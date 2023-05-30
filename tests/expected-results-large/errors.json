@@ -420,7 +420,7 @@
         {
             "sequence_name": "MK114856.1",
             "error": "APOBECHypermutationDetected",
-            "message": "Query sequence shows evidence of APOBEC3F/G-mediatedhypermutation (p = 4.399685326687554e-65)."
+            "message": "Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 4.399685326687554e-65)."
         },
         {
             "sequence_name": "MK114856.1",
@@ -462,7 +462,7 @@
         {
             "sequence_name": "MK115009.1",
             "error": "APOBECHypermutationDetected",
-            "message": "Query sequence shows evidence of APOBEC3F/G-mediatedhypermutation (p = 1.3731449337509935e-41)."
+            "message": "Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 1.3731449337509935e-41)."
         },
         {
             "sequence_name": "MK115009.1",
@@ -593,7 +593,7 @@
         {
             "sequence_name": "MK115464.1",
             "error": "APOBECHypermutationDetected",
-            "message": "Query sequence shows evidence of APOBEC3F/G-mediatedhypermutation (p = 5.391006513622446e-23)."
+            "message": "Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 5.391006513622446e-23)."
         },
         {
             "sequence_name": "MK115464.1",
@@ -732,7 +732,7 @@
         {
             "sequence_name": "MK115095.1",
             "error": "APOBECHypermutationDetected",
-            "message": "Query sequence shows evidence of APOBEC3F/G-mediatedhypermutation (p = 9.460464921885922e-40)."
+            "message": "Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 9.460464921885922e-40)."
         },
         {
             "sequence_name": "MK115095.1",

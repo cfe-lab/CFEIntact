@@ -100,7 +100,7 @@ def isHypermut(aln):
         return IntactnessError(
                 aln[1].id, HYPERMUTATION_ERROR,
                 "Query sequence shows evidence of APOBEC3F/G-mediated" +
-                "hypermutation (p = " + str(pval) + ")."
+                " hypermutation (p = " + str(pval) + ")."
         )
     #/end if
     return None
