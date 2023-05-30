@@ -13,8 +13,6 @@ import util.subtypes as st
 import util.wrappers as wrappers
 
 
-START_CODON = 'ATG'
-
 WRONGORFNUMBER_ERROR = "WrongORFNumber"
 MISPLACEDORF_ERROR   = "MisplacedORF"
 LONGDELETION_ERROR   = "LongDeletion"
