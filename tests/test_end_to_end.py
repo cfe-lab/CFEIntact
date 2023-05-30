@@ -33,3 +33,22 @@ def test_small(tmp_path):
 def test_large(tmp_path):
     run_end_to_end(tmp_path, "tests/data-large.fasta", "./tests/expected-results-large")
 
+
+@pytest.fixture(scope="session")
+def huge_data_file(tmpdir_factory):
+    tmp_dir = tmpdir_factory.mktemp('downloaded_files')
+    tmp_tar_path = tmp_dir.join('test_file.tar')
+    # response = requests.get("https://github.com/cfe-lab/HIVIntact/releases/download/test-data/huge-data-file.tar")
+    # with open(tmp_path, 'wb') as f:
+        # f.write(response.content)
+
+    # return (tmp_path, "tmp1")
+    return ("/home/doname/my/wd/hiv_sequences/all-psd-subtype-b-long.fasta", "haha")
+
+
+@pytest.mark.slow
+@pytest.mark.overnight
+def test_huge(tmp_path, huge_data_file):
+    file_path, expected_dir_path = huge_data_file
+    run_end_to_end(tmp_path, file_path, expected_dir_path)
+
