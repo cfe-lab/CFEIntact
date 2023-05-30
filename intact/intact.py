@@ -40,6 +40,18 @@ class ORF:
         self.start = start
         self.end = end
 
+class ExpectedORF:
+    def __init__(self, name, start, end, deletion_tolerence):
+        self.name = name
+        self.start = start
+        self.end = end
+        self.deletion_tolerence = deletion_tolerence
+
+    def subtyped(working_dir, subtype, name, start, end, deletion_tolerence):
+        start_s = st.convert_from_hxb2_to_subtype(working_dir, start, subtype)
+        end_s = st.convert_from_hxb2_to_subtype(working_dir, end, subtype)
+        return ExpectedORF(name, start_s, end_s, deletion_tolerence)
+
 def _getPositions(pattern, string):
     """
     Hidden function used to get interator of all intances of pattern in string
@@ -397,8 +409,8 @@ def small_frames(
         best_match_delta = 10000000
         found_inside_match = False
         for f in frames:
-            inside = f[0] < e[1] and f[1] > e[2]
-            delta = abs(e[1] - f[0]) + abs(e[2] - f[1])
+            inside = f[0] < e.start and f[1] > e.end
+            delta = abs(e.start - f[0]) + abs(e.end - f[1])
             # only compare inside matches to the best inside match
             if inside == found_inside_match and delta < best_match_delta:
                 best_match = f
@@ -410,29 +422,29 @@ def small_frames(
                 best_match_delta = delta
 
         # ORF lengths and locations are incorrect
-        if (best_match[0] - e[1] > error_bar \
-        or e[2] - best_match[1] > error_bar): 
+        if (best_match[0] - e.start > error_bar \
+        or e.end - best_match[1] > error_bar): 
             errors.append(IntactnessError(
                 sequence.id, MISPLACEDORF_ERROR,
-                "Expected a smaller ORF, " + str(e[0]) + ", at " + str(e[1]) 
-                + "-" + str(e[2]) 
+                "Expected a smaller ORF, " + str(e.name) + ", at " + str(e.start)
+                + "-" + str(e.end)
                 + " in the " + f_type + " strand, got closest match " 
                 + str(best_match[0]) 
                 + "-" + str(best_match[1])
             )) 
         else:
-            insertions = len(re.findall(r"-", str(alignment[0].seq[e[1]:e[2]])))
-            deletions = len(re.findall(r"-", str(alignment[1].seq[e[1]:e[2]])))
+            insertions = len(re.findall(r"-", str(alignment[0].seq[e.start:e.end])))
+            deletions = len(re.findall(r"-", str(alignment[1].seq[e.start:e.end])))
 
             # Max deletion allowed in ORF exceeded
-            if deletions > e[3]:
+            if deletions > e.deletion_tolerence:
 
                 errors.append(IntactnessError(
                     sequence.id, DELETIONINORF_ERROR,
-                    "Smaller ORF " + str(e[0]) + " at " + str(e[1]) 
-                    + "-" + str(e[2]) 
+                    "Smaller ORF " + str(e.name) + " at " + str(e.start) 
+                    + "-" + str(e.end) 
                     + " can have maximum deletions "
-                    + str(e[3]) + ", got " 
+                    + str(e.deletion_tolerence) + ", got " 
                     + str(deletions)
                 ))
 
@@ -441,8 +453,8 @@ def small_frames(
 
                 errors.append(IntactnessError(
                     sequence.id, FRAMESHIFTINORF_ERROR,
-                    "Smaller ORF " + str(e[0]) + " at " + str(e[1]) 
-                    + "-" + str(e[2]) 
+                    "Smaller ORF " + str(e.name) + " at " + str(e.start) 
+                    + "-" + str(e.end) 
                     + " contains an out of frame indel: insertions " + str(insertions)
                     + " deletions " + str(deletions) + "."
                 ))
@@ -523,27 +535,27 @@ def has_reading_frames(
         for got_elem, expected_elem in zip(got, expected):
 
             # ORF lengths and locations are incorrect
-            if got_elem[0] - expected_elem[1] > error_bar \
-            or expected_elem[2] - got_elem[1] > error_bar: 
+            if got_elem[0] - expected_elem.start > error_bar \
+            or expected_elem.end - got_elem[1] > error_bar: 
 
                 errors.append(IntactnessError(
                     sequence.id, MISPLACEDORF_ERROR,
-                    "Expected an ORF, " + str(expected_elem[0]) + ", at " + str(expected_elem[1]) 
-                    + "-" + str(expected_elem[2]) 
+                    "Expected an ORF, " + str(expected_elem.name) + ", at " + str(expected_elem.start) 
+                    + "-" + str(expected_elem.end) 
                     + " in the " + f_type + " strand, got " 
                     + str(got_elem[0]) 
                     + "-" + str(got_elem[1])
                 ))
 
             # Max deletion allowed in ORF exceeded
-            if got_elem[2] > expected_elem[3]:
+            if got_elem[2] > expected_elem.deletion_tolerence:
 
                 errors.append(IntactnessError(
                     sequence.id, DELETIONINORF_ERROR,
-                    "ORF " + str(expected_elem[0]) + " at " + str(got_elem[0]) 
+                    "ORF " + str(expected_elem.name) + " at " + str(got_elem[0]) 
                     + "-" + str(got_elem[1]) 
                     + " can have maximum deletions "
-                    + str(expected_elem[3]) + ", got " 
+                    + str(expected_elem.deletion_tolerence) + ", got " 
                     + str(got_elem[2])
                 ))
 
@@ -552,7 +564,7 @@ def has_reading_frames(
 
                 errors.append(IntactnessError(
                     sequence.id, FRAMESHIFTINORF_ERROR,
-                    "ORF " + str(expected_elem[0]) + " at " + str(got_elem[0]) 
+                    "ORF " + str(expected_elem.name) + " at " + str(got_elem[0]) 
                     + "-" + str(got_elem[1]) 
                     + " contains an out of frame indel, deletions " 
                     + str(got_elem[2]) + " insertions " + str(got_elem[3]) + "."
@@ -597,13 +609,8 @@ def intact( working_dir,
 
     # convert ORF positions to appropriate subtype
     forward_orfs, reverse_orfs, small_orfs = [
-    [                       
-        (
-            n,
-            st.convert_from_hxb2_to_subtype(working_dir, s, subtype), 
-            st.convert_from_hxb2_to_subtype(working_dir, e, subtype), 
-            delta
-        ) \
+    [
+        ExpectedORF.subtyped(working_dir, subtype, n, s, e, delta) \
         for (n, s, e, delta) in orfs
     ] \
     for orfs in [hxb2_forward_orfs, hxb2_reverse_orfs, hxb2_small_orfs]
