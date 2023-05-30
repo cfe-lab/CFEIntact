@@ -50,6 +50,13 @@ class ExpectedORF:
         end_s = st.convert_from_hxb2_to_subtype(working_dir, end, subtype)
         return ExpectedORF(name, start_s, end_s, deletion_tolerence)
 
+class ReceivedORF:
+    def __init__(self, start, end, deleted_count, inserted_count):
+        self.start = start
+        self.end = end
+        self.deleted_count = deleted_count
+        self.inserted_count = inserted_count
+
 def _getPositions(pattern, string):
     """
     Hidden function used to get interator of all intances of pattern in string
@@ -343,7 +350,10 @@ def reading_frames_single_stranded(alignment, sequence, length):
 
                 if current_len * 3 >= length:
                     long_frames.append(
-                        (frame_start, frame_end + 1, delete_offset[fe] - delete_offset[fs], insert_offset[fe] - insert_offset[fs])
+                        ReceivedORF(frame_start,
+                                    frame_end + 1,
+                                    delete_offset[fe] - delete_offset[fs],
+                                    insert_offset[fe] - insert_offset[fs])
                     )
                 current_len = 0
                 continue
@@ -352,7 +362,7 @@ def reading_frames_single_stranded(alignment, sequence, length):
 
             current_len += 1
 
-    long_frames.sort(key=lambda x: x[0])            
+    long_frames.sort(key=lambda x: x.start)
 
     return long_frames
 
@@ -403,12 +413,12 @@ def small_frames(
 
     errors = []
     for e in expected:
-        best_match = (0, 0)
+        best_match = ReceivedORF(0, 0, 0, 0)
         best_match_delta = 10000000
         found_inside_match = False
         for f in frames:
-            inside = f[0] < e.start and f[1] > e.end
-            delta = abs(e.start - f[0]) + abs(e.end - f[1])
+            inside = f.start < e.start and f.end > e.end
+            delta = abs(e.start - f.start) + abs(e.end - f.end)
             # only compare inside matches to the best inside match
             if inside == found_inside_match and delta < best_match_delta:
                 best_match = f
@@ -420,15 +430,15 @@ def small_frames(
                 best_match_delta = delta
 
         # ORF lengths and locations are incorrect
-        if (best_match[0] - e.start > error_bar \
-        or e.end - best_match[1] > error_bar): 
+        if (best_match.start - e.start > error_bar \
+        or e.end - best_match.end > error_bar): 
             errors.append(IntactnessError(
                 sequence.id, MISPLACEDORF_ERROR,
                 "Expected a smaller ORF, " + str(e.name) + ", at " + str(e.start)
                 + "-" + str(e.end)
                 + " in the " + f_type + " strand, got closest match " 
-                + str(best_match[0]) 
-                + "-" + str(best_match[1])
+                + str(best_match.start) 
+                + "-" + str(best_match.end)
             )) 
         else:
             insertions = len(re.findall(r"-", str(alignment[0].seq[e.start:e.end])))
@@ -508,7 +518,7 @@ def has_reading_frames(
                                 ("reverse", reverse_frames, reverse_expected)
                                  ]:
         for got_elem in got:
-            orfs.append(ORF(f_type, got_elem[0], got_elem[1]))
+            orfs.append(ORF(f_type, got_elem.start, got_elem.end))
 
 
     for f_type, got, expected in [
@@ -533,39 +543,39 @@ def has_reading_frames(
         for got_elem, expected_elem in zip(got, expected):
 
             # ORF lengths and locations are incorrect
-            if got_elem[0] - expected_elem.start > error_bar \
-            or expected_elem.end - got_elem[1] > error_bar: 
+            if got_elem.start - expected_elem.start > error_bar \
+            or expected_elem.end - got_elem.end > error_bar: 
 
                 errors.append(IntactnessError(
                     sequence.id, MISPLACEDORF_ERROR,
                     "Expected an ORF, " + str(expected_elem.name) + ", at " + str(expected_elem.start) 
                     + "-" + str(expected_elem.end) 
                     + " in the " + f_type + " strand, got " 
-                    + str(got_elem[0]) 
-                    + "-" + str(got_elem[1])
+                    + str(got_elem.start) 
+                    + "-" + str(got_elem.end)
                 ))
 
             # Max deletion allowed in ORF exceeded
-            if got_elem[2] > expected_elem.deletion_tolerence:
+            if got_elem.deleted_count > expected_elem.deletion_tolerence:
 
                 errors.append(IntactnessError(
                     sequence.id, DELETIONINORF_ERROR,
-                    "ORF " + str(expected_elem.name) + " at " + str(got_elem[0]) 
-                    + "-" + str(got_elem[1]) 
+                    "ORF " + str(expected_elem.name) + " at " + str(got_elem.start) 
+                    + "-" + str(got_elem.end) 
                     + " can have maximum deletions "
                     + str(expected_elem.deletion_tolerence) + ", got " 
-                    + str(got_elem[2])
+                    + str(got_elem.deleted_count)
                 ))
 
             # Check for frameshift deletion in ORF
-            if (got_elem[2] - got_elem[3]) % 3 != 0:
+            if (got_elem.deleted_count - got_elem.inserted_count) % 3 != 0:
 
                 errors.append(IntactnessError(
                     sequence.id, FRAMESHIFTINORF_ERROR,
-                    "ORF " + str(expected_elem.name) + " at " + str(got_elem[0]) 
-                    + "-" + str(got_elem[1]) 
+                    "ORF " + str(expected_elem.name) + " at " + str(got_elem.start) 
+                    + "-" + str(got_elem.end) 
                     + " contains an out of frame indel, deletions " 
-                    + str(got_elem[2]) + " insertions " + str(got_elem[3]) + "."
+                    + str(got_elem.deleted_count) + " insertions " + str(got_elem.inserted_count) + "."
                 ))
 
             
