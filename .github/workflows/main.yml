@@ -1,0 +1,20 @@
+
+name: Local test
+
+on:
+  push:
+    branches: [ "master", "my", "devel" ]
+  pull_request:
+    branches: [ "master", "my", "devel" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install dependencies
+      run: sudo apt-get update && sudo apt-get install -y python3 python3-pip python3-pytest mafft
+    - name: Run build
+      run: pip3 install .
+    - name: Run test
+      run: pytest -v
