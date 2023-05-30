@@ -1,0 +1,72 @@
+{
+    "KX505501.1": [
+        {
+            "orientation": "forward",
+            "start": 766,
+            "end": 9461
+        }
+    ],
+    "MN691959": [
+        {
+            "orientation": "forward",
+            "start": 766,
+            "end": 2291
+        },
+        {
+            "orientation": "forward",
+            "start": 2085,
+            "end": 5095
+        },
+        {
+            "orientation": "forward",
+            "start": 6204,
+            "end": 8794
+        }
+    ],
+    "MN692074": [
+        {
+            "orientation": "forward",
+            "start": 766,
+            "end": 2291
+        },
+        {
+            "orientation": "forward",
+            "start": 2085,
+            "end": 9515
+        }
+    ],
+    "MN692145": [
+        {
+            "orientation": "forward",
+            "start": 766,
+            "end": 2291
+        },
+        {
+            "orientation": "forward",
+            "start": 2085,
+            "end": 5095
+        },
+        {
+            "orientation": "forward",
+            "start": 6201,
+            "end": 8794
+        }
+    ],
+    "MN090335": [
+        {
+            "orientation": "forward",
+            "start": 1176,
+            "end": 2291
+        },
+        {
+            "orientation": "forward",
+            "start": 2085,
+            "end": 5095
+        },
+        {
+            "orientation": "forward",
+            "start": 6201,
+            "end": 8794
+        }
+    ]
+}

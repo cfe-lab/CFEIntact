@@ -1,0 +1,217 @@
+{
+    "KX505501.1": [
+        {
+            "sequence_name": "KX505501.1",
+            "error": "WrongORFNumber",
+            "message": "Expected 3 forward ORFs, got 1"
+        },
+        {
+            "sequence_name": "KX505501.1",
+            "error": "RevResponseElementDeletion",
+            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions."
+        },
+        {
+            "sequence_name": "KX505501.1",
+            "error": "LongDeletion",
+            "message": "Query sequence contains a long deletion."
+        },
+        {
+            "sequence_name": "KX505501.1",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF vif at 5041-5619 can have maximum deletions 30, got 578"
+        },
+        {
+            "sequence_name": "KX505501.1",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF vif at 5041-5619 contains an out of frame indel: insertions 0 deletions 578."
+        },
+        {
+            "sequence_name": "KX505501.1",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF vpr at 5559-5850 can have maximum deletions 30, got 291"
+        },
+        {
+            "sequence_name": "KX505501.1",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF tat_exon1 at 5831-6045 can have maximum deletions 30, got 214"
+        },
+        {
+            "sequence_name": "KX505501.1",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF tat_exon1 at 5831-6045 contains an out of frame indel: insertions 0 deletions 214."
+        },
+        {
+            "sequence_name": "KX505501.1",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF rev_exon1 at 5970-6045 can have maximum deletions 30, got 75"
+        },
+        {
+            "sequence_name": "KX505501.1",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF vpu at 6062-6310 can have maximum deletions 30, got 248"
+        },
+        {
+            "sequence_name": "KX505501.1",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF vpu at 6062-6310 contains an out of frame indel: insertions 0 deletions 248."
+        },
+        {
+            "sequence_name": "KX505501.1",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF tat_exon2 at 8379-8469 can have maximum deletions 30, got 90"
+        },
+        {
+            "sequence_name": "KX505501.1",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF rev_exon2 at 8379-8653 can have maximum deletions 30, got 274"
+        },
+        {
+            "sequence_name": "KX505501.1",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF rev_exon2 at 8379-8653 contains an out of frame indel: insertions 0 deletions 274."
+        },
+        {
+            "sequence_name": "KX505501.1",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF nef at 8797-9417 can have maximum deletions 30, got 590"
+        },
+        {
+            "sequence_name": "KX505501.1",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF nef at 8797-9417 contains an out of frame indel: insertions 0 deletions 590."
+        }
+    ],
+    "MN691959": [
+        {
+            "sequence_name": "MN691959",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF vpr at 5559-5850 contains an out of frame indel: insertions 0 deletions 1."
+        },
+        {
+            "sequence_name": "MN691959",
+            "error": "MisplacedORF",
+            "message": "Expected a smaller ORF, vpu, at 6062-6310 in the forward strand, got closest match 6131-6309"
+        }
+    ],
+    "MN692074": [
+        {
+            "sequence_name": "MN692074",
+            "error": "WrongORFNumber",
+            "message": "Expected 3 forward ORFs, got 2"
+        },
+        {
+            "sequence_name": "MN692074",
+            "error": "RevResponseElementDeletion",
+            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions."
+        },
+        {
+            "sequence_name": "MN692074",
+            "error": "LongDeletion",
+            "message": "Query sequence contains a long deletion."
+        },
+        {
+            "sequence_name": "MN692074",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF vif at 5041-5619 can have maximum deletions 30, got 578"
+        },
+        {
+            "sequence_name": "MN692074",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF vif at 5041-5619 contains an out of frame indel: insertions 0 deletions 578."
+        },
+        {
+            "sequence_name": "MN692074",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF vpr at 5559-5850 can have maximum deletions 30, got 291"
+        },
+        {
+            "sequence_name": "MN692074",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF tat_exon1 at 5831-6045 can have maximum deletions 30, got 214"
+        },
+        {
+            "sequence_name": "MN692074",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF tat_exon1 at 5831-6045 contains an out of frame indel: insertions 0 deletions 214."
+        },
+        {
+            "sequence_name": "MN692074",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF rev_exon1 at 5970-6045 can have maximum deletions 30, got 75"
+        },
+        {
+            "sequence_name": "MN692074",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF vpu at 6062-6310 can have maximum deletions 30, got 248"
+        },
+        {
+            "sequence_name": "MN692074",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF vpu at 6062-6310 contains an out of frame indel: insertions 0 deletions 248."
+        },
+        {
+            "sequence_name": "MN692074",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF tat_exon2 at 8379-8469 can have maximum deletions 30, got 90"
+        },
+        {
+            "sequence_name": "MN692074",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF rev_exon2 at 8379-8653 can have maximum deletions 30, got 274"
+        },
+        {
+            "sequence_name": "MN692074",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF rev_exon2 at 8379-8653 contains an out of frame indel: insertions 0 deletions 274."
+        },
+        {
+            "sequence_name": "MN692074",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF nef at 8797-9417 can have maximum deletions 30, got 616"
+        },
+        {
+            "sequence_name": "MN692074",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF nef at 8797-9417 contains an out of frame indel: insertions 0 deletions 616."
+        }
+    ],
+    "MN692145": [
+        {
+            "sequence_name": "MN692145",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF vpr at 5559-5850 contains an out of frame indel: insertions 0 deletions 1."
+        }
+    ],
+    "MN090335": [
+        {
+            "sequence_name": "MN090335",
+            "error": "MisplacedORF",
+            "message": "Expected an ORF, gag, at 790-2291 in the forward strand, got 1176-2291"
+        },
+        {
+            "sequence_name": "MN090335",
+            "error": "DeletionInOrf",
+            "message": "ORF gag at 1176-2291 can have maximum deletions 30, got 91"
+        },
+        {
+            "sequence_name": "MN090335",
+            "error": "FrameshiftInOrf",
+            "message": "ORF gag at 1176-2291 contains an out of frame indel, deletions 91 insertions 33."
+        },
+        {
+            "sequence_name": "MN090335",
+            "error": "PackagingSignalDeletion",
+            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 42 deletions with max tolerance of 10 deletions."
+        },
+        {
+            "sequence_name": "MN090335",
+            "error": "MajorSpliceDonorSiteMutated",
+            "message": "Query sequence has a mutated splice donor site, AT."
+        },
+        {
+            "sequence_name": "MN090335",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF vpr at 5559-5850 contains an out of frame indel: insertions 0 deletions 1."
+        }
+    ]
+}
