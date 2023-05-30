@@ -117,8 +117,6 @@ def has_long_deletion(sequence, alignment):
                      reference and query sequence.
     """
     # NOTE: This is the same check that HIVSeqInR uses.
-    # TODO: However, it does not actually imply a long deletion
-    #       in consecutive positions. Make sure that it is fine.
     if len(sequence.seq) < 8000:
         return IntactnessError(sequence.id,
                                LONGDELETION_ERROR,
