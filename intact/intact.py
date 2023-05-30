@@ -703,21 +703,21 @@ def intact( working_dir,
 
             errors[sequence.id] = sequence_errors
 
-    intact_file = os.path.join(os.getcwd(), "intact.fasta")
+    intact_file = os.path.join(working_dir, "intact.fasta")
     with open(intact_file, 'w') as f:
        SeqIO.write(intact_sequences, f, "fasta")
 
-    non_intact_file = os.path.join(os.getcwd(), "nonintact.fasta")
+    non_intact_file = os.path.join(working_dir, "nonintact.fasta")
     with open(non_intact_file, 'w') as f:
         SeqIO.write(non_intact_sequences, f, "fasta")
     
-    orf_file = os.path.join(os.getcwd(), "orfs.json")
+    orf_file = os.path.join(working_dir, "orfs.json")
     with open(orf_file, 'w') as f:
         f.write(json.dumps({seq: [x.__dict__ for x in sorfs] \
                             for seq, sorfs in orfs.items()},
                             indent=4))
 
-    error_file = os.path.join(os.getcwd(), "errors.json")
+    error_file = os.path.join(working_dir, "errors.json")
     with open(error_file, 'w') as f:
         f.write(json.dumps({seq: [x.__dict__ for x in serrors] \
                             for seq,serrors in errors.items()}, 
