@@ -296,7 +296,7 @@ def reading_frames_single_stranded(alignment, sequence, length):
         length: the minimum nucleotide length of a reading frame
 
     Returns:
-        A list of tuples of (frame_start, frame_end)
+        A list of tuples of (frame_start, frame_end, frame_deletions, frame_insertions)
     """
 
     # figure out where the query starts w.r.t HXB2 in case full
