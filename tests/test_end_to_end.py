@@ -5,11 +5,18 @@ import filecmp
 import os
 import intact.intact as main
 
+
 @pytest.fixture(scope="session")
-def data_file(tmpdir_factory):
+def small_data_file(tmpdir_factory):
     return "tests/small.fasta"
 
-def test_end_to_end(tmp_path, data_file):
+
+@pytest.fixture(scope="session")
+def large_data_file(tmpdir_factory):
+    return "tests/data.fasta"
+
+
+def run_end_to_end(tmp_path, data_file, expected_dir):
     main.intact(
         working_dir=tmp_path,
         input_file=data_file,
@@ -22,8 +29,18 @@ def test_end_to_end(tmp_path, data_file):
         include_small_orfs=False,
         )
 
-    result = filecmp.dircmp(tmp_path, "./tests/expected-results-small")
+    result = filecmp.dircmp(tmp_path, expected_dir)
     assert result.left_list == result.right_list
     assert result.diff_files == []
     assert result.common_funny == []
     assert result.common == result.right_list
+
+
+def test_small(tmp_path, small_data_file):
+    run_end_to_end(tmp_path, small_data_file, "./tests/expected-results-small")
+
+
+@pytest.mark.slow
+def test_large(tmp_path, large_data_file):
+    run_end_to_end(tmp_path, large_data_file, "./tests/expected-results-large")
+

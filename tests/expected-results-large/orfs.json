@@ -1,0 +1,620 @@
+{
+    "KX505501.1": [
+        {
+            "orientation": "forward",
+            "start": 766,
+            "end": 9461
+        }
+    ],
+    "MN691959": [
+        {
+            "orientation": "forward",
+            "start": 766,
+            "end": 2291
+        },
+        {
+            "orientation": "forward",
+            "start": 2085,
+            "end": 5095
+        },
+        {
+            "orientation": "forward",
+            "start": 6204,
+            "end": 8794
+        }
+    ],
+    "MN692074": [
+        {
+            "orientation": "forward",
+            "start": 766,
+            "end": 2291
+        },
+        {
+            "orientation": "forward",
+            "start": 2085,
+            "end": 9515
+        }
+    ],
+    "MN692145": [
+        {
+            "orientation": "forward",
+            "start": 766,
+            "end": 2291
+        },
+        {
+            "orientation": "forward",
+            "start": 2085,
+            "end": 5095
+        },
+        {
+            "orientation": "forward",
+            "start": 6201,
+            "end": 8794
+        }
+    ],
+    "MN090335": [
+        {
+            "orientation": "forward",
+            "start": 1176,
+            "end": 2291
+        },
+        {
+            "orientation": "forward",
+            "start": 2085,
+            "end": 5095
+        },
+        {
+            "orientation": "forward",
+            "start": 6201,
+            "end": 8794
+        }
+    ],
+    "MN090376": [
+        {
+            "orientation": "forward",
+            "start": 2073,
+            "end": 5095
+        },
+        {
+            "orientation": "forward",
+            "start": 6201,
+            "end": 8794
+        }
+    ],
+    "MK115581.1": [
+        {
+            "orientation": "forward",
+            "start": 766,
+            "end": 2291
+        },
+        {
+            "orientation": "forward",
+            "start": 2085,
+            "end": 5095
+        },
+        {
+            "orientation": "forward",
+            "start": 6201,
+            "end": 8794
+        }
+    ],
+    "MK115690.1": [
+        {
+            "orientation": "forward",
+            "start": 766,
+            "end": 2291
+        },
+        {
+            "orientation": "forward",
+            "start": 2085,
+            "end": 5095
+        },
+        {
+            "orientation": "forward",
+            "start": 6201,
+            "end": 8794
+        }
+    ],
+    "MK115571.1": [
+        {
+            "orientation": "forward",
+            "start": 766,
+            "end": 2291
+        },
+        {
+            "orientation": "forward",
+            "start": 2085,
+            "end": 5095
+        },
+        {
+            "orientation": "forward",
+            "start": 6201,
+            "end": 8794
+        }
+    ],
+    "MK115514.1": [
+        {
+            "orientation": "forward",
+            "start": 766,
+            "end": 2291
+        },
+        {
+            "orientation": "forward",
+            "start": 2085,
+            "end": 5095
+        },
+        {
+            "orientation": "forward",
+            "start": 6201,
+            "end": 8794
+        }
+    ],
+    "MK115488.1": [
+        {
+            "orientation": "forward",
+            "start": 766,
+            "end": 2291
+        },
+        {
+            "orientation": "forward",
+            "start": 2085,
+            "end": 5095
+        },
+        {
+            "orientation": "forward",
+            "start": 6201,
+            "end": 8794
+        }
+    ],
+    "MK115030.1": [
+        {
+            "orientation": "forward",
+            "start": 766,
+            "end": 2282
+        },
+        {
+            "orientation": "forward",
+            "start": 2085,
+            "end": 5095
+        },
+        {
+            "orientation": "forward",
+            "start": 6201,
+            "end": 8794
+        }
+    ],
+    "MK115498.1": [
+        {
+            "orientation": "forward",
+            "start": 766,
+            "end": 2291
+        },
+        {
+            "orientation": "forward",
+            "start": 2085,
+            "end": 5095
+        },
+        {
+            "orientation": "forward",
+            "start": 6201,
+            "end": 8794
+        }
+    ],
+    "MK115211.1": [
+        {
+            "orientation": "forward",
+            "start": 766,
+            "end": 2282
+        },
+        {
+            "orientation": "forward",
+            "start": 2073,
+            "end": 5095
+        },
+        {
+            "orientation": "forward",
+            "start": 6957,
+            "end": 8794
+        }
+    ],
+    "MK115158.1": [
+        {
+            "orientation": "forward",
+            "start": 710,
+            "end": 2282
+        },
+        {
+            "orientation": "forward",
+            "start": 2073,
+            "end": 5095
+        },
+        {
+            "orientation": "forward",
+            "start": 6201,
+            "end": 8794
+        }
+    ],
+    "MK114705.1": [
+        {
+            "orientation": "forward",
+            "start": 766,
+            "end": 2291
+        },
+        {
+            "orientation": "forward",
+            "start": 2085,
+            "end": 5095
+        },
+        {
+            "orientation": "forward",
+            "start": 6201,
+            "end": 8794
+        }
+    ],
+    "MK114856.1": [],
+    "MK115009.1": [],
+    "MK115387.1": [
+        {
+            "orientation": "forward",
+            "start": 766,
+            "end": 2291
+        },
+        {
+            "orientation": "forward",
+            "start": 2085,
+            "end": 5095
+        },
+        {
+            "orientation": "forward",
+            "start": 6204,
+            "end": 8794
+        }
+    ],
+    "MK115491.1": [
+        {
+            "orientation": "forward",
+            "start": 766,
+            "end": 2291
+        },
+        {
+            "orientation": "forward",
+            "start": 2085,
+            "end": 5095
+        },
+        {
+            "orientation": "forward",
+            "start": 6201,
+            "end": 8794
+        }
+    ],
+    "MK116110.1": [
+        {
+            "orientation": "forward",
+            "start": 2085,
+            "end": 5095
+        },
+        {
+            "orientation": "forward",
+            "start": 6204,
+            "end": 8794
+        }
+    ],
+    "MK115527.1": [
+        {
+            "orientation": "forward",
+            "start": 766,
+            "end": 2291
+        },
+        {
+            "orientation": "forward",
+            "start": 2085,
+            "end": 5095
+        },
+        {
+            "orientation": "forward",
+            "start": 6201,
+            "end": 8794
+        }
+    ],
+    "MK114997.1": [
+        {
+            "orientation": "forward",
+            "start": 766,
+            "end": 2282
+        },
+        {
+            "orientation": "forward",
+            "start": 2085,
+            "end": 5095
+        },
+        {
+            "orientation": "forward",
+            "start": 6201,
+            "end": 7284
+        },
+        {
+            "orientation": "forward",
+            "start": 7251,
+            "end": 8794
+        }
+    ],
+    "MK115518.1": [
+        {
+            "orientation": "forward",
+            "start": 766,
+            "end": 2291
+        },
+        {
+            "orientation": "forward",
+            "start": 2085,
+            "end": 5095
+        },
+        {
+            "orientation": "forward",
+            "start": 6201,
+            "end": 8794
+        }
+    ],
+    "MK115065.1": [
+        {
+            "orientation": "forward",
+            "start": 658,
+            "end": 2282
+        },
+        {
+            "orientation": "forward",
+            "start": 2085,
+            "end": 5095
+        },
+        {
+            "orientation": "forward",
+            "start": 6201,
+            "end": 8794
+        }
+    ],
+    "MK115464.1": [],
+    "MK115530.1": [
+        {
+            "orientation": "forward",
+            "start": 766,
+            "end": 2291
+        },
+        {
+            "orientation": "forward",
+            "start": 2085,
+            "end": 5095
+        },
+        {
+            "orientation": "forward",
+            "start": 6201,
+            "end": 8794
+        }
+    ],
+    "MK115520.1": [
+        {
+            "orientation": "forward",
+            "start": 766,
+            "end": 2291
+        },
+        {
+            "orientation": "forward",
+            "start": 2085,
+            "end": 3281
+        },
+        {
+            "orientation": "forward",
+            "start": 3259,
+            "end": 5095
+        },
+        {
+            "orientation": "forward",
+            "start": 6201,
+            "end": 8794
+        }
+    ],
+    "MK115503.1": [
+        {
+            "orientation": "forward",
+            "start": 766,
+            "end": 2291
+        },
+        {
+            "orientation": "forward",
+            "start": 2085,
+            "end": 5095
+        },
+        {
+            "orientation": "forward",
+            "start": 6201,
+            "end": 8794
+        }
+    ],
+    "MK115570.1": [
+        {
+            "orientation": "forward",
+            "start": 766,
+            "end": 2291
+        },
+        {
+            "orientation": "forward",
+            "start": 2085,
+            "end": 5095
+        },
+        {
+            "orientation": "forward",
+            "start": 6201,
+            "end": 8794
+        }
+    ],
+    "MK115509.1": [
+        {
+            "orientation": "forward",
+            "start": 766,
+            "end": 2291
+        },
+        {
+            "orientation": "forward",
+            "start": 2085,
+            "end": 5095
+        },
+        {
+            "orientation": "forward",
+            "start": 6201,
+            "end": 8794
+        }
+    ],
+    "MK115702.1": [
+        {
+            "orientation": "forward",
+            "start": 766,
+            "end": 2282
+        },
+        {
+            "orientation": "forward",
+            "start": 2085,
+            "end": 5095
+        },
+        {
+            "orientation": "forward",
+            "start": 6201,
+            "end": 8765
+        }
+    ],
+    "MK115095.1": [],
+    "MK115490.1": [
+        {
+            "orientation": "forward",
+            "start": 766,
+            "end": 2291
+        },
+        {
+            "orientation": "forward",
+            "start": 2085,
+            "end": 5095
+        },
+        {
+            "orientation": "forward",
+            "start": 6201,
+            "end": 8794
+        }
+    ],
+    "MK115576.1": [
+        {
+            "orientation": "forward",
+            "start": 766,
+            "end": 2291
+        },
+        {
+            "orientation": "forward",
+            "start": 2085,
+            "end": 5095
+        },
+        {
+            "orientation": "forward",
+            "start": 6201,
+            "end": 8794
+        }
+    ],
+    "OQ092466": [
+        {
+            "orientation": "forward",
+            "start": 766,
+            "end": 2291
+        },
+        {
+            "orientation": "forward",
+            "start": 2085,
+            "end": 5095
+        },
+        {
+            "orientation": "forward",
+            "start": 6201,
+            "end": 8794
+        }
+    ],
+    "OQ092463": [
+        {
+            "orientation": "forward",
+            "start": 766,
+            "end": 2291
+        },
+        {
+            "orientation": "forward",
+            "start": 2085,
+            "end": 5095
+        },
+        {
+            "orientation": "forward",
+            "start": 6201,
+            "end": 8794
+        }
+    ],
+    "OQ092465": [
+        {
+            "orientation": "forward",
+            "start": 766,
+            "end": 2291
+        },
+        {
+            "orientation": "forward",
+            "start": 2085,
+            "end": 5095
+        },
+        {
+            "orientation": "forward",
+            "start": 6201,
+            "end": 8794
+        }
+    ],
+    "OQ092462": [
+        {
+            "orientation": "forward",
+            "start": 766,
+            "end": 2291
+        },
+        {
+            "orientation": "forward",
+            "start": 2085,
+            "end": 5095
+        },
+        {
+            "orientation": "forward",
+            "start": 6201,
+            "end": 8794
+        }
+    ],
+    "OQ092464": [
+        {
+            "orientation": "forward",
+            "start": 766,
+            "end": 2291
+        },
+        {
+            "orientation": "forward",
+            "start": 2085,
+            "end": 5095
+        },
+        {
+            "orientation": "forward",
+            "start": 6201,
+            "end": 8794
+        }
+    ],
+    "OQ092467": [
+        {
+            "orientation": "forward",
+            "start": 766,
+            "end": 2291
+        },
+        {
+            "orientation": "forward",
+            "start": 2085,
+            "end": 5095
+        },
+        {
+            "orientation": "forward",
+            "start": 6201,
+            "end": 8794
+        }
+    ]
+}
