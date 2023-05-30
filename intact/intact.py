@@ -316,7 +316,8 @@ def reading_frames_single_stranded(alignment, sequence, length):
     for frame in range(0, 3):
 
         for_translation = sequence.seq[frame:]
-        for _ in range(3 - len(sequence.seq[frame:]) % 3):
+        current_length = len(for_translation)
+        for _ in range(3 - current_length % 3):
             for_translation += 'N'
 
         protein = Seq.translate(for_translation)
