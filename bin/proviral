@@ -81,9 +81,9 @@ def intact(input_file, subtype, include_packaging_signal,
         log.info('JSON-encoded intactness error information written to ' 
                 + errors)
     except Exception as e:
-        shutil.rmtree(folder)
         raise e
-    shutil.rmtree(folder)
+    finally:
+        shutil.rmtree(folder)
 
 if __name__ == '__main__':
     intact()
