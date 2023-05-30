@@ -5,7 +5,7 @@ import re
 import subprocess
 import sys
 import uuid
-from Bio import AlignIO, pairwise2, Seq, SeqIO, SeqRecord
+from Bio import AlignIO, Seq, SeqIO, SeqRecord
 from scipy.stats import fisher_exact
 
 import util.constants as const
