@@ -3,6 +3,7 @@ import pytest
 import requests
 import filecmp
 import os
+import tarfile
 import intact.intact as main
 
 def run_end_to_end(tmp_path, data_file, expected_dir):
@@ -36,14 +37,19 @@ def test_large(tmp_path):
 
 @pytest.fixture(scope="session")
 def huge_data_file(tmpdir_factory):
-    tmp_dir = tmpdir_factory.mktemp('downloaded_files')
-    tmp_tar_path = tmp_dir.join('test_file.tar')
-    # response = requests.get("https://github.com/cfe-lab/HIVIntact/releases/download/test-data/huge-data-file.tar")
-    # with open(tmp_path, 'wb') as f:
-        # f.write(response.content)
+    tmp_dir = tmpdir_factory.mktemp("downloaded_files")
+    tmp_tar_path = tmp_dir.join("test_file.tar.gz")
+    data_file = tmp_dir.join("hivintact_data", "all-psd-subtype-b-long.fasta")
+    expected_dir = tmp_dir.join("hivintact_data", "expected-output")
 
-    # return (tmp_path, "tmp1")
-    return ("/home/doname/my/wd/hiv_sequences/all-psd-subtype-b-long.fasta", "haha")
+    response = requests.get("https://github.com/cfe-lab/HIVIntact/releases/download/test-data/hivintact_data.tar.gz")
+    with open(tmp_tar_path, "wb") as f:
+        f.write(response.content)
+
+    with tarfile.open(tmp_tar_path, "r:gz") as tar:
+        tar.extractall(path=tmp_dir)
+
+    return (data_file, expected_dir)
 
 
 @pytest.mark.slow
