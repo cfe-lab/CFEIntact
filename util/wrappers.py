@@ -21,8 +21,8 @@ def mafft(working_dir, sequences):
 
     SeqIO.write(sequences, alignment_input, "fasta")
 
-    with open(alignment_output, 'w') as output, open(os.devnull, 'w') as devnull:
-        subprocess.call(["mafft", alignment_input], shell=False, stderr=devnull, stdout=output)
+    with open(alignment_output, 'w') as output:
+        subprocess.call(["mafft", "--quiet", alignment_input], shell=False, stdout=output)
 
     alignment = AlignIO.read(alignment_output, "fasta")
 
