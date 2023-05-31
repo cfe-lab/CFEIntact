@@ -40,7 +40,7 @@ def huge_data_file(tmpdir_factory):
     tmp_dir = tmpdir_factory.mktemp("downloaded_files")
     tmp_tar_path = tmp_dir.join("test_file.tar.gz")
     data_file = tmp_dir.join("hivintact_data", "all-psd-subtype-b-long.fasta")
-    expected_dir = tmp_dir.join("hivintact_data", "expected-output")
+    expected_dir = tmp_dir.join("hivintact_data", "expected_output")
 
     response = requests.get("https://github.com/cfe-lab/HIVIntact/releases/download/test-data/hivintact_data.tar.gz")
     with open(tmp_tar_path, "wb") as f:
