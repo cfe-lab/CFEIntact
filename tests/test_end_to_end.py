@@ -26,13 +26,19 @@ def run_end_to_end(tmp_path, data_file, expected_dir):
     assert result.common == result.right_list
 
 
-def test_small(tmp_path):
-    run_end_to_end(tmp_path, "tests/data-small.fasta", "./tests/expected-results-small")
+def test_small(tmp_path, request):
+    pwd = request.fspath.dirname
+    run_end_to_end(tmp_path,
+                   os.path.join(pwd, "data-small.fasta"),
+                   os.path.join(pwd, "expected-results-small"))
 
 
 @pytest.mark.slow
-def test_large(tmp_path):
-    run_end_to_end(tmp_path, "tests/data-large.fasta", "./tests/expected-results-large")
+def test_large(tmp_path, request):
+    pwd = request.fspath.dirname
+    run_end_to_end(tmp_path,
+                   os.path.join(pwd, "data-large.fasta"),
+                   os.path.join(pwd, "expected-results-large"))
 
 
 @pytest.fixture(scope="session")
