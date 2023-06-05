@@ -14,15 +14,10 @@ def get_working_folder(path):
     Returns a default working folder.
     """
 
-    folder = os.path.join(
-        path, 
-        ".proviral-" + str(uuid.uuid4())
-    )
+    if not os.path.exists(path):
+        os.makedirs(path)
 
-    if not os.path.exists(folder):
-        os.makedirs(folder)
-
-    return folder
+    return path
 
 @click.group()
 def cli():
