@@ -1,6 +1,4 @@
-import os
 import subprocess
-import sys
 import tempfile
 
 from Bio import SeqIO, AlignIO
