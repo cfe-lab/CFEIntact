@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Install dependencies
-      run: sudo apt-get update && sudo apt-get install -y python3 python3-pip mafft && pip3 install pytest
+      run: sudo apt-get update && sudo apt-get install -y python3 python3-pip mafft ncbi-blast+ && pip3 install pytest
     - name: Run build
       run: pip3 install .
     - name: Run test
