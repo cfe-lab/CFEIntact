@@ -180,7 +180,7 @@ def check_nonhiv(seqid, blast_rows):
 
     if ratio < 0.8:
         return IntactnessError(seqid, NONHIV_ERROR,
-                               "Sequence contains unrecognized parts."
+                               "Sequence contains unrecognized parts. "
                                "It is probably a Human/HIV Chimera sequence.")
     else:
         return None
