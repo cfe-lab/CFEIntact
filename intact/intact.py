@@ -143,7 +143,7 @@ def is_sorted(lst):
     return True
 
 
-def check_scramble(seqid, blast_rows):
+def is_scrambled(seqid, blast_rows):
     # HIV 5' region can easily map to its 3' region because they are identical.
     # Such a maping would not constitute a scramble, so we ignore the 5' region for this check.
     ignored_5_prime = [x for x in blast_rows if x.sstart > 622 and x.send > 622]
@@ -173,7 +173,7 @@ def check_scramble(seqid, blast_rows):
                                f"Sequence is {direction}-scrambled.")
 
 
-def check_nonhiv(seqid, blast_rows):
+def is_nonhiv(seqid, blast_rows):
     aligned_length = sum(abs(x.qend - x.qstart) + 1 for x in blast_rows)
     total_length = blast_rows[0].qlen if blast_rows else 1
     ratio = aligned_length / total_length
