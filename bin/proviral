@@ -82,8 +82,6 @@ def intact(input_file, subtype, include_packaging_signal,
                 + errors)
     except Exception as e:
         raise e
-    finally:
-        shutil.rmtree(folder)
 
 if __name__ == '__main__':
     intact()
