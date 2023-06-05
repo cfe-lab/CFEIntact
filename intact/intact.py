@@ -795,7 +795,8 @@ def intact( working_dir,
 
     reference = st.subtype_sequence(subtype)
     blast_it = blast_iterate(subtype, input_file) if check_internal_inversion or check_nonhiv or check_scramble else iterate_empty_lists()
-    blast_rows = next(blast_it)
+    try: blast_rows = next(blast_it)
+    except StopIteration: blast_rows = []
 
     for sequence in iterate_sequences(input_file):
         sequence_errors = []
