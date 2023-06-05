@@ -121,7 +121,7 @@ def iterate_blast_rows_from_tsv(file_path):
 
     for row in iterate_values_from_tsv(file_path):
         key = row[0]
-        typed = BlastRow.make(row)
+        typed = BlastRow.init(row)
 
         if key != previous_key and previous_key is not None:
             yield values
@@ -134,7 +134,7 @@ def iterate_blast_rows_from_tsv(file_path):
         yield values
 
 
-def blast_interate(subtype, input_file):
+def blast_iterate(subtype, input_file):
     with tempfile.NamedTemporaryFile() as output_file:
         db_file = st.alignment_file(subtype)
         wrappers.blast(db_file, input_file, output_file.name)
@@ -788,9 +788,16 @@ def intact( working_dir,
     rre_locus = [st.convert_from_hxb2_to_subtype(x, subtype) for x in hxb2_rre_locus]
 
     reference = st.subtype_sequence(subtype)
+    blast_it = blast_iterate(subtype, input_file)
+    blast_rows = []
 
     for sequence in iterate_sequences(input_file):
         sequence_errors = []
+
+        if blast_rows and blast_rows[0].qseqid != sequence.id:
+            blast_rows = []
+        else:
+            blast_rows = next(blast_it)
 
         reverse_sequence = SeqRecord.SeqRecord(Seq.reverse_complement(sequence.seq),
                                                id = sequence.id + " [REVERSED]",
