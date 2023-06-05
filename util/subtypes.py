@@ -42,19 +42,18 @@ def subtype_sequence(subtype):
         name = alignment[0].name
         )
 
-def convert_from_hxb2_to_subtype(working_dir, position, subtype):
+def convert_from_hxb2_to_subtype(position, subtype):
     """
     Convert a position number in HXB2 to the equivalent in another subtype.
 
     Args:
-        working_dir: working folder in which to place temporary files
         position: hxb2 coordinate position to convert
         subtype: subtype position to convert to
     """
 
     sequences = [HXB2(), subtype_sequence(subtype)]
 
-    alignment = wrappers.mafft(working_dir, sequences)
+    alignment = wrappers.mafft(sequences)
 
     hxb2_pos = 0
     subtype_pos = 0
@@ -66,12 +65,11 @@ def convert_from_hxb2_to_subtype(working_dir, position, subtype):
         if alignment[1][i] != "-":
             subtype_pos += 1
 
-def convert_from_subtype_to_hxb2(working_dir, position, orientation, subtype):
+def convert_from_subtype_to_hxb2(position, orientation, subtype):
     """
     Convert a position number in HXB2 to the equivalent in another subtype.
 
     Args:
-        working_dir: working folder in which to place temporary files
         position: hxb2 coordinate position to convert
         subtype: subtype position to convert to
     """
@@ -81,7 +79,7 @@ def convert_from_subtype_to_hxb2(working_dir, position, orientation, subtype):
         sequences = [SeqRecord.SeqRecord(Seq.reverse_complement(s.seq),
                                          id = s.id, name = s.name) for s in sequences]
 
-    alignment = wrappers.mafft(working_dir, sequences)
+    alignment = wrappers.mafft(sequences)
 
     hxb2_pos = 0
     subtype_pos = 0

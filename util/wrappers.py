@@ -5,7 +5,7 @@ import tempfile
 
 from Bio import SeqIO, AlignIO
 
-def mafft(working_dir, sequences):
+def mafft(sequences):
     '''
     Call mafft on a set of sequences and return the resulting alignment.
 
