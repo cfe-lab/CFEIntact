@@ -143,14 +143,18 @@ def is_sorted(lst):
     return True
 
 
-def is_scrambled(seqid, blast_rows):
+def remove_5_prime(blast_rows):
     # HIV 5' region can easily map to its 3' region because they are identical.
     # Such a maping would not constitute a scramble, so we ignore the 5' region for this check.
-    ignored_5_prime = [x for x in blast_rows if x.sstart > 622 and x.send > 622]
+    return [x for x in blast_rows if x.sstart > 622 and x.send > 622]
+
+
+def contains_internal_inversion(seqid, blast_rows):
+    ignored_5_prime = remove_5_prime(blast_rows)
 
     if not ignored_5_prime:
         # No alignment.
-        # It should be an error normally, yet not a scramble error.
+        # It should be an error normally, yet not an internal inversion error.
         return None
 
     all_same = len(set(x.sstrand for x in ignored_5_prime)) == 1
@@ -161,6 +165,17 @@ def is_scrambled(seqid, blast_rows):
         # This indicates an internal inversion.
         return IntactnessError(seqid, INTERNALINVERSION_ERROR,
                                "Sequence contains an internal inversion.")
+    else:
+        return None
+
+
+def is_scrambled(seqid, blast_rows):
+    ignored_5_prime = remove_5_prime(blast_rows)
+
+    if not ignored_5_prime:
+        # No alignment.
+        # It should be an error normally, yet not a scramble error.
+        return None
 
     ignored_5_prime.sort(key=lambda x: x.qstart)
     direction = ignored_5_prime[0].sstrand
