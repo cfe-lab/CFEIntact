@@ -32,36 +32,37 @@ RREDELETION_ERROR    = "RevResponseElementDeletion"
 HYPERMUTATION_ERROR  = "APOBECHypermutationDetected"
 
 
+@dataclass
 class IntactnessError:
-    def __init__(self, sequence_name, error, message):
-        self.sequence_name = sequence_name
-        self.error = error
-        self.message = message
+    sequence_name: str
+    error: str
+    message: str
 
+@dataclass
 class ORF:
-    def __init__(self, orientation, start, end):
-        self.orientation = orientation
-        self.start = start
-        self.end = end
+    orientation: str
+    start: int
+    end: int
 
+@dataclass
 class ExpectedORF:
-    def __init__(self, name, start, end, deletion_tolerence):
-        self.name = name
-        self.start = start
-        self.end = end
-        self.deletion_tolerence = deletion_tolerence
+    name: str
+    start: int
+    end: int
+    deletion_tolerence: int
 
+    @staticmethod
     def subtyped(subtype, name, start, end, deletion_tolerence):
         start_s = st.convert_from_hxb2_to_subtype(start, subtype)
         end_s = st.convert_from_hxb2_to_subtype(end, subtype)
         return ExpectedORF(name, start_s, end_s, deletion_tolerence)
 
+@dataclass
 class ReceivedORF:
-    def __init__(self, start, end, deleted_count, inserted_count):
-        self.start = start
-        self.end = end
-        self.deleted_count = deleted_count
-        self.inserted_count = inserted_count
+    start: int
+    end: int
+    deleted_count: int
+    inserted_count: int
 
 @dataclass
 class BlastRow:
