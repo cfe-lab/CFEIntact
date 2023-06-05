@@ -7,7 +7,7 @@ import csv
 from dataclasses import dataclass
 
 import util.subtypes as st
-
+import util.wrappers as wrappers
 
 @dataclass
 class BlastRow:
@@ -28,23 +28,6 @@ class BlastRow:
     btop: int
     stitle: str
     sstrand: str
-
-
-def blast(subtype, input_file, output_file):
-    db_file = st.alignment_file(subtype)
-
-    subprocess.call(
-        ["blastn",
-         "-query", input_file,
-         "-db", db_file,
-         "-num_alignments", "1",
-         "-reward", "1",
-         "-penalty", "-1",
-         "-gapopen", "2",
-         "-gapextend", "1",
-         "-out", output_file,
-         "-outfmt", "6 qseqid qlen sseqid sgi slen qstart qend sstart send evalue bitscore length pident nident btop stitle sstrand"],
-        shell=False)
 
 
 def init_blast_row(row):
@@ -98,7 +81,8 @@ def iterate_blast_rows_from_tsv(file_path):
 
 def blast_interate(subtype, input_file):
     with tempfile.NamedTemporaryFile() as output_file:
-        blast(subtype, input_file, output_file.name)
+        db_file = st.alignment_file(subtype)
+        wrappers.blast(db_file, input_file, output_file.name)
         for seq in iterate_blast_rows_from_tsv(output_file.name):
             yield seq
 
