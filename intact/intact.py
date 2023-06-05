@@ -20,6 +20,9 @@ WRONGORFNUMBER_ERROR = "WrongORFNumber"
 MISPLACEDORF_ERROR   = "MisplacedORF"
 LONGDELETION_ERROR   = "LongDeletion"
 DELETIONINORF_ERROR  = "DeletionInOrf"
+SCRAMBLE_ERROR       = "Scramble"
+NONHIV_ERROR         = "NonHIV"
+INTERNALINVERSION_ERROR = "InternalInversion"
 
 FRAMESHIFTINORF_ERROR  = "FrameshiftInOrf"
 MSDMUTATED_ERROR = "MajorSpliceDonorSiteMutated"
@@ -139,7 +142,7 @@ def is_sorted(lst):
     return True
 
 
-def check_scramble(blast_rows):
+def check_scramble(seqid, blast_rows):
     # HIV 5' region can easily map to its 3' region because they are identical.
     # Such a maping would not constitute a scramble, so we ignore the 5' region for this check.
     ignored_5_prime = [x for x in blast_rows if x.sstart > 622 and x.send > 622]
@@ -155,7 +158,8 @@ def check_scramble(blast_rows):
         # in forward direction (plus)
         # and some in reverse (minus).
         # This indicates an internal inversion.
-        return "mix"
+        return IntactnessError(seqid, INTERNALINVERSION_ERROR,
+                               "Sequence contains an internal inversion.")
 
     ignored_5_prime.sort(key=lambda x: x.qstart)
     direction = ignored_5_prime[0].sstrand
@@ -164,16 +168,19 @@ def check_scramble(blast_rows):
     elif direction == "minus" and is_sorted(x.send for x in reversed(ignored_5_prime)):
         return None
     else:
-        return direction + "Scramble"
+        return IntactnessError(seqid, SCRAMBLE_ERROR,
+                               f"Sequence is {direction}-scrambled.")
 
 
-def check_nonhiv(blast_rows):
+def check_nonhiv(seqid, blast_rows):
     aligned_length = sum(abs(x.qend - x.qstart) + 1 for x in blast_rows)
     total_length = blast_rows[0].qlen if blast_rows else 1
     ratio = aligned_length / total_length
 
     if ratio < 0.8:
-        return "CHIMERA"
+        return IntactnessError(seqid, NONHIV_ERROR,
+                               "Sequence contains unrecognized parts."
+                               "It is probably a Human/HIV Chimera sequence.")
     else:
         return None
 

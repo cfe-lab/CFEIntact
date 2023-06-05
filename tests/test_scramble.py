@@ -3,7 +3,7 @@ import pytest
 import os
 
 import intact.intact as intact
-from intact.intact import check_scramble, check_nonhiv
+from intact.intact import check_scramble, check_nonhiv, IntactnessError
 
 @pytest.mark.parametrize("lst, expected", [
     ([1, 2, 3, 4, 5], True),
@@ -44,7 +44,7 @@ class BlastRow:
 def test_check_scramble_no_alignment():
     # Test case where there is no alignment
     blast_rows = []
-    assert check_scramble(blast_rows) is None
+    assert check_scramble("id", blast_rows) is None
 
 def test_check_scramble_internal_inversion():
     # Test case where some parts of the sequence are aligned in forward direction
@@ -53,7 +53,9 @@ def test_check_scramble_internal_inversion():
         BlastRow(sstart=900, send=910, qstart=5, sstrand="plus"),
         BlastRow(sstart=930, send=940, qstart=25, sstrand="minus"),
     ]
-    assert check_scramble(blast_rows) == "mix"
+    result = check_scramble("id", blast_rows)
+    assert isinstance(result, IntactnessError)
+    assert result.error == intact.INTERNALINVERSION_ERROR
 
 def test_check_scramble_plus_strand_sorted():
     # Test case where the direction is "plus" and the sstart values are sorted.
@@ -61,7 +63,7 @@ def test_check_scramble_plus_strand_sorted():
         BlastRow(sstart=900, send=910, qstart=5, sstrand="plus"),
         BlastRow(sstart=930, send=940, qstart=25, sstrand="plus"),
     ]
-    assert check_scramble(blast_rows) is None
+    assert check_scramble("id", blast_rows) is None
 
 def test_check_scramble_minus_strand_sorted():
     # Test case where the direction is "minus" and the send values are sorted in reverse order.
@@ -69,7 +71,7 @@ def test_check_scramble_minus_strand_sorted():
         BlastRow(sstart=910, send=900, qstart=25, sstrand="minus"),
         BlastRow(sstart=940, send=930, qstart=5, sstrand="minus"),
     ]
-    assert check_scramble(blast_rows) is None
+    assert check_scramble("id", blast_rows) is None
 
 def test_check_scramble_plus_strand_unsorted():
     # Test case with mixed directions and inversions
@@ -79,7 +81,9 @@ def test_check_scramble_plus_strand_unsorted():
         BlastRow(sstart=920, send=930, qstart=45, sstrand="plus"),
         BlastRow(sstart=950, send=980, qstart=85, sstrand="plus"),
     ]
-    assert check_scramble(blast_rows) == "plusScramble"
+    result = check_scramble("id", blast_rows)
+    assert isinstance(result, IntactnessError)
+    assert result.error == intact.SCRAMBLE_ERROR
 
 def test_check_scramble_plus_strand_unsorted_5prime():
     # Test case with mixed directions and inversions
@@ -89,7 +93,7 @@ def test_check_scramble_plus_strand_unsorted_5prime():
         BlastRow(sstart=920, send=930, qstart=45, sstrand="plus"),
         BlastRow(sstart=950, send=980, qstart=85, sstrand="plus"),
     ]
-    assert check_scramble(blast_rows) == None
+    assert check_scramble("id", blast_rows) == None
 
 def test_check_scramble_minus_strand_unsorted():
     # Test case where the direction is "minus" but the send values are not sorted in reverse order.
@@ -97,7 +101,9 @@ def test_check_scramble_minus_strand_unsorted():
         BlastRow(sstart=910, send=900, qstart=5, sstrand="minus"),
         BlastRow(sstart=940, send=930, qstart=25, sstrand="minus"),
     ]
-    assert check_scramble(blast_rows) == "minusScramble"
+    result = check_scramble("id", blast_rows)
+    assert isinstance(result, IntactnessError)
+    assert result.error == intact.SCRAMBLE_ERROR
 
 def test_check_scramble_mixed_direction():
     # Test case where some rows have "plus" direction and some have "minus" direction.
@@ -106,21 +112,23 @@ def test_check_scramble_mixed_direction():
         BlastRow(sstart=930, send=940, qstart=25, sstrand="minus"),
         BlastRow(sstart=950, send=990, qstart=45, sstrand="minus"),
     ]
-    assert check_scramble(blast_rows) == "mix"
+    result = check_scramble("id", blast_rows)
+    assert isinstance(result, IntactnessError)
+    assert result.error == intact.INTERNALINVERSION_ERROR
 
 def test_check_scramble_single_row_plus_strand():
     # Test case with a single row aligned in the "plus" strand
     blast_rows = [
         BlastRow(sstart=700, send=710, qstart=5, sstrand="plus"),
     ]
-    assert check_scramble(blast_rows) is None
+    assert check_scramble("id", blast_rows) is None
 
 def test_check_scramble_single_row_minus_strand():
     # Test case with a single row aligned in the "minus" strand
     blast_rows = [
         BlastRow(sstart=900, send=910, qstart=5, sstrand="minus"),
     ]
-    assert check_scramble(blast_rows) is None
+    assert check_scramble("id", blast_rows) is None
 
 def test_check_scramble_multiple_directions_and_inversions():
     # Test case with mixed directions and inversions
@@ -131,4 +139,6 @@ def test_check_scramble_multiple_directions_and_inversions():
         BlastRow(sstart=850, send=880, qstart=85, sstrand="plus"),
         BlastRow(sstart=890, send=880, qstart=85, sstrand="minus"),
     ]
-    assert check_scramble(blast_rows) == "mix"
+    result = check_scramble("id", blast_rows)
+    assert isinstance(result, IntactnessError)
+    assert result.error == intact.INTERNALINVERSION_ERROR
