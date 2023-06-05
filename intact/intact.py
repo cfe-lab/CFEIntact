@@ -142,6 +142,14 @@ def blast_iterate(subtype, input_file):
             yield seq
 
 
+def blast_iterate_inf(subtype, input_file):
+    for seq in blast_iterate(subtype, input_file):
+        yield seq
+
+    while True:
+        yield seq
+
+
 def is_sorted(lst):
     last = None
     for x in lst:
@@ -794,9 +802,8 @@ def intact( working_dir,
     rre_locus = [st.convert_from_hxb2_to_subtype(x, subtype) for x in hxb2_rre_locus]
 
     reference = st.subtype_sequence(subtype)
-    blast_it = blast_iterate(subtype, input_file) if check_internal_inversion or check_nonhiv or check_scramble else iterate_empty_lists()
-    try: blast_rows = next(blast_it)
-    except StopIteration: blast_rows = []
+    blast_it = blast_iterate_inf(subtype, input_file) if check_internal_inversion or check_nonhiv or check_scramble else iterate_empty_lists()
+    blast_rows = next(blast_it)
 
     for sequence in iterate_sequences(input_file):
         sequence_errors = []
@@ -804,8 +811,7 @@ def intact( working_dir,
         if blast_rows and blast_rows[0].qseqid != sequence.id:
             blast_rows = []
         else:
-            try: blast_rows = next(blast_it)
-            except StopIteration: blast_rows = []
+            blast_rows = next(blast_it)
 
         reverse_sequence = SeqRecord.SeqRecord(Seq.reverse_complement(sequence.seq),
                                                id = sequence.id + " [REVERSED]",
