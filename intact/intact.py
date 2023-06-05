@@ -739,6 +739,12 @@ def iterate_sequences(input_file):
         for sequence in SeqIO.parse(in_handle, "fasta"):
             yield sequence
 
+
+def iterate_empty_lists():
+    while True:
+        yield []
+
+
 def intact( working_dir,
             input_file,
             subtype,
@@ -788,7 +794,7 @@ def intact( working_dir,
     rre_locus = [st.convert_from_hxb2_to_subtype(x, subtype) for x in hxb2_rre_locus]
 
     reference = st.subtype_sequence(subtype)
-    blast_it = blast_iterate(subtype, input_file)
+    blast_it = blast_iterate(subtype, input_file) if check_internal_inversion or check_nonhiv or check_scramble else iterate_empty_lists()
     blast_rows = []
 
     for sequence in iterate_sequences(input_file):
