@@ -84,28 +84,28 @@ class BlastRow:
     stitle: str
     sstrand: str
 
-
-def init_blast_row(row):
-    it = iter(row)
-    return BlastRow(
-        qseqid=next(it),
-        qlen=int(next(it)),
-        sseqid=next(it),
-        sgi=next(it),
-        slen=int(next(it)),
-        qstart=int(next(it)),
-        qend=int(next(it)),
-        sstart=int(next(it)),
-        send=int(next(it)),
-        evalue=float(next(it)),
-        bitscore=float(next(it)),
-        length=int(next(it)),
-        pident=float(next(it)),
-        nident=float(next(it)),
-        btop=next(it),
-        stitle=next(it),
-        sstrand=next(it),
-    )
+    @staticmethod
+    def init(row):
+        it = iter(row)
+        return BlastRow(
+            qseqid=next(it),
+            qlen=int(next(it)),
+            sseqid=next(it),
+            sgi=next(it),
+            slen=int(next(it)),
+            qstart=int(next(it)),
+            qend=int(next(it)),
+            sstart=int(next(it)),
+            send=int(next(it)),
+            evalue=float(next(it)),
+            bitscore=float(next(it)),
+            length=int(next(it)),
+            pident=float(next(it)),
+            nident=float(next(it)),
+            btop=next(it),
+            stitle=next(it),
+            sstrand=next(it),
+        )
 
 def iterate_blast_rows_from_tsv(file_path):
     previous_key = None
@@ -113,7 +113,7 @@ def iterate_blast_rows_from_tsv(file_path):
 
     for row in iterate_values_from_tsv(file_path):
         key = row[0]
-        typed = init_blast_row(row)
+        typed = BlastRow.make(row)
 
         if key != previous_key and previous_key is not None:
             yield values
