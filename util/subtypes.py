@@ -17,7 +17,7 @@ def subtypes():
 	"""
     List all currently available HIV subtypes
     """
-	return [f.replace(".fasta", "") for f in os.listdir(REFERENCE_DIR)]
+	return [f.replace(".fasta", "") for f in os.listdir(REFERENCE_DIR) if f.endswith(".fasta")]
 
 def alignment_file(subtype):
 	"""
