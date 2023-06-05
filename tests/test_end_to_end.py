@@ -16,6 +16,9 @@ def run_end_to_end(tmp_path, data_file, expected_dir):
         check_major_splice_donor_site=True,
         run_hypermut=True,
         check_long_deletion=True,
+        check_nonhiv=False,
+        check_scramble=False,
+        check_internal_inversion=False,
         include_small_orfs=False,
         )
 
