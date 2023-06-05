@@ -107,6 +107,14 @@ class BlastRow:
             sstrand=next(it),
         )
 
+
+def iterate_values_from_tsv(file_path):
+    with open(file_path, 'r') as tsv_file:
+        reader = csv.reader(tsv_file, delimiter='\t')
+        for row in reader:
+            yield row
+
+
 def iterate_blast_rows_from_tsv(file_path):
     previous_key = None
     values = []
