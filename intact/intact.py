@@ -803,7 +803,8 @@ def intact( working_dir,
         if blast_rows and blast_rows[0].qseqid != sequence.id:
             blast_rows = []
         else:
-            blast_rows = next(blast_it)
+            try: blast_rows = next(blast_it)
+            except StopIteration: blast_rows = []
 
         reverse_sequence = SeqRecord.SeqRecord(Seq.reverse_complement(sequence.seq),
                                                id = sequence.id + " [REVERSED]",
