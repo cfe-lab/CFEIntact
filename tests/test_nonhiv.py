@@ -2,8 +2,8 @@
 import pytest
 import os
 
-import intact.blastit as blastit
-from intact.blastit import check_scramble, check_nonhiv
+import intact.intact as intact
+from intact.intact import check_scramble, check_nonhiv
 
 class BlastRow:
     def __init__(self, qstart, qend, qlen):

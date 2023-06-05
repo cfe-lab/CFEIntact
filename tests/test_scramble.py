@@ -2,8 +2,8 @@
 import pytest
 import os
 
-import intact.blastit as blastit
-from intact.blastit import check_scramble, check_nonhiv
+import intact.intact as intact
+from intact.intact import check_scramble, check_nonhiv
 
 @pytest.mark.parametrize("lst, expected", [
     ([1, 2, 3, 4, 5], True),
@@ -13,24 +13,24 @@ from intact.blastit import check_scramble, check_nonhiv
     ([1, 1, 2, 2, 3, 3], True),
 ])
 def test_is_sorted(lst, expected):
-    assert blastit.is_sorted(lst) == expected
+    assert intact.is_sorted(lst) == expected
 
 # def test_blast(tmp_path):
 #     input_file = "tests/data-large.fasta"
 #     output_file = os.path.join(tmp_path, "out.tsv")
 
-#     # blastit.blast(
+#     # intact.blast(
 #     #     subtype="B",
 #     #     input_file=input_file,
 #     #     output_file=output_file,
 #     # )
 
-#     it = blastit.blast_interate(subtype="B", input_file=input_file)
+#     it = intact.blast_interate(subtype="B", input_file=input_file)
 #     for v in it:
 #         print("\n\n\n")
 #         print("---------------------------")
 #         print(v[0].qseqid)
-#         print(blastit.check_scramble(v))
+#         print(intact.check_scramble(v))
 
 #     assert False
 
