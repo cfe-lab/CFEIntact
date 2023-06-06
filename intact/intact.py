@@ -1,6 +1,5 @@
 import json
 import os
-import pkg_resources
 import re
 import subprocess
 import sys
