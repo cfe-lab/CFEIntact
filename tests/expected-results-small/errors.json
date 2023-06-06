@@ -17,6 +17,11 @@
         },
         {
             "sequence_name": "KX505501.1",
+            "error": "Scramble",
+            "message": "Sequence is plus-scrambled."
+        },
+        {
+            "sequence_name": "KX505501.1",
             "error": "DeletionInOrf",
             "message": "Smaller ORF vif at 5041-5619 can have maximum deletions 30, got 578"
         },
@@ -207,6 +212,16 @@
             "sequence_name": "MN090335",
             "error": "MajorSpliceDonorSiteMutated",
             "message": "Query sequence has a mutated splice donor site, AT."
+        },
+        {
+            "sequence_name": "MN090335",
+            "error": "Scramble",
+            "message": "Sequence is minus-scrambled."
+        },
+        {
+            "sequence_name": "MN090335",
+            "error": "InternalInversion",
+            "message": "Sequence contains an internal inversion."
         },
         {
             "sequence_name": "MN090335",
