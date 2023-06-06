@@ -760,6 +760,16 @@ def iterate_empty_lists():
         yield []
 
 
+def with_blast_rows(blast_it, sequence_it):
+    blast_rows = next(blast_it)
+    for sequence in sequence_it:
+        if blast_rows and blast_rows[0].qseqid == sequence.id:
+            yield (sequence, blast_rows)
+            blast_rows = next(blast_it)
+        else:
+            yield (sequence, [])
+
+
 def intact( working_dir,
             input_file,
             subtype,
@@ -810,15 +820,9 @@ def intact( working_dir,
 
     reference = st.subtype_sequence(subtype)
     blast_it = blast_iterate_inf(subtype, input_file) if check_internal_inversion or check_nonhiv or check_scramble else iterate_empty_lists()
-    blast_rows = next(blast_it)
 
-    for sequence in iterate_sequences(input_file):
+    for (sequence, blast_rows) in with_blast_rows(blast_it, iterate_sequences(input_file)):
         sequence_errors = []
-
-        if blast_rows and blast_rows[0].qseqid != sequence.id:
-            blast_rows = []
-        else:
-            blast_rows = next(blast_it)
 
         reverse_sequence = SeqRecord.SeqRecord(Seq.reverse_complement(sequence.seq),
                                                id = sequence.id + " [REVERSED]",
