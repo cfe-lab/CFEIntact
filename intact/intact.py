@@ -8,6 +8,7 @@ import uuid
 import tempfile
 import csv
 from dataclasses import dataclass
+from collections import Counter
 from Bio import AlignIO, Seq, SeqIO, SeqRecord
 from scipy.stats import fisher_exact
 
@@ -159,6 +160,12 @@ def is_sorted(lst):
     return True
 
 
+def most_frequent_element(lst):
+    counter = Counter(lst)
+    most_common = counter.most_common(1)
+    return most_common[0][0] if most_common else None
+
+
 def remove_5_prime(blast_rows):
     # HIV 5' region can easily map to its 3' region because they are identical.
     # Such a maping would not constitute a scramble, so we ignore the 5' region for this check.
@@ -194,7 +201,7 @@ def is_scrambled(seqid, blast_rows):
         return None
 
     ignored_5_prime.sort(key=lambda x: x.qstart)
-    direction = ignored_5_prime[0].sstrand
+    direction = most_frequent_element(x.sstrand for x in ignored_5_prime)
     if direction == "plus" and is_sorted(x.sstart for x in ignored_5_prime):
         return None
     elif direction == "minus" and is_sorted(x.send for x in reversed(ignored_5_prime)):

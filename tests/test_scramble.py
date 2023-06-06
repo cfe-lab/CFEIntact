@@ -3,7 +3,19 @@ import pytest
 import os
 
 import intact.intact as intact
-from intact.intact import is_scrambled, contains_internal_inversion, IntactnessError
+from intact.intact import is_scrambled, contains_internal_inversion, IntactnessError, most_frequent_element
+
+@pytest.mark.parametrize("lst, expected", [
+    ([1, 2, 3, 4, 2, 2, 3, 1, 4, 4, 4], 4),
+    ([1, 2, 3, 4, 2, 2, 3, 1], 2),
+    ([], None),
+    ([5], 5),
+    ([1, 2, 3, 4, 5], 1),
+    ([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 1),
+    ([1, 2, 3, 2, 4, 5, 4, 6, 6, 6], 6)
+])
+def test_most_frequent_element(lst, expected):
+    assert most_frequent_element(lst) == expected
 
 @pytest.mark.parametrize("lst, expected", [
     ([1, 2, 3, 4, 5], True),
@@ -114,7 +126,7 @@ def test_is_scrambled_mixed_direction():
     ]
     result = is_scrambled("id", blast_rows) or contains_internal_inversion("id", blast_rows)
     assert isinstance(result, IntactnessError)
-    assert result.error == intact.INTERNALINVERSION_ERROR
+    assert result.error == intact.SCRAMBLE_ERROR
 
 def test_is_scrambled_single_row_plus_strand():
     # Test case with a single row aligned in the "plus" strand
