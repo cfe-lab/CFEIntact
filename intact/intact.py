@@ -889,6 +889,21 @@ def intact( working_dir,
             if long_deletion:
                 sequence_errors.append(long_deletion)
 
+        if check_nonhiv:
+            error = is_nonhiv(sequence.id, blast_rows)
+            if error:
+                sequence_errors.append(error)
+
+        if check_scramble:
+            error = is_scrambled(sequence.id, blast_rows)
+            if error:
+                sequence_errors.append(error)
+
+        if check_internal_inversion:
+            error = contains_internal_inversion(sequence.id, blast_rows)
+            if error:
+                sequence_errors.append(error)
+
         orfs[sequence.id] = hxb2_found_orfs
         if len(sequence_errors) == 0:
             intact_sequences.append(sequence)
