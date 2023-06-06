@@ -25,7 +25,7 @@ Installation on Windows systems is not recommended.
 
 In addition, for local installations, `pip` and `virtualenv` are also required, and can be installed using the commands listed above.
 
-Finally, the pipeline requires that the MAFFT multiple sequence aligner be installed. Again, one of:
+The pipeline also requires that the MAFFT multiple sequence aligner be installed. Again, one of:
 
 ```
 sudo apt install mafft
@@ -34,6 +34,9 @@ sudo port install mafft
 ```
 
 depending on your operating system, should get you there.
+
+Finally, when `--check-nonhiv`, `--check-scramble` and `--check-internal-inversion` options are enabled, the BLAST+ software is expected to be installed.
+See [installation instructions](https://blast.ncbi.nlm.nih.gov/doc/blast-help/downloadblastdata.html).
 
 ### Local install (recommended)
 
