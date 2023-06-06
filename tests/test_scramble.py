@@ -1,6 +1,5 @@
 
 import pytest
-import os
 
 import intact.intact as intact
 from intact.intact import is_scrambled, contains_internal_inversion, IntactnessError, most_frequent_element
@@ -26,25 +25,6 @@ def test_most_frequent_element(lst, expected):
 ])
 def test_is_sorted(lst, expected):
     assert intact.is_sorted(lst) == expected
-
-# def test_blast(tmp_path):
-#     input_file = "tests/data-large.fasta"
-#     output_file = os.path.join(tmp_path, "out.tsv")
-
-#     # intact.blast(
-#     #     subtype="B",
-#     #     input_file=input_file,
-#     #     output_file=output_file,
-#     # )
-
-#     it = intact.blast_interate(subtype="B", input_file=input_file)
-#     for v in it:
-#         print("\n\n\n")
-#         print("---------------------------")
-#         print(v[0].qseqid)
-#         print(intact.is_scrambled(v))
-
-#     assert False
 
 class BlastRow:
     def __init__(self, sstart, send, qstart, sstrand):
