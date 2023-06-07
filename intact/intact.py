@@ -147,7 +147,7 @@ def blast_iterate_inf(subtype, input_file):
         yield seq
 
     while True:
-        yield seq
+        yield []
 
 
 def is_sorted(lst):
