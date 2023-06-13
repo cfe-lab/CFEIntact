@@ -579,18 +579,13 @@ def small_frames(
     errors = []
     for e in expected:
         best_match = ReceivedORF(0, 0, 0, 0)
-        best_match_delta = 10000000
-        found_inside_match = False
+        best_match_delta = (float("inf"), float("inf"))
         for f in frames:
-            inside = f.start < e.start and f.end > e.end
-            delta = abs(e.start - f.start) + abs(e.end - f.end)
-            # only compare inside matches to the best inside match
-            if inside == found_inside_match and delta < best_match_delta:
-                best_match = f
-                best_match_delta = delta
-            # if we find an inside match, erase all non-inside matches
-            if inside and not found_inside_match:
-                found_inside_match = True
+            inside = 0 if f.start < e.start and f.end > e.end else 1
+            distance = abs(e.start - f.start) + abs(e.end - f.end)
+            delta = (inside, distance) # Any inside matches are preferred to any outside matches
+
+            if delta < best_match_delta:
                 best_match = f
                 best_match_delta = delta
 
