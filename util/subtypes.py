@@ -64,6 +64,8 @@ def convert_from_hxb2_to_subtype(position, subtype):
         if alignment[1][i] != "-":
             subtype_pos += 1
 
+    return len(alignment[0])
+
 def convert_from_subtype_to_hxb2(position, orientation, subtype):
     """
     Convert a position number in HXB2 to the equivalent in another subtype.
