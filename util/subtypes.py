@@ -42,39 +42,6 @@ def subtype_sequence(subtype):
         name = alignment[0].name
         )
 
-def convert_from_hxb2_to_subtype(position, subtype):
-    """
-    Convert a position number in HXB2 to the equivalent in another subtype.
-
-    Args:
-        position: hxb2 coordinate position to convert
-        subtype: subtype position to convert to
-    """
-
-    sequences = [HXB2(), subtype_sequence(subtype)]
-
-    alignment = wrappers.mafft(sequences)
-
-    return convert_from_aligned_to_reference(position, (alignment[1], alignment[0]))
-
-def convert_from_subtype_to_hxb2(position, orientation, subtype):
-    """
-    Convert a position number in HXB2 to the equivalent in another subtype.
-
-    Args:
-        position: hxb2 coordinate position to convert
-        subtype: subtype position to convert to
-    """
-
-    sequences = [subtype_sequence(subtype), HXB2()]
-    if orientation == "reverse":
-        sequences = [SeqRecord.SeqRecord(Seq.reverse_complement(s.seq),
-                                         id = s.id, name = s.name) for s in sequences]
-
-    alignment = wrappers.mafft(sequences)
-
-    return convert_from_aligned_to_reference(position, alignment)
-
 def convert_from_aligned_to_reference(position, alignment):
     hxb2_pos = 0
     subtype_pos = 0
@@ -87,11 +54,25 @@ def convert_from_aligned_to_reference(position, alignment):
             hxb2_pos += 1
 
 def map_hxb2_positions_to_subtype(subtype):
+    """
+    Convert position numbers in HXB2 to the equivalent in another subtype.
+
+    Args:
+        subtype: subtype position to convert to
+    """
+
     sequences = [HXB2(), subtype_sequence(subtype)]
     alignment = wrappers.mafft(sequences)
     return coords.map_positions(alignment[0], alignment[1])
 
 def map_subtype_positions_to_hxb2(orientation, subtype):
+    """
+    Convert position numbers in HXB2 to the equivalent in another subtype.
+
+    Args:
+        subtype: subtype position to convert to
+    """
+
     sequences = [subtype_sequence(subtype), HXB2()]
     if orientation == "reverse":
         sequences = [SeqRecord.SeqRecord(Seq.reverse_complement(s.seq),
