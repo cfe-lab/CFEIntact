@@ -3,6 +3,7 @@ from Bio import Seq, SeqIO, SeqRecord
 
 import importlib.resources as resources
 import util.wrappers as wrappers
+import util.coordinates as coords
 
 REFERENCE_DIR = str(resources.path('util', 'subtype_alignments').resolve())
 
@@ -85,4 +86,7 @@ def convert_from_aligned_to_reference(position, alignment):
         if alignment[1][i] != "-":
             hxb2_pos += 1
 
-
+def map_hxb2_positions_to_subtype(subtype):
+    sequences = [HXB2(), subtype_sequence(subtype)]
+    alignment = wrappers.mafft(sequences)
+    return coords.map_positions(alignment[0], alignment[1])

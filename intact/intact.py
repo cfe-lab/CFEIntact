@@ -52,9 +52,9 @@ class ExpectedORF:
     deletion_tolerence: int
 
     @staticmethod
-    def subtyped(subtype, name, start, end, deletion_tolerence):
-        start_s = st.convert_from_hxb2_to_subtype(start, subtype)
-        end_s = st.convert_from_hxb2_to_subtype(end, subtype)
+    def subtyped(pos_mapping, name, start, end, deletion_tolerence):
+        start_s = pos_mapping[start]
+        end_s = pos_mapping[end]
         return ExpectedORF(name, start_s, end_s, deletion_tolerence)
 
 @dataclass
@@ -798,19 +798,20 @@ def intact( working_dir,
     non_intact_sequences = []
     orfs = {}
     errors = {}
+    pos_mapping = st.map_hxb2_positions_to_subtype(subtype)
 
     # convert ORF positions to appropriate subtype
     forward_orfs, reverse_orfs, small_orfs = [
     [
-        ExpectedORF.subtyped(subtype, n, s, e, delta) \
+        ExpectedORF.subtyped(pos_mapping, n, s, e, delta) \
         for (n, s, e, delta) in orfs
     ] \
     for orfs in [hxb2_forward_orfs, hxb2_reverse_orfs, hxb2_small_orfs]
     ]
 
     # convert PSI locus and RRE locus to appropriate subtype
-    psi_locus = [st.convert_from_hxb2_to_subtype(x, subtype) for x in hxb2_psi_locus]
-    rre_locus = [st.convert_from_hxb2_to_subtype(x, subtype) for x in hxb2_rre_locus]
+    psi_locus = [pos_mapping[x] for x in hxb2_psi_locus]
+    rre_locus = [pos_mapping[x] for x in hxb2_rre_locus]
 
     reference = st.subtype_sequence(subtype)
     blast_it = blast_iterate_inf(subtype, input_file) if check_internal_inversion or check_nonhiv or check_scramble else iterate_empty_lists()
@@ -870,8 +871,8 @@ def intact( working_dir,
         if check_major_splice_donor_site:
             mutated_splice_donor_site = has_mutated_major_splice_donor_site(
                 alignment,
-                st.convert_from_hxb2_to_subtype(hxb2_msd_site_locus, subtype),
-                st.convert_from_hxb2_to_subtype(hxb2_msd_site_locus + 1, subtype),
+                pos_mapping[hxb2_msd_site_locus],
+                pos_mapping[hxb2_msd_site_locus + 1],
                 const.DEFAULT_MSD_SEQUENCE)
             if mutated_splice_donor_site is not None:
                 sequence_errors.append(mutated_splice_donor_site)
