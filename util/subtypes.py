@@ -82,6 +82,9 @@ def convert_from_subtype_to_hxb2(position, orientation, subtype):
 
     alignment = wrappers.mafft(sequences)
 
+    return convert_from_aligned_to_reference(position, alignment)
+
+def convert_from_aligned_to_reference(position, alignment):
     hxb2_pos = 0
     subtype_pos = 0
     for i in range(len(alignment[0])):
