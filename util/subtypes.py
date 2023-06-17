@@ -90,3 +90,12 @@ def map_hxb2_positions_to_subtype(subtype):
     sequences = [HXB2(), subtype_sequence(subtype)]
     alignment = wrappers.mafft(sequences)
     return coords.map_positions(alignment[0], alignment[1])
+
+def map_subtype_positions_to_hxb2(orientation, subtype):
+    sequences = [subtype_sequence(subtype), HXB2()]
+    if orientation == "reverse":
+        sequences = [SeqRecord.SeqRecord(Seq.reverse_complement(s.seq),
+                                         id = s.id, name = s.name) for s in sequences]
+
+    alignment = wrappers.mafft(sequences)
+    return coords.map_positions(alignment[0], alignment[1])

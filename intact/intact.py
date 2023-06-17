@@ -799,6 +799,10 @@ def intact( working_dir,
     orfs = {}
     errors = {}
     pos_mapping = st.map_hxb2_positions_to_subtype(subtype)
+    pos_subtype_mapping = {
+        "forward": st.map_subtype_positions_to_hxb2("forward", subtype),
+        "reverse": st.map_subtype_positions_to_hxb2("reverse", subtype),
+    }
 
     # convert ORF positions to appropriate subtype
     forward_orfs, reverse_orfs, small_orfs = [
@@ -849,8 +853,8 @@ def intact( working_dir,
 
         hxb2_found_orfs = [ORF(
             o.orientation,
-            st.convert_from_subtype_to_hxb2(o.start, o.orientation, subtype),
-            st.convert_from_subtype_to_hxb2(o.end, o.orientation, subtype)
+            pos_subtype_mapping[o.orientation][o.start],
+            pos_subtype_mapping[o.orientation][o.end],
         ) for o in sequence_orfs]
 
         if include_packaging_signal:
