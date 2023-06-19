@@ -846,7 +846,7 @@ def intact( working_dir,
         sequence_errors.extend(orf_errors)
 
         small_orf_errors = small_frames(
-            alignment, sequence, 100,
+            alignment, sequence, const.DEFAULT_SMALL_ORF_LENGTH,
             small_orfs, error_bar, reverse = False)
         if include_small_orfs:
             sequence_errors.extend(small_orf_errors)
