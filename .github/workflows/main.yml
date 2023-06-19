@@ -17,4 +17,4 @@ jobs:
     - name: Run build
       run: pip3 install .
     - name: Run test
-      run: pytest -v -m "not slow"
+      run: pytest -v -m "not overnight"
