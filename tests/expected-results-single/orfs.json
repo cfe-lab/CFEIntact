@@ -1,0 +1,19 @@
+{
+    "MN692145": [
+        {
+            "orientation": "forward",
+            "start": 766,
+            "end": 2291
+        },
+        {
+            "orientation": "forward",
+            "start": 2085,
+            "end": 5095
+        },
+        {
+            "orientation": "forward",
+            "start": 6201,
+            "end": 8794
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "MN692145": [
+        {
+            "sequence_name": "MN692145",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF vpr at 5559-5850 contains an out of frame indel: insertions 0 deletions 1."
+        }
+    ]
+}
