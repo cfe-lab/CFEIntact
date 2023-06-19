@@ -23,7 +23,7 @@ DEFAULT_SMALL_FORWARD_ORFS = [("vif", 5041, 5619, 30),
 DEFAULT_SMALL_REVERSE_ORFS = []
                        
 DEFAULT_ORF_LENGTH = 1000
-DEFAULT_SMALL_ORF_LENGTH = 100
+DEFAULT_SMALL_ORF_LENGTH = 1
 DEFAULT_ERROR_BAR = 1
 
 # Major Splice Donor Site Location -- HXB2 coordinates only
