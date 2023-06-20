@@ -10,17 +10,17 @@ import os
 
 
 # (start, end, error_bar, breaks_intactness)
-DEFAULT_FORWARD_ORFs = [("gag", 790, 2291, 30), 
-                        ("pol", 2085, 5095, 30), 
-                        ("env", 6225, 8793, 100)]
+DEFAULT_FORWARD_ORFs = [("gag", 790, 2292, 30),
+                        ("pol", 2085, 5096, 30),
+                        ("env", 6225, 8795, 100)]
 DEFAULT_REVERSE_ORFS = []
 DEFAULT_SMALL_FORWARD_ORFS = [("vif", 5041, 5619, 30),   
                       ("vpr", 5559, 5850, 30), 
                       ("tat_exon1", 5831, 6045, 30),
                       ("rev_exon1", 5970, 6045, 30),
                       ("vpu", 6062, 6310, 30),
-                      ("tat_exon2", 8379, 8469, 30),
-                      ("rev_exon2", 8379, 8653, 30),
+                      ("tat_exon2", 8377, 8469, 30),
+                      ("rev_exon2", 8378, 8653, 30),
                       ("nef", 8797, 9417, 30)]
 DEFAULT_SMALL_REVERSE_ORFS = []
                        

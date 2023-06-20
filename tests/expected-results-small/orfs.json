@@ -2,70 +2,70 @@
     "KX505501.1": [
         {
             "orientation": "forward",
-            "start": 766,
+            "start": 765,
             "end": 9460
         }
     ],
     "MN691959": [
         {
             "orientation": "forward",
-            "start": 766,
+            "start": 765,
             "end": 2291
         },
         {
             "orientation": "forward",
-            "start": 2085,
+            "start": 2084,
             "end": 5095
         },
         {
             "orientation": "forward",
-            "start": 6203,
+            "start": 6202,
             "end": 8793
         }
     ],
     "MN692074": [
         {
             "orientation": "forward",
-            "start": 766,
+            "start": 765,
             "end": 2291
         },
         {
             "orientation": "forward",
-            "start": 2085,
+            "start": 2084,
             "end": 9514
         }
     ],
     "MN692145": [
         {
             "orientation": "forward",
-            "start": 766,
+            "start": 765,
             "end": 2291
         },
         {
             "orientation": "forward",
-            "start": 2085,
+            "start": 2084,
             "end": 5095
         },
         {
             "orientation": "forward",
-            "start": 6200,
+            "start": 6199,
             "end": 8793
         }
     ],
     "MN090335": [
         {
             "orientation": "forward",
-            "start": 1176,
+            "start": 1175,
             "end": 2291
         },
         {
             "orientation": "forward",
-            "start": 2085,
+            "start": 2084,
             "end": 5095
         },
         {
             "orientation": "forward",
-            "start": 6200,
+            "start": 6199,
             "end": 8793
         }
     ]

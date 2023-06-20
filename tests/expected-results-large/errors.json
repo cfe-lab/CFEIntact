@@ -23,79 +23,59 @@
         {
             "sequence_name": "KX505501.1",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vif at 5041-5619 can have maximum deletions 30, got 578"
+            "message": "Smaller ORF vif at 5040-5619 can have maximum deletions 30, got 579"
+        },
+        {
+            "sequence_name": "KX505501.1",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF vpr at 5558-5849 can have maximum deletions 30, got 291"
+        },
+        {
+            "sequence_name": "KX505501.1",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF tat_exon1 at 5829-6044 can have maximum deletions 30, got 215"
         },
         {
             "sequence_name": "KX505501.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vif at 5041-5619 contains an out of frame indel: insertions 0 deletions 578."
+            "message": "Smaller ORF tat_exon1 at 5829-6044 contains an out of frame indel: insertions 0 deletions 215."
         },
         {
             "sequence_name": "KX505501.1",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpr at 5559-5849 can have maximum deletions 30, got 290"
+            "message": "Smaller ORF rev_exon1 at 5968-6044 can have maximum deletions 30, got 76"
         },
         {
             "sequence_name": "KX505501.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpr at 5559-5849 contains an out of frame indel: insertions 0 deletions 290."
+            "message": "Smaller ORF rev_exon1 at 5968-6044 contains an out of frame indel: insertions 0 deletions 76."
         },
         {
             "sequence_name": "KX505501.1",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon1 at 5830-6044 can have maximum deletions 30, got 214"
-        },
-        {
-            "sequence_name": "KX505501.1",
-            "error": "FrameshiftInOrf",
-            "message": "Smaller ORF tat_exon1 at 5830-6044 contains an out of frame indel: insertions 0 deletions 214."
+            "message": "Smaller ORF vpu at 6060-6309 can have maximum deletions 30, got 249"
         },
         {
             "sequence_name": "KX505501.1",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon1 at 5969-6044 can have maximum deletions 30, got 75"
+            "message": "Smaller ORF tat_exon2 at 8375-8468 can have maximum deletions 30, got 93"
         },
         {
             "sequence_name": "KX505501.1",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpu at 6061-6309 can have maximum deletions 30, got 248"
-        },
-        {
-            "sequence_name": "KX505501.1",
-            "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpu at 6061-6309 contains an out of frame indel: insertions 0 deletions 248."
+            "message": "Smaller ORF rev_exon2 at 8376-8652 can have maximum deletions 30, got 276"
         },
         {
             "sequence_name": "KX505501.1",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon2 at 8378-8468 can have maximum deletions 30, got 90"
-        },
-        {
-            "sequence_name": "KX505501.1",
-            "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon2 at 8378-8652 can have maximum deletions 30, got 274"
-        },
-        {
-            "sequence_name": "KX505501.1",
-            "error": "FrameshiftInOrf",
-            "message": "Smaller ORF rev_exon2 at 8378-8652 contains an out of frame indel: insertions 0 deletions 274."
-        },
-        {
-            "sequence_name": "KX505501.1",
-            "error": "DeletionInOrf",
-            "message": "Smaller ORF nef at 8796-9416 can have maximum deletions 30, got 590"
-        },
-        {
-            "sequence_name": "KX505501.1",
-            "error": "FrameshiftInOrf",
-            "message": "Smaller ORF nef at 8796-9416 contains an out of frame indel: insertions 0 deletions 590."
+            "message": "Smaller ORF nef at 8795-9416 can have maximum deletions 30, got 591"
         }
     ],
     "MN691959": [
         {
             "sequence_name": "MN691959",
             "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, vpu, at 6061-6309 in the forward strand, got closest match 6130-6308"
+            "message": "Expected a smaller ORF, vpu, at 6060-6309 in the forward strand, got closest match 6129-6308"
         }
     ],
     "MN692074": [
@@ -117,72 +97,57 @@
         {
             "sequence_name": "MN692074",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vif at 5041-5619 can have maximum deletions 30, got 578"
+            "message": "Smaller ORF vif at 5040-5619 can have maximum deletions 30, got 579"
+        },
+        {
+            "sequence_name": "MN692074",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF vpr at 5558-5849 can have maximum deletions 30, got 291"
+        },
+        {
+            "sequence_name": "MN692074",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF tat_exon1 at 5829-6044 can have maximum deletions 30, got 215"
         },
         {
             "sequence_name": "MN692074",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vif at 5041-5619 contains an out of frame indel: insertions 0 deletions 578."
+            "message": "Smaller ORF tat_exon1 at 5829-6044 contains an out of frame indel: insertions 0 deletions 215."
         },
         {
             "sequence_name": "MN692074",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpr at 5559-5849 can have maximum deletions 30, got 290"
+            "message": "Smaller ORF rev_exon1 at 5968-6044 can have maximum deletions 30, got 76"
         },
         {
             "sequence_name": "MN692074",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpr at 5559-5849 contains an out of frame indel: insertions 0 deletions 290."
+            "message": "Smaller ORF rev_exon1 at 5968-6044 contains an out of frame indel: insertions 0 deletions 76."
         },
         {
             "sequence_name": "MN692074",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon1 at 5830-6044 can have maximum deletions 30, got 214"
+            "message": "Smaller ORF vpu at 6060-6309 can have maximum deletions 30, got 249"
+        },
+        {
+            "sequence_name": "MN692074",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF tat_exon2 at 8375-8468 can have maximum deletions 30, got 93"
+        },
+        {
+            "sequence_name": "MN692074",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF rev_exon2 at 8376-8652 can have maximum deletions 30, got 276"
+        },
+        {
+            "sequence_name": "MN692074",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF nef at 8795-9416 can have maximum deletions 30, got 617"
         },
         {
             "sequence_name": "MN692074",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF tat_exon1 at 5830-6044 contains an out of frame indel: insertions 0 deletions 214."
-        },
-        {
-            "sequence_name": "MN692074",
-            "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon1 at 5969-6044 can have maximum deletions 30, got 75"
-        },
-        {
-            "sequence_name": "MN692074",
-            "error": "DeletionInOrf",
-            "message": "Smaller ORF vpu at 6061-6309 can have maximum deletions 30, got 248"
-        },
-        {
-            "sequence_name": "MN692074",
-            "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpu at 6061-6309 contains an out of frame indel: insertions 0 deletions 248."
-        },
-        {
-            "sequence_name": "MN692074",
-            "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon2 at 8378-8468 can have maximum deletions 30, got 90"
-        },
-        {
-            "sequence_name": "MN692074",
-            "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon2 at 8378-8652 can have maximum deletions 30, got 274"
-        },
-        {
-            "sequence_name": "MN692074",
-            "error": "FrameshiftInOrf",
-            "message": "Smaller ORF rev_exon2 at 8378-8652 contains an out of frame indel: insertions 0 deletions 274."
-        },
-        {
-            "sequence_name": "MN692074",
-            "error": "DeletionInOrf",
-            "message": "Smaller ORF nef at 8796-9416 can have maximum deletions 30, got 616"
-        },
-        {
-            "sequence_name": "MN692074",
-            "error": "FrameshiftInOrf",
-            "message": "Smaller ORF nef at 8796-9416 contains an out of frame indel: insertions 0 deletions 616."
+            "message": "Smaller ORF nef at 8795-9416 contains an out of frame indel: insertions 0 deletions 617."
         }
     ],
     "MN692145": [],
@@ -190,17 +155,17 @@
         {
             "sequence_name": "MN090335",
             "error": "MisplacedORF",
-            "message": "Expected an ORF, gag, at 790-2291 in the forward strand, got 1176-2291"
+            "message": "Expected an ORF, gag, at 789-2292 in the forward strand, got 1175-2291"
         },
         {
             "sequence_name": "MN090335",
             "error": "DeletionInOrf",
-            "message": "ORF gag at 1176-2291 can have maximum deletions 30, got 91"
+            "message": "ORF gag at 1175-2291 can have maximum deletions 30, got 91"
         },
         {
             "sequence_name": "MN090335",
             "error": "FrameshiftInOrf",
-            "message": "ORF gag at 1176-2291 contains an out of frame indel, deletions 91 insertions 33."
+            "message": "ORF gag at 1175-2291 contains an out of frame indel, deletions 91 insertions 33."
         },
         {
             "sequence_name": "MN090335",
@@ -254,7 +219,7 @@
         {
             "sequence_name": "MK115581.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpu at 6061-6309 contains an out of frame indel: insertions 9 deletions 5."
+            "message": "Smaller ORF vpu at 6060-6309 contains an out of frame indel: insertions 9 deletions 5."
         }
     ],
     "MK115690.1": [
@@ -271,7 +236,7 @@
         {
             "sequence_name": "MK115690.1",
             "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, nef, at 8796-9416 in the forward strand, got closest match 8766-9409"
+            "message": "Expected a smaller ORF, nef, at 8795-9416 in the forward strand, got closest match 8765-9409"
         }
     ],
     "MK115571.1": [
@@ -288,7 +253,7 @@
         {
             "sequence_name": "MK115571.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpu at 6061-6309 contains an out of frame indel: insertions 9 deletions 1."
+            "message": "Smaller ORF vpu at 6060-6309 contains an out of frame indel: insertions 9 deletions 1."
         }
     ],
     "MK115514.1": [
@@ -300,7 +265,7 @@
         {
             "sequence_name": "MK115514.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpu at 6061-6309 contains an out of frame indel: insertions 9 deletions 7."
+            "message": "Smaller ORF vpu at 6060-6309 contains an out of frame indel: insertions 9 deletions 7."
         }
     ],
     "MK115488.1": [
@@ -314,7 +279,7 @@
         {
             "sequence_name": "MK115030.1",
             "error": "MisplacedORF",
-            "message": "Expected an ORF, gag, at 790-2291 in the forward strand, got 766-2282"
+            "message": "Expected an ORF, gag, at 789-2292 in the forward strand, got 765-2282"
         },
         {
             "sequence_name": "MK115030.1",
@@ -332,12 +297,12 @@
         {
             "sequence_name": "MK115211.1",
             "error": "MisplacedORF",
-            "message": "Expected an ORF, gag, at 790-2291 in the forward strand, got 766-2282"
+            "message": "Expected an ORF, gag, at 789-2292 in the forward strand, got 765-2282"
         },
         {
             "sequence_name": "MK115211.1",
             "error": "MisplacedORF",
-            "message": "Expected an ORF, env, at 6224-8792 in the forward strand, got 6956-8793"
+            "message": "Expected an ORF, env, at 6223-8794 in the forward strand, got 6955-8793"
         },
         {
             "sequence_name": "MK115211.1",
@@ -364,12 +329,12 @@
         {
             "sequence_name": "MK115158.1",
             "error": "MisplacedORF",
-            "message": "Expected an ORF, gag, at 790-2291 in the forward strand, got 710-2282"
+            "message": "Expected an ORF, gag, at 789-2292 in the forward strand, got 709-2282"
         },
         {
             "sequence_name": "MK115158.1",
             "error": "FrameshiftInOrf",
-            "message": "ORF gag at 710-2282 contains an out of frame indel, deletions 20 insertions 0."
+            "message": "ORF gag at 709-2282 contains an out of frame indel, deletions 20 insertions 0."
         },
         {
             "sequence_name": "MK115158.1",
@@ -391,7 +356,7 @@
         {
             "sequence_name": "MK114705.1",
             "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, nef, at 8796-9416 in the forward strand, got closest match 8766-9229"
+            "message": "Expected a smaller ORF, nef, at 8795-9416 in the forward strand, got closest match 8765-9229"
         }
     ],
     "MK114856.1": [
@@ -408,32 +373,32 @@
         {
             "sequence_name": "MK114856.1",
             "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, vif, at 5041-5619 in the forward strand, got closest match 5251-5561"
+            "message": "Expected a smaller ORF, vif, at 5040-5619 in the forward strand, got closest match 5250-5561"
         },
         {
             "sequence_name": "MK114856.1",
             "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, vpr, at 5559-5849 in the forward strand, got closest match 5613-5848"
+            "message": "Expected a smaller ORF, vpr, at 5558-5849 in the forward strand, got closest match 5612-5848"
         },
         {
             "sequence_name": "MK114856.1",
             "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, tat_exon1, at 5830-6044 in the forward strand, got closest match 5863-6047"
+            "message": "Expected a smaller ORF, tat_exon1, at 5829-6044 in the forward strand, got closest match 5862-6047"
         },
         {
             "sequence_name": "MK114856.1",
             "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, vpu, at 6061-6309 in the forward strand, got closest match 6130-6290"
+            "message": "Expected a smaller ORF, vpu, at 6060-6309 in the forward strand, got closest match 6129-6290"
         },
         {
             "sequence_name": "MK114856.1",
             "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, rev_exon2, at 8378-8652 in the forward strand, got closest match 8476-8651"
+            "message": "Expected a smaller ORF, rev_exon2, at 8376-8652 in the forward strand, got closest match 8475-8651"
         },
         {
             "sequence_name": "MK114856.1",
             "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, nef, at 8796-9416 in the forward strand, got closest match 9102-9415"
+            "message": "Expected a smaller ORF, nef, at 8795-9416 in the forward strand, got closest match 9101-9415"
         }
     ],
     "MK115009.1": [
@@ -460,32 +425,32 @@
         {
             "sequence_name": "MK115009.1",
             "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, vif, at 5041-5619 in the forward strand, got closest match 5251-5618"
+            "message": "Expected a smaller ORF, vif, at 5040-5619 in the forward strand, got closest match 5250-5618"
         },
         {
             "sequence_name": "MK115009.1",
             "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, vpr, at 5559-5849 in the forward strand, got closest match 5721-5848"
+            "message": "Expected a smaller ORF, vpr, at 5558-5849 in the forward strand, got closest match 5720-5848"
         },
         {
             "sequence_name": "MK115009.1",
             "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, tat_exon1, at 5830-6044 in the forward strand, got closest match 5863-6047"
+            "message": "Expected a smaller ORF, tat_exon1, at 5829-6044 in the forward strand, got closest match 5862-6047"
         },
         {
             "sequence_name": "MK115009.1",
             "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, vpu, at 6061-6309 in the forward strand, got closest match 6049-6290"
+            "message": "Expected a smaller ORF, vpu, at 6060-6309 in the forward strand, got closest match 6048-6290"
         },
         {
             "sequence_name": "MK115009.1",
             "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, rev_exon2, at 8378-8652 in the forward strand, got closest match 8476-8651"
+            "message": "Expected a smaller ORF, rev_exon2, at 8376-8652 in the forward strand, got closest match 8475-8651"
         },
         {
             "sequence_name": "MK115009.1",
             "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, nef, at 8796-9416 in the forward strand, got closest match 8778-9217"
+            "message": "Expected a smaller ORF, nef, at 8795-9416 in the forward strand, got closest match 8777-9217"
         }
     ],
     "MK115387.1": [],
@@ -525,12 +490,12 @@
         {
             "sequence_name": "MK115065.1",
             "error": "MisplacedORF",
-            "message": "Expected an ORF, gag, at 790-2291 in the forward strand, got 658-2282"
+            "message": "Expected an ORF, gag, at 789-2292 in the forward strand, got 657-2282"
         },
         {
             "sequence_name": "MK115065.1",
             "error": "DeletionInOrf",
-            "message": "ORF gag at 658-2282 can have maximum deletions 30, got 75"
+            "message": "ORF gag at 657-2282 can have maximum deletions 30, got 75"
         },
         {
             "sequence_name": "MK115065.1",
@@ -567,22 +532,22 @@
         {
             "sequence_name": "MK115464.1",
             "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, vif, at 5041-5619 in the forward strand, got closest match 5251-5618"
+            "message": "Expected a smaller ORF, vif, at 5040-5619 in the forward strand, got closest match 5250-5618"
         },
         {
             "sequence_name": "MK115464.1",
             "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, vpu, at 6061-6309 in the forward strand, got closest match 6130-6290"
+            "message": "Expected a smaller ORF, vpu, at 6060-6309 in the forward strand, got closest match 6129-6290"
         },
         {
             "sequence_name": "MK115464.1",
             "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, rev_exon2, at 8378-8652 in the forward strand, got closest match 8437-8651"
+            "message": "Expected a smaller ORF, rev_exon2, at 8376-8652 in the forward strand, got closest match 8436-8651"
         },
         {
             "sequence_name": "MK115464.1",
             "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, nef, at 8796-9416 in the forward strand, got closest match 8835-9415"
+            "message": "Expected a smaller ORF, nef, at 8795-9416 in the forward strand, got closest match 8834-9415"
         }
     ],
     "MK115530.1": [],
@@ -618,7 +583,7 @@
         {
             "sequence_name": "MK115570.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpu at 6061-6309 contains an out of frame indel: insertions 9 deletions 7."
+            "message": "Smaller ORF vpu at 6060-6309 contains an out of frame indel: insertions 9 deletions 7."
         }
     ],
     "MK115509.1": [],
@@ -626,17 +591,17 @@
         {
             "sequence_name": "MK115702.1",
             "error": "MisplacedORF",
-            "message": "Expected an ORF, gag, at 790-2291 in the forward strand, got 766-2282"
+            "message": "Expected an ORF, gag, at 789-2292 in the forward strand, got 765-2282"
         },
         {
             "sequence_name": "MK115702.1",
             "error": "MisplacedORF",
-            "message": "Expected an ORF, env, at 6224-8792 in the forward strand, got 6200-8764"
+            "message": "Expected an ORF, env, at 6223-8794 in the forward strand, got 6199-8764"
         },
         {
             "sequence_name": "MK115702.1",
             "error": "FrameshiftInOrf",
-            "message": "ORF env at 6200-8764 contains an out of frame indel, deletions 50 insertions 37."
+            "message": "ORF env at 6199-8764 contains an out of frame indel, deletions 50 insertions 37."
         },
         {
             "sequence_name": "MK115702.1",
@@ -661,12 +626,12 @@
         {
             "sequence_name": "MK115702.1",
             "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, vpu, at 6061-6309 in the forward strand, got closest match 6049-6305"
+            "message": "Expected a smaller ORF, vpu, at 6060-6309 in the forward strand, got closest match 6048-6305"
         },
         {
             "sequence_name": "MK115702.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF nef at 8796-9416 contains an out of frame indel: insertions 0 deletions 19."
+            "message": "Smaller ORF nef at 8795-9416 contains an out of frame indel: insertions 0 deletions 19."
         }
     ],
     "MK115095.1": [
@@ -683,17 +648,17 @@
         {
             "sequence_name": "MK115095.1",
             "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, vif, at 5041-5619 in the forward strand, got closest match 5251-5618"
+            "message": "Expected a smaller ORF, vif, at 5040-5619 in the forward strand, got closest match 5250-5618"
         },
         {
             "sequence_name": "MK115095.1",
             "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, vpu, at 6061-6309 in the forward strand, got closest match 6130-6290"
+            "message": "Expected a smaller ORF, vpu, at 6060-6309 in the forward strand, got closest match 6129-6290"
         },
         {
             "sequence_name": "MK115095.1",
             "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, rev_exon2, at 8378-8652 in the forward strand, got closest match 8476-8651"
+            "message": "Expected a smaller ORF, rev_exon2, at 8376-8652 in the forward strand, got closest match 8475-8651"
         }
     ],
     "MK115490.1": [],
@@ -726,7 +691,7 @@
         {
             "sequence_name": "OQ092465",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpu at 6061-6309 contains an out of frame indel: insertions 5 deletions 0."
+            "message": "Smaller ORF vpu at 6060-6309 contains an out of frame indel: insertions 5 deletions 0."
         }
     ],
     "OQ092462": [

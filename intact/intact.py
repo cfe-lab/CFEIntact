@@ -57,7 +57,7 @@ class ExpectedORF:
         start = start if start < vpr_defective_insertion_pos else start - 1
         end = end if end < vpr_defective_insertion_pos else end - 1
 
-        start_s = pos_mapping[start]
+        start_s = pos_mapping[start - 1]
         end_s = pos_mapping[end]
         return ExpectedORF(name, start_s, end_s, deletion_tolerence)
 
@@ -512,7 +512,7 @@ def reading_frames_single_stranded(alignment, sequence, length):
 
         for i, elem in enumerate(protein):
             if elem == "*":
-                fs = current_start * 3 + 1 + frame
+                fs = current_start * 3 + 0 + frame
                 frame_start = fs + delete_offset[fs] - insert_offset[fs]
                 fe = i * 3 + 1 + frame
                 frame_end = fe + delete_offset[fe] - insert_offset[fe]

@@ -2,17 +2,17 @@
     "MN692145": [
         {
             "orientation": "forward",
-            "start": 766,
+            "start": 765,
             "end": 2291
         },
         {
             "orientation": "forward",
-            "start": 2085,
+            "start": 2084,
             "end": 5095
         },
         {
             "orientation": "forward",
-            "start": 6200,
+            "start": 6199,
             "end": 8793
         }
     ]
