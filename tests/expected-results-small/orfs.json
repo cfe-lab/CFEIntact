@@ -3,7 +3,7 @@
         {
             "orientation": "forward",
             "start": 766,
-            "end": 9461
+            "end": 9460
         }
     ],
     "MN691959": [
@@ -19,8 +19,8 @@
         },
         {
             "orientation": "forward",
-            "start": 6204,
-            "end": 8794
+            "start": 6203,
+            "end": 8793
         }
     ],
     "MN692074": [
@@ -32,7 +32,7 @@
         {
             "orientation": "forward",
             "start": 2085,
-            "end": 9515
+            "end": 9514
         }
     ],
     "MN692145": [
@@ -48,8 +48,8 @@
         },
         {
             "orientation": "forward",
-            "start": 6201,
-            "end": 8794
+            "start": 6200,
+            "end": 8793
         }
     ],
     "MN090335": [
@@ -65,8 +65,8 @@
         },
         {
             "orientation": "forward",
-            "start": 6201,
-            "end": 8794
+            "start": 6200,
+            "end": 8793
         }
     ]
 }

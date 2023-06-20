@@ -53,6 +53,10 @@ class ExpectedORF:
 
     @staticmethod
     def subtyped(pos_mapping, name, start, end, deletion_tolerence):
+        vpr_defective_insertion_pos = 5772
+        start = start if start < vpr_defective_insertion_pos else start - 1
+        end = end if end < vpr_defective_insertion_pos else end - 1
+
         start_s = pos_mapping[start]
         end_s = pos_mapping[end]
         return ExpectedORF(name, start_s, end_s, deletion_tolerence)

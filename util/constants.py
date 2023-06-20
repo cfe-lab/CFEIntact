@@ -4,7 +4,9 @@ import os
 # In format start, end, maximum_allowed_deletion
 # HXB2 coordinates, must be converted for other subtypes
 
-# All coordinates zero-numbered
+# All coordinates one-based here.
+# Note that because of the defective insertion in VPR of HXB2,
+# the coordinates after that insertion are shifted by -1 (automatically).
 
 
 # (start, end, error_bar, breaks_intactness)
