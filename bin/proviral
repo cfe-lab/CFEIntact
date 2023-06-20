@@ -90,4 +90,4 @@ def intact(input_file, subtype, include_packaging_signal,
         raise e
 
 if __name__ == '__main__':
-    intact()
+    cli()
