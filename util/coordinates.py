@@ -18,6 +18,8 @@ def map_positions(reference, query):
     last_pos = 0
 
     for i in range(len(reference)):
+        if query_pos >= reference_len:
+            break
         if query_pos == last_pos:
             last_pos += 1
             mapping[query_pos] = reference_pos
