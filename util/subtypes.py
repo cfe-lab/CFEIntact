@@ -7,11 +7,15 @@ import util.coordinates as coords
 
 REFERENCE_DIR = str(resources.path('util', 'subtype_alignments').resolve())
 
+# This variable holds a mapping between subtype names and their sequences.
+# Prevents re-reading the same sequence from disk multiple time.
+SEQUENCE_CACHE = {}
+
 def HXB2():
     """
     Return the sequence of HXB2, the standard HIV reference sequence
     """
-    return SeqIO.read(os.path.join(REFERENCE_DIR, "HXB2.fasta"), "fasta")
+    return subtype_sequence("HXB2")
 
 def subtypes():
 	"""
@@ -29,18 +33,23 @@ def alignment_file(subtype):
 	return os.path.join(REFERENCE_DIR, subtype + ".fasta")
 
 def subtype_sequence(subtype):
-	"""
+    """
     Return an example sequence associated with an HIV subtype.
 
     Args:
         subtype: folder in which to put temporary files.
     """
-	alignment = list(SeqIO.parse(alignment_file(subtype), "fasta"))
-	return SeqRecord.SeqRecord(
-        Seq.Seq(str(alignment[0].seq).replace("-","").replace("\n", "")),
-        id = alignment[0].id,
-        name = alignment[0].name
+
+    if subtype not in SEQUENCE_CACHE:
+        alignment = list(SeqIO.parse(alignment_file(subtype), "fasta"))
+        SEQUENCE_CACHE[subtype] = SeqRecord.SeqRecord(
+            Seq.Seq(str(alignment[0].seq).replace("-","").replace("\n", "")),
+            id = alignment[0].id,
+            name = alignment[0].name
         )
+
+    return SEQUENCE_CACHE[subtype]
+
 
 def convert_from_aligned_to_reference(position, alignment):
     hxb2_pos = 0
