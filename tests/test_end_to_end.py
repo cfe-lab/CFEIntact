@@ -19,7 +19,7 @@ def run_end_to_end(tmp_path, data_file, expected_dir):
         check_nonhiv=True,
         check_scramble=True,
         check_internal_inversion=True,
-        include_small_orfs=False,
+        include_small_orfs=True,
         )
 
     result = filecmp.dircmp(tmp_path, expected_dir)

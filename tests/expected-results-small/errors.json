@@ -7,21 +7,6 @@
         },
         {
             "sequence_name": "KX505501.1",
-            "error": "RevResponseElementDeletion",
-            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions."
-        },
-        {
-            "sequence_name": "KX505501.1",
-            "error": "LongDeletion",
-            "message": "Query sequence contains a long deletion."
-        },
-        {
-            "sequence_name": "KX505501.1",
-            "error": "Scramble",
-            "message": "Sequence is plus-scrambled."
-        },
-        {
-            "sequence_name": "KX505501.1",
             "error": "DeletionInOrf",
             "message": "Smaller ORF vif at 5040-5619 can have maximum deletions 30, got 579"
         },
@@ -69,6 +54,21 @@
             "sequence_name": "KX505501.1",
             "error": "DeletionInOrf",
             "message": "Smaller ORF nef at 8795-9416 can have maximum deletions 30, got 591"
+        },
+        {
+            "sequence_name": "KX505501.1",
+            "error": "RevResponseElementDeletion",
+            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions."
+        },
+        {
+            "sequence_name": "KX505501.1",
+            "error": "LongDeletion",
+            "message": "Query sequence contains a long deletion."
+        },
+        {
+            "sequence_name": "KX505501.1",
+            "error": "Scramble",
+            "message": "Sequence is plus-scrambled."
         }
     ],
     "MN691959": [
@@ -83,16 +83,6 @@
             "sequence_name": "MN692074",
             "error": "WrongORFNumber",
             "message": "Expected 3 forward ORFs, got 2"
-        },
-        {
-            "sequence_name": "MN692074",
-            "error": "RevResponseElementDeletion",
-            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions."
-        },
-        {
-            "sequence_name": "MN692074",
-            "error": "LongDeletion",
-            "message": "Query sequence contains a long deletion."
         },
         {
             "sequence_name": "MN692074",
@@ -148,6 +138,16 @@
             "sequence_name": "MN692074",
             "error": "FrameshiftInOrf",
             "message": "Smaller ORF nef at 8795-9416 contains an out of frame indel: insertions 0 deletions 617."
+        },
+        {
+            "sequence_name": "MN692074",
+            "error": "RevResponseElementDeletion",
+            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions."
+        },
+        {
+            "sequence_name": "MN692074",
+            "error": "LongDeletion",
+            "message": "Query sequence contains a long deletion."
         }
     ],
     "MN692145": [],

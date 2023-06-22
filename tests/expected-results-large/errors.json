@@ -7,21 +7,6 @@
         },
         {
             "sequence_name": "KX505501.1",
-            "error": "RevResponseElementDeletion",
-            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions."
-        },
-        {
-            "sequence_name": "KX505501.1",
-            "error": "LongDeletion",
-            "message": "Query sequence contains a long deletion."
-        },
-        {
-            "sequence_name": "KX505501.1",
-            "error": "Scramble",
-            "message": "Sequence is plus-scrambled."
-        },
-        {
-            "sequence_name": "KX505501.1",
             "error": "DeletionInOrf",
             "message": "Smaller ORF vif at 5040-5619 can have maximum deletions 30, got 579"
         },
@@ -69,6 +54,21 @@
             "sequence_name": "KX505501.1",
             "error": "DeletionInOrf",
             "message": "Smaller ORF nef at 8795-9416 can have maximum deletions 30, got 591"
+        },
+        {
+            "sequence_name": "KX505501.1",
+            "error": "RevResponseElementDeletion",
+            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions."
+        },
+        {
+            "sequence_name": "KX505501.1",
+            "error": "LongDeletion",
+            "message": "Query sequence contains a long deletion."
+        },
+        {
+            "sequence_name": "KX505501.1",
+            "error": "Scramble",
+            "message": "Sequence is plus-scrambled."
         }
     ],
     "MN691959": [
@@ -83,16 +83,6 @@
             "sequence_name": "MN692074",
             "error": "WrongORFNumber",
             "message": "Expected 3 forward ORFs, got 2"
-        },
-        {
-            "sequence_name": "MN692074",
-            "error": "RevResponseElementDeletion",
-            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions."
-        },
-        {
-            "sequence_name": "MN692074",
-            "error": "LongDeletion",
-            "message": "Query sequence contains a long deletion."
         },
         {
             "sequence_name": "MN692074",
@@ -148,6 +138,16 @@
             "sequence_name": "MN692074",
             "error": "FrameshiftInOrf",
             "message": "Smaller ORF nef at 8795-9416 contains an out of frame indel: insertions 0 deletions 617."
+        },
+        {
+            "sequence_name": "MN692074",
+            "error": "RevResponseElementDeletion",
+            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions."
+        },
+        {
+            "sequence_name": "MN692074",
+            "error": "LongDeletion",
+            "message": "Query sequence contains a long deletion."
         }
     ],
     "MN692145": [],
@@ -225,6 +225,11 @@
     "MK115690.1": [
         {
             "sequence_name": "MK115690.1",
+            "error": "MisplacedORF",
+            "message": "Expected a smaller ORF, nef, at 8795-9416 in the forward strand, got closest match 8765-9409"
+        },
+        {
+            "sequence_name": "MK115690.1",
             "error": "PackagingSignalDeletion",
             "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 12 deletions with max tolerance of 10 deletions."
         },
@@ -232,14 +237,14 @@
             "sequence_name": "MK115690.1",
             "error": "MajorSpliceDonorSiteMutated",
             "message": "Query sequence has a mutated splice donor site, G-."
-        },
-        {
-            "sequence_name": "MK115690.1",
-            "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, nef, at 8795-9416 in the forward strand, got closest match 8765-9409"
         }
     ],
     "MK115571.1": [
+        {
+            "sequence_name": "MK115571.1",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF vpu at 6060-6309 contains an out of frame indel: insertions 9 deletions 1."
+        },
         {
             "sequence_name": "MK115571.1",
             "error": "PackagingSignalDeletion",
@@ -249,23 +254,18 @@
             "sequence_name": "MK115571.1",
             "error": "MajorSpliceDonorSiteMutated",
             "message": "Query sequence has a missing splice donor site, --."
-        },
-        {
-            "sequence_name": "MK115571.1",
-            "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpu at 6060-6309 contains an out of frame indel: insertions 9 deletions 1."
         }
     ],
     "MK115514.1": [
         {
             "sequence_name": "MK115514.1",
-            "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, --."
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF vpu at 6060-6309 contains an out of frame indel: insertions 9 deletions 7."
         },
         {
             "sequence_name": "MK115514.1",
-            "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpu at 6060-6309 contains an out of frame indel: insertions 9 deletions 7."
+            "error": "MajorSpliceDonorSiteMutated",
+            "message": "Query sequence has a missing splice donor site, --."
         }
     ],
     "MK115488.1": [
@@ -350,13 +350,13 @@
     "MK114705.1": [
         {
             "sequence_name": "MK114705.1",
-            "error": "Scramble",
-            "message": "Sequence is plus-scrambled."
+            "error": "MisplacedORF",
+            "message": "Expected a smaller ORF, nef, at 8795-9416 in the forward strand, got closest match 8765-9229"
         },
         {
             "sequence_name": "MK114705.1",
-            "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, nef, at 8795-9416 in the forward strand, got closest match 8765-9229"
+            "error": "Scramble",
+            "message": "Sequence is plus-scrambled."
         }
     ],
     "MK114856.1": [
@@ -364,11 +364,6 @@
             "sequence_name": "MK114856.1",
             "error": "WrongORFNumber",
             "message": "Expected 3 forward ORFs, got 0"
-        },
-        {
-            "sequence_name": "MK114856.1",
-            "error": "APOBECHypermutationDetected",
-            "message": "Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 3.639064030015132e-65)."
         },
         {
             "sequence_name": "MK114856.1",
@@ -399,6 +394,11 @@
             "sequence_name": "MK114856.1",
             "error": "MisplacedORF",
             "message": "Expected a smaller ORF, nef, at 8795-9416 in the forward strand, got closest match 9101-9415"
+        },
+        {
+            "sequence_name": "MK114856.1",
+            "error": "APOBECHypermutationDetected",
+            "message": "Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 3.639064030015132e-65)."
         }
     ],
     "MK115009.1": [
@@ -406,21 +406,6 @@
             "sequence_name": "MK115009.1",
             "error": "WrongORFNumber",
             "message": "Expected 3 forward ORFs, got 0"
-        },
-        {
-            "sequence_name": "MK115009.1",
-            "error": "APOBECHypermutationDetected",
-            "message": "Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 1.2040967664149076e-41)."
-        },
-        {
-            "sequence_name": "MK115009.1",
-            "error": "Scramble",
-            "message": "Sequence is minus-scrambled."
-        },
-        {
-            "sequence_name": "MK115009.1",
-            "error": "InternalInversion",
-            "message": "Sequence contains an internal inversion."
         },
         {
             "sequence_name": "MK115009.1",
@@ -451,6 +436,21 @@
             "sequence_name": "MK115009.1",
             "error": "MisplacedORF",
             "message": "Expected a smaller ORF, nef, at 8795-9416 in the forward strand, got closest match 8777-9217"
+        },
+        {
+            "sequence_name": "MK115009.1",
+            "error": "APOBECHypermutationDetected",
+            "message": "Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 1.2040967664149076e-41)."
+        },
+        {
+            "sequence_name": "MK115009.1",
+            "error": "Scramble",
+            "message": "Sequence is minus-scrambled."
+        },
+        {
+            "sequence_name": "MK115009.1",
+            "error": "InternalInversion",
+            "message": "Sequence contains an internal inversion."
         }
     ],
     "MK115387.1": [],
@@ -526,11 +526,6 @@
         },
         {
             "sequence_name": "MK115464.1",
-            "error": "APOBECHypermutationDetected",
-            "message": "Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 4.937891251407691e-23)."
-        },
-        {
-            "sequence_name": "MK115464.1",
             "error": "MisplacedORF",
             "message": "Expected a smaller ORF, vif, at 5040-5619 in the forward strand, got closest match 5250-5618"
         },
@@ -548,6 +543,11 @@
             "sequence_name": "MK115464.1",
             "error": "MisplacedORF",
             "message": "Expected a smaller ORF, nef, at 8795-9416 in the forward strand, got closest match 8834-9415"
+        },
+        {
+            "sequence_name": "MK115464.1",
+            "error": "APOBECHypermutationDetected",
+            "message": "Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 4.937891251407691e-23)."
         }
     ],
     "MK115530.1": [],
@@ -572,6 +572,11 @@
     "MK115570.1": [
         {
             "sequence_name": "MK115570.1",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF vpu at 6060-6309 contains an out of frame indel: insertions 9 deletions 7."
+        },
+        {
+            "sequence_name": "MK115570.1",
             "error": "PackagingSignalDeletion",
             "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 11 deletions with max tolerance of 10 deletions."
         },
@@ -579,11 +584,6 @@
             "sequence_name": "MK115570.1",
             "error": "MajorSpliceDonorSiteMutated",
             "message": "Query sequence has a missing splice donor site, --."
-        },
-        {
-            "sequence_name": "MK115570.1",
-            "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpu at 6060-6309 contains an out of frame indel: insertions 9 deletions 7."
         }
     ],
     "MK115509.1": [],
@@ -605,6 +605,16 @@
         },
         {
             "sequence_name": "MK115702.1",
+            "error": "MisplacedORF",
+            "message": "Expected a smaller ORF, vpu, at 6060-6309 in the forward strand, got closest match 6048-6305"
+        },
+        {
+            "sequence_name": "MK115702.1",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF nef at 8795-9416 contains an out of frame indel: insertions 0 deletions 19."
+        },
+        {
+            "sequence_name": "MK115702.1",
             "error": "PackagingSignalDeletion",
             "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 54 deletions with max tolerance of 10 deletions."
         },
@@ -622,16 +632,6 @@
             "sequence_name": "MK115702.1",
             "error": "InternalInversion",
             "message": "Sequence contains an internal inversion."
-        },
-        {
-            "sequence_name": "MK115702.1",
-            "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, vpu, at 6060-6309 in the forward strand, got closest match 6048-6305"
-        },
-        {
-            "sequence_name": "MK115702.1",
-            "error": "FrameshiftInOrf",
-            "message": "Smaller ORF nef at 8795-9416 contains an out of frame indel: insertions 0 deletions 19."
         }
     ],
     "MK115095.1": [
@@ -639,11 +639,6 @@
             "sequence_name": "MK115095.1",
             "error": "WrongORFNumber",
             "message": "Expected 3 forward ORFs, got 0"
-        },
-        {
-            "sequence_name": "MK115095.1",
-            "error": "APOBECHypermutationDetected",
-            "message": "Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 8.33506116803153e-40)."
         },
         {
             "sequence_name": "MK115095.1",
@@ -659,6 +654,11 @@
             "sequence_name": "MK115095.1",
             "error": "MisplacedORF",
             "message": "Expected a smaller ORF, rev_exon2, at 8376-8652 in the forward strand, got closest match 8475-8651"
+        },
+        {
+            "sequence_name": "MK115095.1",
+            "error": "APOBECHypermutationDetected",
+            "message": "Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 8.33506116803153e-40)."
         }
     ],
     "MK115490.1": [],
@@ -685,13 +685,13 @@
     "OQ092465": [
         {
             "sequence_name": "OQ092465",
-            "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a mutated splice donor site, GA."
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF vpu at 6060-6309 contains an out of frame indel: insertions 5 deletions 0."
         },
         {
             "sequence_name": "OQ092465",
-            "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpu at 6060-6309 contains an out of frame indel: insertions 5 deletions 0."
+            "error": "MajorSpliceDonorSiteMutated",
+            "message": "Query sequence has a mutated splice donor site, GA."
         }
     ],
     "OQ092462": [
