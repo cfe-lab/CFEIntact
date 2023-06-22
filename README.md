@@ -1,3 +1,6 @@
+
+[![codecov](https://codecov.io/gh/cfe-lab/HIVIntact/branch/master/graph/badge.svg?token=OCYKUD7QET)](https://codecov.io/gh/cfe-lab/HIVIntact)
+
 # HIVIntact
 An automated Python proviral intactness checker for HIV-1 consensus sequences.
 
