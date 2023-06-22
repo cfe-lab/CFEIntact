@@ -13,8 +13,12 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Install dependencies
-      run: sudo apt-get update && sudo apt-get install -y python3 python3-pip mafft ncbi-blast+ && pip3 install pytest
+      run: sudo apt-get update && sudo apt-get install -y python3 python3-pip mafft ncbi-blast+ && pip3 install pytest pytest-cov
     - name: Run build
       run: pip3 install .
-    - name: Run test
-      run: pytest -v -m "not overnight"
+    - name: Run tests and collect coverage
+      run: pytest -v -m "not overnight" --cov=./intact --cov=./util
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
