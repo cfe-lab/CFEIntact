@@ -2,8 +2,13 @@
     "KX505501.1": [
         {
             "sequence_name": "KX505501.1",
-            "error": "WrongORFNumber",
-            "message": "Expected 3 forward ORFs, got 1"
+            "error": "DeletionInOrf",
+            "message": "ORF pol at 2084-5096 can have maximum deletions 30, got 2892"
+        },
+        {
+            "sequence_name": "KX505501.1",
+            "error": "InternalStopInOrf",
+            "message": "ORF env at 6223-8794 contains an internal stop codon"
         },
         {
             "sequence_name": "KX505501.1",
@@ -76,8 +81,13 @@
     "MN692074": [
         {
             "sequence_name": "MN692074",
-            "error": "WrongORFNumber",
-            "message": "Expected 3 forward ORFs, got 2"
+            "error": "DeletionInOrf",
+            "message": "ORF pol at 2084-5096 can have maximum deletions 30, got 981"
+        },
+        {
+            "sequence_name": "MN692074",
+            "error": "InternalStopInOrf",
+            "message": "ORF env at 6223-8794 contains an internal stop codon"
         },
         {
             "sequence_name": "MN692074",
@@ -129,18 +139,8 @@
     "MN090335": [
         {
             "sequence_name": "MN090335",
-            "error": "MisplacedORF",
-            "message": "Expected an ORF, gag, at 789-2292 in the forward strand, got 1175-2291"
-        },
-        {
-            "sequence_name": "MN090335",
-            "error": "DeletionInOrf",
-            "message": "ORF gag at 1175-2291 can have maximum deletions 30, got 91"
-        },
-        {
-            "sequence_name": "MN090335",
-            "error": "FrameshiftInOrf",
-            "message": "ORF gag at 1175-2291 contains an out of frame indel, deletions 91 insertions 33."
+            "error": "InternalStopInOrf",
+            "message": "ORF gag at 789-2292 contains an internal stop codon"
         },
         {
             "sequence_name": "MN090335",

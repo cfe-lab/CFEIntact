@@ -2,71 +2,86 @@
     "KX505501.1": [
         {
             "orientation": "forward",
-            "start": 765,
-            "end": 9460
+            "start": 336,
+            "end": 1824
+        },
+        {
+            "orientation": "forward",
+            "start": 1628,
+            "end": 1748
+        },
+        {
+            "orientation": "forward",
+            "start": 0,
+            "end": 1824
         }
     ],
     "MN691959": [
         {
             "orientation": "forward",
-            "start": 765,
-            "end": 2291
+            "start": 639,
+            "end": 2142
         },
         {
             "orientation": "forward",
-            "start": 2084,
-            "end": 5095
+            "start": 1934,
+            "end": 4946
         },
         {
             "orientation": "forward",
-            "start": 6202,
-            "end": 8793
+            "start": 6070,
+            "end": 8656
         }
     ],
     "MN692074": [
         {
             "orientation": "forward",
-            "start": 765,
-            "end": 2291
+            "start": 789,
+            "end": 2292
         },
         {
             "orientation": "forward",
             "start": 2084,
-            "end": 9514
+            "end": 4115
+        },
+        {
+            "orientation": "forward",
+            "start": 2,
+            "end": 4115
         }
     ],
     "MN692145": [
         {
             "orientation": "forward",
-            "start": 765,
-            "end": 2291
+            "start": 775,
+            "end": 2287
         },
         {
             "orientation": "forward",
-            "start": 2084,
-            "end": 5095
+            "start": 2070,
+            "end": 5085
         },
         {
             "orientation": "forward",
-            "start": 6199,
-            "end": 8793
+            "start": 6212,
+            "end": 8783
         }
     ],
     "MN090335": [
         {
             "orientation": "forward",
-            "start": 1175,
-            "end": 2291
+            "start": 315,
+            "end": 1665
         },
         {
             "orientation": "forward",
-            "start": 2084,
-            "end": 5095
+            "start": 1427,
+            "end": 4469
         },
         {
             "orientation": "forward",
-            "start": 6199,
-            "end": 8793
+            "start": 5596,
+            "end": 8158
         }
     ]
 }

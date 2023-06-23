@@ -75,6 +75,7 @@ class ReceivedORF:
 class CandidateORF:
     start: int
     end: int
+    orientation: str
     distance: float
     aminoseq: str
     expectedaminoseq: str
@@ -555,41 +556,12 @@ def alignment_score(alignment):
     return sum([a==b for a, b in zip(alignment[0].seq, alignment[1].seq)])
 
 def small_frames(
-    alignment, sequence, length, 
+    alignment, sequence, is_small,
     expected, error_bar, reverse = False
 ):
     """
     Check for presence of small reading frames
     """
-    frames = reading_frames_single_stranded(
-                           alignment,
-                           sequence, length)
-    f_type = "forward"
-    if reverse:
-        tmp_reference = SeqRecord.SeqRecord(Seq.reverse_complement(alignment[0].seq),
-                                        id = alignment[0].id,
-                                        name = alignment[0].name
-                                        )
-        tmp_subtype = SeqRecord.SeqRecord(Seq.reverse_complement(alignment[1].seq),
-                                        id = alignment[1].id,
-                                        name = alignment[1].name
-                                        )
-        tmp_sequence = SeqRecord.SeqRecord(Seq.reverse_complement(sequence.seq),
-                                        id = sequence.id,
-                                        name = sequence.name
-                                        )
-
-        reverse_alignment = [tmp_reference, tmp_subtype]
-        frames = reading_frames_single_stranded(
-                            reverse_alignment,
-                            tmp_sequence,
-                            length)
-        f_type = "reverse"
-
-    if len(frames) == 0:
-        return [IntactnessError(
-            sequence.id, WRONGORFNUMBER_ERROR,
-            "No ORFs >" + str(length) + " bases found.")]
 
     import util.coordinates as coords
     coordinates_mapping = coords.map_positions(alignment[0], alignment[1].seq)
@@ -650,8 +622,7 @@ def small_frames(
                     dist = -1 * jarowinkler_similarity(got_aminoacids, expected_aminoacids)
                     closest_start = min(n, (closest_start_a * 3) + frame)
                     closest_end = min(n, (closest_end_a * 3) + 3 + frame)
-                    yield CandidateORF(closest_start,
-                                       closest_end,
+                    yield CandidateORF(closest_start, closest_end, "forward",
                                        dist, got_aminoacids, expected_aminoacids)
 
     def find_real_correspondence(e):
@@ -685,8 +656,10 @@ def small_frames(
         return impacted
 
     errors = []
+    matches = []
     for e in expected:
         best_match = find_real_correspondence(e)
+        matches.append(best_match)
 
         got_protein = best_match.aminoseq.split("*")[0]
         exp_protein = best_match.expectedaminoseq.split("*")[0]
@@ -704,14 +677,16 @@ def small_frames(
             if "*" in best_match.aminoseq[1:-1]:
                 errors.append(IntactnessError(
                     sequence.id, INTERNALSTOP_ERROR,
-                    "Smaller ORF " + str(e.name) + " at " + str(e.start)
+                    ("Smaller " if is_small else "")
+                    + "ORF " + str(e.name) + " at " + str(e.start)
                     + "-" + str(e.end)
                     + " contains an internal stop codon"
                 ))
             else:
                 errors.append(IntactnessError(
                     sequence.id, DELETIONINORF_ERROR,
-                    "Smaller ORF " + str(e.name) + " at " + str(e.start)
+                    ("Smaller " if is_small else "")
+                    + "ORF " + str(e.name) + " at " + str(e.start)
                     + "-" + str(e.end)
                     + " can have maximum deletions "
                     + str(e.deletion_tolerence) + ", got "
@@ -725,7 +700,8 @@ def small_frames(
 
             errors.append(IntactnessError(
                 sequence.id, INSERTIONINORF_ERROR,
-                "Smaller ORF " + str(e.name) + " at " + str(e.start)
+                ("Smaller " if is_small else "")
+                + "ORF " + str(e.name) + " at " + str(e.start)
                 + "-" + str(e.end)
                 + " can have maximum insertions "
                 + str(3 * e.deletion_tolerence) + ", got "
@@ -741,7 +717,8 @@ def small_frames(
 
             errors.append(IntactnessError(
                 sequence.id, FRAMESHIFTINORF_ERROR,
-                "Smaller ORF " + str(e.name) + " at " + str(e.start) 
+                ("Smaller " if is_small else "")
+                + "ORF " + str(e.name) + " at " + str(e.start) 
                 + "-" + str(e.end) 
                 + " contains out of frame indels that impact " + str(impacted_by_indels)
                 + " positions."
@@ -750,7 +727,7 @@ def small_frames(
             continue
 
         
-    return errors
+    return matches, errors
        
 
 def has_reading_frames(
@@ -961,14 +938,14 @@ def intact( working_dir,
             alignment = reverse_alignment
             sequence = reverse_sequence
 
-        sequence_orfs, orf_errors = has_reading_frames(
+        sequence_orfs, orf_errors = small_frames(
             alignment,
-            reference, sequence, min_orf_length,
-            forward_orfs, reverse_orfs, error_bar)
+            sequence, False,
+            forward_orfs, error_bar)
         sequence_errors.extend(orf_errors)
 
-        small_orf_errors = small_frames(
-            alignment, sequence, const.DEFAULT_SMALL_ORF_LENGTH,
+        sequence_small_orfs, small_orf_errors = small_frames(
+            alignment, sequence, True,
             small_orfs, error_bar, reverse = False)
         if include_small_orfs:
             sequence_errors.extend(small_orf_errors)

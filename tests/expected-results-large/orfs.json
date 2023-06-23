@@ -2,619 +2,698 @@
     "KX505501.1": [
         {
             "orientation": "forward",
-            "start": 765,
-            "end": 9460
+            "start": 336,
+            "end": 1824
+        },
+        {
+            "orientation": "forward",
+            "start": 1628,
+            "end": 1748
+        },
+        {
+            "orientation": "forward",
+            "start": 0,
+            "end": 1824
         }
     ],
     "MN691959": [
         {
             "orientation": "forward",
-            "start": 765,
-            "end": 2291
+            "start": 639,
+            "end": 2142
         },
         {
             "orientation": "forward",
-            "start": 2084,
-            "end": 5095
+            "start": 1934,
+            "end": 4946
         },
         {
             "orientation": "forward",
-            "start": 6202,
-            "end": 8793
+            "start": 6070,
+            "end": 8656
         }
     ],
     "MN692074": [
         {
             "orientation": "forward",
-            "start": 765,
-            "end": 2291
+            "start": 789,
+            "end": 2292
         },
         {
             "orientation": "forward",
             "start": 2084,
-            "end": 9514
+            "end": 4115
+        },
+        {
+            "orientation": "forward",
+            "start": 2,
+            "end": 4115
         }
     ],
     "MN692145": [
         {
             "orientation": "forward",
-            "start": 765,
-            "end": 2291
+            "start": 775,
+            "end": 2287
         },
         {
             "orientation": "forward",
-            "start": 2084,
-            "end": 5095
+            "start": 2070,
+            "end": 5085
         },
         {
             "orientation": "forward",
-            "start": 6199,
-            "end": 8793
+            "start": 6212,
+            "end": 8783
         }
     ],
     "MN090335": [
         {
             "orientation": "forward",
-            "start": 1175,
-            "end": 2291
+            "start": 315,
+            "end": 1665
         },
         {
             "orientation": "forward",
-            "start": 2084,
-            "end": 5095
+            "start": 1427,
+            "end": 4469
         },
         {
             "orientation": "forward",
-            "start": 6199,
-            "end": 8793
+            "start": 5596,
+            "end": 8158
         }
     ],
     "MN090376": [
         {
             "orientation": "forward",
-            "start": 2072,
-            "end": 5095
+            "start": 376,
+            "end": 1639
         },
         {
             "orientation": "forward",
-            "start": 6199,
-            "end": 8793
+            "start": 1382,
+            "end": 4394
+        },
+        {
+            "orientation": "forward",
+            "start": 5524,
+            "end": 8137
         }
     ],
     "MK115581.1": [
         {
             "orientation": "forward",
-            "start": 765,
-            "end": 2291
+            "start": 680,
+            "end": 2186
         },
         {
             "orientation": "forward",
-            "start": 2084,
-            "end": 5095
+            "start": 1972,
+            "end": 4984
         },
         {
             "orientation": "forward",
-            "start": 6199,
-            "end": 8793
+            "start": 6111,
+            "end": 8652
         }
     ],
     "MK115690.1": [
         {
             "orientation": "forward",
-            "start": 765,
-            "end": 2291
+            "start": 777,
+            "end": 2292
         },
         {
             "orientation": "forward",
-            "start": 2084,
-            "end": 5095
+            "start": 2078,
+            "end": 5090
         },
         {
             "orientation": "forward",
-            "start": 6199,
-            "end": 8793
+            "start": 6217,
+            "end": 8800
         }
     ],
     "MK115571.1": [
         {
             "orientation": "forward",
-            "start": 765,
-            "end": 2291
+            "start": 579,
+            "end": 2079
         },
         {
             "orientation": "forward",
-            "start": 2084,
-            "end": 5095
+            "start": 1871,
+            "end": 4883
         },
         {
             "orientation": "forward",
-            "start": 6199,
-            "end": 8793
+            "start": 6010,
+            "end": 8551
         }
     ],
     "MK115514.1": [
         {
             "orientation": "forward",
-            "start": 765,
-            "end": 2291
+            "start": 584,
+            "end": 2090
         },
         {
             "orientation": "forward",
-            "start": 2084,
-            "end": 5095
+            "start": 1876,
+            "end": 4888
         },
         {
             "orientation": "forward",
-            "start": 6199,
-            "end": 8793
+            "start": 6015,
+            "end": 8556
         }
     ],
     "MK115488.1": [
         {
             "orientation": "forward",
-            "start": 765,
-            "end": 2291
+            "start": 707,
+            "end": 2213
         },
         {
             "orientation": "forward",
-            "start": 2084,
-            "end": 5095
+            "start": 1999,
+            "end": 5011
         },
         {
             "orientation": "forward",
-            "start": 6199,
-            "end": 8793
+            "start": 6138,
+            "end": 8679
         }
     ],
     "MK115030.1": [
         {
             "orientation": "forward",
-            "start": 765,
-            "end": 2282
+            "start": 176,
+            "end": 1685
         },
         {
             "orientation": "forward",
-            "start": 2084,
-            "end": 5095
+            "start": 1477,
+            "end": 4567
         },
         {
             "orientation": "forward",
-            "start": 6199,
-            "end": 8793
+            "start": 5616,
+            "end": 8217
         }
     ],
     "MK115498.1": [
         {
             "orientation": "forward",
-            "start": 765,
-            "end": 2291
+            "start": 663,
+            "end": 2169
         },
         {
             "orientation": "forward",
-            "start": 2084,
-            "end": 5095
+            "start": 1955,
+            "end": 4967
         },
         {
             "orientation": "forward",
-            "start": 6199,
-            "end": 8793
+            "start": 6094,
+            "end": 8635
         }
     ],
     "MK115211.1": [
         {
             "orientation": "forward",
-            "start": 765,
-            "end": 2282
+            "start": 250,
+            "end": 1753
         },
         {
             "orientation": "forward",
-            "start": 2072,
-            "end": 5095
+            "start": 1545,
+            "end": 4557
         },
         {
             "orientation": "forward",
-            "start": 6955,
-            "end": 8793
+            "start": 5687,
+            "end": 8198
         }
     ],
     "MK115158.1": [
         {
             "orientation": "forward",
-            "start": 709,
-            "end": 2282
+            "start": 316,
+            "end": 1819
         },
         {
             "orientation": "forward",
-            "start": 2072,
-            "end": 5095
+            "start": 1611,
+            "end": 4623
         },
         {
             "orientation": "forward",
-            "start": 6199,
-            "end": 8793
+            "start": 5753,
+            "end": 8315
         }
     ],
     "MK114705.1": [
         {
             "orientation": "forward",
-            "start": 765,
-            "end": 2291
+            "start": 532,
+            "end": 2053
         },
         {
             "orientation": "forward",
-            "start": 2084,
-            "end": 5095
+            "start": 1839,
+            "end": 4851
         },
         {
             "orientation": "forward",
-            "start": 6199,
-            "end": 8793
+            "start": 5972,
+            "end": 8549
         }
     ],
-    "MK114856.1": [],
-    "MK115009.1": [],
+    "MK114856.1": [
+        {
+            "orientation": "forward",
+            "start": 120,
+            "end": 2022
+        },
+        {
+            "orientation": "forward",
+            "start": 1787,
+            "end": 4892
+        },
+        {
+            "orientation": "forward",
+            "start": 5953,
+            "end": 8521
+        }
+    ],
+    "MK115009.1": [
+        {
+            "orientation": "forward",
+            "start": 302,
+            "end": 1715
+        },
+        {
+            "orientation": "forward",
+            "start": 1613,
+            "end": 4703
+        },
+        {
+            "orientation": "forward",
+            "start": 5752,
+            "end": 8353
+        }
+    ],
     "MK115387.1": [
         {
             "orientation": "forward",
-            "start": 765,
-            "end": 2291
+            "start": 292,
+            "end": 1795
         },
         {
             "orientation": "forward",
-            "start": 2084,
-            "end": 5095
+            "start": 1587,
+            "end": 4599
         },
         {
             "orientation": "forward",
-            "start": 6202,
-            "end": 8793
+            "start": 5726,
+            "end": 8288
         }
     ],
     "MK115491.1": [
         {
             "orientation": "forward",
-            "start": 765,
-            "end": 2291
+            "start": 521,
+            "end": 2027
         },
         {
             "orientation": "forward",
-            "start": 2084,
-            "end": 5095
+            "start": 1813,
+            "end": 4825
         },
         {
             "orientation": "forward",
-            "start": 6199,
-            "end": 8793
+            "start": 5952,
+            "end": 8493
         }
     ],
     "MK116110.1": [
         {
             "orientation": "forward",
-            "start": 2084,
-            "end": 5095
+            "start": 291,
+            "end": 1650
         },
         {
             "orientation": "forward",
-            "start": 6202,
-            "end": 8793
+            "start": 1393,
+            "end": 4405
+        },
+        {
+            "orientation": "forward",
+            "start": 5532,
+            "end": 8073
         }
     ],
     "MK115527.1": [
         {
             "orientation": "forward",
-            "start": 765,
-            "end": 2291
+            "start": 683,
+            "end": 2189
         },
         {
             "orientation": "forward",
-            "start": 2084,
-            "end": 5095
+            "start": 1975,
+            "end": 4987
         },
         {
             "orientation": "forward",
-            "start": 6199,
-            "end": 8793
+            "start": 6114,
+            "end": 8655
         }
     ],
     "MK114997.1": [
         {
             "orientation": "forward",
-            "start": 765,
-            "end": 2282
+            "start": 210,
+            "end": 1725
         },
         {
             "orientation": "forward",
-            "start": 2084,
-            "end": 5095
+            "start": 1511,
+            "end": 4601
         },
         {
             "orientation": "forward",
-            "start": 6199,
-            "end": 7283
-        },
-        {
-            "orientation": "forward",
-            "start": 7249,
-            "end": 8793
+            "start": 5762,
+            "end": 8216
         }
     ],
     "MK115518.1": [
         {
             "orientation": "forward",
-            "start": 765,
-            "end": 2291
+            "start": 739,
+            "end": 2245
         },
         {
             "orientation": "forward",
-            "start": 2084,
-            "end": 5095
+            "start": 2031,
+            "end": 5043
         },
         {
             "orientation": "forward",
-            "start": 6199,
-            "end": 8793
+            "start": 6170,
+            "end": 8711
         }
     ],
     "MK115065.1": [
         {
             "orientation": "forward",
-            "start": 657,
-            "end": 2282
+            "start": 221,
+            "end": 1736
         },
         {
             "orientation": "forward",
-            "start": 2084,
-            "end": 5095
+            "start": 1522,
+            "end": 4534
         },
         {
             "orientation": "forward",
-            "start": 6199,
-            "end": 8793
+            "start": 5661,
+            "end": 8262
         }
     ],
-    "MK115464.1": [],
+    "MK115464.1": [
+        {
+            "orientation": "forward",
+            "start": 527,
+            "end": 2297
+        },
+        {
+            "orientation": "forward",
+            "start": 2089,
+            "end": 5101
+        },
+        {
+            "orientation": "forward",
+            "start": 6228,
+            "end": 8826
+        }
+    ],
     "MK115530.1": [
         {
             "orientation": "forward",
-            "start": 765,
-            "end": 2291
+            "start": 746,
+            "end": 2252
         },
         {
             "orientation": "forward",
-            "start": 2084,
-            "end": 5095
+            "start": 2038,
+            "end": 5050
         },
         {
             "orientation": "forward",
-            "start": 6199,
-            "end": 8793
+            "start": 6177,
+            "end": 8718
         }
     ],
     "MK115520.1": [
         {
             "orientation": "forward",
-            "start": 765,
-            "end": 2291
+            "start": 695,
+            "end": 2195
         },
         {
             "orientation": "forward",
-            "start": 2084,
-            "end": 3281
+            "start": 1987,
+            "end": 4915
         },
         {
             "orientation": "forward",
-            "start": 3259,
-            "end": 5095
-        },
-        {
-            "orientation": "forward",
-            "start": 6199,
-            "end": 8793
+            "start": 6131,
+            "end": 8672
         }
     ],
     "MK115503.1": [
         {
             "orientation": "forward",
-            "start": 765,
-            "end": 2291
+            "start": 817,
+            "end": 2323
         },
         {
             "orientation": "forward",
-            "start": 2084,
-            "end": 5095
+            "start": 2109,
+            "end": 5121
         },
         {
             "orientation": "forward",
-            "start": 6199,
-            "end": 8793
+            "start": 6248,
+            "end": 8789
         }
     ],
     "MK115570.1": [
         {
             "orientation": "forward",
-            "start": 765,
-            "end": 2291
+            "start": 687,
+            "end": 2193
         },
         {
             "orientation": "forward",
-            "start": 2084,
-            "end": 5095
+            "start": 1979,
+            "end": 4991
         },
         {
             "orientation": "forward",
-            "start": 6199,
-            "end": 8793
+            "start": 6118,
+            "end": 8659
         }
     ],
     "MK115509.1": [
         {
             "orientation": "forward",
-            "start": 765,
-            "end": 2291
+            "start": 555,
+            "end": 2061
         },
         {
             "orientation": "forward",
-            "start": 2084,
-            "end": 5095
+            "start": 1847,
+            "end": 4859
         },
         {
             "orientation": "forward",
-            "start": 6199,
-            "end": 8793
+            "start": 5986,
+            "end": 8527
         }
     ],
     "MK115702.1": [
         {
             "orientation": "forward",
-            "start": 765,
-            "end": 2282
+            "start": 246,
+            "end": 1782
         },
         {
             "orientation": "forward",
-            "start": 2084,
-            "end": 5095
+            "start": 1544,
+            "end": 4586
         },
         {
             "orientation": "forward",
-            "start": 6199,
-            "end": 8764
+            "start": 5716,
+            "end": 8257
         }
     ],
-    "MK115095.1": [],
+    "MK115095.1": [
+        {
+            "orientation": "forward",
+            "start": 2,
+            "end": 1697
+        },
+        {
+            "orientation": "forward",
+            "start": 1489,
+            "end": 4579
+        },
+        {
+            "orientation": "forward",
+            "start": 5628,
+            "end": 8229
+        }
+    ],
     "MK115490.1": [
         {
             "orientation": "forward",
-            "start": 765,
-            "end": 2291
+            "start": 549,
+            "end": 2055
         },
         {
             "orientation": "forward",
-            "start": 2084,
-            "end": 5095
+            "start": 1841,
+            "end": 4853
         },
         {
             "orientation": "forward",
-            "start": 6199,
-            "end": 8793
+            "start": 5980,
+            "end": 8521
         }
     ],
     "MK115576.1": [
         {
             "orientation": "forward",
-            "start": 765,
-            "end": 2291
+            "start": 468,
+            "end": 1974
         },
         {
             "orientation": "forward",
-            "start": 2084,
-            "end": 5095
+            "start": 1760,
+            "end": 4772
         },
         {
             "orientation": "forward",
-            "start": 6199,
-            "end": 8793
+            "start": 5899,
+            "end": 8440
         }
     ],
     "OQ092466": [
         {
             "orientation": "forward",
-            "start": 765,
-            "end": 2291
+            "start": 825,
+            "end": 2361
         },
         {
             "orientation": "forward",
-            "start": 2084,
-            "end": 5095
+            "start": 2147,
+            "end": 5165
         },
         {
             "orientation": "forward",
-            "start": 6199,
-            "end": 8793
+            "start": 6292,
+            "end": 8902
         }
     ],
     "OQ092463": [
         {
             "orientation": "forward",
-            "start": 765,
-            "end": 2291
+            "start": 801,
+            "end": 2319
         },
         {
             "orientation": "forward",
-            "start": 2084,
-            "end": 5095
+            "start": 2105,
+            "end": 5168
         },
         {
             "orientation": "forward",
-            "start": 6199,
-            "end": 8793
+            "start": 6244,
+            "end": 8827
         }
     ],
     "OQ092465": [
         {
             "orientation": "forward",
-            "start": 765,
-            "end": 2291
+            "start": 855,
+            "end": 2364
         },
         {
             "orientation": "forward",
-            "start": 2084,
-            "end": 5095
+            "start": 2150,
+            "end": 5213
         },
         {
             "orientation": "forward",
-            "start": 6199,
-            "end": 8793
+            "start": 6289,
+            "end": 8908
         }
     ],
     "OQ092462": [
         {
             "orientation": "forward",
-            "start": 765,
-            "end": 2291
+            "start": 767,
+            "end": 2270
         },
         {
             "orientation": "forward",
-            "start": 2084,
-            "end": 5095
+            "start": 2062,
+            "end": 5074
         },
         {
             "orientation": "forward",
-            "start": 6199,
-            "end": 8793
+            "start": 6201,
+            "end": 8844
         }
     ],
     "OQ092464": [
         {
             "orientation": "forward",
-            "start": 765,
-            "end": 2291
+            "start": 773,
+            "end": 2276
         },
         {
             "orientation": "forward",
-            "start": 2084,
-            "end": 5095
+            "start": 2068,
+            "end": 5080
         },
         {
             "orientation": "forward",
-            "start": 6199,
-            "end": 8793
+            "start": 6207,
+            "end": 8790
         }
     ],
     "OQ092467": [
         {
             "orientation": "forward",
-            "start": 765,
-            "end": 2291
+            "start": 808,
+            "end": 2308
         },
         {
             "orientation": "forward",
-            "start": 2084,
-            "end": 5095
+            "start": 2100,
+            "end": 5112
         },
         {
             "orientation": "forward",
-            "start": 6199,
-            "end": 8793
+            "start": 6239,
+            "end": 8834
         }
     ]
 }
