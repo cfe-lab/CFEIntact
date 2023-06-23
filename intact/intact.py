@@ -661,11 +661,9 @@ def small_frames(
 
         insertions = len(re.findall(r"-", str(alignment[0].seq[aligned_start:aligned_end])))
         deletions = len(re.findall(r"-", str(alignment[1].seq[aligned_start:aligned_end])))
-        translated = best_match.aminoseq.split("*")[0]
-        adeletions = (len(best_match.expectedaminoseq) - (len(translated) + 1)) * 3
 
         # Max deletion allowed in ORF exceeded
-        if adeletions > e.deletion_tolerence:
+        if deletions > e.deletion_tolerence:
 
             if "*" in best_match.aminoseq[1:-1]:
                 errors.append(IntactnessError(
@@ -681,7 +679,7 @@ def small_frames(
                     + "-" + str(e.end)
                     + " can have maximum deletions "
                     + str(e.deletion_tolerence) + ", got "
-                    + str(adeletions)
+                    + str(deletions)
                 ))
 
         # Check for frameshift in ORF
