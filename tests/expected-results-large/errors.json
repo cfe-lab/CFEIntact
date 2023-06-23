@@ -12,23 +12,13 @@
         },
         {
             "sequence_name": "KX505501.1",
-            "error": "DeletionInOrf",
-            "message": "Smaller ORF vif at 5040-5619 can have maximum deletions 30, got 579"
-        },
-        {
-            "sequence_name": "KX505501.1",
             "error": "InternalStopInOrf",
             "message": "Smaller ORF vpr at 5558-5849 contains an internal stop codon"
         },
         {
             "sequence_name": "KX505501.1",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpr at 5558-5849 can have maximum deletions 30, got 291"
-        },
-        {
-            "sequence_name": "KX505501.1",
-            "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon1 at 5829-6044 can have maximum deletions 30, got 215"
+            "message": "Smaller ORF tat_exon1 at 5829-6044 can have maximum deletions 30, got 210"
         },
         {
             "sequence_name": "KX505501.1",
@@ -38,7 +28,7 @@
         {
             "sequence_name": "KX505501.1",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon1 at 5968-6044 can have maximum deletions 30, got 76"
+            "message": "Smaller ORF rev_exon1 at 5968-6044 can have maximum deletions 30, got 72"
         },
         {
             "sequence_name": "KX505501.1",
@@ -53,27 +43,12 @@
         {
             "sequence_name": "KX505501.1",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpu at 6060-6309 can have maximum deletions 30, got 249"
-        },
-        {
-            "sequence_name": "KX505501.1",
-            "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon2 at 8375-8468 can have maximum deletions 30, got 93"
-        },
-        {
-            "sequence_name": "KX505501.1",
-            "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon2 at 8376-8652 can have maximum deletions 30, got 276"
+            "message": "Smaller ORF rev_exon2 at 8376-8652 can have maximum deletions 30, got 96"
         },
         {
             "sequence_name": "KX505501.1",
             "error": "InternalStopInOrf",
             "message": "Smaller ORF nef at 8795-9416 contains an internal stop codon"
-        },
-        {
-            "sequence_name": "KX505501.1",
-            "error": "DeletionInOrf",
-            "message": "Smaller ORF nef at 8795-9416 can have maximum deletions 30, got 591"
         },
         {
             "sequence_name": "KX505501.1",
@@ -112,12 +87,7 @@
         {
             "sequence_name": "MN692074",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vif at 5040-5619 can have maximum deletions 30, got 579"
-        },
-        {
-            "sequence_name": "MN692074",
-            "error": "DeletionInOrf",
-            "message": "Smaller ORF vpr at 5558-5849 can have maximum deletions 30, got 291"
+            "message": "Smaller ORF vif at 5040-5619 can have maximum deletions 30, got 81"
         },
         {
             "sequence_name": "MN692074",
@@ -126,23 +96,8 @@
         },
         {
             "sequence_name": "MN692074",
-            "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon1 at 5829-6044 can have maximum deletions 30, got 215"
-        },
-        {
-            "sequence_name": "MN692074",
             "error": "FrameshiftInOrf",
             "message": "Smaller ORF tat_exon1 at 5829-6044 contains an out of frame indel: insertions 0 deletions 215."
-        },
-        {
-            "sequence_name": "MN692074",
-            "error": "InternalStopInOrf",
-            "message": "Smaller ORF rev_exon1 at 5968-6044 contains an internal stop codon"
-        },
-        {
-            "sequence_name": "MN692074",
-            "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon1 at 5968-6044 can have maximum deletions 30, got 76"
         },
         {
             "sequence_name": "MN692074",
@@ -152,22 +107,12 @@
         {
             "sequence_name": "MN692074",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpu at 6060-6309 can have maximum deletions 30, got 249"
+            "message": "Smaller ORF rev_exon2 at 8376-8652 can have maximum deletions 30, got 192"
         },
         {
             "sequence_name": "MN692074",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon2 at 8375-8468 can have maximum deletions 30, got 93"
-        },
-        {
-            "sequence_name": "MN692074",
-            "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon2 at 8376-8652 can have maximum deletions 30, got 276"
-        },
-        {
-            "sequence_name": "MN692074",
-            "error": "DeletionInOrf",
-            "message": "Smaller ORF nef at 8795-9416 can have maximum deletions 30, got 617"
+            "message": "Smaller ORF nef at 8795-9416 can have maximum deletions 30, got 123"
         },
         {
             "sequence_name": "MN692074",
@@ -185,13 +130,7 @@
             "message": "Query sequence contains a long deletion."
         }
     ],
-    "MN692145": [
-        {
-            "sequence_name": "MN692145",
-            "error": "InternalStopInOrf",
-            "message": "Smaller ORF vpr at 5558-5849 contains an internal stop codon"
-        }
-    ],
+    "MN692145": [],
     "MN090335": [
         {
             "sequence_name": "MN090335",
@@ -465,6 +404,11 @@
         },
         {
             "sequence_name": "MK115009.1",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF tat_exon1 at 5829-6044 can have maximum deletions 30, got 51"
+        },
+        {
+            "sequence_name": "MK115009.1",
             "error": "InternalStopInOrf",
             "message": "Smaller ORF rev_exon2 at 8376-8652 contains an internal stop codon"
         },
@@ -694,6 +638,11 @@
         },
         {
             "sequence_name": "MK115095.1",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF tat_exon1 at 5829-6044 can have maximum deletions 30, got 51"
+        },
+        {
+            "sequence_name": "MK115095.1",
             "error": "InternalStopInOrf",
             "message": "Smaller ORF vpu at 6060-6309 contains an internal stop codon"
         },
@@ -701,6 +650,11 @@
             "sequence_name": "MK115095.1",
             "error": "InternalStopInOrf",
             "message": "Smaller ORF rev_exon2 at 8376-8652 contains an internal stop codon"
+        },
+        {
+            "sequence_name": "MK115095.1",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF nef at 8795-9416 can have maximum deletions 30, got 36"
         },
         {
             "sequence_name": "MK115095.1",
@@ -766,11 +720,6 @@
         }
     ],
     "OQ092467": [
-        {
-            "sequence_name": "OQ092467",
-            "error": "InternalStopInOrf",
-            "message": "Smaller ORF vpr at 5558-5849 contains an internal stop codon"
-        },
         {
             "sequence_name": "OQ092467",
             "error": "PackagingSignalDeletion",

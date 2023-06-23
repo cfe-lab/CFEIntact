@@ -656,27 +656,28 @@ def small_frames(
 
         insertions = len(re.findall(r"-", str(alignment[0].seq[e.start:e.end])))
         deletions = len(re.findall(r"-", str(alignment[1].seq[e.start:e.end])))
-        aminos_without_borders = best_match.aminoseq[(e.deletion_tolerence // 3):-(e.deletion_tolerence // 3)]
-
-        if "*" in aminos_without_borders:
-            errors.append(IntactnessError(
-                sequence.id, INTERNALSTOP_ERROR,
-                "Smaller ORF " + str(e.name) + " at " + str(e.start)
-                + "-" + str(e.end)
-                + " contains an internal stop codon"
-            ))
+        translated = best_match.aminoseq.split("*")[0]
+        adeletions = (len(best_match.expectedaminoseq) - (len(translated) + 1)) * 3
 
         # Max deletion allowed in ORF exceeded
-        if deletions > e.deletion_tolerence:
+        if adeletions > e.deletion_tolerence:
 
-            errors.append(IntactnessError(
-                sequence.id, DELETIONINORF_ERROR,
-                "Smaller ORF " + str(e.name) + " at " + str(e.start) 
-                + "-" + str(e.end) 
-                + " can have maximum deletions "
-                + str(e.deletion_tolerence) + ", got " 
-                + str(deletions)
-            ))
+            if "*" in best_match.aminoseq[1:-1]:
+                errors.append(IntactnessError(
+                    sequence.id, INTERNALSTOP_ERROR,
+                    "Smaller ORF " + str(e.name) + " at " + str(e.start)
+                    + "-" + str(e.end)
+                    + " contains an internal stop codon"
+                ))
+            else:
+                errors.append(IntactnessError(
+                    sequence.id, DELETIONINORF_ERROR,
+                    "Smaller ORF " + str(e.name) + " at " + str(e.start)
+                    + "-" + str(e.end)
+                    + " can have maximum deletions "
+                    + str(e.deletion_tolerence) + ", got "
+                    + str(adeletions)
+                ))
 
         # Check for frameshift in ORF
         if (deletions - insertions) % 3 != 0:
