@@ -601,6 +601,10 @@ def small_frames(
 
     aligner = Align.PairwiseAligner()
     aligner.mode = 'global'
+    aligner.match_score = 2
+    aligner.mismatch_score = -1
+    aligner.open_gap_score = -1.5
+    aligner.extend_gap_score = -0.2
 
     def translate(seq, frame = 0, to_stop = False):
         for_translation = seq[frame:]
