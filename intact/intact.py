@@ -591,10 +591,12 @@ def small_frames(
             "No ORFs >" + str(length) + " bases found.")]
 
     import util.coordinates as coords
-    coordinates_mapping = coords.map_positions(alignment[0], alignment[1])
-    reverse_coordinates_mapping = coords.map_positions(alignment[1], alignment[0])
+    coordinates_mapping = coords.map_positions(alignment[0], alignment[1].seq)
+    reverse_coordinates_mapping = coords.map_positions(alignment[1], alignment[0].seq)
 
     reference = alignment[0].seq.replace("-", "")
+    reference_aligned_mapping = coords.map_nonaligned_to_aligned_positions(reference, alignment[0].seq)
+    query_aligned_mapping = coords.map_nonaligned_to_aligned_positions(sequence, alignment[1].seq)
 
     def translate(seq, frame = 0):
         for_translation = seq[frame:]
@@ -654,8 +656,11 @@ def small_frames(
     for e in expected:
         best_match = find_real_correspondence(e)
 
-        insertions = len(re.findall(r"-", str(alignment[0].seq[e.start:e.end])))
-        deletions = len(re.findall(r"-", str(alignment[1].seq[e.start:e.end])))
+        aligned_start = query_aligned_mapping[best_match.start]
+        aligned_end = query_aligned_mapping[best_match.end - 1] + 1
+
+        insertions = len(re.findall(r"-", str(alignment[0].seq[aligned_start:aligned_end])))
+        deletions = len(re.findall(r"-", str(alignment[1].seq[aligned_start:aligned_end])))
         translated = best_match.aminoseq.split("*")[0]
         adeletions = (len(best_match.expectedaminoseq) - (len(translated) + 1)) * 3
 
