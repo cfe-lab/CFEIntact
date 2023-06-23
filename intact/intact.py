@@ -656,11 +656,9 @@ def small_frames(
     for e in expected:
         best_match = find_real_correspondence(e)
 
-        aligned_start = query_aligned_mapping[best_match.start]
-        aligned_end = query_aligned_mapping[best_match.end - 1] + 1
-
-        insertions = len(re.findall(r"-", str(alignment[0].seq[aligned_start:aligned_end])))
-        deletions = len(re.findall(r"-", str(alignment[1].seq[aligned_start:aligned_end])))
+        got_protein = best_match.aminoseq.split("*")[0]
+        exp_protein = best_match.expectedaminoseq.split("*")[0]
+        deletions = (len(exp_protein) - len(got_protein)) * 3
 
         # Max deletion allowed in ORF exceeded
         if deletions > e.deletion_tolerence:
@@ -681,6 +679,12 @@ def small_frames(
                     + str(e.deletion_tolerence) + ", got "
                     + str(deletions)
                 ))
+
+        aligned_start = query_aligned_mapping[best_match.start]
+        aligned_end = query_aligned_mapping[best_match.end - 1] + 1
+
+        insertions = len(re.findall(r"-", str(alignment[0].seq[aligned_start:aligned_end])))
+        deletions = len(re.findall(r"-", str(alignment[1].seq[aligned_start:aligned_end])))
 
         # Check for frameshift in ORF
         if (deletions - insertions) % 3 != 0:
