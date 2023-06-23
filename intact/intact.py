@@ -21,6 +21,7 @@ WRONGORFNUMBER_ERROR = "WrongORFNumber"
 MISPLACEDORF_ERROR   = "MisplacedORF"
 LONGDELETION_ERROR   = "LongDeletion"
 DELETIONINORF_ERROR  = "DeletionInOrf"
+INSERTIONINORF_ERROR  = "InsertionInOrf"
 INTERNALSTOP_ERROR   = "InternalStopInOrf"
 SCRAMBLE_ERROR       = "Scramble"
 NONHIV_ERROR         = "NonHIV"
@@ -600,10 +601,6 @@ def small_frames(
 
     aligner = Align.PairwiseAligner()
     aligner.mode = 'global'
-    aligner.match_score = 2
-    aligner.mismatch_score = -1
-    aligner.open_gap_score = -0.5
-    aligner.extend_gap_score = -0.1
 
     def translate(seq, frame = 0, to_stop = False):
         for_translation = seq[frame:]
@@ -659,13 +656,43 @@ def small_frames(
         candidates = list(find_candidate_positions(e, q_start, q_end))
         return min(candidates, key=lambda x: x.distance)
 
+    def get_indel_impact(alignment):
+        shift = 0
+        impacted = 0
+        counter = 0
+        good = 0
+        for (x, y) in zip(alignment[0], alignment[1]):
+            if x == "-" and y == "-":
+                continue
+            if x == "-" and y != "-":
+                shift += 1
+            if x != "-" and y == "-":
+                shift -= 1
+            if shift % 3 != 0:
+                counter += 1
+                good = 0
+            else:
+                good += 1
+                if good > 5:
+                    impacted += counter if counter > 30 else 0
+                    counter = 0
+
+        impacted += counter if counter > 30 else 0
+        return impacted
+
     errors = []
     for e in expected:
         best_match = find_real_correspondence(e)
 
         got_protein = best_match.aminoseq.split("*")[0]
         exp_protein = best_match.expectedaminoseq.split("*")[0]
+
+        got_nucleotides = sequence.seq[best_match.start:best_match.start + len(got_protein) * 3]
+        exp_nucleotides = reference[e.start:e.end].upper()
+        orf_alignment = aligner.align(exp_nucleotides, got_nucleotides)[0]
+
         deletions = (len(exp_protein) - len(got_protein)) * 3
+        insertions = (len(got_protein) - len(exp_protein)) * 3
 
         # Max deletion allowed in ORF exceeded
         if deletions > e.deletion_tolerence:
@@ -687,24 +714,36 @@ def small_frames(
                     + str(deletions)
                 ))
 
-        got_nucleotides = sequence.seq[best_match.start:best_match.start + len(got_protein) * 3]
-        exp_nucleotides = reference[e.start:e.end].upper()
+            continue
 
-        alignment = aligner.align(exp_nucleotides, got_nucleotides)[0]
+        # Max insertions allowed in ORF exceeded
+        if insertions > 3 * e.deletion_tolerence:
 
-        insertions = len(re.findall(r"-", str(alignment[0])))
-        deletions = len(re.findall(r"-", str(alignment[1])))
+            errors.append(IntactnessError(
+                sequence.id, INSERTIONINORF_ERROR,
+                "Smaller ORF " + str(e.name) + " at " + str(e.start)
+                + "-" + str(e.end)
+                + " can have maximum insertions "
+                + str(3 * e.deletion_tolerence) + ", got "
+                + str(insertions)
+            ))
+
+            continue
+
+        impacted_by_indels = get_indel_impact(orf_alignment)
 
         # Check for frameshift in ORF
-        if (deletions - insertions) % 3 != 0:
+        if impacted_by_indels >= e.deletion_tolerence + 0.10 * len(exp_nucleotides):
 
             errors.append(IntactnessError(
                 sequence.id, FRAMESHIFTINORF_ERROR,
                 "Smaller ORF " + str(e.name) + " at " + str(e.start) 
                 + "-" + str(e.end) 
-                + " contains an out of frame indel: insertions " + str(insertions)
-                + " deletions " + str(deletions) + "."
+                + " contains out of frame indels that impact " + str(impacted_by_indels)
+                + " positions."
             ))
+
+            continue
 
         
     return errors

@@ -1,14 +1,3 @@
 {
-    "MN692145": [
-        {
-            "sequence_name": "MN692145",
-            "error": "FrameshiftInOrf",
-            "message": "Smaller ORF tat_exon1 at 5829-6044 contains an out of frame indel: insertions 5 deletions 4."
-        },
-        {
-            "sequence_name": "MN692145",
-            "error": "FrameshiftInOrf",
-            "message": "Smaller ORF rev_exon1 at 5968-6044 contains an out of frame indel: insertions 7 deletions 2."
-        }
-    ]
+    "MN692145": []
 }
