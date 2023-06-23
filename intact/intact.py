@@ -640,8 +640,8 @@ def small_frames(
                     dist = -1 * jarowinkler_similarity(got_aminoacids, expected_aminoacids)
                     closest_start = min(n, (closest_start_a * 3) + frame)
                     closest_end = min(n, (closest_end_a * 3) + 3 + frame)
-                    yield CandidateORF(reverse_coordinates_mapping[closest_start],
-                                       reverse_coordinates_mapping[closest_end] + 1,
+                    yield CandidateORF(closest_start,
+                                       closest_end,
                                        dist, got_aminoacids, expected_aminoacids)
 
     def find_real_correspondence(e):
