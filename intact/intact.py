@@ -665,7 +665,7 @@ def small_frames(
                     closest_start_a = q_start_a if not has_start_codon else find_closest(aminoacids, q_start_a, start_direction, 'M')
                     closest_end_a = q_end_a if not has_stop_codon else find_closest(aminoacids, q_end_a, end_direction, '*')
                     got_aminoacids = aminoacids[closest_start_a:closest_end_a + 1]
-                    dist = jarowinkler_similarity(got_aminoacids, expected_aminoacids)
+                    dist = -1 * jarowinkler_similarity(got_aminoacids, expected_aminoacids)
                     closest_start = min(n, (closest_start_a * 3) + frame)
                     closest_end = min(n, (closest_end_a * 3) + 3 + frame)
                     yield CandidateORF(reverse_coordinates_mapping[closest_start],
