@@ -35,3 +35,26 @@ def map_positions(reference, query):
             reference_pos += 1
 
     return mapping
+
+
+def map_nonaligned_to_aligned_positions(nonaligned, aligned):
+    """
+    Returns a mapping that for each position in the original, nonaligned sequence,
+    returns the correspoding position in its aligned version.
+
+    Args:
+        nonaligned: refererence sequence
+        aligned: query sequence (aligned to anything)
+    """
+
+    assert "-" not in nonaligned
+
+    ret = [None] * len(nonaligned)
+
+    actual_index = -1
+    for (i, x) in enumerate(aligned):
+        if x != "-":
+            actual_index += 1
+            ret[actual_index] = i
+
+    return ret

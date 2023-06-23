@@ -1,7 +1,7 @@
 
 import pytest
 
-from util.coordinates import map_positions
+from util.coordinates import map_positions, map_nonaligned_to_aligned_positions
 import util.subtypes as st
 
 def map_positions_hxb2_style(reference, query):
@@ -39,3 +39,14 @@ def test_map_positions(reference, query, expected_mapping):
         assert map_positions_hxb2_style(reference, query) \
             == map_positions(reference, query)
 
+
+@pytest.mark.parametrize("reference, aligned, expected_mapping", [
+    ("ACGTTA", "ACGTTA", [0, 1, 2, 3, 4, 5]),  # No gaps or variations
+    ("ACGTTA", "AC-GTTA", [0, 1, 3, 4, 5, 6]),  # One gap
+    ("ACGTTA", "ACG--TTA", [0, 1, 2, 5, 6, 7]),  # Two gaps
+    ("ACGTTA", "ACGTT-A", [0, 1, 2, 3, 4, 6]),  # Gap at the end
+    ("ACGTTA", "-ACGTTA", [1, 2, 3, 4, 5, 6]),  # Gap at the beginning
+    ("ACGTTA", "-AC-GT-TA", [1, 2, 4, 5, 7, 8]),  # Multiple gaps
+])
+def test_map_nonaligned_to_aligned_positions(reference, aligned, expected_mapping):
+    assert map_nonaligned_to_aligned_positions(reference, aligned) == expected_mapping
