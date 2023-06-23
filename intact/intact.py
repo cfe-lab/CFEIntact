@@ -553,35 +553,6 @@ def alignment_score(alignment):
 
     return sum([a==b for a, b in zip(alignment[0].seq, alignment[1].seq)])
 
-
-def levenshtein_distance(a, b):
-    m = len(a)
-    n = len(b)
-
-    # Create a matrix to store the distances
-    distances = [[0] * (n + 1) for _ in range(m + 1)]
-
-    # Initialize the first row and column of the matrix
-    for i in range(m + 1):
-        distances[i][0] = i
-    for j in range(n + 1):
-        distances[0][j] = j
-
-    # Compute the distances for the rest of the matrix
-    for i in range(1, m + 1):
-        for j in range(1, n + 1):
-            if a[i - 1] == b[j - 1]:
-                distances[i][j] = distances[i - 1][j - 1]
-            else:
-                distances[i][j] = min(
-                    distances[i - 1][j] + 1,      # Deletion
-                    distances[i][j - 1] + 1,      # Insertion
-                    distances[i - 1][j - 1] + 1   # Substitution
-                )
-
-    return distances[m][n]
-
-
 def small_frames(
     alignment, sequence, length, 
     expected, error_bar, reverse = False
