@@ -69,6 +69,14 @@ class ReceivedORF:
     inserted_count: int
 
 @dataclass
+class CandidateORF:
+    start: int
+    end: int
+    distance: float
+    aminoseq: str
+    expectedaminoseq: str
+
+@dataclass
 class BlastRow:
     qseqid: str
     qlen: int
@@ -543,6 +551,35 @@ def alignment_score(alignment):
 
     return sum([a==b for a, b in zip(alignment[0].seq, alignment[1].seq)])
 
+
+def levenshtein_distance(a, b):
+    m = len(a)
+    n = len(b)
+
+    # Create a matrix to store the distances
+    distances = [[0] * (n + 1) for _ in range(m + 1)]
+
+    # Initialize the first row and column of the matrix
+    for i in range(m + 1):
+        distances[i][0] = i
+    for j in range(n + 1):
+        distances[0][j] = j
+
+    # Compute the distances for the rest of the matrix
+    for i in range(1, m + 1):
+        for j in range(1, n + 1):
+            if a[i - 1] == b[j - 1]:
+                distances[i][j] = distances[i - 1][j - 1]
+            else:
+                distances[i][j] = min(
+                    distances[i - 1][j] + 1,      # Deletion
+                    distances[i][j - 1] + 1,      # Insertion
+                    distances[i - 1][j - 1] + 1   # Substitution
+                )
+
+    return distances[m][n]
+
+
 def small_frames(
     alignment, sequence, length, 
     expected, error_bar, reverse = False
@@ -580,56 +617,95 @@ def small_frames(
             sequence.id, WRONGORFNUMBER_ERROR,
             "No ORFs >" + str(length) + " bases found.")]
 
+    import util.coordinates as coords
+    coordinates_mapping = coords.map_positions(alignment[0], alignment[1])
+    reverse_coordinates_mapping = coords.map_positions(alignment[1], alignment[0])
+
+    reference = alignment[0].seq.replace("-", "")
+
+    def translate(seq, frame = 0):
+        for_translation = seq[frame:]
+        for_translation += 'N' * ({0: 0, 1: 2, 2: 1}[len(for_translation) % 3])
+        return Seq.translate(for_translation)
+
+    query_aminoacids_table = [translate(sequence.seq, i) for i in range(3)]
+
+    def find_closest(aminoacids, start, direction, target):
+        distance = 0
+        n = len(aminoacids) - 1
+
+        while start + distance >= 0 and start + distance <= n:
+            if start + distance <= n and aminoacids[start + distance] == target:
+                return start + distance
+            distance += direction
+
+        if target == '*':
+            return n
+        else:
+            return 0
+
+    def find_candidate_positions(e, q_start, q_end):
+        expected_nucleotides = str(reference[e.start:e.end])
+        expected_aminoacids = translate(expected_nucleotides)
+        q_start = coordinates_mapping[e.start]
+        q_end = coordinates_mapping[e.end]
+        got_nucleotides = sequence.seq[q_start:q_end]
+        got_aminoacids = translate(got_nucleotides)
+        q_start_a = q_start // 3
+        q_end_a = q_end // 3
+        has_start_codon = expected_aminoacids[0] == 'M'
+        has_stop_codon = expected_aminoacids[-1] == '*'
+        n = len(sequence.seq) - 1
+
+        for frame in range(3):
+            aminoacids = query_aminoacids_table[frame]
+            for start_direction in [-1, +1]:
+                for end_direction in [-1, +1]:
+                    closest_start_a = q_start_a if not has_start_codon else find_closest(aminoacids, q_start_a, start_direction, 'M')
+                    closest_end_a = q_end_a if not has_stop_codon else find_closest(aminoacids, q_end_a, end_direction, '*')
+                    got_aminoacids = aminoacids[closest_start_a:closest_end_a + 1]
+                    dist = levenshtein_distance(got_aminoacids, expected_aminoacids)
+                    closest_start = min(n, (closest_start_a * 3) + frame)
+                    closest_end = min(n, (closest_end_a * 3) + 3 + frame)
+                    yield CandidateORF(reverse_coordinates_mapping[closest_start],
+                                       reverse_coordinates_mapping[closest_end] + 1,
+                                       dist, got_aminoacids, expected_aminoacids)
+
+    def find_real_correspondence(e):
+        q_start = coordinates_mapping[e.start]
+        q_end = coordinates_mapping[e.end]
+        candidates = list(find_candidate_positions(e, q_start, q_end))
+        return min(candidates, key=lambda x: x.distance)
+
     errors = []
     for e in expected:
-        best_match = ReceivedORF(0, 0, 0, 0)
-        best_match_delta = (float("inf"), float("inf"))
-        for f in frames:
-            inside = 0 if f.start < e.start and f.end > e.end else 1
-            distance = abs(e.start - f.start) + abs(e.end - f.end)
-            delta = (inside, distance) # Any inside matches are preferred to any outside matches
+        best_match = find_real_correspondence(e)
 
-            if delta < best_match_delta:
-                best_match = f
-                best_match_delta = delta
+        insertions = len(re.findall(r"-", str(alignment[0].seq[e.start:e.end])))
+        deletions = len(re.findall(r"-", str(alignment[1].seq[e.start:e.end])))
 
-        # ORF lengths and locations are incorrect
-        if (best_match.start - e.start > error_bar \
-        or e.end - best_match.end > error_bar): 
+        # Max deletion allowed in ORF exceeded
+        if deletions > e.deletion_tolerence:
+
             errors.append(IntactnessError(
-                sequence.id, MISPLACEDORF_ERROR,
-                "Expected a smaller ORF, " + str(e.name) + ", at " + str(e.start)
-                + "-" + str(e.end)
-                + " in the " + f_type + " strand, got closest match " 
-                + str(best_match.start) 
-                + "-" + str(best_match.end)
-            )) 
-        else:
-            insertions = len(re.findall(r"-", str(alignment[0].seq[e.start:e.end])))
-            deletions = len(re.findall(r"-", str(alignment[1].seq[e.start:e.end])))
+                sequence.id, DELETIONINORF_ERROR,
+                "Smaller ORF " + str(e.name) + " at " + str(e.start) 
+                + "-" + str(e.end) 
+                + " can have maximum deletions "
+                + str(e.deletion_tolerence) + ", got " 
+                + str(deletions)
+            ))
 
-            # Max deletion allowed in ORF exceeded
-            if deletions > e.deletion_tolerence:
+        # Check for frameshift in ORF
+        if (deletions - insertions) % 3 != 0:
 
-                errors.append(IntactnessError(
-                    sequence.id, DELETIONINORF_ERROR,
-                    "Smaller ORF " + str(e.name) + " at " + str(e.start) 
-                    + "-" + str(e.end) 
-                    + " can have maximum deletions "
-                    + str(e.deletion_tolerence) + ", got " 
-                    + str(deletions)
-                ))
-
-            # Check for frameshift in ORF
-            if (deletions - insertions) % 3 != 0:
-
-                errors.append(IntactnessError(
-                    sequence.id, FRAMESHIFTINORF_ERROR,
-                    "Smaller ORF " + str(e.name) + " at " + str(e.start) 
-                    + "-" + str(e.end) 
-                    + " contains an out of frame indel: insertions " + str(insertions)
-                    + " deletions " + str(deletions) + "."
-                ))
+            errors.append(IntactnessError(
+                sequence.id, FRAMESHIFTINORF_ERROR,
+                "Smaller ORF " + str(e.name) + " at " + str(e.start) 
+                + "-" + str(e.end) 
+                + " contains an out of frame indel: insertions " + str(insertions)
+                + " deletions " + str(deletions) + "."
+            ))
 
         
     return errors

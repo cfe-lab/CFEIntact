@@ -71,13 +71,7 @@
             "message": "Sequence is plus-scrambled."
         }
     ],
-    "MN691959": [
-        {
-            "sequence_name": "MN691959",
-            "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, vpu, at 6060-6309 in the forward strand, got closest match 6129-6308"
-        }
-    ],
+    "MN691959": [],
     "MN692074": [
         {
             "sequence_name": "MN692074",
@@ -225,11 +219,6 @@
     "MK115690.1": [
         {
             "sequence_name": "MK115690.1",
-            "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, nef, at 8795-9416 in the forward strand, got closest match 8765-9409"
-        },
-        {
-            "sequence_name": "MK115690.1",
             "error": "PackagingSignalDeletion",
             "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 12 deletions with max tolerance of 10 deletions."
         },
@@ -350,11 +339,6 @@
     "MK114705.1": [
         {
             "sequence_name": "MK114705.1",
-            "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, nef, at 8795-9416 in the forward strand, got closest match 8765-9229"
-        },
-        {
-            "sequence_name": "MK114705.1",
             "error": "Scramble",
             "message": "Sequence is plus-scrambled."
         }
@@ -367,36 +351,6 @@
         },
         {
             "sequence_name": "MK114856.1",
-            "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, vif, at 5040-5619 in the forward strand, got closest match 5250-5561"
-        },
-        {
-            "sequence_name": "MK114856.1",
-            "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, vpr, at 5558-5849 in the forward strand, got closest match 5612-5848"
-        },
-        {
-            "sequence_name": "MK114856.1",
-            "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, tat_exon1, at 5829-6044 in the forward strand, got closest match 5862-6047"
-        },
-        {
-            "sequence_name": "MK114856.1",
-            "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, vpu, at 6060-6309 in the forward strand, got closest match 6129-6290"
-        },
-        {
-            "sequence_name": "MK114856.1",
-            "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, rev_exon2, at 8376-8652 in the forward strand, got closest match 8475-8651"
-        },
-        {
-            "sequence_name": "MK114856.1",
-            "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, nef, at 8795-9416 in the forward strand, got closest match 9101-9415"
-        },
-        {
-            "sequence_name": "MK114856.1",
             "error": "APOBECHypermutationDetected",
             "message": "Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 3.639064030015132e-65)."
         }
@@ -406,36 +360,6 @@
             "sequence_name": "MK115009.1",
             "error": "WrongORFNumber",
             "message": "Expected 3 forward ORFs, got 0"
-        },
-        {
-            "sequence_name": "MK115009.1",
-            "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, vif, at 5040-5619 in the forward strand, got closest match 5250-5618"
-        },
-        {
-            "sequence_name": "MK115009.1",
-            "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, vpr, at 5558-5849 in the forward strand, got closest match 5720-5848"
-        },
-        {
-            "sequence_name": "MK115009.1",
-            "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, tat_exon1, at 5829-6044 in the forward strand, got closest match 5862-6047"
-        },
-        {
-            "sequence_name": "MK115009.1",
-            "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, vpu, at 6060-6309 in the forward strand, got closest match 6048-6290"
-        },
-        {
-            "sequence_name": "MK115009.1",
-            "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, rev_exon2, at 8376-8652 in the forward strand, got closest match 8475-8651"
-        },
-        {
-            "sequence_name": "MK115009.1",
-            "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, nef, at 8795-9416 in the forward strand, got closest match 8777-9217"
         },
         {
             "sequence_name": "MK115009.1",
@@ -526,26 +450,6 @@
         },
         {
             "sequence_name": "MK115464.1",
-            "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, vif, at 5040-5619 in the forward strand, got closest match 5250-5618"
-        },
-        {
-            "sequence_name": "MK115464.1",
-            "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, vpu, at 6060-6309 in the forward strand, got closest match 6129-6290"
-        },
-        {
-            "sequence_name": "MK115464.1",
-            "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, rev_exon2, at 8376-8652 in the forward strand, got closest match 8436-8651"
-        },
-        {
-            "sequence_name": "MK115464.1",
-            "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, nef, at 8795-9416 in the forward strand, got closest match 8834-9415"
-        },
-        {
-            "sequence_name": "MK115464.1",
             "error": "APOBECHypermutationDetected",
             "message": "Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 4.937891251407691e-23)."
         }
@@ -605,11 +509,6 @@
         },
         {
             "sequence_name": "MK115702.1",
-            "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, vpu, at 6060-6309 in the forward strand, got closest match 6048-6305"
-        },
-        {
-            "sequence_name": "MK115702.1",
             "error": "FrameshiftInOrf",
             "message": "Smaller ORF nef at 8795-9416 contains an out of frame indel: insertions 0 deletions 19."
         },
@@ -639,21 +538,6 @@
             "sequence_name": "MK115095.1",
             "error": "WrongORFNumber",
             "message": "Expected 3 forward ORFs, got 0"
-        },
-        {
-            "sequence_name": "MK115095.1",
-            "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, vif, at 5040-5619 in the forward strand, got closest match 5250-5618"
-        },
-        {
-            "sequence_name": "MK115095.1",
-            "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, vpu, at 6060-6309 in the forward strand, got closest match 6129-6290"
-        },
-        {
-            "sequence_name": "MK115095.1",
-            "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, rev_exon2, at 8376-8652 in the forward strand, got closest match 8475-8651"
         },
         {
             "sequence_name": "MK115095.1",

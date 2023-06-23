@@ -71,13 +71,7 @@
             "message": "Sequence is plus-scrambled."
         }
     ],
-    "MN691959": [
-        {
-            "sequence_name": "MN691959",
-            "error": "MisplacedORF",
-            "message": "Expected a smaller ORF, vpu, at 6060-6309 in the forward strand, got closest match 6129-6308"
-        }
-    ],
+    "MN691959": [],
     "MN692074": [
         {
             "sequence_name": "MN692074",
