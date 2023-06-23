@@ -7,8 +7,18 @@
         },
         {
             "sequence_name": "KX505501.1",
+            "error": "InternalStopInOrf",
+            "message": "Smaller ORF vif at 5040-5619 contains an internal stop codon"
+        },
+        {
+            "sequence_name": "KX505501.1",
             "error": "DeletionInOrf",
             "message": "Smaller ORF vif at 5040-5619 can have maximum deletions 30, got 579"
+        },
+        {
+            "sequence_name": "KX505501.1",
+            "error": "InternalStopInOrf",
+            "message": "Smaller ORF vpr at 5558-5849 contains an internal stop codon"
         },
         {
             "sequence_name": "KX505501.1",
@@ -37,6 +47,11 @@
         },
         {
             "sequence_name": "KX505501.1",
+            "error": "InternalStopInOrf",
+            "message": "Smaller ORF vpu at 6060-6309 contains an internal stop codon"
+        },
+        {
+            "sequence_name": "KX505501.1",
             "error": "DeletionInOrf",
             "message": "Smaller ORF vpu at 6060-6309 can have maximum deletions 30, got 249"
         },
@@ -49,6 +64,11 @@
             "sequence_name": "KX505501.1",
             "error": "DeletionInOrf",
             "message": "Smaller ORF rev_exon2 at 8376-8652 can have maximum deletions 30, got 276"
+        },
+        {
+            "sequence_name": "KX505501.1",
+            "error": "InternalStopInOrf",
+            "message": "Smaller ORF nef at 8795-9416 contains an internal stop codon"
         },
         {
             "sequence_name": "KX505501.1",
@@ -71,7 +91,18 @@
             "message": "Sequence is plus-scrambled."
         }
     ],
-    "MN691959": [],
+    "MN691959": [
+        {
+            "sequence_name": "MN691959",
+            "error": "InternalStopInOrf",
+            "message": "Smaller ORF vpu at 6060-6309 contains an internal stop codon"
+        },
+        {
+            "sequence_name": "MN691959",
+            "error": "InternalStopInOrf",
+            "message": "Smaller ORF tat_exon2 at 8375-8468 contains an internal stop codon"
+        }
+    ],
     "MN692074": [
         {
             "sequence_name": "MN692074",
@@ -90,6 +121,11 @@
         },
         {
             "sequence_name": "MN692074",
+            "error": "InternalStopInOrf",
+            "message": "Smaller ORF tat_exon1 at 5829-6044 contains an internal stop codon"
+        },
+        {
+            "sequence_name": "MN692074",
             "error": "DeletionInOrf",
             "message": "Smaller ORF tat_exon1 at 5829-6044 can have maximum deletions 30, got 215"
         },
@@ -97,6 +133,11 @@
             "sequence_name": "MN692074",
             "error": "FrameshiftInOrf",
             "message": "Smaller ORF tat_exon1 at 5829-6044 contains an out of frame indel: insertions 0 deletions 215."
+        },
+        {
+            "sequence_name": "MN692074",
+            "error": "InternalStopInOrf",
+            "message": "Smaller ORF rev_exon1 at 5968-6044 contains an internal stop codon"
         },
         {
             "sequence_name": "MN692074",
@@ -144,7 +185,13 @@
             "message": "Query sequence contains a long deletion."
         }
     ],
-    "MN692145": [],
+    "MN692145": [
+        {
+            "sequence_name": "MN692145",
+            "error": "InternalStopInOrf",
+            "message": "Smaller ORF vpr at 5558-5849 contains an internal stop codon"
+        }
+    ],
     "MN090335": [
         {
             "sequence_name": "MN090335",
@@ -160,6 +207,11 @@
             "sequence_name": "MN090335",
             "error": "FrameshiftInOrf",
             "message": "ORF gag at 1175-2291 contains an out of frame indel, deletions 91 insertions 33."
+        },
+        {
+            "sequence_name": "MN090335",
+            "error": "InternalStopInOrf",
+            "message": "Smaller ORF tat_exon2 at 8375-8468 contains an internal stop codon"
         },
         {
             "sequence_name": "MN090335",

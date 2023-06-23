@@ -1,3 +1,9 @@
 {
-    "MN692145": []
+    "MN692145": [
+        {
+            "sequence_name": "MN692145",
+            "error": "InternalStopInOrf",
+            "message": "Smaller ORF vpr at 5558-5849 contains an internal stop codon"
+        }
+    ]
 }

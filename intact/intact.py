@@ -21,6 +21,7 @@ WRONGORFNUMBER_ERROR = "WrongORFNumber"
 MISPLACEDORF_ERROR   = "MisplacedORF"
 LONGDELETION_ERROR   = "LongDeletion"
 DELETIONINORF_ERROR  = "DeletionInOrf"
+INTERNALSTOP_ERROR   = "InternalStopInOrf"
 SCRAMBLE_ERROR       = "Scramble"
 NONHIV_ERROR         = "NonHIV"
 INTERNALINVERSION_ERROR = "InternalInversion"
@@ -684,6 +685,15 @@ def small_frames(
 
         insertions = len(re.findall(r"-", str(alignment[0].seq[e.start:e.end])))
         deletions = len(re.findall(r"-", str(alignment[1].seq[e.start:e.end])))
+        aminos_without_borders = best_match.aminoseq[(e.deletion_tolerence // 3):-(e.deletion_tolerence // 3)]
+
+        if "*" in aminos_without_borders:
+            errors.append(IntactnessError(
+                sequence.id, INTERNALSTOP_ERROR,
+                "Smaller ORF " + str(e.name) + " at " + str(e.start)
+                + "-" + str(e.end)
+                + " contains an internal stop codon"
+            ))
 
         # Max deletion allowed in ORF exceeded
         if deletions > e.deletion_tolerence:
