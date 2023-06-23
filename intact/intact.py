@@ -608,7 +608,7 @@ def small_frames(
         n = len(aminoacids) - 1
 
         while start + distance >= 0 and start + distance <= n:
-            if start + distance <= n and aminoacids[start + distance] == target:
+            if aminoacids[start + distance] == target:
                 return start + distance
             distance += direction
 
