@@ -8,7 +8,7 @@ import tempfile
 import csv
 from dataclasses import dataclass
 from collections import Counter
-from Bio import AlignIO, Seq, SeqIO, SeqRecord
+from Bio import AlignIO, Seq, SeqIO, SeqRecord, Align
 from scipy.stats import fisher_exact
 from jarowinkler import jarowinkler_similarity
 
@@ -598,10 +598,17 @@ def small_frames(
     reference_aligned_mapping = coords.map_nonaligned_to_aligned_positions(reference, alignment[0].seq)
     query_aligned_mapping = coords.map_nonaligned_to_aligned_positions(sequence, alignment[1].seq)
 
-    def translate(seq, frame = 0):
+    aligner = Align.PairwiseAligner()
+    aligner.mode = 'global'
+    aligner.match_score = 2
+    aligner.mismatch_score = -1
+    aligner.open_gap_score = -0.5
+    aligner.extend_gap_score = -0.1
+
+    def translate(seq, frame = 0, to_stop = False):
         for_translation = seq[frame:]
         for_translation += 'N' * ({0: 0, 1: 2, 2: 1}[len(for_translation) % 3])
-        return Seq.translate(for_translation)
+        return Seq.translate(for_translation, to_stop = to_stop)
 
     query_aminoacids_table = [translate(sequence.seq, i) for i in range(3)]
 
@@ -680,11 +687,13 @@ def small_frames(
                     + str(deletions)
                 ))
 
-        aligned_start = query_aligned_mapping[best_match.start]
-        aligned_end = query_aligned_mapping[best_match.end - 1] + 1
+        got_nucleotides = sequence.seq[best_match.start:best_match.start + len(got_protein) * 3]
+        exp_nucleotides = reference[e.start:e.end].upper()
 
-        insertions = len(re.findall(r"-", str(alignment[0].seq[aligned_start:aligned_end])))
-        deletions = len(re.findall(r"-", str(alignment[1].seq[aligned_start:aligned_end])))
+        alignment = aligner.align(exp_nucleotides, got_nucleotides)[0]
+
+        insertions = len(re.findall(r"-", str(alignment[0])))
+        deletions = len(re.findall(r"-", str(alignment[1])))
 
         # Check for frameshift in ORF
         if (deletions - insertions) % 3 != 0:
