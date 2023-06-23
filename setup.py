@@ -64,7 +64,7 @@ setup(
     description='Test for proviral intactness.',
     author='Imogen Wright',
     author_email='imogen@hyraxbio.co.za',
-    version='0.6',
+    version='0.7',
     packages=['intact', 'util'],
     package_data={
                   'intact': ['data/*'],
