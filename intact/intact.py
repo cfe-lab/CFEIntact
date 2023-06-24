@@ -511,7 +511,11 @@ def has_reading_frames(
         for_translation += 'N' * ({0: 0, 1: 2, 2: 1}[len(for_translation) % 3])
         return Seq.translate(for_translation, to_stop = to_stop)
 
-    query_aminoacids_table = [translate(sequence.seq, i) for i in range(3)]
+    try:
+        query_aminoacids_table = [translate(sequence.seq, i) for i in range(3)]
+    except CodonTable.TranslationError as e:
+        log.error(e)
+        return [], []
 
     def find_closest(aminoacids, start, direction, target):
         distance = 0
