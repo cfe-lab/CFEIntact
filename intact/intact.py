@@ -8,6 +8,7 @@ import tempfile
 import csv
 from dataclasses import dataclass
 from collections import Counter
+import Bio
 from Bio import AlignIO, Seq, SeqIO, SeqRecord, Align
 from scipy.stats import fisher_exact
 from jarowinkler import jarowinkler_similarity
@@ -15,6 +16,7 @@ from jarowinkler import jarowinkler_similarity
 import util.constants as const
 import util.subtypes as st
 import util.wrappers as wrappers
+import util.log as log
 
 
 WRONGORFNUMBER_ERROR = "WrongORFNumber"
@@ -513,7 +515,7 @@ def has_reading_frames(
 
     try:
         query_aminoacids_table = [translate(sequence.seq, i) for i in range(3)]
-    except CodonTable.TranslationError as e:
+    except Bio.Data.CodonTable.TranslationError as e:
         log.error(e)
         return [], []
 
