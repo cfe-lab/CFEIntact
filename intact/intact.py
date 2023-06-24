@@ -555,7 +555,7 @@ def alignment_score(alignment):
 
     return sum([a==b for a, b in zip(alignment[0].seq, alignment[1].seq)])
 
-def small_frames(
+def has_reading_frames(
     alignment, sequence, is_small,
     expected, error_bar, reverse = False
 ):
@@ -729,121 +729,9 @@ def small_frames(
 
             continue
 
-        
+
     return matches, errors
-       
 
-def has_reading_frames(
-    alignment, reference,
-    sequence, length, 
-    forward_expected, reverse_expected, error_bar):
-    """
-    Check that a sequences has the appropriate number of reading frames
-    longer than a certain length in the appropriate strands and
-    positions.
-
-    Args:
-        sequence: the sequence to check.
-        length: the minimum nucleotide length of a reading frame.
-
-    Returns:
-        A list of tuples of (frame_start, frame_end)
-    """
-    
-    forward_frames = reading_frames_single_stranded(
-                           alignment,
-                           sequence, length)
-
-    tmp_reference = SeqRecord.SeqRecord(Seq.reverse_complement(alignment[0].seq),
-                                       id = alignment[0].id,
-                                       name = alignment[0].name
-                                       )
-    tmp_subtype = SeqRecord.SeqRecord(Seq.reverse_complement(alignment[1].seq),
-                                       id = alignment[1].id,
-                                       name = alignment[1].name
-                                       )
-    tmp_sequence = SeqRecord.SeqRecord(Seq.reverse_complement(sequence.seq),
-                                       id = sequence.id,
-                                       name = sequence.name
-                                       )
-
-    reverse_alignment = [tmp_reference, tmp_subtype]
-    reverse_frames = reading_frames_single_stranded(
-                           reverse_alignment,
-                           tmp_sequence,
-                           length)
-
-
-    orfs = []
-    for f_type, got, expected in [
-                                ("forward", forward_frames, forward_expected),
-                                ("reverse", reverse_frames, reverse_expected)
-                                 ]:
-        for got_elem in got:
-            orfs.append(ORF(f_type, got_elem.start, got_elem.end))
-
-
-    for f_type, got, expected in [
-                                ("forward", forward_frames, forward_expected),
-                                ("reverse", reverse_frames, reverse_expected)
-                                 ]:
-
-
-        if len(got) != len(expected) and len(expected) > 0:
-            return orfs, [IntactnessError(
-                sequence.id, WRONGORFNUMBER_ERROR,
-                "Expected " + str(len(expected)) 
-                + " " + f_type 
-                + " ORFs, got " + str(len(got))
-            )]
-    
-    errors = []
-    for f_type, got, expected in [
-                                ("forward", forward_frames, forward_expected),
-                                ("reverse", reverse_frames, reverse_expected)
-                                 ]:
-        for got_elem, expected_elem in zip(got, expected):
-
-            # ORF lengths and locations are incorrect
-            if got_elem.start - expected_elem.start > error_bar \
-            or expected_elem.end - got_elem.end > error_bar: 
-
-                errors.append(IntactnessError(
-                    sequence.id, MISPLACEDORF_ERROR,
-                    "Expected an ORF, " + str(expected_elem.name) + ", at " + str(expected_elem.start) 
-                    + "-" + str(expected_elem.end) 
-                    + " in the " + f_type + " strand, got " 
-                    + str(got_elem.start) 
-                    + "-" + str(got_elem.end)
-                ))
-
-            # Max deletion allowed in ORF exceeded
-            if got_elem.deleted_count > expected_elem.deletion_tolerence:
-
-                errors.append(IntactnessError(
-                    sequence.id, DELETIONINORF_ERROR,
-                    "ORF " + str(expected_elem.name) + " at " + str(got_elem.start) 
-                    + "-" + str(got_elem.end) 
-                    + " can have maximum deletions "
-                    + str(expected_elem.deletion_tolerence) + ", got " 
-                    + str(got_elem.deleted_count)
-                ))
-
-            # Check for frameshift deletion in ORF
-            if (got_elem.deleted_count - got_elem.inserted_count) % 3 != 0:
-
-                errors.append(IntactnessError(
-                    sequence.id, FRAMESHIFTINORF_ERROR,
-                    "ORF " + str(expected_elem.name) + " at " + str(got_elem.start) 
-                    + "-" + str(got_elem.end) 
-                    + " contains an out of frame indel, deletions " 
-                    + str(got_elem.deleted_count) + " insertions " + str(got_elem.inserted_count) + "."
-                ))
-
-            
-
-
-    return orfs, errors
 
 def iterate_sequences(input_file):
     with open(input_file, 'r') as in_handle:
@@ -941,13 +829,13 @@ def intact( working_dir,
             alignment = reverse_alignment
             sequence = reverse_sequence
 
-        sequence_orfs, orf_errors = small_frames(
+        sequence_orfs, orf_errors = has_reading_frames(
             alignment,
             sequence, False,
             forward_orfs, error_bar)
         sequence_errors.extend(orf_errors)
 
-        sequence_small_orfs, small_orf_errors = small_frames(
+        sequence_small_orfs, small_orf_errors = has_reading_frames(
             alignment, sequence, True,
             small_orfs, error_bar, reverse = False)
         if include_small_orfs:
