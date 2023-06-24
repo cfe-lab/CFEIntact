@@ -666,7 +666,10 @@ def small_frames(
 
         got_nucleotides = sequence.seq[best_match.start:best_match.start + len(got_protein) * 3]
         exp_nucleotides = reference[e.start:e.end].upper()
-        orf_alignment = aligner.align(exp_nucleotides, got_nucleotides)[0]
+        if got_nucleotides:
+            orf_alignment = aligner.align(exp_nucleotides, got_nucleotides)[0]
+        else:
+            orf_alignment = (exp_nucleotides, "-" * len(exp_nucleotides))
 
         deletions = (len(exp_protein) - len(got_protein)) * 3
         insertions = (len(got_protein) - len(exp_protein)) * 3
