@@ -605,8 +605,8 @@ def has_reading_frames(
         else:
             orf_alignment = (exp_nucleotides, "-" * len(exp_nucleotides))
 
-        deletions = (len(exp_protein) - len(got_protein)) * 3
-        insertions = (len(got_protein) - len(exp_protein)) * 3
+        deletions = max(0, len(exp_protein) - len(got_protein)) * 3
+        insertions = max(0, len(got_protein) - len(exp_protein)) * 3
 
         # Max deletion allowed in ORF exceeded
         if deletions > e.deletion_tolerence:
