@@ -555,7 +555,7 @@ def has_reading_frames(
                     got_aminoacids = aminoacids[closest_start_a:closest_end_a + 1]
                     dist = -1 * jaro_similarity(got_aminoacids, expected_aminoacids)
                     closest_start = min(n, (closest_start_a * 3) + frame)
-                    closest_end = min(n, (closest_end_a * 3) + 3 + frame)
+                    closest_end = min(n + 1, (closest_end_a * 3) + 3 + frame)
                     yield CandidateORF(closest_start, closest_end, "forward",
                                        dist, got_aminoacids, expected_aminoacids)
 
