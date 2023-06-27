@@ -11,7 +11,7 @@ from collections import Counter
 import Bio
 from Bio import AlignIO, Seq, SeqIO, SeqRecord, Align
 from scipy.stats import fisher_exact
-from jarowinkler import jarowinkler_similarity
+from jarowinkler import jaro_similarity
 
 import util.constants as const
 import util.subtypes as st
@@ -553,7 +553,7 @@ def has_reading_frames(
                     closest_start_a = q_start_a if not has_start_codon else find_closest(aminoacids, q_start_a, start_direction, 'M')
                     closest_end_a = q_end_a if not has_stop_codon else find_closest(aminoacids, q_end_a, end_direction, '*')
                     got_aminoacids = aminoacids[closest_start_a:closest_end_a + 1]
-                    dist = -1 * jarowinkler_similarity(got_aminoacids, expected_aminoacids)
+                    dist = -1 * jaro_similarity(got_aminoacids, expected_aminoacids)
                     closest_start = min(n, (closest_start_a * 3) + frame)
                     closest_end = min(n, (closest_end_a * 3) + 3 + frame)
                     yield CandidateORF(closest_start, closest_end, "forward",
