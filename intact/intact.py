@@ -233,12 +233,12 @@ def is_scrambled(seqid, blast_rows):
                                f"Sequence is {direction}-scrambled.")
 
 
-def is_nonhiv(seqid, blast_rows):
+def is_nonhiv(seqid, seqlen, blast_rows):
     aligned_length = sum(abs(x.qend - x.qstart) + 1 for x in blast_rows)
     total_length = blast_rows[0].qlen if blast_rows else 1
     ratio = aligned_length / total_length
 
-    if ratio < 0.8:
+    if ratio < 0.8 and seqlen > total_length * 0.6:
         return IntactnessError(seqid, NONHIV_ERROR,
                                "Sequence contains unrecognized parts. "
                                "It is probably a Human/HIV Chimera sequence.")
@@ -828,7 +828,7 @@ def intact( working_dir,
                 sequence_errors.append(long_deletion)
 
         if check_nonhiv:
-            error = is_nonhiv(sequence.id, blast_rows)
+            error = is_nonhiv(sequence.id, len(sequence), blast_rows)
             if error:
                 sequence_errors.append(error)
 
