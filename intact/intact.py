@@ -45,9 +45,13 @@ class IntactnessError:
 
 @dataclass
 class ORF:
+    name: str
     orientation: str
     start: int
     end: int
+    distance: str
+    aminoacids: str
+    nucleotides: str
 
 @dataclass
 class ExpectedORF:
@@ -75,6 +79,7 @@ class ReceivedORF:
 
 @dataclass
 class CandidateORF:
+    name: str
     start: int
     end: int
     orientation: str
@@ -556,7 +561,7 @@ def has_reading_frames(
                     dist = 1 - jaro_similarity(got_aminoacids, expected_aminoacids)
                     closest_start = min(n, (closest_start_a * 3) + frame)
                     closest_end = min(n + 1, (closest_end_a * 3) + 3 + frame)
-                    yield CandidateORF(closest_start, closest_end, "forward",
+                    yield CandidateORF(e.name, closest_start, closest_end, "forward",
                                        dist, got_aminoacids, expected_aminoacids)
 
     def find_real_correspondence(e):
@@ -776,10 +781,14 @@ def intact( working_dir,
             sequence_errors.extend(small_orf_errors)
 
         hxb2_found_orfs = [ORF(
+            o.name,
             o.orientation,
             pos_subtype_mapping[o.orientation][o.start],
             pos_subtype_mapping[o.orientation][o.end],
-        ) for o in sequence_orfs]
+            o.distance,
+            str(o.aminoseq),
+            str(sequence[o.start:o.end].seq),
+        ) for o in sorted(sequence_orfs + sequence_small_orfs, key=lambda o: o.start)]
 
         if include_packaging_signal:
             missing_psi_locus = has_packaging_signal(alignment,
