@@ -618,7 +618,7 @@ def has_reading_frames(
         # Max deletion allowed in ORF exceeded
         if deletions > e.deletion_tolerence:
 
-            if "*" in best_match.aminoseq[1:-1]:
+            if "*" in best_match.aminoseq[:(-e.deletion_tolerence // 3)]:
                 errors.append(IntactnessError(
                     sequence.id, INTERNALSTOP_ERROR,
                     ("Smaller " if is_small else "")
