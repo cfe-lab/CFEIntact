@@ -603,7 +603,7 @@ def has_reading_frames(
         got_protein = best_match.aminoseq.split("*")[0]
         exp_protein = best_match.expectedaminoseq.split("*")[0]
 
-        got_nucleotides = sequence.seq[best_match.start:best_match.start + len(got_protein) * 3]
+        got_nucleotides = sequence.seq[best_match.start:best_match.start + len(got_protein) * 3].upper()
         exp_nucleotides = reference[e.start:e.end].upper()
         if got_nucleotides:
             orf_alignment = aligner.align(exp_nucleotides, got_nucleotides)[0]
