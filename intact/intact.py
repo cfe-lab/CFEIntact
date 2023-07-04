@@ -850,8 +850,10 @@ def intact( working_dir,
 
             if len(sequence_errors) == 0:
                 SeqIO.write([sequence], intact_writer, "fasta")
+                intact_writer.flush()
             else:
                 SeqIO.write([sequence], nonintact_writer, "fasta")
+                nonintact_writer.flush()
 
             # add the small orf errors after the intactness check if not included
             if not include_small_orfs:
@@ -859,9 +861,11 @@ def intact( working_dir,
 
             orfs_writer.write(json.dumps({sequence.id: [x.__dict__ for x in hxb2_found_orfs]},
                                          indent=4))
+            orfs_writer.flush()
 
             errors_writer.write(json.dumps({sequence.id: [x.__dict__ for x in sequence_errors]},
                                            indent=4))
+            errors_writer.flush()
 
     return intact_file, non_intact_file, orf_file, error_file
 #/end def intact
