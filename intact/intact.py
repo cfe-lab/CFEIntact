@@ -725,8 +725,6 @@ def intact( working_dir,
         Name of a file containing all consensus sequences.
     """
 
-    intact_sequences = []
-    non_intact_sequences = []
     orfs = {}
     errors = {}
     pos_mapping = st.map_hxb2_positions_to_subtype(subtype)
@@ -751,117 +749,115 @@ def intact( working_dir,
     reference = st.subtype_sequence(subtype)
     blast_it = blast_iterate_inf(subtype, input_file) if check_internal_inversion or check_nonhiv or check_scramble else iterate_empty_lists()
 
-    for (sequence, blast_rows) in with_blast_rows(blast_it, iterate_sequences(input_file)):
-        sequence_errors = []
-
-        reverse_sequence = SeqRecord.SeqRecord(Seq.reverse_complement(sequence.seq),
-                                               id = sequence.id + " [REVERSED]",
-                                               name = sequence.name
-                                               )
-
-        alignment = wrappers.mafft([reference, sequence])
-        reverse_alignment = wrappers.mafft([reference, reverse_sequence])
-
-        forward_score = alignment_score(alignment)
-        reverse_score = alignment_score(reverse_alignment)
-        if alignment_score(reverse_alignment) > alignment_score(alignment):
-            print("Reversing sequence " + sequence.id + "; forward score " 
-                  + str(forward_score) + "; reverse score " + str(reverse_score))
-            alignment = reverse_alignment
-            sequence = reverse_sequence
-
-        sequence_orfs, orf_errors = has_reading_frames(
-            alignment,
-            sequence, False,
-            forward_orfs, error_bar)
-        sequence_errors.extend(orf_errors)
-
-        sequence_small_orfs, small_orf_errors = has_reading_frames(
-            alignment, sequence, True,
-            small_orfs, error_bar, reverse = False)
-        if include_small_orfs:
-            sequence_errors.extend(small_orf_errors)
-
-        hxb2_found_orfs = [ORF(
-            o.name,
-            o.orientation,
-            pos_subtype_mapping[o.orientation][o.start],
-            pos_subtype_mapping[o.orientation][o.end],
-            o.distance,
-            str(o.aminoseq),
-            str(sequence[o.start:o.end].seq),
-        ) for o in sorted(sequence_orfs + sequence_small_orfs, key=lambda o: o.start)]
-
-        if include_packaging_signal:
-            missing_psi_locus = has_packaging_signal(alignment,
-                                                     psi_locus,
-                                                     const.PSI_ERROR_TOLERANCE)
-            if missing_psi_locus is not None:
-                sequence_errors.append(missing_psi_locus)
-
-        if include_rre:
-            missing_rre_locus = has_rev_response_element(alignment,
-                                                         rre_locus,
-                                                         const.RRE_ERROR_TOLERANCE
-                                                         )
-            if missing_rre_locus is not None:
-                sequence_errors.append(missing_rre_locus)
-
-        if check_major_splice_donor_site:
-            mutated_splice_donor_site = has_mutated_major_splice_donor_site(
-                alignment,
-                pos_mapping[hxb2_msd_site_locus],
-                pos_mapping[hxb2_msd_site_locus + 1],
-                const.DEFAULT_MSD_SEQUENCE)
-            if mutated_splice_donor_site is not None:
-                sequence_errors.append(mutated_splice_donor_site)
-
-        if run_hypermut is not None:
-            hypermutated = isHypermut(alignment)
-
-            if hypermutated is not None:
-                sequence_errors.append(hypermutated)
-
-        if check_long_deletion is not None:
-            long_deletion = has_long_deletion(sequence, alignment)
-            if long_deletion:
-                sequence_errors.append(long_deletion)
-
-        if check_nonhiv:
-            error = is_nonhiv(sequence.id, len(sequence), blast_rows)
-            if error:
-                sequence_errors.append(error)
-
-        if check_scramble:
-            error = is_scrambled(sequence.id, blast_rows)
-            if error:
-                sequence_errors.append(error)
-
-        if check_internal_inversion:
-            error = contains_internal_inversion(sequence.id, blast_rows)
-            if error:
-                sequence_errors.append(error)
-
-        orfs[sequence.id] = hxb2_found_orfs
-        if len(sequence_errors) == 0:
-            intact_sequences.append(sequence)
-        else:
-            non_intact_sequences.append(sequence)
-
-        # add the small orf errors after the intactness check if not included
-        if not include_small_orfs:
-            sequence_errors.extend(small_orf_errors)
-
-        errors[sequence.id] = sequence_errors
-
     intact_file = os.path.join(working_dir, "intact.fasta")
-    with open(intact_file, 'w') as f:
-       SeqIO.write(intact_sequences, f, "fasta")
-
     non_intact_file = os.path.join(working_dir, "nonintact.fasta")
-    with open(non_intact_file, 'w') as f:
-        SeqIO.write(non_intact_sequences, f, "fasta")
-    
+
+    with open(intact_file, 'w') as intact_writer, \
+         open(non_intact_file, 'w') as nonintact_writer:
+
+        for (sequence, blast_rows) in with_blast_rows(blast_it, iterate_sequences(input_file)):
+            sequence_errors = []
+
+            reverse_sequence = SeqRecord.SeqRecord(Seq.reverse_complement(sequence.seq),
+                                                   id = sequence.id + " [REVERSED]",
+                                                   name = sequence.name
+                                                   )
+
+            alignment = wrappers.mafft([reference, sequence])
+            reverse_alignment = wrappers.mafft([reference, reverse_sequence])
+
+            forward_score = alignment_score(alignment)
+            reverse_score = alignment_score(reverse_alignment)
+            if alignment_score(reverse_alignment) > alignment_score(alignment):
+                print("Reversing sequence " + sequence.id + "; forward score "
+                      + str(forward_score) + "; reverse score " + str(reverse_score))
+                alignment = reverse_alignment
+                sequence = reverse_sequence
+
+            sequence_orfs, orf_errors = has_reading_frames(
+                alignment,
+                sequence, False,
+                forward_orfs, error_bar)
+            sequence_errors.extend(orf_errors)
+
+            sequence_small_orfs, small_orf_errors = has_reading_frames(
+                alignment, sequence, True,
+                small_orfs, error_bar, reverse = False)
+            if include_small_orfs:
+                sequence_errors.extend(small_orf_errors)
+
+            hxb2_found_orfs = [ORF(
+                o.name,
+                o.orientation,
+                pos_subtype_mapping[o.orientation][o.start],
+                pos_subtype_mapping[o.orientation][o.end],
+                o.distance,
+                str(o.aminoseq),
+                str(sequence[o.start:o.end].seq),
+            ) for o in sorted(sequence_orfs + sequence_small_orfs, key=lambda o: o.start)]
+
+            if include_packaging_signal:
+                missing_psi_locus = has_packaging_signal(alignment,
+                                                         psi_locus,
+                                                         const.PSI_ERROR_TOLERANCE)
+                if missing_psi_locus is not None:
+                    sequence_errors.append(missing_psi_locus)
+
+            if include_rre:
+                missing_rre_locus = has_rev_response_element(alignment,
+                                                             rre_locus,
+                                                             const.RRE_ERROR_TOLERANCE
+                                                             )
+                if missing_rre_locus is not None:
+                    sequence_errors.append(missing_rre_locus)
+
+            if check_major_splice_donor_site:
+                mutated_splice_donor_site = has_mutated_major_splice_donor_site(
+                    alignment,
+                    pos_mapping[hxb2_msd_site_locus],
+                    pos_mapping[hxb2_msd_site_locus + 1],
+                    const.DEFAULT_MSD_SEQUENCE)
+                if mutated_splice_donor_site is not None:
+                    sequence_errors.append(mutated_splice_donor_site)
+
+            if run_hypermut is not None:
+                hypermutated = isHypermut(alignment)
+
+                if hypermutated is not None:
+                    sequence_errors.append(hypermutated)
+
+            if check_long_deletion is not None:
+                long_deletion = has_long_deletion(sequence, alignment)
+                if long_deletion:
+                    sequence_errors.append(long_deletion)
+
+            if check_nonhiv:
+                error = is_nonhiv(sequence.id, len(sequence), blast_rows)
+                if error:
+                    sequence_errors.append(error)
+
+            if check_scramble:
+                error = is_scrambled(sequence.id, blast_rows)
+                if error:
+                    sequence_errors.append(error)
+
+            if check_internal_inversion:
+                error = contains_internal_inversion(sequence.id, blast_rows)
+                if error:
+                    sequence_errors.append(error)
+
+            orfs[sequence.id] = hxb2_found_orfs
+            if len(sequence_errors) == 0:
+                SeqIO.write([sequence], intact_writer, "fasta")
+            else:
+                SeqIO.write([sequence], nonintact_writer, "fasta")
+
+            # add the small orf errors after the intactness check if not included
+            if not include_small_orfs:
+                sequence_errors.extend(small_orf_errors)
+
+            errors[sequence.id] = sequence_errors
+
     orf_file = os.path.join(working_dir, "orfs.json")
     with open(orf_file, 'w') as f:
         f.write(json.dumps({seq: [x.__dict__ for x in sorfs] \
