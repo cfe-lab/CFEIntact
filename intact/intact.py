@@ -498,7 +498,7 @@ aligner.open_gap_score = -1.5
 aligner.extend_gap_score = -0.2
 
 def has_reading_frames(
-    alignment, sequence, is_small,
+    alignment, sequence, reference, is_small,
     expected, error_bar, reverse = False
 ):
     """
@@ -509,7 +509,6 @@ def has_reading_frames(
     coordinates_mapping = coords.map_positions(alignment[0], alignment[1].seq)
     reverse_coordinates_mapping = coords.map_positions(alignment[1], alignment[0].seq)
 
-    reference = alignment[0].seq.replace("-", "")
     reference_aligned_mapping = coords.map_nonaligned_to_aligned_positions(reference, alignment[0].seq)
     query_aligned_mapping = coords.map_nonaligned_to_aligned_positions(sequence, alignment[1].seq)
 
@@ -539,7 +538,7 @@ def has_reading_frames(
             return 0
 
     def find_candidate_positions(e, q_start, q_end):
-        expected_nucleotides = str(reference[e.start:e.end])
+        expected_nucleotides = str(reference.seq[e.start:e.end])
         expected_aminoacids = translate(expected_nucleotides)
         q_start = coordinates_mapping[e.start]
         q_end = coordinates_mapping[e.end]
@@ -604,7 +603,7 @@ def has_reading_frames(
         exp_protein = best_match.expectedaminoseq.split("*")[0]
 
         got_nucleotides = sequence.seq[best_match.start:best_match.start + len(got_protein) * 3].upper()
-        exp_nucleotides = reference[e.start:e.end].upper()
+        exp_nucleotides = reference.seq[e.start:e.end].upper()
         if got_nucleotides:
             orf_alignment = aligner.align(exp_nucleotides, got_nucleotides)[0]
             best_match.distance = -1 * (orf_alignment.score / len(exp_nucleotides))
@@ -777,13 +776,12 @@ def intact( working_dir,
                 sequence = reverse_sequence
 
             sequence_orfs, orf_errors = has_reading_frames(
-                alignment,
-                sequence, False,
+                alignment, sequence, reference, False,
                 forward_orfs, error_bar)
             sequence_errors.extend(orf_errors)
 
             sequence_small_orfs, small_orf_errors = has_reading_frames(
-                alignment, sequence, True,
+                alignment, sequence, reference, True,
                 small_orfs, error_bar, reverse = False)
             if include_small_orfs:
                 sequence_errors.extend(small_orf_errors)
