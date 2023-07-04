@@ -65,7 +65,8 @@
             "error": "Scramble",
             "message": "Sequence is plus-scrambled."
         }
-    ],
+    ]
+}{
     "MN691959": [
         {
             "sequence_name": "MN691959",
@@ -77,7 +78,8 @@
             "error": "InternalStopInOrf",
             "message": "Smaller ORF tat_exon2 at 8375-8468 contains an internal stop codon"
         }
-    ],
+    ]
+}{
     "MN692074": [
         {
             "sequence_name": "MN692074",
@@ -134,8 +136,10 @@
             "error": "LongDeletion",
             "message": "Query sequence contains a long deletion."
         }
-    ],
-    "MN692145": [],
+    ]
+}{
+    "MN692145": []
+}{
     "MN090335": [
         {
             "sequence_name": "MN090335",
@@ -167,7 +171,8 @@
             "error": "InternalInversion",
             "message": "Sequence contains an internal inversion."
         }
-    ],
+    ]
+}{
     "MN090376": [
         {
             "sequence_name": "MN090376",
@@ -194,8 +199,10 @@
             "error": "InternalInversion",
             "message": "Sequence contains an internal inversion."
         }
-    ],
-    "MK115581.1": [],
+    ]
+}{
+    "MK115581.1": []
+}{
     "MK115690.1": [
         {
             "sequence_name": "MK115690.1",
@@ -207,7 +214,8 @@
             "error": "MajorSpliceDonorSiteMutated",
             "message": "Query sequence has a mutated splice donor site, G-."
         }
-    ],
+    ]
+}{
     "MK115571.1": [
         {
             "sequence_name": "MK115571.1",
@@ -219,21 +227,24 @@
             "error": "MajorSpliceDonorSiteMutated",
             "message": "Query sequence has a missing splice donor site, --."
         }
-    ],
+    ]
+}{
     "MK115514.1": [
         {
             "sequence_name": "MK115514.1",
             "error": "MajorSpliceDonorSiteMutated",
             "message": "Query sequence has a missing splice donor site, --."
         }
-    ],
+    ]
+}{
     "MK115488.1": [
         {
             "sequence_name": "MK115488.1",
             "error": "MajorSpliceDonorSiteMutated",
             "message": "Query sequence has a missing splice donor site, --."
         }
-    ],
+    ]
+}{
     "MK115030.1": [
         {
             "sequence_name": "MK115030.1",
@@ -245,8 +256,10 @@
             "error": "InternalInversion",
             "message": "Sequence contains an internal inversion."
         }
-    ],
-    "MK115498.1": [],
+    ]
+}{
+    "MK115498.1": []
+}{
     "MK115211.1": [
         {
             "sequence_name": "MK115211.1",
@@ -273,7 +286,8 @@
             "error": "InternalInversion",
             "message": "Sequence contains an internal inversion."
         }
-    ],
+    ]
+}{
     "MK115158.1": [
         {
             "sequence_name": "MK115158.1",
@@ -285,7 +299,8 @@
             "error": "MajorSpliceDonorSiteMutated",
             "message": "Query sequence has a missing splice donor site, --."
         }
-    ],
+    ]
+}{
     "MK114705.1": [
         {
             "sequence_name": "MK114705.1",
@@ -297,7 +312,8 @@
             "error": "Scramble",
             "message": "Sequence is plus-scrambled."
         }
-    ],
+    ]
+}{
     "MK114856.1": [
         {
             "sequence_name": "MK114856.1",
@@ -354,7 +370,8 @@
             "error": "APOBECHypermutationDetected",
             "message": "Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 3.639064030015132e-65)."
         }
-    ],
+    ]
+}{
     "MK115009.1": [
         {
             "sequence_name": "MK115009.1",
@@ -411,15 +428,18 @@
             "error": "InternalInversion",
             "message": "Sequence contains an internal inversion."
         }
-    ],
+    ]
+}{
     "MK115387.1": [
         {
             "sequence_name": "MK115387.1",
             "error": "InternalStopInOrf",
             "message": "Smaller ORF tat_exon2 at 8375-8468 contains an internal stop codon"
         }
-    ],
-    "MK115491.1": [],
+    ]
+}{
+    "MK115491.1": []
+}{
     "MK116110.1": [
         {
             "sequence_name": "MK116110.1",
@@ -441,16 +461,20 @@
             "error": "InternalInversion",
             "message": "Sequence contains an internal inversion."
         }
-    ],
-    "MK115527.1": [],
+    ]
+}{
+    "MK115527.1": []
+}{
     "MK114997.1": [
         {
             "sequence_name": "MK114997.1",
             "error": "InternalStopInOrf",
             "message": "ORF env at 6223-8794 contains an internal stop codon"
         }
-    ],
-    "MK115518.1": [],
+    ]
+}{
+    "MK115518.1": []
+}{
     "MK115065.1": [
         {
             "sequence_name": "MK115065.1",
@@ -472,7 +496,8 @@
             "error": "InternalInversion",
             "message": "Sequence contains an internal inversion."
         }
-    ],
+    ]
+}{
     "MK115464.1": [
         {
             "sequence_name": "MK115464.1",
@@ -524,8 +549,10 @@
             "error": "APOBECHypermutationDetected",
             "message": "Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 4.937891251407691e-23)."
         }
-    ],
-    "MK115530.1": [],
+    ]
+}{
+    "MK115530.1": []
+}{
     "MK115520.1": [
         {
             "sequence_name": "MK115520.1",
@@ -542,8 +569,10 @@
             "error": "InternalInversion",
             "message": "Sequence contains an internal inversion."
         }
-    ],
-    "MK115503.1": [],
+    ]
+}{
+    "MK115503.1": []
+}{
     "MK115570.1": [
         {
             "sequence_name": "MK115570.1",
@@ -555,8 +584,10 @@
             "error": "MajorSpliceDonorSiteMutated",
             "message": "Query sequence has a missing splice donor site, --."
         }
-    ],
-    "MK115509.1": [],
+    ]
+}{
+    "MK115509.1": []
+}{
     "MK115702.1": [
         {
             "sequence_name": "MK115702.1",
@@ -578,7 +609,8 @@
             "error": "InternalInversion",
             "message": "Sequence contains an internal inversion."
         }
-    ],
+    ]
+}{
     "MK115095.1": [
         {
             "sequence_name": "MK115095.1",
@@ -625,16 +657,20 @@
             "error": "APOBECHypermutationDetected",
             "message": "Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 8.33506116803153e-40)."
         }
-    ],
-    "MK115490.1": [],
-    "MK115576.1": [],
+    ]
+}{
+    "MK115490.1": []
+}{
+    "MK115576.1": []
+}{
     "OQ092466": [
         {
             "sequence_name": "OQ092466",
             "error": "MajorSpliceDonorSiteMutated",
             "message": "Query sequence has a mutated splice donor site, GC."
         }
-    ],
+    ]
+}{
     "OQ092463": [
         {
             "sequence_name": "OQ092463",
@@ -646,14 +682,16 @@
             "error": "MajorSpliceDonorSiteMutated",
             "message": "Query sequence has a missing splice donor site, --."
         }
-    ],
+    ]
+}{
     "OQ092465": [
         {
             "sequence_name": "OQ092465",
             "error": "MajorSpliceDonorSiteMutated",
             "message": "Query sequence has a mutated splice donor site, GA."
         }
-    ],
+    ]
+}{
     "OQ092462": [
         {
             "sequence_name": "OQ092462",
@@ -665,7 +703,8 @@
             "error": "MajorSpliceDonorSiteMutated",
             "message": "Query sequence has a missing splice donor site, --."
         }
-    ],
+    ]
+}{
     "OQ092464": [
         {
             "sequence_name": "OQ092464",
@@ -677,7 +716,8 @@
             "error": "MajorSpliceDonorSiteMutated",
             "message": "Query sequence has a missing splice donor site, --."
         }
-    ],
+    ]
+}{
     "OQ092467": [
         {
             "sequence_name": "OQ092467",

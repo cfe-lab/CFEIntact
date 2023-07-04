@@ -725,8 +725,6 @@ def intact( working_dir,
         Name of a file containing all consensus sequences.
     """
 
-    orfs = {}
-    errors = {}
     pos_mapping = st.map_hxb2_positions_to_subtype(subtype)
     pos_subtype_mapping = {
         "forward": st.map_subtype_positions_to_hxb2("forward", subtype),
@@ -751,9 +749,13 @@ def intact( working_dir,
 
     intact_file = os.path.join(working_dir, "intact.fasta")
     non_intact_file = os.path.join(working_dir, "nonintact.fasta")
+    orf_file = os.path.join(working_dir, "orfs.json")
+    error_file = os.path.join(working_dir, "errors.json")
 
     with open(intact_file, 'w') as intact_writer, \
-         open(non_intact_file, 'w') as nonintact_writer:
+         open(non_intact_file, 'w') as nonintact_writer, \
+         open(orf_file, 'w') as orfs_writer, \
+         open(error_file, 'w') as errors_writer:
 
         for (sequence, blast_rows) in with_blast_rows(blast_it, iterate_sequences(input_file)):
             sequence_errors = []
@@ -846,7 +848,6 @@ def intact( working_dir,
                 if error:
                     sequence_errors.append(error)
 
-            orfs[sequence.id] = hxb2_found_orfs
             if len(sequence_errors) == 0:
                 SeqIO.write([sequence], intact_writer, "fasta")
             else:
@@ -856,19 +857,11 @@ def intact( working_dir,
             if not include_small_orfs:
                 sequence_errors.extend(small_orf_errors)
 
-            errors[sequence.id] = sequence_errors
+            orfs_writer.write(json.dumps({sequence.id: [x.__dict__ for x in hxb2_found_orfs]},
+                                         indent=4))
 
-    orf_file = os.path.join(working_dir, "orfs.json")
-    with open(orf_file, 'w') as f:
-        f.write(json.dumps({seq: [x.__dict__ for x in sorfs] \
-                            for seq, sorfs in orfs.items()},
-                            indent=4))
-
-    error_file = os.path.join(working_dir, "errors.json")
-    with open(error_file, 'w') as f:
-        f.write(json.dumps({seq: [x.__dict__ for x in serrors] \
-                            for seq,serrors in errors.items()}, 
-                            indent=4))
+            errors_writer.write(json.dumps({sequence.id: [x.__dict__ for x in sequence_errors]},
+                                           indent=4))
 
     return intact_file, non_intact_file, orf_file, error_file
 #/end def intact
