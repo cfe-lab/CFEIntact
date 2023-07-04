@@ -17,6 +17,7 @@ import util.constants as const
 import util.subtypes as st
 import util.wrappers as wrappers
 import util.log as log
+import util.coordinates as coords
 
 
 WRONGORFNUMBER_ERROR = "WrongORFNumber"
@@ -505,7 +506,6 @@ def has_reading_frames(
     Check for presence of small reading frames
     """
 
-    import util.coordinates as coords
     coordinates_mapping = coords.map_positions(alignment[0], alignment[1].seq)
     reverse_coordinates_mapping = coords.map_positions(alignment[1], alignment[0].seq)
 
