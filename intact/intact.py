@@ -490,6 +490,13 @@ def alignment_score(alignment):
 
     return sum([a==b for a, b in zip(alignment[0].seq, alignment[1].seq)])
 
+aligner = Align.PairwiseAligner()
+aligner.mode = 'global'
+aligner.match_score = 2
+aligner.mismatch_score = -1
+aligner.open_gap_score = -1.5
+aligner.extend_gap_score = -0.2
+
 def has_reading_frames(
     alignment, sequence, is_small,
     expected, error_bar, reverse = False
@@ -505,13 +512,6 @@ def has_reading_frames(
     reference = alignment[0].seq.replace("-", "")
     reference_aligned_mapping = coords.map_nonaligned_to_aligned_positions(reference, alignment[0].seq)
     query_aligned_mapping = coords.map_nonaligned_to_aligned_positions(sequence, alignment[1].seq)
-
-    aligner = Align.PairwiseAligner()
-    aligner.mode = 'global'
-    aligner.match_score = 2
-    aligner.mismatch_score = -1
-    aligner.open_gap_score = -1.5
-    aligner.extend_gap_score = -0.2
 
     def translate(seq, frame = 0, to_stop = False):
         for_translation = seq[frame:]
