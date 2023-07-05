@@ -606,10 +606,10 @@ def has_reading_frames(
         exp_nucleotides = reference.seq[e.start:e.end].upper()
         if got_nucleotides:
             orf_alignment = aligner.align(exp_nucleotides, got_nucleotides)[0]
-            best_match.distance = -1 * (orf_alignment.score / len(exp_nucleotides))
+            best_match.distance = aligner.match_score - (orf_alignment.score / len(exp_nucleotides))
         else:
             orf_alignment = (exp_nucleotides, "-" * len(exp_nucleotides))
-            best_match.distance = len(exp_nucleotides) ** 2
+            best_match.distance = aligner.match_score - ((aligner.open_gap_score + len(exp_nucleotides) * aligner.extend_gap_score) / len(exp_nucleotides))
 
         deletions = max(0, len(exp_protein) - len(got_protein)) * 3
         insertions = max(0, len(got_protein) - len(exp_protein)) * 3
