@@ -491,6 +491,22 @@ def alignment_score(alignment):
 
     return sum([a==b for a, b in zip(alignment[0].seq, alignment[1].seq)])
 
+
+def get_biggest_protein(has_start_codon, aminoseq):
+    def skip_to_startcodon(x):
+        index = x.find("M")
+        if index >= 0:
+            return x[index:]
+        else:
+            return ""
+
+    split_strings = aminoseq.split("*")
+    parts = [x + "*" for x in split_strings[:-1]] + [split_strings[-1]]
+    subparts = [skip_to_startcodon(x) for x in parts] if has_start_codon else parts
+    longest = max(subparts, key=len)
+    return longest
+
+
 aligner = Align.PairwiseAligner()
 aligner.mode = 'global'
 aligner.match_score = 2
@@ -599,8 +615,9 @@ def has_reading_frames(
         best_match = find_real_correspondence(e)
         matches.append(best_match)
 
-        got_protein = best_match.aminoseq.split("*")[0]
-        exp_protein = best_match.expectedaminoseq.split("*")[0]
+        has_start_codon = best_match.expectedaminoseq[0] == 'M'
+        got_protein = get_biggest_protein(has_start_codon, best_match.aminoseq)
+        exp_protein = get_biggest_protein(has_start_codon, best_match.expectedaminoseq)
 
         got_nucleotides = sequence.seq[best_match.start:best_match.start + len(got_protein) * 3].upper()
         exp_nucleotides = reference.seq[e.start:e.end].upper()
