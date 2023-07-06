@@ -621,17 +621,15 @@ def has_reading_frames(
         got_protein = best_match.protein
         exp_protein = get_biggest_protein(has_start_codon, best_match.expectedaminoseq)
 
-        got_nucleotides = sequence.seq[best_match.start:best_match.start + len(got_protein) * 3].upper()
-        exp_nucleotides = reference.seq[e.start:e.end].upper()
-        if got_nucleotides:
-            orf_alignment = aligner.align(exp_nucleotides, got_nucleotides)[0]
-            best_match.distance = aligner.match_score - (orf_alignment.score / len(exp_nucleotides))
-        else:
-            orf_alignment = (exp_nucleotides, "-" * len(exp_nucleotides))
-            best_match.distance = aligner.match_score - ((aligner.open_gap_score + len(exp_nucleotides) * aligner.extend_gap_score) / len(exp_nucleotides))
-
         deletions = max(0, len(exp_protein) - len(got_protein)) * 3
         insertions = max(0, len(got_protein) - len(exp_protein)) * 3
+
+        if got_protein:
+            orf_alignment = aligner.align(exp_protein, got_protein)[0]
+            best_match.distance = aligner.match_score - (orf_alignment.score / len(exp_protein))
+        else:
+            orf_alignment = (exp_protein, "-" * len(exp_protein))
+            best_match.distance = aligner.match_score - ((aligner.open_gap_score + len(exp_protein) * aligner.extend_gap_score) / len(exp_protein))
 
         # Max deletion allowed in ORF exceeded
         if deletions > e.deletion_tolerence:
@@ -672,21 +670,25 @@ def has_reading_frames(
 
             continue
 
-        impacted_by_indels = get_indel_impact(orf_alignment)
+        got_nucleotides = sequence.seq[best_match.start:best_match.start + len(got_protein) * 3].upper()
+        if got_nucleotides:
+            exp_nucleotides = reference.seq[e.start:e.end].upper()
+            orf_alignment = aligner.align(exp_nucleotides, got_nucleotides)[0]
+            impacted_by_indels = get_indel_impact(orf_alignment)
 
-        # Check for frameshift in ORF
-        if impacted_by_indels >= e.deletion_tolerence + 0.10 * len(exp_nucleotides):
+            # Check for frameshift in ORF
+            if impacted_by_indels >= e.deletion_tolerence + 0.10 * len(exp_nucleotides):
 
-            errors.append(IntactnessError(
-                sequence.id, FRAMESHIFTINORF_ERROR,
-                ("Smaller " if is_small else "")
-                + "ORF " + str(e.name) + " at " + str(e.start) 
-                + "-" + str(e.end) 
-                + " contains out of frame indels that impact " + str(impacted_by_indels)
-                + " positions."
-            ))
+                errors.append(IntactnessError(
+                    sequence.id, FRAMESHIFTINORF_ERROR,
+                    ("Smaller " if is_small else "")
+                    + "ORF " + str(e.name) + " at " + str(e.start) 
+                    + "-" + str(e.end) 
+                    + " contains out of frame indels that impact " + str(impacted_by_indels)
+                    + " positions."
+                ))
 
-            continue
+                continue
 
 
     return matches, errors
