@@ -61,16 +61,32 @@ class ExpectedORF:
     start: int
     end: int
     deletion_tolerence: int
+    nucleotides: str
+    aminoacids: str
+    protein: str
 
     @staticmethod
-    def subtyped(pos_mapping, name, start, end, deletion_tolerence):
+    def subtyped(reference, pos_mapping, name, start, end, deletion_tolerence):
         vpr_defective_insertion_pos = 5772
         start = start if start < vpr_defective_insertion_pos else start - 1
         end = end if end < vpr_defective_insertion_pos else end - 1
 
         start_s = pos_mapping[start - 1]
         end_s = pos_mapping[end]
-        return ExpectedORF(name, start_s, end_s, deletion_tolerence)
+
+        nucleotides = str(reference.seq[start_s:end_s])
+        aminoacids = translate(nucleotides)
+        has_start_codon = aminoacids[0] == 'M'
+        protein = get_biggest_protein(has_start_codon, aminoacids)
+
+        return ExpectedORF(name=name,
+                           start=start_s,
+                           end=end_s,
+                           deletion_tolerence=deletion_tolerence,
+                           nucleotides=nucleotides,
+                           aminoacids=aminoacids,
+                           protein=protein,
+                           )
 
 @dataclass
 class ReceivedORF:
@@ -87,8 +103,7 @@ class CandidateORF:
     orientation: str
     distance: float
     protein: str
-    aminoseq: str
-    expectedaminoseq: str
+    aminoacids: str
 
 @dataclass
 class BlastRow:
@@ -494,7 +509,7 @@ def alignment_score(alignment):
     return sum([a==b for a, b in zip(alignment[0].seq, alignment[1].seq)])
 
 
-def get_biggest_protein(has_start_codon, aminoseq):
+def get_biggest_protein(has_start_codon, aminoacids):
     def skip_to_startcodon(x):
         index = x.find("M")
         if index >= 0:
@@ -502,7 +517,7 @@ def get_biggest_protein(has_start_codon, aminoseq):
         else:
             return ""
 
-    parts = aminoseq.split("*")
+    parts = aminoacids.split("*")
     subparts = [skip_to_startcodon(x) for x in parts] if has_start_codon else parts
     longest = max(subparts, key=len)
     return longest
@@ -514,6 +529,21 @@ aligner.match_score = 2
 aligner.mismatch_score = -1
 aligner.open_gap_score = -1.5
 aligner.extend_gap_score = -0.2
+
+
+def has_start_codon(orf):
+    return orf.aminoacids[0] == "M"
+
+
+def has_stop_codon(orf):
+    return orf.aminoacids[-1] == "*"
+
+
+def translate(seq, frame = 0, to_stop = False):
+    for_translation = seq[frame:]
+    for_translation += 'N' * ({0: 0, 1: 2, 2: 1}[len(for_translation) % 3])
+    return Seq.translate(for_translation, to_stop = to_stop)
+
 
 def has_reading_frames(
     alignment, sequence, reference, is_small,
@@ -528,11 +558,6 @@ def has_reading_frames(
 
     reference_aligned_mapping = coords.map_nonaligned_to_aligned_positions(reference, alignment[0].seq)
     query_aligned_mapping = coords.map_nonaligned_to_aligned_positions(sequence, alignment[1].seq)
-
-    def translate(seq, frame = 0, to_stop = False):
-        for_translation = seq[frame:]
-        for_translation += 'N' * ({0: 0, 1: 2, 2: 1}[len(for_translation) % 3])
-        return Seq.translate(for_translation, to_stop = to_stop)
 
     try:
         query_aminoacids_table = [translate(sequence.seq, i) for i in range(3)]
@@ -555,31 +580,29 @@ def has_reading_frames(
             return 0
 
     def find_candidate_positions(e, q_start, q_end):
-        expected_nucleotides = str(reference.seq[e.start:e.end])
-        expected_aminoacids = translate(expected_nucleotides)
+        expected_nucleotides = e.nucleotides
+        expected_aminoacids = e.aminoacids
         q_start = coordinates_mapping[e.start]
         q_end = coordinates_mapping[e.end]
         got_nucleotides = sequence.seq[q_start:q_end]
         got_aminoacids = translate(got_nucleotides)
         q_start_a = q_start // 3
         q_end_a = q_end // 3
-        has_start_codon = expected_aminoacids[0] == 'M'
-        has_stop_codon = expected_aminoacids[-1] == '*'
         n = len(sequence.seq) - 1
 
         for frame in range(3):
             aminoacids = query_aminoacids_table[frame]
             for start_direction in [-1, +1]:
                 for end_direction in [-1, +1]:
-                    closest_start_a = q_start_a if not has_start_codon else find_closest(aminoacids, q_start_a, start_direction, 'M')
-                    closest_end_a = q_end_a if not has_stop_codon else find_closest(aminoacids, q_end_a, end_direction, '*')
+                    closest_start_a = q_start_a if not has_start_codon(e) else find_closest(aminoacids, q_start_a, start_direction, 'M')
+                    closest_end_a = q_end_a if not has_stop_codon(e) else find_closest(aminoacids, q_end_a, end_direction, '*')
                     got_aminoacids = aminoacids[closest_start_a:closest_end_a + 1]
                     dist = 1 - jaro_similarity(got_aminoacids, expected_aminoacids)
                     closest_start = min(n, (closest_start_a * 3) + frame)
                     closest_end = min(n + 1, (closest_end_a * 3) + 3 + frame)
-                    got_protein = get_biggest_protein(has_start_codon, got_aminoacids)
+                    got_protein = get_biggest_protein(has_start_codon(e), got_aminoacids)
                     yield CandidateORF(e.name, closest_start, closest_end, "forward",
-                                       dist, got_protein, got_aminoacids, expected_aminoacids)
+                                       dist, got_protein, got_aminoacids)
 
     def find_real_correspondence(e):
         q_start = coordinates_mapping[e.start]
@@ -617,9 +640,8 @@ def has_reading_frames(
         best_match = find_real_correspondence(e)
         matches.append(best_match)
 
-        has_start_codon = best_match.expectedaminoseq[0] == 'M'
         got_protein = best_match.protein
-        exp_protein = get_biggest_protein(has_start_codon, best_match.expectedaminoseq)
+        exp_protein = e.protein
 
         deletions = max(0, len(exp_protein) - len(got_protein)) * 3
         insertions = max(0, len(got_protein) - len(exp_protein)) * 3
@@ -634,7 +656,7 @@ def has_reading_frames(
         # Max deletion allowed in ORF exceeded
         if deletions > e.deletion_tolerence:
 
-            if "*" in best_match.aminoseq[:(-e.deletion_tolerence // 3)]:
+            if "*" in best_match.aminoacids[:(-e.deletion_tolerence // 3)]:
                 errors.append(IntactnessError(
                     sequence.id, INTERNALSTOP_ERROR,
                     ("Smaller " if is_small else "")
@@ -745,6 +767,7 @@ def intact( working_dir,
         Name of a file containing all consensus sequences.
     """
 
+    reference = st.subtype_sequence(subtype)
     pos_mapping = st.map_hxb2_positions_to_subtype(subtype)
     pos_subtype_mapping = {
         "forward": st.map_subtype_positions_to_hxb2("forward", subtype),
@@ -754,7 +777,7 @@ def intact( working_dir,
     # convert ORF positions to appropriate subtype
     forward_orfs, reverse_orfs, small_orfs = [
     [
-        ExpectedORF.subtyped(pos_mapping, n, s, e, delta) \
+        ExpectedORF.subtyped(reference, pos_mapping, n, s, e, delta) \
         for (n, s, e, delta) in orfs
     ] \
     for orfs in [hxb2_forward_orfs, hxb2_reverse_orfs, hxb2_small_orfs]
@@ -763,9 +786,6 @@ def intact( working_dir,
     # convert PSI locus and RRE locus to appropriate subtype
     psi_locus = [pos_mapping[x] for x in hxb2_psi_locus]
     rre_locus = [pos_mapping[x] for x in hxb2_rre_locus]
-
-    reference = st.subtype_sequence(subtype)
-    blast_it = blast_iterate_inf(subtype, input_file) if check_internal_inversion or check_nonhiv or check_scramble else iterate_empty_lists()
 
     intact_file = os.path.join(working_dir, "intact.fasta")
     non_intact_file = os.path.join(working_dir, "nonintact.fasta")
@@ -777,6 +797,7 @@ def intact( working_dir,
          open(orf_file, 'w') as orfs_writer, \
          open(error_file, 'w') as errors_writer:
 
+        blast_it = blast_iterate_inf(subtype, input_file) if check_internal_inversion or check_nonhiv or check_scramble else iterate_empty_lists()
         for (sequence, blast_rows) in with_blast_rows(blast_it, iterate_sequences(input_file)):
             sequence_errors = []
 
@@ -814,7 +835,7 @@ def intact( working_dir,
                 pos_subtype_mapping[o.orientation][o.end],
                 o.distance,
                 str(o.protein),
-                str(o.aminoseq),
+                str(o.aminoacids),
                 str(sequence[o.start:o.end].seq),
             ) for o in sorted(sequence_orfs + sequence_small_orfs, key=lambda o: o.start)]
 
