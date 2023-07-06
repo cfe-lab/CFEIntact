@@ -45,17 +45,6 @@ class IntactnessError:
     message: str
 
 @dataclass
-class ORF:
-    name: str
-    orientation: str
-    start: int
-    end: int
-    distance: str
-    protein: str
-    aminoacids: str
-    nucleotides: str
-
-@dataclass
 class ExpectedORF:
     name: str
     start: int
@@ -89,13 +78,6 @@ class ExpectedORF:
                            )
 
 @dataclass
-class ReceivedORF:
-    start: int
-    end: int
-    deleted_count: int
-    inserted_count: int
-
-@dataclass
 class CandidateORF:
     name: str
     start: int
@@ -104,6 +86,17 @@ class CandidateORF:
     distance: float
     protein: str
     aminoacids: str
+
+@dataclass
+class FoundORF:
+    name: str
+    orientation: str
+    start: int
+    end: int
+    distance: str
+    protein: str
+    aminoacids: str
+    nucleotides: str
 
 @dataclass
 class BlastRow:
@@ -828,7 +821,7 @@ def intact( working_dir,
             if include_small_orfs:
                 sequence_errors.extend(small_orf_errors)
 
-            hxb2_found_orfs = [ORF(
+            hxb2_found_orfs = [FoundORF(
                 o.name,
                 o.orientation,
                 pos_subtype_mapping[o.orientation][o.start],
