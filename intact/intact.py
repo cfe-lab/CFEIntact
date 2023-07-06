@@ -51,6 +51,7 @@ class ORF:
     start: int
     end: int
     distance: str
+    protein: str
     aminoacids: str
     nucleotides: str
 
@@ -85,6 +86,7 @@ class CandidateORF:
     end: int
     orientation: str
     distance: float
+    protein: str
     aminoseq: str
     expectedaminoseq: str
 
@@ -500,8 +502,7 @@ def get_biggest_protein(has_start_codon, aminoseq):
         else:
             return ""
 
-    split_strings = aminoseq.split("*")
-    parts = [x + "*" for x in split_strings[:-1]] + [split_strings[-1]]
+    parts = aminoseq.split("*")
     subparts = [skip_to_startcodon(x) for x in parts] if has_start_codon else parts
     longest = max(subparts, key=len)
     return longest
@@ -576,8 +577,9 @@ def has_reading_frames(
                     dist = 1 - jaro_similarity(got_aminoacids, expected_aminoacids)
                     closest_start = min(n, (closest_start_a * 3) + frame)
                     closest_end = min(n + 1, (closest_end_a * 3) + 3 + frame)
+                    got_protein = get_biggest_protein(has_start_codon, got_aminoacids)
                     yield CandidateORF(e.name, closest_start, closest_end, "forward",
-                                       dist, got_aminoacids, expected_aminoacids)
+                                       dist, got_protein, got_aminoacids, expected_aminoacids)
 
     def find_real_correspondence(e):
         q_start = coordinates_mapping[e.start]
@@ -616,7 +618,7 @@ def has_reading_frames(
         matches.append(best_match)
 
         has_start_codon = best_match.expectedaminoseq[0] == 'M'
-        got_protein = get_biggest_protein(has_start_codon, best_match.aminoseq)
+        got_protein = best_match.protein
         exp_protein = get_biggest_protein(has_start_codon, best_match.expectedaminoseq)
 
         got_nucleotides = sequence.seq[best_match.start:best_match.start + len(got_protein) * 3].upper()
@@ -809,6 +811,7 @@ def intact( working_dir,
                 pos_subtype_mapping[o.orientation][o.start],
                 pos_subtype_mapping[o.orientation][o.end],
                 o.distance,
+                str(o.protein),
                 str(o.aminoseq),
                 str(sequence[o.start:o.end].seq),
             ) for o in sorted(sequence_orfs + sequence_small_orfs, key=lambda o: o.start)]

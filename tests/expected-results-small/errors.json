@@ -114,7 +114,7 @@
         {
             "sequence_name": "MN692074",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF tat_exon2 at 8375-8468 contains out of frame indels that impact 86 positions."
+            "message": "Smaller ORF tat_exon2 at 8375-8468 contains out of frame indels that impact 85 positions."
         },
         {
             "sequence_name": "MN692074",

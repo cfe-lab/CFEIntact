@@ -114,7 +114,7 @@
         {
             "sequence_name": "MN692074",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF tat_exon2 at 8375-8468 contains out of frame indels that impact 86 positions."
+            "message": "Smaller ORF tat_exon2 at 8375-8468 contains out of frame indels that impact 85 positions."
         },
         {
             "sequence_name": "MN692074",
@@ -635,7 +635,7 @@
         {
             "sequence_name": "MK115095.1",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon1 at 5829-6044 can have maximum deletions 30, got 51"
+            "message": "Smaller ORF tat_exon1 at 5829-6044 can have maximum deletions 30, got 54"
         },
         {
             "sequence_name": "MK115095.1",
