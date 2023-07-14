@@ -56,6 +56,8 @@ def cli():
 @click.option(
     '--include-small-orfs/--exclude-small-orfs', default=False)
 @click.option(
+    '--output-csv/--output-json', default=False)
+@click.option(
     '--working-folder',
     default=os.getcwd()
 )
@@ -63,7 +65,7 @@ def cli():
 def intact(input_file, subtype, include_packaging_signal,
            include_rre, check_major_splice_donor_site, run_hypermut,
            check_long_deletion, check_nonhiv, check_scramble, check_internal_inversion,
-           include_small_orfs, working_folder):
+           include_small_orfs, output_csv, working_folder):
     """
     Check consensus sequences for intactness.
     """
@@ -79,7 +81,7 @@ def intact(input_file, subtype, include_packaging_signal,
             folder, input_file, subtype, include_packaging_signal, include_rre,
             check_major_splice_donor_site, run_hypermut,
             check_long_deletion, check_nonhiv, check_scramble, check_internal_inversion,
-            include_small_orfs
+            include_small_orfs, output_csv
         )
     except Exception as e:
         raise e

@@ -791,6 +791,7 @@ def intact( working_dir,
             check_scramble,
             check_internal_inversion,
             include_small_orfs,
+            output_csv,
             hxb2_forward_orfs = const.DEFAULT_FORWARD_ORFs,
             hxb2_reverse_orfs = const.DEFAULT_REVERSE_ORFS,
             hxb2_small_orfs = const.DEFAULT_SMALL_FORWARD_ORFS,
@@ -829,7 +830,7 @@ def intact( working_dir,
     psi_locus = [pos_mapping[x] for x in hxb2_psi_locus]
     rre_locus = [pos_mapping[x] for x in hxb2_rre_locus]
 
-    with OutputWriter(working_dir, "json") as writer:
+    with OutputWriter(working_dir, "csv" if output_csv else "json") as writer:
 
         blast_it = blast_iterate_inf(subtype, input_file) if check_internal_inversion or check_nonhiv or check_scramble else iterate_empty_lists()
         for (sequence, blast_rows) in with_blast_rows(blast_it, iterate_sequences(input_file)):
