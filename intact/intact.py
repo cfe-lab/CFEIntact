@@ -6,6 +6,7 @@ import sys
 import uuid
 import tempfile
 import csv
+import dataclasses
 from dataclasses import dataclass
 from collections import Counter
 import Bio
@@ -735,13 +736,10 @@ class OutputWriter:
         self.fmt = fmt
         self.intact_path = os.path.join(working_dir, "intact.fasta")
         self.non_intact_path = os.path.join(working_dir, "nonintact.fasta")
-        self.orf_path = os.path.join(working_dir, "orfs.json")
-        self.error_path = os.path.join(working_dir, "errors.json")
+        self.orf_path = os.path.join(working_dir, f"orfs.{fmt}")
+        self.error_path = os.path.join(working_dir, f"errors.{fmt}")
 
-        if fmt == "json":
-            self.orfs = {}
-            self.errors = {}
-        else:
+        if fmt not in ("json", "csv"):
             raise ValueError(f"Unrecognized output format {fmt}")
 
 
@@ -750,6 +748,16 @@ class OutputWriter:
         self.nonintact_file = open(self.non_intact_path, 'w')
         self.orfs_file = open(self.orf_path, 'w')
         self.errors_file = open(self.error_path, 'w')
+
+        if self.fmt == "json":
+            self.orfs = {}
+            self.errors = {}
+        elif self.fmt == "csv":
+            self.orfs_writer = csv.writer(self.orfs_file)
+            self.orfs_writer.writerow([field.name for field in dataclasses.fields(CandidateORF)])
+            self.errors_writer = csv.writer(self.errors_file)
+            self.errors_writer.writerow([field.name for field in dataclasses.fields(IntactnessError)])
+
         return self
 
 
@@ -777,6 +785,11 @@ class OutputWriter:
         if self.fmt == "json":
             self.orfs[sequence.id] = orfs
             self.errors[sequence.id] = errors
+        elif self.fmt == "csv":
+            for orf in orfs:
+                self.orfs_writer.writerow(orf.values())
+            for error in errors:
+                self.errors_writer.writerow(error.values())
 
 
 def intact( working_dir,
