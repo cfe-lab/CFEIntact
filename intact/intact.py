@@ -730,6 +730,55 @@ def with_blast_rows(blast_it, sequence_it):
             yield (sequence, [])
 
 
+class OutputWriter:
+    def __init__(self, working_dir, fmt):
+        self.fmt = fmt
+        self.intact_file = os.path.join(working_dir, "intact.fasta")
+        self.non_intact_file = os.path.join(working_dir, "nonintact.fasta")
+        self.orf_file = os.path.join(working_dir, "orfs.json")
+        self.error_file = os.path.join(working_dir, "errors.json")
+
+        if fmt == "json":
+            self.orfs = {}
+            self.errors = {}
+        else:
+            raise ValueError(f"Unrecognized output format {fmt}")
+
+
+    def __enter__(self, *args):
+        self.intact_writer = open(self.intact_file, 'w')
+        self.nonintact_writer = open(self.non_intact_file, 'w')
+        self.orfs_writer = open(self.orf_file, 'w')
+        self.errors_writer = open(self.error_file, 'w')
+        return self
+
+
+    def __exit__(self, *args):
+        if self.fmt == "json":
+            json.dump(self.orfs, self.orfs_writer, indent=4)
+            json.dump(self.errors, self.errors_writer, indent=4)
+
+        self.intact_writer.close()
+        self.nonintact_writer.close()
+        self.orfs_writer.close()
+        self.errors_writer.close()
+
+        log.info('Intact sequences written to ' + self.intact_file)
+        log.info('Non-intact sequences written to ' + self.non_intact_file)
+        log.info('ORFs for all sequences written to ' + self.orf_file)
+        log.info('JSON-encoded intactness error information written to ' + self.error_file)
+
+
+    def write(self, sequence, is_intact, orfs, errors):
+        fastawriter = self.intact_writer if is_intact else self.nonintact_writer
+        SeqIO.write([sequence], fastawriter, "fasta")
+        fastawriter.flush()
+
+        if self.fmt == "json":
+            self.orfs[sequence.id] = orfs
+            self.errors[sequence.id] = errors
+
+
 def intact( working_dir,
             input_file,
             subtype,
@@ -780,15 +829,7 @@ def intact( working_dir,
     psi_locus = [pos_mapping[x] for x in hxb2_psi_locus]
     rre_locus = [pos_mapping[x] for x in hxb2_rre_locus]
 
-    intact_file = os.path.join(working_dir, "intact.fasta")
-    non_intact_file = os.path.join(working_dir, "nonintact.fasta")
-    orf_file = os.path.join(working_dir, "orfs.json")
-    error_file = os.path.join(working_dir, "errors.json")
-
-    with open(intact_file, 'w') as intact_writer, \
-         open(non_intact_file, 'w') as nonintact_writer, \
-         open(orf_file, 'w') as orfs_writer, \
-         open(error_file, 'w') as errors_writer:
+    with OutputWriter(working_dir, "json") as writer:
 
         blast_it = blast_iterate_inf(subtype, input_file) if check_internal_inversion or check_nonhiv or check_scramble else iterate_empty_lists()
         for (sequence, blast_rows) in with_blast_rows(blast_it, iterate_sequences(input_file)):
@@ -882,25 +923,14 @@ def intact( working_dir,
                 if error:
                     sequence_errors.append(error)
 
-            if len(sequence_errors) == 0:
-                SeqIO.write([sequence], intact_writer, "fasta")
-                intact_writer.flush()
-            else:
-                SeqIO.write([sequence], nonintact_writer, "fasta")
-                nonintact_writer.flush()
+            is_intact = len(sequence_errors) == 0
 
             # add the small orf errors after the intactness check if not included
             if not include_small_orfs:
                 sequence_errors.extend(small_orf_errors)
 
-            orfs_writer.write(json.dumps({sequence.id: [x.__dict__ for x in hxb2_found_orfs]},
-                                         indent=4))
-            orfs_writer.flush()
-
-            errors_writer.write(json.dumps({sequence.id: [x.__dict__ for x in sequence_errors]},
-                                           indent=4))
-            errors_writer.flush()
-
-    return intact_file, non_intact_file, orf_file, error_file
+            orfs = [x.__dict__ for x in hxb2_found_orfs]
+            errors = [x.__dict__ for x in sequence_errors]
+            writer.write(sequence, is_intact, orfs, errors)
 #/end def intact
 #/end intact.py

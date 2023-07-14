@@ -75,17 +75,12 @@ def intact(input_file, subtype, include_packaging_signal,
     folder = get_working_folder(working_folder)
 
     try:
-        intact_sequences, non_intact_sequences, orfs, errors = it.intact(
+        it.intact(
             folder, input_file, subtype, include_packaging_signal, include_rre,
             check_major_splice_donor_site, run_hypermut,
             check_long_deletion, check_nonhiv, check_scramble, check_internal_inversion,
             include_small_orfs
         )
-        log.info('Intact sequences written to ' + intact_sequences)
-        log.info('Non-intact sequences written to ' + non_intact_sequences)
-        log.info('ORFs for all sequences written to ' + orfs)
-        log.info('JSON-encoded intactness error information written to ' 
-                + errors)
     except Exception as e:
         raise e
 

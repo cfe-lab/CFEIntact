@@ -65,8 +65,7 @@
             "error": "Scramble",
             "message": "Sequence is plus-scrambled."
         }
-    ]
-}{
+    ],
     "MN691959": [
         {
             "sequence_name": "MN691959",
@@ -78,8 +77,7 @@
             "error": "InternalStopInOrf",
             "message": "Smaller ORF tat_exon2 at 8375-8468 contains an internal stop codon"
         }
-    ]
-}{
+    ],
     "MN692074": [
         {
             "sequence_name": "MN692074",
@@ -136,10 +134,8 @@
             "error": "LongDeletion",
             "message": "Query sequence contains a long deletion."
         }
-    ]
-}{
-    "MN692145": []
-}{
+    ],
+    "MN692145": [],
     "MN090335": [
         {
             "sequence_name": "MN090335",
