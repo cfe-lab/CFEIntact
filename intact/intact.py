@@ -733,10 +733,10 @@ def with_blast_rows(blast_it, sequence_it):
 class OutputWriter:
     def __init__(self, working_dir, fmt):
         self.fmt = fmt
-        self.intact_file = os.path.join(working_dir, "intact.fasta")
-        self.non_intact_file = os.path.join(working_dir, "nonintact.fasta")
-        self.orf_file = os.path.join(working_dir, "orfs.json")
-        self.error_file = os.path.join(working_dir, "errors.json")
+        self.intact_path = os.path.join(working_dir, "intact.fasta")
+        self.non_intact_path = os.path.join(working_dir, "nonintact.fasta")
+        self.orf_path = os.path.join(working_dir, "orfs.json")
+        self.error_path = os.path.join(working_dir, "errors.json")
 
         if fmt == "json":
             self.orfs = {}
@@ -746,33 +746,33 @@ class OutputWriter:
 
 
     def __enter__(self, *args):
-        self.intact_writer = open(self.intact_file, 'w')
-        self.nonintact_writer = open(self.non_intact_file, 'w')
-        self.orfs_writer = open(self.orf_file, 'w')
-        self.errors_writer = open(self.error_file, 'w')
+        self.intact_file = open(self.intact_path, 'w')
+        self.nonintact_file = open(self.non_intact_path, 'w')
+        self.orfs_file = open(self.orf_path, 'w')
+        self.errors_file = open(self.error_path, 'w')
         return self
 
 
     def __exit__(self, *args):
         if self.fmt == "json":
-            json.dump(self.orfs, self.orfs_writer, indent=4)
-            json.dump(self.errors, self.errors_writer, indent=4)
+            json.dump(self.orfs, self.orfs_file, indent=4)
+            json.dump(self.errors, self.errors_file, indent=4)
 
-        self.intact_writer.close()
-        self.nonintact_writer.close()
-        self.orfs_writer.close()
-        self.errors_writer.close()
+        self.intact_file.close()
+        self.nonintact_file.close()
+        self.orfs_file.close()
+        self.errors_file.close()
 
-        log.info('Intact sequences written to ' + self.intact_file)
-        log.info('Non-intact sequences written to ' + self.non_intact_file)
-        log.info('ORFs for all sequences written to ' + self.orf_file)
-        log.info('JSON-encoded intactness error information written to ' + self.error_file)
+        log.info('Intact sequences written to ' + self.intact_path)
+        log.info('Non-intact sequences written to ' + self.non_intact_path)
+        log.info('ORFs for all sequences written to ' + self.orf_path)
+        log.info('JSON-encoded intactness error information written to ' + self.error_path)
 
 
     def write(self, sequence, is_intact, orfs, errors):
-        fastawriter = self.intact_writer if is_intact else self.nonintact_writer
-        SeqIO.write([sequence], fastawriter, "fasta")
-        fastawriter.flush()
+        fasta_file = self.intact_file if is_intact else self.nonintact_file
+        SeqIO.write([sequence], fasta_file, "fasta")
+        fasta_file.flush()
 
         if self.fmt == "json":
             self.orfs[sequence.id] = orfs
