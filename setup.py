@@ -70,9 +70,11 @@ setup(
                   'intact': ['data/*'],
                   'util': ['subtype_alignments/*']
                   },
-    scripts=[
-        'bin/proviral'
-    ],
+    entry_points={
+        'console_scripts': [
+            'proviral = bin.proviral:cli'
+        ]
+    },
     cmdclass={
         'install': CheckPresenceOfExecutables
     },

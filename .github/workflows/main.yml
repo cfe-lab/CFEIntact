@@ -17,7 +17,7 @@ jobs:
     - name: Run build
       run: pip3 install .
     - name: Run tests and collect coverage
-      run: pytest -v -m "not overnight" --cov=./intact --cov=./util
+      run: pytest -v -m "not overnight" --cov=./bin --cov=./intact --cov=./util
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
       env:
