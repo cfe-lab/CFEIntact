@@ -776,7 +776,7 @@ class OutputWriter:
         log.info('Intact sequences written to ' + self.intact_path)
         log.info('Non-intact sequences written to ' + self.non_intact_path)
         log.info('ORFs for all sequences written to ' + self.orf_path)
-        log.info('JSON-encoded intactness error information written to ' + self.error_path)
+        log.info('Intactness error information written to ' + self.error_path)
 
 
     def write(self, sequence, is_intact, orfs, errors):
