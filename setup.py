@@ -65,7 +65,7 @@ setup(
     author='Imogen Wright',
     author_email='imogen@hyraxbio.co.za',
     version='0.7',
-    packages=['intact', 'util'],
+    packages=['bin', 'intact', 'util'],
     package_data={
                   'intact': ['data/*'],
                   'util': ['subtype_alignments/*']
