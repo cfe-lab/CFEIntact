@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 
 import os
 import click
@@ -85,6 +84,3 @@ def intact(input_file, subtype, include_packaging_signal,
         )
     except Exception as e:
         raise e
-
-if __name__ == '__main__':
-    cli()
