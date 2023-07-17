@@ -6,7 +6,7 @@ import os
 import tarfile
 import intact.intact as main
 
-def run_end_to_end(tmp_path, data_file, expected_dir):
+def run_end_to_end(tmp_path, data_file, expected_dir, output_csv):
     main.intact(
         working_dir=tmp_path,
         input_file=data_file,
@@ -20,7 +20,7 @@ def run_end_to_end(tmp_path, data_file, expected_dir):
         check_scramble=True,
         check_internal_inversion=True,
         include_small_orfs=True,
-        output_csv=False,
+        output_csv=output_csv,
         )
 
     result = filecmp.dircmp(tmp_path, expected_dir)
@@ -34,13 +34,32 @@ def test_single(tmp_path, request):
     pwd = request.fspath.dirname
     run_end_to_end(tmp_path,
                    os.path.join(pwd, "data-single.fasta"),
-                   os.path.join(pwd, "expected-results-single"))
+                   os.path.join(pwd, "expected-results-single"),
+                   output_csv=False)
+
+
+def test_single_csv(tmp_path, request):
+    pwd = request.fspath.dirname
+    run_end_to_end(tmp_path,
+                   os.path.join(pwd, "data-single.fasta"),
+                   os.path.join(pwd, "expected-results-single-csv"),
+                   output_csv=True)
+
 
 def test_small(tmp_path, request):
     pwd = request.fspath.dirname
     run_end_to_end(tmp_path,
                    os.path.join(pwd, "data-small.fasta"),
-                   os.path.join(pwd, "expected-results-small"))
+                   os.path.join(pwd, "expected-results-small"),
+                   output_csv=False)
+
+
+def test_small_csv(tmp_path, request):
+    pwd = request.fspath.dirname
+    run_end_to_end(tmp_path,
+                   os.path.join(pwd, "data-small.fasta"),
+                   os.path.join(pwd, "expected-results-small-csv"),
+                   output_csv=True)
 
 
 @pytest.mark.slow
@@ -48,7 +67,17 @@ def test_large(tmp_path, request):
     pwd = request.fspath.dirname
     run_end_to_end(tmp_path,
                    os.path.join(pwd, "data-large.fasta"),
-                   os.path.join(pwd, "expected-results-large"))
+                   os.path.join(pwd, "expected-results-large"),
+                   output_csv=False)
+
+
+@pytest.mark.slow
+def test_large_csv(tmp_path, request):
+    pwd = request.fspath.dirname
+    run_end_to_end(tmp_path,
+                   os.path.join(pwd, "data-large.fasta"),
+                   os.path.join(pwd, "expected-results-large-csv"),
+                   output_csv=True)
 
 
 @pytest.fixture(scope="session")
@@ -72,5 +101,5 @@ def huge_data_file(tmpdir_factory):
 @pytest.mark.overnight
 def test_huge(tmp_path, huge_data_file):
     file_path, expected_dir_path = huge_data_file
-    run_end_to_end(tmp_path, file_path, expected_dir_path)
+    run_end_to_end(tmp_path, file_path, expected_dir_path, output_csv=False)
 
