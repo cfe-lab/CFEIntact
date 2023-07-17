@@ -29,6 +29,7 @@ def cli():
 )
 @click.option(
     '--subtype',
+    required=True,
     type=click.Choice(st.subtypes())
 )
 @click.option(
@@ -68,9 +69,6 @@ def intact(input_file, subtype, include_packaging_signal,
     """
     Check consensus sequences for intactness.
     """
-
-    if subtype is None:
-        raise ValueError('Must select a subtype using the --subtype option.')
 
     log.info('Intactness called.')
     folder = get_working_folder(working_folder)
