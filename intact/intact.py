@@ -754,7 +754,7 @@ class OutputWriter:
             self.errors = {}
         elif self.fmt == "csv":
             self.orfs_writer = csv.writer(self.orfs_file)
-            self.orfs_header = [field.name for field in dataclasses.fields(CandidateORF)]
+            self.orfs_header = ['seqid'] + [field.name for field in dataclasses.fields(CandidateORF)]
             self.orfs_writer.writerow(self.orfs_header)
             self.errors_writer = csv.writer(self.errors_file)
             self.errors_header = [field.name for field in dataclasses.fields(IntactnessError)]
@@ -789,7 +789,7 @@ class OutputWriter:
             self.errors[sequence.id] = errors
         elif self.fmt == "csv":
             for orf in orfs:
-                self.orfs_writer.writerow([orf[key] for key in self.orfs_header])
+                self.orfs_writer.writerow([(sequence.id if key == 'seqid' else orf[key]) for key in self.orfs_header])
             for error in errors:
                 self.errors_writer.writerow([error[key] for key in self.errors_header])
 
