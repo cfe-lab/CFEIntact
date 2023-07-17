@@ -75,12 +75,9 @@ def intact(input_file, subtype, include_packaging_signal,
     log.info('Intactness called.')
     folder = get_working_folder(working_folder)
 
-    try:
-        it.intact(
-            folder, input_file, subtype, include_packaging_signal, include_rre,
-            check_major_splice_donor_site, run_hypermut,
-            check_long_deletion, check_nonhiv, check_scramble, check_internal_inversion,
-            include_small_orfs, output_csv
-        )
-    except Exception as e:
-        raise e
+    it.intact(
+        folder, input_file, subtype, include_packaging_signal, include_rre,
+        check_major_splice_donor_site, run_hypermut,
+        check_long_deletion, check_nonhiv, check_scramble, check_internal_inversion,
+        include_small_orfs, output_csv
+    )
