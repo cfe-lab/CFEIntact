@@ -169,16 +169,16 @@ def iterate_blast_rows_from_tsv(file_path):
         yield values
 
 
-def blast_iterate(subtype, input_file):
-    with tempfile.NamedTemporaryFile() as output_file:
+def blast_iterate(subtype, input_file, working_dir):
+    with open(os.path.join(working_dir, 'blast.tsv'), 'w') as output_file:
         db_file = st.alignment_file(subtype)
         wrappers.blast(db_file, input_file, output_file.name)
         for seq in iterate_blast_rows_from_tsv(output_file.name):
             yield seq
 
 
-def blast_iterate_inf(subtype, input_file):
-    for seq in blast_iterate(subtype, input_file):
+def blast_iterate_inf(subtype, input_file, working_dir):
+    for seq in blast_iterate(subtype, input_file, working_dir):
         yield seq
 
     while True:
@@ -734,6 +734,7 @@ def with_blast_rows(blast_it, sequence_it):
 class OutputWriter:
     def __init__(self, working_dir, fmt):
         self.fmt = fmt
+        self.working_dir = working_dir
         self.intact_path = os.path.join(working_dir, "intact.fasta")
         self.non_intact_path = os.path.join(working_dir, "nonintact.fasta")
         self.orf_path = os.path.join(working_dir, f"orfs.{fmt}")
@@ -777,6 +778,8 @@ class OutputWriter:
         log.info('Non-intact sequences written to ' + self.non_intact_path)
         log.info('ORFs for all sequences written to ' + self.orf_path)
         log.info('Intactness error information written to ' + self.error_path)
+        if os.path.exists(os.path.join(self.working_dir, 'blast.tsv')):
+            log.info('Blast output written to ' + os.path.join(self.working_dir, 'blast.tsv'))
 
 
     def write(self, sequence, is_intact, orfs, errors):
@@ -847,7 +850,7 @@ def intact( working_dir,
 
     with OutputWriter(working_dir, "csv" if output_csv else "json") as writer:
 
-        blast_it = blast_iterate_inf(subtype, input_file) if check_internal_inversion or check_nonhiv or check_scramble else iterate_empty_lists()
+        blast_it = blast_iterate_inf(subtype, input_file, working_dir) if check_internal_inversion or check_nonhiv or check_scramble else iterate_empty_lists()
         for (sequence, blast_rows) in with_blast_rows(blast_it, iterate_sequences(input_file)):
             sequence_errors = []
 
