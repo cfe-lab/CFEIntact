@@ -1,7 +1,7 @@
 
 # Inputs and Outputs
 
-To use HIVIntact, you need to provide a filepath to a `.fasta` file that contains the sequences you want to analyze.
+The only input is a path to a `.fasta` file that you want to analyze.
 This file should include the genomic sequences of interest.
 
 Once the analysis is complete, HIVIntact will generate four output files:
