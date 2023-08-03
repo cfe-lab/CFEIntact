@@ -89,7 +89,7 @@ We describe the logic of each step below.
 Determines presence and possible intactness of HIV Packaging Signal Region.
 
 Based on the alignment, HIVIntact locates the PSI region in the input sequence and checks its length.
-For lengths smaller than the [tolerable limit](cuttofs.md), an error with code `PackagingSignalDeletion` is reported.
+For lengths smaller than the [tolerable limit](cutoffs.md), an error with code `PackagingSignalDeletion` is reported.
 
 ### RRE check
 
