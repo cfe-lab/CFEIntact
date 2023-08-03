@@ -1,25 +1,26 @@
 
-## Inputs and outputs
+# Inputs and Outputs
 
-HIVIntact expects a filepath to a `.fasta` file to be provided.
-This file should contain the sequences that we want to analyze.
+To use HIVIntact, you need to provide a filepath to a `.fasta` file that contains the sequences you want to analyze.
+This file should include the genomic sequences of interest.
 
-Then after the run is finished, 4 files will be produced:
+Once the analysis is complete, HIVIntact will generate four output files:
 
-   [Filename]       [Description]
-   errors.json      File containing associations of sequences to their list of identified defects.
-   orfs.json        File containing associations of sequences to their list of identified ORFs.
-   intact.fasta     File containing a list of files with no fatal defects identified.
-   nonintact.fasta  File containing a list of files with no fatal defects.
+| Filename         | Description                                                  |
+| ---------------- | ------------------------------------------------------------ |
+| errors.json      | This file contains associations between sequences and their identified defects. |
+| orfs.json        | This file contains associations between sequences and their identified Open Reading Frames (ORFs). |
+| intact.fasta     | This file contains a list of sequences with no fatal defects identified. These sequences are considered putative intact genomes. |
+| nonintact.fasta  | This file contains a list of sequences with identified defects. These sequences are not considered putative intact genomes. |
 
-If `--output-csv` option is passed to HIVIntact,
-then the output format is `.csv` instead of `.json`.
+If you pass the `--output-csv` option to HIVIntact, the output format will be `.csv` instead of `.json`.
 
-Below is an example `errors.csv` contents:
+Here is an example of the contents of the `errors.csv` file:
 
-      sequence_name,error,message
-      KX505501.1,DeletionInOrf,"ORF pol at 2084-5096 can have maximum deletions 30, got 2892"
-      KX505501.1,RevResponseElementDeletion,Query Sequence exceeds maximum deletion tolerance in RRE. Contains 35 deletions with max tolerance of 20 deletions.
-      MN691959,InternalStopInOrf,Smaller ORF vpu at 6060-6309 contains an internal stop codon
-      MK114856.1,APOBECHypermutationDetected,Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 3.639064030015132e-65).
-      MK116110.1,PackagingSignalDeletion,Query Sequence exceeds maximum deletion tolerance in PSI. Contains 93 deletions with max tolerance of 10 deletions.
+| sequence_name | error                          | message                                                                                             |
+|---------------|--------------------------------|-----------------------------------------------------------------------------------------------------|
+| KX505501.1    | DeletionInOrf                  | ORF pol at 2084-5096 can have maximum deletions 30, got 2892                                    |
+| KX505501.1    | RevResponseElementDeletion     | Query Sequence exceeds maximum deletion tolerance in RRE. Contains 35 deletions with max tolerance of 20 deletions. |
+| MN691959      | InternalStopInOrf              | Smaller ORF vpu at 6060-6309 contains an internal stop codon                                     |
+| MK114856.1    | APOBECHypermutationDetected    | Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 3.639064030015132e-65).  |
+| MK116110.1    | PackagingSignalDeletion        | Query Sequence exceeds maximum deletion tolerance in PSI. Contains 93 deletions with max tolerance of 10 deletions. |
