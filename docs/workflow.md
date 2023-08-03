@@ -29,36 +29,6 @@ The outputs from this procedure are used to produce the `orfs.json` file.
 Optionally, HIVIntact calls the NCBI's `blastn` program to obtain alignment data that is region-based,
 as opposed to the global alignment provided by `mafft`.
 
-# HIVIntact workflow
-
-## Preparation
-
-When HIVIntact starts analysing a particular sequence it performs some initial preprocessing,
-results of which are only used later.
-
-### Alignment to reference
-
-For each input sequence HIVIntact calls `mafft` software to align it to its subtype sequence.
-
-This operation is repeated with the reverse complement (RC) of the input sequence,
-to see if the fit is better and use the RC instead for that case,
-so that the direction is which the original sequence is read should not matter.
-
-Alignment never fails.
-
-### ORFs detection
-
-(TODO: describe the logic)
-
-Detection never fails, but can output ORFs that are of length 0.
-
-Outputs from this procedure are also used to produce the `orfs.json` file.
-
-### BLAST analysis
-
-Optionally, HIVIntact calls the NCBI's `blastn` program to get alignment data that is region-based,
-as opposed to the `mafft`'s global alignment.
-
 ## Analysis steps
 
 HIVIntact performs multiple analysis steps that are independent of each other.
