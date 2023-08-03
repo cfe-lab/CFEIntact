@@ -28,3 +28,5 @@ The PSI error tolerance is 10.
 The RRE error tolerance is 20.
 
 Minimum tolerable sequence length is 8000.
+
+Maximum tolerable number of nucleotides impacted by frame shifts is 10% of the ORF's length.
