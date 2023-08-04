@@ -610,8 +610,6 @@ def has_reading_frames(
         counter = 0
         good = 0
         for (x, y) in zip(alignment[0], alignment[1]):
-            if x == "-" and y == "-":
-                continue
             if x == "-" and y != "-":
                 shift += 1
             if x != "-" and y == "-":
