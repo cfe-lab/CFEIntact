@@ -67,7 +67,7 @@ class ExpectedORF:
 
         nucleotides = str(reference.seq[start_s:end_s])
         aminoacids = translate(nucleotides)
-        has_start_codon = aminoacids[0] == 'M'
+        has_start_codon = translate(reference.seq[(start - 1):end]).startswith("M")
         protein = get_biggest_protein(has_start_codon, aminoacids)
 
         return ExpectedORF(name=name,
