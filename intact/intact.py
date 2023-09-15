@@ -102,60 +102,60 @@ class FoundORF:
 @dataclass
 class BlastRow:
     qseqid: str
-    qlen: int
     sseqid: str
     sgi: str
+    qlen: int
     slen: int
+    length: int
     qstart: int
     qend: int
     sstart: int
     send: int
     evalue: float
     bitscore: float
-    length: int
     pident: float
     nident: float
-    btop: int
-    stitle: str
     sstrand: str
+    stitle: str
+    btop: str
 
     @staticmethod
     def init(row):
         it = iter(row)
         return BlastRow(
-            qseqid=next(it),
-            qlen=int(next(it)),
-            sseqid=next(it),
-            sgi=next(it),
-            slen=int(next(it)),
-            qstart=int(next(it)),
-            qend=int(next(it)),
-            sstart=int(next(it)),
-            send=int(next(it)),
-            evalue=float(next(it)),
-            bitscore=float(next(it)),
-            length=int(next(it)),
-            pident=float(next(it)),
-            nident=float(next(it)),
-            btop=next(it),
-            stitle=next(it),
-            sstrand=next(it),
+                qseqid=row['qseqid'],
+                sseqid=row['sseqid'],
+                sgi=row['sgi'],
+                qlen=int(row['qlen']),
+                slen=int(row['slen']),
+                length=int(row['length']),
+                qstart=int(row['qstart']),
+                qend=int(row['qend']),
+                sstart=int(row['sstart']),
+                send=int(row['send']),
+                evalue=float(row['evalue']),
+                bitscore=float(row['bitscore']),
+                pident=float(row['pident']),
+                nident=float(row['nident']),
+                sstrand=row['sstrand'],
+                stitle=row['stitle'],
+                btop=row['btop'],
         )
 
 
-def iterate_values_from_tsv(file_path):
-    with open(file_path, 'r') as tsv_file:
-        reader = csv.reader(tsv_file, delimiter='\t')
+def iterate_values_from_csv(file_path):
+    with open(file_path, 'r') as csv_file:
+        reader = csv.DictReader(csv_file)
         for row in reader:
             yield row
 
 
-def iterate_blast_rows_from_tsv(file_path):
+def iterate_blast_rows_from_csv(file_path):
     previous_key = None
     values = []
 
-    for row in iterate_values_from_tsv(file_path):
-        key = row[0]
+    for row in iterate_values_from_csv(file_path):
+        key = row['qseqid']
         typed = BlastRow.init(row)
 
         if key != previous_key and previous_key is not None:
@@ -170,10 +170,10 @@ def iterate_blast_rows_from_tsv(file_path):
 
 
 def blast_iterate(subtype, input_file, working_dir):
-    with open(os.path.join(working_dir, 'blast.tsv'), 'w') as output_file:
+    with open(os.path.join(working_dir, 'blast.csv'), 'w') as output_file:
         db_file = st.alignment_file(subtype)
         wrappers.blast(db_file, input_file, output_file.name)
-        for seq in iterate_blast_rows_from_tsv(output_file.name):
+        for seq in iterate_blast_rows_from_csv(output_file.name):
             yield seq
 
 
@@ -776,8 +776,8 @@ class OutputWriter:
         log.info('Non-intact sequences written to ' + self.non_intact_path)
         log.info('ORFs for all sequences written to ' + self.orf_path)
         log.info('Intactness error information written to ' + self.error_path)
-        if os.path.exists(os.path.join(self.working_dir, 'blast.tsv')):
-            log.info('Blast output written to ' + os.path.join(self.working_dir, 'blast.tsv'))
+        if os.path.exists(os.path.join(self.working_dir, 'blast.csv')):
+            log.info('Blast output written to ' + os.path.join(self.working_dir, 'blast.csv'))
 
 
     def write(self, sequence, is_intact, orfs, errors):
