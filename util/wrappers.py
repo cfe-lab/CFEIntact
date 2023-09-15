@@ -1,7 +1,10 @@
+import dataclasses
 import subprocess
 import tempfile
 
 from Bio import SeqIO, AlignIO
+
+from util.blastrow import BlastRow
 
 def mafft(sequences):
     '''
@@ -22,12 +25,7 @@ def mafft(sequences):
 
 def blast(alignment_file, input_file, output_file):
     fileformat = "10" # .csv format
-    fields = ["qseqid", "sseqid", "sgi", "qlen", "slen", "length",
-              "qstart", "qend", "sstart", "send",
-              "evalue", "bitscore", "pident", "nident",
-              "sstrand", "stitle",
-              "btop",
-              ]
+    fields = [field.name for field in dataclasses.fields(BlastRow)]
     outfmt = fileformat + ' ' + ' '.join(fields)
 
     with open(output_file, "w") as output, \
