@@ -1,10 +1,6 @@
 import json
 import os
 import re
-import subprocess
-import sys
-import uuid
-import tempfile
 import csv
 import dataclasses
 from dataclasses import dataclass
@@ -789,10 +785,6 @@ def intact( working_dir,
 
     reference = st.subtype_sequence(subtype)
     pos_mapping = st.map_hxb2_positions_to_subtype(subtype)
-    pos_subtype_mapping = {
-        "forward": st.map_subtype_positions_to_hxb2("forward", subtype),
-        "reverse": st.map_subtype_positions_to_hxb2("reverse", subtype),
-    }
 
     # convert ORF positions to appropriate subtype
     forward_orfs, reverse_orfs, small_orfs = [
