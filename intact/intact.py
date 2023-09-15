@@ -19,6 +19,7 @@ import util.subtypes as st
 import util.wrappers as wrappers
 import util.log as log
 import util.coordinates as coords
+from util.blastrow import BlastRow
 
 
 WRONGORFNUMBER_ERROR = "WrongORFNumber"
@@ -98,49 +99,6 @@ class FoundORF:
     protein: str
     aminoacids: str
     nucleotides: str
-
-@dataclass
-class BlastRow:
-    qseqid: str
-    sseqid: str
-    sgi: str
-    qlen: int
-    slen: int
-    length: int
-    qstart: int
-    qend: int
-    sstart: int
-    send: int
-    evalue: float
-    bitscore: float
-    pident: float
-    nident: float
-    sstrand: str
-    stitle: str
-    btop: str
-
-    @staticmethod
-    def init(row):
-        it = iter(row)
-        return BlastRow(
-                qseqid=row['qseqid'],
-                sseqid=row['sseqid'],
-                sgi=row['sgi'],
-                qlen=int(row['qlen']),
-                slen=int(row['slen']),
-                length=int(row['length']),
-                qstart=int(row['qstart']),
-                qend=int(row['qend']),
-                sstart=int(row['sstart']),
-                send=int(row['send']),
-                evalue=float(row['evalue']),
-                bitscore=float(row['bitscore']),
-                pident=float(row['pident']),
-                nident=float(row['nident']),
-                sstrand=row['sstrand'],
-                stitle=row['stitle'],
-                btop=row['btop'],
-        )
 
 
 def iterate_values_from_csv(file_path):
