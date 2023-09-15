@@ -8,17 +8,17 @@
         {
             "sequence_name": "KX505501.1",
             "error": "InternalStopInOrf",
-            "message": "ORF env at 6223-8794 contains an internal stop codon"
+            "message": "ORF env at 6223-8794 contains an internal stop codon at 6322"
         },
         {
             "sequence_name": "KX505501.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF vif at 5040-5619 contains an internal stop codon"
+            "message": "Smaller ORF vif at 5040-5619 contains an internal stop codon at 5076"
         },
         {
             "sequence_name": "KX505501.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF vpr at 5558-5849 contains an internal stop codon"
+            "message": "Smaller ORF vpr at 5558-5849 contains an internal stop codon at 5594"
         },
         {
             "sequence_name": "KX505501.1",
@@ -33,7 +33,7 @@
         {
             "sequence_name": "KX505501.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF vpu at 6060-6309 contains an internal stop codon"
+            "message": "Smaller ORF vpu at 6060-6309 contains an internal stop codon at 6096"
         },
         {
             "sequence_name": "KX505501.1",
@@ -48,7 +48,7 @@
         {
             "sequence_name": "KX505501.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF nef at 8795-9416 contains an internal stop codon"
+            "message": "Smaller ORF nef at 8795-9416 contains an internal stop codon at 8831"
         },
         {
             "sequence_name": "KX505501.1",
@@ -70,12 +70,12 @@
         {
             "sequence_name": "MN691959",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF vpu at 6060-6309 contains an internal stop codon"
+            "message": "Smaller ORF vpu at 6060-6309 contains an internal stop codon at 6123"
         },
         {
             "sequence_name": "MN691959",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF tat_exon2 at 8375-8468 contains an internal stop codon"
+            "message": "Smaller ORF tat_exon2 at 8375-8468 contains an internal stop codon at 8420"
         }
     ],
     "MN692074": [
@@ -87,7 +87,7 @@
         {
             "sequence_name": "MN692074",
             "error": "InternalStopInOrf",
-            "message": "ORF env at 6223-8794 contains an internal stop codon"
+            "message": "ORF env at 6223-8794 contains an internal stop codon at 6550"
         },
         {
             "sequence_name": "MN692074",
@@ -102,7 +102,7 @@
         {
             "sequence_name": "MN692074",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF tat_exon1 at 5829-6044 contains an internal stop codon"
+            "message": "Smaller ORF tat_exon1 at 5829-6044 contains an internal stop codon at 5892"
         },
         {
             "sequence_name": "MN692074",
@@ -140,12 +140,12 @@
         {
             "sequence_name": "MN090335",
             "error": "InternalStopInOrf",
-            "message": "ORF gag at 789-2292 contains an internal stop codon"
+            "message": "ORF gag at 789-2292 contains an internal stop codon at 822"
         },
         {
             "sequence_name": "MN090335",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF tat_exon2 at 8375-8468 contains an internal stop codon"
+            "message": "Smaller ORF tat_exon2 at 8375-8468 contains an internal stop codon at 8420"
         },
         {
             "sequence_name": "MN090335",

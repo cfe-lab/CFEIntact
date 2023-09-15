@@ -606,13 +606,16 @@ def has_reading_frames(
         # Max deletion allowed in ORF exceeded
         if deletions > e.deletion_tolerence:
 
-            if "*" in best_match.aminoacids[:(-e.deletion_tolerence // 3)]:
+            limit = e.deletion_tolerence // 3
+            limited_aminoacids = best_match.aminoacids[limit:-limit]
+
+            if "*" in limited_aminoacids:
                 errors.append(IntactnessError(
                     sequence.id, INTERNALSTOP_ERROR,
                     ("Smaller " if is_small else "")
                     + "ORF " + str(e.name) + " at " + str(e.start)
                     + "-" + str(e.end)
-                    + " contains an internal stop codon"
+                    + " contains an internal stop codon at " + str(e.start + (limit + limited_aminoacids.index("*")) * 3)
                 ))
             else:
                 errors.append(IntactnessError(
