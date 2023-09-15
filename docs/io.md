@@ -12,6 +12,7 @@ Once the analysis is complete, HIVIntact will generate four output files:
 | orfs.json        | This file contains associations between sequences and their identified Open Reading Frames (ORFs). |
 | intact.fasta     | This file contains a list of sequences with no fatal defects identified. These sequences are considered putative intact genomes. |
 | nonintact.fasta  | This file contains a list of sequences with identified defects. These sequences are not considered putative intact genomes. |
+| blast.csv        | This file contains output from BLASTN software. It is produced conditionally. |
 
 If you pass the `--output-csv` option to HIVIntact, the output format will be `.csv` instead of `.json`.
 
