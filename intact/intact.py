@@ -751,6 +751,10 @@ class OutputWriter:
             for error in errors:
                 self.errors_writer.writerow([error[key] for key in self.errors_header])
 
+def strip_sequence_dashes(seq):
+    return SeqRecord.SeqRecord(
+        Seq.Seq(str(seq.seq).replace("-","").replace("\n", "")),
+        id = seq.id, name = seq.name)
 
 def intact( working_dir,
             input_file,
@@ -786,15 +790,19 @@ def intact( working_dir,
     subtype_choices = {}
     with open(st.alignment_file(subtype), 'r') as in_handle:
         for sequence in SeqIO.parse(in_handle, "fasta"):
-            subtype_choices[sequence.id] = sequence
+            subtype_choices[sequence.id] = strip_sequence_dashes(sequence)
+
+    hxb2_reference = st.HXB2()
 
     with OutputWriter(working_dir, "csv" if output_csv else "json") as writer:
 
         blast_it = blast_iterate_inf(subtype, input_file, working_dir) if check_internal_inversion or check_nonhiv or check_scramble else iterate_empty_lists()
         for (sequence, blast_rows) in with_blast_rows(blast_it, iterate_sequences(input_file)):
 
-            reference = st.subtype_sequence(subtype)
-            pos_mapping = st.map_hxb2_positions_to_subtype(subtype)
+            reference_name = blast_rows[0].sseqid if blast_rows else sorted(subtype_choices.keys())[0]
+            reference = subtype_choices[reference_name]
+            hxb2_alignment = wrappers.mafft([hxb2_reference, reference])
+            pos_mapping = coords.map_positions(hxb2_alignment[0], hxb2_alignment[1])
 
             # convert ORF positions to appropriate subtype
             forward_orfs, reverse_orfs, small_orfs = [
