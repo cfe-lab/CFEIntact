@@ -18,22 +18,23 @@ import util.coordinates as coords
 from util.blastrow import BlastRow
 
 
-WRONGORFNUMBER_ERROR = "WrongORFNumber"
-MISPLACEDORF_ERROR   = "MisplacedORF"
-LONGDELETION_ERROR   = "LongDeletion"
-DELETIONINORF_ERROR  = "DeletionInOrf"
-INSERTIONINORF_ERROR  = "InsertionInOrf"
-INTERNALSTOP_ERROR   = "InternalStopInOrf"
-SCRAMBLE_ERROR       = "Scramble"
-NONHIV_ERROR         = "NonHIV"
+WRONGORFNUMBER_ERROR    = "WrongORFNumber"
+MISPLACEDORF_ERROR      = "MisplacedORF"
+LONGDELETION_ERROR      = "LongDeletion"
+DELETIONINORF_ERROR     = "DeletionInOrf"
+INSERTIONINORF_ERROR    = "InsertionInOrf"
+INTERNALSTOP_ERROR      = "InternalStopInOrf"
+SCRAMBLE_ERROR          = "Scramble"
+NONHIV_ERROR            = "NonHIV"
 INTERNALINVERSION_ERROR = "InternalInversion"
+ALIGNMENT_FAILED        = "AlignmentFailed" # Happens when mafft process fails
 
-FRAMESHIFTINORF_ERROR  = "FrameshiftInOrf"
-MSDMUTATED_ERROR = "MajorSpliceDonorSiteMutated"
-PSIDELETION_ERROR    = "PackagingSignalDeletion"
-PSINOTFOUND_ERROR    = "PackagingSignalNotComplete"
-RREDELETION_ERROR    = "RevResponseElementDeletion"
-HYPERMUTATION_ERROR  = "APOBECHypermutationDetected"
+FRAMESHIFTINORF_ERROR   = "FrameshiftInOrf"
+MSDMUTATED_ERROR        = "MajorSpliceDonorSiteMutated"
+PSIDELETION_ERROR       = "PackagingSignalDeletion"
+PSINOTFOUND_ERROR       = "PackagingSignalNotComplete"
+RREDELETION_ERROR       = "RevResponseElementDeletion"
+HYPERMUTATION_ERROR     = "APOBECHypermutationDetected"
 
 
 @dataclass
@@ -832,8 +833,15 @@ def intact( working_dir,
                                                    name = sequence.name
                                                    )
 
-            alignment = wrappers.mafft([reference, sequence])
-            reverse_alignment = wrappers.mafft([reference, reverse_sequence])
+            try:
+                alignment = wrappers.mafft([reference, sequence])
+                reverse_alignment = wrappers.mafft([reference, reverse_sequence])
+            except wrappers.AlignmentFailure:
+                err = IntactnessError(sequence.id, ALIGNMENT_FAILED, "Alignment failed for this sequence. It probably contains invalid symbols.")
+                sequence_errors.append(err)
+                errors = [x.__dict__ for x in sequence_errors]
+                writer.write(sequence, is_intact=False, orfs=[], errors=errors)
+                continue
 
             forward_score = alignment_score(alignment)
             reverse_score = alignment_score(reverse_alignment)

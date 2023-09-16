@@ -6,6 +6,9 @@ from Bio import SeqIO, AlignIO
 
 from util.blastrow import BlastRow
 
+class AlignmentFailure(Exception):
+    pass
+
 def mafft(sequences):
     '''
     Call mafft on a set of sequences and return the resulting alignment.
@@ -19,7 +22,12 @@ def mafft(sequences):
 
     with tempfile.NamedTemporaryFile() as alignment_input, tempfile.NamedTemporaryFile() as alignment_output:
         SeqIO.write(sequences, alignment_input.name, "fasta")
-        subprocess.call(["mafft", "--quiet", alignment_input.name], shell=False, stdout=alignment_output)
+
+        try:
+            subprocess.run(["mafft", "--quiet", alignment_input.name], shell=False, stdout=alignment_output, check=True)
+        except subprocess.CalledProcessError:
+            raise AlignmentFailure()
+
         alignment = AlignIO.read(alignment_output.name, "fasta")
         return alignment
 
