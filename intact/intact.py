@@ -783,26 +783,32 @@ def intact( working_dir,
         Name of a file containing all consensus sequences.
     """
 
-    reference = st.subtype_sequence(subtype)
-    pos_mapping = st.map_hxb2_positions_to_subtype(subtype)
-
-    # convert ORF positions to appropriate subtype
-    forward_orfs, reverse_orfs, small_orfs = [
-    [
-        ExpectedORF.subtyped(reference, pos_mapping, n, s, e, delta) \
-        for (n, s, e, delta) in orfs
-    ] \
-    for orfs in [hxb2_forward_orfs, hxb2_reverse_orfs, hxb2_small_orfs]
-    ]
-
-    # convert PSI locus and RRE locus to appropriate subtype
-    psi_locus = [pos_mapping[x] for x in hxb2_psi_locus]
-    rre_locus = [pos_mapping[x] for x in hxb2_rre_locus]
+    subtype_choices = {}
+    with open(st.alignment_file(subtype), 'r') as in_handle:
+        for sequence in SeqIO.parse(in_handle, "fasta"):
+            subtype_choices[sequence.id] = sequence
 
     with OutputWriter(working_dir, "csv" if output_csv else "json") as writer:
 
         blast_it = blast_iterate_inf(subtype, input_file, working_dir) if check_internal_inversion or check_nonhiv or check_scramble else iterate_empty_lists()
         for (sequence, blast_rows) in with_blast_rows(blast_it, iterate_sequences(input_file)):
+
+            reference = st.subtype_sequence(subtype)
+            pos_mapping = st.map_hxb2_positions_to_subtype(subtype)
+
+            # convert ORF positions to appropriate subtype
+            forward_orfs, reverse_orfs, small_orfs = [
+            [
+                ExpectedORF.subtyped(reference, pos_mapping, n, s, e, delta) \
+                for (n, s, e, delta) in orfs
+            ] \
+            for orfs in [hxb2_forward_orfs, hxb2_reverse_orfs, hxb2_small_orfs]
+            ]
+
+            # convert PSI locus and RRE locus to appropriate subtype
+            psi_locus = [pos_mapping[x] for x in hxb2_psi_locus]
+            rre_locus = [pos_mapping[x] for x in hxb2_rre_locus]
+
             sequence_errors = []
 
             reverse_sequence = SeqRecord.SeqRecord(Seq.reverse_complement(sequence.seq),
