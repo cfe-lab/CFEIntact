@@ -592,12 +592,12 @@ def has_reading_frames(
         deletions = max(0, len(exp_protein) - len(got_protein)) * 3
         insertions = max(0, len(got_protein) - len(exp_protein)) * 3
 
-        if got_protein:
+        if got_protein and exp_protein:
             orf_alignment = aligner.align(exp_protein, got_protein)[0]
             best_match.distance = aligner.match_score - (orf_alignment.score / len(exp_protein))
         else:
             orf_alignment = (exp_protein, "-" * len(exp_protein))
-            best_match.distance = aligner.match_score - ((aligner.open_gap_score + len(exp_protein) * aligner.extend_gap_score) / len(exp_protein))
+            best_match.distance = aligner.match_score - ((aligner.open_gap_score + len(exp_protein) * aligner.extend_gap_score) / max(1, len(exp_protein)))
 
         # Max deletion allowed in ORF exceeded
         if deletions > e.deletion_tolerence:
@@ -642,8 +642,8 @@ def has_reading_frames(
             continue
 
         got_nucleotides = sequence.seq[best_match.start:best_match.start + len(got_protein) * 3].upper()
-        if got_nucleotides:
-            exp_nucleotides = reference.seq[e.start:e.end].upper()
+        exp_nucleotides = reference.seq[e.start:e.end].upper()
+        if got_nucleotides and exp_nucleotides:
             orf_alignment = aligner.align(exp_nucleotides, got_nucleotides)[0]
             impacted_by_indels = get_indel_impact(orf_alignment)
 
