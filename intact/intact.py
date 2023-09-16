@@ -799,7 +799,15 @@ def intact( working_dir,
         blast_it = blast_iterate_inf(subtype, input_file, working_dir) if check_internal_inversion or check_nonhiv or check_scramble or 1 < len(subtype_choices) else iterate_empty_lists()
         for (sequence, blast_rows) in with_blast_rows(blast_it, iterate_sequences(input_file)):
 
-            reference_name = blast_rows[0].sseqid if blast_rows else sorted(subtype_choices.keys())[0]
+            blast_rows_statistics = {}
+            for blast_row in blast_rows:
+                blast_rows_statistics[blast_row.sseqid] = blast_rows_statistics.get(blast_row.sseqid, 0) + abs(blast_row.qend - blast_row.qstart)
+
+            if blast_rows_statistics:
+                reference_name = max(blast_rows_statistics, key=blast_rows_statistics.get)
+            else:
+                reference_name = sorted(subtype_choices.keys())[0]
+
             reference = subtype_choices[reference_name]
             hxb2_alignment = wrappers.mafft([hxb2_reference, reference])
             pos_mapping = coords.map_positions(hxb2_alignment[0], hxb2_alignment[1])
