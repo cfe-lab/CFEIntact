@@ -28,6 +28,7 @@ SCRAMBLE_ERROR          = "Scramble"
 NONHIV_ERROR            = "NonHIV"
 INTERNALINVERSION_ERROR = "InternalInversion"
 ALIGNMENT_FAILED        = "AlignmentFailed" # Happens when mafft process fails
+INVALID_CODON           = "InvalidCodon" # Happens when there is an invalid codon in ORF
 
 FRAMESHIFTINORF_ERROR   = "FrameshiftInOrf"
 MSDMUTATED_ERROR        = "MajorSpliceDonorSiteMutated"
@@ -508,11 +509,16 @@ def has_reading_frames(
     reference_aligned_mapping = coords.map_nonaligned_to_aligned_positions(reference, alignment[0].seq)
     query_aligned_mapping = coords.map_nonaligned_to_aligned_positions(sequence, alignment[1].seq)
 
+    errors = []
+    matches = []
+
     try:
         query_aminoacids_table = [translate(sequence.seq, i) for i in range(3)]
     except Bio.Data.CodonTable.TranslationError as e:
         log.error(e)
-        return [], []
+        err = IntactnessError(sequence.id, INVALID_CODON, e.args[0])
+        errors.append(err)
+        return matches, errors
 
     def find_closest(aminoacids, start, direction, target):
         distance = 0
@@ -581,8 +587,6 @@ def has_reading_frames(
         impacted += counter if counter > 30 else 0
         return impacted
 
-    errors = []
-    matches = []
     for e in expected:
         best_match = find_real_correspondence(e)
         matches.append(best_match)
