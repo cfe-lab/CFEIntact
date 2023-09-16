@@ -11,8 +11,10 @@ KX505501.1,DeletionInOrf,"Smaller ORF rev_exon2 at 8377-8653 can have maximum de
 KX505501.1,InternalStopInOrf,Smaller ORF nef at 8796-9417 contains an internal stop codon at 8832
 KX505501.1,RevResponseElementDeletion,Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.
 KX505501.1,LongDeletion,Query sequence contains a long deletion.
-MN691959,InternalStopInOrf,Smaller ORF vpu at 5625-5871 contains an internal stop codon at 5688
-MN691959,InternalStopInOrf,Smaller ORF tat_exon2 at 7937-8030 contains an internal stop codon at 7982
+KX505501.1,Scramble,Sequence is plus-scrambled.
+MN691959,FrameshiftInOrf,Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 79 positions.
+MN691959,InternalStopInOrf,Smaller ORF vpu at 6061-6310 contains an internal stop codon at 6124
+MN691959,InsertionInOrf,"Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 249"
 MN692074,DeletionInOrf,"ORF pol at 2084-5096 can have maximum deletions 30, got 981"
 MN692074,InternalStopInOrf,ORF env at 6224-8795 contains an internal stop codon at 6551
 MN692074,DeletionInOrf,"Smaller ORF vif at 5040-5619 can have maximum deletions 30, got 81"
@@ -26,11 +28,10 @@ MN692074,RevResponseElementDeletion,Query Sequence exceeds maximum deletion tole
 MN692074,LongDeletion,Query sequence contains a long deletion.
 MN692145,FrameshiftInOrf,Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 79 positions.
 MN692145,InsertionInOrf,"Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 231"
-MN692145,Scramble,Sequence is plus-scrambled.
 MN090335,InternalStopInOrf,ORF gag at 789-2292 contains an internal stop codon at 822
 MN090335,FrameshiftInOrf,Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 79 positions.
 MN090335,InsertionInOrf,"Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 282"
 MN090335,PackagingSignalDeletion,Query Sequence exceeds maximum deletion tolerance in PSI. Contains 42 deletions with max tolerance of 10 deletions.
 MN090335,MajorSpliceDonorSiteMutated,"Query sequence has a mutated splice donor site, AT."
-MN090335,Scramble,Sequence is plus-scrambled.
+MN090335,Scramble,Sequence is minus-scrambled.
 MN090335,InternalInversion,Sequence contains an internal inversion.

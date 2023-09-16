@@ -11,8 +11,10 @@ KX505501.1,DeletionInOrf,"Smaller ORF rev_exon2 at 8377-8653 can have maximum de
 KX505501.1,InternalStopInOrf,Smaller ORF nef at 8796-9417 contains an internal stop codon at 8832
 KX505501.1,RevResponseElementDeletion,Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.
 KX505501.1,LongDeletion,Query sequence contains a long deletion.
-MN691959,InternalStopInOrf,Smaller ORF vpu at 5625-5871 contains an internal stop codon at 5688
-MN691959,InternalStopInOrf,Smaller ORF tat_exon2 at 7937-8030 contains an internal stop codon at 7982
+KX505501.1,Scramble,Sequence is plus-scrambled.
+MN691959,FrameshiftInOrf,Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 79 positions.
+MN691959,InternalStopInOrf,Smaller ORF vpu at 6061-6310 contains an internal stop codon at 6124
+MN691959,InsertionInOrf,"Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 249"
 MN692074,DeletionInOrf,"ORF pol at 2084-5096 can have maximum deletions 30, got 981"
 MN692074,InternalStopInOrf,ORF env at 6224-8795 contains an internal stop codon at 6551
 MN692074,DeletionInOrf,"Smaller ORF vif at 5040-5619 can have maximum deletions 30, got 81"
@@ -26,25 +28,26 @@ MN692074,RevResponseElementDeletion,Query Sequence exceeds maximum deletion tole
 MN692074,LongDeletion,Query sequence contains a long deletion.
 MN692145,FrameshiftInOrf,Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 79 positions.
 MN692145,InsertionInOrf,"Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 231"
-MN692145,Scramble,Sequence is plus-scrambled.
 MN090335,InternalStopInOrf,ORF gag at 789-2292 contains an internal stop codon at 822
 MN090335,FrameshiftInOrf,Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 79 positions.
 MN090335,InsertionInOrf,"Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 282"
 MN090335,PackagingSignalDeletion,Query Sequence exceeds maximum deletion tolerance in PSI. Contains 42 deletions with max tolerance of 10 deletions.
 MN090335,MajorSpliceDonorSiteMutated,"Query sequence has a mutated splice donor site, AT."
-MN090335,Scramble,Sequence is plus-scrambled.
+MN090335,Scramble,Sequence is minus-scrambled.
 MN090335,InternalInversion,Sequence contains an internal inversion.
 MN090376,InternalStopInOrf,ORF gag at 789-2292 contains an internal stop codon at 933
 MN090376,FrameshiftInOrf,Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 79 positions.
 MN090376,InsertionInOrf,"Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 252"
 MN090376,PackagingSignalDeletion,Query Sequence exceeds maximum deletion tolerance in PSI. Contains 95 deletions with max tolerance of 10 deletions.
 MN090376,MajorSpliceDonorSiteMutated,"Query sequence has a missing splice donor site, --."
+MN090376,Scramble,Sequence is minus-scrambled.
 MN090376,InternalInversion,Sequence contains an internal inversion.
 MK115581.1,FrameshiftInOrf,Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 80 positions.
 MK115581.1,InsertionInOrf,"Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 243"
+MK115690.1,FrameshiftInOrf,Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 79 positions.
+MK115690.1,InsertionInOrf,"Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 243"
 MK115690.1,PackagingSignalDeletion,Query Sequence exceeds maximum deletion tolerance in PSI. Contains 12 deletions with max tolerance of 10 deletions.
 MK115690.1,MajorSpliceDonorSiteMutated,"Query sequence has a mutated splice donor site, G-."
-MK115690.1,Scramble,Sequence is plus-scrambled.
 MK115571.1,FrameshiftInOrf,Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 80 positions.
 MK115571.1,InsertionInOrf,"Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 243"
 MK115571.1,PackagingSignalDeletion,Query Sequence exceeds maximum deletion tolerance in PSI. Contains 79 deletions with max tolerance of 10 deletions.
@@ -55,7 +58,10 @@ MK115514.1,MajorSpliceDonorSiteMutated,"Query sequence has a missing splice dono
 MK115488.1,FrameshiftInOrf,Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 80 positions.
 MK115488.1,InsertionInOrf,"Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 243"
 MK115488.1,MajorSpliceDonorSiteMutated,"Query sequence has a missing splice donor site, --."
-MK115030.1,DeletionInOrf,"ORF gag at 315-1857 can have maximum deletions 30, got 33"
+MK115030.1,FrameshiftInOrf,Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 79 positions.
+MK115030.1,InsertionInOrf,"Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 270"
+MK115030.1,Scramble,Sequence is minus-scrambled.
+MK115030.1,InternalInversion,Sequence contains an internal inversion.
 MK115498.1,FrameshiftInOrf,Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 80 positions.
 MK115498.1,InsertionInOrf,"Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 243"
 MK115211.1,InternalStopInOrf,ORF env at 6224-8795 contains an internal stop codon at 6890
@@ -63,11 +69,12 @@ MK115211.1,FrameshiftInOrf,Smaller ORF vpr at 5558-5850 contains out of frame in
 MK115211.1,InsertionInOrf,"Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 252"
 MK115211.1,PackagingSignalDeletion,Query Sequence exceeds maximum deletion tolerance in PSI. Contains 20 deletions with max tolerance of 10 deletions.
 MK115211.1,MajorSpliceDonorSiteMutated,"Query sequence has a missing splice donor site, --."
-MK115158.1,FrameshiftInOrf,Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 79 positions.
-MK115158.1,InsertionInOrf,"Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 252"
+MK115211.1,Scramble,Sequence is minus-scrambled.
+MK115211.1,InternalInversion,Sequence contains an internal inversion.
 MK115158.1,PackagingSignalDeletion,Query Sequence exceeds maximum deletion tolerance in PSI. Contains 20 deletions with max tolerance of 10 deletions.
 MK115158.1,MajorSpliceDonorSiteMutated,"Query sequence has a missing splice donor site, --."
-MK114705.1,InternalStopInOrf,Smaller ORF nef at 8357-8972 contains an internal stop codon at 8789
+MK114705.1,FrameshiftInOrf,Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 78 positions.
+MK114705.1,FrameshiftInOrf,Smaller ORF nef at 8796-9417 contains out of frame indels that impact 122 positions.
 MK114856.1,InternalStopInOrf,ORF gag at 789-2292 contains an internal stop codon at 873
 MK114856.1,InternalStopInOrf,ORF pol at 2084-5096 contains an internal stop codon at 2213
 MK114856.1,InternalStopInOrf,ORF env at 6224-8795 contains an internal stop codon at 6326
@@ -78,25 +85,24 @@ MK114856.1,InternalStopInOrf,Smaller ORF vpu at 6061-6310 contains an internal s
 MK114856.1,InternalStopInOrf,Smaller ORF rev_exon2 at 8377-8653 contains an internal stop codon at 8434
 MK114856.1,InternalStopInOrf,Smaller ORF nef at 8796-9417 contains an internal stop codon at 8970
 MK114856.1,APOBECHypermutationDetected,Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 4.399685326687554e-65).
-MK115009.1,InternalStopInOrf,ORF gag at 315-1857 contains an internal stop codon at 360
-MK115009.1,InternalStopInOrf,ORF pol at 1619-4661 contains an internal stop codon at 1718
-MK115009.1,InternalStopInOrf,ORF env at 5788-8356 contains an internal stop codon at 5914
-MK115009.1,InternalStopInOrf,Smaller ORF vif at 4605-5184 contains an internal stop codon at 4644
-MK115009.1,InternalStopInOrf,Smaller ORF vpr at 5123-5414 contains an internal stop codon at 5282
-MK115009.1,DeletionInOrf,"Smaller ORF tat_exon1 at 5394-5609 can have maximum deletions 30, got 54"
-MK115009.1,InternalStopInOrf,Smaller ORF rev_exon2 at 7938-8214 contains an internal stop codon at 7995
-MK115009.1,InternalStopInOrf,Smaller ORF nef at 8357-8972 contains an internal stop codon at 8543
-MK115009.1,APOBECHypermutationDetected,Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 1.786005214078088e-40).
+MK115009.1,InternalStopInOrf,ORF gag at 789-2292 contains an internal stop codon at 834
+MK115009.1,InternalStopInOrf,ORF pol at 2084-5096 contains an internal stop codon at 2183
+MK115009.1,InternalStopInOrf,ORF env at 6224-8795 contains an internal stop codon at 6350
+MK115009.1,InternalStopInOrf,Smaller ORF vif at 5040-5619 contains an internal stop codon at 5079
+MK115009.1,InternalStopInOrf,Smaller ORF vpr at 5558-5850 contains an internal stop codon at 5717
+MK115009.1,DeletionInOrf,"Smaller ORF tat_exon1 at 5830-6045 can have maximum deletions 30, got 54"
+MK115009.1,InternalStopInOrf,Smaller ORF rev_exon2 at 8377-8653 contains an internal stop codon at 8434
+MK115009.1,InternalStopInOrf,Smaller ORF nef at 8796-9417 contains an internal stop codon at 8982
+MK115009.1,APOBECHypermutationDetected,Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 1.3731449337509935e-41).
+MK115009.1,Scramble,Sequence is minus-scrambled.
+MK115009.1,InternalInversion,Sequence contains an internal inversion.
 MK115387.1,FrameshiftInOrf,Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 79 positions.
 MK115387.1,InsertionInOrf,"Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 279"
 MK115491.1,FrameshiftInOrf,Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 80 positions.
 MK115491.1,InsertionInOrf,"Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 243"
-MK116110.1,InternalStopInOrf,ORF gag at 789-2292 contains an internal stop codon at 849
-MK116110.1,FrameshiftInOrf,Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 77 positions.
-MK116110.1,InsertionInOrf,"Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 249"
-MK116110.1,PackagingSignalDeletion,Query Sequence exceeds maximum deletion tolerance in PSI. Contains 93 deletions with max tolerance of 10 deletions.
-MK116110.1,MajorSpliceDonorSiteMutated,"Query sequence has a missing splice donor site, --."
-MK116110.1,InternalInversion,Sequence contains an internal inversion.
+MK116110.1,InternalStopInOrf,ORF gag at 140-1643 contains an internal stop codon at 194
+MK116110.1,PackagingSignalDeletion,Query Sequence exceeds maximum deletion tolerance in PSI. Contains 22 deletions with max tolerance of 10 deletions.
+MK116110.1,MajorSpliceDonorSiteMutated,"Query sequence has a mutated splice donor site, CC."
 MK115527.1,FrameshiftInOrf,Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 80 positions.
 MK115527.1,InsertionInOrf,"Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 243"
 MK114997.1,InternalStopInOrf,ORF env at 6224-8795 contains an internal stop codon at 6356
@@ -104,9 +110,12 @@ MK114997.1,FrameshiftInOrf,Smaller ORF vpr at 5558-5850 contains out of frame in
 MK114997.1,InsertionInOrf,"Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 270"
 MK115518.1,FrameshiftInOrf,Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 80 positions.
 MK115518.1,InsertionInOrf,"Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 243"
-MK115065.1,DeletionInOrf,"ORF gag at 315-1857 can have maximum deletions 30, got 33"
-MK115065.1,PackagingSignalDeletion,Query Sequence exceeds maximum deletion tolerance in PSI. Contains 82 deletions with max tolerance of 10 deletions.
+MK115065.1,FrameshiftInOrf,Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 79 positions.
+MK115065.1,InsertionInOrf,"Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 270"
+MK115065.1,PackagingSignalDeletion,Query Sequence exceeds maximum deletion tolerance in PSI. Contains 75 deletions with max tolerance of 10 deletions.
 MK115065.1,MajorSpliceDonorSiteMutated,"Query sequence has a missing splice donor site, --."
+MK115065.1,Scramble,Sequence is plus-scrambled.
+MK115065.1,InternalInversion,Sequence contains an internal inversion.
 MK115464.1,InternalStopInOrf,ORF gag at 789-2292 contains an internal stop codon at 924
 MK115464.1,InternalStopInOrf,ORF pol at 2084-5096 contains an internal stop codon at 2183
 MK115464.1,InternalStopInOrf,ORF env at 6224-8795 contains an internal stop codon at 6425
@@ -123,7 +132,6 @@ MK115520.1,InternalStopInOrf,ORF pol at 2084-5096 contains an internal stop codo
 MK115520.1,FrameshiftInOrf,Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 80 positions.
 MK115520.1,InsertionInOrf,"Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 243"
 MK115520.1,MajorSpliceDonorSiteMutated,"Query sequence has a mutated splice donor site, GA."
-MK115520.1,Scramble,Sequence is plus-scrambled.
 MK115520.1,InternalInversion,Sequence contains an internal inversion.
 MK115503.1,FrameshiftInOrf,Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 80 positions.
 MK115503.1,InsertionInOrf,"Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 243"
@@ -139,15 +147,16 @@ MK115702.1,PackagingSignalDeletion,Query Sequence exceeds maximum deletion toler
 MK115702.1,MajorSpliceDonorSiteMutated,"Query sequence has a missing splice donor site, --."
 MK115702.1,Scramble,Sequence is plus-scrambled.
 MK115702.1,InternalInversion,Sequence contains an internal inversion.
-MK115095.1,InternalStopInOrf,ORF gag at 236-1757 contains an internal stop codon at 374
-MK115095.1,InternalStopInOrf,ORF pol at 1537-4561 contains an internal stop codon at 1636
-MK115095.1,InternalStopInOrf,ORF env at 5691-8271 contains an internal stop codon at 6018
-MK115095.1,InternalStopInOrf,Smaller ORF vif at 4505-5087 contains an internal stop codon at 4616
-MK115095.1,DeletionInOrf,"Smaller ORF tat_exon1 at 5297-5512 can have maximum deletions 30, got 54"
-MK115095.1,InternalStopInOrf,Smaller ORF vpu at 5528-5774 contains an internal stop codon at 5594
-MK115095.1,InternalStopInOrf,Smaller ORF rev_exon2 at 7853-8129 contains an internal stop codon at 7910
-MK115095.1,DeletionInOrf,"Smaller ORF nef at 8272-8905 can have maximum deletions 30, got 48"
-MK115095.1,APOBECHypermutationDetected,Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 2.055256122735383e-31).
+MK115095.1,InternalStopInOrf,ORF gag at 789-2292 contains an internal stop codon at 927
+MK115095.1,InternalStopInOrf,ORF pol at 2084-5096 contains an internal stop codon at 2183
+MK115095.1,InternalStopInOrf,ORF env at 6224-8795 contains an internal stop codon at 6551
+MK115095.1,InternalStopInOrf,Smaller ORF vif at 5040-5619 contains an internal stop codon at 5151
+MK115095.1,FrameshiftInOrf,Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 79 positions.
+MK115095.1,DeletionInOrf,"Smaller ORF tat_exon1 at 5830-6045 can have maximum deletions 30, got 54"
+MK115095.1,InternalStopInOrf,Smaller ORF vpu at 6061-6310 contains an internal stop codon at 6127
+MK115095.1,InternalStopInOrf,Smaller ORF rev_exon2 at 8377-8653 contains an internal stop codon at 8434
+MK115095.1,InsertionInOrf,"Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 213"
+MK115095.1,APOBECHypermutationDetected,Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 9.460464921885922e-40).
 MK115490.1,FrameshiftInOrf,Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 80 positions.
 MK115490.1,InsertionInOrf,"Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 243"
 MK115576.1,FrameshiftInOrf,Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 80 positions.
@@ -155,19 +164,16 @@ MK115576.1,InsertionInOrf,"Smaller ORF nef at 8796-9417 can have maximum inserti
 OQ092466,FrameshiftInOrf,Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 79 positions.
 OQ092466,InsertionInOrf,"Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 261"
 OQ092466,MajorSpliceDonorSiteMutated,"Query sequence has a mutated splice donor site, GC."
-OQ092466,Scramble,Sequence is plus-scrambled.
-OQ092463,PackagingSignalDeletion,Query Sequence exceeds maximum deletion tolerance in PSI. Contains 33 deletions with max tolerance of 10 deletions.
+OQ092463,PackagingSignalDeletion,Query Sequence exceeds maximum deletion tolerance in PSI. Contains 26 deletions with max tolerance of 10 deletions.
 OQ092463,MajorSpliceDonorSiteMutated,"Query sequence has a missing splice donor site, --."
 OQ092465,MajorSpliceDonorSiteMutated,"Query sequence has a mutated splice donor site, GA."
 OQ092462,FrameshiftInOrf,Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 79 positions.
 OQ092462,InsertionInOrf,"Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 255"
 OQ092462,PackagingSignalDeletion,Query Sequence exceeds maximum deletion tolerance in PSI. Contains 23 deletions with max tolerance of 10 deletions.
 OQ092462,MajorSpliceDonorSiteMutated,"Query sequence has a missing splice donor site, --."
-OQ092462,Scramble,Sequence is plus-scrambled.
-OQ092464,PackagingSignalDeletion,Query Sequence exceeds maximum deletion tolerance in PSI. Contains 28 deletions with max tolerance of 10 deletions.
+OQ092464,PackagingSignalDeletion,Query Sequence exceeds maximum deletion tolerance in PSI. Contains 19 deletions with max tolerance of 10 deletions.
 OQ092464,MajorSpliceDonorSiteMutated,"Query sequence has a missing splice donor site, --."
 OQ092467,FrameshiftInOrf,Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 79 positions.
 OQ092467,InsertionInOrf,"Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 237"
 OQ092467,PackagingSignalDeletion,Query Sequence exceeds maximum deletion tolerance in PSI. Contains 22 deletions with max tolerance of 10 deletions.
 OQ092467,MajorSpliceDonorSiteMutated,"Query sequence has a missing splice donor site, --."
-OQ092467,Scramble,Sequence is plus-scrambled.

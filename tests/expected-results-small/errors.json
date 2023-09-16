@@ -59,18 +59,28 @@
             "sequence_name": "KX505501.1",
             "error": "LongDeletion",
             "message": "Query sequence contains a long deletion."
+        },
+        {
+            "sequence_name": "KX505501.1",
+            "error": "Scramble",
+            "message": "Sequence is plus-scrambled."
         }
     ],
     "MN691959": [
         {
             "sequence_name": "MN691959",
-            "error": "InternalStopInOrf",
-            "message": "Smaller ORF vpu at 5625-5871 contains an internal stop codon at 5688"
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 79 positions."
         },
         {
             "sequence_name": "MN691959",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF tat_exon2 at 7937-8030 contains an internal stop codon at 7982"
+            "message": "Smaller ORF vpu at 6061-6310 contains an internal stop codon at 6124"
+        },
+        {
+            "sequence_name": "MN691959",
+            "error": "InsertionInOrf",
+            "message": "Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 249"
         }
     ],
     "MN692074": [
@@ -140,11 +150,6 @@
             "sequence_name": "MN692145",
             "error": "InsertionInOrf",
             "message": "Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 231"
-        },
-        {
-            "sequence_name": "MN692145",
-            "error": "Scramble",
-            "message": "Sequence is plus-scrambled."
         }
     ],
     "MN090335": [
@@ -176,7 +181,7 @@
         {
             "sequence_name": "MN090335",
             "error": "Scramble",
-            "message": "Sequence is plus-scrambled."
+            "message": "Sequence is minus-scrambled."
         },
         {
             "sequence_name": "MN090335",

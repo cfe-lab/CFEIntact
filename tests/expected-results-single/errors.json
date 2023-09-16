@@ -9,11 +9,6 @@
             "sequence_name": "MN692145",
             "error": "InsertionInOrf",
             "message": "Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 231"
-        },
-        {
-            "sequence_name": "MN692145",
-            "error": "Scramble",
-            "message": "Sequence is plus-scrambled."
         }
     ]
 }

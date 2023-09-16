@@ -1,4 +1,3 @@
 sequence_name,error,message
 MN692145,FrameshiftInOrf,Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 79 positions.
 MN692145,InsertionInOrf,"Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 231"
-MN692145,Scramble,Sequence is plus-scrambled.
