@@ -10,7 +10,7 @@ def run_end_to_end(tmp_path, data_file, expected_dir, output_csv):
     main.intact(
         working_dir=tmp_path,
         input_file=data_file,
-        subtype="B",
+        subtype="all",
         include_packaging_signal=True,
         include_rre=True,
         check_major_splice_donor_site=True,
