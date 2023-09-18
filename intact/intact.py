@@ -98,6 +98,15 @@ class FoundORF:
     aminoacids: str
     nucleotides: str
 
+@dataclass
+class HolisticInfo:
+    hypermutation_probablility: float = dataclasses.field(default=None)
+    inferred_subtype: str  = dataclasses.field(default=None)
+    blast_matched_qlen: int  = dataclasses.field(default=None) # number of query nucleotides matched to a known reference sequence
+    blast_sseq_coverage: float  = dataclasses.field(default=None) # percentage of reference sequence covered by the query sequence
+    blast_qseq_coverage: float  = dataclasses.field(default=None) # percentage of the query sequence covered by reference sequence
+    blast_n_conseqs: int  = dataclasses.field(default=None) # number of blast conseqs in the resulting match
+
 
 def iterate_values_from_csv(file_path):
     with open(file_path, 'r') as csv_file:
@@ -201,12 +210,16 @@ def is_scrambled(seqid, blast_rows):
                                f"Sequence is {direction}-scrambled.")
 
 
-def is_nonhiv(seqid, seqlen, blast_rows):
+def is_nonhiv(holistic, seqid, seqlen, blast_rows):
     aligned_length = sum(abs(x.qend - x.qstart) + 1 for x in blast_rows)
-    total_length = blast_rows[0].qlen if blast_rows else 1
-    ratio = aligned_length / total_length
+    holistic.total_matched_qlen = blast_rows[0].qlen if blast_rows else 1
+    holistic.blast_qseq_coverage = aligned_length / holistic.total_matched_qlen
 
-    if ratio < 0.8 and seqlen > total_length * 0.6:
+    aligned_reference_length = sum(abs(x.qend - x.qstart) + 1 for x in blast_rows)
+    total_matched_slen = blast_rows[0].qlen if blast_rows else 1
+    holistic.blast_sseq_coverage = aligned_reference_length / total_matched_slen
+
+    if holistic.blast_qseq_coverage < 0.8 and seqlen > holistic.total_matched_qlen * 0.6:
         return IntactnessError(seqid, NONHIV_ERROR,
                                "Sequence contains unrecognized parts. "
                                "It is probably a Human/HIV Chimera sequence.")
@@ -229,7 +242,7 @@ def _getPositions(pattern, string):
     return set(m.start() for m in re.finditer(pattern, string))
 #/end _getPositions
 
-def isHypermut(aln):
+def isHypermut(holistic, aln):
     """
     APOBEC3G/F hypermutation scan and test based on Rose and Korber, Bioinformatics (2000).
     Briefly, scans reference for APOBEC possible signatures and non-signatures and performs
@@ -268,6 +281,8 @@ def isHypermut(aln):
              [nCtl, ctlTot - nCtl]],
             alternative = 'greater'
         )
+
+    holistic.hypermutation_probablility = 1 - pval
 
     if pval < 0.05:
         return IntactnessError(
@@ -698,6 +713,7 @@ class OutputWriter:
         self.intact_path = os.path.join(working_dir, "intact.fasta")
         self.non_intact_path = os.path.join(working_dir, "nonintact.fasta")
         self.orf_path = os.path.join(working_dir, f"orfs.{fmt}")
+        self.holistic_path = os.path.join(working_dir, f"holistic.{fmt}")
         self.error_path = os.path.join(working_dir, f"errors.{fmt}")
 
         if fmt not in ("json", "csv"):
@@ -708,15 +724,20 @@ class OutputWriter:
         self.intact_file = open(self.intact_path, 'w')
         self.nonintact_file = open(self.non_intact_path, 'w')
         self.orfs_file = open(self.orf_path, 'w')
+        self.holistic_file = open(self.holistic_path, 'w')
         self.errors_file = open(self.error_path, 'w')
 
         if self.fmt == "json":
             self.orfs = {}
+            self.holistic = {}
             self.errors = {}
         elif self.fmt == "csv":
             self.orfs_writer = csv.writer(self.orfs_file)
             self.orfs_header = ['seqid'] + [field.name for field in dataclasses.fields(CandidateORF)]
             self.orfs_writer.writerow(self.orfs_header)
+            self.holistic_writer = csv.writer(self.holistic_file)
+            self.holistic_header = ['seqid'] + [field.name for field in dataclasses.fields(HolisticInfo)]
+            self.holistic_writer.writerow(self.holistic_header)
             self.errors_writer = csv.writer(self.errors_file)
             self.errors_header = [field.name for field in dataclasses.fields(IntactnessError)]
             self.errors_writer.writerow(self.errors_header)
@@ -727,32 +748,37 @@ class OutputWriter:
     def __exit__(self, *args):
         if self.fmt == "json":
             json.dump(self.orfs, self.orfs_file, indent=4)
+            json.dump(self.holistic, self.holistic_file, indent=4)
             json.dump(self.errors, self.errors_file, indent=4)
 
         self.intact_file.close()
         self.nonintact_file.close()
         self.orfs_file.close()
+        self.holistic_file.close()
         self.errors_file.close()
 
         log.info('Intact sequences written to ' + self.intact_path)
         log.info('Non-intact sequences written to ' + self.non_intact_path)
         log.info('ORFs for all sequences written to ' + self.orf_path)
+        log.info('Holistic info for all sequences written to ' + self.holistic_path)
         log.info('Intactness error information written to ' + self.error_path)
         if os.path.exists(os.path.join(self.working_dir, 'blast.csv')):
             log.info('Blast output written to ' + os.path.join(self.working_dir, 'blast.csv'))
 
 
-    def write(self, sequence, is_intact, orfs, errors):
+    def write(self, sequence, is_intact, orfs, errors, holistic):
         fasta_file = self.intact_file if is_intact else self.nonintact_file
         SeqIO.write([sequence], fasta_file, "fasta")
         fasta_file.flush()
 
         if self.fmt == "json":
             self.orfs[sequence.id] = orfs
+            self.holistic[sequence.id] = holistic
             self.errors[sequence.id] = errors
         elif self.fmt == "csv":
             for orf in orfs:
                 self.orfs_writer.writerow([(sequence.id if key == 'seqid' else orf[key]) for key in self.orfs_header])
+            self.holistic_writer.writerow([(sequence.id if key == 'seqid' else holistic[key]) for key in self.holistic_header])
             for error in errors:
                 self.errors_writer.writerow([error[key] for key in self.errors_header])
 
@@ -831,6 +857,9 @@ def intact( working_dir,
             rre_locus = [pos_mapping[x] for x in hxb2_rre_locus]
 
             sequence_errors = []
+            holistic = HolisticInfo()
+            holistic.inferred_subtype = reference_name
+            holistic.blast_n_conseqs = len(blast_rows)
 
             reverse_sequence = SeqRecord.SeqRecord(Seq.reverse_complement(sequence.seq),
                                                    id = sequence.id + " [REVERSED]",
@@ -844,7 +873,8 @@ def intact( working_dir,
                 err = IntactnessError(sequence.id, ALIGNMENT_FAILED, "Alignment failed for this sequence. It probably contains invalid symbols.")
                 sequence_errors.append(err)
                 errors = [x.__dict__ for x in sequence_errors]
-                writer.write(sequence, is_intact=False, orfs=[], errors=errors)
+                holistic = holistic.__dict__
+                writer.write(sequence, is_intact=False, orfs=[], errors=errors, holistic=holistic)
                 continue
 
             forward_score = alignment_score(alignment)
@@ -902,7 +932,7 @@ def intact( working_dir,
                     sequence_errors.append(mutated_splice_donor_site)
 
             if run_hypermut is not None:
-                hypermutated = isHypermut(alignment)
+                hypermutated = isHypermut(holistic, alignment)
 
                 if hypermutated is not None:
                     sequence_errors.append(hypermutated)
@@ -913,7 +943,7 @@ def intact( working_dir,
                     sequence_errors.append(long_deletion)
 
             if check_nonhiv:
-                error = is_nonhiv(sequence.id, len(sequence), blast_rows)
+                error = is_nonhiv(holistic, sequence.id, len(sequence), blast_rows)
                 if error:
                     sequence_errors.append(error)
 
@@ -935,6 +965,7 @@ def intact( working_dir,
 
             orfs = [x.__dict__ for x in hxb2_found_orfs]
             errors = [x.__dict__ for x in sequence_errors]
-            writer.write(sequence, is_intact, orfs, errors)
+            holistic = holistic.__dict__
+            writer.write(sequence, is_intact, orfs, errors, holistic=holistic)
 #/end def intact
 #/end intact.py
