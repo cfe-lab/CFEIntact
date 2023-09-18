@@ -82,6 +82,8 @@ class CandidateORF:
     name: str
     start: int
     end: int
+    subtype_start: int
+    subtype_end: int
     orientation: str
     distance: float
     protein: str
@@ -90,9 +92,11 @@ class CandidateORF:
 @dataclass
 class FoundORF:
     name: str
-    orientation: str
     start: int
     end: int
+    subtype_start: int
+    subtype_end: int
+    orientation: str
     distance: str
     protein: str
     aminoacids: str
@@ -568,8 +572,8 @@ def has_reading_frames(
                     closest_start = min(n, (closest_start_a * 3) + frame)
                     closest_end = min(n + 1, (closest_end_a * 3) + 3 + frame)
                     got_protein = get_biggest_protein(has_start_codon(e), got_aminoacids)
-                    yield CandidateORF(e.name, closest_start, closest_end, "forward",
-                                       dist, got_protein, got_aminoacids)
+                    yield CandidateORF(e.name, closest_start, closest_end, e.start, e.end,
+                                       "forward", dist, got_protein, got_aminoacids)
 
     def find_real_correspondence(e):
         q_start = coordinates_mapping[e.start]
@@ -730,7 +734,7 @@ class OutputWriter:
             self.errors = {}
         elif self.fmt == "csv":
             self.orfs_writer = csv.writer(self.orfs_file)
-            self.orfs_header = ['seqid'] + [field.name for field in dataclasses.fields(CandidateORF)]
+            self.orfs_header = ['seqid'] + [field.name for field in dataclasses.fields(FoundORF)]
             self.orfs_writer.writerow(self.orfs_header)
             self.holistic_writer = csv.writer(self.holistic_file)
             self.holistic_header = ['seqid'] + [field.name for field in dataclasses.fields(HolisticInfo)]
@@ -900,9 +904,11 @@ def intact( working_dir,
 
             hxb2_found_orfs = [FoundORF(
                 o.name,
-                o.orientation,
                 o.start,
                 o.end,
+                o.subtype_start,
+                o.subtype_end,
+                o.orientation,
                 o.distance,
                 str(o.protein),
                 str(o.aminoacids),
