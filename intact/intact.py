@@ -215,10 +215,6 @@ def is_nonhiv(holistic, seqid, seqlen, blast_rows):
     holistic.blast_matched_qlen = blast_rows[0].qlen if blast_rows else 1
     holistic.blast_qseq_coverage = aligned_length / holistic.blast_matched_qlen
 
-    aligned_reference_length = sum(abs(x.qend - x.qstart) + 1 for x in blast_rows)
-    blast_matched_slen = blast_rows[0].qlen if blast_rows else 1
-    holistic.blast_sseq_coverage = aligned_reference_length / blast_matched_slen
-
     if holistic.blast_qseq_coverage < 0.8 and seqlen > holistic.blast_matched_qlen * 0.6:
         return IntactnessError(seqid, NONHIV_ERROR,
                                "Sequence contains unrecognized parts. "
@@ -860,6 +856,10 @@ def intact( working_dir,
             holistic = HolisticInfo()
             holistic.inferred_subtype = reference_name
             holistic.blast_n_conseqs = len(blast_rows)
+
+            aligned_reference_length = sum(abs(x.send - x.sstart) + 1 for x in blast_rows)
+            blast_matched_slen = blast_rows[0].slen if blast_rows else 1
+            holistic.blast_sseq_coverage = aligned_reference_length / blast_matched_slen
 
             reverse_sequence = SeqRecord.SeqRecord(Seq.reverse_complement(sequence.seq),
                                                    id = sequence.id + " [REVERSED]",
