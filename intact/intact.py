@@ -212,14 +212,14 @@ def is_scrambled(seqid, blast_rows):
 
 def is_nonhiv(holistic, seqid, seqlen, blast_rows):
     aligned_length = sum(abs(x.qend - x.qstart) + 1 for x in blast_rows)
-    holistic.total_matched_qlen = blast_rows[0].qlen if blast_rows else 1
-    holistic.blast_qseq_coverage = aligned_length / holistic.total_matched_qlen
+    holistic.blast_matched_qlen = blast_rows[0].qlen if blast_rows else 1
+    holistic.blast_qseq_coverage = aligned_length / holistic.blast_matched_qlen
 
     aligned_reference_length = sum(abs(x.qend - x.qstart) + 1 for x in blast_rows)
-    total_matched_slen = blast_rows[0].qlen if blast_rows else 1
-    holistic.blast_sseq_coverage = aligned_reference_length / total_matched_slen
+    blast_matched_slen = blast_rows[0].qlen if blast_rows else 1
+    holistic.blast_sseq_coverage = aligned_reference_length / blast_matched_slen
 
-    if holistic.blast_qseq_coverage < 0.8 and seqlen > holistic.total_matched_qlen * 0.6:
+    if holistic.blast_qseq_coverage < 0.8 and seqlen > holistic.blast_matched_qlen * 0.6:
         return IntactnessError(seqid, NONHIV_ERROR,
                                "Sequence contains unrecognized parts. "
                                "It is probably a Human/HIV Chimera sequence.")

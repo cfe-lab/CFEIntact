@@ -1,2 +1,2 @@
 seqid,hypermutation_probablility,inferred_subtype,blast_matched_qlen,blast_sseq_coverage,blast_qseq_coverage,blast_n_conseqs
-MN692145,0.1661041079701131,Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455,,1.1271545051088863,1.1271545051088863,3
+MN692145,0.1661041079701131,Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455,9689,1.1271545051088863,1.1271545051088863,3
