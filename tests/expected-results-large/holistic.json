@@ -6,6 +6,9 @@
         "blast_matched_qlen": 1997,
         "blast_sseq_coverage": 0.2498199403230785,
         "blast_qseq_coverage": 1.2158237356034052,
+        "blast_sseq_orfs_coverage": 0.17661753684736448,
+        "orfs_start": 789,
+        "orfs_end": 8795,
         "blast_n_conseqs": 4
     },
     "MN691959": {
@@ -15,6 +18,9 @@
         "blast_matched_qlen": 9493,
         "blast_sseq_coverage": 1.0816956477003807,
         "blast_qseq_coverage": 1.1086063415148004,
+        "blast_sseq_orfs_coverage": 1.0,
+        "orfs_start": 789,
+        "orfs_end": 8795,
         "blast_n_conseqs": 3
     },
     "MN692074": {
@@ -24,6 +30,9 @@
         "blast_matched_qlen": 4178,
         "blast_sseq_coverage": 0.5041670953801831,
         "blast_qseq_coverage": 1.1728099569171853,
+        "blast_sseq_orfs_coverage": 0.41144141893579816,
+        "orfs_start": 789,
+        "orfs_end": 8795,
         "blast_n_conseqs": 4
     },
     "MN692145": {
@@ -33,6 +42,9 @@
         "blast_matched_qlen": 9689,
         "blast_sseq_coverage": 1.1304660973351168,
         "blast_qseq_coverage": 1.1271545051088863,
+        "blast_sseq_orfs_coverage": 1.0,
+        "orfs_start": 789,
+        "orfs_end": 8795,
         "blast_n_conseqs": 3
     },
     "MN090335": {
@@ -42,6 +54,9 @@
         "blast_matched_qlen": 9069,
         "blast_sseq_coverage": 0.9842576396748637,
         "blast_qseq_coverage": 1.0603153600176425,
+        "blast_sseq_orfs_coverage": 1.0003747189607795,
+        "orfs_start": 789,
+        "orfs_end": 8795,
         "blast_n_conseqs": 3
     },
     "MN090376": {
@@ -51,6 +66,9 @@
         "blast_matched_qlen": 8985,
         "blast_sseq_coverage": 0.9784957300133759,
         "blast_qseq_coverage": 1.0604340567612687,
+        "blast_sseq_orfs_coverage": 0.9943792155883088,
+        "orfs_start": 789,
+        "orfs_end": 8795,
         "blast_n_conseqs": 3
     },
     "MK115581.1": {
@@ -60,6 +78,9 @@
         "blast_matched_qlen": 9495,
         "blast_sseq_coverage": 0.9870357032616525,
         "blast_qseq_coverage": 1.0046340179041602,
+        "blast_sseq_orfs_coverage": 1.0,
+        "orfs_start": 789,
+        "orfs_end": 8795,
         "blast_n_conseqs": 2
     },
     "MK115690.1": {
@@ -69,6 +90,9 @@
         "blast_matched_qlen": 9689,
         "blast_sseq_coverage": 0.988167506945159,
         "blast_qseq_coverage": 0.9949427185468056,
+        "blast_sseq_orfs_coverage": 1.0,
+        "orfs_start": 789,
+        "orfs_end": 8795,
         "blast_n_conseqs": 2
     },
     "MK115571.1": {
@@ -78,6 +102,9 @@
         "blast_matched_qlen": 9394,
         "blast_sseq_coverage": 0.9866241382858318,
         "blast_qseq_coverage": 1.0113902490951672,
+        "blast_sseq_orfs_coverage": 1.0,
+        "orfs_start": 789,
+        "orfs_end": 8795,
         "blast_n_conseqs": 2
     },
     "MK115514.1": {
@@ -87,6 +114,9 @@
         "blast_matched_qlen": 9382,
         "blast_sseq_coverage": 0.9864183557979216,
         "blast_qseq_coverage": 1.0173736943082499,
+        "blast_sseq_orfs_coverage": 1.0,
+        "orfs_start": 789,
+        "orfs_end": 8795,
         "blast_n_conseqs": 2
     },
     "MK115488.1": {
@@ -96,6 +126,9 @@
         "blast_matched_qlen": 9623,
         "blast_sseq_coverage": 1.0255170285008746,
         "blast_qseq_coverage": 1.0325262392185388,
+        "blast_sseq_orfs_coverage": 1.0,
+        "orfs_start": 789,
+        "orfs_end": 8795,
         "blast_n_conseqs": 6
     },
     "MK115030.1": {
@@ -105,6 +138,9 @@
         "blast_matched_qlen": 9126,
         "blast_sseq_coverage": 0.9940323078506019,
         "blast_qseq_coverage": 1.0655270655270654,
+        "blast_sseq_orfs_coverage": 1.0,
+        "orfs_start": 789,
+        "orfs_end": 8795,
         "blast_n_conseqs": 3
     },
     "MK115498.1": {
@@ -114,6 +150,9 @@
         "blast_matched_qlen": 9461,
         "blast_sseq_coverage": 0.9866241382858318,
         "blast_qseq_coverage": 1.0080329774865235,
+        "blast_sseq_orfs_coverage": 1.0,
+        "orfs_start": 789,
+        "orfs_end": 8795,
         "blast_n_conseqs": 2
     },
     "MK115211.1": {
@@ -123,6 +162,9 @@
         "blast_matched_qlen": 9032,
         "blast_sseq_coverage": 0.9950612202901533,
         "blast_qseq_coverage": 1.0598981399468557,
+        "blast_sseq_orfs_coverage": 1.0,
+        "orfs_start": 789,
+        "orfs_end": 8795,
         "blast_n_conseqs": 3
     },
     "MK115158.1": {
@@ -132,6 +174,9 @@
         "blast_matched_qlen": 9143,
         "blast_sseq_coverage": 0.9921577414295317,
         "blast_qseq_coverage": 0.9699223449633599,
+        "blast_sseq_orfs_coverage": 1.0,
+        "orfs_start": 234,
+        "orfs_end": 8212,
         "blast_n_conseqs": 1
     },
     "MK114705.1": {
@@ -141,6 +186,9 @@
         "blast_matched_qlen": 9411,
         "blast_sseq_coverage": 1.0980553554892478,
         "blast_qseq_coverage": 1.122622463075125,
+        "blast_sseq_orfs_coverage": 1.0,
+        "orfs_start": 789,
+        "orfs_end": 8795,
         "blast_n_conseqs": 6
     },
     "MK114856.1": {
@@ -150,6 +198,9 @@
         "blast_matched_qlen": 9477,
         "blast_sseq_coverage": 1.0485646671468258,
         "blast_qseq_coverage": 1.0812493405085997,
+        "blast_sseq_orfs_coverage": 1.0,
+        "orfs_start": 789,
+        "orfs_end": 8795,
         "blast_n_conseqs": 4
     },
     "MK115009.1": {
@@ -159,6 +210,9 @@
         "blast_matched_qlen": 9207,
         "blast_sseq_coverage": 0.9965016977055252,
         "blast_qseq_coverage": 1.0590854784403172,
+        "blast_sseq_orfs_coverage": 1.0,
+        "orfs_start": 789,
+        "orfs_end": 8795,
         "blast_n_conseqs": 3
     },
     "MK115387.1": {
@@ -168,6 +222,9 @@
         "blast_matched_qlen": 9136,
         "blast_sseq_coverage": 0.9796275336968824,
         "blast_qseq_coverage": 1.040936952714536,
+        "blast_sseq_orfs_coverage": 1.0,
+        "orfs_start": 789,
+        "orfs_end": 8795,
         "blast_n_conseqs": 2
     },
     "MK115491.1": {
@@ -177,6 +234,9 @@
         "blast_matched_qlen": 9422,
         "blast_sseq_coverage": 1.003704084782385,
         "blast_qseq_coverage": 1.0299299511780937,
+        "blast_sseq_orfs_coverage": 1.0,
+        "orfs_start": 789,
+        "orfs_end": 8795,
         "blast_n_conseqs": 2
     },
     "MK116110.1": {
@@ -186,6 +246,9 @@
         "blast_matched_qlen": 8967,
         "blast_sseq_coverage": 0.9957759004001778,
         "blast_qseq_coverage": 0.9972119995539199,
+        "blast_sseq_orfs_coverage": 0.998622244488978,
+        "orfs_start": 140,
+        "orfs_end": 8124,
         "blast_n_conseqs": 3
     },
     "MK115527.1": {
@@ -195,6 +258,9 @@
         "blast_matched_qlen": 9481,
         "blast_sseq_coverage": 0.986727029529787,
         "blast_qseq_coverage": 1.0056956017297753,
+        "blast_sseq_orfs_coverage": 1.0,
+        "orfs_start": 789,
+        "orfs_end": 8795,
         "blast_n_conseqs": 2
     },
     "MK114997.1": {
@@ -204,6 +270,9 @@
         "blast_matched_qlen": 9055,
         "blast_sseq_coverage": 0.9784957300133759,
         "blast_qseq_coverage": 1.0516841524019878,
+        "blast_sseq_orfs_coverage": 1.0,
+        "orfs_start": 789,
+        "orfs_end": 8795,
         "blast_n_conseqs": 2
     },
     "MK115518.1": {
@@ -213,6 +282,9 @@
         "blast_matched_qlen": 9537,
         "blast_sseq_coverage": 0.9847720958946393,
         "blast_qseq_coverage": 0.9996854356715948,
+        "blast_sseq_orfs_coverage": 1.0,
+        "orfs_start": 789,
+        "orfs_end": 8795,
         "blast_n_conseqs": 3
     },
     "MK115065.1": {
@@ -222,6 +294,9 @@
         "blast_matched_qlen": 9214,
         "blast_sseq_coverage": 1.0080255170285009,
         "blast_qseq_coverage": 1.069459518124593,
+        "blast_sseq_orfs_coverage": 1.0,
+        "orfs_start": 789,
+        "orfs_end": 8795,
         "blast_n_conseqs": 6
     },
     "MK115464.1": {
@@ -231,6 +306,9 @@
         "blast_matched_qlen": 9663,
         "blast_sseq_coverage": 0.9838460746990431,
         "blast_qseq_coverage": 0.9893407844354756,
+        "blast_sseq_orfs_coverage": 1.0,
+        "orfs_start": 789,
+        "orfs_end": 8795,
         "blast_n_conseqs": 2
     },
     "MK115530.1": {
@@ -240,6 +318,9 @@
         "blast_matched_qlen": 9544,
         "blast_sseq_coverage": 0.9866241382858318,
         "blast_qseq_coverage": 0.9992665549036044,
+        "blast_sseq_orfs_coverage": 1.0,
+        "orfs_start": 789,
+        "orfs_end": 8795,
         "blast_n_conseqs": 2
     },
     "MK115520.1": {
@@ -249,6 +330,9 @@
         "blast_matched_qlen": 9589,
         "blast_sseq_coverage": 0.9787015125012861,
         "blast_qseq_coverage": 0.987902805297737,
+        "blast_sseq_orfs_coverage": 1.012115913065201,
+        "orfs_start": 789,
+        "orfs_end": 8795,
         "blast_n_conseqs": 3
     },
     "MK115503.1": {
@@ -258,6 +342,9 @@
         "blast_matched_qlen": 9617,
         "blast_sseq_coverage": 0.9870357032616525,
         "blast_qseq_coverage": 0.9953207861079338,
+        "blast_sseq_orfs_coverage": 1.0,
+        "orfs_start": 789,
+        "orfs_end": 8795,
         "blast_n_conseqs": 2
     },
     "MK115570.1": {
@@ -267,6 +354,9 @@
         "blast_matched_qlen": 9485,
         "blast_sseq_coverage": 0.9866241382858318,
         "blast_qseq_coverage": 1.0057986294148655,
+        "blast_sseq_orfs_coverage": 1.0,
+        "orfs_start": 789,
+        "orfs_end": 8795,
         "blast_n_conseqs": 2
     },
     "MK115509.1": {
@@ -276,6 +366,9 @@
         "blast_matched_qlen": 9353,
         "blast_sseq_coverage": 0.9866241382858318,
         "blast_qseq_coverage": 1.0197797498128942,
+        "blast_sseq_orfs_coverage": 1.0,
+        "orfs_start": 789,
+        "orfs_end": 8795,
         "blast_n_conseqs": 2
     },
     "MK115702.1": {
@@ -285,6 +378,9 @@
         "blast_matched_qlen": 9098,
         "blast_sseq_coverage": 0.987447268237473,
         "blast_qseq_coverage": 1.0596834469114091,
+        "blast_sseq_orfs_coverage": 1.019860104921309,
+        "orfs_start": 789,
+        "orfs_end": 8795,
         "blast_n_conseqs": 4
     },
     "MK115095.1": {
@@ -294,6 +390,9 @@
         "blast_matched_qlen": 9137,
         "blast_sseq_coverage": 0.9907397880440375,
         "blast_qseq_coverage": 1.060085367188355,
+        "blast_sseq_orfs_coverage": 1.0,
+        "orfs_start": 789,
+        "orfs_end": 8795,
         "blast_n_conseqs": 2
     },
     "MK115490.1": {
@@ -303,6 +402,9 @@
         "blast_matched_qlen": 9347,
         "blast_sseq_coverage": 0.9848749871385946,
         "blast_qseq_coverage": 1.0204343639670483,
+        "blast_sseq_orfs_coverage": 1.0,
+        "orfs_start": 789,
+        "orfs_end": 8795,
         "blast_n_conseqs": 3
     },
     "MK115576.1": {
@@ -312,6 +414,9 @@
         "blast_matched_qlen": 9266,
         "blast_sseq_coverage": 0.9917687004835889,
         "blast_qseq_coverage": 1.0342110943233327,
+        "blast_sseq_orfs_coverage": 1.0,
+        "orfs_start": 789,
+        "orfs_end": 8795,
         "blast_n_conseqs": 3
     },
     "OQ092466": {
@@ -321,6 +426,9 @@
         "blast_matched_qlen": 9686,
         "blast_sseq_coverage": 1.1015536577837226,
         "blast_qseq_coverage": 1.1192442700805285,
+        "blast_sseq_orfs_coverage": 1.0,
+        "orfs_start": 789,
+        "orfs_end": 8795,
         "blast_n_conseqs": 3
     },
     "OQ092463": {
@@ -330,6 +438,9 @@
         "blast_matched_qlen": 9605,
         "blast_sseq_coverage": 1.0529124055135617,
         "blast_qseq_coverage": 0.9884435190005205,
+        "blast_sseq_orfs_coverage": 1.0,
+        "orfs_start": 140,
+        "orfs_end": 8124,
         "blast_n_conseqs": 2
     },
     "OQ092465": {
@@ -339,6 +450,9 @@
         "blast_matched_qlen": 9659,
         "blast_sseq_coverage": 1.0429696287964005,
         "blast_qseq_coverage": 0.9620043482762191,
+        "blast_sseq_orfs_coverage": 1.0,
+        "orfs_start": 200,
+        "orfs_end": 8208,
         "blast_n_conseqs": 2
     },
     "OQ092462": {
@@ -348,6 +462,9 @@
         "blast_matched_qlen": 9714,
         "blast_sseq_coverage": 1.130671879823027,
         "blast_qseq_coverage": 1.1301214741610048,
+        "blast_sseq_orfs_coverage": 1.0,
+        "orfs_start": 789,
+        "orfs_end": 8795,
         "blast_n_conseqs": 3
     },
     "OQ092464": {
@@ -357,6 +474,9 @@
         "blast_matched_qlen": 9556,
         "blast_sseq_coverage": 1.0427446569178853,
         "blast_qseq_coverage": 0.9678735872750105,
+        "blast_sseq_orfs_coverage": 1.0,
+        "orfs_start": 200,
+        "orfs_end": 8208,
         "blast_n_conseqs": 2
     },
     "OQ092467": {
@@ -366,6 +486,9 @@
         "blast_matched_qlen": 9936,
         "blast_sseq_coverage": 1.1308776623109373,
         "blast_qseq_coverage": 1.0962157809983897,
+        "blast_sseq_orfs_coverage": 1.0,
+        "orfs_start": 789,
+        "orfs_end": 8795,
         "blast_n_conseqs": 3
     }
 }

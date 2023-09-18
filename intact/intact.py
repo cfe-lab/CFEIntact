@@ -110,6 +110,9 @@ class HolisticInfo:
     blast_matched_qlen: int  = dataclasses.field(default=None) # number of query nucleotides matched to a known reference sequence
     blast_sseq_coverage: float  = dataclasses.field(default=None) # percentage of reference sequence covered by the query sequence
     blast_qseq_coverage: float  = dataclasses.field(default=None) # percentage of the query sequence covered by reference sequence
+    blast_sseq_orfs_coverage: float  = dataclasses.field(default=None) # percentage of the query sequence covered by reference sequence
+    orfs_start: int  = dataclasses.field(default=None) # start position of the region used for orfs coverage
+    orfs_end: int  = dataclasses.field(default=None) # end position of the region used for orfs coverage
     blast_n_conseqs: int  = dataclasses.field(default=None) # number of blast conseqs in the resulting match
 
 
@@ -866,6 +869,13 @@ def intact( working_dir,
             aligned_reference_length = sum(abs(x.send - x.sstart) + 1 for x in blast_rows)
             blast_matched_slen = blast_rows[0].slen if blast_rows else 1
             holistic.blast_sseq_coverage = aligned_reference_length / blast_matched_slen
+
+            holistic.orfs_start = min(forward_orfs, key=lambda e: e.start).start
+            holistic.orfs_end = max(forward_orfs, key=lambda e: e.end).end
+            clamp = lambda p: max(holistic.orfs_start, min(holistic.orfs_end, p))
+            aligned_reference_orfs_length = sum(abs(clamp(x.send + 1) - clamp(x.sstart)) for x in blast_rows)
+            blast_matched_orfs_slen = holistic.orfs_end - holistic.orfs_start
+            holistic.blast_sseq_orfs_coverage = aligned_reference_orfs_length / blast_matched_orfs_slen
 
             reverse_sequence = SeqRecord.SeqRecord(Seq.reverse_complement(sequence.seq),
                                                    id = sequence.id + " [REVERSED]",
