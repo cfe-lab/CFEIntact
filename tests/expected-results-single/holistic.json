@@ -1,5 +1,6 @@
 {
     "MN692145": {
+        "qlen": 9689,
         "hypermutation_probablility": 0.1661041079701131,
         "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
         "blast_matched_qlen": 9689,

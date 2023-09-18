@@ -100,6 +100,7 @@ class FoundORF:
 
 @dataclass
 class HolisticInfo:
+    qlen: int = dataclasses.field(default=None)
     hypermutation_probablility: float = dataclasses.field(default=None)
     inferred_subtype: str  = dataclasses.field(default=None)
     blast_matched_qlen: int  = dataclasses.field(default=None) # number of query nucleotides matched to a known reference sequence
@@ -854,6 +855,7 @@ def intact( working_dir,
 
             sequence_errors = []
             holistic = HolisticInfo()
+            holistic.qlen = len(sequence)
             holistic.inferred_subtype = reference_name
             holistic.blast_n_conseqs = len(blast_rows)
 
