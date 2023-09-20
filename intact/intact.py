@@ -623,6 +623,9 @@ def has_reading_frames(
             orf_alignment = (exp_protein, "-" * len(exp_protein))
             best_match.distance = aligner.match_score - ((aligner.open_gap_score + len(exp_protein) * aligner.extend_gap_score) / max(1, len(exp_protein)))
 
+        average_distance = 0.62
+        best_match.distance = 1 - (average_distance / (best_match.distance + average_distance)) # normalise it to the [0, 1) interval, with f(average_distance) = 0.5.
+
         # Max deletion allowed in ORF exceeded
         if deletions > e.deletion_tolerence:
 
