@@ -6,7 +6,7 @@ import dataclasses
 from dataclasses import dataclass
 from collections import Counter
 import Bio
-from Bio import AlignIO, Seq, SeqIO, SeqRecord, Align
+from Bio import AlignIO, Seq, SeqIO, SeqRecord
 from scipy.stats import fisher_exact
 from jarowinkler import jaro_similarity
 
@@ -15,6 +15,7 @@ import util.subtypes as st
 import util.wrappers as wrappers
 import util.log as log
 import util.coordinates as coords
+import util.detailed_aligner as detailed_aligner
 from util.blastrow import BlastRow
 
 
@@ -492,13 +493,6 @@ def get_biggest_protein(has_start_codon, aminoacids):
     return longest
 
 
-aligner = Align.PairwiseAligner()
-aligner.mode = 'global'
-aligner.match_score = 2
-aligner.mismatch_score = -1
-aligner.open_gap_score = -1.5
-aligner.extend_gap_score = -0.2
-
 
 def has_start_codon(orf):
     return orf.aminoacids[0] == "M"
@@ -616,15 +610,8 @@ def has_reading_frames(
         deletions = max(0, len(exp_protein) - len(got_protein)) * 3
         insertions = max(0, len(got_protein) - len(exp_protein)) * 3
 
-        if got_protein and exp_protein:
-            orf_alignment = aligner.align(exp_protein, got_protein)[0]
-            best_match.distance = aligner.match_score - (orf_alignment.score / len(exp_protein))
-        else:
-            orf_alignment = (exp_protein, "-" * len(exp_protein))
-            best_match.distance = aligner.match_score - ((aligner.open_gap_score + len(exp_protein) * aligner.extend_gap_score) / max(1, len(exp_protein)))
-
-        average_distance = 0.62
-        best_match.distance = 1 - (average_distance / (best_match.distance + average_distance)) # normalise it to the [0, 1) interval, with f(average_distance) = 0.5.
+        orf_alignment = detailed_aligner.align(exp_protein, got_protein)
+        best_match.distance = detailed_aligner.measure_distance(orf_alignment)
 
         # Max deletion allowed in ORF exceeded
         if deletions > e.deletion_tolerence:
@@ -671,7 +658,7 @@ def has_reading_frames(
         got_nucleotides = sequence.seq[best_match.start:best_match.start + len(got_protein) * 3].upper()
         exp_nucleotides = reference.seq[e.start:e.end].upper()
         if got_nucleotides and exp_nucleotides:
-            orf_alignment = aligner.align(exp_nucleotides, got_nucleotides)[0]
+            orf_alignment = detailed_aligner.align(exp_nucleotides, got_nucleotides)
             impacted_by_indels = get_indel_impact(orf_alignment)
 
             # Check for frameshift in ORF
