@@ -581,7 +581,7 @@ def has_reading_frames(
     def find_real_correspondence(e):
         q_start = coordinates_mapping[e.start]
         q_end = coordinates_mapping[e.end - 1 if e.end == len(coordinates_mapping) else e.end]
-        candidates = list(find_candidate_positions(e, q_start, q_end))
+        candidates = find_candidate_positions(e, q_start, q_end)
         return min(candidates, key=lambda x: x.distance)
 
     def get_indel_impact(alignment):
