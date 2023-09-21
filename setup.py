@@ -83,7 +83,6 @@ setup(
         'biopython>=1.71',
         'click>=6.7',
         'scipy>=1.6.0',
-        'jarowinkler>=1.1.0',
         'numpy>1.19.5'
     ],
     setup_requires=[
@@ -91,7 +90,6 @@ setup(
         'biopython>=1.71',
         'click>=6.7',
         'scipy>=1.6.0',
-        'jarowinkler>=1.1.0',
         'numpy>=1.19.5'
     ]
 )

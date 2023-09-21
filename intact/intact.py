@@ -8,7 +8,6 @@ from collections import Counter
 import Bio
 from Bio import AlignIO, Seq, SeqIO, SeqRecord
 from scipy.stats import fisher_exact
-from jarowinkler import jaro_similarity
 
 import util.constants as const
 import util.subtypes as st
@@ -550,6 +549,7 @@ def has_reading_frames(
     def find_candidate_positions(e, q_start, q_end):
         expected_nucleotides = e.nucleotides
         expected_aminoacids = e.aminoacids
+        expected_protein = expected_aminoacids.strip("*")
         q_start = coordinates_mapping[e.start]
         q_end = coordinates_mapping[e.end - 1 if e.end == len(coordinates_mapping) else e.end]
         got_nucleotides = sequence.seq[q_start:q_end]
@@ -557,6 +557,7 @@ def has_reading_frames(
         q_start_a = q_start // 3
         q_end_a = q_end // 3
         n = len(sequence.seq) - 1
+        visited_set = set()
 
         for frame in range(3):
             aminoacids = query_aminoacids_table[frame]
@@ -565,10 +566,15 @@ def has_reading_frames(
                     closest_start_a = q_start_a if not has_start_codon(e) else find_closest(aminoacids, q_start_a, start_direction, 'M')
                     closest_end_a = q_end_a if not has_stop_codon(e) else find_closest(aminoacids, q_end_a, end_direction, '*')
                     got_aminoacids = aminoacids[closest_start_a:closest_end_a + 1]
-                    dist = 1 - jaro_similarity(got_aminoacids, expected_aminoacids)
+                    if got_aminoacids in visited_set:
+                        continue
+                    else:
+                        visited_set.add(got_aminoacids)
+
                     closest_start = min(n, (closest_start_a * 3) + frame)
                     closest_end = min(n + 1, (closest_end_a * 3) + 3 + frame)
                     got_protein = get_biggest_protein(has_start_codon(e), got_aminoacids)
+                    dist = detailed_aligner.align(got_protein, expected_protein).distance()
                     yield CandidateORF(e.name, closest_start, closest_end, e.start, e.end,
                                        "forward", dist, got_protein, got_aminoacids)
 
@@ -609,9 +615,6 @@ def has_reading_frames(
 
         deletions = max(0, len(exp_protein) - len(got_protein)) * 3
         insertions = max(0, len(got_protein) - len(exp_protein)) * 3
-
-        orf_alignment = detailed_aligner.align(exp_protein, got_protein)
-        best_match.distance = detailed_aligner.measure_distance(orf_alignment)
 
         # Max deletion allowed in ORF exceeded
         if deletions > e.deletion_tolerence:

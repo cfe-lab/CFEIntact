@@ -22,6 +22,18 @@ class Alignment:
         else:
             raise IndexError("Index out of range")
 
+    def distance(self):
+        if self.score == 0:
+            absolute = 0
+        else:
+            absolute = aligner.match_score - (self.score / len(self.reference))
+
+        # normalise it to the [0, 1) interval, with f(average_distance) = 0.5.
+        average_distance = 0.62
+        norm = 1 - (average_distance / (absolute + average_distance))
+
+        return norm
+
 def align(seq1, seq2):
     if seq1 and seq2:
         x = aligner.align(seq1, seq2)[0]
@@ -30,15 +42,3 @@ def align(seq1, seq2):
         return align(seq1 or "-" * len(seq2), seq2 or "-" * len(seq1))
     else:
         return Alignment(seq1, seq2, 0)
-
-def measure_distance(alignment):
-    if alignment.score == 0:
-        absolute = 0
-    else:
-        absolute = aligner.match_score - (alignment.score / len(alignment.reference))
-
-    # normalise it to the [0, 1) interval, with f(average_distance) = 0.5.
-    average_distance = 0.62
-    norm = 1 - (average_distance / (absolute + average_distance))
-
-    return norm
