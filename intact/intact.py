@@ -505,18 +505,11 @@ def translate(seq, frame = 0, to_stop = False):
 
 
 def has_reading_frames(
-    alignment, sequence, reference, is_small,
+    aligned_sequence, is_small,
     expected, error_bar, reverse = False
 ):
-    """
-    Check for presence of small reading frames
-    """
-
-    coordinates_mapping = coords.map_positions(alignment[0], alignment[1].seq)
-    reverse_coordinates_mapping = coords.map_positions(alignment[1], alignment[0].seq)
-
-    reference_aligned_mapping = coords.map_nonaligned_to_aligned_positions(reference, alignment[0].seq)
-    query_aligned_mapping = coords.map_nonaligned_to_aligned_positions(sequence, alignment[1].seq)
+    sequence = aligned_sequence.this
+    reference = aligned_sequence.reference
 
     errors = []
     matches = []
@@ -543,14 +536,11 @@ def has_reading_frames(
         else:
             return 0
 
-    def find_candidate_positions(e, q_start, q_end):
-        expected_nucleotides = e.nucleotides
+    def find_candidate_positions(e):
+        q_start = aligned_sequence.map_index(e.start)
+        q_end = aligned_sequence.map_index(e.end)
         expected_aminoacids = e.aminoacids
         expected_protein = expected_aminoacids.strip("*")
-        q_start = coordinates_mapping[e.start]
-        q_end = coordinates_mapping[e.end - 1 if e.end == len(coordinates_mapping) else e.end]
-        got_nucleotides = sequence.seq[q_start:q_end]
-        got_aminoacids = translate(got_nucleotides)
         q_start_a = q_start // 3
         q_end_a = q_end // 3
         n = len(sequence.seq) - 1
@@ -576,9 +566,7 @@ def has_reading_frames(
                                        "forward", dist, got_protein, got_aminoacids)
 
     def find_real_correspondence(e):
-        q_start = coordinates_mapping[e.start]
-        q_end = coordinates_mapping[e.end - 1 if e.end == len(coordinates_mapping) else e.end]
-        candidates = find_candidate_positions(e, q_start, q_end)
+        candidates = find_candidate_positions(e)
         return min(candidates, key=lambda x: x.distance)
 
     def get_indel_impact(alignment):
@@ -895,12 +883,12 @@ def intact( working_dir,
             alignment = aligned_sequence.get_alignment()
 
             sequence_orfs, orf_errors = has_reading_frames(
-                alignment, sequence, reference, False,
+                aligned_sequence, False,
                 forward_orfs, error_bar)
             sequence_errors.extend(orf_errors)
 
             sequence_small_orfs, small_orf_errors = has_reading_frames(
-                alignment, sequence, reference, True,
+                aligned_sequence, True,
                 small_orfs, error_bar, reverse = False)
             if include_small_orfs:
                 sequence_errors.extend(small_orf_errors)

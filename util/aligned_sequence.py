@@ -33,14 +33,21 @@ class AlignedSequence:
         return self.get_alignment()[1]
 
 
-    def map_index(self, index):
+    def get_coordinates_mapping(self):
         if not self.coordinates_mapping:
             self.coordinates_mapping = coords.map_positions(self.aligned_reference(), self.aligned_this())
+
+        return self.coordinates_mapping
+
+
+    def map_index(self, index):
+        if isinstance(index, ReferenceIndex):
+            index = index.value
 
         if not isinstance(index, int):
             raise TypeError(f"Expected integer as index", index)
 
-        return self.coordinates_mapping[index]
+        return self.get_coordinates_mapping()[index]
 
 
     def index(self, index):
@@ -59,7 +66,7 @@ class AlignedSequence:
         newthis = self.this[first:(last + 1)]
         newreference = self.reference[self.map_index(first):(self.map_index(last) + 1)]
         # TODO: calculate new "coordinates_mapping" and new "alignment" from these indexes.
-        return Sequence(this=newthis, reference=newreference)
+        return AlignedSequence(this=newthis, reference=newreference)
 
 
     def reverse(self):
