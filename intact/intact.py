@@ -63,8 +63,8 @@ class ExpectedORF:
         start = start if start < vpr_defective_insertion_pos else start - 1
         end = end if end < vpr_defective_insertion_pos else end - 1
 
-        start_s = aligned_sequence.map_index(start - 1) # decrement is needed because original "start" is 1-based.
-        end_s = aligned_sequence.map_index(end)
+        start_s = ReferenceIndex(start - 1).mapto(aligned_sequence) # decrement is needed because original "start" is 1-based.
+        end_s = ReferenceIndex(end).mapto(aligned_sequence)
 
         nucleotides = str(aligned_sequence.this.seq[start_s:end_s])
         aminoacids = translate(nucleotides)
@@ -537,8 +537,8 @@ def has_reading_frames(
             return 0
 
     def find_candidate_positions(e):
-        q_start = aligned_sequence.map_index(e.start)
-        q_end = aligned_sequence.map_index(e.end)
+        q_start = ReferenceIndex(e.start).mapto(aligned_sequence)
+        q_end = ReferenceIndex(e.end).mapto(aligned_sequence)
         expected_aminoacids = e.aminoacids
         expected_protein = expected_aminoacids.strip("*")
         q_start_a = q_start // 3
@@ -834,8 +834,8 @@ def intact( working_dir,
             ]
 
             # convert PSI locus and RRE locus to appropriate subtype
-            psi_locus = [aligned_subtype.map_index(x) for x in hxb2_psi_locus]
-            rre_locus = [aligned_subtype.map_index(x) for x in hxb2_rre_locus]
+            psi_locus = [ReferenceIndex(x).mapto(aligned_subtype) for x in hxb2_psi_locus]
+            rre_locus = [ReferenceIndex(x).mapto(aligned_subtype) for x in hxb2_rre_locus]
 
             sequence_errors = []
             holistic = HolisticInfo()
@@ -924,8 +924,8 @@ def intact( working_dir,
             if check_major_splice_donor_site:
                 mutated_splice_donor_site = has_mutated_major_splice_donor_site(
                     alignment,
-                    aligned_subtype.map_index(hxb2_msd_site_locus),
-                    aligned_subtype.map_index(hxb2_msd_site_locus + 1),
+                    ReferenceIndex(hxb2_msd_site_locus).mapto(aligned_subtype),
+                    ReferenceIndex(hxb2_msd_site_locus + 1).mapto(aligned_subtype),
                     const.DEFAULT_MSD_SEQUENCE)
                 if mutated_splice_donor_site is not None:
                     sequence_errors.append(mutated_splice_donor_site)

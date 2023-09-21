@@ -9,6 +9,8 @@ import util.wrappers as wrappers
 class ReferenceIndex:
     value: int
 
+    def mapto(self, aligned):
+        return aligned.map_index(self.value)
 
 @dataclass
 class AlignedSequence:
