@@ -6,7 +6,7 @@ import dataclasses
 from dataclasses import dataclass
 from collections import Counter
 import Bio
-from Bio import AlignIO, Seq, SeqIO, SeqRecord
+from Bio import Seq, SeqIO, SeqRecord
 from scipy.stats import fisher_exact
 
 import util.constants as const
@@ -15,6 +15,7 @@ import util.wrappers as wrappers
 import util.log as log
 import util.coordinates as coords
 import util.detailed_aligner as detailed_aligner
+from util.aligned_sequence import AlignedSequence, ReferenceIndex
 from util.blastrow import BlastRow
 
 
@@ -44,6 +45,7 @@ class IntactnessError:
     error: str
     message: str
 
+
 @dataclass
 class ExpectedORF:
     name: str
@@ -54,18 +56,19 @@ class ExpectedORF:
     aminoacids: str
     protein: str
 
+
     @staticmethod
-    def subtyped(reference, pos_mapping, name, start, end, deletion_tolerence):
+    def subtyped(aligned_sequence, name, start, end, deletion_tolerence):
         vpr_defective_insertion_pos = 5772
         start = start if start < vpr_defective_insertion_pos else start - 1
         end = end if end < vpr_defective_insertion_pos else end - 1
 
-        start_s = pos_mapping[start - 1]
-        end_s = pos_mapping[end]
+        start_s = aligned_sequence.map_index(start - 1) # decrement is needed because original "start" is 1-based.
+        end_s = aligned_sequence.map_index(end)
 
-        nucleotides = str(reference.seq[start_s:end_s])
+        nucleotides = str(aligned_sequence.this.seq[start_s:end_s])
         aminoacids = translate(nucleotides)
-        has_start_codon = translate(reference.seq[(start - 1):end]).startswith("M")
+        has_start_codon = translate(aligned_sequence.this.seq[(start - 1):end]).startswith("M")
         protein = get_biggest_protein(has_start_codon, aminoacids)
 
         return ExpectedORF(name=name,
@@ -76,6 +79,7 @@ class ExpectedORF:
                            aminoacids=aminoacids,
                            protein=protein,
                            )
+
 
 @dataclass
 class CandidateORF:
@@ -89,6 +93,7 @@ class CandidateORF:
     protein: str
     aminoacids: str
 
+
 @dataclass
 class FoundORF:
     name: str
@@ -101,6 +106,7 @@ class FoundORF:
     protein: str
     aminoacids: str
     nucleotides: str
+
 
 @dataclass
 class HolisticInfo:
@@ -837,21 +843,23 @@ def intact( working_dir,
                 reference_name = sorted(subtype_choices.keys())[0]
 
             reference = subtype_choices[reference_name]
-            hxb2_alignment = wrappers.mafft([hxb2_reference, reference])
-            pos_mapping = coords.map_positions(hxb2_alignment[0], hxb2_alignment[1])
+            aligned_subtype = AlignedSequence(this=reference, reference=hxb2_reference)
+
+            # hxb2_alignment = wrappers.mafft([hxb2_reference, reference])
+            # pos_mapping = coords.map_positions(hxb2_alignment[0], hxb2_alignment[1])
 
             # convert ORF positions to appropriate subtype
             forward_orfs, reverse_orfs, small_orfs = [
             [
-                ExpectedORF.subtyped(reference, pos_mapping, n, s, e, delta) \
+                ExpectedORF.subtyped(aligned_subtype, n, s, e, delta) \
                 for (n, s, e, delta) in orfs
             ] \
             for orfs in [hxb2_forward_orfs, hxb2_reverse_orfs, hxb2_small_orfs]
             ]
 
             # convert PSI locus and RRE locus to appropriate subtype
-            psi_locus = [pos_mapping[x] for x in hxb2_psi_locus]
-            rre_locus = [pos_mapping[x] for x in hxb2_rre_locus]
+            psi_locus = [aligned_subtype.map_index(x) for x in hxb2_psi_locus]
+            rre_locus = [aligned_subtype.map_index(x) for x in hxb2_rre_locus]
 
             sequence_errors = []
             holistic = HolisticInfo()
@@ -865,7 +873,7 @@ def intact( working_dir,
 
             holistic.orfs_start = min(forward_orfs, key=lambda e: e.start).start
             holistic.orfs_end = max(forward_orfs, key=lambda e: e.end).end
-            clamp = lambda p: max(holistic.orfs_start, min(holistic.orfs_end, p))
+            clamp = lambda p: max(min(p, holistic.orfs_end), holistic.orfs_start)
             aligned_reference_orfs_length = sum(abs(clamp(x.send + 1) - clamp(x.sstart)) for x in blast_rows)
             blast_matched_orfs_slen = holistic.orfs_end - holistic.orfs_start
             holistic.blast_sseq_orfs_coverage = aligned_reference_orfs_length / blast_matched_orfs_slen
@@ -936,8 +944,8 @@ def intact( working_dir,
             if check_major_splice_donor_site:
                 mutated_splice_donor_site = has_mutated_major_splice_donor_site(
                     alignment,
-                    pos_mapping[hxb2_msd_site_locus],
-                    pos_mapping[hxb2_msd_site_locus + 1],
+                    aligned_subtype.map_index(hxb2_msd_site_locus),
+                    aligned_subtype.map_index(hxb2_msd_site_locus + 1),
                     const.DEFAULT_MSD_SEQUENCE)
                 if mutated_splice_donor_site is not None:
                     sequence_errors.append(mutated_splice_donor_site)
