@@ -15,8 +15,13 @@ import util.wrappers as wrappers
 import util.log as log
 import util.coordinates as coords
 import util.detailed_aligner as detailed_aligner
-from util.aligned_sequence import AlignedSequence, ReferenceIndex
+from util.aligned_sequence import AlignedSequence
+from util.reference_index import ReferenceIndex
 from util.blastrow import BlastRow
+from util.candidate_orf import CandidateORF
+from util.expected_orf import ExpectedORF
+from util.translate_to_aminoacids import translate_to_aminoacids
+from util.get_biggest_protein import get_biggest_protein
 
 
 WRONGORFNUMBER_ERROR    = "WrongORFNumber"
@@ -44,54 +49,6 @@ class IntactnessError:
     sequence_name: str
     error: str
     message: str
-
-
-@dataclass
-class ExpectedORF:
-    name: str
-    start: int
-    end: int
-    deletion_tolerence: int
-    nucleotides: str
-    aminoacids: str
-    protein: str
-
-
-    @staticmethod
-    def subtyped(aligned_sequence, name, start, end, deletion_tolerence):
-        vpr_defective_insertion_pos = 5772
-        start = start if start < vpr_defective_insertion_pos else start - 1
-        end = end if end < vpr_defective_insertion_pos else end - 1
-
-        start_s = ReferenceIndex(start - 1).mapto(aligned_sequence) # decrement is needed because original "start" is 1-based.
-        end_s = ReferenceIndex(end).mapto(aligned_sequence)
-
-        nucleotides = str(aligned_sequence.this.seq[start_s:end_s])
-        aminoacids = translate(nucleotides)
-        has_start_codon = translate(aligned_sequence.this.seq[(start - 1):end]).startswith("M")
-        protein = get_biggest_protein(has_start_codon, aminoacids)
-
-        return ExpectedORF(name=name,
-                           start=start_s,
-                           end=end_s,
-                           deletion_tolerence=deletion_tolerence,
-                           nucleotides=nucleotides,
-                           aminoacids=aminoacids,
-                           protein=protein,
-                           )
-
-
-@dataclass
-class CandidateORF:
-    name: str
-    start: int
-    end: int
-    subtype_start: int
-    subtype_end: int
-    orientation: str
-    distance: float
-    protein: str
-    aminoacids: str
 
 
 @dataclass
@@ -475,33 +432,12 @@ def has_rev_response_element(alignment, rre_locus, rre_tolerance):
 #/end def has_rev_response_element
 
 
-def get_biggest_protein(has_start_codon, aminoacids):
-    def skip_to_startcodon(x):
-        index = x.find("M")
-        if index >= 0:
-            return x[index:]
-        else:
-            return ""
-
-    parts = aminoacids.split("*")
-    subparts = [skip_to_startcodon(x) for x in parts] if has_start_codon else parts
-    longest = max(subparts, key=len)
-    return longest
-
-
-
 def has_start_codon(orf):
     return orf.aminoacids[0] == "M"
 
 
 def has_stop_codon(orf):
     return orf.aminoacids[-1] == "*"
-
-
-def translate(seq, frame = 0, to_stop = False):
-    for_translation = seq[frame:]
-    for_translation += 'N' * ({0: 0, 1: 2, 2: 1}[len(for_translation) % 3])
-    return Seq.translate(for_translation, to_stop = to_stop)
 
 
 def has_reading_frames(
@@ -515,7 +451,7 @@ def has_reading_frames(
     matches = []
 
     try:
-        query_aminoacids_table = [translate(sequence.seq, i) for i in range(3)]
+        query_aminoacids_table = [translate_to_aminoacids(sequence.seq, i) for i in range(3)]
     except Bio.Data.CodonTable.TranslationError as e:
         log.error(e)
         err = IntactnessError(sequence.id, INVALID_CODON, e.args[0])

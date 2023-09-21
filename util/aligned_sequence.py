@@ -4,19 +4,16 @@ from Bio import Seq, SeqRecord
 
 import util.coordinates as coords
 import util.wrappers as wrappers
-
-@dataclass
-class ReferenceIndex:
-    value: int
-
-    def mapto(self, aligned):
-        return aligned.map_index(self.value)
+from util.candidate_orf import CandidateORF
+from util.expected_orf import ExpectedORF
+from util.reference_index import ReferenceIndex
 
 @dataclass
 class AlignedSequence:
     this: Seq
     reference: Seq
-    alignment: (str, str) = dataclasses.field(default=None)
+    orfs: dict[str, CandidateORF]  = dataclasses.field(default=None)
+    alignment: (str, str)          = dataclasses.field(default=None)
     coordinates_mapping: list[int] = dataclasses.field(default=None)
 
 
@@ -82,3 +79,10 @@ class AlignedSequence:
 
     def alignment_score(self):
         return sum([a==b for a, b in zip(self.get_alignment()[0].seq, self.get_alignment()[1].seq)])
+
+
+    def get_orf(self, expected_orf: ExpectedORF):
+        if expected_orf.name not in self.orfs:
+            self.orfs[expected_orf.name] = find_orf(expected_orf)
+
+        return self.orfs[expected_orf.name]
