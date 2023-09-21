@@ -63,9 +63,13 @@ class AlignedSequence:
 
 
     def reverse(self):
-        newthis = SeqRecord.SeqRecord(Seq.reverse_complement(this.seq),
-                                      id = this.id + " [REVERSED]",
-                                      name = this.name
+        newthis = SeqRecord.SeqRecord(Seq.reverse_complement(self.this.seq),
+                                      id = self.this.id + " [REVERSED]",
+                                      name = self.this.name
                                       )
 
-        return Sequence(this=newthis, reference=self.reference)
+        return AlignedSequence(this=newthis, reference=self.reference)
+
+
+    def alignment_score(self):
+        return sum([a==b for a, b in zip(self.get_alignment()[0].seq, self.get_alignment()[1].seq)])

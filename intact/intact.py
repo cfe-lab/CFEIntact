@@ -475,15 +475,6 @@ def has_rev_response_element(alignment, rre_locus, rre_tolerance):
 #/end def has_rev_response_element
 
 
-def alignment_score(alignment):
-    """
-    Simple score for an alignment (just to find out if it's forward or
-    reverse - absolutely not a true genetic distance)
-    """
-
-    return sum([a==b for a, b in zip(alignment[0].seq, alignment[1].seq)])
-
-
 def get_biggest_protein(has_start_codon, aminoacids):
     def skip_to_startcodon(x):
         index = x.find("M")
@@ -845,9 +836,6 @@ def intact( working_dir,
             reference = subtype_choices[reference_name]
             aligned_subtype = AlignedSequence(this=reference, reference=hxb2_reference)
 
-            # hxb2_alignment = wrappers.mafft([hxb2_reference, reference])
-            # pos_mapping = coords.map_positions(hxb2_alignment[0], hxb2_alignment[1])
-
             # convert ORF positions to appropriate subtype
             forward_orfs, reverse_orfs, small_orfs = [
             [
@@ -884,8 +872,8 @@ def intact( working_dir,
                                                    )
 
             try:
-                alignment = wrappers.mafft([reference, sequence])
-                reverse_alignment = wrappers.mafft([reference, reverse_sequence])
+                forward_aligned_sequence = AlignedSequence(this=sequence, reference=aligned_subtype.this)
+                reverse_aligned_sequence = forward_aligned_sequence.reverse()
             except wrappers.AlignmentFailure:
                 err = IntactnessError(sequence.id, ALIGNMENT_FAILED, "Alignment failed for this sequence. It probably contains invalid symbols.")
                 sequence_errors.append(err)
@@ -894,13 +882,17 @@ def intact( working_dir,
                 writer.write(sequence, is_intact=False, orfs=[], errors=errors, holistic=holistic)
                 continue
 
-            forward_score = alignment_score(alignment)
-            reverse_score = alignment_score(reverse_alignment)
-            if alignment_score(reverse_alignment) > alignment_score(alignment):
+            forward_score = forward_aligned_sequence.alignment_score()
+            reverse_score = reverse_aligned_sequence.alignment_score()
+            if forward_score >= reverse_score:
+                aligned_sequence = forward_aligned_sequence
+            else:
                 print("Reversing sequence " + sequence.id + "; forward score "
                       + str(forward_score) + "; reverse score " + str(reverse_score))
-                alignment = reverse_alignment
+                aligned_sequence = reverse_aligned_sequence
                 sequence = reverse_sequence
+
+            alignment = aligned_sequence.get_alignment()
 
             sequence_orfs, orf_errors = has_reading_frames(
                 alignment, sequence, reference, False,
