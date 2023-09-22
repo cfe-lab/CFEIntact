@@ -7,6 +7,7 @@ import util.wrappers as wrappers
 from util.candidate_orf import CandidateORF
 from util.expected_orf import ExpectedORF
 from util.reference_index import ReferenceIndex
+from util.find_orf import find_orf
 
 @dataclass
 class AlignedSequence:

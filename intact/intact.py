@@ -22,6 +22,7 @@ from util.candidate_orf import CandidateORF
 from util.expected_orf import ExpectedORF
 from util.translate_to_aminoacids import translate_to_aminoacids
 from util.get_biggest_protein import get_biggest_protein
+from util.find_orf import find_orf
 
 
 WRONGORFNUMBER_ERROR    = "WrongORFNumber"
@@ -432,14 +433,6 @@ def has_rev_response_element(alignment, rre_locus, rre_tolerance):
 #/end def has_rev_response_element
 
 
-def has_start_codon(orf):
-    return orf.aminoacids[0] == "M"
-
-
-def has_stop_codon(orf):
-    return orf.aminoacids[-1] == "*"
-
-
 def has_reading_frames(
     aligned_sequence, is_small,
     expected, error_bar, reverse = False
@@ -449,61 +442,6 @@ def has_reading_frames(
 
     errors = []
     matches = []
-
-    try:
-        query_aminoacids_table = [translate_to_aminoacids(sequence.seq, i) for i in range(3)]
-    except Bio.Data.CodonTable.TranslationError as e:
-        log.error(e)
-        err = IntactnessError(sequence.id, INVALID_CODON, e.args[0])
-        errors.append(err)
-        return matches, errors
-
-    def find_closest(aminoacids, start, direction, target):
-        distance = 0
-        n = len(aminoacids) - 1
-
-        while start + distance >= 0 and start + distance <= n:
-            if aminoacids[start + distance] == target:
-                return start + distance
-            distance += direction
-
-        if target == '*':
-            return n
-        else:
-            return 0
-
-    def find_candidate_positions(e):
-        q_start = ReferenceIndex(e.start).mapto(aligned_sequence)
-        q_end = ReferenceIndex(e.end).mapto(aligned_sequence)
-        expected_aminoacids = e.aminoacids
-        expected_protein = expected_aminoacids.strip("*")
-        q_start_a = q_start // 3
-        q_end_a = q_end // 3
-        n = len(sequence.seq) - 1
-        visited_set = set()
-
-        for frame in range(3):
-            aminoacids = query_aminoacids_table[frame]
-            for start_direction in [-1, +1]:
-                for end_direction in [-1, +1]:
-                    closest_start_a = q_start_a if not has_start_codon(e) else find_closest(aminoacids, q_start_a, start_direction, 'M')
-                    closest_end_a = q_end_a if not has_stop_codon(e) else find_closest(aminoacids, q_end_a, end_direction, '*')
-                    got_aminoacids = aminoacids[closest_start_a:closest_end_a + 1]
-                    if got_aminoacids in visited_set:
-                        continue
-                    else:
-                        visited_set.add(got_aminoacids)
-
-                    closest_start = min(n, (closest_start_a * 3) + frame)
-                    closest_end = min(n + 1, (closest_end_a * 3) + 3 + frame)
-                    got_protein = get_biggest_protein(has_start_codon(e), got_aminoacids)
-                    dist = detailed_aligner.align(got_protein, expected_protein).distance()
-                    yield CandidateORF(e.name, closest_start, closest_end, e.start, e.end,
-                                       "forward", dist, got_protein, got_aminoacids)
-
-    def find_real_correspondence(e):
-        candidates = find_candidate_positions(e)
-        return min(candidates, key=lambda x: x.distance)
 
     def get_indel_impact(alignment):
         shift = 0
@@ -528,7 +466,7 @@ def has_reading_frames(
         return impacted
 
     for e in expected:
-        best_match = find_real_correspondence(e)
+        best_match = find_orf(aligned_sequence, e)
         matches.append(best_match)
 
         got_protein = best_match.protein
