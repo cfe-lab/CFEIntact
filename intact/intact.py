@@ -730,11 +730,6 @@ def intact( working_dir,
         blast_matched_orfs_slen = holistic.orfs_end - holistic.orfs_start
         holistic.blast_sseq_orfs_coverage = aligned_reference_orfs_length / blast_matched_orfs_slen
 
-        reverse_sequence = SeqRecord.SeqRecord(Seq.reverse_complement(sequence.seq),
-                                                id = sequence.id + " [REVERSED]",
-                                                name = sequence.name
-                                                )
-
         forward_aligned_sequence = AlignedSequence(this=sequence, reference=aligned_subtype.this)
         reverse_aligned_sequence = forward_aligned_sequence.reverse()
 
@@ -746,7 +741,7 @@ def intact( working_dir,
             print("Reversing sequence " + sequence.id + "; forward score "
                     + str(forward_score) + "; reverse score " + str(reverse_score))
             aligned_sequence = reverse_aligned_sequence
-            sequence = reverse_sequence
+            sequence = aligned_sequence.this
 
         alignment = aligned_sequence.get_alignment()
 
