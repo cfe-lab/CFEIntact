@@ -638,10 +638,18 @@ class OutputWriter:
             for error in errors:
                 self.errors_writer.writerow([error[key] for key in self.errors_header])
 
-def strip_sequence_dashes(seq):
-    return SeqRecord.SeqRecord(
-        Seq.Seq(str(seq.seq).replace("-","").replace("\n", "")),
-        id = seq.id, name = seq.name)
+
+def read_hxb2_orfs(aligned_subtype, orfs):
+    for (name, start, end, delta) in orfs:
+        vpr_defective_insertion_pos = 5772
+        start = start if start < vpr_defective_insertion_pos else start - 1
+        end = end if end < vpr_defective_insertion_pos else end - 1
+
+        # decrement is needed because original coordinates are 1-based.
+        start = start - 1
+
+        yield ExpectedORF.subtyped(aligned_subtype, name, start, end, delta)
+
 
 def intact( working_dir,
             input_file,
@@ -677,7 +685,7 @@ def intact( working_dir,
     subtype_choices = {}
     with open(st.alignment_file(subtype), 'r') as in_handle:
         for sequence in SeqIO.parse(in_handle, "fasta"):
-            subtype_choices[sequence.id] = strip_sequence_dashes(sequence)
+            subtype_choices[sequence.id] = sequence
 
     def analyse_single_sequence(holistic, sequence, blast_rows):
         sequence_errors = []
@@ -724,13 +732,9 @@ def intact( working_dir,
             sequence = aligned_sequence.this
 
         # convert ORF positions to appropriate subtype
-        forward_orfs, reverse_orfs, small_orfs = [
-        [
-            ExpectedORF.subtyped(aligned_subtype, n, s, e, delta) \
-            for (n, s, e, delta) in orfs
-        ] \
-        for orfs in [hxb2_forward_orfs, hxb2_reverse_orfs, hxb2_small_orfs]
-        ]
+        forward_orfs, reverse_orfs, small_orfs = \
+            [list(read_hxb2_orfs(aligned_subtype, orfs)) \
+             for orfs in [hxb2_forward_orfs, hxb2_reverse_orfs, hxb2_small_orfs]]
 
         holistic.orfs_start = min(forward_orfs, key=lambda e: e.start).start
         holistic.orfs_end = max(forward_orfs, key=lambda e: e.end).end

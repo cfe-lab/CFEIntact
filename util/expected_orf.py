@@ -17,16 +17,12 @@ class ExpectedORF:
 
     @staticmethod
     def subtyped(aligned_sequence, name, start, end, deletion_tolerence):
-        vpr_defective_insertion_pos = 5772
-        start = start if start < vpr_defective_insertion_pos else start - 1
-        end = end if end < vpr_defective_insertion_pos else end - 1
-
-        start_s = ReferenceIndex(start - 1).mapto(aligned_sequence) # decrement is needed because original "start" is 1-based.
+        start_s = ReferenceIndex(start).mapto(aligned_sequence)
         end_s = ReferenceIndex(end).mapto(aligned_sequence)
 
         nucleotides = str(aligned_sequence.this.seq[start_s:end_s])
         aminoacids = translate_to_aminoacids(nucleotides)
-        has_start_codon = translate_to_aminoacids(aligned_sequence.this.seq[(start - 1):end]).startswith("M")
+        has_start_codon = translate_to_aminoacids(aligned_sequence.this.seq[start:end]).startswith("M")
         protein = get_biggest_protein(has_start_codon, aminoacids)
 
         return ExpectedORF(name=name,
