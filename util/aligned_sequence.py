@@ -47,7 +47,11 @@ class AlignedSequence:
         if not isinstance(index, int):
             raise TypeError(f"Expected integer as index", index)
 
-        return self.get_coordinates_mapping()[index]
+        mapping = self.get_coordinates_mapping()
+        if index < len(mapping):
+            return mapping[index]
+        else:
+            return mapping[-1]
 
 
     def index(self, index):
