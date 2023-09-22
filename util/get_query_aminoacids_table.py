@@ -1,3 +1,4 @@
+import Bio
 from util.translate_to_aminoacids import translate_to_aminoacids
 
 def get_query_aminoacids_table(sequence):
