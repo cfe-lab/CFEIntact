@@ -6,11 +6,11 @@ import os
 import tarfile
 import intact.intact as main
 
-def run_end_to_end(tmp_path, data_file, expected_dir, output_csv):
+def run_end_to_end(tmp_path, data_file, expected_dir, subtype, output_csv):
     main.intact(
         working_dir=tmp_path,
         input_file=data_file,
-        subtype="all",
+        subtype=subtype,
         include_packaging_signal=True,
         include_rre=True,
         check_major_splice_donor_site=True,
@@ -35,6 +35,7 @@ def test_single(tmp_path, request):
     run_end_to_end(tmp_path,
                    os.path.join(pwd, "data-single.fasta"),
                    os.path.join(pwd, "expected-results-single"),
+                   subtype="all",
                    output_csv=False)
 
 
@@ -43,7 +44,17 @@ def test_single_csv(tmp_path, request):
     run_end_to_end(tmp_path,
                    os.path.join(pwd, "data-single.fasta"),
                    os.path.join(pwd, "expected-results-single-csv"),
+                   subtype="all",
                    output_csv=True)
+
+
+def test_single_hxb2(tmp_path, request):
+    pwd = request.fspath.dirname
+    run_end_to_end(tmp_path,
+                   os.path.join(pwd, "data-single.fasta"),
+                   os.path.join(pwd, "expected-results-single-hxb2"),
+                   subtype="HXB2",
+                   output_csv=False)
 
 
 def test_small(tmp_path, request):
@@ -51,6 +62,7 @@ def test_small(tmp_path, request):
     run_end_to_end(tmp_path,
                    os.path.join(pwd, "data-small.fasta"),
                    os.path.join(pwd, "expected-results-small"),
+                   subtype="all",
                    output_csv=False)
 
 
@@ -59,6 +71,7 @@ def test_small_csv(tmp_path, request):
     run_end_to_end(tmp_path,
                    os.path.join(pwd, "data-small.fasta"),
                    os.path.join(pwd, "expected-results-small-csv"),
+                   subtype="all",
                    output_csv=True)
 
 
@@ -68,6 +81,7 @@ def test_large(tmp_path, request):
     run_end_to_end(tmp_path,
                    os.path.join(pwd, "data-large.fasta"),
                    os.path.join(pwd, "expected-results-large"),
+                   subtype="all",
                    output_csv=False)
 
 
@@ -77,7 +91,18 @@ def test_large_csv(tmp_path, request):
     run_end_to_end(tmp_path,
                    os.path.join(pwd, "data-large.fasta"),
                    os.path.join(pwd, "expected-results-large-csv"),
+                   subtype="all",
                    output_csv=True)
+
+
+@pytest.mark.slow
+def test_large_hxb2(tmp_path, request):
+    pwd = request.fspath.dirname
+    run_end_to_end(tmp_path,
+                   os.path.join(pwd, "data-large.fasta"),
+                   os.path.join(pwd, "expected-results-large-hxb2"),
+                   subtype="HXB2",
+                   output_csv=False)
 
 
 @pytest.fixture(scope="session")
@@ -101,5 +126,5 @@ def huge_data_file(tmpdir_factory):
 @pytest.mark.overnight
 def test_huge(tmp_path, huge_data_file):
     file_path, expected_dir_path = huge_data_file
-    run_end_to_end(tmp_path, file_path, expected_dir_path, output_csv=False)
+    run_end_to_end(tmp_path, file_path, expected_dir_path, subtype="all", output_csv=False)
 
