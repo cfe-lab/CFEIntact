@@ -710,26 +710,6 @@ def intact( working_dir,
         reference = subtype_choices[reference_name]
         aligned_subtype = AlignedSequence(this=reference, reference=st.HXB2())
 
-        # convert ORF positions to appropriate subtype
-        forward_orfs, reverse_orfs, small_orfs = [
-        [
-            ExpectedORF.subtyped(aligned_subtype, n, s, e, delta) \
-            for (n, s, e, delta) in orfs
-        ] \
-        for orfs in [hxb2_forward_orfs, hxb2_reverse_orfs, hxb2_small_orfs]
-        ]
-
-        # convert PSI locus and RRE locus to appropriate subtype
-        psi_locus = [ReferenceIndex(x).mapto(aligned_subtype) for x in hxb2_psi_locus]
-        rre_locus = [ReferenceIndex(x).mapto(aligned_subtype) for x in hxb2_rre_locus]
-
-        holistic.orfs_start = min(forward_orfs, key=lambda e: e.start).start
-        holistic.orfs_end = max(forward_orfs, key=lambda e: e.end).end
-        clamp = lambda p: max(min(p, holistic.orfs_end), holistic.orfs_start)
-        aligned_reference_orfs_length = sum(abs(clamp(x.send + 1) - clamp(x.sstart)) for x in blast_rows)
-        blast_matched_orfs_slen = holistic.orfs_end - holistic.orfs_start
-        holistic.blast_sseq_orfs_coverage = aligned_reference_orfs_length / blast_matched_orfs_slen
-
         forward_aligned_sequence = AlignedSequence(this=sequence, reference=aligned_subtype.this)
         reverse_aligned_sequence = forward_aligned_sequence.reverse()
 
@@ -742,6 +722,26 @@ def intact( working_dir,
                     + str(forward_score) + "; reverse score " + str(reverse_score))
             aligned_sequence = reverse_aligned_sequence
             sequence = aligned_sequence.this
+
+        # convert ORF positions to appropriate subtype
+        forward_orfs, reverse_orfs, small_orfs = [
+        [
+            ExpectedORF.subtyped(aligned_subtype, n, s, e, delta) \
+            for (n, s, e, delta) in orfs
+        ] \
+        for orfs in [hxb2_forward_orfs, hxb2_reverse_orfs, hxb2_small_orfs]
+        ]
+
+        holistic.orfs_start = min(forward_orfs, key=lambda e: e.start).start
+        holistic.orfs_end = max(forward_orfs, key=lambda e: e.end).end
+        clamp = lambda p: max(min(p, holistic.orfs_end), holistic.orfs_start)
+        aligned_reference_orfs_length = sum(abs(clamp(x.send + 1) - clamp(x.sstart)) for x in blast_rows)
+        blast_matched_orfs_slen = holistic.orfs_end - holistic.orfs_start
+        holistic.blast_sseq_orfs_coverage = aligned_reference_orfs_length / blast_matched_orfs_slen
+
+        # convert PSI locus and RRE locus to appropriate subtype
+        psi_locus = [ReferenceIndex(x).mapto(aligned_subtype) for x in hxb2_psi_locus]
+        rre_locus = [ReferenceIndex(x).mapto(aligned_subtype) for x in hxb2_rre_locus]
 
         alignment = aligned_sequence.get_alignment()
 
