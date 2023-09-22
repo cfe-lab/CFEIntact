@@ -641,12 +641,14 @@ class OutputWriter:
 
 def read_hxb2_orfs(aligned_subtype, orfs):
     for (name, start, end, delta) in orfs:
-        vpr_defective_insertion_pos = 5772
+        # Decrement is needed because original coordinates are 1-based.
+        start = start - 1
+        end = end - 1
+
+        # Offset by the vpr bug in the original HXB2
+        vpr_defective_insertion_pos = 5771
         start = start if start < vpr_defective_insertion_pos else start - 1
         end = end if end < vpr_defective_insertion_pos else end - 1
-
-        # decrement is needed because original coordinates are 1-based.
-        start = start - 1
 
         yield ExpectedORF.subtyped(aligned_subtype, name, start, end, delta)
 

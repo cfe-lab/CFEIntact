@@ -3,52 +3,52 @@
         {
             "sequence_name": "KX505501.1",
             "error": "DeletionInOrf",
-            "message": "ORF pol at 2084-5096 can have maximum deletions 30, got 2721"
+            "message": "ORF pol at 2084-5095 can have maximum deletions 30, got 2721"
         },
         {
             "sequence_name": "KX505501.1",
             "error": "InternalStopInOrf",
-            "message": "ORF env at 6224-8795 contains an internal stop codon at 6323"
+            "message": "ORF env at 6224-8794 contains an internal stop codon at 6323"
         },
         {
             "sequence_name": "KX505501.1",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF vif at 5040-5619 can have maximum insertions 90, got 909"
+            "message": "Smaller ORF vif at 5040-5618 can have maximum insertions 90, got 909"
         },
         {
             "sequence_name": "KX505501.1",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpr at 5558-5850 can have maximum deletions 30, got 84"
+            "message": "Smaller ORF vpr at 5558-5849 can have maximum deletions 30, got 84"
         },
         {
             "sequence_name": "KX505501.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF tat_exon1 at 5830-6045 contains an internal stop codon at 5893"
+            "message": "Smaller ORF tat_exon1 at 5830-6044 contains an internal stop codon at 5893"
         },
         {
             "sequence_name": "KX505501.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF rev_exon1 at 5969-6045 contains an internal stop codon at 6005"
+            "message": "Smaller ORF rev_exon1 at 5969-6044 contains an internal stop codon at 6005"
         },
         {
             "sequence_name": "KX505501.1",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpu at 6061-6310 can have maximum deletions 30, got 69"
+            "message": "Smaller ORF vpu at 6061-6309 can have maximum deletions 30, got 69"
         },
         {
             "sequence_name": "KX505501.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF tat_exon2 at 8376-8469 contains out of frame indels that impact 40 positions."
+            "message": "Smaller ORF tat_exon2 at 8376-8468 contains out of frame indels that impact 71 positions."
         },
         {
             "sequence_name": "KX505501.1",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon2 at 8377-8653 can have maximum deletions 30, got 96"
+            "message": "Smaller ORF rev_exon2 at 8377-8652 can have maximum deletions 30, got 96"
         },
         {
             "sequence_name": "KX505501.1",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 1116"
+            "message": "Smaller ORF nef at 8796-9416 can have maximum insertions 90, got 1116"
         },
         {
             "sequence_name": "KX505501.1",
@@ -70,64 +70,64 @@
         {
             "sequence_name": "MN691959",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 79 positions."
+            "message": "Smaller ORF vpr at 5558-5849 contains out of frame indels that impact 78 positions."
         },
         {
             "sequence_name": "MN691959",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF vpu at 6061-6310 contains an internal stop codon at 6124"
+            "message": "Smaller ORF vpu at 6061-6309 contains an internal stop codon at 6124"
         },
         {
             "sequence_name": "MN691959",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 249"
+            "message": "Smaller ORF nef at 8796-9416 can have maximum insertions 90, got 249"
         }
     ],
     "MN692074": [
         {
             "sequence_name": "MN692074",
             "error": "DeletionInOrf",
-            "message": "ORF pol at 2084-5096 can have maximum deletions 30, got 981"
+            "message": "ORF pol at 2084-5095 can have maximum deletions 30, got 981"
         },
         {
             "sequence_name": "MN692074",
             "error": "InternalStopInOrf",
-            "message": "ORF env at 6224-8795 contains an internal stop codon at 6551"
+            "message": "ORF env at 6224-8794 contains an internal stop codon at 6551"
         },
         {
             "sequence_name": "MN692074",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vif at 5040-5619 can have maximum deletions 30, got 81"
+            "message": "Smaller ORF vif at 5040-5618 can have maximum deletions 30, got 81"
         },
         {
             "sequence_name": "MN692074",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF vpr at 5558-5850 can have maximum insertions 90, got 234"
+            "message": "Smaller ORF vpr at 5558-5849 can have maximum insertions 90, got 234"
         },
         {
             "sequence_name": "MN692074",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF tat_exon1 at 5830-6045 contains an internal stop codon at 5893"
+            "message": "Smaller ORF tat_exon1 at 5830-6044 contains an internal stop codon at 5893"
         },
         {
             "sequence_name": "MN692074",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpu at 6061-6310 can have maximum deletions 30, got 165"
+            "message": "Smaller ORF vpu at 6061-6309 can have maximum deletions 30, got 165"
         },
         {
             "sequence_name": "MN692074",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF tat_exon2 at 8376-8469 contains out of frame indels that impact 76 positions."
+            "message": "Smaller ORF tat_exon2 at 8376-8468 contains out of frame indels that impact 76 positions."
         },
         {
             "sequence_name": "MN692074",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon2 at 8377-8653 can have maximum deletions 30, got 204"
+            "message": "Smaller ORF rev_exon2 at 8377-8652 can have maximum deletions 30, got 204"
         },
         {
             "sequence_name": "MN692074",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 1131"
+            "message": "Smaller ORF nef at 8796-9416 can have maximum insertions 90, got 1131"
         },
         {
             "sequence_name": "MN692074",
@@ -144,29 +144,29 @@
         {
             "sequence_name": "MN692145",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 79 positions."
+            "message": "Smaller ORF vpr at 5558-5849 contains out of frame indels that impact 78 positions."
         },
         {
             "sequence_name": "MN692145",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 231"
+            "message": "Smaller ORF nef at 8796-9416 can have maximum insertions 90, got 231"
         }
     ],
     "MN090335": [
         {
             "sequence_name": "MN090335",
             "error": "InternalStopInOrf",
-            "message": "ORF gag at 789-2292 contains an internal stop codon at 822"
+            "message": "ORF gag at 789-2291 contains an internal stop codon at 822"
         },
         {
             "sequence_name": "MN090335",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 79 positions."
+            "message": "Smaller ORF vpr at 5558-5849 contains out of frame indels that impact 78 positions."
         },
         {
             "sequence_name": "MN090335",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 282"
+            "message": "Smaller ORF nef at 8796-9416 can have maximum insertions 90, got 282"
         },
         {
             "sequence_name": "MN090335",
@@ -193,17 +193,17 @@
         {
             "sequence_name": "MN090376",
             "error": "InternalStopInOrf",
-            "message": "ORF gag at 789-2292 contains an internal stop codon at 822"
+            "message": "ORF gag at 789-2291 contains an internal stop codon at 822"
         },
         {
             "sequence_name": "MN090376",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 79 positions."
+            "message": "Smaller ORF vpr at 5558-5849 contains out of frame indels that impact 78 positions."
         },
         {
             "sequence_name": "MN090376",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 252"
+            "message": "Smaller ORF nef at 8796-9416 can have maximum insertions 90, got 252"
         },
         {
             "sequence_name": "MN090376",
@@ -230,24 +230,24 @@
         {
             "sequence_name": "MK115581.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 80 positions."
+            "message": "Smaller ORF vpr at 5558-5849 contains out of frame indels that impact 79 positions."
         },
         {
             "sequence_name": "MK115581.1",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 243"
+            "message": "Smaller ORF nef at 8796-9416 can have maximum insertions 90, got 243"
         }
     ],
     "MK115690.1": [
         {
             "sequence_name": "MK115690.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 79 positions."
+            "message": "Smaller ORF vpr at 5558-5849 contains out of frame indels that impact 78 positions."
         },
         {
             "sequence_name": "MK115690.1",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 243"
+            "message": "Smaller ORF nef at 8796-9416 can have maximum insertions 90, got 243"
         },
         {
             "sequence_name": "MK115690.1",
@@ -264,12 +264,12 @@
         {
             "sequence_name": "MK115571.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 80 positions."
+            "message": "Smaller ORF vpr at 5558-5849 contains out of frame indels that impact 79 positions."
         },
         {
             "sequence_name": "MK115571.1",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 243"
+            "message": "Smaller ORF nef at 8796-9416 can have maximum insertions 90, got 243"
         },
         {
             "sequence_name": "MK115571.1",
@@ -286,12 +286,12 @@
         {
             "sequence_name": "MK115514.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 80 positions."
+            "message": "Smaller ORF vpr at 5558-5849 contains out of frame indels that impact 79 positions."
         },
         {
             "sequence_name": "MK115514.1",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 243"
+            "message": "Smaller ORF nef at 8796-9416 can have maximum insertions 90, got 243"
         },
         {
             "sequence_name": "MK115514.1",
@@ -303,12 +303,12 @@
         {
             "sequence_name": "MK115488.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 80 positions."
+            "message": "Smaller ORF vpr at 5558-5849 contains out of frame indels that impact 79 positions."
         },
         {
             "sequence_name": "MK115488.1",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 243"
+            "message": "Smaller ORF nef at 8796-9416 can have maximum insertions 90, got 243"
         },
         {
             "sequence_name": "MK115488.1",
@@ -320,12 +320,12 @@
         {
             "sequence_name": "MK115030.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 79 positions."
+            "message": "Smaller ORF vpr at 5558-5849 contains out of frame indels that impact 78 positions."
         },
         {
             "sequence_name": "MK115030.1",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 270"
+            "message": "Smaller ORF nef at 8796-9416 can have maximum insertions 90, got 270"
         },
         {
             "sequence_name": "MK115030.1",
@@ -342,29 +342,29 @@
         {
             "sequence_name": "MK115498.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 80 positions."
+            "message": "Smaller ORF vpr at 5558-5849 contains out of frame indels that impact 79 positions."
         },
         {
             "sequence_name": "MK115498.1",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 243"
+            "message": "Smaller ORF nef at 8796-9416 can have maximum insertions 90, got 243"
         }
     ],
     "MK115211.1": [
         {
             "sequence_name": "MK115211.1",
             "error": "InternalStopInOrf",
-            "message": "ORF env at 6224-8795 contains an internal stop codon at 6890"
+            "message": "ORF env at 6224-8794 contains an internal stop codon at 6890"
         },
         {
             "sequence_name": "MK115211.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 79 positions."
+            "message": "Smaller ORF vpr at 5558-5849 contains out of frame indels that impact 78 positions."
         },
         {
             "sequence_name": "MK115211.1",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 252"
+            "message": "Smaller ORF nef at 8796-9416 can have maximum insertions 90, got 252"
         },
         {
             "sequence_name": "MK115211.1",
@@ -403,59 +403,59 @@
         {
             "sequence_name": "MK114705.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 78 positions."
+            "message": "Smaller ORF vpr at 5558-5849 contains out of frame indels that impact 77 positions."
         },
         {
             "sequence_name": "MK114705.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF nef at 8796-9417 contains out of frame indels that impact 122 positions."
+            "message": "Smaller ORF nef at 8796-9416 contains out of frame indels that impact 122 positions."
         }
     ],
     "MK114856.1": [
         {
             "sequence_name": "MK114856.1",
             "error": "InternalStopInOrf",
-            "message": "ORF gag at 789-2292 contains an internal stop codon at 873"
+            "message": "ORF gag at 789-2291 contains an internal stop codon at 873"
         },
         {
             "sequence_name": "MK114856.1",
             "error": "InternalStopInOrf",
-            "message": "ORF pol at 2084-5096 contains an internal stop codon at 2213"
+            "message": "ORF pol at 2084-5095 contains an internal stop codon at 2213"
         },
         {
             "sequence_name": "MK114856.1",
             "error": "InternalStopInOrf",
-            "message": "ORF env at 6224-8795 contains an internal stop codon at 6326"
+            "message": "ORF env at 6224-8794 contains an internal stop codon at 6326"
         },
         {
             "sequence_name": "MK114856.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF vif at 5040-5619 contains an internal stop codon at 5172"
+            "message": "Smaller ORF vif at 5040-5618 contains an internal stop codon at 5172"
         },
         {
             "sequence_name": "MK114856.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF vpr at 5558-5850 contains an internal stop codon at 5594"
+            "message": "Smaller ORF vpr at 5558-5849 contains an internal stop codon at 5594"
         },
         {
             "sequence_name": "MK114856.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF tat_exon1 at 5830-6045 contains an internal stop codon at 5920"
+            "message": "Smaller ORF tat_exon1 at 5830-6044 contains an internal stop codon at 5920"
         },
         {
             "sequence_name": "MK114856.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF vpu at 6061-6310 contains an internal stop codon at 6127"
+            "message": "Smaller ORF vpu at 6061-6309 contains an internal stop codon at 6127"
         },
         {
             "sequence_name": "MK114856.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF rev_exon2 at 8377-8653 contains an internal stop codon at 8434"
+            "message": "Smaller ORF rev_exon2 at 8377-8652 contains an internal stop codon at 8434"
         },
         {
             "sequence_name": "MK114856.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF nef at 8796-9417 contains an internal stop codon at 8853"
+            "message": "Smaller ORF nef at 8796-9416 contains an internal stop codon at 8853"
         },
         {
             "sequence_name": "MK114856.1",
@@ -467,42 +467,42 @@
         {
             "sequence_name": "MK115009.1",
             "error": "InternalStopInOrf",
-            "message": "ORF gag at 789-2292 contains an internal stop codon at 834"
+            "message": "ORF gag at 789-2291 contains an internal stop codon at 834"
         },
         {
             "sequence_name": "MK115009.1",
             "error": "InternalStopInOrf",
-            "message": "ORF pol at 2084-5096 contains an internal stop codon at 2183"
+            "message": "ORF pol at 2084-5095 contains an internal stop codon at 2183"
         },
         {
             "sequence_name": "MK115009.1",
             "error": "InternalStopInOrf",
-            "message": "ORF env at 6224-8795 contains an internal stop codon at 6350"
+            "message": "ORF env at 6224-8794 contains an internal stop codon at 6350"
         },
         {
             "sequence_name": "MK115009.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF vif at 5040-5619 contains an internal stop codon at 5373"
+            "message": "Smaller ORF vif at 5040-5618 contains an internal stop codon at 5373"
         },
         {
             "sequence_name": "MK115009.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF vpr at 5558-5850 contains an internal stop codon at 5717"
+            "message": "Smaller ORF vpr at 5558-5849 contains an internal stop codon at 5717"
         },
         {
             "sequence_name": "MK115009.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF tat_exon1 at 5830-6045 contains an internal stop codon at 5860"
+            "message": "Smaller ORF tat_exon1 at 5830-6044 contains an internal stop codon at 5860"
         },
         {
             "sequence_name": "MK115009.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF rev_exon2 at 8377-8653 contains an internal stop codon at 8434"
+            "message": "Smaller ORF rev_exon2 at 8377-8652 contains an internal stop codon at 8434"
         },
         {
             "sequence_name": "MK115009.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF nef at 8796-9417 contains an internal stop codon at 8874"
+            "message": "Smaller ORF nef at 8796-9416 contains an internal stop codon at 8874"
         },
         {
             "sequence_name": "MK115009.1",
@@ -524,31 +524,31 @@
         {
             "sequence_name": "MK115387.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 79 positions."
+            "message": "Smaller ORF vpr at 5558-5849 contains out of frame indels that impact 78 positions."
         },
         {
             "sequence_name": "MK115387.1",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 279"
+            "message": "Smaller ORF nef at 8796-9416 can have maximum insertions 90, got 279"
         }
     ],
     "MK115491.1": [
         {
             "sequence_name": "MK115491.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 80 positions."
+            "message": "Smaller ORF vpr at 5558-5849 contains out of frame indels that impact 79 positions."
         },
         {
             "sequence_name": "MK115491.1",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 243"
+            "message": "Smaller ORF nef at 8796-9416 can have maximum insertions 90, got 243"
         }
     ],
     "MK116110.1": [
         {
             "sequence_name": "MK116110.1",
             "error": "InternalStopInOrf",
-            "message": "ORF gag at 140-1643 contains an internal stop codon at 185"
+            "message": "ORF gag at 140-1642 contains an internal stop codon at 185"
         },
         {
             "sequence_name": "MK116110.1",
@@ -565,53 +565,53 @@
         {
             "sequence_name": "MK115527.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 80 positions."
+            "message": "Smaller ORF vpr at 5558-5849 contains out of frame indels that impact 79 positions."
         },
         {
             "sequence_name": "MK115527.1",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 243"
+            "message": "Smaller ORF nef at 8796-9416 can have maximum insertions 90, got 243"
         }
     ],
     "MK114997.1": [
         {
             "sequence_name": "MK114997.1",
             "error": "InternalStopInOrf",
-            "message": "ORF env at 6224-8795 contains an internal stop codon at 6512"
+            "message": "ORF env at 6224-8794 contains an internal stop codon at 6512"
         },
         {
             "sequence_name": "MK114997.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 79 positions."
+            "message": "Smaller ORF vpr at 5558-5849 contains out of frame indels that impact 78 positions."
         },
         {
             "sequence_name": "MK114997.1",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 270"
+            "message": "Smaller ORF nef at 8796-9416 can have maximum insertions 90, got 270"
         }
     ],
     "MK115518.1": [
         {
             "sequence_name": "MK115518.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 80 positions."
+            "message": "Smaller ORF vpr at 5558-5849 contains out of frame indels that impact 79 positions."
         },
         {
             "sequence_name": "MK115518.1",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 243"
+            "message": "Smaller ORF nef at 8796-9416 can have maximum insertions 90, got 243"
         }
     ],
     "MK115065.1": [
         {
             "sequence_name": "MK115065.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 79 positions."
+            "message": "Smaller ORF vpr at 5558-5849 contains out of frame indels that impact 78 positions."
         },
         {
             "sequence_name": "MK115065.1",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 270"
+            "message": "Smaller ORF nef at 8796-9416 can have maximum insertions 90, got 270"
         },
         {
             "sequence_name": "MK115065.1",
@@ -638,47 +638,47 @@
         {
             "sequence_name": "MK115464.1",
             "error": "InternalStopInOrf",
-            "message": "ORF gag at 789-2292 contains an internal stop codon at 924"
+            "message": "ORF gag at 789-2291 contains an internal stop codon at 924"
         },
         {
             "sequence_name": "MK115464.1",
             "error": "InternalStopInOrf",
-            "message": "ORF pol at 2084-5096 contains an internal stop codon at 2183"
+            "message": "ORF pol at 2084-5095 contains an internal stop codon at 2183"
         },
         {
             "sequence_name": "MK115464.1",
             "error": "InternalStopInOrf",
-            "message": "ORF env at 6224-8795 contains an internal stop codon at 6425"
+            "message": "ORF env at 6224-8794 contains an internal stop codon at 6425"
         },
         {
             "sequence_name": "MK115464.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF vif at 5040-5619 contains an internal stop codon at 5247"
+            "message": "Smaller ORF vif at 5040-5618 contains an internal stop codon at 5247"
         },
         {
             "sequence_name": "MK115464.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 79 positions."
+            "message": "Smaller ORF vpr at 5558-5849 contains out of frame indels that impact 78 positions."
         },
         {
             "sequence_name": "MK115464.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF tat_exon1 at 5830-6045 contains out of frame indels that impact 104 positions."
+            "message": "Smaller ORF tat_exon1 at 5830-6044 contains out of frame indels that impact 104 positions."
         },
         {
             "sequence_name": "MK115464.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF vpu at 6061-6310 contains an internal stop codon at 6127"
+            "message": "Smaller ORF vpu at 6061-6309 contains an internal stop codon at 6127"
         },
         {
             "sequence_name": "MK115464.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF rev_exon2 at 8377-8653 contains an internal stop codon at 8434"
+            "message": "Smaller ORF rev_exon2 at 8377-8652 contains an internal stop codon at 8434"
         },
         {
             "sequence_name": "MK115464.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF nef at 8796-9417 contains out of frame indels that impact 393 positions."
+            "message": "Smaller ORF nef at 8796-9416 contains out of frame indels that impact 393 positions."
         },
         {
             "sequence_name": "MK115464.1",
@@ -690,29 +690,29 @@
         {
             "sequence_name": "MK115530.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 80 positions."
+            "message": "Smaller ORF vpr at 5558-5849 contains out of frame indels that impact 79 positions."
         },
         {
             "sequence_name": "MK115530.1",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 243"
+            "message": "Smaller ORF nef at 8796-9416 can have maximum insertions 90, got 243"
         }
     ],
     "MK115520.1": [
         {
             "sequence_name": "MK115520.1",
             "error": "InternalStopInOrf",
-            "message": "ORF pol at 2084-5096 contains an internal stop codon at 2198"
+            "message": "ORF pol at 2084-5095 contains an internal stop codon at 2198"
         },
         {
             "sequence_name": "MK115520.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 80 positions."
+            "message": "Smaller ORF vpr at 5558-5849 contains out of frame indels that impact 79 positions."
         },
         {
             "sequence_name": "MK115520.1",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 243"
+            "message": "Smaller ORF nef at 8796-9416 can have maximum insertions 90, got 243"
         },
         {
             "sequence_name": "MK115520.1",
@@ -729,24 +729,24 @@
         {
             "sequence_name": "MK115503.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 80 positions."
+            "message": "Smaller ORF vpr at 5558-5849 contains out of frame indels that impact 79 positions."
         },
         {
             "sequence_name": "MK115503.1",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 243"
+            "message": "Smaller ORF nef at 8796-9416 can have maximum insertions 90, got 243"
         }
     ],
     "MK115570.1": [
         {
             "sequence_name": "MK115570.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 80 positions."
+            "message": "Smaller ORF vpr at 5558-5849 contains out of frame indels that impact 79 positions."
         },
         {
             "sequence_name": "MK115570.1",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 243"
+            "message": "Smaller ORF nef at 8796-9416 can have maximum insertions 90, got 243"
         },
         {
             "sequence_name": "MK115570.1",
@@ -763,24 +763,24 @@
         {
             "sequence_name": "MK115509.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 80 positions."
+            "message": "Smaller ORF vpr at 5558-5849 contains out of frame indels that impact 79 positions."
         },
         {
             "sequence_name": "MK115509.1",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 243"
+            "message": "Smaller ORF nef at 8796-9416 can have maximum insertions 90, got 243"
         }
     ],
     "MK115702.1": [
         {
             "sequence_name": "MK115702.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 78 positions."
+            "message": "Smaller ORF vpr at 5558-5849 contains out of frame indels that impact 77 positions."
         },
         {
             "sequence_name": "MK115702.1",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 249"
+            "message": "Smaller ORF nef at 8796-9416 can have maximum insertions 90, got 249"
         },
         {
             "sequence_name": "MK115702.1",
@@ -807,47 +807,47 @@
         {
             "sequence_name": "MK115095.1",
             "error": "InternalStopInOrf",
-            "message": "ORF gag at 789-2292 contains an internal stop codon at 927"
+            "message": "ORF gag at 789-2291 contains an internal stop codon at 927"
         },
         {
             "sequence_name": "MK115095.1",
             "error": "InternalStopInOrf",
-            "message": "ORF pol at 2084-5096 contains an internal stop codon at 2183"
+            "message": "ORF pol at 2084-5095 contains an internal stop codon at 2183"
         },
         {
             "sequence_name": "MK115095.1",
             "error": "InternalStopInOrf",
-            "message": "ORF env at 6224-8795 contains an internal stop codon at 6551"
+            "message": "ORF env at 6224-8794 contains an internal stop codon at 6551"
         },
         {
             "sequence_name": "MK115095.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF vif at 5040-5619 contains an internal stop codon at 5151"
+            "message": "Smaller ORF vif at 5040-5618 contains an internal stop codon at 5151"
         },
         {
             "sequence_name": "MK115095.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 79 positions."
+            "message": "Smaller ORF vpr at 5558-5849 contains out of frame indels that impact 78 positions."
         },
         {
             "sequence_name": "MK115095.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF tat_exon1 at 5830-6045 contains an internal stop codon at 5860"
+            "message": "Smaller ORF tat_exon1 at 5830-6044 contains an internal stop codon at 5860"
         },
         {
             "sequence_name": "MK115095.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF vpu at 6061-6310 contains an internal stop codon at 6127"
+            "message": "Smaller ORF vpu at 6061-6309 contains an internal stop codon at 6127"
         },
         {
             "sequence_name": "MK115095.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF rev_exon2 at 8377-8653 contains an internal stop codon at 8434"
+            "message": "Smaller ORF rev_exon2 at 8377-8652 contains an internal stop codon at 8434"
         },
         {
             "sequence_name": "MK115095.1",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 213"
+            "message": "Smaller ORF nef at 8796-9416 can have maximum insertions 90, got 213"
         },
         {
             "sequence_name": "MK115095.1",
@@ -859,36 +859,36 @@
         {
             "sequence_name": "MK115490.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 80 positions."
+            "message": "Smaller ORF vpr at 5558-5849 contains out of frame indels that impact 79 positions."
         },
         {
             "sequence_name": "MK115490.1",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 243"
+            "message": "Smaller ORF nef at 8796-9416 can have maximum insertions 90, got 243"
         }
     ],
     "MK115576.1": [
         {
             "sequence_name": "MK115576.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 80 positions."
+            "message": "Smaller ORF vpr at 5558-5849 contains out of frame indels that impact 79 positions."
         },
         {
             "sequence_name": "MK115576.1",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 243"
+            "message": "Smaller ORF nef at 8796-9416 can have maximum insertions 90, got 243"
         }
     ],
     "OQ092466": [
         {
             "sequence_name": "OQ092466",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 79 positions."
+            "message": "Smaller ORF vpr at 5558-5849 contains out of frame indels that impact 78 positions."
         },
         {
             "sequence_name": "OQ092466",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 261"
+            "message": "Smaller ORF nef at 8796-9416 can have maximum insertions 90, got 261"
         },
         {
             "sequence_name": "OQ092466",
@@ -919,12 +919,12 @@
         {
             "sequence_name": "OQ092462",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 79 positions."
+            "message": "Smaller ORF vpr at 5558-5849 contains out of frame indels that impact 78 positions."
         },
         {
             "sequence_name": "OQ092462",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 255"
+            "message": "Smaller ORF nef at 8796-9416 can have maximum insertions 90, got 255"
         },
         {
             "sequence_name": "OQ092462",
@@ -953,12 +953,12 @@
         {
             "sequence_name": "OQ092467",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpr at 5558-5850 contains out of frame indels that impact 79 positions."
+            "message": "Smaller ORF vpr at 5558-5849 contains out of frame indels that impact 78 positions."
         },
         {
             "sequence_name": "OQ092467",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 237"
+            "message": "Smaller ORF nef at 8796-9416 can have maximum insertions 90, got 237"
         },
         {
             "sequence_name": "OQ092467",

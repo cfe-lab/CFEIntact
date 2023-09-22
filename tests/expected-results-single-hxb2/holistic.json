@@ -8,7 +8,7 @@
         "blast_qseq_coverage": 1.1271545051088863,
         "blast_sseq_orfs_coverage": 1.0,
         "orfs_start": 789,
-        "orfs_end": 8794,
+        "orfs_end": 8793,
         "blast_n_conseqs": 3
     }
 }
