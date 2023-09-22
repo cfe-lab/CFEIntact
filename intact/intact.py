@@ -756,29 +756,36 @@ def intact( working_dir,
 
             alignment = aligned_sequence.get_alignment()
 
-            sequence_orfs, orf_errors = has_reading_frames(
-                aligned_sequence, False,
-                forward_orfs, error_bar)
-            sequence_errors.extend(orf_errors)
+            try:
+                sequence_orfs, orf_errors = has_reading_frames(
+                    aligned_sequence, False,
+                    forward_orfs, error_bar)
+                sequence_errors.extend(orf_errors)
 
-            sequence_small_orfs, small_orf_errors = has_reading_frames(
-                aligned_sequence, True,
-                small_orfs, error_bar, reverse = False)
-            if include_small_orfs:
-                sequence_errors.extend(small_orf_errors)
+                sequence_small_orfs, small_orf_errors = has_reading_frames(
+                    aligned_sequence, True,
+                    small_orfs, error_bar, reverse = False)
+                if include_small_orfs:
+                    sequence_errors.extend(small_orf_errors)
 
-            hxb2_found_orfs = [FoundORF(
-                o.name,
-                o.start,
-                o.end,
-                o.subtype_start,
-                o.subtype_end,
-                o.orientation,
-                o.distance,
-                str(o.protein),
-                str(o.aminoacids),
-                str(sequence[o.start:o.end].seq),
-            ) for o in sorted(sequence_orfs + sequence_small_orfs, key=lambda o: o.start)]
+                hxb2_found_orfs = [FoundORF(
+                    o.name,
+                    o.start,
+                    o.end,
+                    o.subtype_start,
+                    o.subtype_end,
+                    o.orientation,
+                    o.distance,
+                    str(o.protein),
+                    str(o.aminoacids),
+                    str(sequence[o.start:o.end].seq),
+                ) for o in sorted(sequence_orfs + sequence_small_orfs, key=lambda o: o.start)]
+
+            except Bio.Data.CodonTable.TranslationError as e:
+                log.error(e)
+                err = IntactnessError(sequence.id, INVALID_CODON, e.args[0])
+                sequence_errors.append(err)
+                hxb2_found_orfs = []
 
             if include_packaging_signal:
                 missing_psi_locus = has_packaging_signal(alignment,
