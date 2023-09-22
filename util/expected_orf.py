@@ -22,7 +22,7 @@ class ExpectedORF:
 
         nucleotides = str(aligned_sequence.this.seq[start_s:(end_s + 1)])
         aminoacids = translate_to_aminoacids(nucleotides)
-        has_start_codon = translate_to_aminoacids(aligned_sequence.this.seq[start:(end + 1)]).startswith("M")
+        has_start_codon = translate_to_aminoacids(aligned_sequence.reference.seq[start:(end + 1)]).startswith("M")
         protein = get_biggest_protein(has_start_codon, aminoacids)
 
         return ExpectedORF(name=name,
