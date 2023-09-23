@@ -1,7 +1,8 @@
 from util.reference_index import ReferenceIndex
 from util.get_query_aminoacids_table import get_query_aminoacids_table
 from util.get_biggest_protein import get_biggest_protein
-from util.candidate_orf import CandidateORF
+from util.original_orf import OriginalORF
+from util.mapped_orf import MappedORF
 
 import util.detailed_aligner as detailed_aligner
 
@@ -57,8 +58,21 @@ def find_candidate_positions(aligned_sequence, e):
                 closest_end = min(n + 1, (closest_end_a * 3) + 3 + frame)
                 got_protein = get_biggest_protein(has_start_codon(e), got_aminoacids)
                 dist = detailed_aligner.align(got_protein, expected_protein).distance()
-                yield CandidateORF(e.name, closest_start, closest_end, e.start, e.end,
-                                    "forward", dist, got_protein, got_aminoacids)
+                orf = OriginalORF(
+                    name=e.name,
+                    start=closest_start,
+                    end=closest_end,
+                    nucleotides=str(aligned_sequence.this.seq[closest_start:(closest_end + 1)]),
+                    aminoacids=got_aminoacids,
+                    protein=got_protein,
+                    deletion_tolerence=e.deletion_tolerence,
+                    )
+                yield MappedORF(
+                    reference=e,
+                    query=orf,
+                    orientation="forward",
+                    distance=dist,
+                )
 
 
 def find_orf(aligned_sequence, e):

@@ -18,8 +18,8 @@ import util.detailed_aligner as detailed_aligner
 from util.aligned_sequence import AlignedSequence
 from util.reference_index import ReferenceIndex
 from util.blastrow import BlastRow
-from util.candidate_orf import CandidateORF
-from util.expected_orf import ExpectedORF
+from util.mapped_orf import MappedORF
+from util.initialize_orf import initialize_orf
 from util.get_query_aminoacids_table import get_query_aminoacids_table
 from util.get_biggest_protein import get_biggest_protein
 from util.find_orf import find_orf
@@ -469,7 +469,7 @@ def has_reading_frames(
         best_match = find_orf(aligned_sequence, e)
         matches.append(best_match)
 
-        got_protein = best_match.protein
+        got_protein = best_match.query.protein
         exp_protein = e.protein
 
         deletions = max(0, len(exp_protein) - len(got_protein)) * 3
@@ -479,7 +479,7 @@ def has_reading_frames(
         if deletions > e.deletion_tolerence:
 
             limit = e.deletion_tolerence // 3
-            limited_aminoacids = best_match.aminoacids[limit:-limit]
+            limited_aminoacids = best_match.query.aminoacids[limit:-limit]
 
             if "*" in limited_aminoacids:
                 errors.append(IntactnessError(
@@ -517,7 +517,7 @@ def has_reading_frames(
 
             continue
 
-        got_nucleotides = sequence.seq[best_match.start:best_match.start + len(got_protein) * 3].upper()
+        got_nucleotides = sequence.seq[best_match.query.start:best_match.query.start + len(got_protein) * 3].upper()
         exp_nucleotides = reference.seq[e.start:e.end].upper()
         if got_nucleotides and exp_nucleotides:
             orf_alignment = detailed_aligner.align(exp_nucleotides, got_nucleotides)
@@ -650,7 +650,7 @@ def read_hxb2_orfs(aligned_subtype, orfs):
         start = start if start < vpr_defective_insertion_pos else start - 1
         end = end if end < vpr_defective_insertion_pos else end - 1
 
-        yield ExpectedORF.subtyped(aligned_subtype, name, start, end, delta)
+        yield initialize_orf(aligned_subtype, name, start, end, delta)
 
 
 def intact( working_dir,
@@ -763,17 +763,17 @@ def intact( working_dir,
             sequence_errors.extend(small_orf_errors)
 
         hxb2_found_orfs = [FoundORF(
-            o.name,
-            o.start,
-            o.end,
-            o.subtype_start,
-            o.subtype_end,
+            o.query.name,
+            o.query.start,
+            o.query.end,
+            o.reference.start,
+            o.reference.end,
             o.orientation,
             o.distance,
-            str(o.protein),
-            str(o.aminoacids),
-            str(sequence[o.start:o.end].seq),
-        ) for o in sorted(sequence_orfs + sequence_small_orfs, key=lambda o: o.start)]
+            str(o.query.protein),
+            str(o.query.aminoacids),
+            str(sequence[o.query.start:o.query.end].seq),
+        ) for o in sorted(sequence_orfs + sequence_small_orfs, key=lambda o: o.query.start)]
 
         if include_packaging_signal:
             missing_psi_locus = has_packaging_signal(alignment,
