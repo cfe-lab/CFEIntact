@@ -5,23 +5,19 @@ import csv
 import dataclasses
 from dataclasses import dataclass
 from collections import Counter
-import Bio
 from Bio import Seq, SeqIO, SeqRecord
+from Bio.Data import IUPACData
 from scipy.stats import fisher_exact
 
 import util.constants as const
 import util.subtypes as st
 import util.wrappers as wrappers
 import util.log as log
-import util.coordinates as coords
 import util.detailed_aligner as detailed_aligner
 from util.aligned_sequence import AlignedSequence
 from util.reference_index import ReferenceIndex
 from util.blastrow import BlastRow
-from util.mapped_orf import MappedORF
 from util.initialize_orf import initialize_orf
-from util.get_query_aminoacids_table import get_query_aminoacids_table
-from util.get_biggest_protein import get_biggest_protein
 from util.find_orf import find_orf
 
 
@@ -35,7 +31,7 @@ SCRAMBLE_ERROR          = "Scramble"
 NONHIV_ERROR            = "NonHIV"
 INTERNALINVERSION_ERROR = "InternalInversion"
 ALIGNMENT_FAILED        = "AlignmentFailed" # Happens when mafft process fails
-INVALID_CODON           = "InvalidCodon" # Happens when there is an invalid codon in ORF
+UNKNOWN_NUCLEOTIDE      = "UnknownNucleotide" # Happens when there is an invalid codon anywhere in a sequence
 
 FRAMESHIFTINORF_ERROR   = "FrameshiftInOrf"
 MSDMUTATED_ERROR        = "MajorSpliceDonorSiteMutated"
@@ -220,7 +216,7 @@ def isHypermut(holistic, aln):
         aln -- AlignIO object where aln[0] is the reference and aln[1] is the query.
 
     Internal Args:
-        newAln -- all non-indel positions (i.e. removes all sites 
+        newAln -- all non-indel positions (i.e. removes all sites
             where a '-' exists in either sequence.
         ref_str -- joined string from newAln[0]
         qry_str -- joined string from newAln[1]
@@ -281,15 +277,15 @@ def has_long_deletion(sequence, alignment):
 #/end has_long_deletion
 
 
-def has_mutated_major_splice_donor_site(alignment, 
-                                        splice_donor_start_pos, 
+def has_mutated_major_splice_donor_site(alignment,
+                                        splice_donor_start_pos,
                                         splice_donor_end_pos,
                                         splice_donor_sequence):
     """
     Determines whether the major splice donor site is mutated.
     Keyword Args:
-        
-        alignment -- multiple sequence alignment object containing the 
+
+        alignment -- multiple sequence alignment object containing the
                      reference and query sequence.
         splice_donor_start_pos -- first position of splice donor site
         splice_donor_end_pos -- last position of splice donor site
@@ -298,17 +294,17 @@ def has_mutated_major_splice_donor_site(alignment,
 
     sd_begin = [m.start() for m in re.finditer(r"[^-]",
                 str(alignment[0].seq))][splice_donor_start_pos]
-    
+
     sd_end = [m.start() for m in re.finditer(r"[^-]",
               str(alignment[0].seq))][splice_donor_end_pos]
-    
+
     sd = alignment[1].seq[sd_begin:(sd_end + 1)]
 
     # splice donor site is missing from sequence
     if all([x == "-" for x in sd]):
         return IntactnessError(
                 alignment[1].id, MSDMUTATED_ERROR,
-                "Query sequence has a missing splice donor site, " 
+                "Query sequence has a missing splice donor site, "
                 + "".join(sd.upper()) + "."
                 )
 
@@ -316,48 +312,48 @@ def has_mutated_major_splice_donor_site(alignment,
 
         return IntactnessError(
                 alignment[1].id, MSDMUTATED_ERROR,
-                "Query sequence has a mutated splice donor site, " 
+                "Query sequence has a mutated splice donor site, "
                 + "".join(sd.upper()) + "."
                 )
 
     return None
 
-    
 
-    
-    
+
+
+
 
 def has_packaging_signal(alignment, psi_locus, psi_tolerance):
     """
-    Determines presence and possible intactness of HIV 
+    Determines presence and possible intactness of HIV
     Packaging Signal Region.
-    
-    
+
+
     Keyword Args:
-        
-        alignment -- multiple sequence alignment object containing the 
+
+        alignment -- multiple sequence alignment object containing the
                      reference and query sequence.
         psi_locus -- tuple containing start and end coordinates of PSI wrt
                      the reference being used.
         psi_tolerance -- number of deletions in query tolerated to be intact
-        
-        
+
+
     Internal Args:
-        
+
         packaging_begin -- Aligned PSI start position.
         packaging_end -- Aligned PSI end position.
         query_start -- beginning position of query sequence.
         query_psi -- extracted PSI region from query
         query_psi_deletions -- number of deletions in query PSI region
-        
-        
+
+
     Return:
-        
+
         PSINOTFOUND_ERROR -- IntactnessError denoting query does not encompass
                              the complete PSI region.
         PSIDELETION_ERROR -- IntactnessError denoting query likely contains
                              defective PSI.
-        None -- Denotes intact PSI.    
+        None -- Denotes intact PSI.
     """
     packaging_begin = [m.start() for m in re.finditer(r"[^-]",
                        str(alignment[0].seq))][psi_locus[0]]
@@ -378,7 +374,7 @@ def has_packaging_signal(alignment, psi_locus, psi_tolerance):
     if query_psi_deletions > psi_tolerance:
         return IntactnessError(
                 alignment[1].id, PSIDELETION_ERROR,
-                "Query Sequence exceeds maximum deletion tolerance in PSI. " + 
+                "Query Sequence exceeds maximum deletion tolerance in PSI. " +
                 "Contains " + str(query_psi_deletions) + " deletions with max "
                 + "tolerance of " + str(psi_tolerance) + " deletions."
                 )
@@ -388,32 +384,32 @@ def has_packaging_signal(alignment, psi_locus, psi_tolerance):
 
 def has_rev_response_element(alignment, rre_locus, rre_tolerance):
     """
-    Determines presence and possible intactness of HIV 
+    Determines presence and possible intactness of HIV
     Packaging Signal Region.
-    
-    
+
+
     Keyword Args:
-        
-        alignment -- multiple sequence alignment object containing the 
+
+        alignment -- multiple sequence alignment object containing the
                      reference and query sequence.
         rre_locus -- tuple containing start and end coordinates of RRE wrt
                      the reference being used.
         RRE_tolerance -- number of deletions in query tolerated to be intact
-        
-        
+
+
     Internal Args:
-        
+
         rre_begin -- Aligned RRE start position.
         rre_end -- Aligned RRE end position.
         query_rre -- extracted RRE region from query
         query_rre_deletions -- number of deletions in query RRE region
-        
-        
+
+
     Return:
-        
+
         RREDELETION_ERROR -- IntactnessError denoting query likely contains
                              defective RRE.
-        None -- Denotes intact RRE.    
+        None -- Denotes intact RRE.
     """
     rre_begin = [m.start() for m in re.finditer(r"[^-]",
                        str(alignment[0].seq))][rre_locus[0]]
@@ -424,7 +420,7 @@ def has_rev_response_element(alignment, rre_locus, rre_tolerance):
     if query_rre_deletions > rre_tolerance:
         return IntactnessError(
                 alignment[1].id, RREDELETION_ERROR,
-                "Query Sequence exceeds maximum deletion tolerance in RRE. " + 
+                "Query Sequence exceeds maximum deletion tolerance in RRE. " +
                 "Contains " + str(query_rre_deletions) + " deletions with max "
                 + "tolerance of " + str(rre_tolerance) + " deletions."
                 )
@@ -529,8 +525,8 @@ def has_reading_frames(
                 errors.append(IntactnessError(
                     sequence.id, FRAMESHIFTINORF_ERROR,
                     ("Smaller " if is_small else "")
-                    + "ORF " + str(e.name) + " at " + str(e.start) 
-                    + "-" + str(e.end) 
+                    + "ORF " + str(e.name) + " at " + str(e.start)
+                    + "-" + str(e.end)
                     + " contains out of frame indels that impact " + str(impacted_by_indels)
                     + " positions."
                 ))
@@ -653,6 +649,44 @@ def read_hxb2_orfs(aligned_subtype, orfs):
         yield initialize_orf(aligned_subtype, name, start, end, delta)
 
 
+VALID_DNA_CHARACTERS = IUPACData.ambiguous_dna_letters.upper()
+
+def find_invalid_subsequences(sequence):
+    invalid_subsequences = []
+    current_subsequence = []
+    start_position = None
+
+    for idx, symbol in enumerate(sequence.seq):
+        if symbol not in VALID_DNA_CHARACTERS:
+            if start_position is None:
+                start_position = idx
+            current_subsequence.append(symbol)
+        else:
+            if current_subsequence:
+                end_position = idx - 1
+                invalid_subsequences.append(
+                    {
+                        'sequence': ''.join(current_subsequence),
+                        'start': start_position,
+                        'end': end_position
+                    }
+                )
+                current_subsequence = []
+                start_position = None
+
+    if current_subsequence:
+        end_position = len(sequence.seq) - 1
+        invalid_subsequences.append(
+            {
+                'sequence': ''.join(current_subsequence),
+                'start': start_position,
+                'end': end_position
+            }
+        )
+
+    return invalid_subsequences
+
+
 def intact( working_dir,
             input_file,
             subtype,
@@ -692,13 +726,20 @@ def intact( working_dir,
     def analyse_single_sequence(holistic, sequence, blast_rows):
         sequence_errors = []
 
-        e = get_query_aminoacids_table(sequence)
-        if isinstance(e, Exception):
-            log.error(e)
-            err = IntactnessError(sequence.id, INVALID_CODON, e.args[0])
+        invalid_subsequences = find_invalid_subsequences(sequence)
+        if invalid_subsequences:
+            error_details = ', '.join(
+                f"{subseq['sequence']} (start: {subseq['start']}, end: {subseq['end']})" \
+                for subseq in invalid_subsequences
+            )
+
+            err = IntactnessError(sequence.id, UNKNOWN_NUCLEOTIDE,
+                                  f'Sequence contains invalid nucleotides: {error_details}')
             sequence_errors.append(err)
-            sequence = SeqRecord.SeqRecord(Seq.Seq(''.join(x for x in sequence.seq if x in "ACTGN")),
-                                           id = sequence.id, name = sequence.name)
+
+            sequence = SeqRecord.SeqRecord(
+                Seq.Seq(''.join(x for x in sequence.seq if x in VALID_DNA_CHARACTERS)),
+                id=sequence.id, name=sequence.name)
 
         holistic.qlen = len(sequence)
         holistic.blast_n_conseqs = len(blast_rows)
