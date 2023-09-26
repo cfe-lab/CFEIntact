@@ -1,14 +1,3 @@
 {
-    "MN692145": [
-        {
-            "sequence_name": "MN692145",
-            "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpr at 5558-5843 contains out of frame indels that impact 75 positions."
-        },
-        {
-            "sequence_name": "MN692145",
-            "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 231"
-        }
-    ]
+    "MN692145": []
 }
