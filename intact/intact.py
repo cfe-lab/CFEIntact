@@ -769,8 +769,8 @@ def intact( working_dir,
         if forward_score >= reverse_score:
             aligned_sequence = forward_aligned_sequence
         else:
-            print("Reversing sequence " + sequence.id + "; forward score "
-                    + str(forward_score) + "; reverse score " + str(reverse_score))
+            log.info("Reversing sequence " + sequence.id + "; forward score "
+                     + str(forward_score) + "; reverse score " + str(reverse_score))
             aligned_sequence = reverse_aligned_sequence
             sequence = aligned_sequence.this
 
