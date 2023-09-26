@@ -1,0 +1,26 @@
+{
+    "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455": [
+        {
+            "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF vpr at 5558-5843 contains out of frame indels that impact 75 positions."
+        },
+        {
+            "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
+            "error": "InsertionInOrf",
+            "message": "Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 249"
+        }
+    ],
+    "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSED": [
+        {
+            "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSED [REVERSED]",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF vpr at 5558-5843 contains out of frame indels that impact 75 positions."
+        },
+        {
+            "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSED [REVERSED]",
+            "error": "InsertionInOrf",
+            "message": "Smaller ORF nef at 8796-9417 can have maximum insertions 90, got 249"
+        }
+    ]
+}

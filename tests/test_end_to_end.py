@@ -128,3 +128,12 @@ def test_huge(tmp_path, huge_data_file):
     file_path, expected_dir_path = huge_data_file
     run_end_to_end(tmp_path, file_path, expected_dir_path, subtype="all", output_csv=False)
 
+
+def test_edgy(tmp_path, request):
+    pwd = request.fspath.dirname
+    run_end_to_end(tmp_path,
+                   os.path.join(pwd, "data-edgy.fasta"),
+                   os.path.join(pwd, "expected-results-edgy"),
+                   subtype="all",
+                   output_csv=False)
+
