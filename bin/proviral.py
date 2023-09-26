@@ -80,5 +80,4 @@ def intact(input_file, subtype, include_packaging_signal,
         include_small_orfs, output_csv
     )
 
-if __name__ == "__main__":
-    cli()
+if __name__ == "__main__": cli()
