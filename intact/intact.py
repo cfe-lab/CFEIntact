@@ -30,7 +30,6 @@ INTERNALSTOP_ERROR      = "InternalStopInOrf"
 SCRAMBLE_ERROR          = "Scramble"
 NONHIV_ERROR            = "NonHIV"
 INTERNALINVERSION_ERROR = "InternalInversion"
-ALIGNMENT_FAILED        = "AlignmentFailed" # Happens when mafft process fails
 UNKNOWN_NUCLEOTIDE      = "UnknownNucleotide" # Happens when there is an invalid codon anywhere in a sequence
 
 FRAMESHIFTINORF_ERROR   = "FrameshiftInOrf"
@@ -879,15 +878,7 @@ def intact( working_dir,
         blast_it = blast_iterate_inf(subtype, input_file, working_dir) if check_internal_inversion or check_nonhiv or check_scramble or 1 < len(subtype_choices) else iterate_empty_lists()
         for (sequence, blast_rows) in with_blast_rows(blast_it, iterate_sequences(input_file)):
             holistic = HolisticInfo()
-
-            try:
-                is_intact, hxb2_found_orfs, sequence_errors = analyse_single_sequence(holistic, sequence, blast_rows)
-            except wrappers.AlignmentFailure:
-                err = IntactnessError(sequence.id, ALIGNMENT_FAILED, "Alignment failed for this sequence. It probably contains invalid symbols.")
-                is_intact = False
-                hxb2_found_orfs = []
-                sequence_errors = [err]
-
+            is_intact, hxb2_found_orfs, sequence_errors = analyse_single_sequence(holistic, sequence, blast_rows)
             orfs = [x.__dict__ for x in hxb2_found_orfs]
             errors = [x.__dict__ for x in sequence_errors]
             holistic = holistic.__dict__
