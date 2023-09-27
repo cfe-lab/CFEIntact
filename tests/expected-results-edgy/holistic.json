@@ -35,6 +35,30 @@
         "orfs_end": 8007,
         "blast_n_conseqs": 0
     },
+    "empty-sequence": {
+        "qlen": 0,
+        "hypermutation_probablility": 0.0,
+        "inferred_subtype": "Ref.01_AE.AF.07.569M.GQ477441",
+        "blast_matched_qlen": 1,
+        "blast_sseq_coverage": 0.0,
+        "blast_qseq_coverage": 0.0,
+        "blast_sseq_orfs_coverage": 0.0,
+        "orfs_start": 1,
+        "orfs_end": 8007,
+        "blast_n_conseqs": 0
+    },
+    "empty-sequence2": {
+        "qlen": 0,
+        "hypermutation_probablility": 0.0,
+        "inferred_subtype": "Ref.01_AE.AF.07.569M.GQ477441",
+        "blast_matched_qlen": 1,
+        "blast_sseq_coverage": 0.0,
+        "blast_qseq_coverage": 0.0,
+        "blast_sseq_orfs_coverage": 0.0,
+        "orfs_start": 1,
+        "orfs_end": 8007,
+        "blast_n_conseqs": 0
+    },
     "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSED": {
         "qlen": 9718,
         "hypermutation_probablility": 0.13527282947774355,

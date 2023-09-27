@@ -356,8 +356,9 @@ def has_packaging_signal(alignment, psi_locus, psi_tolerance):
     """
     packaging_begin = [m.start() for m in re.finditer(r"[^-]",
                        str(alignment[0].seq))][psi_locus[0]]
-    query_start = [m.start() for m in re.finditer(r"[^-]",
-                   str(alignment[1].seq))][0]
+    query_options = [m and m.start() for m in re.finditer(r"[^-]",
+                     str(alignment[1].seq))]
+    query_start = query_options[0] if query_options else ''
     packaging_end = [m.start() for m in re.finditer(r"[^-]",
                      str(alignment[0].seq))][psi_locus[1]]
     # if query_start > packaging_begin:
