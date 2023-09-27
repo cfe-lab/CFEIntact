@@ -318,19 +318,86 @@
             "message": "Query sequence contains a long deletion."
         }
     ],
-    "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSED[REVERSE_COMPLEMENT]": [
+    "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSECOMPLEMENTED[REVERSE_COMPLEMENT]": [
         {
-            "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSED[REVERSE_COMPLEMENT]",
+            "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSECOMPLEMENTED[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
             "message": "Smaller ORF nef at 8008-8682 can have maximum deletions 30, got 54"
         },
         {
-            "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSED[REVERSE_COMPLEMENT]",
+            "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSECOMPLEMENTED[REVERSE_COMPLEMENT]",
             "error": "MajorSpliceDonorSiteMutated",
             "message": "Query sequence has a mutated splice donor site, G."
         },
         {
-            "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSED[REVERSE_COMPLEMENT]",
+            "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSECOMPLEMENTED[REVERSE_COMPLEMENT]",
+            "error": "NonHIV",
+            "message": "Sequence contains unrecognized parts. It is probably a Human/HIV Chimera sequence."
+        }
+    ],
+    "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSED": [
+        {
+            "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSED",
+            "error": "InternalStopInOrf",
+            "message": "ORF gag at 1-1497 contains an internal stop codon at 58"
+        },
+        {
+            "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSED",
+            "error": "InternalStopInOrf",
+            "message": "ORF pol at 1290-4301 contains an internal stop codon at 1386"
+        },
+        {
+            "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSED",
+            "error": "InternalStopInOrf",
+            "message": "ORF env at 5430-8006 contains an internal stop codon at 5556"
+        },
+        {
+            "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSED",
+            "error": "InternalStopInOrf",
+            "message": "Smaller ORF vif at 4246-4821 contains an internal stop codon at 4315"
+        },
+        {
+            "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSED",
+            "error": "InternalStopInOrf",
+            "message": "Smaller ORF vpr at 4764-5051 contains an internal stop codon at 4821"
+        },
+        {
+            "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSED",
+            "error": "InternalStopInOrf",
+            "message": "Smaller ORF tat_exon1 at 5032-5247 contains an internal stop codon at 5083"
+        },
+        {
+            "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSED",
+            "error": "InternalStopInOrf",
+            "message": "Smaller ORF vpu at 5267-5512 contains an internal stop codon at 5318"
+        },
+        {
+            "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSED",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF tat_exon2 at 7567-7662 contains out of frame indels that impact 71 positions."
+        },
+        {
+            "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSED",
+            "error": "InsertionInOrf",
+            "message": "Smaller ORF rev_exon2 at 7568-7864 can have maximum insertions 90, got 108"
+        },
+        {
+            "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSED",
+            "error": "InternalStopInOrf",
+            "message": "Smaller ORF nef at 8008-8682 contains an internal stop codon at 8050"
+        },
+        {
+            "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSED",
+            "error": "RevResponseElementDeletion",
+            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 131 deletions with max tolerance of 20 deletions."
+        },
+        {
+            "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSED",
+            "error": "MajorSpliceDonorSiteMutated",
+            "message": "Query sequence has a mutated splice donor site, A."
+        },
+        {
+            "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSED",
             "error": "NonHIV",
             "message": "Sequence contains unrecognized parts. It is probably a Human/HIV Chimera sequence."
         }

@@ -770,6 +770,11 @@ def intact( working_dir,
         else:
             reference_name = sorted(subtype_choices.keys())[0]
 
+        blast_orientation_statistics = { "plus": 0, "minus": 0 }
+        for blast_row in blast_rows:
+            if blast_row.qseqid == reference_name:
+                blast_orientation_statistics[blast_row.sstrand] += abs(blast_row.qend - blast_row.qstart)
+
         holistic.inferred_subtype = reference_name
         reference = subtype_choices[reference_name]
         aligned_subtype = AlignedSequence(this=reference, reference=st.HXB2())
@@ -777,13 +782,11 @@ def intact( working_dir,
         forward_aligned_sequence = AlignedSequence(this=sequence, reference=aligned_subtype.this)
         reverse_aligned_sequence = forward_aligned_sequence.reverse()
 
-        forward_score = forward_aligned_sequence.alignment_score()
-        reverse_score = reverse_aligned_sequence.alignment_score()
-        if forward_score >= reverse_score:
+        if blast_orientation_statistics["minus"] < blast_orientation_statistics["plus"] \
+           or reverse_aligned_sequence.alignment_score() <= forward_aligned_sequence.alignment_score():
             aligned_sequence = forward_aligned_sequence
         else:
-            log.info("Reversing sequence " + sequence.id + "; forward score "
-                     + str(forward_score) + "; reverse score " + str(reverse_score))
+            log.info("Reversing sequence " + sequence.id)
             aligned_sequence = reverse_aligned_sequence
             sequence = aligned_sequence.this
 
