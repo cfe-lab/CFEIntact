@@ -36,7 +36,6 @@ def find_candidate_positions(aligned_sequence, e):
     expected_protein = expected_aminoacids.strip("*")
     q_start_a = q_start // 3
     q_end_a = q_end // 3
-    n = len(aligned_sequence.this.seq) - 1
     visited_set = set()
     query_aminoacids_table = get_query_aminoacids_table(aligned_sequence.this)
 
@@ -52,8 +51,8 @@ def find_candidate_positions(aligned_sequence, e):
                 else:
                     visited_set.add(got_aminoacids)
 
-                closest_start = min(n, (closest_start_a * 3) + frame)
-                closest_end = min(n + 1, (closest_end_a * 3) + 3 + frame)
+                closest_start = (closest_start_a * 3) + frame
+                closest_end = (closest_end_a * 3) + 3 + frame
                 got_protein = get_biggest_protein(has_start_codon(e), got_aminoacids)
                 dist = detailed_aligner.align(got_protein, expected_protein).distance()
                 orf = OriginalORF(
