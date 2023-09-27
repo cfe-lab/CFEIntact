@@ -60,7 +60,7 @@ def find_candidate_positions(aligned_sequence, e):
                     name=e.name,
                     start=closest_start,
                     end=closest_end,
-                    nucleotides=str(aligned_sequence.this.seq[closest_start:(closest_end + 1)]),
+                    nucleotides=str(aligned_sequence.slice(closest_start, closest_end).this.seq),
                     aminoacids=got_aminoacids,
                     protein=got_protein,
                     deletion_tolerence=e.deletion_tolerence,
