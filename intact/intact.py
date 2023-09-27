@@ -563,9 +563,12 @@ class OutputWriter:
         self.working_dir = working_dir
         self.intact_path = os.path.join(working_dir, "intact.fasta")
         self.non_intact_path = os.path.join(working_dir, "nonintact.fasta")
+        self.subtypes_path = os.path.join(working_dir, f"subtypes.fasta")
         self.orf_path = os.path.join(working_dir, f"orfs.{fmt}")
         self.holistic_path = os.path.join(working_dir, f"holistic.{fmt}")
         self.error_path = os.path.join(working_dir, f"errors.{fmt}")
+
+        self.subtypes = set()
 
         if fmt not in ("json", "csv"):
             raise ValueError(f"Unrecognized output format {fmt}")
@@ -574,6 +577,7 @@ class OutputWriter:
     def __enter__(self, *args):
         self.intact_file = open(self.intact_path, 'w')
         self.nonintact_file = open(self.non_intact_path, 'w')
+        self.subtypes_file = open(self.subtypes_path, 'w')
         self.orfs_file = open(self.orf_path, 'w')
         self.holistic_file = open(self.holistic_path, 'w')
         self.errors_file = open(self.error_path, 'w')
@@ -604,12 +608,14 @@ class OutputWriter:
 
         self.intact_file.close()
         self.nonintact_file.close()
+        self.subtypes_file.close()
         self.orfs_file.close()
         self.holistic_file.close()
         self.errors_file.close()
 
         log.info('Intact sequences written to ' + self.intact_path)
         log.info('Non-intact sequences written to ' + self.non_intact_path)
+        log.info('Subtype sequences written to ' + self.subtypes_path)
         log.info('ORFs for all sequences written to ' + self.orf_path)
         log.info('Holistic info for all sequences written to ' + self.holistic_path)
         log.info('Intactness error information written to ' + self.error_path)
@@ -617,10 +623,15 @@ class OutputWriter:
             log.info('Blast output written to ' + os.path.join(self.working_dir, 'blast.csv'))
 
 
-    def write(self, sequence, is_intact, orfs, errors, holistic):
+    def write(self, sequence, subtype, is_intact, orfs, errors, holistic):
         fasta_file = self.intact_file if is_intact else self.nonintact_file
         SeqIO.write([sequence], fasta_file, "fasta")
         fasta_file.flush()
+
+        if subtype.id not in self.subtypes:
+            self.subtypes.add(subtype.id)
+            SeqIO.write([subtype], self.subtypes_file, "fasta")
+            self.subtypes_file.flush()
 
         if self.fmt == "json":
             self.orfs[sequence.id] = orfs
@@ -875,7 +886,8 @@ def intact( working_dir,
         orfs = [x.__dict__ for x in hxb2_found_orfs]
         errors = [x.__dict__ for x in sequence_errors]
         holistic = holistic.__dict__
-        writer.write(sequence, is_intact, orfs, errors, holistic)
+        subtype = aligned_sequence.reference
+        writer.write(sequence, subtype, is_intact, orfs, errors, holistic)
 
     with OutputWriter(working_dir, "csv" if output_csv else "json") as writer:
 
