@@ -17,7 +17,6 @@ class BlastRow:
     pident: float
     nident: float
     sstrand: str
-    btop: str
 
     @staticmethod
     def init(row):
@@ -38,5 +37,4 @@ class BlastRow:
                 pident=float(row['pident']),
                 nident=float(row['nident']),
                 sstrand=row['sstrand'],
-                btop=row['btop'],
         )
