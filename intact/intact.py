@@ -51,13 +51,15 @@ class FoundORF:
     name: str
     start: int
     end: int
-    subtype_start: int
-    subtype_end: int
     orientation: str
     distance: str
     protein: str
     aminoacids: str
     nucleotides: str
+    subtype_start: int
+    subtype_end: int
+    subtype_aminoacids: str
+    subtype_nucleotides: str
 
 
 @dataclass
@@ -818,13 +820,15 @@ def intact( working_dir,
             o.query.name,
             o.query.start,
             o.query.end,
-            o.reference.start,
-            o.reference.end,
             o.orientation,
             o.distance,
             str(o.query.protein),
             str(o.query.aminoacids),
             str(o.query.nucleotides),
+            o.reference.start,
+            o.reference.end,
+            str(o.reference.aminoacids),
+            str(o.reference.nucleotides),
         ) for o in sorted(sequence_orfs + sequence_small_orfs, key=lambda o: o.query.start)]
 
         if include_packaging_signal:
