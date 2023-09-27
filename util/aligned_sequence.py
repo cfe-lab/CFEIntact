@@ -13,7 +13,7 @@ from util.find_orf import find_orf
 class AlignedSequence:
     this: Seq
     reference: Seq
-    orfs: dict[str, MappedORF]  = dataclasses.field(default=None)
+    orfs: dict[str, MappedORF]     = dataclasses.field(default=None)
     alignment: (str, str)          = dataclasses.field(default=None)
     coordinates_mapping: list[int] = dataclasses.field(default=None)
 
@@ -87,7 +87,10 @@ class AlignedSequence:
 
 
     def get_orf(self, expected_orf: OriginalORF):
+        if self.orfs is None:
+            self.orfs = {}
+
         if expected_orf.name not in self.orfs:
-            self.orfs[expected_orf.name] = find_orf(expected_orf)
+            self.orfs[expected_orf.name] = find_orf(self, expected_orf)
 
         return self.orfs[expected_orf.name]

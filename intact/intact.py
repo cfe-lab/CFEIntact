@@ -18,7 +18,6 @@ from util.aligned_sequence import AlignedSequence
 from util.reference_index import ReferenceIndex
 from util.blastrow import BlastRow
 from util.initialize_orf import initialize_orf
-from util.find_orf import find_orf
 
 
 WRONGORFNUMBER_ERROR    = "WrongORFNumber"
@@ -462,7 +461,7 @@ def has_reading_frames(
         return impacted
 
     for e in expected:
-        best_match = find_orf(aligned_sequence, e)
+        best_match = aligned_sequence.get_orf(e)
         matches.append(best_match)
 
         got_protein = best_match.query.protein
