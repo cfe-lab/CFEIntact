@@ -39,8 +39,6 @@ def find_candidate_positions(aligned_sequence, e):
     n = len(aligned_sequence.this.seq) - 1
     visited_set = set()
     query_aminoacids_table = get_query_aminoacids_table(aligned_sequence.this)
-    if isinstance(query_aminoacids_table, Exception):
-        raise query_aminoacids_table
 
     for frame in range(3):
         aminoacids = query_aminoacids_table[frame]
