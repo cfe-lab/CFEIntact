@@ -8,7 +8,7 @@
         "blast_qseq_coverage": 1.130479522535501,
         "blast_sseq_orfs_coverage": 1.0,
         "orfs_start": 789,
-        "orfs_end": 8794,
+        "orfs_end": 8793,
         "blast_n_conseqs": 3
     },
     "small-sequence[REVERSE_COMPLEMENT]": {
@@ -20,7 +20,7 @@
         "blast_qseq_coverage": 0.0,
         "blast_sseq_orfs_coverage": 0.0,
         "orfs_start": 1,
-        "orfs_end": 8007,
+        "orfs_end": 8006,
         "blast_n_conseqs": 0
     },
     "singleton-sequence": {
@@ -32,7 +32,7 @@
         "blast_qseq_coverage": 0.0,
         "blast_sseq_orfs_coverage": 0.0,
         "orfs_start": 1,
-        "orfs_end": 8007,
+        "orfs_end": 8006,
         "blast_n_conseqs": 0
     },
     "empty-sequence": {
@@ -44,7 +44,7 @@
         "blast_qseq_coverage": 0.0,
         "blast_sseq_orfs_coverage": 0.0,
         "orfs_start": 1,
-        "orfs_end": 8007,
+        "orfs_end": 8006,
         "blast_n_conseqs": 0
     },
     "empty-sequence2": {
@@ -56,7 +56,7 @@
         "blast_qseq_coverage": 0.0,
         "blast_sseq_orfs_coverage": 0.0,
         "orfs_start": 1,
-        "orfs_end": 8007,
+        "orfs_end": 8006,
         "blast_n_conseqs": 0
     },
     "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSED[REVERSE_COMPLEMENT]": {
@@ -68,7 +68,7 @@
         "blast_qseq_coverage": 0.0,
         "blast_sseq_orfs_coverage": 0.0,
         "orfs_start": 1,
-        "orfs_end": 8007,
+        "orfs_end": 8006,
         "blast_n_conseqs": 0
     },
     "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.WITH-XS[REVERSE_COMPLEMENT]": {
@@ -80,7 +80,7 @@
         "blast_qseq_coverage": 0.0,
         "blast_sseq_orfs_coverage": 0.0,
         "orfs_start": 1,
-        "orfs_end": 8007,
+        "orfs_end": 8006,
         "blast_n_conseqs": 0
     },
     "small-sequence-with-xs": {
@@ -92,7 +92,7 @@
         "blast_qseq_coverage": 0.0,
         "blast_sseq_orfs_coverage": 0.0,
         "orfs_start": 1,
-        "orfs_end": 8007,
+        "orfs_end": 8006,
         "blast_n_conseqs": 0
     },
     "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.WITH-BAD-SYMBOLS[REVERSE_COMPLEMENT]": {
@@ -104,7 +104,7 @@
         "blast_qseq_coverage": 0.0,
         "blast_sseq_orfs_coverage": 0.0,
         "orfs_start": 1,
-        "orfs_end": 8007,
+        "orfs_end": 8006,
         "blast_n_conseqs": 0
     },
     "small-sequence-with-bad-symbols": {
@@ -116,7 +116,7 @@
         "blast_qseq_coverage": 0.0,
         "blast_sseq_orfs_coverage": 0.0,
         "orfs_start": 1,
-        "orfs_end": 8007,
+        "orfs_end": 8006,
         "blast_n_conseqs": 0
     },
     "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.WITH-DASHES[REVERSE_COMPLEMENT]": {
@@ -128,7 +128,7 @@
         "blast_qseq_coverage": 0.0,
         "blast_sseq_orfs_coverage": 0.0,
         "orfs_start": 1,
-        "orfs_end": 8007,
+        "orfs_end": 8006,
         "blast_n_conseqs": 0
     },
     "small-sequence-with-dashes": {
@@ -140,7 +140,7 @@
         "blast_qseq_coverage": 0.0,
         "blast_sseq_orfs_coverage": 0.0,
         "orfs_start": 1,
-        "orfs_end": 8007,
+        "orfs_end": 8006,
         "blast_n_conseqs": 0
     }
 }

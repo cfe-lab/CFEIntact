@@ -1,32 +1,32 @@
 sequence_name,error,message
-KX505501.1,DeletionInOrf,"ORF pol at 2084-5096 can have maximum deletions 30, got 2721"
-KX505501.1,InternalStopInOrf,ORF env at 6223-8794 contains an internal stop codon at 6322
-KX505501.1,InsertionInOrf,"Smaller ORF vif at 5040-5619 can have maximum insertions 90, got 909"
-KX505501.1,DeletionInOrf,"Smaller ORF vpr at 5558-5849 can have maximum deletions 30, got 66"
-KX505501.1,InternalStopInOrf,Smaller ORF tat_exon1 at 5829-6045 contains an internal stop codon at 5892
-KX505501.1,InternalStopInOrf,Smaller ORF rev_exon1 at 5968-6046 contains an internal stop codon at 6004
-KX505501.1,FrameshiftInOrf,Smaller ORF vpu at 6060-6309 contains out of frame indels that impact 189 positions.
-KX505501.1,FrameshiftInOrf,Smaller ORF tat_exon2 at 8375-8471 contains out of frame indels that impact 51 positions.
-KX505501.1,DeletionInOrf,"Smaller ORF rev_exon2 at 8376-8652 can have maximum deletions 30, got 96"
-KX505501.1,InsertionInOrf,"Smaller ORF nef at 8795-9416 can have maximum insertions 90, got 867"
+KX505501.1,DeletionInOrf,"ORF pol at 2084-5095 can have maximum deletions 30, got 2721"
+KX505501.1,InternalStopInOrf,ORF env at 6223-8793 contains an internal stop codon at 6322
+KX505501.1,InsertionInOrf,"Smaller ORF vif at 5040-5618 can have maximum insertions 90, got 909"
+KX505501.1,DeletionInOrf,"Smaller ORF vpr at 5558-5848 can have maximum deletions 30, got 66"
+KX505501.1,InternalStopInOrf,Smaller ORF tat_exon1 at 5829-6044 contains an internal stop codon at 5892
+KX505501.1,InternalStopInOrf,Smaller ORF rev_exon1 at 5968-6045 contains an internal stop codon at 6004
+KX505501.1,FrameshiftInOrf,Smaller ORF vpu at 6060-6308 contains out of frame indels that impact 190 positions.
+KX505501.1,FrameshiftInOrf,Smaller ORF tat_exon2 at 8375-8470 contains out of frame indels that impact 51 positions.
+KX505501.1,DeletionInOrf,"Smaller ORF rev_exon2 at 8376-8651 can have maximum deletions 30, got 96"
+KX505501.1,InsertionInOrf,"Smaller ORF nef at 8795-9415 can have maximum insertions 90, got 867"
 KX505501.1,RevResponseElementDeletion,Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.
 KX505501.1,LongDeletion,Query sequence contains a long deletion.
 KX505501.1,Scramble,Sequence is plus-scrambled.
-MN691959,InternalStopInOrf,Smaller ORF vpu at 6060-6309 contains an internal stop codon at 6123
-MN691959,InternalStopInOrf,Smaller ORF tat_exon2 at 8375-8471 contains an internal stop codon at 8420
-MN692074,DeletionInOrf,"ORF pol at 2084-5096 can have maximum deletions 30, got 981"
-MN692074,InternalStopInOrf,ORF env at 6223-8794 contains an internal stop codon at 6550
-MN692074,DeletionInOrf,"Smaller ORF vif at 5040-5619 can have maximum deletions 30, got 81"
-MN692074,InsertionInOrf,"Smaller ORF vpr at 5558-5849 can have maximum insertions 90, got 207"
-MN692074,InternalStopInOrf,Smaller ORF tat_exon1 at 5829-6045 contains an internal stop codon at 5892
-MN692074,InsertionInOrf,"Smaller ORF vpu at 6060-6309 can have maximum insertions 90, got 249"
-MN692074,FrameshiftInOrf,Smaller ORF tat_exon2 at 8375-8471 contains out of frame indels that impact 40 positions.
-MN692074,DeletionInOrf,"Smaller ORF rev_exon2 at 8376-8652 can have maximum deletions 30, got 204"
-MN692074,InsertionInOrf,"Smaller ORF nef at 8795-9416 can have maximum insertions 90, got 882"
+MN691959,InternalStopInOrf,Smaller ORF vpu at 6060-6308 contains an internal stop codon at 6123
+MN691959,InternalStopInOrf,Smaller ORF tat_exon2 at 8375-8470 contains an internal stop codon at 8420
+MN692074,DeletionInOrf,"ORF pol at 2084-5095 can have maximum deletions 30, got 981"
+MN692074,InternalStopInOrf,ORF env at 6223-8793 contains an internal stop codon at 6550
+MN692074,DeletionInOrf,"Smaller ORF vif at 5040-5618 can have maximum deletions 30, got 81"
+MN692074,InsertionInOrf,"Smaller ORF vpr at 5558-5848 can have maximum insertions 90, got 207"
+MN692074,InternalStopInOrf,Smaller ORF tat_exon1 at 5829-6044 contains an internal stop codon at 5892
+MN692074,InsertionInOrf,"Smaller ORF vpu at 6060-6308 can have maximum insertions 90, got 249"
+MN692074,FrameshiftInOrf,Smaller ORF tat_exon2 at 8375-8470 contains out of frame indels that impact 40 positions.
+MN692074,DeletionInOrf,"Smaller ORF rev_exon2 at 8376-8651 can have maximum deletions 30, got 204"
+MN692074,InsertionInOrf,"Smaller ORF nef at 8795-9415 can have maximum insertions 90, got 882"
 MN692074,RevResponseElementDeletion,Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.
 MN692074,LongDeletion,Query sequence contains a long deletion.
-MN090335,InternalStopInOrf,ORF gag at 789-2292 contains an internal stop codon at 822
-MN090335,InternalStopInOrf,Smaller ORF tat_exon2 at 8375-8471 contains an internal stop codon at 8420
+MN090335,InternalStopInOrf,ORF gag at 789-2291 contains an internal stop codon at 822
+MN090335,InternalStopInOrf,Smaller ORF tat_exon2 at 8375-8470 contains an internal stop codon at 8420
 MN090335,PackagingSignalDeletion,Query Sequence exceeds maximum deletion tolerance in PSI. Contains 42 deletions with max tolerance of 10 deletions.
 MN090335,MajorSpliceDonorSiteMutated,"Query sequence has a mutated splice donor site, AT."
 MN090335,Scramble,Sequence is minus-scrambled.

@@ -824,7 +824,7 @@ def intact( working_dir,
             o.distance,
             str(o.query.protein),
             str(o.query.aminoacids),
-            str(sequence[o.query.start:o.query.end].seq),
+            str(o.query.nucleotides),
         ) for o in sorted(sequence_orfs + sequence_small_orfs, key=lambda o: o.query.start)]
 
         if include_packaging_signal:

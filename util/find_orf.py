@@ -52,7 +52,7 @@ def find_candidate_positions(aligned_sequence, e):
                     visited_set.add(got_aminoacids)
 
                 closest_start = (closest_start_a * 3) + frame
-                closest_end = (closest_end_a * 3) + 3 + frame
+                closest_end = (closest_end_a * 3) + 3 + frame - 1
                 got_protein = get_biggest_protein(has_start_codon(e), got_aminoacids)
                 dist = detailed_aligner.align(got_protein, expected_protein).distance()
                 orf = OriginalORF(
