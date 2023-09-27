@@ -722,8 +722,9 @@ def intact( working_dir,
         for sequence in SeqIO.parse(in_handle, "fasta"):
             subtype_choices[sequence.id] = sequence
 
-    def analyse_single_sequence(holistic, sequence, blast_rows):
+    def analyse_single_sequence(writer, sequence, blast_rows):
         sequence_errors = []
+        holistic = HolisticInfo()
 
         invalid_subsequences = find_invalid_subsequences(sequence)
         if invalid_subsequences:
@@ -871,19 +872,16 @@ def intact( working_dir,
         if not include_small_orfs:
             sequence_errors.extend(small_orf_errors)
 
-        return is_intact, hxb2_found_orfs, sequence_errors
+        orfs = [x.__dict__ for x in hxb2_found_orfs]
+        errors = [x.__dict__ for x in sequence_errors]
+        holistic = holistic.__dict__
+        writer.write(sequence, is_intact, orfs, errors, holistic)
 
     with OutputWriter(working_dir, "csv" if output_csv else "json") as writer:
 
         blast_it = blast_iterate_inf(subtype, input_file, working_dir) if check_internal_inversion or check_nonhiv or check_scramble or 1 < len(subtype_choices) else iterate_empty_lists()
         for (sequence, blast_rows) in with_blast_rows(blast_it, iterate_sequences(input_file)):
-            holistic = HolisticInfo()
-            is_intact, hxb2_found_orfs, sequence_errors = analyse_single_sequence(holistic, sequence, blast_rows)
-            orfs = [x.__dict__ for x in hxb2_found_orfs]
-            errors = [x.__dict__ for x in sequence_errors]
-            holistic = holistic.__dict__
-            writer.write(sequence, is_intact, orfs, errors, holistic=holistic)
-
+            analyse_single_sequence(writer, sequence, blast_rows)
 
 #/end def intact
 #/end intact.py
