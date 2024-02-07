@@ -64,6 +64,7 @@ class FoundORF:
 
 @dataclass
 class HolisticInfo:
+    intact: bool = dataclasses.field(default=None)
     qlen: int = dataclasses.field(default=None)
     hypermutation_probablility: float = dataclasses.field(default=None)
     inferred_subtype: str  = dataclasses.field(default=None)
@@ -884,7 +885,7 @@ def intact( working_dir,
             if error:
                 sequence_errors.append(error)
 
-        is_intact = len(sequence_errors) == 0
+        holistic.intact = len(sequence_errors) == 0
 
         # add the small orf errors after the intactness check if not included
         if not include_small_orfs:
@@ -892,9 +893,8 @@ def intact( working_dir,
 
         orfs = [x.__dict__ for x in hxb2_found_orfs]
         errors = [x.__dict__ for x in sequence_errors]
-        holistic = holistic.__dict__
         subtype = aligned_sequence.reference
-        writer.write(sequence, subtype, is_intact, orfs, errors, holistic)
+        writer.write(sequence, subtype, holistic.intact, orfs, errors, holistic.__dict__)
 
     with OutputWriter(working_dir, "csv" if output_csv else "json") as writer:
 

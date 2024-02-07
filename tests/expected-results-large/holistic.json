@@ -1,5 +1,6 @@
 {
     "KX505501.1": {
+        "intact": false,
         "qlen": 1997,
         "hypermutation_probablility": 0.7087072014754221,
         "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
@@ -12,6 +13,7 @@
         "blast_n_conseqs": 4
     },
     "MN691959": {
+        "intact": false,
         "qlen": 9493,
         "hypermutation_probablility": 0.19667690182893238,
         "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
@@ -24,6 +26,7 @@
         "blast_n_conseqs": 3
     },
     "MN692074": {
+        "intact": false,
         "qlen": 4178,
         "hypermutation_probablility": 0.36378645339477633,
         "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
@@ -36,6 +39,7 @@
         "blast_n_conseqs": 4
     },
     "MN692145": {
+        "intact": true,
         "qlen": 9689,
         "hypermutation_probablility": 0.1672411051048176,
         "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
@@ -48,6 +52,7 @@
         "blast_n_conseqs": 3
     },
     "MN090335": {
+        "intact": false,
         "qlen": 9069,
         "hypermutation_probablility": 0.1771850809736527,
         "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
@@ -60,6 +65,7 @@
         "blast_n_conseqs": 3
     },
     "MN090376": {
+        "intact": false,
         "qlen": 8985,
         "hypermutation_probablility": 0.026415767987601813,
         "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
@@ -72,6 +78,7 @@
         "blast_n_conseqs": 3
     },
     "MK115581.1": {
+        "intact": true,
         "qlen": 9495,
         "hypermutation_probablility": 0.6919440876652894,
         "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
@@ -84,6 +91,7 @@
         "blast_n_conseqs": 2
     },
     "MK115690.1": {
+        "intact": false,
         "qlen": 9689,
         "hypermutation_probablility": 0.051230576250981485,
         "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
@@ -96,6 +104,7 @@
         "blast_n_conseqs": 3
     },
     "MK115571.1": {
+        "intact": false,
         "qlen": 9394,
         "hypermutation_probablility": 0.8029570594372466,
         "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
@@ -108,6 +117,7 @@
         "blast_n_conseqs": 2
     },
     "MK115514.1": {
+        "intact": false,
         "qlen": 9382,
         "hypermutation_probablility": 0.6482462132632603,
         "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
@@ -120,6 +130,7 @@
         "blast_n_conseqs": 2
     },
     "MK115488.1": {
+        "intact": false,
         "qlen": 9623,
         "hypermutation_probablility": 0.6534999185838631,
         "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
@@ -132,6 +143,7 @@
         "blast_n_conseqs": 6
     },
     "MK115030.1": {
+        "intact": false,
         "qlen": 9126,
         "hypermutation_probablility": 0.032014462397289556,
         "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
@@ -144,6 +156,7 @@
         "blast_n_conseqs": 3
     },
     "MK115498.1": {
+        "intact": true,
         "qlen": 9461,
         "hypermutation_probablility": 0.83547963060225,
         "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
@@ -156,6 +169,7 @@
         "blast_n_conseqs": 2
     },
     "MK115211.1": {
+        "intact": false,
         "qlen": 9032,
         "hypermutation_probablility": 0.11818291879607423,
         "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
@@ -168,6 +182,7 @@
         "blast_n_conseqs": 3
     },
     "MK115158.1": {
+        "intact": false,
         "qlen": 9143,
         "hypermutation_probablility": 0.002572269807584293,
         "inferred_subtype": "Ref.47_BF.ES.08.P1942.GQ372987",
@@ -180,6 +195,7 @@
         "blast_n_conseqs": 1
     },
     "MK114705.1": {
+        "intact": false,
         "qlen": 9411,
         "hypermutation_probablility": 0.14584270737492833,
         "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
@@ -192,6 +208,7 @@
         "blast_n_conseqs": 6
     },
     "MK114856.1": {
+        "intact": false,
         "qlen": 9477,
         "hypermutation_probablility": 1.0,
         "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
@@ -204,6 +221,7 @@
         "blast_n_conseqs": 4
     },
     "MK115009.1": {
+        "intact": false,
         "qlen": 9207,
         "hypermutation_probablility": 1.0,
         "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
@@ -216,6 +234,7 @@
         "blast_n_conseqs": 3
     },
     "MK115387.1": {
+        "intact": false,
         "qlen": 9136,
         "hypermutation_probablility": 0.5436355526687852,
         "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
@@ -228,6 +247,7 @@
         "blast_n_conseqs": 2
     },
     "MK115491.1": {
+        "intact": true,
         "qlen": 9422,
         "hypermutation_probablility": 0.8961809048805741,
         "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
@@ -240,6 +260,7 @@
         "blast_n_conseqs": 2
     },
     "MK116110.1": {
+        "intact": false,
         "qlen": 8967,
         "hypermutation_probablility": 0.07021438897893317,
         "inferred_subtype": "Ref.B.TH.90.BK132.AY173951",
@@ -252,6 +273,7 @@
         "blast_n_conseqs": 3
     },
     "MK115527.1": {
+        "intact": true,
         "qlen": 9481,
         "hypermutation_probablility": 0.770862998910788,
         "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
@@ -264,6 +286,7 @@
         "blast_n_conseqs": 2
     },
     "MK114997.1": {
+        "intact": false,
         "qlen": 9055,
         "hypermutation_probablility": 0.05560625344150194,
         "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
@@ -276,6 +299,7 @@
         "blast_n_conseqs": 2
     },
     "MK115518.1": {
+        "intact": true,
         "qlen": 9537,
         "hypermutation_probablility": 0.6408152618300496,
         "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
@@ -288,6 +312,7 @@
         "blast_n_conseqs": 3
     },
     "MK115065.1": {
+        "intact": false,
         "qlen": 9214,
         "hypermutation_probablility": 0.033954952452739495,
         "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
@@ -300,6 +325,7 @@
         "blast_n_conseqs": 6
     },
     "MK115464.1": {
+        "intact": false,
         "qlen": 9663,
         "hypermutation_probablility": 1.0,
         "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
@@ -312,6 +338,7 @@
         "blast_n_conseqs": 2
     },
     "MK115530.1": {
+        "intact": true,
         "qlen": 9544,
         "hypermutation_probablility": 0.5812621948015355,
         "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
@@ -324,6 +351,7 @@
         "blast_n_conseqs": 2
     },
     "MK115520.1": {
+        "intact": false,
         "qlen": 9589,
         "hypermutation_probablility": 0.5225247969864292,
         "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
@@ -336,6 +364,7 @@
         "blast_n_conseqs": 3
     },
     "MK115503.1": {
+        "intact": true,
         "qlen": 9617,
         "hypermutation_probablility": 0.42870398270204335,
         "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
@@ -348,6 +377,7 @@
         "blast_n_conseqs": 2
     },
     "MK115570.1": {
+        "intact": false,
         "qlen": 9485,
         "hypermutation_probablility": 0.7406166892211931,
         "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
@@ -360,6 +390,7 @@
         "blast_n_conseqs": 2
     },
     "MK115509.1": {
+        "intact": true,
         "qlen": 9353,
         "hypermutation_probablility": 0.7883768413537747,
         "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
@@ -372,6 +403,7 @@
         "blast_n_conseqs": 2
     },
     "MK115702.1": {
+        "intact": false,
         "qlen": 9098,
         "hypermutation_probablility": 0.1454272422215308,
         "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
@@ -384,6 +416,7 @@
         "blast_n_conseqs": 4
     },
     "MK115095.1": {
+        "intact": false,
         "qlen": 9137,
         "hypermutation_probablility": 1.0,
         "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
@@ -396,6 +429,7 @@
         "blast_n_conseqs": 2
     },
     "MK115490.1": {
+        "intact": true,
         "qlen": 9347,
         "hypermutation_probablility": 0.8875203448314265,
         "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
@@ -408,6 +442,7 @@
         "blast_n_conseqs": 3
     },
     "MK115576.1": {
+        "intact": true,
         "qlen": 9266,
         "hypermutation_probablility": 0.8197662757563093,
         "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
@@ -420,6 +455,7 @@
         "blast_n_conseqs": 3
     },
     "OQ092466": {
+        "intact": false,
         "qlen": 9686,
         "hypermutation_probablility": 0.3858261890626,
         "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
@@ -432,6 +468,7 @@
         "blast_n_conseqs": 3
     },
     "OQ092463": {
+        "intact": false,
         "qlen": 9605,
         "hypermutation_probablility": 0.21628713708846803,
         "inferred_subtype": "Ref.B.TH.90.BK132.AY173951",
@@ -444,6 +481,7 @@
         "blast_n_conseqs": 2
     },
     "OQ092465": {
+        "intact": false,
         "qlen": 9659,
         "hypermutation_probablility": 0.02412789935966586,
         "inferred_subtype": "Ref.28_BF.BR.99.BREPM12817.DQ085874",
@@ -456,6 +494,7 @@
         "blast_n_conseqs": 2
     },
     "OQ092462": {
+        "intact": false,
         "qlen": 9714,
         "hypermutation_probablility": 0.10883643311676816,
         "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
@@ -468,6 +507,7 @@
         "blast_n_conseqs": 3
     },
     "OQ092464": {
+        "intact": false,
         "qlen": 9556,
         "hypermutation_probablility": 0.006887768010151674,
         "inferred_subtype": "Ref.28_BF.BR.99.BREPM12817.DQ085874",
@@ -480,6 +520,7 @@
         "blast_n_conseqs": 2
     },
     "OQ092467": {
+        "intact": false,
         "qlen": 9936,
         "hypermutation_probablility": 0.6438715160567257,
         "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",

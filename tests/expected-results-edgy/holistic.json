@@ -1,5 +1,6 @@
 {
     "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455": {
+        "intact": true,
         "qlen": 9718,
         "hypermutation_probablility": 0.0,
         "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
@@ -12,6 +13,7 @@
         "blast_n_conseqs": 3
     },
     "small-sequence[REVERSE_COMPLEMENT]": {
+        "intact": false,
         "qlen": 19,
         "hypermutation_probablility": 0.0,
         "inferred_subtype": "Ref.01_AE.AF.07.569M.GQ477441",
@@ -24,6 +26,7 @@
         "blast_n_conseqs": 0
     },
     "singleton-sequence": {
+        "intact": false,
         "qlen": 1,
         "hypermutation_probablility": 0.0,
         "inferred_subtype": "Ref.01_AE.AF.07.569M.GQ477441",
@@ -36,6 +39,7 @@
         "blast_n_conseqs": 0
     },
     "empty-sequence": {
+        "intact": false,
         "qlen": 0,
         "hypermutation_probablility": 0.0,
         "inferred_subtype": "Ref.01_AE.AF.07.569M.GQ477441",
@@ -48,6 +52,7 @@
         "blast_n_conseqs": 0
     },
     "empty-sequence2": {
+        "intact": false,
         "qlen": 0,
         "hypermutation_probablility": 0.0,
         "inferred_subtype": "Ref.01_AE.AF.07.569M.GQ477441",
@@ -60,6 +65,7 @@
         "blast_n_conseqs": 0
     },
     "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.WITH.SOME.LOWERCASES": {
+        "intact": false,
         "qlen": 9714,
         "hypermutation_probablility": 0.1679778416620883,
         "inferred_subtype": "Ref.01_AE.AF.07.569M.GQ477441",
@@ -72,6 +78,7 @@
         "blast_n_conseqs": 0
     },
     "small-sequence-with-lowercases": {
+        "intact": false,
         "qlen": 16,
         "hypermutation_probablility": 0.0,
         "inferred_subtype": "Ref.01_AE.AF.07.569M.GQ477441",
@@ -84,6 +91,7 @@
         "blast_n_conseqs": 0
     },
     "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSECOMPLEMENTED[REVERSE_COMPLEMENT]": {
+        "intact": false,
         "qlen": 9718,
         "hypermutation_probablility": 0.13527282947774355,
         "inferred_subtype": "Ref.01_AE.AF.07.569M.GQ477441",
@@ -96,6 +104,7 @@
         "blast_n_conseqs": 0
     },
     "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSED": {
+        "intact": false,
         "qlen": 9718,
         "hypermutation_probablility": 7.126591271466864e-05,
         "inferred_subtype": "Ref.01_AE.AF.07.569M.GQ477441",
@@ -108,6 +117,7 @@
         "blast_n_conseqs": 0
     },
     "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.WITH-XS[REVERSE_COMPLEMENT]": {
+        "intact": false,
         "qlen": 9711,
         "hypermutation_probablility": 0.13527282947774355,
         "inferred_subtype": "Ref.01_AE.AF.07.569M.GQ477441",
@@ -120,6 +130,7 @@
         "blast_n_conseqs": 0
     },
     "small-sequence-with-xs": {
+        "intact": false,
         "qlen": 12,
         "hypermutation_probablility": 0.0,
         "inferred_subtype": "Ref.01_AE.AF.07.569M.GQ477441",
@@ -132,6 +143,7 @@
         "blast_n_conseqs": 0
     },
     "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.WITH-BAD-SYMBOLS[REVERSE_COMPLEMENT]": {
+        "intact": false,
         "qlen": 9711,
         "hypermutation_probablility": 0.13527282947774355,
         "inferred_subtype": "Ref.01_AE.AF.07.569M.GQ477441",
@@ -144,6 +156,7 @@
         "blast_n_conseqs": 0
     },
     "small-sequence-with-bad-symbols": {
+        "intact": false,
         "qlen": 12,
         "hypermutation_probablility": 0.0,
         "inferred_subtype": "Ref.01_AE.AF.07.569M.GQ477441",
@@ -156,6 +169,7 @@
         "blast_n_conseqs": 0
     },
     "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.WITH-DASHES[REVERSE_COMPLEMENT]": {
+        "intact": false,
         "qlen": 9711,
         "hypermutation_probablility": 0.13527282947774355,
         "inferred_subtype": "Ref.01_AE.AF.07.569M.GQ477441",
@@ -168,6 +182,7 @@
         "blast_n_conseqs": 0
     },
     "small-sequence-with-dashes": {
+        "intact": false,
         "qlen": 12,
         "hypermutation_probablility": 0.0,
         "inferred_subtype": "Ref.01_AE.AF.07.569M.GQ477441",
