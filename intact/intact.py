@@ -711,6 +711,7 @@ def intact( working_dir,
             check_nonhiv,
             check_scramble,
             check_internal_inversion,
+            check_unknown_nucleotides,
             include_small_orfs,
             output_csv,
             hxb2_forward_orfs = const.DEFAULT_FORWARD_ORFs,
@@ -747,9 +748,10 @@ def intact( working_dir,
                 for subseq in invalid_subsequences
             )
 
-            err = IntactnessError(sequence.id, UNKNOWN_NUCLEOTIDE,
-                                  f'Sequence contains invalid nucleotides: {error_details}')
-            sequence_errors.append(err)
+            if check_unknown_nucleotides:
+                err = IntactnessError(sequence.id, UNKNOWN_NUCLEOTIDE,
+                                      f'Sequence contains invalid nucleotides: {error_details}')
+                sequence_errors.append(err)
 
             sequence = SeqRecord.SeqRecord(
                 Seq.Seq(''.join(x for x in sequence.seq if x in VALID_DNA_CHARACTERS)),

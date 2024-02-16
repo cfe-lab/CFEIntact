@@ -19,6 +19,7 @@ def run_end_to_end(tmp_path, data_file, expected_dir, subtype, output_csv):
         check_nonhiv=True,
         check_scramble=True,
         check_internal_inversion=True,
+        check_unknown_nucleotides=True,
         include_small_orfs=True,
         output_csv=output_csv,
         )

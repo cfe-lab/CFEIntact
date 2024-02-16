@@ -54,6 +54,9 @@ def cli():
     '--check-internal-inversion/--ignore-internal-inversion', default=False
 )
 @click.option(
+    '--check-unknown-nucleotides/--ignore-unknown-nucleotides', default=True
+)
+@click.option(
     '--include-small-orfs/--exclude-small-orfs', default=False)
 @click.option(
     '--output-csv/--output-json', default=False)
@@ -65,7 +68,7 @@ def cli():
 def intact(input_file, subtype, include_packaging_signal,
            include_rre, check_major_splice_donor_site, run_hypermut,
            check_long_deletion, check_nonhiv, check_scramble, check_internal_inversion,
-           include_small_orfs, output_csv, working_folder):
+           check_unknown_nucleotides, include_small_orfs, output_csv, working_folder):
     """
     Check consensus sequences for intactness.
     """
@@ -77,7 +80,7 @@ def intact(input_file, subtype, include_packaging_signal,
         folder, input_file, subtype, include_packaging_signal, include_rre,
         check_major_splice_donor_site, run_hypermut,
         check_long_deletion, check_nonhiv, check_scramble, check_internal_inversion,
-        include_small_orfs, output_csv
+        check_unknown_nucleotides, include_small_orfs, output_csv
     )
 
 if __name__ == "__main__": cli()
