@@ -4,7 +4,7 @@
 The only input is a path to a `.fasta` file that you want to analyze.
 This file should include the genomic sequences of interest.
 
-Once the analysis is complete, HIVIntact will generate four output files:
+Once the analysis is complete, CFEIntact will generate four output files:
 
 | Filename         | Description                                                  |
 | ---------------- | ------------------------------------------------------------ |
@@ -14,7 +14,7 @@ Once the analysis is complete, HIVIntact will generate four output files:
 | nonintact.fasta  | This file contains a list of sequences with identified defects. These sequences are not considered putative intact genomes. |
 | blast.csv        | This file contains output from BLASTN software. It is produced conditionally. |
 
-If you pass the `--output-csv` option to HIVIntact, the output format will be `.csv` instead of `.json`.
+If you pass the `--output-csv` option to CFEIntact, the output format will be `.csv` instead of `.json`.
 
 Here is an example of the contents of the `errors.csv` file:
 

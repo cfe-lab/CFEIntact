@@ -1,15 +1,15 @@
 
-# HIVIntact workflow
+# CFEIntact workflow
 
 ## Preparation
 
-Before analyzing a sequence, HIVIntact does some initial preprocessing that is used later in the analysis.
+Before analyzing a sequence, CFEIntact does some initial preprocessing that is used later in the analysis.
 
 ### Alignment to Reference
 
-For each input sequence, HIVIntact uses the `mafft` software to align it to its subtype sequence.
+For each input sequence, CFEIntact uses the `mafft` software to align it to its subtype sequence.
 This operation is repeated with the reverse complement (RC) of the input sequence to determine if the fit is better.
-If the RC provides a better alignment, HIVIntact uses it instead.
+If the RC provides a better alignment, CFEIntact uses it instead.
 This ensures that the direction in which the original sequence is read does not affect the analysis.
 
 The alignment is global, and it never fails.
@@ -26,12 +26,12 @@ The outputs from this procedure are used to produce the `orfs.json` file.
 
 ### BLAST Analysis
 
-Optionally, HIVIntact calls the NCBI's `blastn` program to obtain alignment data that is region-based,
+Optionally, CFEIntact calls the NCBI's `blastn` program to obtain alignment data that is region-based,
 as opposed to the global alignment provided by `mafft`.
 
 ## Analysis steps
 
-HIVIntact performs multiple analysis steps that are independent of each other.
+CFEIntact performs multiple analysis steps that are independent of each other.
 Most of these analyses are optional and controlled by passing a command line option to the main program.
 
 Table below lists all of the independent steps:
@@ -58,7 +58,7 @@ We describe the logic of each step below.
 
 Determines presence and possible intactness of HIV Packaging Signal Region.
 
-Based on the alignment, HIVIntact locates the PSI region in the input sequence and checks its length.
+Based on the alignment, CFEIntact locates the PSI region in the input sequence and checks its length.
 For lengths smaller than the [tolerable limit](cutoffs.md), an error with code `PackagingSignalDeletion` is reported.
 
 ### RRE check
@@ -71,7 +71,7 @@ The analysis performed is the same as the PSI check, but the error code is `RevR
 
 Determines whether the Major Splice Donor site is mutated.
 
-Based on the alignment, HIVIntact locates the region that is expected to contain the MSD subsequence.
+Based on the alignment, CFEIntact locates the region that is expected to contain the MSD subsequence.
 If the found subsequence is anything but `G` followed by `T`,
 an error with `MajorSpliceDonorSiteMutated` error code is reported.
 
@@ -118,15 +118,15 @@ It outputs the `InternalInversion` error code.
 Large ORFs are `gag`, `pol` and `env`.
 
 Using data from the ORF detection procedure,
-HIVIntact goes through each of the listed ORFs and checks two things:
+CFEIntact goes through each of the listed ORFs and checks two things:
 
 - their lengths
 - and possible out-of-frame indels.
 
 The length check is based on comparing it to predefined length limits.
-Go to [cuttofs page](cutoffs.md) now to learn the limits that HIVIntact adhears to.
+Go to [cuttofs page](cutoffs.md) now to learn the limits that CFEIntact adhears to.
 If the length is too long, the error code is `InsertionInOrf`.
-If the length is too short, then HIVIntact also checks if there is an internal stop codon in the analyzed ORF.
+If the length is too short, then CFEIntact also checks if there is an internal stop codon in the analyzed ORF.
 Depending on that, the code is either `DeletionInOrf` or `InternalStopInOrf`.
 Notably, internal stop codons that do not make the resulting protein too short are ignored.
 

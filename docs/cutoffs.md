@@ -1,7 +1,7 @@
 
 # Predefined limits
 
-Many decisions in HIVIntact logic rely on predefined "limits".
+Many decisions in CFEIntact logic rely on predefined "limits".
 This page lists all of them,
 except for the standard constants such as the 5% limit for p-value.
 
