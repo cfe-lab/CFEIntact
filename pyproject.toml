@@ -20,6 +20,19 @@ dependencies = [
     "scipy>=1.6.0",
 ]
 
+
+[project.optional-dependencies]
+test = [
+    # Dependencies required for running the test suite
+    "pytest>=6.0",
+    "pytest-cov",
+]
+dev = [
+    # Dependencies required for development (linting, type checking, etc.)
+    "flake8",
+    "mypy>=0.800",
+]
+
 [project.scripts]
 cfeintact = "cfeintact.main:cli"
 
