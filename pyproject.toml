@@ -49,14 +49,9 @@ markers = [
 ]
 
 [tool.flake8]
-ignore = ["XE231",
-          "XE241",
-          "E302",  # expected N blank lines, found Y
+ignore = ["E302",  # expected N blank lines, found Y
           "E303",  # too many blank lines
           "E711",  # comparison to None should be 'if cond is None:'
           "E701",  # multiple statements on one line
           ]
-per-file-ignores = [
-    "__init__.py:F401",
-]
 max-line-length = 120
