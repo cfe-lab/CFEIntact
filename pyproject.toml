@@ -31,7 +31,8 @@ dev = [
     # Dependencies required for development (linting, type checking, etc.)
     "flake8",
     "flake8-pyproject",
-    "mypy>=0.800",
+    "mypy==1.9.0",
+    "types-requests",
 ]
 
 [project.scripts]
@@ -47,6 +48,16 @@ markers = [
   "overnight: for tests that take hours to complete (deselect with '-m \"not overnight\"')",
   "serial"
 ]
+
+[tool.mypy]
+files = ["src", "tests"]
+ignore_missing_imports = true
+strict_optional = true
+allow_untyped_calls = true
+warn_return_any = true
+warn_unused_ignores = true
+disallow_untyped_defs = false
+strict = true
 
 [tool.flake8]
 ignore = ["E302",  # expected N blank lines, found Y
