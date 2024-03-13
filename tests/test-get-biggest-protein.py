@@ -1,6 +1,5 @@
 
 import pytest
-import os
 
 from cfeintact.intact import get_biggest_protein
 

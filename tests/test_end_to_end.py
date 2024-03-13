@@ -22,7 +22,7 @@ def run_end_to_end(tmp_path, data_file, expected_dir, subtype, output_csv):
         check_unknown_nucleotides=True,
         include_small_orfs=True,
         output_csv=output_csv,
-        )
+    )
 
     result = filecmp.dircmp(tmp_path, expected_dir)
     assert result.left_list == result.right_list
@@ -137,4 +137,3 @@ def test_edgy(tmp_path, request):
                    os.path.join(pwd, "expected-results-edgy"),
                    subtype="all",
                    output_csv=False)
-

@@ -1,7 +1,6 @@
 
 import os
 import sys
-import filecmp
 from unittest.mock import patch
 import cfeintact.main as main
 
@@ -16,5 +15,4 @@ def test_basic_run(tmp_path, request):
         try: main.cli()
         except SystemExit as e: assert e.code == 0
 
-    expected_dir = os.path.join(pwd, "expected-results-small")
     assert os.path.exists(os.path.join(working_dir, "errors.json"))

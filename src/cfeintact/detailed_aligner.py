@@ -1,5 +1,5 @@
 
-from Bio import AlignIO, Seq, SeqIO, SeqRecord, Align
+from Bio import Align
 
 aligner = Align.PairwiseAligner()
 aligner.mode = 'global'
@@ -7,6 +7,7 @@ aligner.match_score = 2
 aligner.mismatch_score = -1
 aligner.open_gap_score = -1.5
 aligner.extend_gap_score = -0.2
+
 
 class Alignment:
     def __init__(self, reference, query, score):
@@ -33,6 +34,7 @@ class Alignment:
         norm = 1 - (average_distance / (absolute + average_distance))
 
         return norm
+
 
 def align(seq1, seq2):
     if seq1 and seq2:

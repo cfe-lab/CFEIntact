@@ -1,12 +1,11 @@
 
 import os
 import click
-import shutil
-import uuid
 
 import cfeintact.intact as it
 import cfeintact.log as log
 import cfeintact.subtypes as st
+
 
 def get_working_folder(path):
     """
@@ -18,13 +17,15 @@ def get_working_folder(path):
 
     return path
 
+
 @click.group()
 def cli():
     pass
 
+
 @cli.command('intact')
 @click.argument(
-    'input_file', 
+    'input_file',
     type=click.Path(exists=True, readable=True, resolve_path=True)
 )
 @click.option(
@@ -64,7 +65,6 @@ def cli():
     '--working-folder',
     default=os.getcwd()
 )
-
 def intact(input_file, subtype, include_packaging_signal,
            include_rre, check_major_splice_donor_site, run_hypermut,
            check_long_deletion, check_nonhiv, check_scramble, check_internal_inversion,
@@ -83,4 +83,6 @@ def intact(input_file, subtype, include_packaging_signal,
         check_unknown_nucleotides, include_small_orfs, output_csv
     )
 
-if __name__ == "__main__": cli()
+
+if __name__ == "__main__":
+    cli()

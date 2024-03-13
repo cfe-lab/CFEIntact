@@ -2,14 +2,14 @@ import os
 from Bio import Seq, SeqIO, SeqRecord
 
 import importlib.resources as resources
-import cfeintact.wrappers as wrappers
-import cfeintact.coordinates as coords
 
-REFERENCE_DIR = str(resources.path('cfeintact', 'subtype_alignments').resolve())
+REFERENCE_DIR = str(resources.path(
+    'cfeintact', 'subtype_alignments').resolve())
 
 # This variable holds a mapping between subtype names and their sequences.
 # Prevents re-reading the same sequence from disk multiple time.
 SEQUENCE_CACHE = {}
+
 
 def HXB2():
     """
@@ -17,20 +17,23 @@ def HXB2():
     """
     return subtype_sequence("HXB2")
 
+
 def subtypes():
-	"""
-    List all currently available HIV subtypes
     """
-	return [f.replace(".fasta", "") for f in os.listdir(REFERENCE_DIR) if f.endswith(".fasta")]
+List all currently available HIV subtypes
+"""
+    return [f.replace(".fasta", "") for f in os.listdir(REFERENCE_DIR) if f.endswith(".fasta")]
+
 
 def alignment_file(subtype):
-	"""
-    Return an alignment file associated with an HIV subtype.
-
-    Args:
-        subtype: folder in which to put temporary files.
     """
-	return os.path.join(REFERENCE_DIR, subtype + ".fasta")
+Return an alignment file associated with an HIV subtype.
+
+Args:
+    subtype: folder in which to put temporary files.
+"""
+    return os.path.join(REFERENCE_DIR, subtype + ".fasta")
+
 
 def subtype_sequence(subtype):
     """
@@ -43,9 +46,9 @@ def subtype_sequence(subtype):
     if subtype not in SEQUENCE_CACHE:
         alignment = list(SeqIO.parse(alignment_file(subtype), "fasta"))
         SEQUENCE_CACHE[subtype] = SeqRecord.SeqRecord(
-            Seq.Seq(str(alignment[0].seq).replace("-","").replace("\n", "")),
-            id = alignment[0].id,
-            name = alignment[0].name
+            Seq.Seq(str(alignment[0].seq).replace("-", "").replace("\n", "")),
+            id=alignment[0].id,
+            name=alignment[0].name
         )
 
     return SEQUENCE_CACHE[subtype]

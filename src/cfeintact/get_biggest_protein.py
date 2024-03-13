@@ -8,6 +8,7 @@ def get_biggest_protein(has_start_codon, aminoacids):
             return ""
 
     parts = aminoacids.split("*")
-    subparts = [skip_to_startcodon(x) for x in parts] if has_start_codon else parts
+    subparts = [skip_to_startcodon(x)
+                for x in parts] if has_start_codon else parts
     longest = max(subparts, key=len)
     return longest

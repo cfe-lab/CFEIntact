@@ -6,6 +6,7 @@ from Bio import SeqIO, AlignIO
 
 from cfeintact.blastrow import BlastRow
 
+
 def mafft(sequences):
     '''
     Call mafft on a set of sequences and return the resulting alignment.
@@ -19,17 +20,19 @@ def mafft(sequences):
 
     with tempfile.NamedTemporaryFile() as alignment_input, tempfile.NamedTemporaryFile() as alignment_output:
         SeqIO.write(sequences, alignment_input.name, "fasta")
-        subprocess.run(["mafft", "--quiet", alignment_input.name], shell=False, stdout=alignment_output, check=True)
+        subprocess.run(["mafft", "--quiet", alignment_input.name],
+                       shell=False, stdout=alignment_output, check=True)
         alignment = AlignIO.read(alignment_output.name, "fasta")
         return alignment
 
+
 def blast(alignment_file, input_file, output_file):
-    fileformat = "10" # .csv format
+    fileformat = "10"  # .csv format
     fields = [field.name for field in dataclasses.fields(BlastRow)]
     outfmt = fileformat + ' ' + ' '.join(fields)
 
     with open(output_file, "w") as output, \
-         tempfile.NamedTemporaryFile() as alignment_output:
+            tempfile.NamedTemporaryFile() as alignment_output:
 
         subprocess.call(
             ["blastn",

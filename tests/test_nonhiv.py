@@ -1,7 +1,4 @@
 
-import pytest
-import os
-
 import cfeintact.intact as intact
 from cfeintact.intact import is_nonhiv, IntactnessError, HolisticInfo
 

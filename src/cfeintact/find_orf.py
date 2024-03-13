@@ -6,6 +6,7 @@ from cfeintact.mapped_orf import MappedORF
 
 import cfeintact.detailed_aligner as detailed_aligner
 
+
 def has_start_codon(orf):
     return orf.aminoacids.startswith("M")
 
@@ -43,8 +44,10 @@ def find_candidate_positions(aligned_sequence, e):
         aminoacids = query_aminoacids_table[frame]
         for start_direction in [-1, +1]:
             for end_direction in [-1, +1]:
-                closest_start_a = q_start_a if not has_start_codon(e) else find_closest(aminoacids, q_start_a, start_direction, 'M')
-                closest_end_a = q_end_a if not has_stop_codon(e) else find_closest(aminoacids, q_end_a, end_direction, '*')
+                closest_start_a = q_start_a if not has_start_codon(
+                    e) else find_closest(aminoacids, q_start_a, start_direction, 'M')
+                closest_end_a = q_end_a if not has_stop_codon(
+                    e) else find_closest(aminoacids, q_end_a, end_direction, '*')
                 got_aminoacids = aminoacids[closest_start_a:closest_end_a + 1]
                 if got_aminoacids in visited_set:
                     continue
@@ -53,17 +56,20 @@ def find_candidate_positions(aligned_sequence, e):
 
                 closest_start = (closest_start_a * 3) + frame
                 closest_end = (closest_end_a * 3) + 3 + frame - 1
-                got_protein = get_biggest_protein(has_start_codon(e), got_aminoacids)
-                dist = detailed_aligner.align(got_protein, expected_protein).distance()
+                got_protein = get_biggest_protein(
+                    has_start_codon(e), got_aminoacids)
+                dist = detailed_aligner.align(
+                    got_protein, expected_protein).distance()
                 orf = OriginalORF(
                     name=e.name,
                     start=closest_start,
                     end=closest_end,
-                    nucleotides=str(aligned_sequence.slice(closest_start, closest_end).this.seq),
+                    nucleotides=str(aligned_sequence.slice(
+                        closest_start, closest_end).this.seq),
                     aminoacids=got_aminoacids,
                     protein=got_protein,
                     deletion_tolerence=e.deletion_tolerence,
-                    )
+                )
                 yield MappedORF(
                     reference=e,
                     query=orf,
