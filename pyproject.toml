@@ -30,6 +30,7 @@ test = [
 dev = [
     # Dependencies required for development (linting, type checking, etc.)
     "flake8",
+    "flake8-pyproject",
     "mypy>=0.800",
 ]
 
@@ -38,3 +39,16 @@ cfeintact = "cfeintact.main:cli"
 
 [tool.hatch.build.targets.sdist]
 include = [ "src/cfeintact" ]
+
+[tool.flake8]
+ignore = ["XE231",
+          "XE241",
+          "E302",  # expected N blank lines, found Y
+          "E303",  # too many blank lines
+          "E711",  # comparison to None should be 'if cond is None:'
+          "E701",  # multiple statements on one line
+          ]
+per-file-ignores = [
+    "__init__.py:F401",
+]
+max-line-length = 120
