@@ -14,7 +14,7 @@ authors = [
 ]
 dependencies = [
     "appdirs>=1.4.3",
-    "biopython>=1.71",
+    "biopython==1.83",
     "click>=6.7",
     "numpy>1.19.5",
     "scipy>=1.6.0",

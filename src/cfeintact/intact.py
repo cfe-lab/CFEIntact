@@ -8,6 +8,7 @@ from collections import Counter
 from Bio import Seq, SeqIO, SeqRecord
 from Bio.Data import IUPACData
 from scipy.stats import fisher_exact
+from typing import Optional, Dict
 
 import cfeintact.constants as const
 import cfeintact.subtypes as st
@@ -65,24 +66,24 @@ class FoundORF:
 
 @dataclass
 class HolisticInfo:
-    intact: bool = dataclasses.field(default=None)
-    qlen: int = dataclasses.field(default=None)
-    hypermutation_probablility: float = dataclasses.field(default=None)
-    inferred_subtype: str = dataclasses.field(default=None)
+    intact: Optional[bool] = dataclasses.field(default=None)
+    qlen: Optional[int] = dataclasses.field(default=None)
+    hypermutation_probablility: Optional[float] = dataclasses.field(default=None)
+    inferred_subtype: Optional[str] = dataclasses.field(default=None)
     # number of query nucleotides matched to a known reference sequence
-    blast_matched_qlen: int = dataclasses.field(default=None)
+    blast_matched_qlen: Optional[int] = dataclasses.field(default=None)
     # percentage of reference sequence covered by the query sequence
-    blast_sseq_coverage: float = dataclasses.field(default=None)
+    blast_sseq_coverage: Optional[float] = dataclasses.field(default=None)
     # percentage of the query sequence covered by reference sequence
-    blast_qseq_coverage: float = dataclasses.field(default=None)
+    blast_qseq_coverage: Optional[float] = dataclasses.field(default=None)
     # percentage of the query sequence covered by reference sequence
-    blast_sseq_orfs_coverage: float = dataclasses.field(default=None)
+    blast_sseq_orfs_coverage: Optional[float] = dataclasses.field(default=None)
     # start position of the region used for orfs coverage
-    orfs_start: int = dataclasses.field(default=None)
+    orfs_start: Optional[int] = dataclasses.field(default=None)
     # end position of the region used for orfs coverage
-    orfs_end: int = dataclasses.field(default=None)
+    orfs_end: Optional[int] = dataclasses.field(default=None)
     # number of blast conseqs in the resulting match
-    blast_n_conseqs: int = dataclasses.field(default=None)
+    blast_n_conseqs: Optional[int] = dataclasses.field(default=None)
 
 
 def iterate_values_from_csv(file_path):
@@ -769,14 +770,13 @@ def intact(working_dir,
         blast_matched_slen = blast_rows[0].slen if blast_rows else 1
         holistic.blast_sseq_coverage = aligned_reference_length / blast_matched_slen
 
-        blast_rows_statistics = {}
+        blast_rows_statistics: Dict[str, int] = {}
         for blast_row in blast_rows:
             blast_rows_statistics[blast_row.sseqid] = blast_rows_statistics.get(
                 blast_row.sseqid, 0) + abs(blast_row.qend - blast_row.qstart)
 
         if blast_rows_statistics:
-            reference_name = max(blast_rows_statistics,
-                                 key=blast_rows_statistics.get)
+            reference_name = max(blast_rows_statistics, key=lambda key: blast_rows_statistics.get(key, 0))
         else:
             reference_name = sorted(subtype_choices.keys())[0]
 
@@ -813,7 +813,10 @@ def intact(working_dir,
         def clamp(p):
             return max(min(p, holistic.orfs_end), holistic.orfs_start)
         aligned_reference_orfs_length = sum(abs(clamp(x.send + 1) - clamp(x.sstart)) for x in blast_rows)
-        blast_matched_orfs_slen = holistic.orfs_end - holistic.orfs_start
+        if holistic.orfs_end is not None and holistic.orfs_start is not None:
+            blast_matched_orfs_slen = holistic.orfs_end - holistic.orfs_start
+        else:
+            blast_matched_orfs_slen = 0
         holistic.blast_sseq_orfs_coverage = aligned_reference_orfs_length / blast_matched_orfs_slen
 
         # convert PSI locus and RRE locus to appropriate subtype

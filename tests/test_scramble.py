@@ -1,5 +1,6 @@
 
 import pytest
+from typing import List
 
 import cfeintact.intact as intact
 from cfeintact.intact import is_scrambled, contains_internal_inversion, IntactnessError, most_frequent_element
@@ -35,7 +36,7 @@ class BlastRow:
 
 def test_is_scrambled_no_alignment():
     # Test case where there is no alignment
-    blast_rows = []
+    blast_rows: List[BlastRow] = []
     assert is_scrambled("id", blast_rows) or contains_internal_inversion("id", blast_rows) is None
 
 def test_is_scrambled_internal_inversion():

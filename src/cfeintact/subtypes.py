@@ -3,8 +3,7 @@ from Bio import Seq, SeqIO, SeqRecord
 
 import importlib.resources as resources
 
-REFERENCE_DIR = str(resources.path(
-    'cfeintact', 'subtype_alignments').resolve())
+REFERENCE_DIR = str(resources.path('cfeintact', 'subtype_alignments'))
 
 # This variable holds a mapping between subtype names and their sequences.
 # Prevents re-reading the same sequence from disk multiple time.

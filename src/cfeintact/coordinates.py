@@ -1,5 +1,7 @@
 
-def map_positions(reference, query):
+from typing import List, Optional
+
+def map_positions(reference: str, query: str) -> List[Optional[int]]:
     """
     Returns a mapping that for each position in the reference sequence,
     returns the correspoding position in the query sequence.
@@ -14,7 +16,7 @@ def map_positions(reference, query):
     reference_pos = 0
     query_pos = 0
     reference_len = len(reference) - reference.count("-")
-    mapping = [None] * reference_len
+    mapping: List[Optional[int]] = [None] * reference_len
     last_pos = 0
 
     for i in range(len(reference)):
@@ -49,7 +51,7 @@ def map_nonaligned_to_aligned_positions(nonaligned, aligned):
 
     assert "-" not in nonaligned
 
-    ret = [None] * len(nonaligned)
+    ret: List[Optional[int]] = [None] * len(nonaligned)
 
     actual_index = -1
     for (i, x) in enumerate(aligned):

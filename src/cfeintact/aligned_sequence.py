@@ -1,6 +1,8 @@
 import dataclasses
 from dataclasses import dataclass
-from Bio import Seq, SeqRecord
+from Bio.SeqRecord import SeqRecord
+from Bio.Seq import Seq
+from typing import Dict, Tuple, List, Optional
 
 import cfeintact.coordinates as coords
 import cfeintact.wrappers as wrappers
@@ -12,11 +14,11 @@ from cfeintact.find_orf import find_orf
 
 @dataclass
 class AlignedSequence:
-    this: Seq
-    reference: Seq
-    orfs: dict[str, MappedORF] = dataclasses.field(default=None)
-    alignment: (str, str) = dataclasses.field(default=None)
-    coordinates_mapping: list[int] = dataclasses.field(default=None)
+    this: SeqRecord
+    reference: SeqRecord
+    orfs: Optional[Dict[str, MappedORF]] = dataclasses.field(default=None)
+    alignment: Optional[Tuple[str, str]] = dataclasses.field(default=None)
+    coordinates_mapping: Optional[List[Optional[int]]] = dataclasses.field(default=None)
 
     def get_alignment(self):
         if not self.alignment:
@@ -69,17 +71,17 @@ class AlignedSequence:
         return AlignedSequence(this=newthis, reference=newreference)
 
     def reverse(self):
-        newthis = SeqRecord.SeqRecord(Seq.reverse_complement(self.this.seq),
-                                      id=self.this.id + "[REVERSE_COMPLEMENT]",
-                                      name=self.this.name
-                                      )
+        newthis = SeqRecord(Seq.reverse_complement(self.this.seq),
+                            id=(self.this.id or "*Unknown*") + "[REVERSE_COMPLEMENT]",
+                            name=self.this.name
+                            )
 
         return AlignedSequence(this=newthis, reference=self.reference)
 
     def alignment_score(self):
         return sum([a == b for a, b in zip(self.get_alignment()[0].seq, self.get_alignment()[1].seq)])
 
-    def get_orf(self, expected_orf: OriginalORF):
+    def get_orf(self, expected_orf: OriginalORF) -> MappedORF:
         if self.orfs is None:
             self.orfs = {}
 

@@ -1,4 +1,6 @@
 
+from typing import List
+
 import cfeintact.intact as intact
 from cfeintact.intact import is_nonhiv, IntactnessError, HolisticInfo
 
@@ -10,7 +12,7 @@ class BlastRow:
 
 
 def test_is_nonhiv_empty_blast_rows():
-    blast_rows = []
+    blast_rows: List[BlastRow] = []
     result = is_nonhiv(HolisticInfo(), "id", 5, blast_rows)
     assert isinstance(result, IntactnessError)
     assert result.error == intact.NONHIV_ERROR

@@ -1,7 +1,7 @@
 
 import pytest
 
-from cfeintact.intact import get_biggest_protein
+from cfeintact.get_biggest_protein import get_biggest_protein
 
 @pytest.mark.parametrize("aminoseq, expected_output", [
     ("MXX*MXXX*MX*", "MXXX"),
