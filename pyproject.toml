@@ -30,7 +30,6 @@ test = [
 dev = [
     # Dependencies required for development (linting, type checking, etc.)
     "flake8",
-    "flake8-pyproject",
     "mypy==1.9.0",
     "types-requests",
 ]
@@ -58,11 +57,3 @@ warn_return_any = true
 warn_unused_ignores = true
 disallow_untyped_defs = false
 strict = true
-
-[tool.flake8]
-ignore = ["E302",  # expected N blank lines, found Y
-          "E303",  # too many blank lines
-          "E711",  # comparison to None should be 'if cond is None:'
-          "E701",  # multiple statements on one line
-          ]
-max-line-length = 120

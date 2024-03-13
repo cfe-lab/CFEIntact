@@ -1,0 +1,8 @@
+[flake8]
+# Below are the error codes to ignore:
+# E302: expected N blank lines, found Y
+# E303: too many blank lines
+# E711: comparison to None should be 'if cond is None:'
+# E701: multiple statements on one line
+ignore = E302,E303,E711,E701
+max-line-length = 120
