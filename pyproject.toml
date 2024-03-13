@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cfeintact"
+dynamic = ["version"]
+description = "A bioinformatics tool for detecting defects in HIV-1 proviral sequences."
+readme = "README.md"
+license = "MIT"
+authors = [
+    { name = "Imogen Wright", email = "imogen@hyraxbio.co.za" },
+    { name = "British Columbia Centre for Excellence in HIV/AIDS", email = "vmysak@bccfe.ca" },
+]
+dependencies = [
+    "appdirs>=1.4.3",
+    "biopython>=1.71",
+    "click>=6.7",
+    "numpy>1.19.5",
+    "scipy>=1.6.0",
+]
+
+[project.scripts]
+cfeintact = "cfeintact.main:cli"
+
+[tool.hatch.version]
+path = "src/cfeintact/__init__.py"
+
+[tool.hatch.build.targets.sdist]
+include = [ "src/cfeintact" ]
