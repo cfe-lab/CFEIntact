@@ -46,3 +46,17 @@ jobs:
 
       - name: Run tests and collect coverage
         run: pytest -v ${{ matrix.testcase }}
+
+  installtest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install -y python3 python3-pip mafft ncbi-blast+
+
+      - name: Run build
+        run: pip3 install .
+
+      - name: Run test
+        run: cfeintact intact --help
