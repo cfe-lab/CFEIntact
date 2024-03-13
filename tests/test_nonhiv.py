@@ -2,8 +2,8 @@
 import pytest
 import os
 
-import intact.intact as intact
-from intact.intact import is_nonhiv, IntactnessError, HolisticInfo
+import cfeintact.intact as intact
+from cfeintact.intact import is_nonhiv, IntactnessError, HolisticInfo
 
 class BlastRow:
     def __init__(self, qstart, qend, qlen):

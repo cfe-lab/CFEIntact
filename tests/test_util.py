@@ -1,8 +1,8 @@
 
 import pytest
 
-from util.coordinates import map_positions, map_nonaligned_to_aligned_positions
-import util.subtypes as st
+from cfeintact.coordinates import map_positions, map_nonaligned_to_aligned_positions
+import cfeintact.subtypes as st
 
 def map_positions_hxb2_style(reference, query):
     return [st.convert_from_aligned_to_reference(position, [reference, query])

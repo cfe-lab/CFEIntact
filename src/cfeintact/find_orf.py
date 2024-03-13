@@ -1,10 +1,10 @@
-from util.reference_index import ReferenceIndex
-from util.get_query_aminoacids_table import get_query_aminoacids_table
-from util.get_biggest_protein import get_biggest_protein
-from util.original_orf import OriginalORF
-from util.mapped_orf import MappedORF
+from cfeintact.reference_index import ReferenceIndex
+from cfeintact.get_query_aminoacids_table import get_query_aminoacids_table
+from cfeintact.get_biggest_protein import get_biggest_protein
+from cfeintact.original_orf import OriginalORF
+from cfeintact.mapped_orf import MappedORF
 
-import util.detailed_aligner as detailed_aligner
+import cfeintact.detailed_aligner as detailed_aligner
 
 def has_start_codon(orf):
     return orf.aminoacids.startswith("M")

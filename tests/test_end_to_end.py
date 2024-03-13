@@ -4,7 +4,7 @@ import requests
 import filecmp
 import os
 import tarfile
-import intact.intact as main
+import cfeintact.intact as main
 
 def run_end_to_end(tmp_path, data_file, expected_dir, subtype, output_csv):
     main.intact(

@@ -4,9 +4,9 @@ import click
 import shutil
 import uuid
 
-import intact.intact as it
-import util.log as log
-import util.subtypes as st
+import cfeintact.intact as it
+import cfeintact.log as log
+import cfeintact.subtypes as st
 
 def get_working_folder(path):
     """

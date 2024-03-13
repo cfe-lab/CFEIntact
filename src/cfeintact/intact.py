@@ -9,15 +9,15 @@ from Bio import Seq, SeqIO, SeqRecord
 from Bio.Data import IUPACData
 from scipy.stats import fisher_exact
 
-import util.constants as const
-import util.subtypes as st
-import util.wrappers as wrappers
-import util.log as log
-import util.detailed_aligner as detailed_aligner
-from util.aligned_sequence import AlignedSequence
-from util.reference_index import ReferenceIndex
-from util.blastrow import BlastRow
-from util.initialize_orf import initialize_orf
+import cfeintact.constants as const
+import cfeintact.subtypes as st
+import cfeintact.wrappers as wrappers
+import cfeintact.log as log
+import cfeintact.detailed_aligner as detailed_aligner
+from cfeintact.aligned_sequence import AlignedSequence
+from cfeintact.reference_index import ReferenceIndex
+from cfeintact.blastrow import BlastRow
+from cfeintact.initialize_orf import initialize_orf
 
 
 WRONGORFNUMBER_ERROR    = "WrongORFNumber"
@@ -723,7 +723,7 @@ def intact( working_dir,
             min_orf_length = const.DEFAULT_ORF_LENGTH,
             error_bar = const.DEFAULT_ERROR_BAR):
     """
-    Check if a set of consensus sequences in a FASTA file is intact.
+    Check if a set of consensus sequences in a FASTA file is cfeintact.
 
     Args:
         input_folder: folder of files from NGS machine.
@@ -905,4 +905,4 @@ def intact( working_dir,
             analyse_single_sequence(writer, sequence, blast_rows)
 
 #/end def intact
-#/end intact.py
+#/end cfeintact.py

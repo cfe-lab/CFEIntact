@@ -1,6 +1,6 @@
-from util.translate_to_aminoacids import translate_to_aminoacids
-from util.find_orf import find_orf
-from util.original_orf import OriginalORF
+from cfeintact.translate_to_aminoacids import translate_to_aminoacids
+from cfeintact.find_orf import find_orf
+from cfeintact.original_orf import OriginalORF
 
 
 def initialize_orf(aligned_sequence, name, start, end, deletion_tolerence):

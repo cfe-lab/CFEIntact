@@ -2,10 +2,10 @@ import os
 from Bio import Seq, SeqIO, SeqRecord
 
 import importlib.resources as resources
-import util.wrappers as wrappers
-import util.coordinates as coords
+import cfeintact.wrappers as wrappers
+import cfeintact.coordinates as coords
 
-REFERENCE_DIR = str(resources.path('util', 'subtype_alignments').resolve())
+REFERENCE_DIR = str(resources.path('cfeintact', 'subtype_alignments').resolve())
 
 # This variable holds a mapping between subtype names and their sequences.
 # Prevents re-reading the same sequence from disk multiple time.

@@ -15,7 +15,8 @@ class CheckPresenceOfExecutables(install):
     """
 
     needed_executables = {
-        'mafft': 'https://mafft.cbrc.jp/alignment/software/'
+        'mafft': 'https://mafft.cbrc.jp/alignment/software/',
+        'blastn': 'https://blast.ncbi.nlm.nih.gov/doc/blast-help/downloadblastdata.html'
     }
 
     class ExecutableException(Exception):
@@ -60,19 +61,18 @@ class CheckPresenceOfExecutables(install):
         install.run(self)
 
 setup(
-    name='intactness-pipeline',
+    name='cfeintact',
     description='Test for proviral intactness.',
     author='Imogen Wright',
     author_email='imogen@hyraxbio.co.za',
-    version='0.7',
-    packages=['bin', 'intact', 'util'],
-    package_data={
-                  'intact': ['data/*'],
-                  'util': ['subtype_alignments/*']
+    version='1.4',
+    packages=['cfeintact'],
+    package_dir={'': 'src'},
+    package_data={ 'cfeintact': ['subtype_alignments/*' ],
                   },
     entry_points={
         'console_scripts': [
-            'proviral = bin.proviral:cli'
+            'cfeintact = cfeintact.main:cli'
         ]
     },
     cmdclass={

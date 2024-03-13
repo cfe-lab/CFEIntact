@@ -2,12 +2,12 @@ import dataclasses
 from dataclasses import dataclass
 from Bio import Seq, SeqRecord
 
-import util.coordinates as coords
-import util.wrappers as wrappers
-from util.mapped_orf import MappedORF
-from util.original_orf import OriginalORF
-from util.reference_index import ReferenceIndex
-from util.find_orf import find_orf
+import cfeintact.coordinates as coords
+import cfeintact.wrappers as wrappers
+from cfeintact.mapped_orf import MappedORF
+from cfeintact.original_orf import OriginalORF
+from cfeintact.reference_index import ReferenceIndex
+from cfeintact.find_orf import find_orf
 
 @dataclass
 class AlignedSequence:

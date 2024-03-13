@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from util.original_orf import OriginalORF
+from cfeintact.original_orf import OriginalORF
 
 @dataclass
 class MappedORF:

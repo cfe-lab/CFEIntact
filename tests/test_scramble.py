@@ -1,8 +1,8 @@
 
 import pytest
 
-import intact.intact as intact
-from intact.intact import is_scrambled, contains_internal_inversion, IntactnessError, most_frequent_element
+import cfeintact.intact as intact
+from cfeintact.intact import is_scrambled, contains_internal_inversion, IntactnessError, most_frequent_element
 
 @pytest.mark.parametrize("lst, expected", [
     ([1, 2, 3, 4, 2, 2, 3, 1, 4, 4, 4], 4),

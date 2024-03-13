@@ -4,7 +4,7 @@ import tempfile
 
 from Bio import SeqIO, AlignIO
 
-from util.blastrow import BlastRow
+from cfeintact.blastrow import BlastRow
 
 def mafft(sequences):
     '''
