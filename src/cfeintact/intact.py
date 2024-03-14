@@ -16,7 +16,7 @@ import cfeintact.wrappers as wrappers
 import cfeintact.log as log
 import cfeintact.detailed_aligner as detailed_aligner
 import cfeintact.defect as defect
-from cfeintact.defect import Defect
+from cfeintact.defect import Defect, ORFDefect
 from cfeintact.aligned_sequence import AlignedSequence
 from cfeintact.reference_index import ReferenceIndex
 from cfeintact.blastrow import BlastRow
@@ -534,7 +534,8 @@ class OutputWriter:
             self.holistic_writer = csv.writer(self.holistic_file)
             self.holistic_header = ['seqid'] + [field.name for field in dataclasses.fields(HolisticInfo)]
             self.holistic_writer.writerow(self.holistic_header)
-            self.errors_writer = csv.DictWriter(self.errors_file, fieldnames=["sequence_name", "error", "message"])
+            self.errors_writer = csv.DictWriter(
+                self.errors_file, fieldnames=["sequence_name", "error", "message", "orf"])
             self.errors_writer.writeheader()
 
         return self
@@ -561,7 +562,7 @@ class OutputWriter:
         if os.path.exists(os.path.join(self.working_dir, 'blast.csv')):
             log.info('Blast output written to ' + os.path.join(self.working_dir, 'blast.csv'))
 
-    def write(self, sequence, subtype, is_intact, orfs, errors, holistic):
+    def write(self, sequence, subtype, is_intact, orfs, defects, holistic):
         fasta_file = self.intact_file if is_intact else self.nonintact_file
         SeqIO.write([sequence], fasta_file, "fasta")
         fasta_file.flush()
@@ -572,10 +573,11 @@ class OutputWriter:
             self.subtypes_file.flush()
 
         errors_dicts = [{
-            "sequence_name": error.sequence_name,
-            "error": error.error.__class__.__name__,
-            "message": str(error.error),
-        } for error in errors]
+            "sequence_name": d.sequence_name,
+            "error": d.error.__class__.__name__,
+            "message": str(d.error),
+            "orf": d.error.q.name if isinstance(d.error, ORFDefect) else None,
+        } for d in defects]
 
         if self.fmt == "json":
             self.orfs[sequence.id] = orfs

@@ -3,136 +3,162 @@
         {
             "sequence_name": "KX505501.1",
             "error": "DeletionInOrf",
-            "message": "ORF pol at 1627-1926 can have maximum deletions 30, got 2721"
+            "message": "ORF pol at 1627-1926 can have maximum deletions 30, got 2721",
+            "orf": "pol"
         },
         {
             "sequence_name": "KX505501.1",
             "error": "InternalStopInOrf",
-            "message": "ORF env at 0-1823 contains an internal stop codon at 99"
+            "message": "ORF env at 0-1823 contains an internal stop codon at 99",
+            "orf": "env"
         },
         {
             "sequence_name": "KX505501.1",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF vif at 0-1823 can have maximum insertions 90, got 909"
+            "message": "Smaller ORF vif at 0-1823 can have maximum insertions 90, got 909",
+            "orf": "vif"
         },
         {
             "sequence_name": "KX505501.1",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpr at 1599-1823 can have maximum deletions 30, got 66"
+            "message": "Smaller ORF vpr at 1599-1823 can have maximum deletions 30, got 66",
+            "orf": "vpr"
         },
         {
             "sequence_name": "KX505501.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF tat_exon1 at 1-1749 contains an internal stop codon at 64"
+            "message": "Smaller ORF tat_exon1 at 1-1749 contains an internal stop codon at 64",
+            "orf": "tat_exon1"
         },
         {
             "sequence_name": "KX505501.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF rev_exon1 at 1306-1749 contains an internal stop codon at 1342"
+            "message": "Smaller ORF rev_exon1 at 1306-1749 contains an internal stop codon at 1342",
+            "orf": "rev_exon1"
         },
         {
             "sequence_name": "KX505501.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpu at 6060-6308 contains out of frame indels that impact 190 positions."
+            "message": "Smaller ORF vpu at 6060-6308 contains out of frame indels that impact 190 positions.",
+            "orf": "vpu"
         },
         {
             "sequence_name": "KX505501.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF tat_exon2 at 8375-8470 contains out of frame indels that impact 51 positions."
+            "message": "Smaller ORF tat_exon2 at 8375-8470 contains out of frame indels that impact 51 positions.",
+            "orf": "tat_exon2"
         },
         {
             "sequence_name": "KX505501.1",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon2 at 1747-1926 can have maximum deletions 30, got 96"
+            "message": "Smaller ORF rev_exon2 at 1747-1926 can have maximum deletions 30, got 96",
+            "orf": "rev_exon2"
         },
         {
             "sequence_name": "KX505501.1",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 0-1823 can have maximum insertions 90, got 867"
+            "message": "Smaller ORF nef at 0-1823 can have maximum insertions 90, got 867",
+            "orf": "nef"
         },
         {
             "sequence_name": "KX505501.1",
             "error": "RevResponseElementDeletion",
-            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions."
+            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.",
+            "orf": null
         },
         {
             "sequence_name": "KX505501.1",
             "error": "LongDeletion",
-            "message": "Query sequence contains a long deletion."
+            "message": "Query sequence contains a long deletion.",
+            "orf": null
         },
         {
             "sequence_name": "KX505501.1",
             "error": "Scramble",
-            "message": "Sequence is plus-scrambled."
+            "message": "Sequence is plus-scrambled.",
+            "orf": null
         }
     ],
     "MN691959": [
         {
             "sequence_name": "MN691959",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF vpu at 5910-6155 contains an internal stop codon at 5973"
+            "message": "Smaller ORF vpu at 5910-6155 contains an internal stop codon at 5973",
+            "orf": "vpu"
         },
         {
             "sequence_name": "MN691959",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF tat_exon2 at 8237-8332 contains an internal stop codon at 8282"
+            "message": "Smaller ORF tat_exon2 at 8237-8332 contains an internal stop codon at 8282",
+            "orf": "tat_exon2"
         }
     ],
     "MN692074": [
         {
             "sequence_name": "MN692074",
             "error": "DeletionInOrf",
-            "message": "ORF pol at 2084-4114 can have maximum deletions 30, got 981"
+            "message": "ORF pol at 2084-4114 can have maximum deletions 30, got 981",
+            "orf": "pol"
         },
         {
             "sequence_name": "MN692074",
             "error": "InternalStopInOrf",
-            "message": "ORF env at 2-4114 contains an internal stop codon at 329"
+            "message": "ORF env at 2-4114 contains an internal stop codon at 329",
+            "orf": "env"
         },
         {
             "sequence_name": "MN692074",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vif at 3617-4114 can have maximum deletions 30, got 81"
+            "message": "Smaller ORF vif at 3617-4114 can have maximum deletions 30, got 81",
+            "orf": "vif"
         },
         {
             "sequence_name": "MN692074",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF vpr at 3617-4114 can have maximum insertions 90, got 207"
+            "message": "Smaller ORF vpr at 3617-4114 can have maximum insertions 90, got 207",
+            "orf": "vpr"
         },
         {
             "sequence_name": "MN692074",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF tat_exon1 at 3823-4083 contains an internal stop codon at 3886"
+            "message": "Smaller ORF tat_exon1 at 3823-4083 contains an internal stop codon at 3886",
+            "orf": "tat_exon1"
         },
         {
             "sequence_name": "MN692074",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF vpu at 3617-4114 can have maximum insertions 90, got 249"
+            "message": "Smaller ORF vpu at 3617-4114 can have maximum insertions 90, got 249",
+            "orf": "vpu"
         },
         {
             "sequence_name": "MN692074",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF tat_exon2 at 8375-8470 contains out of frame indels that impact 40 positions."
+            "message": "Smaller ORF tat_exon2 at 8375-8470 contains out of frame indels that impact 40 positions.",
+            "orf": "tat_exon2"
         },
         {
             "sequence_name": "MN692074",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon2 at 4081-4152 can have maximum deletions 30, got 204"
+            "message": "Smaller ORF rev_exon2 at 4081-4152 can have maximum deletions 30, got 204",
+            "orf": "rev_exon2"
         },
         {
             "sequence_name": "MN692074",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 0-4058 can have maximum insertions 90, got 882"
+            "message": "Smaller ORF nef at 0-4058 can have maximum insertions 90, got 882",
+            "orf": "nef"
         },
         {
             "sequence_name": "MN692074",
             "error": "RevResponseElementDeletion",
-            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions."
+            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.",
+            "orf": null
         },
         {
             "sequence_name": "MN692074",
             "error": "LongDeletion",
-            "message": "Query sequence contains a long deletion."
+            "message": "Query sequence contains a long deletion.",
+            "orf": null
         }
     ],
     "MN692145": [],
@@ -140,59 +166,70 @@
         {
             "sequence_name": "MN090335",
             "error": "InternalStopInOrf",
-            "message": "ORF gag at 315-1664 contains an internal stop codon at 348"
+            "message": "ORF gag at 315-1664 contains an internal stop codon at 348",
+            "orf": "gag"
         },
         {
             "sequence_name": "MN090335",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF tat_exon2 at 7739-7834 contains an internal stop codon at 7784"
+            "message": "Smaller ORF tat_exon2 at 7739-7834 contains an internal stop codon at 7784",
+            "orf": "tat_exon2"
         },
         {
             "sequence_name": "MN090335",
             "error": "PackagingSignalDeletion",
-            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 42 deletions with max tolerance of 10 deletions."
+            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 42 deletions with max tolerance of 10 deletions.",
+            "orf": null
         },
         {
             "sequence_name": "MN090335",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a mutated splice donor site, AT."
+            "message": "Query sequence has a mutated splice donor site, AT.",
+            "orf": null
         },
         {
             "sequence_name": "MN090335",
             "error": "Scramble",
-            "message": "Sequence is minus-scrambled."
+            "message": "Sequence is minus-scrambled.",
+            "orf": null
         },
         {
             "sequence_name": "MN090335",
             "error": "InternalInversion",
-            "message": "Sequence contains an internal inversion."
+            "message": "Sequence contains an internal inversion.",
+            "orf": null
         }
     ],
     "MN090376": [
         {
             "sequence_name": "MN090376",
             "error": "InternalStopInOrf",
-            "message": "ORF gag at 522-1589 contains an internal stop codon at 555"
+            "message": "ORF gag at 522-1589 contains an internal stop codon at 555",
+            "orf": "gag"
         },
         {
             "sequence_name": "MN090376",
             "error": "PackagingSignalDeletion",
-            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 95 deletions with max tolerance of 10 deletions."
+            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 95 deletions with max tolerance of 10 deletions.",
+            "orf": null
         },
         {
             "sequence_name": "MN090376",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, --."
+            "message": "Query sequence has a missing splice donor site, --.",
+            "orf": null
         },
         {
             "sequence_name": "MN090376",
             "error": "Scramble",
-            "message": "Sequence is minus-scrambled."
+            "message": "Sequence is minus-scrambled.",
+            "orf": null
         },
         {
             "sequence_name": "MN090376",
             "error": "InternalInversion",
-            "message": "Sequence contains an internal inversion."
+            "message": "Sequence contains an internal inversion.",
+            "orf": null
         }
     ],
     "MK115581.1": [],
@@ -200,55 +237,64 @@
         {
             "sequence_name": "MK115690.1",
             "error": "PackagingSignalDeletion",
-            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 12 deletions with max tolerance of 10 deletions."
+            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 12 deletions with max tolerance of 10 deletions.",
+            "orf": null
         },
         {
             "sequence_name": "MK115690.1",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a mutated splice donor site, G-."
+            "message": "Query sequence has a mutated splice donor site, G-.",
+            "orf": null
         },
         {
             "sequence_name": "MK115690.1",
             "error": "Scramble",
-            "message": "Sequence is plus-scrambled."
+            "message": "Sequence is plus-scrambled.",
+            "orf": null
         }
     ],
     "MK115571.1": [
         {
             "sequence_name": "MK115571.1",
             "error": "PackagingSignalDeletion",
-            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 79 deletions with max tolerance of 10 deletions."
+            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 79 deletions with max tolerance of 10 deletions.",
+            "orf": null
         },
         {
             "sequence_name": "MK115571.1",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, --."
+            "message": "Query sequence has a missing splice donor site, --.",
+            "orf": null
         }
     ],
     "MK115514.1": [
         {
             "sequence_name": "MK115514.1",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, --."
+            "message": "Query sequence has a missing splice donor site, --.",
+            "orf": null
         }
     ],
     "MK115488.1": [
         {
             "sequence_name": "MK115488.1",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, --."
+            "message": "Query sequence has a missing splice donor site, --.",
+            "orf": null
         }
     ],
     "MK115030.1": [
         {
             "sequence_name": "MK115030.1",
             "error": "Scramble",
-            "message": "Sequence is minus-scrambled."
+            "message": "Sequence is minus-scrambled.",
+            "orf": null
         },
         {
             "sequence_name": "MK115030.1",
             "error": "InternalInversion",
-            "message": "Sequence contains an internal inversion."
+            "message": "Sequence contains an internal inversion.",
+            "orf": null
         }
     ],
     "MK115498.1": [],
@@ -256,167 +302,198 @@
         {
             "sequence_name": "MK115211.1",
             "error": "InternalStopInOrf",
-            "message": "ORF env at 5687-8197 contains an internal stop codon at 6353"
+            "message": "ORF env at 5687-8197 contains an internal stop codon at 6353",
+            "orf": "env"
         },
         {
             "sequence_name": "MK115211.1",
             "error": "PackagingSignalDeletion",
-            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 20 deletions with max tolerance of 10 deletions."
+            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 20 deletions with max tolerance of 10 deletions.",
+            "orf": null
         },
         {
             "sequence_name": "MK115211.1",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, --."
+            "message": "Query sequence has a missing splice donor site, --.",
+            "orf": null
         },
         {
             "sequence_name": "MK115211.1",
             "error": "Scramble",
-            "message": "Sequence is minus-scrambled."
+            "message": "Sequence is minus-scrambled.",
+            "orf": null
         },
         {
             "sequence_name": "MK115211.1",
             "error": "InternalInversion",
-            "message": "Sequence contains an internal inversion."
+            "message": "Sequence contains an internal inversion.",
+            "orf": null
         }
     ],
     "MK115158.1": [
         {
             "sequence_name": "MK115158.1",
             "error": "PackagingSignalDeletion",
-            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 20 deletions with max tolerance of 10 deletions."
+            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 20 deletions with max tolerance of 10 deletions.",
+            "orf": null
         },
         {
             "sequence_name": "MK115158.1",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, --."
+            "message": "Query sequence has a missing splice donor site, --.",
+            "orf": null
         }
     ],
     "MK114705.1": [
         {
             "sequence_name": "MK114705.1",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF nef at 8550-8984 can have maximum deletions 30, got 186"
+            "message": "Smaller ORF nef at 8550-8984 can have maximum deletions 30, got 186",
+            "orf": "nef"
         }
     ],
     "MK114856.1": [
         {
             "sequence_name": "MK114856.1",
             "error": "InternalStopInOrf",
-            "message": "ORF gag at 120-2021 contains an internal stop codon at 204"
+            "message": "ORF gag at 120-2021 contains an internal stop codon at 204",
+            "orf": "gag"
         },
         {
             "sequence_name": "MK114856.1",
             "error": "InternalStopInOrf",
-            "message": "ORF pol at 1787-4825 contains an internal stop codon at 1916"
+            "message": "ORF pol at 1787-4825 contains an internal stop codon at 1916",
+            "orf": "pol"
         },
         {
             "sequence_name": "MK114856.1",
             "error": "InternalStopInOrf",
-            "message": "ORF env at 5953-8520 contains an internal stop codon at 6055"
+            "message": "ORF env at 5953-8520 contains an internal stop codon at 6055",
+            "orf": "env"
         },
         {
             "sequence_name": "MK114856.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF vif at 4425-5348 contains an internal stop codon at 4557"
+            "message": "Smaller ORF vif at 4425-5348 contains an internal stop codon at 4557",
+            "orf": "vif"
         },
         {
             "sequence_name": "MK114856.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF vpr at 5033-5578 contains an internal stop codon at 5069"
+            "message": "Smaller ORF vpr at 5033-5578 contains an internal stop codon at 5069",
+            "orf": "vpr"
         },
         {
             "sequence_name": "MK114856.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF tat_exon1 at 5486-5776 contains an internal stop codon at 5576"
+            "message": "Smaller ORF tat_exon1 at 5486-5776 contains an internal stop codon at 5576",
+            "orf": "tat_exon1"
         },
         {
             "sequence_name": "MK114856.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF vpu at 5790-6038 contains an internal stop codon at 5856"
+            "message": "Smaller ORF vpu at 5790-6038 contains an internal stop codon at 5856",
+            "orf": "vpu"
         },
         {
             "sequence_name": "MK114856.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF tat_exon2 at 8102-8197 contains an internal stop codon at 8147"
+            "message": "Smaller ORF tat_exon2 at 8102-8197 contains an internal stop codon at 8147",
+            "orf": "tat_exon2"
         },
         {
             "sequence_name": "MK114856.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF rev_exon2 at 8103-8378 contains an internal stop codon at 8160"
+            "message": "Smaller ORF rev_exon2 at 8103-8378 contains an internal stop codon at 8160",
+            "orf": "rev_exon2"
         },
         {
             "sequence_name": "MK114856.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF nef at 7916-9175 contains an internal stop codon at 7973"
+            "message": "Smaller ORF nef at 7916-9175 contains an internal stop codon at 7973",
+            "orf": "nef"
         },
         {
             "sequence_name": "MK114856.1",
             "error": "APOBECHypermutationDetected",
-            "message": "Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 3.639064030015132e-65)."
+            "message": "Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 3.639064030015132e-65).",
+            "orf": null
         }
     ],
     "MK115009.1": [
         {
             "sequence_name": "MK115009.1",
             "error": "InternalStopInOrf",
-            "message": "ORF gag at 302-1714 contains an internal stop codon at 347"
+            "message": "ORF gag at 302-1714 contains an internal stop codon at 347",
+            "orf": "gag"
         },
         {
             "sequence_name": "MK115009.1",
             "error": "InternalStopInOrf",
-            "message": "ORF pol at 1613-4624 contains an internal stop codon at 1712"
+            "message": "ORF pol at 1613-4624 contains an internal stop codon at 1712",
+            "orf": "pol"
         },
         {
             "sequence_name": "MK115009.1",
             "error": "InternalStopInOrf",
-            "message": "ORF env at 5752-8352 contains an internal stop codon at 5878"
+            "message": "ORF env at 5752-8352 contains an internal stop codon at 5878",
+            "orf": "env"
         },
         {
             "sequence_name": "MK115009.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF vif at 4289-4987 contains an internal stop codon at 4622"
+            "message": "Smaller ORF vif at 4289-4987 contains an internal stop codon at 4622",
+            "orf": "vif"
         },
         {
             "sequence_name": "MK115009.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF vpr at 5087-5377 contains an internal stop codon at 5246"
+            "message": "Smaller ORF vpr at 5087-5377 contains an internal stop codon at 5246",
+            "orf": "vpr"
         },
         {
             "sequence_name": "MK115009.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF tat_exon1 at 5235-5573 contains an internal stop codon at 5265"
+            "message": "Smaller ORF tat_exon1 at 5235-5573 contains an internal stop codon at 5265",
+            "orf": "tat_exon1"
         },
         {
             "sequence_name": "MK115009.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF rev_exon2 at 7935-8210 contains an internal stop codon at 7992"
+            "message": "Smaller ORF rev_exon2 at 7935-8210 contains an internal stop codon at 7992",
+            "orf": "rev_exon2"
         },
         {
             "sequence_name": "MK115009.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF nef at 7748-8995 contains an internal stop codon at 7826"
+            "message": "Smaller ORF nef at 7748-8995 contains an internal stop codon at 7826",
+            "orf": "nef"
         },
         {
             "sequence_name": "MK115009.1",
             "error": "APOBECHypermutationDetected",
-            "message": "Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 1.2040967664149076e-41)."
+            "message": "Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 1.2040967664149076e-41).",
+            "orf": null
         },
         {
             "sequence_name": "MK115009.1",
             "error": "Scramble",
-            "message": "Sequence is minus-scrambled."
+            "message": "Sequence is minus-scrambled.",
+            "orf": null
         },
         {
             "sequence_name": "MK115009.1",
             "error": "InternalInversion",
-            "message": "Sequence contains an internal inversion."
+            "message": "Sequence contains an internal inversion.",
+            "orf": null
         }
     ],
     "MK115387.1": [
         {
             "sequence_name": "MK115387.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF tat_exon2 at 7869-7964 contains an internal stop codon at 7914"
+            "message": "Smaller ORF tat_exon2 at 7869-7964 contains an internal stop codon at 7914",
+            "orf": "tat_exon2"
         }
     ],
     "MK115491.1": [],
@@ -424,17 +501,20 @@
         {
             "sequence_name": "MK116110.1",
             "error": "InternalStopInOrf",
-            "message": "ORF gag at 62-1600 contains an internal stop codon at 107"
+            "message": "ORF gag at 62-1600 contains an internal stop codon at 107",
+            "orf": "gag"
         },
         {
             "sequence_name": "MK116110.1",
             "error": "PackagingSignalDeletion",
-            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 22 deletions with max tolerance of 10 deletions."
+            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 22 deletions with max tolerance of 10 deletions.",
+            "orf": null
         },
         {
             "sequence_name": "MK116110.1",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a mutated splice donor site, CC."
+            "message": "Query sequence has a mutated splice donor site, CC.",
+            "orf": null
         }
     ],
     "MK115527.1": [],
@@ -442,7 +522,8 @@
         {
             "sequence_name": "MK114997.1",
             "error": "InternalStopInOrf",
-            "message": "ORF env at 4985-8206 contains an internal stop codon at 5273"
+            "message": "ORF env at 4985-8206 contains an internal stop codon at 5273",
+            "orf": "env"
         }
     ],
     "MK115518.1": [],
@@ -450,74 +531,88 @@
         {
             "sequence_name": "MK115065.1",
             "error": "PackagingSignalDeletion",
-            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 75 deletions with max tolerance of 10 deletions."
+            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 75 deletions with max tolerance of 10 deletions.",
+            "orf": null
         },
         {
             "sequence_name": "MK115065.1",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, --."
+            "message": "Query sequence has a missing splice donor site, --.",
+            "orf": null
         },
         {
             "sequence_name": "MK115065.1",
             "error": "Scramble",
-            "message": "Sequence is plus-scrambled."
+            "message": "Sequence is plus-scrambled.",
+            "orf": null
         },
         {
             "sequence_name": "MK115065.1",
             "error": "InternalInversion",
-            "message": "Sequence contains an internal inversion."
+            "message": "Sequence contains an internal inversion.",
+            "orf": null
         }
     ],
     "MK115464.1": [
         {
             "sequence_name": "MK115464.1",
             "error": "InternalStopInOrf",
-            "message": "ORF gag at 527-2296 contains an internal stop codon at 662"
+            "message": "ORF gag at 527-2296 contains an internal stop codon at 662",
+            "orf": "gag"
         },
         {
             "sequence_name": "MK115464.1",
             "error": "InternalStopInOrf",
-            "message": "ORF pol at 2089-5100 contains an internal stop codon at 2188"
+            "message": "ORF pol at 2089-5100 contains an internal stop codon at 2188",
+            "orf": "pol"
         },
         {
             "sequence_name": "MK115464.1",
             "error": "InternalStopInOrf",
-            "message": "ORF env at 6228-8798 contains an internal stop codon at 6429"
+            "message": "ORF env at 6228-8798 contains an internal stop codon at 6429",
+            "orf": "env"
         },
         {
             "sequence_name": "MK115464.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF vif at 5045-5623 contains an internal stop codon at 5252"
+            "message": "Smaller ORF vif at 5045-5623 contains an internal stop codon at 5252",
+            "orf": "vif"
         },
         {
             "sequence_name": "MK115464.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF tat_exon1 at 5829-6044 contains out of frame indels that impact 104 positions."
+            "message": "Smaller ORF tat_exon1 at 5829-6044 contains out of frame indels that impact 104 positions.",
+            "orf": "tat_exon1"
         },
         {
             "sequence_name": "MK115464.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF vpu at 6065-6310 contains an internal stop codon at 6131"
+            "message": "Smaller ORF vpu at 6065-6310 contains an internal stop codon at 6131",
+            "orf": "vpu"
         },
         {
             "sequence_name": "MK115464.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF tat_exon2 at 8380-8475 contains an internal stop codon at 8425"
+            "message": "Smaller ORF tat_exon2 at 8380-8475 contains an internal stop codon at 8425",
+            "orf": "tat_exon2"
         },
         {
             "sequence_name": "MK115464.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF rev_exon2 at 8381-8656 contains an internal stop codon at 8438"
+            "message": "Smaller ORF rev_exon2 at 8381-8656 contains an internal stop codon at 8438",
+            "orf": "rev_exon2"
         },
         {
             "sequence_name": "MK115464.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF nef at 8194-9450 contains an internal stop codon at 8272"
+            "message": "Smaller ORF nef at 8194-9450 contains an internal stop codon at 8272",
+            "orf": "nef"
         },
         {
             "sequence_name": "MK115464.1",
             "error": "APOBECHypermutationDetected",
-            "message": "Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 4.937891251407691e-23)."
+            "message": "Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 4.937891251407691e-23).",
+            "orf": null
         }
     ],
     "MK115530.1": [],
@@ -525,17 +620,20 @@
         {
             "sequence_name": "MK115520.1",
             "error": "InternalStopInOrf",
-            "message": "ORF pol at 1986-5003 contains an internal stop codon at 2100"
+            "message": "ORF pol at 1986-5003 contains an internal stop codon at 2100",
+            "orf": "pol"
         },
         {
             "sequence_name": "MK115520.1",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a mutated splice donor site, GA."
+            "message": "Query sequence has a mutated splice donor site, GA.",
+            "orf": null
         },
         {
             "sequence_name": "MK115520.1",
             "error": "InternalInversion",
-            "message": "Sequence contains an internal inversion."
+            "message": "Sequence contains an internal inversion.",
+            "orf": null
         }
     ],
     "MK115503.1": [],
@@ -543,12 +641,14 @@
         {
             "sequence_name": "MK115570.1",
             "error": "PackagingSignalDeletion",
-            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 11 deletions with max tolerance of 10 deletions."
+            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 11 deletions with max tolerance of 10 deletions.",
+            "orf": null
         },
         {
             "sequence_name": "MK115570.1",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, --."
+            "message": "Query sequence has a missing splice donor site, --.",
+            "orf": null
         }
     ],
     "MK115509.1": [],
@@ -556,69 +656,82 @@
         {
             "sequence_name": "MK115702.1",
             "error": "PackagingSignalDeletion",
-            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 54 deletions with max tolerance of 10 deletions."
+            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 54 deletions with max tolerance of 10 deletions.",
+            "orf": null
         },
         {
             "sequence_name": "MK115702.1",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, --."
+            "message": "Query sequence has a missing splice donor site, --.",
+            "orf": null
         },
         {
             "sequence_name": "MK115702.1",
             "error": "Scramble",
-            "message": "Sequence is plus-scrambled."
+            "message": "Sequence is plus-scrambled.",
+            "orf": null
         },
         {
             "sequence_name": "MK115702.1",
             "error": "InternalInversion",
-            "message": "Sequence contains an internal inversion."
+            "message": "Sequence contains an internal inversion.",
+            "orf": null
         }
     ],
     "MK115095.1": [
         {
             "sequence_name": "MK115095.1",
             "error": "InternalStopInOrf",
-            "message": "ORF gag at 2-1696 contains an internal stop codon at 140"
+            "message": "ORF gag at 2-1696 contains an internal stop codon at 140",
+            "orf": "gag"
         },
         {
             "sequence_name": "MK115095.1",
             "error": "InternalStopInOrf",
-            "message": "ORF pol at 1489-4500 contains an internal stop codon at 1588"
+            "message": "ORF pol at 1489-4500 contains an internal stop codon at 1588",
+            "orf": "pol"
         },
         {
             "sequence_name": "MK115095.1",
             "error": "InternalStopInOrf",
-            "message": "ORF env at 5628-8228 contains an internal stop codon at 5955"
+            "message": "ORF env at 5628-8228 contains an internal stop codon at 5955",
+            "orf": "env"
         },
         {
             "sequence_name": "MK115095.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF vif at 4445-5023 contains an internal stop codon at 4556"
+            "message": "Smaller ORF vif at 4445-5023 contains an internal stop codon at 4556",
+            "orf": "vif"
         },
         {
             "sequence_name": "MK115095.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF tat_exon1 at 5111-5452 contains an internal stop codon at 5141"
+            "message": "Smaller ORF tat_exon1 at 5111-5452 contains an internal stop codon at 5141",
+            "orf": "tat_exon1"
         },
         {
             "sequence_name": "MK115095.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF vpu at 5465-5710 contains an internal stop codon at 5531"
+            "message": "Smaller ORF vpu at 5465-5710 contains an internal stop codon at 5531",
+            "orf": "vpu"
         },
         {
             "sequence_name": "MK115095.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF rev_exon2 at 7811-8086 contains an internal stop codon at 7868"
+            "message": "Smaller ORF rev_exon2 at 7811-8086 contains an internal stop codon at 7868",
+            "orf": "rev_exon2"
         },
         {
             "sequence_name": "MK115095.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF nef at 7624-8871 contains an internal stop codon at 7702"
+            "message": "Smaller ORF nef at 7624-8871 contains an internal stop codon at 7702",
+            "orf": "nef"
         },
         {
             "sequence_name": "MK115095.1",
             "error": "APOBECHypermutationDetected",
-            "message": "Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 8.33506116803153e-40)."
+            "message": "Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 8.33506116803153e-40).",
+            "orf": null
         }
     ],
     "MK115490.1": [],
@@ -627,62 +740,72 @@
         {
             "sequence_name": "OQ092466",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a mutated splice donor site, GC."
+            "message": "Query sequence has a mutated splice donor site, GC.",
+            "orf": null
         }
     ],
     "OQ092463": [
         {
             "sequence_name": "OQ092463",
             "error": "PackagingSignalDeletion",
-            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 26 deletions with max tolerance of 10 deletions."
+            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 26 deletions with max tolerance of 10 deletions.",
+            "orf": null
         },
         {
             "sequence_name": "OQ092463",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, --."
+            "message": "Query sequence has a missing splice donor site, --.",
+            "orf": null
         }
     ],
     "OQ092465": [
         {
             "sequence_name": "OQ092465",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a mutated splice donor site, GA."
+            "message": "Query sequence has a mutated splice donor site, GA.",
+            "orf": null
         }
     ],
     "OQ092462": [
         {
             "sequence_name": "OQ092462",
             "error": "PackagingSignalDeletion",
-            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 23 deletions with max tolerance of 10 deletions."
+            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 23 deletions with max tolerance of 10 deletions.",
+            "orf": null
         },
         {
             "sequence_name": "OQ092462",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, --."
+            "message": "Query sequence has a missing splice donor site, --.",
+            "orf": null
         }
     ],
     "OQ092464": [
         {
             "sequence_name": "OQ092464",
             "error": "PackagingSignalDeletion",
-            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 19 deletions with max tolerance of 10 deletions."
+            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 19 deletions with max tolerance of 10 deletions.",
+            "orf": null
         },
         {
             "sequence_name": "OQ092464",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, --."
+            "message": "Query sequence has a missing splice donor site, --.",
+            "orf": null
         }
     ],
     "OQ092467": [
         {
             "sequence_name": "OQ092467",
             "error": "PackagingSignalDeletion",
-            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 22 deletions with max tolerance of 10 deletions."
+            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 22 deletions with max tolerance of 10 deletions.",
+            "orf": null
         },
         {
             "sequence_name": "OQ092467",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, --."
+            "message": "Query sequence has a missing splice donor site, --.",
+            "orf": null
         }
     ]
 }

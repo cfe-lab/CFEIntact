@@ -4,843 +4,1006 @@
         {
             "sequence_name": "small-sequence[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
-            "message": "ORF gag at 0-20 can have maximum deletions 30, got 1494"
+            "message": "ORF gag at 0-20 can have maximum deletions 30, got 1494",
+            "orf": "gag"
         },
         {
             "sequence_name": "small-sequence[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
-            "message": "ORF pol at 0-20 can have maximum deletions 30, got 2988"
+            "message": "ORF pol at 0-20 can have maximum deletions 30, got 2988",
+            "orf": "pol"
         },
         {
             "sequence_name": "small-sequence[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
-            "message": "ORF env at 0-20 can have maximum deletions 100, got 2574"
+            "message": "ORF env at 0-20 can have maximum deletions 100, got 2574",
+            "orf": "env"
         },
         {
             "sequence_name": "small-sequence[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vif at 0-20 can have maximum deletions 30, got 573"
+            "message": "Smaller ORF vif at 0-20 can have maximum deletions 30, got 573",
+            "orf": "vif"
         },
         {
             "sequence_name": "small-sequence[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpr at 0-20 can have maximum deletions 30, got 285"
+            "message": "Smaller ORF vpr at 0-20 can have maximum deletions 30, got 285",
+            "orf": "vpr"
         },
         {
             "sequence_name": "small-sequence[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon1 at 0-5 can have maximum deletions 30, got 216"
+            "message": "Smaller ORF tat_exon1 at 0-5 can have maximum deletions 30, got 216",
+            "orf": "tat_exon1"
         },
         {
             "sequence_name": "small-sequence[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon1 at 0-5 can have maximum deletions 30, got 78"
+            "message": "Smaller ORF rev_exon1 at 0-5 can have maximum deletions 30, got 78",
+            "orf": "rev_exon1"
         },
         {
             "sequence_name": "small-sequence[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpu at 0-20 can have maximum deletions 30, got 243"
+            "message": "Smaller ORF vpu at 0-20 can have maximum deletions 30, got 243",
+            "orf": "vpu"
         },
         {
             "sequence_name": "small-sequence[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon2 at 19-18 can have maximum deletions 30, got 90"
+            "message": "Smaller ORF tat_exon2 at 19-18 can have maximum deletions 30, got 90",
+            "orf": "tat_exon2"
         },
         {
             "sequence_name": "small-sequence[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon2 at 19-18 can have maximum deletions 30, got 294"
+            "message": "Smaller ORF rev_exon2 at 19-18 can have maximum deletions 30, got 294",
+            "orf": "rev_exon2"
         },
         {
             "sequence_name": "small-sequence[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF nef at 0-20 can have maximum deletions 30, got 672"
+            "message": "Smaller ORF nef at 0-20 can have maximum deletions 30, got 672",
+            "orf": "nef"
         },
         {
             "sequence_name": "small-sequence[REVERSE_COMPLEMENT]",
             "error": "PackagingSignalDeletion",
-            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 21 deletions with max tolerance of 10 deletions."
+            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 21 deletions with max tolerance of 10 deletions.",
+            "orf": null
         },
         {
             "sequence_name": "small-sequence[REVERSE_COMPLEMENT]",
             "error": "RevResponseElementDeletion",
-            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions."
+            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.",
+            "orf": null
         },
         {
             "sequence_name": "small-sequence[REVERSE_COMPLEMENT]",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, -."
+            "message": "Query sequence has a missing splice donor site, -.",
+            "orf": null
         },
         {
             "sequence_name": "small-sequence[REVERSE_COMPLEMENT]",
             "error": "LongDeletion",
-            "message": "Query sequence contains a long deletion."
+            "message": "Query sequence contains a long deletion.",
+            "orf": null
         },
         {
             "sequence_name": "small-sequence[REVERSE_COMPLEMENT]",
             "error": "NonHIV",
-            "message": "Sequence contains unrecognized parts. It is probably a Human/HIV Chimera sequence."
+            "message": "Sequence contains unrecognized parts. It is probably a Human/HIV Chimera sequence.",
+            "orf": null
         }
     ],
     "singleton-sequence": [
         {
             "sequence_name": "singleton-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF gag at 0-2 can have maximum deletions 30, got 1494"
+            "message": "ORF gag at 0-2 can have maximum deletions 30, got 1494",
+            "orf": "gag"
         },
         {
             "sequence_name": "singleton-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF pol at 0-2 can have maximum deletions 30, got 3006"
+            "message": "ORF pol at 0-2 can have maximum deletions 30, got 3006",
+            "orf": "pol"
         },
         {
             "sequence_name": "singleton-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF env at 0-2 can have maximum deletions 100, got 2574"
+            "message": "ORF env at 0-2 can have maximum deletions 100, got 2574",
+            "orf": "env"
         },
         {
             "sequence_name": "singleton-sequence",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vif at 0-2 can have maximum deletions 30, got 573"
+            "message": "Smaller ORF vif at 0-2 can have maximum deletions 30, got 573",
+            "orf": "vif"
         },
         {
             "sequence_name": "singleton-sequence",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpr at 0-2 can have maximum deletions 30, got 285"
+            "message": "Smaller ORF vpr at 0-2 can have maximum deletions 30, got 285",
+            "orf": "vpr"
         },
         {
             "sequence_name": "singleton-sequence",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon1 at 0-2 can have maximum deletions 30, got 216"
+            "message": "Smaller ORF tat_exon1 at 0-2 can have maximum deletions 30, got 216",
+            "orf": "tat_exon1"
         },
         {
             "sequence_name": "singleton-sequence",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon1 at 0-2 can have maximum deletions 30, got 78"
+            "message": "Smaller ORF rev_exon1 at 0-2 can have maximum deletions 30, got 78",
+            "orf": "rev_exon1"
         },
         {
             "sequence_name": "singleton-sequence",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpu at 0-2 can have maximum deletions 30, got 243"
+            "message": "Smaller ORF vpu at 0-2 can have maximum deletions 30, got 243",
+            "orf": "vpu"
         },
         {
             "sequence_name": "singleton-sequence",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon2 at 1-0 can have maximum deletions 30, got 90"
+            "message": "Smaller ORF tat_exon2 at 1-0 can have maximum deletions 30, got 90",
+            "orf": "tat_exon2"
         },
         {
             "sequence_name": "singleton-sequence",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon2 at 1-0 can have maximum deletions 30, got 294"
+            "message": "Smaller ORF rev_exon2 at 1-0 can have maximum deletions 30, got 294",
+            "orf": "rev_exon2"
         },
         {
             "sequence_name": "singleton-sequence",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF nef at 0-2 can have maximum deletions 30, got 672"
+            "message": "Smaller ORF nef at 0-2 can have maximum deletions 30, got 672",
+            "orf": "nef"
         },
         {
             "sequence_name": "singleton-sequence",
             "error": "PackagingSignalDeletion",
-            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 21 deletions with max tolerance of 10 deletions."
+            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 21 deletions with max tolerance of 10 deletions.",
+            "orf": null
         },
         {
             "sequence_name": "singleton-sequence",
             "error": "RevResponseElementDeletion",
-            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions."
+            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.",
+            "orf": null
         },
         {
             "sequence_name": "singleton-sequence",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, -."
+            "message": "Query sequence has a missing splice donor site, -.",
+            "orf": null
         },
         {
             "sequence_name": "singleton-sequence",
             "error": "LongDeletion",
-            "message": "Query sequence contains a long deletion."
+            "message": "Query sequence contains a long deletion.",
+            "orf": null
         },
         {
             "sequence_name": "singleton-sequence",
             "error": "NonHIV",
-            "message": "Sequence contains unrecognized parts. It is probably a Human/HIV Chimera sequence."
+            "message": "Sequence contains unrecognized parts. It is probably a Human/HIV Chimera sequence.",
+            "orf": null
         }
     ],
     "empty-sequence": [
         {
             "sequence_name": "empty-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF gag at 0--1 can have maximum deletions 30, got 1494"
+            "message": "ORF gag at 0--1 can have maximum deletions 30, got 1494",
+            "orf": "gag"
         },
         {
             "sequence_name": "empty-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF pol at 0--1 can have maximum deletions 30, got 3009"
+            "message": "ORF pol at 0--1 can have maximum deletions 30, got 3009",
+            "orf": "pol"
         },
         {
             "sequence_name": "empty-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF env at 0--1 can have maximum deletions 100, got 2574"
+            "message": "ORF env at 0--1 can have maximum deletions 100, got 2574",
+            "orf": "env"
         },
         {
             "sequence_name": "empty-sequence",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vif at 0--1 can have maximum deletions 30, got 573"
+            "message": "Smaller ORF vif at 0--1 can have maximum deletions 30, got 573",
+            "orf": "vif"
         },
         {
             "sequence_name": "empty-sequence",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpr at 0--1 can have maximum deletions 30, got 285"
+            "message": "Smaller ORF vpr at 0--1 can have maximum deletions 30, got 285",
+            "orf": "vpr"
         },
         {
             "sequence_name": "empty-sequence",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon1 at 0-2 can have maximum deletions 30, got 216"
+            "message": "Smaller ORF tat_exon1 at 0-2 can have maximum deletions 30, got 216",
+            "orf": "tat_exon1"
         },
         {
             "sequence_name": "empty-sequence",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon1 at 0-2 can have maximum deletions 30, got 78"
+            "message": "Smaller ORF rev_exon1 at 0-2 can have maximum deletions 30, got 78",
+            "orf": "rev_exon1"
         },
         {
             "sequence_name": "empty-sequence",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpu at 0--1 can have maximum deletions 30, got 243"
+            "message": "Smaller ORF vpu at 0--1 can have maximum deletions 30, got 243",
+            "orf": "vpu"
         },
         {
             "sequence_name": "empty-sequence",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon2 at 0--1 can have maximum deletions 30, got 90"
+            "message": "Smaller ORF tat_exon2 at 0--1 can have maximum deletions 30, got 90",
+            "orf": "tat_exon2"
         },
         {
             "sequence_name": "empty-sequence",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon2 at 0--1 can have maximum deletions 30, got 294"
+            "message": "Smaller ORF rev_exon2 at 0--1 can have maximum deletions 30, got 294",
+            "orf": "rev_exon2"
         },
         {
             "sequence_name": "empty-sequence",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF nef at 0--1 can have maximum deletions 30, got 672"
+            "message": "Smaller ORF nef at 0--1 can have maximum deletions 30, got 672",
+            "orf": "nef"
         },
         {
             "sequence_name": "empty-sequence",
             "error": "PackagingSignalDeletion",
-            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 21 deletions with max tolerance of 10 deletions."
+            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 21 deletions with max tolerance of 10 deletions.",
+            "orf": null
         },
         {
             "sequence_name": "empty-sequence",
             "error": "RevResponseElementDeletion",
-            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions."
+            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.",
+            "orf": null
         },
         {
             "sequence_name": "empty-sequence",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, -."
+            "message": "Query sequence has a missing splice donor site, -.",
+            "orf": null
         },
         {
             "sequence_name": "empty-sequence",
             "error": "LongDeletion",
-            "message": "Query sequence contains a long deletion."
+            "message": "Query sequence contains a long deletion.",
+            "orf": null
         }
     ],
     "empty-sequence2": [
         {
             "sequence_name": "empty-sequence2",
             "error": "DeletionInOrf",
-            "message": "ORF gag at 0--1 can have maximum deletions 30, got 1494"
+            "message": "ORF gag at 0--1 can have maximum deletions 30, got 1494",
+            "orf": "gag"
         },
         {
             "sequence_name": "empty-sequence2",
             "error": "DeletionInOrf",
-            "message": "ORF pol at 0--1 can have maximum deletions 30, got 3009"
+            "message": "ORF pol at 0--1 can have maximum deletions 30, got 3009",
+            "orf": "pol"
         },
         {
             "sequence_name": "empty-sequence2",
             "error": "DeletionInOrf",
-            "message": "ORF env at 0--1 can have maximum deletions 100, got 2574"
+            "message": "ORF env at 0--1 can have maximum deletions 100, got 2574",
+            "orf": "env"
         },
         {
             "sequence_name": "empty-sequence2",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vif at 0--1 can have maximum deletions 30, got 573"
+            "message": "Smaller ORF vif at 0--1 can have maximum deletions 30, got 573",
+            "orf": "vif"
         },
         {
             "sequence_name": "empty-sequence2",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpr at 0--1 can have maximum deletions 30, got 285"
+            "message": "Smaller ORF vpr at 0--1 can have maximum deletions 30, got 285",
+            "orf": "vpr"
         },
         {
             "sequence_name": "empty-sequence2",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon1 at 0-2 can have maximum deletions 30, got 216"
+            "message": "Smaller ORF tat_exon1 at 0-2 can have maximum deletions 30, got 216",
+            "orf": "tat_exon1"
         },
         {
             "sequence_name": "empty-sequence2",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon1 at 0-2 can have maximum deletions 30, got 78"
+            "message": "Smaller ORF rev_exon1 at 0-2 can have maximum deletions 30, got 78",
+            "orf": "rev_exon1"
         },
         {
             "sequence_name": "empty-sequence2",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpu at 0--1 can have maximum deletions 30, got 243"
+            "message": "Smaller ORF vpu at 0--1 can have maximum deletions 30, got 243",
+            "orf": "vpu"
         },
         {
             "sequence_name": "empty-sequence2",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon2 at 0--1 can have maximum deletions 30, got 90"
+            "message": "Smaller ORF tat_exon2 at 0--1 can have maximum deletions 30, got 90",
+            "orf": "tat_exon2"
         },
         {
             "sequence_name": "empty-sequence2",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon2 at 0--1 can have maximum deletions 30, got 294"
+            "message": "Smaller ORF rev_exon2 at 0--1 can have maximum deletions 30, got 294",
+            "orf": "rev_exon2"
         },
         {
             "sequence_name": "empty-sequence2",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF nef at 0--1 can have maximum deletions 30, got 672"
+            "message": "Smaller ORF nef at 0--1 can have maximum deletions 30, got 672",
+            "orf": "nef"
         },
         {
             "sequence_name": "empty-sequence2",
             "error": "PackagingSignalDeletion",
-            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 21 deletions with max tolerance of 10 deletions."
+            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 21 deletions with max tolerance of 10 deletions.",
+            "orf": null
         },
         {
             "sequence_name": "empty-sequence2",
             "error": "RevResponseElementDeletion",
-            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions."
+            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.",
+            "orf": null
         },
         {
             "sequence_name": "empty-sequence2",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, -."
+            "message": "Query sequence has a missing splice donor site, -.",
+            "orf": null
         },
         {
             "sequence_name": "empty-sequence2",
             "error": "LongDeletion",
-            "message": "Query sequence contains a long deletion."
+            "message": "Query sequence contains a long deletion.",
+            "orf": null
         }
     ],
     "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.WITH.SOME.LOWERCASES": [
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.WITH.SOME.LOWERCASES",
             "error": "UnknownNucleotide",
-            "message": "Sequence contains invalid nucleotides: t (start: 2086, end: 2086), g (start: 2092, end: 2092), t (start: 2131, end: 2131), c (start: 2160, end: 2160)"
+            "message": "Sequence contains invalid nucleotides: t (start: 2086, end: 2086), g (start: 2092, end: 2092), t (start: 2131, end: 2131), c (start: 2160, end: 2160)",
+            "orf": null
         },
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.WITH.SOME.LOWERCASES",
             "error": "InternalStopInOrf",
-            "message": "ORF gag at 789-2243 contains an internal stop codon at 2088"
+            "message": "ORF gag at 789-2243 contains an internal stop codon at 2088",
+            "orf": "gag"
         },
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.WITH.SOME.LOWERCASES",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF nef at 8791-9411 can have maximum deletions 30, got 54"
+            "message": "Smaller ORF nef at 8791-9411 can have maximum deletions 30, got 54",
+            "orf": "nef"
         },
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.WITH.SOME.LOWERCASES",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a mutated splice donor site, G."
+            "message": "Query sequence has a mutated splice donor site, G.",
+            "orf": null
         },
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.WITH.SOME.LOWERCASES",
             "error": "NonHIV",
-            "message": "Sequence contains unrecognized parts. It is probably a Human/HIV Chimera sequence."
+            "message": "Sequence contains unrecognized parts. It is probably a Human/HIV Chimera sequence.",
+            "orf": null
         }
     ],
     "small-sequence-with-lowercases": [
         {
             "sequence_name": "small-sequence-with-lowercases",
             "error": "UnknownNucleotide",
-            "message": "Sequence contains invalid nucleotides: t (start: 5, end: 5), c (start: 11, end: 11), t (start: 17, end: 17)"
+            "message": "Sequence contains invalid nucleotides: t (start: 5, end: 5), c (start: 11, end: 11), t (start: 17, end: 17)",
+            "orf": null
         },
         {
             "sequence_name": "small-sequence-with-lowercases",
             "error": "DeletionInOrf",
-            "message": "ORF gag at 0-17 can have maximum deletions 30, got 1494"
+            "message": "ORF gag at 0-17 can have maximum deletions 30, got 1494",
+            "orf": "gag"
         },
         {
             "sequence_name": "small-sequence-with-lowercases",
             "error": "DeletionInOrf",
-            "message": "ORF pol at 0-17 can have maximum deletions 30, got 2991"
+            "message": "ORF pol at 0-17 can have maximum deletions 30, got 2991",
+            "orf": "pol"
         },
         {
             "sequence_name": "small-sequence-with-lowercases",
             "error": "DeletionInOrf",
-            "message": "ORF env at 0-17 can have maximum deletions 100, got 2574"
+            "message": "ORF env at 0-17 can have maximum deletions 100, got 2574",
+            "orf": "env"
         },
         {
             "sequence_name": "small-sequence-with-lowercases",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vif at 0-17 can have maximum deletions 30, got 573"
+            "message": "Smaller ORF vif at 0-17 can have maximum deletions 30, got 573",
+            "orf": "vif"
         },
         {
             "sequence_name": "small-sequence-with-lowercases",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpr at 0-17 can have maximum deletions 30, got 285"
+            "message": "Smaller ORF vpr at 0-17 can have maximum deletions 30, got 285",
+            "orf": "vpr"
         },
         {
             "sequence_name": "small-sequence-with-lowercases",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon1 at 0-11 can have maximum deletions 30, got 216"
+            "message": "Smaller ORF tat_exon1 at 0-11 can have maximum deletions 30, got 216",
+            "orf": "tat_exon1"
         },
         {
             "sequence_name": "small-sequence-with-lowercases",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon1 at 0-11 can have maximum deletions 30, got 78"
+            "message": "Smaller ORF rev_exon1 at 0-11 can have maximum deletions 30, got 78",
+            "orf": "rev_exon1"
         },
         {
             "sequence_name": "small-sequence-with-lowercases",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpu at 0-17 can have maximum deletions 30, got 243"
+            "message": "Smaller ORF vpu at 0-17 can have maximum deletions 30, got 243",
+            "orf": "vpu"
         },
         {
             "sequence_name": "small-sequence-with-lowercases",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon2 at 11-16 can have maximum deletions 30, got 84"
+            "message": "Smaller ORF tat_exon2 at 11-16 can have maximum deletions 30, got 84",
+            "orf": "tat_exon2"
         },
         {
             "sequence_name": "small-sequence-with-lowercases",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon2 at 10-15 can have maximum deletions 30, got 288"
+            "message": "Smaller ORF rev_exon2 at 10-15 can have maximum deletions 30, got 288",
+            "orf": "rev_exon2"
         },
         {
             "sequence_name": "small-sequence-with-lowercases",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF nef at 0-17 can have maximum deletions 30, got 672"
+            "message": "Smaller ORF nef at 0-17 can have maximum deletions 30, got 672",
+            "orf": "nef"
         },
         {
             "sequence_name": "small-sequence-with-lowercases",
             "error": "PackagingSignalDeletion",
-            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 21 deletions with max tolerance of 10 deletions."
+            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 21 deletions with max tolerance of 10 deletions.",
+            "orf": null
         },
         {
             "sequence_name": "small-sequence-with-lowercases",
             "error": "RevResponseElementDeletion",
-            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions."
+            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.",
+            "orf": null
         },
         {
             "sequence_name": "small-sequence-with-lowercases",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, -."
+            "message": "Query sequence has a missing splice donor site, -.",
+            "orf": null
         },
         {
             "sequence_name": "small-sequence-with-lowercases",
             "error": "LongDeletion",
-            "message": "Query sequence contains a long deletion."
+            "message": "Query sequence contains a long deletion.",
+            "orf": null
         },
         {
             "sequence_name": "small-sequence-with-lowercases",
             "error": "NonHIV",
-            "message": "Sequence contains unrecognized parts. It is probably a Human/HIV Chimera sequence."
+            "message": "Sequence contains unrecognized parts. It is probably a Human/HIV Chimera sequence.",
+            "orf": null
         }
     ],
     "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSECOMPLEMENTED[REVERSE_COMPLEMENT]": [
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSECOMPLEMENTED[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF nef at 8795-9415 can have maximum deletions 30, got 54"
+            "message": "Smaller ORF nef at 8795-9415 can have maximum deletions 30, got 54",
+            "orf": "nef"
         },
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSECOMPLEMENTED[REVERSE_COMPLEMENT]",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a mutated splice donor site, G."
+            "message": "Query sequence has a mutated splice donor site, G.",
+            "orf": null
         },
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSECOMPLEMENTED[REVERSE_COMPLEMENT]",
             "error": "NonHIV",
-            "message": "Sequence contains unrecognized parts. It is probably a Human/HIV Chimera sequence."
+            "message": "Sequence contains unrecognized parts. It is probably a Human/HIV Chimera sequence.",
+            "orf": null
         }
     ],
     "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSED": [
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSED",
             "error": "InternalStopInOrf",
-            "message": "ORF gag at 48-2339 contains an internal stop codon at 105"
+            "message": "ORF gag at 48-2339 contains an internal stop codon at 105",
+            "orf": "gag"
         },
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSED",
             "error": "InternalStopInOrf",
-            "message": "ORF pol at 2071-5364 contains an internal stop codon at 2167"
+            "message": "ORF pol at 2071-5364 contains an internal stop codon at 2167",
+            "orf": "pol"
         },
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSED",
             "error": "InternalStopInOrf",
-            "message": "ORF env at 6216-8717 contains an internal stop codon at 6342"
+            "message": "ORF env at 6216-8717 contains an internal stop codon at 6342",
+            "orf": "env"
         },
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSED",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF vif at 5293-5817 contains an internal stop codon at 5362"
+            "message": "Smaller ORF vif at 5293-5817 contains an internal stop codon at 5362",
+            "orf": "vif"
         },
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSED",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF vpr at 5690-5917 contains an internal stop codon at 5747"
+            "message": "Smaller ORF vpr at 5690-5917 contains an internal stop codon at 5747",
+            "orf": "vpr"
         },
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSED",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF tat_exon1 at 5864-6067 contains an internal stop codon at 5915"
+            "message": "Smaller ORF tat_exon1 at 5864-6067 contains an internal stop codon at 5915",
+            "orf": "tat_exon1"
         },
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSED",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF vpu at 6074-6406 contains an internal stop codon at 6125"
+            "message": "Smaller ORF vpu at 6074-6406 contains an internal stop codon at 6125",
+            "orf": "vpu"
         },
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSED",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF tat_exon2 at 7567-7662 contains out of frame indels that impact 71 positions."
+            "message": "Smaller ORF tat_exon2 at 7567-7662 contains out of frame indels that impact 71 positions.",
+            "orf": "tat_exon2"
         },
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSED",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF rev_exon2 at 8199-8702 can have maximum insertions 90, got 108"
+            "message": "Smaller ORF rev_exon2 at 8199-8702 can have maximum insertions 90, got 108",
+            "orf": "rev_exon2"
         },
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSED",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF nef at 8757-9611 contains an internal stop codon at 8799"
+            "message": "Smaller ORF nef at 8757-9611 contains an internal stop codon at 8799",
+            "orf": "nef"
         },
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSED",
             "error": "RevResponseElementDeletion",
-            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 131 deletions with max tolerance of 20 deletions."
+            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 131 deletions with max tolerance of 20 deletions.",
+            "orf": null
         },
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSED",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a mutated splice donor site, A."
+            "message": "Query sequence has a mutated splice donor site, A.",
+            "orf": null
         },
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSED",
             "error": "NonHIV",
-            "message": "Sequence contains unrecognized parts. It is probably a Human/HIV Chimera sequence."
+            "message": "Sequence contains unrecognized parts. It is probably a Human/HIV Chimera sequence.",
+            "orf": null
         }
     ],
     "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.WITH-XS[REVERSE_COMPLEMENT]": [
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.WITH-XS",
             "error": "UnknownNucleotide",
-            "message": "Sequence contains invalid nucleotides: XXXXXXX (start: 45, end: 51)"
+            "message": "Sequence contains invalid nucleotides: XXXXXXX (start: 45, end: 51)",
+            "orf": null
         },
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.WITH-XS[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF nef at 8795-9415 can have maximum deletions 30, got 54"
+            "message": "Smaller ORF nef at 8795-9415 can have maximum deletions 30, got 54",
+            "orf": "nef"
         },
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.WITH-XS[REVERSE_COMPLEMENT]",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a mutated splice donor site, G."
+            "message": "Query sequence has a mutated splice donor site, G.",
+            "orf": null
         },
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.WITH-XS[REVERSE_COMPLEMENT]",
             "error": "NonHIV",
-            "message": "Sequence contains unrecognized parts. It is probably a Human/HIV Chimera sequence."
+            "message": "Sequence contains unrecognized parts. It is probably a Human/HIV Chimera sequence.",
+            "orf": null
         }
     ],
     "small-sequence-with-xs": [
         {
             "sequence_name": "small-sequence-with-xs",
             "error": "UnknownNucleotide",
-            "message": "Sequence contains invalid nucleotides: XXXXXXX (start: 6, end: 12)"
+            "message": "Sequence contains invalid nucleotides: XXXXXXX (start: 6, end: 12)",
+            "orf": null
         },
         {
             "sequence_name": "small-sequence-with-xs",
             "error": "DeletionInOrf",
-            "message": "ORF gag at 0-11 can have maximum deletions 30, got 1494"
+            "message": "ORF gag at 0-11 can have maximum deletions 30, got 1494",
+            "orf": "gag"
         },
         {
             "sequence_name": "small-sequence-with-xs",
             "error": "DeletionInOrf",
-            "message": "ORF pol at 0-11 can have maximum deletions 30, got 2997"
+            "message": "ORF pol at 0-11 can have maximum deletions 30, got 2997",
+            "orf": "pol"
         },
         {
             "sequence_name": "small-sequence-with-xs",
             "error": "DeletionInOrf",
-            "message": "ORF env at 0-11 can have maximum deletions 100, got 2574"
+            "message": "ORF env at 0-11 can have maximum deletions 100, got 2574",
+            "orf": "env"
         },
         {
             "sequence_name": "small-sequence-with-xs",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vif at 0-11 can have maximum deletions 30, got 573"
+            "message": "Smaller ORF vif at 0-11 can have maximum deletions 30, got 573",
+            "orf": "vif"
         },
         {
             "sequence_name": "small-sequence-with-xs",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpr at 0-11 can have maximum deletions 30, got 285"
+            "message": "Smaller ORF vpr at 0-11 can have maximum deletions 30, got 285",
+            "orf": "vpr"
         },
         {
             "sequence_name": "small-sequence-with-xs",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon1 at 0-14 can have maximum deletions 30, got 216"
+            "message": "Smaller ORF tat_exon1 at 0-14 can have maximum deletions 30, got 216",
+            "orf": "tat_exon1"
         },
         {
             "sequence_name": "small-sequence-with-xs",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon1 at 0-14 can have maximum deletions 30, got 78"
+            "message": "Smaller ORF rev_exon1 at 0-14 can have maximum deletions 30, got 78",
+            "orf": "rev_exon1"
         },
         {
             "sequence_name": "small-sequence-with-xs",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpu at 0-11 can have maximum deletions 30, got 243"
+            "message": "Smaller ORF vpu at 0-11 can have maximum deletions 30, got 243",
+            "orf": "vpu"
         },
         {
             "sequence_name": "small-sequence-with-xs",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon2 at 12-11 can have maximum deletions 30, got 90"
+            "message": "Smaller ORF tat_exon2 at 12-11 can have maximum deletions 30, got 90",
+            "orf": "tat_exon2"
         },
         {
             "sequence_name": "small-sequence-with-xs",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon2 at 12-11 can have maximum deletions 30, got 294"
+            "message": "Smaller ORF rev_exon2 at 12-11 can have maximum deletions 30, got 294",
+            "orf": "rev_exon2"
         },
         {
             "sequence_name": "small-sequence-with-xs",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF nef at 0-11 can have maximum deletions 30, got 672"
+            "message": "Smaller ORF nef at 0-11 can have maximum deletions 30, got 672",
+            "orf": "nef"
         },
         {
             "sequence_name": "small-sequence-with-xs",
             "error": "PackagingSignalDeletion",
-            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 21 deletions with max tolerance of 10 deletions."
+            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 21 deletions with max tolerance of 10 deletions.",
+            "orf": null
         },
         {
             "sequence_name": "small-sequence-with-xs",
             "error": "RevResponseElementDeletion",
-            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions."
+            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.",
+            "orf": null
         },
         {
             "sequence_name": "small-sequence-with-xs",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, -."
+            "message": "Query sequence has a missing splice donor site, -.",
+            "orf": null
         },
         {
             "sequence_name": "small-sequence-with-xs",
             "error": "LongDeletion",
-            "message": "Query sequence contains a long deletion."
+            "message": "Query sequence contains a long deletion.",
+            "orf": null
         },
         {
             "sequence_name": "small-sequence-with-xs",
             "error": "NonHIV",
-            "message": "Sequence contains unrecognized parts. It is probably a Human/HIV Chimera sequence."
+            "message": "Sequence contains unrecognized parts. It is probably a Human/HIV Chimera sequence.",
+            "orf": null
         }
     ],
     "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.WITH-BAD-SYMBOLS[REVERSE_COMPLEMENT]": [
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.WITH-BAD-SYMBOLS",
             "error": "UnknownNucleotide",
-            "message": "Sequence contains invalid nucleotides: >1>#>@> (start: 45, end: 51)"
+            "message": "Sequence contains invalid nucleotides: >1>#>@> (start: 45, end: 51)",
+            "orf": null
         },
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.WITH-BAD-SYMBOLS[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF nef at 8795-9415 can have maximum deletions 30, got 54"
+            "message": "Smaller ORF nef at 8795-9415 can have maximum deletions 30, got 54",
+            "orf": "nef"
         },
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.WITH-BAD-SYMBOLS[REVERSE_COMPLEMENT]",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a mutated splice donor site, G."
+            "message": "Query sequence has a mutated splice donor site, G.",
+            "orf": null
         },
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.WITH-BAD-SYMBOLS[REVERSE_COMPLEMENT]",
             "error": "NonHIV",
-            "message": "Sequence contains unrecognized parts. It is probably a Human/HIV Chimera sequence."
+            "message": "Sequence contains unrecognized parts. It is probably a Human/HIV Chimera sequence.",
+            "orf": null
         }
     ],
     "small-sequence-with-bad-symbols": [
         {
             "sequence_name": "small-sequence-with-bad-symbols",
             "error": "UnknownNucleotide",
-            "message": "Sequence contains invalid nucleotides: >1>#>@> (start: 6, end: 12)"
+            "message": "Sequence contains invalid nucleotides: >1>#>@> (start: 6, end: 12)",
+            "orf": null
         },
         {
             "sequence_name": "small-sequence-with-bad-symbols",
             "error": "DeletionInOrf",
-            "message": "ORF gag at 0-11 can have maximum deletions 30, got 1494"
+            "message": "ORF gag at 0-11 can have maximum deletions 30, got 1494",
+            "orf": "gag"
         },
         {
             "sequence_name": "small-sequence-with-bad-symbols",
             "error": "DeletionInOrf",
-            "message": "ORF pol at 0-11 can have maximum deletions 30, got 2997"
+            "message": "ORF pol at 0-11 can have maximum deletions 30, got 2997",
+            "orf": "pol"
         },
         {
             "sequence_name": "small-sequence-with-bad-symbols",
             "error": "DeletionInOrf",
-            "message": "ORF env at 0-11 can have maximum deletions 100, got 2574"
+            "message": "ORF env at 0-11 can have maximum deletions 100, got 2574",
+            "orf": "env"
         },
         {
             "sequence_name": "small-sequence-with-bad-symbols",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vif at 0-11 can have maximum deletions 30, got 573"
+            "message": "Smaller ORF vif at 0-11 can have maximum deletions 30, got 573",
+            "orf": "vif"
         },
         {
             "sequence_name": "small-sequence-with-bad-symbols",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpr at 0-11 can have maximum deletions 30, got 285"
+            "message": "Smaller ORF vpr at 0-11 can have maximum deletions 30, got 285",
+            "orf": "vpr"
         },
         {
             "sequence_name": "small-sequence-with-bad-symbols",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon1 at 0-14 can have maximum deletions 30, got 216"
+            "message": "Smaller ORF tat_exon1 at 0-14 can have maximum deletions 30, got 216",
+            "orf": "tat_exon1"
         },
         {
             "sequence_name": "small-sequence-with-bad-symbols",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon1 at 0-14 can have maximum deletions 30, got 78"
+            "message": "Smaller ORF rev_exon1 at 0-14 can have maximum deletions 30, got 78",
+            "orf": "rev_exon1"
         },
         {
             "sequence_name": "small-sequence-with-bad-symbols",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpu at 0-11 can have maximum deletions 30, got 243"
+            "message": "Smaller ORF vpu at 0-11 can have maximum deletions 30, got 243",
+            "orf": "vpu"
         },
         {
             "sequence_name": "small-sequence-with-bad-symbols",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon2 at 12-11 can have maximum deletions 30, got 90"
+            "message": "Smaller ORF tat_exon2 at 12-11 can have maximum deletions 30, got 90",
+            "orf": "tat_exon2"
         },
         {
             "sequence_name": "small-sequence-with-bad-symbols",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon2 at 12-11 can have maximum deletions 30, got 294"
+            "message": "Smaller ORF rev_exon2 at 12-11 can have maximum deletions 30, got 294",
+            "orf": "rev_exon2"
         },
         {
             "sequence_name": "small-sequence-with-bad-symbols",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF nef at 0-11 can have maximum deletions 30, got 672"
+            "message": "Smaller ORF nef at 0-11 can have maximum deletions 30, got 672",
+            "orf": "nef"
         },
         {
             "sequence_name": "small-sequence-with-bad-symbols",
             "error": "PackagingSignalDeletion",
-            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 21 deletions with max tolerance of 10 deletions."
+            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 21 deletions with max tolerance of 10 deletions.",
+            "orf": null
         },
         {
             "sequence_name": "small-sequence-with-bad-symbols",
             "error": "RevResponseElementDeletion",
-            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions."
+            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.",
+            "orf": null
         },
         {
             "sequence_name": "small-sequence-with-bad-symbols",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, -."
+            "message": "Query sequence has a missing splice donor site, -.",
+            "orf": null
         },
         {
             "sequence_name": "small-sequence-with-bad-symbols",
             "error": "LongDeletion",
-            "message": "Query sequence contains a long deletion."
+            "message": "Query sequence contains a long deletion.",
+            "orf": null
         },
         {
             "sequence_name": "small-sequence-with-bad-symbols",
             "error": "NonHIV",
-            "message": "Sequence contains unrecognized parts. It is probably a Human/HIV Chimera sequence."
+            "message": "Sequence contains unrecognized parts. It is probably a Human/HIV Chimera sequence.",
+            "orf": null
         }
     ],
     "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.WITH-DASHES[REVERSE_COMPLEMENT]": [
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.WITH-DASHES",
             "error": "UnknownNucleotide",
-            "message": "Sequence contains invalid nucleotides: ------- (start: 45, end: 51)"
+            "message": "Sequence contains invalid nucleotides: ------- (start: 45, end: 51)",
+            "orf": null
         },
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.WITH-DASHES[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF nef at 8795-9415 can have maximum deletions 30, got 54"
+            "message": "Smaller ORF nef at 8795-9415 can have maximum deletions 30, got 54",
+            "orf": "nef"
         },
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.WITH-DASHES[REVERSE_COMPLEMENT]",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a mutated splice donor site, G."
+            "message": "Query sequence has a mutated splice donor site, G.",
+            "orf": null
         },
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.WITH-DASHES[REVERSE_COMPLEMENT]",
             "error": "NonHIV",
-            "message": "Sequence contains unrecognized parts. It is probably a Human/HIV Chimera sequence."
+            "message": "Sequence contains unrecognized parts. It is probably a Human/HIV Chimera sequence.",
+            "orf": null
         }
     ],
     "small-sequence-with-dashes": [
         {
             "sequence_name": "small-sequence-with-dashes",
             "error": "UnknownNucleotide",
-            "message": "Sequence contains invalid nucleotides: ------- (start: 6, end: 12)"
+            "message": "Sequence contains invalid nucleotides: ------- (start: 6, end: 12)",
+            "orf": null
         },
         {
             "sequence_name": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
-            "message": "ORF gag at 0-11 can have maximum deletions 30, got 1494"
+            "message": "ORF gag at 0-11 can have maximum deletions 30, got 1494",
+            "orf": "gag"
         },
         {
             "sequence_name": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
-            "message": "ORF pol at 0-11 can have maximum deletions 30, got 2997"
+            "message": "ORF pol at 0-11 can have maximum deletions 30, got 2997",
+            "orf": "pol"
         },
         {
             "sequence_name": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
-            "message": "ORF env at 0-11 can have maximum deletions 100, got 2574"
+            "message": "ORF env at 0-11 can have maximum deletions 100, got 2574",
+            "orf": "env"
         },
         {
             "sequence_name": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vif at 0-11 can have maximum deletions 30, got 573"
+            "message": "Smaller ORF vif at 0-11 can have maximum deletions 30, got 573",
+            "orf": "vif"
         },
         {
             "sequence_name": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpr at 0-11 can have maximum deletions 30, got 285"
+            "message": "Smaller ORF vpr at 0-11 can have maximum deletions 30, got 285",
+            "orf": "vpr"
         },
         {
             "sequence_name": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon1 at 0-14 can have maximum deletions 30, got 216"
+            "message": "Smaller ORF tat_exon1 at 0-14 can have maximum deletions 30, got 216",
+            "orf": "tat_exon1"
         },
         {
             "sequence_name": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon1 at 0-14 can have maximum deletions 30, got 78"
+            "message": "Smaller ORF rev_exon1 at 0-14 can have maximum deletions 30, got 78",
+            "orf": "rev_exon1"
         },
         {
             "sequence_name": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpu at 0-11 can have maximum deletions 30, got 243"
+            "message": "Smaller ORF vpu at 0-11 can have maximum deletions 30, got 243",
+            "orf": "vpu"
         },
         {
             "sequence_name": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon2 at 12-11 can have maximum deletions 30, got 90"
+            "message": "Smaller ORF tat_exon2 at 12-11 can have maximum deletions 30, got 90",
+            "orf": "tat_exon2"
         },
         {
             "sequence_name": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon2 at 12-11 can have maximum deletions 30, got 294"
+            "message": "Smaller ORF rev_exon2 at 12-11 can have maximum deletions 30, got 294",
+            "orf": "rev_exon2"
         },
         {
             "sequence_name": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF nef at 0-11 can have maximum deletions 30, got 672"
+            "message": "Smaller ORF nef at 0-11 can have maximum deletions 30, got 672",
+            "orf": "nef"
         },
         {
             "sequence_name": "small-sequence-with-dashes",
             "error": "PackagingSignalDeletion",
-            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 21 deletions with max tolerance of 10 deletions."
+            "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 21 deletions with max tolerance of 10 deletions.",
+            "orf": null
         },
         {
             "sequence_name": "small-sequence-with-dashes",
             "error": "RevResponseElementDeletion",
-            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions."
+            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.",
+            "orf": null
         },
         {
             "sequence_name": "small-sequence-with-dashes",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, -."
+            "message": "Query sequence has a missing splice donor site, -.",
+            "orf": null
         },
         {
             "sequence_name": "small-sequence-with-dashes",
             "error": "LongDeletion",
-            "message": "Query sequence contains a long deletion."
+            "message": "Query sequence contains a long deletion.",
+            "orf": null
         },
         {
             "sequence_name": "small-sequence-with-dashes",
             "error": "NonHIV",
-            "message": "Sequence contains unrecognized parts. It is probably a Human/HIV Chimera sequence."
+            "message": "Sequence contains unrecognized parts. It is probably a Human/HIV Chimera sequence.",
+            "orf": null
         }
     ]
 }
