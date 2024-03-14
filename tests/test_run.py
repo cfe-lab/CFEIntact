@@ -9,7 +9,7 @@ def test_basic_run(tmp_path, request):
     pwd = request.fspath.dirname
     input = os.path.join(pwd, "data-small.fasta")
 
-    testargs = ["cfeintact", "intact", "--subtype", "B", "--working-folder", working_dir, input]
+    testargs = ["cfeintact", "intact", "--subtype", "B", "--working-folder", working_dir, "--output-json", input]
 
     with patch.object(sys, 'argv', testargs):
         try: main.cli()

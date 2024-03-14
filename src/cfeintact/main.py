@@ -60,7 +60,7 @@ def cli():
 @click.option(
     '--check-small-orfs/--ignore-small-orfs', default=True)
 @click.option(
-    '--output-csv/--output-json', default=False)
+    '--output-csv/--output-json', default=True)
 @click.option(
     '--working-folder',
     default=os.getcwd()
