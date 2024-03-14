@@ -1,8 +1,9 @@
 
 from typing import List
 
-import cfeintact.intact as intact
+import cfeintact.defect as defect
 from cfeintact.intact import is_nonhiv, IntactnessError, HolisticInfo
+
 
 class BlastRow:
     def __init__(self, qstart, qend, qlen):
@@ -15,7 +16,7 @@ def test_is_nonhiv_empty_blast_rows():
     blast_rows: List[BlastRow] = []
     result = is_nonhiv(HolisticInfo(), "id", 5, blast_rows)
     assert isinstance(result, IntactnessError)
-    assert result.error == intact.NONHIV_ERROR
+    assert isinstance(result.error, defect.NonHIV)
 
 
 def test_is_nonhiv_low_ratio():
@@ -26,7 +27,7 @@ def test_is_nonhiv_low_ratio():
     ]
     result = is_nonhiv(HolisticInfo(), "id", 1000, blast_rows)
     assert isinstance(result, IntactnessError)
-    assert result.error == intact.NONHIV_ERROR
+    assert isinstance(result.error, defect.NonHIV)
 
 
 def test_is_nonhiv_high_ratio():
@@ -51,4 +52,4 @@ def test_is_nonhiv_single_blast_row():
     blast_rows = [BlastRow(0, 200, 1000)]
     result = is_nonhiv(HolisticInfo(), "id", 1000, blast_rows)
     assert isinstance(result, IntactnessError)
-    assert result.error == intact.NONHIV_ERROR
+    assert isinstance(result.error, defect.NonHIV)

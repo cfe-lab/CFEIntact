@@ -3,6 +3,7 @@ import pytest
 from typing import List
 
 import cfeintact.intact as intact
+import cfeintact.defect as defect
 from cfeintact.intact import is_scrambled, contains_internal_inversion, IntactnessError, most_frequent_element
 
 @pytest.mark.parametrize("lst, expected", [
@@ -48,7 +49,7 @@ def test_is_scrambled_internal_inversion():
     ]
     result = is_scrambled("id", blast_rows) or contains_internal_inversion("id", blast_rows)
     assert isinstance(result, IntactnessError)
-    assert result.error == intact.INTERNALINVERSION_ERROR
+    assert isinstance(result.error, defect.InternalInversion)
 
 def test_is_scrambled_plus_strand_sorted():
     # Test case where the direction is "plus" and the sstart values are sorted.
@@ -76,7 +77,7 @@ def test_is_scrambled_plus_strand_unsorted():
     ]
     result = is_scrambled("id", blast_rows) or contains_internal_inversion("id", blast_rows)
     assert isinstance(result, IntactnessError)
-    assert result.error == intact.SCRAMBLE_ERROR
+    assert isinstance(result.error, defect.Scramble)
 
 def test_is_scrambled_plus_strand_unsorted_5prime():
     # Test case with mixed directions and inversions
@@ -96,7 +97,7 @@ def test_is_scrambled_minus_strand_unsorted():
     ]
     result = is_scrambled("id", blast_rows) or contains_internal_inversion("id", blast_rows)
     assert isinstance(result, IntactnessError)
-    assert result.error == intact.SCRAMBLE_ERROR
+    assert isinstance(result.error, defect.Scramble)
 
 def test_is_scrambled_mixed_direction():
     # Test case where some rows have "plus" direction and some have "minus" direction.
@@ -107,7 +108,7 @@ def test_is_scrambled_mixed_direction():
     ]
     result = is_scrambled("id", blast_rows) or contains_internal_inversion("id", blast_rows)
     assert isinstance(result, IntactnessError)
-    assert result.error == intact.SCRAMBLE_ERROR
+    assert isinstance(result.error, defect.Scramble)
 
 def test_is_scrambled_single_row_plus_strand():
     # Test case with a single row aligned in the "plus" strand
@@ -134,4 +135,4 @@ def test_is_scrambled_multiple_directions_and_inversions():
     ]
     result = is_scrambled("id", blast_rows) or contains_internal_inversion("id", blast_rows)
     assert isinstance(result, IntactnessError)
-    assert result.error == intact.SCRAMBLE_ERROR
+    assert isinstance(result.error, defect.Scramble)
