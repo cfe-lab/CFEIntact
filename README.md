@@ -19,14 +19,14 @@ CFEIntact is built with Python 3 and requires several dependencies, including MA
 
 ### Prerequisites
 
-- Python 3 installed on your system.
+- `Python3` for running the main program.
 - `pip` for managing Python packages.
-- MAFFT for sequence alignment.
-- BLAST+ for sequence analysis when certain checks are enabled.
+- `MAFFT` for sequence alignment.
+- `BLAST+` for sequence analysis when certain checks are enabled.
 
 ### Install CFEIntact
 
-Clone the repository and install CFEIntact using `virtualenv`:
+Clone the repository and install CFEIntact:
 
 ```shell
 git clone https://github.com/cfe-lab/CFEIntact
