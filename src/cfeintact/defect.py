@@ -6,15 +6,19 @@ from cfeintact.original_orf import OriginalORF
 
 
 @dataclass(frozen=True)
+class ORFDefect:
+    q: OriginalORF
+
+
+@dataclass(frozen=True)
 class LongDeletion:
     def __str__(self):
         return "Query sequence contains a long deletion."
 
 
 @dataclass(frozen=True)
-class DeletionInOrf:
+class DeletionInOrf(ORFDefect):
     e: OriginalORF
-    q: OriginalORF
     is_small: bool
     deletions: int
 
@@ -26,8 +30,7 @@ class DeletionInOrf:
 
 
 @dataclass(frozen=True)
-class InsertionInOrf:
-    q: OriginalORF
+class InsertionInOrf(ORFDefect):
     e: OriginalORF
     is_small: bool
     insertions: int
@@ -39,9 +42,8 @@ class InsertionInOrf:
 
 
 @dataclass(frozen=True)
-class InternalStopInOrf:
+class InternalStopInOrf(ORFDefect):
     e: OriginalORF
-    q: OriginalORF
     is_small: bool
     position: int
 
@@ -52,9 +54,8 @@ class InternalStopInOrf:
 
 
 @dataclass(frozen=True)
-class FrameshiftInOrf:
+class FrameshiftInOrf(ORFDefect):
     e: OriginalORF
-    q: OriginalORF
     is_small: bool
     impacted_positions: int
 
@@ -140,9 +141,16 @@ class UnknownNucleotide:
 
 
 # The final exported Defect type will encompass all defined classes
-Defect = Union[
+DefectType = Union[
     LongDeletion, DeletionInOrf, InsertionInOrf, InternalStopInOrf,
     FrameshiftInOrf, MajorSpliceDonorSiteMutated, PackagingSignalDeletion,
     PackagingSignalNotComplete, RevResponseElementDeletion, APOBECHypermutationDetected,
     NonHIV, Scramble, InternalInversion, UnknownNucleotide
 ]
+
+
+
+@dataclass(frozen=True)
+class Defect:
+    sequence_name: str
+    error: DefectType

@@ -8,7 +8,7 @@ from collections import Counter
 from Bio import Seq, SeqIO, SeqRecord
 from Bio.Data import IUPACData
 from scipy.stats import fisher_exact
-from typing import Optional, Dict
+from typing import Optional, Dict, List
 
 import cfeintact.constants as const
 import cfeintact.subtypes as st
@@ -16,16 +16,11 @@ import cfeintact.wrappers as wrappers
 import cfeintact.log as log
 import cfeintact.detailed_aligner as detailed_aligner
 import cfeintact.defect as defect
+from cfeintact.defect import Defect
 from cfeintact.aligned_sequence import AlignedSequence
 from cfeintact.reference_index import ReferenceIndex
 from cfeintact.blastrow import BlastRow
 from cfeintact.initialize_orf import initialize_orf
-
-
-@dataclass(frozen=True)
-class IntactnessError:
-    sequence_name: str
-    error: defect.Defect
 
 
 @dataclass(frozen=True)
@@ -129,7 +124,7 @@ def remove_5_prime(blast_rows):
     return [x for x in blast_rows if x.sstart > 622 and x.send > 622]
 
 
-def contains_internal_inversion(seqid, blast_rows):
+def contains_internal_inversion(seqid: str, blast_rows: List[BlastRow]) -> Optional[Defect]:
     ignored_5_prime = remove_5_prime(blast_rows)
 
     if not ignored_5_prime:
@@ -138,14 +133,14 @@ def contains_internal_inversion(seqid, blast_rows):
         return None
 
     all_same = len(set(x.sstrand for x in ignored_5_prime)) == 1
-    if not all_same:
-        # Some parts of the sequence were aligned
-        # in forward direction (plus)
-        # and some in reverse (minus).
-        # This indicates an internal inversion.
-        return IntactnessError(seqid, defect.InternalInversion())
-    else:
+    if all_same:
         return None
+
+    # Some parts of the sequence were aligned
+    # in forward direction (plus)
+    # and some in reverse (minus).
+    # This indicates an internal inversion.
+    return Defect(seqid, defect.InternalInversion())
 
 
 def is_scrambled(seqid, blast_rows):
@@ -163,7 +158,7 @@ def is_scrambled(seqid, blast_rows):
     elif direction == "minus" and is_sorted(x.send for x in reversed(ignored_5_prime)):
         return None
     else:
-        return IntactnessError(seqid, defect.Scramble(direction))
+        return Defect(seqid, defect.Scramble(direction))
 
 
 def is_nonhiv(holistic, seqid, seqlen, blast_rows):
@@ -172,7 +167,7 @@ def is_nonhiv(holistic, seqid, seqlen, blast_rows):
     holistic.blast_qseq_coverage = aligned_length / holistic.blast_matched_qlen
 
     if holistic.blast_qseq_coverage < 0.8 and seqlen > holistic.blast_matched_qlen * 0.6:
-        return IntactnessError(seqid, defect.NonHIV())
+        return Defect(seqid, defect.NonHIV())
     else:
         return None
 
@@ -237,7 +232,7 @@ def isHypermut(holistic, aln):
     holistic.hypermutation_probablility = 1 - pval
 
     if pval < 0.05:
-        return IntactnessError(
+        return Defect(
             aln[1].id,
             defect.APOBECHypermutationDetected(pval),
         )
@@ -258,7 +253,7 @@ def has_long_deletion(sequence, alignment):
 
     # NOTE: This is the same check that HIVSeqInR uses.
     if len(sequence.seq) < 8000:
-        return IntactnessError(sequence.id, defect.LongDeletion())
+        return Defect(sequence.id, defect.LongDeletion())
 
     return None
 # /end has_long_deletion
@@ -288,7 +283,7 @@ def has_mutated_major_splice_donor_site(alignment,
     sd = alignment[1].seq[sd_begin:(sd_end + 1)]
 
     if sd.upper() != splice_donor_sequence.upper():
-        return IntactnessError(
+        return Defect(
             alignment[1].id,
             defect.MajorSpliceDonorSiteMutated(''.join(sd.upper())),
         )
@@ -322,9 +317,9 @@ def has_packaging_signal(alignment, psi_locus, psi_tolerance):
 
     Return:
 
-        PSINOTFOUND_ERROR -- IntactnessError denoting query does not encompass
+        PSINOTFOUND_ERROR -- Defect denoting query does not encompass
                              the complete PSI region.
-        PSIDELETION_ERROR -- IntactnessError denoting query likely contains
+        PSIDELETION_ERROR -- Defect denoting query likely contains
                              defective PSI.
         None -- Denotes intact PSI.
     """
@@ -336,7 +331,7 @@ def has_packaging_signal(alignment, psi_locus, psi_tolerance):
     #                  str(alignment[1].seq))]
     # query_start = query_options[0] if query_options else ''
     # if query_start > packaging_begin:
-    #     return IntactnessError(
+    #     return Defect(
     #             alignment[1].id, PSINOTFOUND_ERROR,
     #             "Query Start at reference position " + str(query_start)
     #             + ". Does not encompass PSI at positions "
@@ -346,7 +341,7 @@ def has_packaging_signal(alignment, psi_locus, psi_tolerance):
     query_psi = str(alignment[1].seq[packaging_begin:packaging_end])
     query_psi_deletions = len(re.findall(r"-", query_psi))
     if query_psi_deletions > psi_tolerance:
-        return IntactnessError(
+        return Defect(
             alignment[1].id,
             defect.PackagingSignalDeletion(query_psi_deletions, psi_tolerance),
         )
@@ -380,7 +375,7 @@ def has_rev_response_element(alignment, rre_locus, rre_tolerance):
 
     Return:
 
-        RREDELETION_ERROR -- IntactnessError denoting query likely contains
+        RREDELETION_ERROR -- Defect denoting query likely contains
                              defective RRE.
         None -- Denotes intact RRE.
     """
@@ -391,7 +386,7 @@ def has_rev_response_element(alignment, rre_locus, rre_tolerance):
     query_rre = str(alignment[1].seq[rre_begin:rre_end])
     query_rre_deletions = len(re.findall(r"-", query_rre))
     if query_rre_deletions > rre_tolerance:
-        return IntactnessError(
+        return Defect(
             alignment[1].id,
             defect.RevResponseElementDeletion(query_rre_deletions, rre_tolerance),
         )
@@ -451,18 +446,18 @@ def has_reading_frames(
 
             if "*" in limited_aminoacids:
                 position = q.start + (limit + limited_aminoacids.index('*')) * 3
-                d1 = defect.InternalStopInOrf(e, q, is_small, position)
-                errors.append(IntactnessError(sequence.id, d1))
+                d1 = defect.InternalStopInOrf(e=e, q=q, is_small=is_small, position=position)
+                errors.append(Defect(sequence.id, d1))
             else:
-                d2 = defect.DeletionInOrf(e, q, is_small, deletions)
-                errors.append(IntactnessError(sequence.id, d2))
+                d2 = defect.DeletionInOrf(e=e, q=q, is_small=is_small, deletions=deletions)
+                errors.append(Defect(sequence.id, d2))
 
             continue
 
         # Max insertions allowed in ORF exceeded
         if insertions > 3 * e.deletion_tolerence:
             d3 = defect.InsertionInOrf(e=e, q=q, is_small=is_small, insertions=insertions)
-            errors.append(IntactnessError(sequence.id, d3))
+            errors.append(Defect(sequence.id, d3))
             continue
 
         got_nucleotides = sequence.seq[q.start:
@@ -475,8 +470,8 @@ def has_reading_frames(
 
             # Check for frameshift in ORF
             if impacted_by_indels >= e.deletion_tolerence + 0.10 * len(exp_nucleotides):
-                d = defect.FrameshiftInOrf(e, q, is_small, impacted_by_indels)
-                errors.append(IntactnessError(sequence.id, d))
+                d = defect.FrameshiftInOrf(e=e, q=q, is_small=is_small, impacted_positions=impacted_by_indels)
+                errors.append(Defect(sequence.id, d))
                 continue
 
     return matches, errors
@@ -537,8 +532,7 @@ class OutputWriter:
                 'seqid'] + [field.name for field in dataclasses.fields(FoundORF)]
             self.orfs_writer.writerow(self.orfs_header)
             self.holistic_writer = csv.writer(self.holistic_file)
-            self.holistic_header = [
-                'seqid'] + [field.name for field in dataclasses.fields(HolisticInfo)]
+            self.holistic_header = ['seqid'] + [field.name for field in dataclasses.fields(HolisticInfo)]
             self.holistic_writer.writerow(self.holistic_header)
             self.errors_writer = csv.DictWriter(self.errors_file, fieldnames=["sequence_name", "error", "message"])
             self.errors_writer.writeheader()
@@ -699,7 +693,7 @@ def intact(working_dir,
                     f"{subseq['sequence']} (start: {subseq['start']}, end: {subseq['end']})"
                     for subseq in invalid_subsequences
                 )
-                err = IntactnessError(sequence.id, defect.UnknownNucleotide(error_details))
+                err = Defect(sequence.id, defect.UnknownNucleotide(error_details))
                 sequence_errors.append(err)
 
             sequence = SeqRecord.SeqRecord(

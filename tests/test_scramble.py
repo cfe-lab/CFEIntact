@@ -4,7 +4,9 @@ from typing import List
 
 import cfeintact.intact as intact
 import cfeintact.defect as defect
-from cfeintact.intact import is_scrambled, contains_internal_inversion, IntactnessError, most_frequent_element
+from cfeintact.intact import is_scrambled, contains_internal_inversion, most_frequent_element
+from cfeintact.defect import Defect
+from cfeintact.blastrow import BlastRow
 
 @pytest.mark.parametrize("lst, expected", [
     ([1, 2, 3, 4, 2, 2, 3, 1, 4, 4, 4], 4),
@@ -28,12 +30,18 @@ def test_most_frequent_element(lst, expected):
 def test_is_sorted(lst, expected):
     assert intact.is_sorted(lst) == expected
 
-class BlastRow:
+
+class MockBlastRow:
     def __init__(self, sstart, send, qstart, sstrand):
         self.sstart = sstart
         self.send = send
         self.qstart = qstart
         self.sstrand = sstrand
+
+
+def mk_blast_row(sstart, send, qstart, sstrand):
+    return MockBlastRow(sstart, send, qstart, sstrand)
+
 
 def test_is_scrambled_no_alignment():
     # Test case where there is no alignment
@@ -44,95 +52,95 @@ def test_is_scrambled_internal_inversion():
     # Test case where some parts of the sequence are aligned in forward direction
     # and some in reverse, indicating an internal inversion error.
     blast_rows = [
-        BlastRow(sstart=900, send=910, qstart=5, sstrand="plus"),
-        BlastRow(sstart=930, send=940, qstart=25, sstrand="minus"),
+        mk_blast_row(sstart=900, send=910, qstart=5, sstrand="plus"),
+        mk_blast_row(sstart=930, send=940, qstart=25, sstrand="minus"),
     ]
     result = is_scrambled("id", blast_rows) or contains_internal_inversion("id", blast_rows)
-    assert isinstance(result, IntactnessError)
+    assert isinstance(result, Defect)
     assert isinstance(result.error, defect.InternalInversion)
 
 def test_is_scrambled_plus_strand_sorted():
     # Test case where the direction is "plus" and the sstart values are sorted.
     blast_rows = [
-        BlastRow(sstart=900, send=910, qstart=5, sstrand="plus"),
-        BlastRow(sstart=930, send=940, qstart=25, sstrand="plus"),
+        mk_blast_row(sstart=900, send=910, qstart=5, sstrand="plus"),
+        mk_blast_row(sstart=930, send=940, qstart=25, sstrand="plus"),
     ]
     assert is_scrambled("id", blast_rows) or contains_internal_inversion("id", blast_rows) is None
 
 def test_is_scrambled_minus_strand_sorted():
     # Test case where the direction is "minus" and the send values are sorted in reverse order.
     blast_rows = [
-        BlastRow(sstart=910, send=900, qstart=25, sstrand="minus"),
-        BlastRow(sstart=940, send=930, qstart=5, sstrand="minus"),
+        mk_blast_row(sstart=910, send=900, qstart=25, sstrand="minus"),
+        mk_blast_row(sstart=940, send=930, qstart=5, sstrand="minus"),
     ]
     assert is_scrambled("id", blast_rows) or contains_internal_inversion("id", blast_rows) is None
 
 def test_is_scrambled_plus_strand_unsorted():
     # Test case with mixed directions and inversions
     blast_rows = [
-        BlastRow(sstart=700, send=700, qstart=99, sstrand="plus"),
-        BlastRow(sstart=880, send=890, qstart=25, sstrand="plus"),
-        BlastRow(sstart=920, send=930, qstart=45, sstrand="plus"),
-        BlastRow(sstart=950, send=980, qstart=85, sstrand="plus"),
+        mk_blast_row(sstart=700, send=700, qstart=99, sstrand="plus"),
+        mk_blast_row(sstart=880, send=890, qstart=25, sstrand="plus"),
+        mk_blast_row(sstart=920, send=930, qstart=45, sstrand="plus"),
+        mk_blast_row(sstart=950, send=980, qstart=85, sstrand="plus"),
     ]
     result = is_scrambled("id", blast_rows) or contains_internal_inversion("id", blast_rows)
-    assert isinstance(result, IntactnessError)
+    assert isinstance(result, Defect)
     assert isinstance(result.error, defect.Scramble)
 
 def test_is_scrambled_plus_strand_unsorted_5prime():
     # Test case with mixed directions and inversions
     blast_rows = [
-        BlastRow(sstart=100, send=110, qstart=99, sstrand="plus"),
-        BlastRow(sstart=880, send=890, qstart=25, sstrand="plus"),
-        BlastRow(sstart=920, send=930, qstart=45, sstrand="plus"),
-        BlastRow(sstart=950, send=980, qstart=85, sstrand="plus"),
+        mk_blast_row(sstart=100, send=110, qstart=99, sstrand="plus"),
+        mk_blast_row(sstart=880, send=890, qstart=25, sstrand="plus"),
+        mk_blast_row(sstart=920, send=930, qstart=45, sstrand="plus"),
+        mk_blast_row(sstart=950, send=980, qstart=85, sstrand="plus"),
     ]
     assert is_scrambled("id", blast_rows) or contains_internal_inversion("id", blast_rows) == None
 
 def test_is_scrambled_minus_strand_unsorted():
     # Test case where the direction is "minus" but the send values are not sorted in reverse order.
     blast_rows = [
-        BlastRow(sstart=910, send=900, qstart=5, sstrand="minus"),
-        BlastRow(sstart=940, send=930, qstart=25, sstrand="minus"),
+        mk_blast_row(sstart=910, send=900, qstart=5, sstrand="minus"),
+        mk_blast_row(sstart=940, send=930, qstart=25, sstrand="minus"),
     ]
     result = is_scrambled("id", blast_rows) or contains_internal_inversion("id", blast_rows)
-    assert isinstance(result, IntactnessError)
+    assert isinstance(result, Defect)
     assert isinstance(result.error, defect.Scramble)
 
 def test_is_scrambled_mixed_direction():
     # Test case where some rows have "plus" direction and some have "minus" direction.
     blast_rows = [
-        BlastRow(sstart=900, send=910, qstart=5, sstrand="plus"),
-        BlastRow(sstart=930, send=940, qstart=25, sstrand="minus"),
-        BlastRow(sstart=950, send=990, qstart=45, sstrand="minus"),
+        mk_blast_row(sstart=900, send=910, qstart=5, sstrand="plus"),
+        mk_blast_row(sstart=930, send=940, qstart=25, sstrand="minus"),
+        mk_blast_row(sstart=950, send=990, qstart=45, sstrand="minus"),
     ]
     result = is_scrambled("id", blast_rows) or contains_internal_inversion("id", blast_rows)
-    assert isinstance(result, IntactnessError)
+    assert isinstance(result, Defect)
     assert isinstance(result.error, defect.Scramble)
 
 def test_is_scrambled_single_row_plus_strand():
     # Test case with a single row aligned in the "plus" strand
     blast_rows = [
-        BlastRow(sstart=700, send=710, qstart=5, sstrand="plus"),
+        mk_blast_row(sstart=700, send=710, qstart=5, sstrand="plus"),
     ]
     assert is_scrambled("id", blast_rows) or contains_internal_inversion("id", blast_rows) is None
 
 def test_is_scrambled_single_row_minus_strand():
     # Test case with a single row aligned in the "minus" strand
     blast_rows = [
-        BlastRow(sstart=900, send=910, qstart=5, sstrand="minus"),
+        mk_blast_row(sstart=900, send=910, qstart=5, sstrand="minus"),
     ]
     assert is_scrambled("id", blast_rows) or contains_internal_inversion("id", blast_rows) is None
 
 def test_is_scrambled_multiple_directions_and_inversions():
     # Test case with mixed directions and inversions
     blast_rows = [
-        BlastRow(sstart=900, send=910, qstart=5, sstrand="plus"),
-        BlastRow(sstart=880, send=890, qstart=25, sstrand="minus"),
-        BlastRow(sstart=920, send=930, qstart=45, sstrand="minus"),
-        BlastRow(sstart=850, send=880, qstart=85, sstrand="plus"),
-        BlastRow(sstart=890, send=880, qstart=85, sstrand="minus"),
+        mk_blast_row(sstart=900, send=910, qstart=5, sstrand="plus"),
+        mk_blast_row(sstart=880, send=890, qstart=25, sstrand="minus"),
+        mk_blast_row(sstart=920, send=930, qstart=45, sstrand="minus"),
+        mk_blast_row(sstart=850, send=880, qstart=85, sstrand="plus"),
+        mk_blast_row(sstart=890, send=880, qstart=85, sstrand="minus"),
     ]
     result = is_scrambled("id", blast_rows) or contains_internal_inversion("id", blast_rows)
-    assert isinstance(result, IntactnessError)
+    assert isinstance(result, Defect)
     assert isinstance(result.error, defect.Scramble)

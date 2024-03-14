@@ -2,7 +2,8 @@
 from typing import List
 
 import cfeintact.defect as defect
-from cfeintact.intact import is_nonhiv, IntactnessError, HolisticInfo
+from cfeintact.intact import is_nonhiv, HolisticInfo
+from cfeintact.defect import Defect
 
 
 class BlastRow:
@@ -15,7 +16,7 @@ class BlastRow:
 def test_is_nonhiv_empty_blast_rows():
     blast_rows: List[BlastRow] = []
     result = is_nonhiv(HolisticInfo(), "id", 5, blast_rows)
-    assert isinstance(result, IntactnessError)
+    assert isinstance(result, Defect)
     assert isinstance(result.error, defect.NonHIV)
 
 
@@ -26,7 +27,7 @@ def test_is_nonhiv_low_ratio():
         BlastRow(400, 500, 1000)
     ]
     result = is_nonhiv(HolisticInfo(), "id", 1000, blast_rows)
-    assert isinstance(result, IntactnessError)
+    assert isinstance(result, Defect)
     assert isinstance(result.error, defect.NonHIV)
 
 
@@ -51,5 +52,5 @@ def test_is_nonhiv_high_ratio_reversed():
 def test_is_nonhiv_single_blast_row():
     blast_rows = [BlastRow(0, 200, 1000)]
     result = is_nonhiv(HolisticInfo(), "id", 1000, blast_rows)
-    assert isinstance(result, IntactnessError)
+    assert isinstance(result, Defect)
     assert isinstance(result.error, defect.NonHIV)
