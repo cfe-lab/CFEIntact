@@ -707,16 +707,16 @@ def find_invalid_subsequences(sequence):
 def intact(working_dir,
            input_file,
            subtype,
-           include_packaging_signal,
-           include_rre,
+           check_packaging_signal,
+           check_rre,
            check_major_splice_donor_site,
-           run_hypermut,
+           check_hypermut,
            check_long_deletion,
            check_nonhiv,
            check_scramble,
            check_internal_inversion,
            check_unknown_nucleotides,
-           include_small_orfs,
+           check_small_orfs,
            output_csv,
            hxb2_forward_orfs=const.DEFAULT_FORWARD_ORFs,
            hxb2_reverse_orfs=const.DEFAULT_REVERSE_ORFS,
@@ -835,7 +835,7 @@ def intact(working_dir,
         sequence_small_orfs, small_orf_errors = has_reading_frames(
             aligned_sequence, True,
             small_orfs, error_bar, reverse=False)
-        if include_small_orfs:
+        if check_small_orfs:
             sequence_errors.extend(small_orf_errors)
 
         hxb2_found_orfs = [FoundORF(
@@ -853,14 +853,14 @@ def intact(working_dir,
             str(o.reference.nucleotides),
         ) for o in sorted(sequence_orfs + sequence_small_orfs, key=lambda o: o.query.start)]
 
-        if include_packaging_signal:
+        if check_packaging_signal:
             missing_psi_locus = has_packaging_signal(alignment,
                                                      psi_locus,
                                                      const.PSI_ERROR_TOLERANCE)
             if missing_psi_locus is not None:
                 sequence_errors.append(missing_psi_locus)
 
-        if include_rre:
+        if check_rre:
             missing_rre_locus = has_rev_response_element(alignment,
                                                          rre_locus,
                                                          const.RRE_ERROR_TOLERANCE
@@ -877,7 +877,7 @@ def intact(working_dir,
             if mutated_splice_donor_site is not None:
                 sequence_errors.append(mutated_splice_donor_site)
 
-        if run_hypermut is not None:
+        if check_hypermut is not None:
             hypermutated = isHypermut(holistic, alignment)
 
             if hypermutated is not None:
@@ -906,7 +906,7 @@ def intact(working_dir,
         holistic.intact = len(sequence_errors) == 0
 
         # add the small orf errors after the intactness check if not included
-        if not include_small_orfs:
+        if not check_small_orfs:
             sequence_errors.extend(small_orf_errors)
 
         orfs = [x.__dict__ for x in hxb2_found_orfs]

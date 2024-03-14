@@ -34,41 +34,41 @@ def cli():
     type=click.Choice(st.subtypes())
 )
 @click.option(
-    '--include-packaging-signal/--exclude-packaging-signal', default=True)
+    '--check-packaging-signal/--ignore-packaging-signal', default=True)
 @click.option(
-    '--include-rre/--exclude-rre', default=True)
+    '--check-rre/--ignore-rre', default=True)
 @click.option(
     '--check-major-splice-donor-site/--ignore-major-splice-donor-site', default=True)
 @click.option(
-    '--run-hypermut/--no-hypermut', default=False
+    '--check-hypermut/--ignore-hypermut', default=True
 )
 @click.option(
-    '--check-long-deletion/--ignore-long-deletion', default=False
+    '--check-long-deletion/--ignore-long-deletion', default=True
 )
 @click.option(
-    '--check-nonhiv/--ignore-nonhiv', default=False
+    '--check-nonhiv/--ignore-nonhiv', default=True
 )
 @click.option(
-    '--check-scramble/--ignore-scramble', default=False
+    '--check-scramble/--ignore-scramble', default=True
 )
 @click.option(
-    '--check-internal-inversion/--ignore-internal-inversion', default=False
+    '--check-internal-inversion/--ignore-internal-inversion', default=True
 )
 @click.option(
     '--check-unknown-nucleotides/--ignore-unknown-nucleotides', default=True
 )
 @click.option(
-    '--include-small-orfs/--exclude-small-orfs', default=False)
+    '--check-small-orfs/--ignore-small-orfs', default=True)
 @click.option(
     '--output-csv/--output-json', default=False)
 @click.option(
     '--working-folder',
     default=os.getcwd()
 )
-def intact(input_file, subtype, include_packaging_signal,
-           include_rre, check_major_splice_donor_site, run_hypermut,
+def intact(input_file, subtype, check_packaging_signal,
+           check_rre, check_major_splice_donor_site, check_hypermut,
            check_long_deletion, check_nonhiv, check_scramble, check_internal_inversion,
-           check_unknown_nucleotides, include_small_orfs, output_csv, working_folder):
+           check_unknown_nucleotides, check_small_orfs, output_csv, working_folder):
     """
     Check consensus sequences for intactness.
     """
@@ -77,10 +77,10 @@ def intact(input_file, subtype, include_packaging_signal,
     folder = get_working_folder(working_folder)
 
     it.intact(
-        folder, input_file, subtype, include_packaging_signal, include_rre,
-        check_major_splice_donor_site, run_hypermut,
+        folder, input_file, subtype, check_packaging_signal, check_rre,
+        check_major_splice_donor_site, check_hypermut,
         check_long_deletion, check_nonhiv, check_scramble, check_internal_inversion,
-        check_unknown_nucleotides, include_small_orfs, output_csv
+        check_unknown_nucleotides, check_small_orfs, output_csv
     )
 
 

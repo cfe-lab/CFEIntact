@@ -41,13 +41,13 @@ Table below lists all of the independent steps:
 | PSI check                 | Yes                 | `--exclude-packaging-signal`              |
 | RRE check                 | Yes                 | `--exclude-rre`                           |
 | MSD check                 | Yes                 | `--ignore-major-splice-donor-site`        |
-| Hypermutation check       | No                  | `--run-hypermut`                          |
-| Large deletion check      | No                  | `--check-long-deletion`                   |
-| NonHIV check              | No                  | `--check-nonhiv`                          |
-| Scramble check            | No                  | `--check-scramble`                        |
-| Inversion check           | No                  | `--check-internal-inversion`              |
+| Hypermutation check       | Yes                 | `--no-hypermut`                           |
+| Large deletion check      | Yes                 | `--ignore-long-deletion`                  |
+| NonHIV check              | Yes                 | `--ignore-nonhiv`                         |
+| Scramble check            | Yes                 | `--ignore-scramble`                       |
+| Inversion check           | Yes                 | `--ignore-internal-inversion`             |
 | Large ORFs analysis       | Yes                 |                                           |
-| Small ORFs analysis       | No                  | `--include-small-orfs`                    |
+| Small ORFs analysis       | Yes                 | `--ignore-small-orfs`                     |
 
 
 Each step works on a single input sequence and has a set of potential errors it can detect for that sequence.
