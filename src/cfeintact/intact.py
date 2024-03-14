@@ -398,10 +398,7 @@ def has_rev_response_element(alignment, rre_locus, rre_tolerance):
 # /end def has_rev_response_element
 
 
-def has_reading_frames(
-    aligned_sequence, is_small,
-    expected, error_bar, reverse=False
-):
+def has_reading_frames(aligned_sequence, expected, error_bar, reverse=False):
     sequence = aligned_sequence.this
     reference = aligned_sequence.reference
 
@@ -460,17 +457,17 @@ def has_reading_frames(
 
             if "*" in limited_aminoacids:
                 position = q.start + (limit + limited_aminoacids.index('*')) * 3
-                d1 = defect.InternalStopInOrf(e=e, q=q, is_small=is_small, position=position)
+                d1 = defect.InternalStopInOrf(e=e, q=q, position=position)
                 errors.append(Defect(sequence.id, d1))
             else:
-                d2 = defect.DeletionInOrf(e=e, q=q, is_small=is_small, deletions=deletions)
+                d2 = defect.DeletionInOrf(e=e, q=q, deletions=deletions)
                 errors.append(Defect(sequence.id, d2))
 
             continue
 
         # Max insertions allowed in ORF exceeded
         if insertions > 3 * e.deletion_tolerence:
-            d3 = defect.InsertionInOrf(e=e, q=q, is_small=is_small, insertions=insertions)
+            d3 = defect.InsertionInOrf(e=e, q=q, insertions=insertions)
             errors.append(Defect(sequence.id, d3))
             continue
 
@@ -484,7 +481,7 @@ def has_reading_frames(
 
             # Check for frameshift in ORF
             if impacted_by_indels >= e.deletion_tolerence + 0.10 * len(exp_nucleotides):
-                d = defect.FrameshiftInOrf(e=e, q=q, is_small=is_small, impacted_positions=impacted_by_indels)
+                d = defect.FrameshiftInOrf(e=e, q=q, impacted_positions=impacted_by_indels)
                 errors.append(Defect(sequence.id, d))
                 continue
 
@@ -785,14 +782,10 @@ def intact(working_dir,
 
         alignment = aligned_sequence.get_alignment()
 
-        sequence_orfs, orf_errors = has_reading_frames(
-            aligned_sequence, False,
-            forward_orfs, error_bar)
+        sequence_orfs, orf_errors = has_reading_frames(aligned_sequence, forward_orfs, error_bar)
         sequence_errors.extend(orf_errors)
 
-        sequence_small_orfs, small_orf_errors = has_reading_frames(
-            aligned_sequence, True,
-            small_orfs, error_bar, reverse=False)
+        sequence_small_orfs, small_orf_errors = has_reading_frames(aligned_sequence, small_orfs, error_bar)
         if check_small_orfs:
             sequence_errors.extend(small_orf_errors)
 

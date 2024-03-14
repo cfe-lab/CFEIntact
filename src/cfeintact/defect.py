@@ -19,11 +19,10 @@ class LongDeletion:
 @dataclass(frozen=True)
 class DeletionInOrf(ORFDefect):
     e: OriginalORF
-    is_small: bool
     deletions: int
 
     def __str__(self):
-        return (f"{'Smaller ' if self.is_small else ''}"
+        return (f"{'Smaller ' if self.q.is_small else ''}"
                 f"ORF {self.e.name} at {self.q.start}-{self.q.end}"
                 f" can have maximum deletions "
                 f"{self.e.deletion_tolerence}, got {self.deletions}")
@@ -32,11 +31,10 @@ class DeletionInOrf(ORFDefect):
 @dataclass(frozen=True)
 class InsertionInOrf(ORFDefect):
     e: OriginalORF
-    is_small: bool
     insertions: int
 
     def __str__(self):
-        return (f"{'Smaller ' if self.is_small else ''}"
+        return (f"{'Smaller ' if self.q.is_small else ''}"
                 f"ORF {self.e.name} at {self.q.start}-{self.q.end} can have maximum insertions "
                 f"{3 * self.e.deletion_tolerence}, got {self.insertions}")
 
@@ -44,11 +42,10 @@ class InsertionInOrf(ORFDefect):
 @dataclass(frozen=True)
 class InternalStopInOrf(ORFDefect):
     e: OriginalORF
-    is_small: bool
     position: int
 
     def __str__(self):
-        return (f"{'Smaller ' if self.is_small else ''}"
+        return (f"{'Smaller ' if self.q.is_small else ''}"
                 f"ORF {self.e.name} at {self.q.start}-{self.q.end}"
                 f" contains an internal stop codon at {self.position}")
 
@@ -56,11 +53,10 @@ class InternalStopInOrf(ORFDefect):
 @dataclass(frozen=True)
 class FrameshiftInOrf(ORFDefect):
     e: OriginalORF
-    is_small: bool
     impacted_positions: int
 
     def __str__(self):
-        return (f"{'Smaller ' if self.is_small else ''}"
+        return (f"{'Smaller ' if self.q.is_small else ''}"
                 f"ORF {self.e.name} at {self.e.start}-{self.e.end}"  # FIXME: change this to q.{start,end}
                 f" contains out of frame indels that impact {self.impacted_positions} positions.")
 
