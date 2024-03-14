@@ -10,3 +10,4 @@ class OriginalORF:
     nucleotides: str
     aminoacids: str
     protein: str
+    is_small: bool

@@ -1,8 +1,11 @@
+from typing import Iterable
+
 from cfeintact.reference_index import ReferenceIndex
 from cfeintact.get_query_aminoacids_table import get_query_aminoacids_table
 from cfeintact.get_biggest_protein import get_biggest_protein
 from cfeintact.original_orf import OriginalORF
 from cfeintact.mapped_orf import MappedORF
+from cfeintact.aligned_sequence import AlignedSequence
 
 import cfeintact.detailed_aligner as detailed_aligner
 
@@ -30,7 +33,7 @@ def find_closest(aminoacids, start, direction, target):
         return 0
 
 
-def find_candidate_positions(aligned_sequence, e):
+def find_candidate_positions(aligned_sequence: AlignedSequence, e: OriginalORF) -> Iterable[MappedORF]:
     q_start = ReferenceIndex(e.start).mapto(aligned_sequence)
     q_end = ReferenceIndex(e.end).mapto(aligned_sequence)
     expected_aminoacids = e.aminoacids
@@ -69,6 +72,7 @@ def find_candidate_positions(aligned_sequence, e):
                     aminoacids=got_aminoacids,
                     protein=got_protein,
                     deletion_tolerence=e.deletion_tolerence,
+                    is_small=e.is_small,
                 )
                 yield MappedORF(
                     reference=e,
@@ -78,6 +82,6 @@ def find_candidate_positions(aligned_sequence, e):
                 )
 
 
-def find_orf(aligned_sequence, e):
+def find_orf(aligned_sequence: AlignedSequence, e: OriginalORF) -> MappedORF:
     candidates = find_candidate_positions(aligned_sequence, e)
     return min(candidates, key=lambda x: x.distance)

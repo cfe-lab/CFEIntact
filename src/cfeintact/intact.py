@@ -8,7 +8,7 @@ from collections import Counter
 from Bio import Seq, SeqIO, SeqRecord
 from Bio.Data import IUPACData
 from scipy.stats import fisher_exact
-from typing import Optional, Dict, List
+from typing import Optional, Dict, List, Iterable
 
 import cfeintact.constants as const
 import cfeintact.subtypes as st
@@ -21,6 +21,9 @@ from cfeintact.aligned_sequence import AlignedSequence
 from cfeintact.reference_index import ReferenceIndex
 from cfeintact.blastrow import BlastRow
 from cfeintact.initialize_orf import initialize_orf
+from cfeintact.original_orf import OriginalORF
+from cfeintact.mapped_orf import MappedORF
+from cfeintact.find_orf import find_orf
 
 
 @dataclass(frozen=True)
@@ -427,8 +430,19 @@ def has_reading_frames(
         impacted += counter if counter > 30 else 0
         return impacted
 
+
+    def get_orf(self: AlignedSequence, expected_orf: OriginalORF) -> MappedORF:
+        if self.orfs is None:
+            self.orfs = {}
+
+        if expected_orf.name not in self.orfs:
+            self.orfs[expected_orf.name] = find_orf(self, expected_orf)
+
+        return self.orfs[expected_orf.name]
+
+
     for e in expected:
-        best_match = aligned_sequence.get_orf(e)
+        best_match = get_orf(aligned_sequence, e)
         matches.append(best_match)
         q = best_match.query
 
@@ -593,7 +607,9 @@ class OutputWriter:
                 self.errors_writer.writerow(error)
 
 
-def read_hxb2_orfs(aligned_subtype, orfs):
+def read_hxb2_orfs(aligned_subtype: AlignedSequence,
+                   orfs: const.ORFsDefinition,
+                   is_small: bool) -> Iterable[OriginalORF]:
     for (name, start, end, delta) in orfs:
         # Decrement is needed because original coordinates are 1-based.
         start = start - 1
@@ -604,7 +620,7 @@ def read_hxb2_orfs(aligned_subtype, orfs):
         start = start if start < vpr_defective_insertion_pos else start - 1
         end = end if end < vpr_defective_insertion_pos else end - 1
 
-        yield initialize_orf(aligned_subtype, name, start, end, delta)
+        yield initialize_orf(aligned_subtype, name, start, end, delta, is_small)
 
 
 VALID_DNA_CHARACTERS = IUPACData.ambiguous_dna_letters.upper()
@@ -744,9 +760,10 @@ def intact(working_dir,
             sequence = aligned_sequence.this
 
         # convert ORF positions to appropriate subtype
-        forward_orfs, reverse_orfs, small_orfs = \
-            [list(read_hxb2_orfs(aligned_subtype, orfs))
-             for orfs in [hxb2_forward_orfs, hxb2_reverse_orfs, hxb2_small_orfs]]
+        forward_orfs, reverse_orfs = \
+            [list(read_hxb2_orfs(aligned_subtype, orfs, is_small=False))
+             for orfs in [hxb2_forward_orfs, hxb2_reverse_orfs]]
+        small_orfs = list(read_hxb2_orfs(aligned_subtype, hxb2_small_orfs, is_small=True))
 
         holistic.orfs_start = min(forward_orfs, key=lambda e: e.start).start
         holistic.orfs_end = max(forward_orfs, key=lambda e: e.end).end

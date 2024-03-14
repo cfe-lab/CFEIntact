@@ -7,9 +7,7 @@ from typing import Dict, Tuple, List, Optional
 import cfeintact.coordinates as coords
 import cfeintact.wrappers as wrappers
 from cfeintact.mapped_orf import MappedORF
-from cfeintact.original_orf import OriginalORF
 from cfeintact.reference_index import ReferenceIndex
-from cfeintact.find_orf import find_orf
 
 
 @dataclass
@@ -80,12 +78,3 @@ class AlignedSequence:
 
     def alignment_score(self):
         return sum([a == b for a, b in zip(self.get_alignment()[0].seq, self.get_alignment()[1].seq)])
-
-    def get_orf(self, expected_orf: OriginalORF) -> MappedORF:
-        if self.orfs is None:
-            self.orfs = {}
-
-        if expected_orf.name not in self.orfs:
-            self.orfs[expected_orf.name] = find_orf(self, expected_orf)
-
-        return self.orfs[expected_orf.name]
