@@ -39,7 +39,7 @@ python3 -m pip install .
 To analyze a set of FASTA sequences for HIV-1 proviral intactness:
 
 ```shell
-proviral intact --subtype B sequences.fasta
+cfeintact check --subtype B sequences.fasta
 ```
 
 ## Documentation

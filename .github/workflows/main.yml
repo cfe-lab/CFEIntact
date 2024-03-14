@@ -59,7 +59,7 @@ jobs:
         run: pip3 install .
 
       - name: Run test
-        run: cfeintact intact --help
+        run: cfeintact check --subtype B tests/data-small.fasta && test -f "errors.csv"
 
   linter:
     runs-on: ubuntu-latest

@@ -23,7 +23,7 @@ def cli():
     pass
 
 
-@cli.command('intact')
+@cli.command('check')
 @click.argument(
     'input_file',
     type=click.Path(exists=True, readable=True, resolve_path=True)
