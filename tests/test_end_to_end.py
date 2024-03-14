@@ -6,6 +6,15 @@ import os
 import tarfile
 import cfeintact.intact as main
 
+
+def check_outputs(tmp_path, expected_dir):
+    result = filecmp.dircmp(tmp_path, expected_dir)
+    assert result.left_list == result.right_list
+    assert result.diff_files == []
+    assert result.common_funny == []
+    assert result.common == result.right_list
+
+
 def run_end_to_end(tmp_path, data_file, expected_dir, subtype, output_csv):
     main.intact(
         working_dir=tmp_path,
@@ -24,11 +33,7 @@ def run_end_to_end(tmp_path, data_file, expected_dir, subtype, output_csv):
         output_csv=output_csv,
     )
 
-    result = filecmp.dircmp(tmp_path, expected_dir)
-    assert result.left_list == result.right_list
-    assert result.diff_files == []
-    assert result.common_funny == []
-    assert result.common == result.right_list
+    check_outputs(tmp_path, expected_dir)
 
 
 def test_single(tmp_path, request):
@@ -56,6 +61,33 @@ def test_single_hxb2(tmp_path, request):
                    os.path.join(pwd, "expected-results-single-hxb2"),
                    subtype="HXB2",
                    output_csv=False)
+
+
+def test_single_noblast(tmp_path, request):
+    pwd = request.fspath.dirname
+    data_file = os.path.join(pwd, "data-single.fasta")
+    expected_dir = os.path.join(pwd, "expected-results-single-noblast")
+    subtype = "HXB2"
+    output_csv = True
+
+    main.intact(
+        working_dir=tmp_path,
+        input_file=data_file,
+        subtype=subtype,
+        check_packaging_signal=True,
+        check_rre=True,
+        check_major_splice_donor_site=True,
+        check_hypermut=True,
+        check_long_deletion=True,
+        check_nonhiv=False,
+        check_scramble=False,
+        check_internal_inversion=False,
+        check_unknown_nucleotides=True,
+        check_small_orfs=True,
+        output_csv=output_csv,
+    )
+
+    check_outputs(tmp_path, expected_dir)
 
 
 def test_small(tmp_path, request):
