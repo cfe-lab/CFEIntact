@@ -1,5 +1,5 @@
 
-name: Local test
+name: Main
 
 on:
   push:
