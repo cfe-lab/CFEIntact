@@ -472,8 +472,9 @@ def has_reading_frames(
     for e in expected:
         best_match = aligned_sequence.get_orf(e)
         matches.append(best_match)
+        q = best_match.query
 
-        got_protein = best_match.query.protein
+        got_protein = q.protein
         exp_protein = e.protein
 
         deletions = max(0, len(exp_protein) - len(got_protein)) * 3
@@ -483,20 +484,20 @@ def has_reading_frames(
         if deletions > e.deletion_tolerence:
 
             limit = e.deletion_tolerence // 3
-            limited_aminoacids = best_match.query.aminoacids[limit:-limit]
+            limited_aminoacids = q.aminoacids[limit:-limit]
 
             if "*" in limited_aminoacids:
                 errors.append(IntactnessError(
                     sequence.id, INTERNALSTOP_ERROR,
                     f"{'Smaller ' if is_small else ''}"
-                    f"ORF {e.name} at {e.start}-{e.end}"
-                    f" contains an internal stop codon at {e.start + (limit + limited_aminoacids.index('*')) * 3}"
+                    f"ORF {e.name} at {q.start}-{q.end}"
+                    f" contains an internal stop codon at {q.start + (limit + limited_aminoacids.index('*')) * 3}"
                 ))
             else:
                 errors.append(IntactnessError(
                     sequence.id, DELETIONINORF_ERROR,
                     f"{'Smaller ' if is_small else ''}"
-                    f"ORF {e.name} at {e.start}-{e.end}"
+                    f"ORF {e.name} at {q.start}-{q.end}"
                     f" can have maximum deletions "
                     f"{e.deletion_tolerence}, got {deletions}"
                 ))
@@ -509,15 +510,15 @@ def has_reading_frames(
             errors.append(IntactnessError(
                 sequence.id, INSERTIONINORF_ERROR,
                 f"{'Smaller ' if is_small else ''}"
-                f"ORF {e.name} at {e.start}-{e.end}"
+                f"ORF {e.name} at {q.start}-{q.end}"
                 f" can have maximum insertions "
                 f"{3 * e.deletion_tolerence}, got {insertions}"
             ))
 
             continue
 
-        got_nucleotides = sequence.seq[best_match.query.start:
-                                       best_match.query.start + len(got_protein) * 3].upper()
+        got_nucleotides = sequence.seq[q.start:
+                                       q.start + len(got_protein) * 3].upper()
         exp_nucleotides = reference.seq[e.start:e.end].upper()
         if got_nucleotides and exp_nucleotides:
             orf_alignment = detailed_aligner.align(

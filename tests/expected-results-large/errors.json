@@ -3,32 +3,32 @@
         {
             "sequence_name": "KX505501.1",
             "error": "DeletionInOrf",
-            "message": "ORF pol at 2084-5095 can have maximum deletions 30, got 2721"
+            "message": "ORF pol at 1627-1926 can have maximum deletions 30, got 2721"
         },
         {
             "sequence_name": "KX505501.1",
             "error": "InternalStopInOrf",
-            "message": "ORF env at 6223-8793 contains an internal stop codon at 6322"
+            "message": "ORF env at 0-1823 contains an internal stop codon at 99"
         },
         {
             "sequence_name": "KX505501.1",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF vif at 5040-5618 can have maximum insertions 90, got 909"
+            "message": "Smaller ORF vif at 0-1823 can have maximum insertions 90, got 909"
         },
         {
             "sequence_name": "KX505501.1",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpr at 5558-5848 can have maximum deletions 30, got 66"
+            "message": "Smaller ORF vpr at 1599-1823 can have maximum deletions 30, got 66"
         },
         {
             "sequence_name": "KX505501.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF tat_exon1 at 5829-6044 contains an internal stop codon at 5892"
+            "message": "Smaller ORF tat_exon1 at 1-1749 contains an internal stop codon at 64"
         },
         {
             "sequence_name": "KX505501.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF rev_exon1 at 5968-6045 contains an internal stop codon at 6004"
+            "message": "Smaller ORF rev_exon1 at 1306-1749 contains an internal stop codon at 1342"
         },
         {
             "sequence_name": "KX505501.1",
@@ -43,12 +43,12 @@
         {
             "sequence_name": "KX505501.1",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon2 at 8376-8651 can have maximum deletions 30, got 96"
+            "message": "Smaller ORF rev_exon2 at 1747-1926 can have maximum deletions 30, got 96"
         },
         {
             "sequence_name": "KX505501.1",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 8795-9415 can have maximum insertions 90, got 867"
+            "message": "Smaller ORF nef at 0-1823 can have maximum insertions 90, got 867"
         },
         {
             "sequence_name": "KX505501.1",
@@ -70,44 +70,44 @@
         {
             "sequence_name": "MN691959",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF vpu at 6060-6308 contains an internal stop codon at 6123"
+            "message": "Smaller ORF vpu at 5910-6155 contains an internal stop codon at 5973"
         },
         {
             "sequence_name": "MN691959",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF tat_exon2 at 8375-8470 contains an internal stop codon at 8420"
+            "message": "Smaller ORF tat_exon2 at 8237-8332 contains an internal stop codon at 8282"
         }
     ],
     "MN692074": [
         {
             "sequence_name": "MN692074",
             "error": "DeletionInOrf",
-            "message": "ORF pol at 2084-5095 can have maximum deletions 30, got 981"
+            "message": "ORF pol at 2084-4114 can have maximum deletions 30, got 981"
         },
         {
             "sequence_name": "MN692074",
             "error": "InternalStopInOrf",
-            "message": "ORF env at 6223-8793 contains an internal stop codon at 6550"
+            "message": "ORF env at 2-4114 contains an internal stop codon at 329"
         },
         {
             "sequence_name": "MN692074",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vif at 5040-5618 can have maximum deletions 30, got 81"
+            "message": "Smaller ORF vif at 3617-4114 can have maximum deletions 30, got 81"
         },
         {
             "sequence_name": "MN692074",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF vpr at 5558-5848 can have maximum insertions 90, got 207"
+            "message": "Smaller ORF vpr at 3617-4114 can have maximum insertions 90, got 207"
         },
         {
             "sequence_name": "MN692074",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF tat_exon1 at 5829-6044 contains an internal stop codon at 5892"
+            "message": "Smaller ORF tat_exon1 at 3823-4083 contains an internal stop codon at 3886"
         },
         {
             "sequence_name": "MN692074",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF vpu at 6060-6308 can have maximum insertions 90, got 249"
+            "message": "Smaller ORF vpu at 3617-4114 can have maximum insertions 90, got 249"
         },
         {
             "sequence_name": "MN692074",
@@ -117,12 +117,12 @@
         {
             "sequence_name": "MN692074",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon2 at 8376-8651 can have maximum deletions 30, got 204"
+            "message": "Smaller ORF rev_exon2 at 4081-4152 can have maximum deletions 30, got 204"
         },
         {
             "sequence_name": "MN692074",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 8795-9415 can have maximum insertions 90, got 882"
+            "message": "Smaller ORF nef at 0-4058 can have maximum insertions 90, got 882"
         },
         {
             "sequence_name": "MN692074",
@@ -140,12 +140,12 @@
         {
             "sequence_name": "MN090335",
             "error": "InternalStopInOrf",
-            "message": "ORF gag at 789-2291 contains an internal stop codon at 822"
+            "message": "ORF gag at 315-1664 contains an internal stop codon at 348"
         },
         {
             "sequence_name": "MN090335",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF tat_exon2 at 8375-8470 contains an internal stop codon at 8420"
+            "message": "Smaller ORF tat_exon2 at 7739-7834 contains an internal stop codon at 7784"
         },
         {
             "sequence_name": "MN090335",
@@ -172,7 +172,7 @@
         {
             "sequence_name": "MN090376",
             "error": "InternalStopInOrf",
-            "message": "ORF gag at 789-2291 contains an internal stop codon at 822"
+            "message": "ORF gag at 522-1589 contains an internal stop codon at 555"
         },
         {
             "sequence_name": "MN090376",
@@ -256,7 +256,7 @@
         {
             "sequence_name": "MK115211.1",
             "error": "InternalStopInOrf",
-            "message": "ORF env at 6223-8793 contains an internal stop codon at 6889"
+            "message": "ORF env at 5687-8197 contains an internal stop codon at 6353"
         },
         {
             "sequence_name": "MK115211.1",
@@ -295,59 +295,59 @@
         {
             "sequence_name": "MK114705.1",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF nef at 8795-9415 can have maximum deletions 30, got 186"
+            "message": "Smaller ORF nef at 8550-8984 can have maximum deletions 30, got 186"
         }
     ],
     "MK114856.1": [
         {
             "sequence_name": "MK114856.1",
             "error": "InternalStopInOrf",
-            "message": "ORF gag at 789-2291 contains an internal stop codon at 873"
+            "message": "ORF gag at 120-2021 contains an internal stop codon at 204"
         },
         {
             "sequence_name": "MK114856.1",
             "error": "InternalStopInOrf",
-            "message": "ORF pol at 2084-5095 contains an internal stop codon at 2213"
+            "message": "ORF pol at 1787-4825 contains an internal stop codon at 1916"
         },
         {
             "sequence_name": "MK114856.1",
             "error": "InternalStopInOrf",
-            "message": "ORF env at 6223-8793 contains an internal stop codon at 6325"
+            "message": "ORF env at 5953-8520 contains an internal stop codon at 6055"
         },
         {
             "sequence_name": "MK114856.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF vif at 5040-5618 contains an internal stop codon at 5172"
+            "message": "Smaller ORF vif at 4425-5348 contains an internal stop codon at 4557"
         },
         {
             "sequence_name": "MK114856.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF vpr at 5558-5848 contains an internal stop codon at 5594"
+            "message": "Smaller ORF vpr at 5033-5578 contains an internal stop codon at 5069"
         },
         {
             "sequence_name": "MK114856.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF tat_exon1 at 5829-6044 contains an internal stop codon at 5919"
+            "message": "Smaller ORF tat_exon1 at 5486-5776 contains an internal stop codon at 5576"
         },
         {
             "sequence_name": "MK114856.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF vpu at 6060-6308 contains an internal stop codon at 6126"
+            "message": "Smaller ORF vpu at 5790-6038 contains an internal stop codon at 5856"
         },
         {
             "sequence_name": "MK114856.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF tat_exon2 at 8375-8470 contains an internal stop codon at 8420"
+            "message": "Smaller ORF tat_exon2 at 8102-8197 contains an internal stop codon at 8147"
         },
         {
             "sequence_name": "MK114856.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF rev_exon2 at 8376-8651 contains an internal stop codon at 8433"
+            "message": "Smaller ORF rev_exon2 at 8103-8378 contains an internal stop codon at 8160"
         },
         {
             "sequence_name": "MK114856.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF nef at 8795-9415 contains an internal stop codon at 8852"
+            "message": "Smaller ORF nef at 7916-9175 contains an internal stop codon at 7973"
         },
         {
             "sequence_name": "MK114856.1",
@@ -359,42 +359,42 @@
         {
             "sequence_name": "MK115009.1",
             "error": "InternalStopInOrf",
-            "message": "ORF gag at 789-2291 contains an internal stop codon at 834"
+            "message": "ORF gag at 302-1714 contains an internal stop codon at 347"
         },
         {
             "sequence_name": "MK115009.1",
             "error": "InternalStopInOrf",
-            "message": "ORF pol at 2084-5095 contains an internal stop codon at 2183"
+            "message": "ORF pol at 1613-4624 contains an internal stop codon at 1712"
         },
         {
             "sequence_name": "MK115009.1",
             "error": "InternalStopInOrf",
-            "message": "ORF env at 6223-8793 contains an internal stop codon at 6349"
+            "message": "ORF env at 5752-8352 contains an internal stop codon at 5878"
         },
         {
             "sequence_name": "MK115009.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF vif at 5040-5618 contains an internal stop codon at 5373"
+            "message": "Smaller ORF vif at 4289-4987 contains an internal stop codon at 4622"
         },
         {
             "sequence_name": "MK115009.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF vpr at 5558-5848 contains an internal stop codon at 5717"
+            "message": "Smaller ORF vpr at 5087-5377 contains an internal stop codon at 5246"
         },
         {
             "sequence_name": "MK115009.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF tat_exon1 at 5829-6044 contains an internal stop codon at 5859"
+            "message": "Smaller ORF tat_exon1 at 5235-5573 contains an internal stop codon at 5265"
         },
         {
             "sequence_name": "MK115009.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF rev_exon2 at 8376-8651 contains an internal stop codon at 8433"
+            "message": "Smaller ORF rev_exon2 at 7935-8210 contains an internal stop codon at 7992"
         },
         {
             "sequence_name": "MK115009.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF nef at 8795-9415 contains an internal stop codon at 8873"
+            "message": "Smaller ORF nef at 7748-8995 contains an internal stop codon at 7826"
         },
         {
             "sequence_name": "MK115009.1",
@@ -416,7 +416,7 @@
         {
             "sequence_name": "MK115387.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF tat_exon2 at 8375-8470 contains an internal stop codon at 8420"
+            "message": "Smaller ORF tat_exon2 at 7869-7964 contains an internal stop codon at 7914"
         }
     ],
     "MK115491.1": [],
@@ -424,7 +424,7 @@
         {
             "sequence_name": "MK116110.1",
             "error": "InternalStopInOrf",
-            "message": "ORF gag at 140-1642 contains an internal stop codon at 185"
+            "message": "ORF gag at 62-1600 contains an internal stop codon at 107"
         },
         {
             "sequence_name": "MK116110.1",
@@ -442,7 +442,7 @@
         {
             "sequence_name": "MK114997.1",
             "error": "InternalStopInOrf",
-            "message": "ORF env at 6223-8793 contains an internal stop codon at 6511"
+            "message": "ORF env at 4985-8206 contains an internal stop codon at 5273"
         }
     ],
     "MK115518.1": [],
@@ -472,22 +472,22 @@
         {
             "sequence_name": "MK115464.1",
             "error": "InternalStopInOrf",
-            "message": "ORF gag at 789-2291 contains an internal stop codon at 924"
+            "message": "ORF gag at 527-2296 contains an internal stop codon at 662"
         },
         {
             "sequence_name": "MK115464.1",
             "error": "InternalStopInOrf",
-            "message": "ORF pol at 2084-5095 contains an internal stop codon at 2183"
+            "message": "ORF pol at 2089-5100 contains an internal stop codon at 2188"
         },
         {
             "sequence_name": "MK115464.1",
             "error": "InternalStopInOrf",
-            "message": "ORF env at 6223-8793 contains an internal stop codon at 6424"
+            "message": "ORF env at 6228-8798 contains an internal stop codon at 6429"
         },
         {
             "sequence_name": "MK115464.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF vif at 5040-5618 contains an internal stop codon at 5247"
+            "message": "Smaller ORF vif at 5045-5623 contains an internal stop codon at 5252"
         },
         {
             "sequence_name": "MK115464.1",
@@ -497,22 +497,22 @@
         {
             "sequence_name": "MK115464.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF vpu at 6060-6308 contains an internal stop codon at 6126"
+            "message": "Smaller ORF vpu at 6065-6310 contains an internal stop codon at 6131"
         },
         {
             "sequence_name": "MK115464.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF tat_exon2 at 8375-8470 contains an internal stop codon at 8420"
+            "message": "Smaller ORF tat_exon2 at 8380-8475 contains an internal stop codon at 8425"
         },
         {
             "sequence_name": "MK115464.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF rev_exon2 at 8376-8651 contains an internal stop codon at 8433"
+            "message": "Smaller ORF rev_exon2 at 8381-8656 contains an internal stop codon at 8438"
         },
         {
             "sequence_name": "MK115464.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF nef at 8795-9415 contains an internal stop codon at 8873"
+            "message": "Smaller ORF nef at 8194-9450 contains an internal stop codon at 8272"
         },
         {
             "sequence_name": "MK115464.1",
@@ -525,7 +525,7 @@
         {
             "sequence_name": "MK115520.1",
             "error": "InternalStopInOrf",
-            "message": "ORF pol at 2084-5095 contains an internal stop codon at 2198"
+            "message": "ORF pol at 1986-5003 contains an internal stop codon at 2100"
         },
         {
             "sequence_name": "MK115520.1",
@@ -578,42 +578,42 @@
         {
             "sequence_name": "MK115095.1",
             "error": "InternalStopInOrf",
-            "message": "ORF gag at 789-2291 contains an internal stop codon at 927"
+            "message": "ORF gag at 2-1696 contains an internal stop codon at 140"
         },
         {
             "sequence_name": "MK115095.1",
             "error": "InternalStopInOrf",
-            "message": "ORF pol at 2084-5095 contains an internal stop codon at 2183"
+            "message": "ORF pol at 1489-4500 contains an internal stop codon at 1588"
         },
         {
             "sequence_name": "MK115095.1",
             "error": "InternalStopInOrf",
-            "message": "ORF env at 6223-8793 contains an internal stop codon at 6550"
+            "message": "ORF env at 5628-8228 contains an internal stop codon at 5955"
         },
         {
             "sequence_name": "MK115095.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF vif at 5040-5618 contains an internal stop codon at 5151"
+            "message": "Smaller ORF vif at 4445-5023 contains an internal stop codon at 4556"
         },
         {
             "sequence_name": "MK115095.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF tat_exon1 at 5829-6044 contains an internal stop codon at 5859"
+            "message": "Smaller ORF tat_exon1 at 5111-5452 contains an internal stop codon at 5141"
         },
         {
             "sequence_name": "MK115095.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF vpu at 6060-6308 contains an internal stop codon at 6126"
+            "message": "Smaller ORF vpu at 5465-5710 contains an internal stop codon at 5531"
         },
         {
             "sequence_name": "MK115095.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF rev_exon2 at 8376-8651 contains an internal stop codon at 8433"
+            "message": "Smaller ORF rev_exon2 at 7811-8086 contains an internal stop codon at 7868"
         },
         {
             "sequence_name": "MK115095.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF nef at 8795-9415 contains an internal stop codon at 8873"
+            "message": "Smaller ORF nef at 7624-8871 contains an internal stop codon at 7702"
         },
         {
             "sequence_name": "MK115095.1",
