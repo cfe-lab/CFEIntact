@@ -23,9 +23,9 @@ class DeletionInOrf(ORFDefect):
 
     def __str__(self):
         return (f"{'Smaller ' if self.q.is_small else ''}"
-                f"ORF {self.e.name} at {self.q.start}-{self.q.end}"
+                f"ORF {self.e.name} at {self.q.start + 1}-{self.q.end + 1}"
                 f" can have maximum deletions "
-                f"{self.e.deletion_tolerence}, got {self.deletions}")
+                f"{self.e.deletion_tolerence}, got {self.deletions}.")
 
 
 @dataclass(frozen=True)
@@ -35,8 +35,8 @@ class InsertionInOrf(ORFDefect):
 
     def __str__(self):
         return (f"{'Smaller ' if self.q.is_small else ''}"
-                f"ORF {self.e.name} at {self.q.start}-{self.q.end} can have maximum insertions "
-                f"{3 * self.e.deletion_tolerence}, got {self.insertions}")
+                f"ORF {self.e.name} at {self.q.start + 1}-{self.q.end + 1} can have maximum insertions "
+                f"{3 * self.e.deletion_tolerence}, got {self.insertions}.")
 
 
 @dataclass(frozen=True)
@@ -46,8 +46,8 @@ class InternalStopInOrf(ORFDefect):
 
     def __str__(self):
         return (f"{'Smaller ' if self.q.is_small else ''}"
-                f"ORF {self.e.name} at {self.q.start}-{self.q.end}"
-                f" contains an internal stop codon at {self.position}")
+                f"ORF {self.e.name} at {self.q.start + 1}-{self.q.end + 1}"
+                f" contains an internal stop codon at {self.position + 1}.")
 
 
 @dataclass(frozen=True)
@@ -57,7 +57,7 @@ class FrameshiftInOrf(ORFDefect):
 
     def __str__(self):
         return (f"{'Smaller ' if self.q.is_small else ''}"
-                f"ORF {self.e.name} at {self.q.start}-{self.q.end}"
+                f"ORF {self.e.name} at {self.q.start + 1}-{self.q.end + 1}"
                 f" contains out of frame indels that impact {self.impacted_positions} positions.")
 
 
@@ -86,7 +86,7 @@ class PackagingSignalNotComplete:
 
     def __str__(self):
         return ("Query does not encompass the complete PSI region. "
-                f"PSI starts at reference position {self.position}.")
+                f"PSI starts at reference position {self.position + 1}.")
 
 
 @dataclass(frozen=True)
@@ -133,17 +133,16 @@ class UnknownNucleotide:
     details: str
 
     def __str__(self):
-        return f"Sequence contains invalid nucleotides: {self.details}"
+        return f"Sequence contains invalid nucleotides: {self.details}."
 
 
-# The final exported Defect type will encompass all defined classes
+# The final exported Defect type encompasses all defined classes
 DefectType = Union[
     LongDeletion, DeletionInOrf, InsertionInOrf, InternalStopInOrf,
     FrameshiftInOrf, MajorSpliceDonorSiteMutated, PackagingSignalDeletion,
     PackagingSignalNotComplete, RevResponseElementDeletion, APOBECHypermutationDetected,
     NonHIV, Scramble, InternalInversion, UnknownNucleotide
 ]
-
 
 
 @dataclass(frozen=True)

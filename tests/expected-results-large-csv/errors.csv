@@ -1,37 +1,37 @@
 sequence_name,error,message,orf
-KX505501.1,DeletionInOrf,"ORF pol at 1627-1926 can have maximum deletions 30, got 2721",pol
-KX505501.1,InternalStopInOrf,ORF env at 0-1823 contains an internal stop codon at 99,env
-KX505501.1,InsertionInOrf,"Smaller ORF vif at 0-1823 can have maximum insertions 90, got 909",vif
-KX505501.1,DeletionInOrf,"Smaller ORF vpr at 1599-1823 can have maximum deletions 30, got 66",vpr
-KX505501.1,InternalStopInOrf,Smaller ORF tat_exon1 at 1-1749 contains an internal stop codon at 64,tat_exon1
-KX505501.1,InternalStopInOrf,Smaller ORF rev_exon1 at 1306-1749 contains an internal stop codon at 1342,rev_exon1
-KX505501.1,FrameshiftInOrf,Smaller ORF vpu at 1599-1823 contains out of frame indels that impact 190 positions.,vpu
-KX505501.1,FrameshiftInOrf,Smaller ORF tat_exon2 at 1746-1823 contains out of frame indels that impact 51 positions.,tat_exon2
-KX505501.1,DeletionInOrf,"Smaller ORF rev_exon2 at 1747-1926 can have maximum deletions 30, got 96",rev_exon2
-KX505501.1,InsertionInOrf,"Smaller ORF nef at 0-1823 can have maximum insertions 90, got 867",nef
+KX505501.1,DeletionInOrf,"ORF pol at 1628-1927 can have maximum deletions 30, got 2721.",pol
+KX505501.1,InternalStopInOrf,ORF env at 1-1824 contains an internal stop codon at 100.,env
+KX505501.1,InsertionInOrf,"Smaller ORF vif at 1-1824 can have maximum insertions 90, got 909.",vif
+KX505501.1,DeletionInOrf,"Smaller ORF vpr at 1600-1824 can have maximum deletions 30, got 66.",vpr
+KX505501.1,InternalStopInOrf,Smaller ORF tat_exon1 at 2-1750 contains an internal stop codon at 65.,tat_exon1
+KX505501.1,InternalStopInOrf,Smaller ORF rev_exon1 at 1307-1750 contains an internal stop codon at 1343.,rev_exon1
+KX505501.1,FrameshiftInOrf,Smaller ORF vpu at 1600-1824 contains out of frame indels that impact 190 positions.,vpu
+KX505501.1,FrameshiftInOrf,Smaller ORF tat_exon2 at 1747-1824 contains out of frame indels that impact 51 positions.,tat_exon2
+KX505501.1,DeletionInOrf,"Smaller ORF rev_exon2 at 1748-1927 can have maximum deletions 30, got 96.",rev_exon2
+KX505501.1,InsertionInOrf,"Smaller ORF nef at 1-1824 can have maximum insertions 90, got 867.",nef
 KX505501.1,RevResponseElementDeletion,Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.,
 KX505501.1,LongDeletion,Query sequence contains a long deletion.,
 KX505501.1,Scramble,Sequence is plus-scrambled.,
-MN691959,InternalStopInOrf,Smaller ORF vpu at 5910-6155 contains an internal stop codon at 5973,vpu
-MN691959,InternalStopInOrf,Smaller ORF tat_exon2 at 8237-8332 contains an internal stop codon at 8282,tat_exon2
-MN692074,DeletionInOrf,"ORF pol at 2084-4114 can have maximum deletions 30, got 981",pol
-MN692074,InternalStopInOrf,ORF env at 2-4114 contains an internal stop codon at 329,env
-MN692074,DeletionInOrf,"Smaller ORF vif at 3617-4114 can have maximum deletions 30, got 81",vif
-MN692074,InsertionInOrf,"Smaller ORF vpr at 3617-4114 can have maximum insertions 90, got 207",vpr
-MN692074,InternalStopInOrf,Smaller ORF tat_exon1 at 3823-4083 contains an internal stop codon at 3886,tat_exon1
-MN692074,InsertionInOrf,"Smaller ORF vpu at 3617-4114 can have maximum insertions 90, got 249",vpu
-MN692074,FrameshiftInOrf,Smaller ORF tat_exon2 at 4080-4163 contains out of frame indels that impact 40 positions.,tat_exon2
-MN692074,DeletionInOrf,"Smaller ORF rev_exon2 at 4081-4152 can have maximum deletions 30, got 204",rev_exon2
-MN692074,InsertionInOrf,"Smaller ORF nef at 0-4058 can have maximum insertions 90, got 882",nef
+MN691959,InternalStopInOrf,Smaller ORF vpu at 5911-6156 contains an internal stop codon at 5974.,vpu
+MN691959,InternalStopInOrf,Smaller ORF tat_exon2 at 8238-8333 contains an internal stop codon at 8283.,tat_exon2
+MN692074,DeletionInOrf,"ORF pol at 2085-4115 can have maximum deletions 30, got 981.",pol
+MN692074,InternalStopInOrf,ORF env at 3-4115 contains an internal stop codon at 330.,env
+MN692074,DeletionInOrf,"Smaller ORF vif at 3618-4115 can have maximum deletions 30, got 81.",vif
+MN692074,InsertionInOrf,"Smaller ORF vpr at 3618-4115 can have maximum insertions 90, got 207.",vpr
+MN692074,InternalStopInOrf,Smaller ORF tat_exon1 at 3824-4084 contains an internal stop codon at 3887.,tat_exon1
+MN692074,InsertionInOrf,"Smaller ORF vpu at 3618-4115 can have maximum insertions 90, got 249.",vpu
+MN692074,FrameshiftInOrf,Smaller ORF tat_exon2 at 4081-4164 contains out of frame indels that impact 40 positions.,tat_exon2
+MN692074,DeletionInOrf,"Smaller ORF rev_exon2 at 4082-4153 can have maximum deletions 30, got 204.",rev_exon2
+MN692074,InsertionInOrf,"Smaller ORF nef at 1-4059 can have maximum insertions 90, got 882.",nef
 MN692074,RevResponseElementDeletion,Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.,
 MN692074,LongDeletion,Query sequence contains a long deletion.,
-MN090335,InternalStopInOrf,ORF gag at 315-1664 contains an internal stop codon at 348,gag
-MN090335,InternalStopInOrf,Smaller ORF tat_exon2 at 7739-7834 contains an internal stop codon at 7784,tat_exon2
+MN090335,InternalStopInOrf,ORF gag at 316-1665 contains an internal stop codon at 349.,gag
+MN090335,InternalStopInOrf,Smaller ORF tat_exon2 at 7740-7835 contains an internal stop codon at 7785.,tat_exon2
 MN090335,PackagingSignalDeletion,Query Sequence exceeds maximum deletion tolerance in PSI. Contains 42 deletions with max tolerance of 10 deletions.,
 MN090335,MajorSpliceDonorSiteMutated,"Query sequence has a mutated splice donor site, AT.",
 MN090335,Scramble,Sequence is minus-scrambled.,
 MN090335,InternalInversion,Sequence contains an internal inversion.,
-MN090376,InternalStopInOrf,ORF gag at 522-1589 contains an internal stop codon at 555,gag
+MN090376,InternalStopInOrf,ORF gag at 523-1590 contains an internal stop codon at 556.,gag
 MN090376,PackagingSignalDeletion,Query Sequence exceeds maximum deletion tolerance in PSI. Contains 95 deletions with max tolerance of 10 deletions.,
 MN090376,MajorSpliceDonorSiteMutated,"Query sequence has a missing splice donor site, --.",
 MN090376,Scramble,Sequence is minus-scrambled.,
@@ -45,56 +45,56 @@ MK115514.1,MajorSpliceDonorSiteMutated,"Query sequence has a missing splice dono
 MK115488.1,MajorSpliceDonorSiteMutated,"Query sequence has a missing splice donor site, --.",
 MK115030.1,Scramble,Sequence is minus-scrambled.,
 MK115030.1,InternalInversion,Sequence contains an internal inversion.,
-MK115211.1,InternalStopInOrf,ORF env at 5687-8197 contains an internal stop codon at 6353,env
+MK115211.1,InternalStopInOrf,ORF env at 5688-8198 contains an internal stop codon at 6354.,env
 MK115211.1,PackagingSignalDeletion,Query Sequence exceeds maximum deletion tolerance in PSI. Contains 20 deletions with max tolerance of 10 deletions.,
 MK115211.1,MajorSpliceDonorSiteMutated,"Query sequence has a missing splice donor site, --.",
 MK115211.1,Scramble,Sequence is minus-scrambled.,
 MK115211.1,InternalInversion,Sequence contains an internal inversion.,
 MK115158.1,PackagingSignalDeletion,Query Sequence exceeds maximum deletion tolerance in PSI. Contains 20 deletions with max tolerance of 10 deletions.,
 MK115158.1,MajorSpliceDonorSiteMutated,"Query sequence has a missing splice donor site, --.",
-MK114705.1,DeletionInOrf,"Smaller ORF nef at 8550-8984 can have maximum deletions 30, got 186",nef
-MK114856.1,InternalStopInOrf,ORF gag at 120-2021 contains an internal stop codon at 204,gag
-MK114856.1,InternalStopInOrf,ORF pol at 1787-4825 contains an internal stop codon at 1916,pol
-MK114856.1,InternalStopInOrf,ORF env at 5953-8520 contains an internal stop codon at 6055,env
-MK114856.1,InternalStopInOrf,Smaller ORF vif at 4425-5348 contains an internal stop codon at 4557,vif
-MK114856.1,InternalStopInOrf,Smaller ORF vpr at 5033-5578 contains an internal stop codon at 5069,vpr
-MK114856.1,InternalStopInOrf,Smaller ORF tat_exon1 at 5486-5776 contains an internal stop codon at 5576,tat_exon1
-MK114856.1,InternalStopInOrf,Smaller ORF vpu at 5790-6038 contains an internal stop codon at 5856,vpu
-MK114856.1,InternalStopInOrf,Smaller ORF tat_exon2 at 8102-8197 contains an internal stop codon at 8147,tat_exon2
-MK114856.1,InternalStopInOrf,Smaller ORF rev_exon2 at 8103-8378 contains an internal stop codon at 8160,rev_exon2
-MK114856.1,InternalStopInOrf,Smaller ORF nef at 7916-9175 contains an internal stop codon at 7973,nef
+MK114705.1,DeletionInOrf,"Smaller ORF nef at 8551-8985 can have maximum deletions 30, got 186.",nef
+MK114856.1,InternalStopInOrf,ORF gag at 121-2022 contains an internal stop codon at 205.,gag
+MK114856.1,InternalStopInOrf,ORF pol at 1788-4826 contains an internal stop codon at 1917.,pol
+MK114856.1,InternalStopInOrf,ORF env at 5954-8521 contains an internal stop codon at 6056.,env
+MK114856.1,InternalStopInOrf,Smaller ORF vif at 4426-5349 contains an internal stop codon at 4558.,vif
+MK114856.1,InternalStopInOrf,Smaller ORF vpr at 5034-5579 contains an internal stop codon at 5070.,vpr
+MK114856.1,InternalStopInOrf,Smaller ORF tat_exon1 at 5487-5777 contains an internal stop codon at 5577.,tat_exon1
+MK114856.1,InternalStopInOrf,Smaller ORF vpu at 5791-6039 contains an internal stop codon at 5857.,vpu
+MK114856.1,InternalStopInOrf,Smaller ORF tat_exon2 at 8103-8198 contains an internal stop codon at 8148.,tat_exon2
+MK114856.1,InternalStopInOrf,Smaller ORF rev_exon2 at 8104-8379 contains an internal stop codon at 8161.,rev_exon2
+MK114856.1,InternalStopInOrf,Smaller ORF nef at 7917-9176 contains an internal stop codon at 7974.,nef
 MK114856.1,APOBECHypermutationDetected,Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 3.639064030015132e-65).,
-MK115009.1,InternalStopInOrf,ORF gag at 302-1714 contains an internal stop codon at 347,gag
-MK115009.1,InternalStopInOrf,ORF pol at 1613-4624 contains an internal stop codon at 1712,pol
-MK115009.1,InternalStopInOrf,ORF env at 5752-8352 contains an internal stop codon at 5878,env
-MK115009.1,InternalStopInOrf,Smaller ORF vif at 4289-4987 contains an internal stop codon at 4622,vif
-MK115009.1,InternalStopInOrf,Smaller ORF vpr at 5087-5377 contains an internal stop codon at 5246,vpr
-MK115009.1,InternalStopInOrf,Smaller ORF tat_exon1 at 5235-5573 contains an internal stop codon at 5265,tat_exon1
-MK115009.1,InternalStopInOrf,Smaller ORF rev_exon2 at 7935-8210 contains an internal stop codon at 7992,rev_exon2
-MK115009.1,InternalStopInOrf,Smaller ORF nef at 7748-8995 contains an internal stop codon at 7826,nef
+MK115009.1,InternalStopInOrf,ORF gag at 303-1715 contains an internal stop codon at 348.,gag
+MK115009.1,InternalStopInOrf,ORF pol at 1614-4625 contains an internal stop codon at 1713.,pol
+MK115009.1,InternalStopInOrf,ORF env at 5753-8353 contains an internal stop codon at 5879.,env
+MK115009.1,InternalStopInOrf,Smaller ORF vif at 4290-4988 contains an internal stop codon at 4623.,vif
+MK115009.1,InternalStopInOrf,Smaller ORF vpr at 5088-5378 contains an internal stop codon at 5247.,vpr
+MK115009.1,InternalStopInOrf,Smaller ORF tat_exon1 at 5236-5574 contains an internal stop codon at 5266.,tat_exon1
+MK115009.1,InternalStopInOrf,Smaller ORF rev_exon2 at 7936-8211 contains an internal stop codon at 7993.,rev_exon2
+MK115009.1,InternalStopInOrf,Smaller ORF nef at 7749-8996 contains an internal stop codon at 7827.,nef
 MK115009.1,APOBECHypermutationDetected,Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 1.2040967664149076e-41).,
 MK115009.1,Scramble,Sequence is minus-scrambled.,
 MK115009.1,InternalInversion,Sequence contains an internal inversion.,
-MK115387.1,InternalStopInOrf,Smaller ORF tat_exon2 at 7869-7964 contains an internal stop codon at 7914,tat_exon2
-MK116110.1,InternalStopInOrf,ORF gag at 62-1600 contains an internal stop codon at 107,gag
+MK115387.1,InternalStopInOrf,Smaller ORF tat_exon2 at 7870-7965 contains an internal stop codon at 7915.,tat_exon2
+MK116110.1,InternalStopInOrf,ORF gag at 63-1601 contains an internal stop codon at 108.,gag
 MK116110.1,PackagingSignalDeletion,Query Sequence exceeds maximum deletion tolerance in PSI. Contains 22 deletions with max tolerance of 10 deletions.,
 MK116110.1,MajorSpliceDonorSiteMutated,"Query sequence has a mutated splice donor site, CC.",
-MK114997.1,InternalStopInOrf,ORF env at 4985-8206 contains an internal stop codon at 5273,env
+MK114997.1,InternalStopInOrf,ORF env at 4986-8207 contains an internal stop codon at 5274.,env
 MK115065.1,PackagingSignalDeletion,Query Sequence exceeds maximum deletion tolerance in PSI. Contains 75 deletions with max tolerance of 10 deletions.,
 MK115065.1,MajorSpliceDonorSiteMutated,"Query sequence has a missing splice donor site, --.",
 MK115065.1,Scramble,Sequence is plus-scrambled.,
 MK115065.1,InternalInversion,Sequence contains an internal inversion.,
-MK115464.1,InternalStopInOrf,ORF gag at 527-2296 contains an internal stop codon at 662,gag
-MK115464.1,InternalStopInOrf,ORF pol at 2089-5100 contains an internal stop codon at 2188,pol
-MK115464.1,InternalStopInOrf,ORF env at 6228-8798 contains an internal stop codon at 6429,env
-MK115464.1,InternalStopInOrf,Smaller ORF vif at 5045-5623 contains an internal stop codon at 5252,vif
-MK115464.1,FrameshiftInOrf,Smaller ORF tat_exon1 at 5563-6051 contains out of frame indels that impact 104 positions.,tat_exon1
-MK115464.1,InternalStopInOrf,Smaller ORF vpu at 6065-6310 contains an internal stop codon at 6131,vpu
-MK115464.1,InternalStopInOrf,Smaller ORF tat_exon2 at 8380-8475 contains an internal stop codon at 8425,tat_exon2
-MK115464.1,InternalStopInOrf,Smaller ORF rev_exon2 at 8381-8656 contains an internal stop codon at 8438,rev_exon2
-MK115464.1,InternalStopInOrf,Smaller ORF nef at 8194-9450 contains an internal stop codon at 8272,nef
+MK115464.1,InternalStopInOrf,ORF gag at 528-2297 contains an internal stop codon at 663.,gag
+MK115464.1,InternalStopInOrf,ORF pol at 2090-5101 contains an internal stop codon at 2189.,pol
+MK115464.1,InternalStopInOrf,ORF env at 6229-8799 contains an internal stop codon at 6430.,env
+MK115464.1,InternalStopInOrf,Smaller ORF vif at 5046-5624 contains an internal stop codon at 5253.,vif
+MK115464.1,FrameshiftInOrf,Smaller ORF tat_exon1 at 5564-6052 contains out of frame indels that impact 104 positions.,tat_exon1
+MK115464.1,InternalStopInOrf,Smaller ORF vpu at 6066-6311 contains an internal stop codon at 6132.,vpu
+MK115464.1,InternalStopInOrf,Smaller ORF tat_exon2 at 8381-8476 contains an internal stop codon at 8426.,tat_exon2
+MK115464.1,InternalStopInOrf,Smaller ORF rev_exon2 at 8382-8657 contains an internal stop codon at 8439.,rev_exon2
+MK115464.1,InternalStopInOrf,Smaller ORF nef at 8195-9451 contains an internal stop codon at 8273.,nef
 MK115464.1,APOBECHypermutationDetected,Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 4.937891251407691e-23).,
-MK115520.1,InternalStopInOrf,ORF pol at 1986-5003 contains an internal stop codon at 2100,pol
+MK115520.1,InternalStopInOrf,ORF pol at 1987-5004 contains an internal stop codon at 2101.,pol
 MK115520.1,MajorSpliceDonorSiteMutated,"Query sequence has a mutated splice donor site, GA.",
 MK115520.1,InternalInversion,Sequence contains an internal inversion.,
 MK115570.1,PackagingSignalDeletion,Query Sequence exceeds maximum deletion tolerance in PSI. Contains 11 deletions with max tolerance of 10 deletions.,
@@ -103,14 +103,14 @@ MK115702.1,PackagingSignalDeletion,Query Sequence exceeds maximum deletion toler
 MK115702.1,MajorSpliceDonorSiteMutated,"Query sequence has a missing splice donor site, --.",
 MK115702.1,Scramble,Sequence is plus-scrambled.,
 MK115702.1,InternalInversion,Sequence contains an internal inversion.,
-MK115095.1,InternalStopInOrf,ORF gag at 2-1696 contains an internal stop codon at 140,gag
-MK115095.1,InternalStopInOrf,ORF pol at 1489-4500 contains an internal stop codon at 1588,pol
-MK115095.1,InternalStopInOrf,ORF env at 5628-8228 contains an internal stop codon at 5955,env
-MK115095.1,InternalStopInOrf,Smaller ORF vif at 4445-5023 contains an internal stop codon at 4556,vif
-MK115095.1,InternalStopInOrf,Smaller ORF tat_exon1 at 5111-5452 contains an internal stop codon at 5141,tat_exon1
-MK115095.1,InternalStopInOrf,Smaller ORF vpu at 5465-5710 contains an internal stop codon at 5531,vpu
-MK115095.1,InternalStopInOrf,Smaller ORF rev_exon2 at 7811-8086 contains an internal stop codon at 7868,rev_exon2
-MK115095.1,InternalStopInOrf,Smaller ORF nef at 7624-8871 contains an internal stop codon at 7702,nef
+MK115095.1,InternalStopInOrf,ORF gag at 3-1697 contains an internal stop codon at 141.,gag
+MK115095.1,InternalStopInOrf,ORF pol at 1490-4501 contains an internal stop codon at 1589.,pol
+MK115095.1,InternalStopInOrf,ORF env at 5629-8229 contains an internal stop codon at 5956.,env
+MK115095.1,InternalStopInOrf,Smaller ORF vif at 4446-5024 contains an internal stop codon at 4557.,vif
+MK115095.1,InternalStopInOrf,Smaller ORF tat_exon1 at 5112-5453 contains an internal stop codon at 5142.,tat_exon1
+MK115095.1,InternalStopInOrf,Smaller ORF vpu at 5466-5711 contains an internal stop codon at 5532.,vpu
+MK115095.1,InternalStopInOrf,Smaller ORF rev_exon2 at 7812-8087 contains an internal stop codon at 7869.,rev_exon2
+MK115095.1,InternalStopInOrf,Smaller ORF nef at 7625-8872 contains an internal stop codon at 7703.,nef
 MK115095.1,APOBECHypermutationDetected,Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 8.33506116803153e-40).,
 OQ092466,MajorSpliceDonorSiteMutated,"Query sequence has a mutated splice donor site, GC.",
 OQ092463,PackagingSignalDeletion,Query Sequence exceeds maximum deletion tolerance in PSI. Contains 26 deletions with max tolerance of 10 deletions.,
