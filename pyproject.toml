@@ -24,6 +24,7 @@ test = [
     # Dependencies required for running the test suite
     "pytest>=6.0",
     "pytest-cov",
+    "requests",
 ]
 dev = [
     # Dependencies required for development (linting, type checking, etc.)
