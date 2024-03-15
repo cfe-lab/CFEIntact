@@ -39,13 +39,13 @@
         {
             "sequence_name": "KX505501.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpu at 6060-6308 contains out of frame indels that impact 190 positions.",
+            "message": "Smaller ORF vpu at 1599-1823 contains out of frame indels that impact 190 positions.",
             "orf": "vpu"
         },
         {
             "sequence_name": "KX505501.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF tat_exon2 at 8375-8470 contains out of frame indels that impact 51 positions.",
+            "message": "Smaller ORF tat_exon2 at 1746-1823 contains out of frame indels that impact 51 positions.",
             "orf": "tat_exon2"
         },
         {
@@ -133,7 +133,7 @@
         {
             "sequence_name": "MN692074",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF tat_exon2 at 8375-8470 contains out of frame indels that impact 40 positions.",
+            "message": "Smaller ORF tat_exon2 at 4080-4163 contains out of frame indels that impact 40 positions.",
             "orf": "tat_exon2"
         },
         {
@@ -587,7 +587,7 @@
         {
             "sequence_name": "MK115464.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF tat_exon1 at 5829-6044 contains out of frame indels that impact 104 positions.",
+            "message": "Smaller ORF tat_exon1 at 5563-6051 contains out of frame indels that impact 104 positions.",
             "orf": "tat_exon1"
         },
         {

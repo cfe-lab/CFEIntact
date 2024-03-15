@@ -57,7 +57,7 @@ class FrameshiftInOrf(ORFDefect):
 
     def __str__(self):
         return (f"{'Smaller ' if self.q.is_small else ''}"
-                f"ORF {self.e.name} at {self.e.start}-{self.e.end}"  # FIXME: change this to q.{start,end}
+                f"ORF {self.e.name} at {self.q.start}-{self.q.end}"
                 f" contains out of frame indels that impact {self.impacted_positions} positions.")
 
 

@@ -582,7 +582,7 @@
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.BUT.REVERSED",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF tat_exon2 at 7567-7662 contains out of frame indels that impact 71 positions.",
+            "message": "Smaller ORF tat_exon2 at 8199-8297 contains out of frame indels that impact 71 positions.",
             "orf": "tat_exon2"
         },
         {

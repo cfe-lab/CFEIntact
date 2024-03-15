@@ -5,8 +5,8 @@ KX505501.1,InsertionInOrf,"Smaller ORF vif at 0-1823 can have maximum insertions
 KX505501.1,DeletionInOrf,"Smaller ORF vpr at 1599-1823 can have maximum deletions 30, got 66",vpr
 KX505501.1,InternalStopInOrf,Smaller ORF tat_exon1 at 1-1749 contains an internal stop codon at 64,tat_exon1
 KX505501.1,InternalStopInOrf,Smaller ORF rev_exon1 at 1306-1749 contains an internal stop codon at 1342,rev_exon1
-KX505501.1,FrameshiftInOrf,Smaller ORF vpu at 6060-6308 contains out of frame indels that impact 190 positions.,vpu
-KX505501.1,FrameshiftInOrf,Smaller ORF tat_exon2 at 8375-8470 contains out of frame indels that impact 51 positions.,tat_exon2
+KX505501.1,FrameshiftInOrf,Smaller ORF vpu at 1599-1823 contains out of frame indels that impact 190 positions.,vpu
+KX505501.1,FrameshiftInOrf,Smaller ORF tat_exon2 at 1746-1823 contains out of frame indels that impact 51 positions.,tat_exon2
 KX505501.1,DeletionInOrf,"Smaller ORF rev_exon2 at 1747-1926 can have maximum deletions 30, got 96",rev_exon2
 KX505501.1,InsertionInOrf,"Smaller ORF nef at 0-1823 can have maximum insertions 90, got 867",nef
 KX505501.1,RevResponseElementDeletion,Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.,
@@ -20,7 +20,7 @@ MN692074,DeletionInOrf,"Smaller ORF vif at 3617-4114 can have maximum deletions 
 MN692074,InsertionInOrf,"Smaller ORF vpr at 3617-4114 can have maximum insertions 90, got 207",vpr
 MN692074,InternalStopInOrf,Smaller ORF tat_exon1 at 3823-4083 contains an internal stop codon at 3886,tat_exon1
 MN692074,InsertionInOrf,"Smaller ORF vpu at 3617-4114 can have maximum insertions 90, got 249",vpu
-MN692074,FrameshiftInOrf,Smaller ORF tat_exon2 at 8375-8470 contains out of frame indels that impact 40 positions.,tat_exon2
+MN692074,FrameshiftInOrf,Smaller ORF tat_exon2 at 4080-4163 contains out of frame indels that impact 40 positions.,tat_exon2
 MN692074,DeletionInOrf,"Smaller ORF rev_exon2 at 4081-4152 can have maximum deletions 30, got 204",rev_exon2
 MN692074,InsertionInOrf,"Smaller ORF nef at 0-4058 can have maximum insertions 90, got 882",nef
 MN692074,RevResponseElementDeletion,Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.,
