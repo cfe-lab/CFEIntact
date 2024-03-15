@@ -36,18 +36,18 @@ Most of these analyses are optional and controlled by passing a command line opt
 
 Table below lists all of the independent steps:
 
-| Name                      | Enabled by Default? | Command Line Option                       |
-| --------------------------| --------------------| ------------------------------------------|
-| PSI check                 | Yes                 | `--exclude-packaging-signal`              |
-| RRE check                 | Yes                 | `--exclude-rre`                           |
-| MSD check                 | Yes                 | `--ignore-major-splice-donor-site`        |
-| Hypermutation check       | Yes                 | `--no-hypermut`                           |
-| Large deletion check      | Yes                 | `--ignore-long-deletion`                  |
-| NonHIV check              | Yes                 | `--ignore-nonhiv`                         |
-| Scramble check            | Yes                 | `--ignore-scramble`                       |
-| Inversion check           | Yes                 | `--ignore-internal-inversion`             |
-| Large ORFs analysis       | Yes                 |                                           |
-| Small ORFs analysis       | Yes                 | `--ignore-small-orfs`                     |
+| Name                 | Enabled by Default? | Command Line Option                |
+|----------------------|---------------------|------------------------------------|
+| PSI check            | Yes                 | `--ignore-packaging-signal`        |
+| RRE check            | Yes                 | `--ignore-rre`                     |
+| MSD check            | Yes                 | `--ignore-major-splice-donor-site` |
+| Hypermutation check  | Yes                 | `--ignore-hypermut`                |
+| Large deletion check | Yes                 | `--ignore-long-deletion`           |
+| NonHIV check         | Yes                 | `--ignore-nonhiv`                  |
+| Scramble check       | Yes                 | `--ignore-scramble`                |
+| Inversion check      | Yes                 | `--ignore-internal-inversion`      |
+| Large ORFs analysis  | Yes                 |                                    |
+| Small ORFs analysis  | Yes                 | `--ignore-small-orfs`              |
 
 
 Each step works on a single input sequence and has a set of potential errors it can detect for that sequence.
