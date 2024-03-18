@@ -16,7 +16,7 @@ class AlignedSequence:
     reference: SeqRecord
     orfs: Optional[Dict[str, MappedORF]] = dataclasses.field(default=None)
     alignment: Optional[Tuple[str, str]] = dataclasses.field(default=None)
-    coordinates_mapping: Optional[List[Optional[int]]] = dataclasses.field(default=None)
+    coordinates_mapping: Optional[List[int]] = dataclasses.field(default=None)
 
     def get_alignment(self):
         if not self.alignment:
@@ -32,8 +32,8 @@ class AlignedSequence:
 
     def get_coordinates_mapping(self):
         if not self.coordinates_mapping:
-            self.coordinates_mapping = coords.map_positions(
-                self.aligned_reference(), self.aligned_this())
+            self.coordinates_mapping = \
+                coords.map_positions(self.aligned_reference(), self.aligned_this())
 
         return self.coordinates_mapping
 
