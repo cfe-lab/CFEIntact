@@ -1,32 +1,32 @@
 sequence_name,error,message,orf
-KX505501.1,DeletionInOrf,"ORF pol at 1628-1927 can have maximum deletions 30, got 2721.",pol
+KX505501.1,InternalStopInOrf,ORF pol at 1629-1927 contains an internal stop codon at 1746.,pol
 KX505501.1,InternalStopInOrf,ORF env at 1-1824 contains an internal stop codon at 100.,env
 KX505501.1,InsertionInOrf,"Smaller ORF vif at 1-1824 can have maximum insertions 90, got 909.",vif
 KX505501.1,DeletionInOrf,"Smaller ORF vpr at 1600-1824 can have maximum deletions 30, got 66.",vpr
-KX505501.1,InternalStopInOrf,Smaller ORF tat_exon1 at 2-1750 contains an internal stop codon at 65.,tat_exon1
-KX505501.1,InternalStopInOrf,Smaller ORF rev_exon1 at 1307-1750 contains an internal stop codon at 1343.,rev_exon1
+KX505501.1,InternalStopInOrf,Smaller ORF tat_exon1 at 1578-1747 contains an internal stop codon at 1614.,tat_exon1
+KX505501.1,InternalStopInOrf,Smaller ORF rev_exon1 at 1578-1747 contains an internal stop codon at 1614.,rev_exon1
 KX505501.1,FrameshiftInOrf,Smaller ORF vpu at 1600-1824 contains out of frame indels that impact 190 positions.,vpu
 KX505501.1,FrameshiftInOrf,Smaller ORF tat_exon2 at 1747-1824 contains out of frame indels that impact 51 positions.,tat_exon2
-KX505501.1,DeletionInOrf,"Smaller ORF rev_exon2 at 1748-1927 can have maximum deletions 30, got 96.",rev_exon2
+KX505501.1,InternalStopInOrf,Smaller ORF rev_exon2 at 1747-1927 contains an internal stop codon at 1822.,rev_exon2
 KX505501.1,InsertionInOrf,"Smaller ORF nef at 1-1824 can have maximum insertions 90, got 867.",nef
 KX505501.1,RevResponseElementDeletion,Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.,
 KX505501.1,LongDeletion,Query sequence contains a long deletion.,
 KX505501.1,Scramble,Sequence is plus-scrambled.,
 MN691959,InternalStopInOrf,Smaller ORF vpu at 5911-6156 contains an internal stop codon at 5974.,vpu
-MN691959,InternalStopInOrf,Smaller ORF tat_exon2 at 8238-8333 contains an internal stop codon at 8283.,tat_exon2
-MN692074,DeletionInOrf,"ORF pol at 2085-4115 can have maximum deletions 30, got 981.",pol
+MN691959,InternalStopInOrf,Smaller ORF tat_exon2 at 8238-8330 contains an internal stop codon at 8283.,tat_exon2
+MN692074,InternalStopInOrf,ORF pol at 2085-4153 contains an internal stop codon at 4113.,pol
 MN692074,InternalStopInOrf,ORF env at 3-4115 contains an internal stop codon at 330.,env
 MN692074,DeletionInOrf,"Smaller ORF vif at 3618-4115 can have maximum deletions 30, got 81.",vif
 MN692074,InsertionInOrf,"Smaller ORF vpr at 3618-4115 can have maximum insertions 90, got 207.",vpr
-MN692074,InternalStopInOrf,Smaller ORF tat_exon1 at 3824-4084 contains an internal stop codon at 3887.,tat_exon1
+MN692074,InternalStopInOrf,Smaller ORF tat_exon1 at 3824-4083 contains an internal stop codon at 3887.,tat_exon1
 MN692074,InsertionInOrf,"Smaller ORF vpu at 3618-4115 can have maximum insertions 90, got 249.",vpu
-MN692074,FrameshiftInOrf,Smaller ORF tat_exon2 at 4081-4164 contains out of frame indels that impact 40 positions.,tat_exon2
-MN692074,DeletionInOrf,"Smaller ORF rev_exon2 at 4082-4153 can have maximum deletions 30, got 204.",rev_exon2
+MN692074,DeletionInOrf,"Smaller ORF tat_exon2 at 4083-4115 can have maximum deletions 30, got 60.",tat_exon2
+MN692074,DeletionInOrf,"Smaller ORF rev_exon2 at 4083-4115 can have maximum deletions 30, got 243.",rev_exon2
 MN692074,InsertionInOrf,"Smaller ORF nef at 1-4059 can have maximum insertions 90, got 882.",nef
 MN692074,RevResponseElementDeletion,Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.,
 MN692074,LongDeletion,Query sequence contains a long deletion.,
 MN090335,InternalStopInOrf,ORF gag at 316-1665 contains an internal stop codon at 349.,gag
-MN090335,InternalStopInOrf,Smaller ORF tat_exon2 at 7740-7835 contains an internal stop codon at 7785.,tat_exon2
+MN090335,InternalStopInOrf,Smaller ORF tat_exon2 at 7740-7832 contains an internal stop codon at 7785.,tat_exon2
 MN090335,PackagingSignalDeletion,Query Sequence exceeds maximum deletion tolerance in PSI. Contains 42 deletions with max tolerance of 10 deletions.,
 MN090335,MajorSpliceDonorSiteMutated,"Query sequence has a mutated splice donor site, AT.",
 MN090335,Scramble,Sequence is minus-scrambled.,
