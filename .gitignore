@@ -2,4 +2,4 @@ build/
 *.egg-info/
 __pycache__
 .coverage
-.vscode/
+.vscode
