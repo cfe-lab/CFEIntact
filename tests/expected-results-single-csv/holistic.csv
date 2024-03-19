@@ -1,2 +1,2 @@
 seqid,intact,qlen,hypermutation_probablility,inferred_subtype,blast_matched_qlen,blast_sseq_coverage,blast_qseq_coverage,blast_sseq_orfs_coverage,orfs_start,orfs_end,blast_n_conseqs
-MN692145,True,9689,0.1672411051048176,Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455,9689,1.130479522535501,1.1271545051088863,1.0,789,8793,3
+MN692145,True,9689,0.1672411051048176,Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE,9689,1.130479522535501,1.1271545051088863,1.0,789,8793,3
