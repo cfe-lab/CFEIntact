@@ -24,8 +24,6 @@ CFEIntact is built with Python 3 and requires several dependencies, including MA
 - `MAFFT` for sequence alignment.
 - `BLAST+` for sequence analysis when certain checks are enabled.
 
-### Install CFEIntact
-
 Clone the repository and install CFEIntact:
 
 ```shell
@@ -39,8 +37,11 @@ python3 -m pip install .
 To analyze a set of FASTA sequences for HIV-1 proviral intactness:
 
 ```shell
-cfeintact check --subtype B sequences.fasta
+cfeintact check --subtype HXB2 sequences.fasta
 ```
+
+Note: currently it is recommended to use HXB2 even if your sequences are not subtype B.
+This is because many well known reference subtypes contain defects in them.
 
 ## Documentation
 
