@@ -88,7 +88,8 @@ def find_candidate_positions(aligned_sequence: AlignedSequence, e: OriginalORF) 
                     nucleotides=got_nucleotides,
                     aminoacids=got_aminoacids,
                     protein=got_protein,
-                    deletion_tolerence=e.deletion_tolerence,
+                    max_deletions=e.max_deletions,
+                    max_insertions=e.max_insertions,
                     is_small=e.is_small,
                 )
                 yield MappedORF(

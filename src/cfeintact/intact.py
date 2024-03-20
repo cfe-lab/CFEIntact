@@ -449,9 +449,9 @@ def has_reading_frames(aligned_sequence, expected, error_bar, reverse=False):
         insertions = max(0, len(got_protein) - len(exp_protein)) * 3
 
         # Max deletion allowed in ORF exceeded
-        if deletions > e.deletion_tolerence:
+        if deletions > e.max_deletions:
 
-            limit = e.deletion_tolerence // 3
+            limit = e.max_deletions // 3
             limited_aminoacids = q.aminoacids[limit:-limit]
 
             if "*" in limited_aminoacids:
@@ -465,7 +465,7 @@ def has_reading_frames(aligned_sequence, expected, error_bar, reverse=False):
             continue
 
         # Max insertions allowed in ORF exceeded
-        if insertions > 3 * e.deletion_tolerence:
+        if insertions > e.max_insertions:
             d3 = defect.InsertionInOrf(e=e, q=q, insertions=insertions)
             errors.append(Defect(sequence.id, d3))
             continue
@@ -479,7 +479,7 @@ def has_reading_frames(aligned_sequence, expected, error_bar, reverse=False):
             impacted_by_indels = get_indel_impact(orf_alignment)
 
             # Check for frameshift in ORF
-            if impacted_by_indels >= e.deletion_tolerence + 0.10 * len(exp_nucleotides):
+            if impacted_by_indels >= e.max_deletions + 0.10 * len(exp_nucleotides):
                 d = defect.FrameshiftInOrf(e=e, q=q, impacted_positions=impacted_by_indels)
                 errors.append(Defect(sequence.id, d))
                 continue
@@ -606,7 +606,7 @@ class OutputWriter:
 def read_hxb2_orfs(aligned_subtype: AlignedSequence,
                    orfs: const.ORFsDefinition,
                    is_small: bool) -> Iterable[OriginalORF]:
-    for (name, start, end, delta) in orfs:
+    for (name, start, end, max_deletions, max_insertions) in orfs:
         # Decrement is needed because original coordinates are 1-based.
         start = start - 1
         end = end - 1
@@ -616,7 +616,8 @@ def read_hxb2_orfs(aligned_subtype: AlignedSequence,
         start = start if start < vpr_defective_insertion_pos else start - 1
         end = end if end < vpr_defective_insertion_pos else end - 1
 
-        yield initialize_orf(aligned_subtype, name, start, end, delta, is_small)
+        yield initialize_orf(aligned_subtype, name, start, end,
+                             max_deletions, max_insertions, is_small)
 
 
 VALID_DNA_CHARACTERS = IUPACData.ambiguous_dna_letters.upper()

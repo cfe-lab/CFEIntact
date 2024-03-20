@@ -1,12 +1,13 @@
 from dataclasses import dataclass
 
 
-@dataclass
+@dataclass(frozen=True)
 class OriginalORF:
     name: str
     start: int
     end: int
-    deletion_tolerence: int
+    max_deletions: int
+    max_insertions: int
     nucleotides: str
     aminoacids: str
     protein: str
