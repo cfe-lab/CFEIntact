@@ -4,67 +4,67 @@
         {
             "sequence_name": "small-sequence[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
-            "message": "ORF gag at 1-21 can have maximum deletions 30, got 1494.",
+            "message": "ORF gag at 1-21 can have maximum deletions 12, got 1494.",
             "orf": "gag"
         },
         {
             "sequence_name": "small-sequence[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
-            "message": "ORF pol at 1-21 can have maximum deletions 30, got 2988.",
+            "message": "ORF pol at 1-21 can have maximum deletions 21, got 2988.",
             "orf": "pol"
         },
         {
             "sequence_name": "small-sequence[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
-            "message": "ORF env at 1-21 can have maximum deletions 100, got 2574.",
+            "message": "ORF env at 1-21 can have maximum deletions 141, got 2574.",
             "orf": "env"
         },
         {
             "sequence_name": "small-sequence[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vif at 1-21 can have maximum deletions 30, got 573.",
+            "message": "Smaller ORF vif at 1-21 can have maximum deletions 6, got 573.",
             "orf": "vif"
         },
         {
             "sequence_name": "small-sequence[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpr at 1-21 can have maximum deletions 30, got 285.",
+            "message": "Smaller ORF vpr at 1-21 can have maximum deletions 15, got 285.",
             "orf": "vpr"
         },
         {
             "sequence_name": "small-sequence[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon1 at 2-5 can have maximum deletions 30, got 216.",
+            "message": "Smaller ORF tat_exon1 at 2-5 can have maximum deletions 1, got 216.",
             "orf": "tat_exon1"
         },
         {
             "sequence_name": "small-sequence[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon1 at 2-5 can have maximum deletions 30, got 78.",
+            "message": "Smaller ORF rev_exon1 at 2-5 can have maximum deletions 0, got 78.",
             "orf": "rev_exon1"
         },
         {
             "sequence_name": "small-sequence[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpu at 1-21 can have maximum deletions 30, got 243.",
+            "message": "Smaller ORF vpu at 1-21 can have maximum deletions 9, got 243.",
             "orf": "vpu"
         },
         {
             "sequence_name": "small-sequence[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon2 at 1-14 can have maximum deletions 30, got 75.",
+            "message": "Smaller ORF tat_exon2 at 1-14 can have maximum deletions 0, got 75.",
             "orf": "tat_exon2"
         },
         {
             "sequence_name": "small-sequence[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon2 at 1-21 can have maximum deletions 30, got 273.",
+            "message": "Smaller ORF rev_exon2 at 1-21 can have maximum deletions 4, got 273.",
             "orf": "rev_exon2"
         },
         {
             "sequence_name": "small-sequence[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF nef at 1-21 can have maximum deletions 30, got 672.",
+            "message": "Smaller ORF nef at 1-21 can have maximum deletions 42, got 672.",
             "orf": "nef"
         },
         {
@@ -102,67 +102,67 @@
         {
             "sequence_name": "singleton-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF gag at 1-3 can have maximum deletions 30, got 1494.",
+            "message": "ORF gag at 1-3 can have maximum deletions 12, got 1494.",
             "orf": "gag"
         },
         {
             "sequence_name": "singleton-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF pol at 1-3 can have maximum deletions 30, got 3006.",
+            "message": "ORF pol at 1-3 can have maximum deletions 21, got 3006.",
             "orf": "pol"
         },
         {
             "sequence_name": "singleton-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF env at 1-3 can have maximum deletions 100, got 2574.",
+            "message": "ORF env at 1-3 can have maximum deletions 141, got 2574.",
             "orf": "env"
         },
         {
             "sequence_name": "singleton-sequence",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vif at 1-3 can have maximum deletions 30, got 573.",
+            "message": "Smaller ORF vif at 1-3 can have maximum deletions 6, got 573.",
             "orf": "vif"
         },
         {
             "sequence_name": "singleton-sequence",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpr at 1-3 can have maximum deletions 30, got 285.",
+            "message": "Smaller ORF vpr at 1-3 can have maximum deletions 15, got 285.",
             "orf": "vpr"
         },
         {
             "sequence_name": "singleton-sequence",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon1 at 1-1 can have maximum deletions 30, got 216.",
+            "message": "Smaller ORF tat_exon1 at 1-1 can have maximum deletions 1, got 216.",
             "orf": "tat_exon1"
         },
         {
             "sequence_name": "singleton-sequence",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon1 at 1-1 can have maximum deletions 30, got 78.",
+            "message": "Smaller ORF rev_exon1 at 1-1 can have maximum deletions 0, got 78.",
             "orf": "rev_exon1"
         },
         {
             "sequence_name": "singleton-sequence",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpu at 1-3 can have maximum deletions 30, got 243.",
+            "message": "Smaller ORF vpu at 1-3 can have maximum deletions 9, got 243.",
             "orf": "vpu"
         },
         {
             "sequence_name": "singleton-sequence",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon2 at 1-3 can have maximum deletions 30, got 87.",
+            "message": "Smaller ORF tat_exon2 at 1-3 can have maximum deletions 0, got 87.",
             "orf": "tat_exon2"
         },
         {
             "sequence_name": "singleton-sequence",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon2 at 1-3 can have maximum deletions 30, got 291.",
+            "message": "Smaller ORF rev_exon2 at 1-3 can have maximum deletions 4, got 291.",
             "orf": "rev_exon2"
         },
         {
             "sequence_name": "singleton-sequence",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF nef at 1-3 can have maximum deletions 30, got 672.",
+            "message": "Smaller ORF nef at 1-3 can have maximum deletions 42, got 672.",
             "orf": "nef"
         },
         {
@@ -200,67 +200,67 @@
         {
             "sequence_name": "empty-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF gag at 1-0 can have maximum deletions 30, got 1494.",
+            "message": "ORF gag at 1-0 can have maximum deletions 12, got 1494.",
             "orf": "gag"
         },
         {
             "sequence_name": "empty-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF pol at 1-0 can have maximum deletions 30, got 3009.",
+            "message": "ORF pol at 1-0 can have maximum deletions 21, got 3009.",
             "orf": "pol"
         },
         {
             "sequence_name": "empty-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF env at 1-0 can have maximum deletions 100, got 2574.",
+            "message": "ORF env at 1-0 can have maximum deletions 141, got 2574.",
             "orf": "env"
         },
         {
             "sequence_name": "empty-sequence",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vif at 1-0 can have maximum deletions 30, got 573.",
+            "message": "Smaller ORF vif at 1-0 can have maximum deletions 6, got 573.",
             "orf": "vif"
         },
         {
             "sequence_name": "empty-sequence",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpr at 1-0 can have maximum deletions 30, got 285.",
+            "message": "Smaller ORF vpr at 1-0 can have maximum deletions 15, got 285.",
             "orf": "vpr"
         },
         {
             "sequence_name": "empty-sequence",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon1 at 1-1 can have maximum deletions 30, got 216.",
+            "message": "Smaller ORF tat_exon1 at 1-1 can have maximum deletions 1, got 216.",
             "orf": "tat_exon1"
         },
         {
             "sequence_name": "empty-sequence",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon1 at 1-1 can have maximum deletions 30, got 78.",
+            "message": "Smaller ORF rev_exon1 at 1-1 can have maximum deletions 0, got 78.",
             "orf": "rev_exon1"
         },
         {
             "sequence_name": "empty-sequence",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpu at 1-0 can have maximum deletions 30, got 243.",
+            "message": "Smaller ORF vpu at 1-0 can have maximum deletions 9, got 243.",
             "orf": "vpu"
         },
         {
             "sequence_name": "empty-sequence",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon2 at 1-0 can have maximum deletions 30, got 90.",
+            "message": "Smaller ORF tat_exon2 at 1-0 can have maximum deletions 0, got 90.",
             "orf": "tat_exon2"
         },
         {
             "sequence_name": "empty-sequence",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon2 at 1-0 can have maximum deletions 30, got 294.",
+            "message": "Smaller ORF rev_exon2 at 1-0 can have maximum deletions 4, got 294.",
             "orf": "rev_exon2"
         },
         {
             "sequence_name": "empty-sequence",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF nef at 1-0 can have maximum deletions 30, got 672.",
+            "message": "Smaller ORF nef at 1-0 can have maximum deletions 42, got 672.",
             "orf": "nef"
         },
         {
@@ -292,67 +292,67 @@
         {
             "sequence_name": "empty-sequence2",
             "error": "DeletionInOrf",
-            "message": "ORF gag at 1-0 can have maximum deletions 30, got 1494.",
+            "message": "ORF gag at 1-0 can have maximum deletions 12, got 1494.",
             "orf": "gag"
         },
         {
             "sequence_name": "empty-sequence2",
             "error": "DeletionInOrf",
-            "message": "ORF pol at 1-0 can have maximum deletions 30, got 3009.",
+            "message": "ORF pol at 1-0 can have maximum deletions 21, got 3009.",
             "orf": "pol"
         },
         {
             "sequence_name": "empty-sequence2",
             "error": "DeletionInOrf",
-            "message": "ORF env at 1-0 can have maximum deletions 100, got 2574.",
+            "message": "ORF env at 1-0 can have maximum deletions 141, got 2574.",
             "orf": "env"
         },
         {
             "sequence_name": "empty-sequence2",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vif at 1-0 can have maximum deletions 30, got 573.",
+            "message": "Smaller ORF vif at 1-0 can have maximum deletions 6, got 573.",
             "orf": "vif"
         },
         {
             "sequence_name": "empty-sequence2",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpr at 1-0 can have maximum deletions 30, got 285.",
+            "message": "Smaller ORF vpr at 1-0 can have maximum deletions 15, got 285.",
             "orf": "vpr"
         },
         {
             "sequence_name": "empty-sequence2",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon1 at 1-1 can have maximum deletions 30, got 216.",
+            "message": "Smaller ORF tat_exon1 at 1-1 can have maximum deletions 1, got 216.",
             "orf": "tat_exon1"
         },
         {
             "sequence_name": "empty-sequence2",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon1 at 1-1 can have maximum deletions 30, got 78.",
+            "message": "Smaller ORF rev_exon1 at 1-1 can have maximum deletions 0, got 78.",
             "orf": "rev_exon1"
         },
         {
             "sequence_name": "empty-sequence2",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpu at 1-0 can have maximum deletions 30, got 243.",
+            "message": "Smaller ORF vpu at 1-0 can have maximum deletions 9, got 243.",
             "orf": "vpu"
         },
         {
             "sequence_name": "empty-sequence2",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon2 at 1-0 can have maximum deletions 30, got 90.",
+            "message": "Smaller ORF tat_exon2 at 1-0 can have maximum deletions 0, got 90.",
             "orf": "tat_exon2"
         },
         {
             "sequence_name": "empty-sequence2",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon2 at 1-0 can have maximum deletions 30, got 294.",
+            "message": "Smaller ORF rev_exon2 at 1-0 can have maximum deletions 4, got 294.",
             "orf": "rev_exon2"
         },
         {
             "sequence_name": "empty-sequence2",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF nef at 1-0 can have maximum deletions 30, got 672.",
+            "message": "Smaller ORF nef at 1-0 can have maximum deletions 42, got 672.",
             "orf": "nef"
         },
         {
@@ -402,7 +402,13 @@
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.WITH.SOME.LOWERCASES",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF nef at 8792-9412 can have maximum deletions 30, got 54.",
+            "message": "Smaller ORF rev_exon2 at 8373-8648 can have maximum deletions 4, got 21.",
+            "orf": "rev_exon2"
+        },
+        {
+            "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.WITH.SOME.LOWERCASES",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF nef at 8792-9412 can have maximum deletions 42, got 54.",
             "orf": "nef"
         },
         {
@@ -428,67 +434,67 @@
         {
             "sequence_name": "small-sequence-with-lowercases",
             "error": "DeletionInOrf",
-            "message": "ORF gag at 1-18 can have maximum deletions 30, got 1494.",
+            "message": "ORF gag at 1-18 can have maximum deletions 12, got 1494.",
             "orf": "gag"
         },
         {
             "sequence_name": "small-sequence-with-lowercases",
             "error": "DeletionInOrf",
-            "message": "ORF pol at 1-18 can have maximum deletions 30, got 2991.",
+            "message": "ORF pol at 1-18 can have maximum deletions 21, got 2991.",
             "orf": "pol"
         },
         {
             "sequence_name": "small-sequence-with-lowercases",
             "error": "DeletionInOrf",
-            "message": "ORF env at 1-18 can have maximum deletions 100, got 2574.",
+            "message": "ORF env at 1-18 can have maximum deletions 141, got 2574.",
             "orf": "env"
         },
         {
             "sequence_name": "small-sequence-with-lowercases",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vif at 1-18 can have maximum deletions 30, got 573.",
+            "message": "Smaller ORF vif at 1-18 can have maximum deletions 6, got 573.",
             "orf": "vif"
         },
         {
             "sequence_name": "small-sequence-with-lowercases",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpr at 1-18 can have maximum deletions 30, got 285.",
+            "message": "Smaller ORF vpr at 1-18 can have maximum deletions 15, got 285.",
             "orf": "vpr"
         },
         {
             "sequence_name": "small-sequence-with-lowercases",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon1 at 1-11 can have maximum deletions 30, got 216.",
+            "message": "Smaller ORF tat_exon1 at 1-11 can have maximum deletions 1, got 216.",
             "orf": "tat_exon1"
         },
         {
             "sequence_name": "small-sequence-with-lowercases",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon1 at 2-11 can have maximum deletions 30, got 78.",
+            "message": "Smaller ORF rev_exon1 at 2-11 can have maximum deletions 0, got 78.",
             "orf": "rev_exon1"
         },
         {
             "sequence_name": "small-sequence-with-lowercases",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpu at 1-18 can have maximum deletions 30, got 243.",
+            "message": "Smaller ORF vpu at 1-18 can have maximum deletions 9, got 243.",
             "orf": "vpu"
         },
         {
             "sequence_name": "small-sequence-with-lowercases",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon2 at 12-18 can have maximum deletions 30, got 84.",
+            "message": "Smaller ORF tat_exon2 at 12-18 can have maximum deletions 0, got 84.",
             "orf": "tat_exon2"
         },
         {
             "sequence_name": "small-sequence-with-lowercases",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon2 at 12-18 can have maximum deletions 30, got 288.",
+            "message": "Smaller ORF rev_exon2 at 12-18 can have maximum deletions 4, got 288.",
             "orf": "rev_exon2"
         },
         {
             "sequence_name": "small-sequence-with-lowercases",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF nef at 1-18 can have maximum deletions 30, got 672.",
+            "message": "Smaller ORF nef at 1-18 can have maximum deletions 42, got 672.",
             "orf": "nef"
         },
         {
@@ -526,7 +532,13 @@
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSECOMPLEMENTED[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF nef at 8796-9416 can have maximum deletions 30, got 54.",
+            "message": "Smaller ORF rev_exon2 at 8377-8652 can have maximum deletions 4, got 21.",
+            "orf": "rev_exon2"
+        },
+        {
+            "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSECOMPLEMENTED[REVERSE_COMPLEMENT]",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF nef at 8796-9416 can have maximum deletions 42, got 54.",
             "orf": "nef"
         },
         {
@@ -552,13 +564,13 @@
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "error": "InternalStopInOrf",
-            "message": "ORF pol at 2072-5245 contains an internal stop codon at 2168.",
+            "message": "ORF pol at 2072-5245 contains an internal stop codon at 2096.",
             "orf": "pol"
         },
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "error": "InternalStopInOrf",
-            "message": "ORF env at 6217-8718 contains an internal stop codon at 6343.",
+            "message": "ORF env at 6217-8718 contains an internal stop codon at 6361.",
             "orf": "env"
         },
         {
@@ -570,19 +582,19 @@
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF vpr at 5691-5918 contains an internal stop codon at 5748.",
+            "message": "Smaller ORF vpr at 5691-5918 contains an internal stop codon at 5706.",
             "orf": "vpr"
         },
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
-            "error": "InternalStopInOrf",
-            "message": "Smaller ORF tat_exon1 at 5890-6065 contains an internal stop codon at 5938.",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF tat_exon1 at 5890-6065 can have maximum deletions 1, got 147.",
             "orf": "tat_exon1"
         },
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
-            "error": "FrameshiftInOrf",
-            "message": "Smaller ORF rev_exon1 at 5956-6065 contains out of frame indels that impact 64 positions.",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF rev_exon1 at 5956-6065 can have maximum deletions 0, got 9.",
             "orf": "rev_exon1"
         },
         {
@@ -593,8 +605,8 @@
         },
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
-            "error": "FrameshiftInOrf",
-            "message": "Smaller ORF tat_exon2 at 8200-8298 contains out of frame indels that impact 70 positions.",
+            "error": "InsertionInOrf",
+            "message": "Smaller ORF tat_exon2 at 8200-8298 can have maximum insertions 0, got 6.",
             "orf": "tat_exon2"
         },
         {
@@ -638,7 +650,13 @@
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.WITH-XS[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF nef at 8796-9416 can have maximum deletions 30, got 54.",
+            "message": "Smaller ORF rev_exon2 at 8377-8652 can have maximum deletions 4, got 21.",
+            "orf": "rev_exon2"
+        },
+        {
+            "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.WITH-XS[REVERSE_COMPLEMENT]",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF nef at 8796-9416 can have maximum deletions 42, got 54.",
             "orf": "nef"
         },
         {
@@ -664,67 +682,67 @@
         {
             "sequence_name": "small-sequence-with-xs",
             "error": "DeletionInOrf",
-            "message": "ORF gag at 1-12 can have maximum deletions 30, got 1494.",
+            "message": "ORF gag at 1-12 can have maximum deletions 12, got 1494.",
             "orf": "gag"
         },
         {
             "sequence_name": "small-sequence-with-xs",
             "error": "DeletionInOrf",
-            "message": "ORF pol at 1-12 can have maximum deletions 30, got 2997.",
+            "message": "ORF pol at 1-12 can have maximum deletions 21, got 2997.",
             "orf": "pol"
         },
         {
             "sequence_name": "small-sequence-with-xs",
             "error": "DeletionInOrf",
-            "message": "ORF env at 1-12 can have maximum deletions 100, got 2574.",
+            "message": "ORF env at 1-12 can have maximum deletions 141, got 2574.",
             "orf": "env"
         },
         {
             "sequence_name": "small-sequence-with-xs",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vif at 1-12 can have maximum deletions 30, got 573.",
+            "message": "Smaller ORF vif at 1-12 can have maximum deletions 6, got 573.",
             "orf": "vif"
         },
         {
             "sequence_name": "small-sequence-with-xs",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpr at 1-12 can have maximum deletions 30, got 285.",
+            "message": "Smaller ORF vpr at 1-12 can have maximum deletions 15, got 285.",
             "orf": "vpr"
         },
         {
             "sequence_name": "small-sequence-with-xs",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon1 at 1-12 can have maximum deletions 30, got 216.",
+            "message": "Smaller ORF tat_exon1 at 1-12 can have maximum deletions 1, got 216.",
             "orf": "tat_exon1"
         },
         {
             "sequence_name": "small-sequence-with-xs",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon1 at 3-12 can have maximum deletions 30, got 78.",
+            "message": "Smaller ORF rev_exon1 at 3-12 can have maximum deletions 0, got 78.",
             "orf": "rev_exon1"
         },
         {
             "sequence_name": "small-sequence-with-xs",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpu at 1-12 can have maximum deletions 30, got 243.",
+            "message": "Smaller ORF vpu at 1-12 can have maximum deletions 9, got 243.",
             "orf": "vpu"
         },
         {
             "sequence_name": "small-sequence-with-xs",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon2 at 1-12 can have maximum deletions 30, got 78.",
+            "message": "Smaller ORF tat_exon2 at 1-12 can have maximum deletions 0, got 78.",
             "orf": "tat_exon2"
         },
         {
             "sequence_name": "small-sequence-with-xs",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon2 at 1-12 can have maximum deletions 30, got 282.",
+            "message": "Smaller ORF rev_exon2 at 1-12 can have maximum deletions 4, got 282.",
             "orf": "rev_exon2"
         },
         {
             "sequence_name": "small-sequence-with-xs",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF nef at 1-12 can have maximum deletions 30, got 672.",
+            "message": "Smaller ORF nef at 1-12 can have maximum deletions 42, got 672.",
             "orf": "nef"
         },
         {
@@ -768,7 +786,13 @@
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.WITH-BAD-SYMBOLS[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF nef at 8796-9416 can have maximum deletions 30, got 54.",
+            "message": "Smaller ORF rev_exon2 at 8377-8652 can have maximum deletions 4, got 21.",
+            "orf": "rev_exon2"
+        },
+        {
+            "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.WITH-BAD-SYMBOLS[REVERSE_COMPLEMENT]",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF nef at 8796-9416 can have maximum deletions 42, got 54.",
             "orf": "nef"
         },
         {
@@ -794,67 +818,67 @@
         {
             "sequence_name": "small-sequence-with-bad-symbols",
             "error": "DeletionInOrf",
-            "message": "ORF gag at 1-12 can have maximum deletions 30, got 1494.",
+            "message": "ORF gag at 1-12 can have maximum deletions 12, got 1494.",
             "orf": "gag"
         },
         {
             "sequence_name": "small-sequence-with-bad-symbols",
             "error": "DeletionInOrf",
-            "message": "ORF pol at 1-12 can have maximum deletions 30, got 2997.",
+            "message": "ORF pol at 1-12 can have maximum deletions 21, got 2997.",
             "orf": "pol"
         },
         {
             "sequence_name": "small-sequence-with-bad-symbols",
             "error": "DeletionInOrf",
-            "message": "ORF env at 1-12 can have maximum deletions 100, got 2574.",
+            "message": "ORF env at 1-12 can have maximum deletions 141, got 2574.",
             "orf": "env"
         },
         {
             "sequence_name": "small-sequence-with-bad-symbols",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vif at 1-12 can have maximum deletions 30, got 573.",
+            "message": "Smaller ORF vif at 1-12 can have maximum deletions 6, got 573.",
             "orf": "vif"
         },
         {
             "sequence_name": "small-sequence-with-bad-symbols",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpr at 1-12 can have maximum deletions 30, got 285.",
+            "message": "Smaller ORF vpr at 1-12 can have maximum deletions 15, got 285.",
             "orf": "vpr"
         },
         {
             "sequence_name": "small-sequence-with-bad-symbols",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon1 at 1-12 can have maximum deletions 30, got 216.",
+            "message": "Smaller ORF tat_exon1 at 1-12 can have maximum deletions 1, got 216.",
             "orf": "tat_exon1"
         },
         {
             "sequence_name": "small-sequence-with-bad-symbols",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon1 at 3-12 can have maximum deletions 30, got 78.",
+            "message": "Smaller ORF rev_exon1 at 3-12 can have maximum deletions 0, got 78.",
             "orf": "rev_exon1"
         },
         {
             "sequence_name": "small-sequence-with-bad-symbols",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpu at 1-12 can have maximum deletions 30, got 243.",
+            "message": "Smaller ORF vpu at 1-12 can have maximum deletions 9, got 243.",
             "orf": "vpu"
         },
         {
             "sequence_name": "small-sequence-with-bad-symbols",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon2 at 1-12 can have maximum deletions 30, got 78.",
+            "message": "Smaller ORF tat_exon2 at 1-12 can have maximum deletions 0, got 78.",
             "orf": "tat_exon2"
         },
         {
             "sequence_name": "small-sequence-with-bad-symbols",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon2 at 1-12 can have maximum deletions 30, got 282.",
+            "message": "Smaller ORF rev_exon2 at 1-12 can have maximum deletions 4, got 282.",
             "orf": "rev_exon2"
         },
         {
             "sequence_name": "small-sequence-with-bad-symbols",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF nef at 1-12 can have maximum deletions 30, got 672.",
+            "message": "Smaller ORF nef at 1-12 can have maximum deletions 42, got 672.",
             "orf": "nef"
         },
         {
@@ -898,7 +922,13 @@
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.WITH-DASHES[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF nef at 8796-9416 can have maximum deletions 30, got 54.",
+            "message": "Smaller ORF rev_exon2 at 8377-8652 can have maximum deletions 4, got 21.",
+            "orf": "rev_exon2"
+        },
+        {
+            "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.WITH-DASHES[REVERSE_COMPLEMENT]",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF nef at 8796-9416 can have maximum deletions 42, got 54.",
             "orf": "nef"
         },
         {
@@ -924,67 +954,67 @@
         {
             "sequence_name": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
-            "message": "ORF gag at 1-12 can have maximum deletions 30, got 1494.",
+            "message": "ORF gag at 1-12 can have maximum deletions 12, got 1494.",
             "orf": "gag"
         },
         {
             "sequence_name": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
-            "message": "ORF pol at 1-12 can have maximum deletions 30, got 2997.",
+            "message": "ORF pol at 1-12 can have maximum deletions 21, got 2997.",
             "orf": "pol"
         },
         {
             "sequence_name": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
-            "message": "ORF env at 1-12 can have maximum deletions 100, got 2574.",
+            "message": "ORF env at 1-12 can have maximum deletions 141, got 2574.",
             "orf": "env"
         },
         {
             "sequence_name": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vif at 1-12 can have maximum deletions 30, got 573.",
+            "message": "Smaller ORF vif at 1-12 can have maximum deletions 6, got 573.",
             "orf": "vif"
         },
         {
             "sequence_name": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpr at 1-12 can have maximum deletions 30, got 285.",
+            "message": "Smaller ORF vpr at 1-12 can have maximum deletions 15, got 285.",
             "orf": "vpr"
         },
         {
             "sequence_name": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon1 at 1-12 can have maximum deletions 30, got 216.",
+            "message": "Smaller ORF tat_exon1 at 1-12 can have maximum deletions 1, got 216.",
             "orf": "tat_exon1"
         },
         {
             "sequence_name": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon1 at 3-12 can have maximum deletions 30, got 78.",
+            "message": "Smaller ORF rev_exon1 at 3-12 can have maximum deletions 0, got 78.",
             "orf": "rev_exon1"
         },
         {
             "sequence_name": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpu at 1-12 can have maximum deletions 30, got 243.",
+            "message": "Smaller ORF vpu at 1-12 can have maximum deletions 9, got 243.",
             "orf": "vpu"
         },
         {
             "sequence_name": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon2 at 1-12 can have maximum deletions 30, got 78.",
+            "message": "Smaller ORF tat_exon2 at 1-12 can have maximum deletions 0, got 78.",
             "orf": "tat_exon2"
         },
         {
             "sequence_name": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon2 at 1-12 can have maximum deletions 30, got 282.",
+            "message": "Smaller ORF rev_exon2 at 1-12 can have maximum deletions 4, got 282.",
             "orf": "rev_exon2"
         },
         {
             "sequence_name": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF nef at 1-12 can have maximum deletions 30, got 672.",
+            "message": "Smaller ORF nef at 1-12 can have maximum deletions 42, got 672.",
             "orf": "nef"
         },
         {
@@ -1022,67 +1052,67 @@
         {
             "sequence_name": "small-sequence-with-dashes/andwithslashestoo",
             "error": "DeletionInOrf",
-            "message": "ORF gag at 1-12 can have maximum deletions 30, got 1494.",
+            "message": "ORF gag at 1-12 can have maximum deletions 12, got 1494.",
             "orf": "gag"
         },
         {
             "sequence_name": "small-sequence-with-dashes/andwithslashestoo",
             "error": "DeletionInOrf",
-            "message": "ORF pol at 1-12 can have maximum deletions 30, got 2997.",
+            "message": "ORF pol at 1-12 can have maximum deletions 21, got 2997.",
             "orf": "pol"
         },
         {
             "sequence_name": "small-sequence-with-dashes/andwithslashestoo",
             "error": "DeletionInOrf",
-            "message": "ORF env at 1-12 can have maximum deletions 100, got 2574.",
+            "message": "ORF env at 1-12 can have maximum deletions 141, got 2574.",
             "orf": "env"
         },
         {
             "sequence_name": "small-sequence-with-dashes/andwithslashestoo",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vif at 1-12 can have maximum deletions 30, got 573.",
+            "message": "Smaller ORF vif at 1-12 can have maximum deletions 6, got 573.",
             "orf": "vif"
         },
         {
             "sequence_name": "small-sequence-with-dashes/andwithslashestoo",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpr at 1-12 can have maximum deletions 30, got 285.",
+            "message": "Smaller ORF vpr at 1-12 can have maximum deletions 15, got 285.",
             "orf": "vpr"
         },
         {
             "sequence_name": "small-sequence-with-dashes/andwithslashestoo",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon1 at 1-12 can have maximum deletions 30, got 216.",
+            "message": "Smaller ORF tat_exon1 at 1-12 can have maximum deletions 1, got 216.",
             "orf": "tat_exon1"
         },
         {
             "sequence_name": "small-sequence-with-dashes/andwithslashestoo",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon1 at 3-12 can have maximum deletions 30, got 78.",
+            "message": "Smaller ORF rev_exon1 at 3-12 can have maximum deletions 0, got 78.",
             "orf": "rev_exon1"
         },
         {
             "sequence_name": "small-sequence-with-dashes/andwithslashestoo",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF vpu at 1-12 can have maximum deletions 30, got 243.",
+            "message": "Smaller ORF vpu at 1-12 can have maximum deletions 9, got 243.",
             "orf": "vpu"
         },
         {
             "sequence_name": "small-sequence-with-dashes/andwithslashestoo",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon2 at 1-12 can have maximum deletions 30, got 78.",
+            "message": "Smaller ORF tat_exon2 at 1-12 can have maximum deletions 0, got 78.",
             "orf": "tat_exon2"
         },
         {
             "sequence_name": "small-sequence-with-dashes/andwithslashestoo",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon2 at 1-12 can have maximum deletions 30, got 282.",
+            "message": "Smaller ORF rev_exon2 at 1-12 can have maximum deletions 4, got 282.",
             "orf": "rev_exon2"
         },
         {
             "sequence_name": "small-sequence-with-dashes/andwithslashestoo",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF nef at 1-12 can have maximum deletions 30, got 672.",
+            "message": "Smaller ORF nef at 1-12 can have maximum deletions 42, got 672.",
             "orf": "nef"
         },
         {

@@ -13,19 +13,19 @@ ORFDefinition = Tuple[str, int, int, int, int]
 ORFsDefinition = List[ORFDefinition]
 
 DEFAULT_FORWARD_ORFs: ORFsDefinition \
-    = [("gag", 790, 2292, 30, 90),
-       ("pol", 2085, 5096, 30, 90),
-       ("env", 6225, 8795, 100, 300)]
+    = [("gag", 790, 2292, 12, 33),
+       ("pol", 2085, 5096, 21, 24),
+       ("env", 6225, 8795, 141, 72)]
 DEFAULT_REVERSE_ORFS: ORFsDefinition = []
 DEFAULT_SMALL_FORWARD_ORFS: ORFsDefinition \
-    = [("vif", 5041, 5619, 30, 90),
-       ("vpr", 5559, 5850, 30, 90),
-       ("tat_exon1", 5831, 6045, 30, 90),
-       ("rev_exon1", 5970, 6045, 30, 90),
-       ("vpu", 6062, 6310, 30, 90),
-       ("tat_exon2", 8377, 8469, 30, 90),
-       ("rev_exon2", 8378, 8653, 30, 90),
-       ("nef", 8797, 9417, 30, 90)]
+    = [("vif", 5041, 5619, 6, 3),
+       ("vpr", 5559, 5850, 15, 3),
+       ("tat_exon1", 5831, 6045, 1, 3),
+       ("rev_exon1", 5970, 6045, 0, 3),
+       ("vpu", 6062, 6310, 9, 21),
+       ("tat_exon2", 8377, 8469, 0, 3),
+       ("rev_exon2", 8378, 8653, 4, 3),
+       ("nef", 8797, 9417, 42, 45)]
 DEFAULT_SMALL_REVERSE_ORFS: ORFsDefinition = []
 
 DEFAULT_ORF_LENGTH = 1000
