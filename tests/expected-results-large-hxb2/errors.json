@@ -27,13 +27,13 @@
         {
             "sequence_name": "KX505501.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF tat_exon1 at 1578-1747 contains an internal stop codon at 1614.",
+            "message": "Smaller ORF tat_exon1 at 1578-1746 contains an internal stop codon at 1614.",
             "orf": "tat_exon1"
         },
         {
             "sequence_name": "KX505501.1",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF rev_exon1 at 1578-1747 contains an internal stop codon at 1614.",
+            "message": "Smaller ORF rev_exon1 at 1578-1746 contains an internal stop codon at 1614.",
             "orf": "rev_exon1"
         },
         {
@@ -121,7 +121,7 @@
         {
             "sequence_name": "MN692074",
             "error": "InternalStopInOrf",
-            "message": "Smaller ORF tat_exon1 at 3824-4083 contains an internal stop codon at 3887.",
+            "message": "Smaller ORF tat_exon1 at 3824-4082 contains an internal stop codon at 3887.",
             "orf": "tat_exon1"
         },
         {

@@ -34,13 +34,13 @@
         {
             "sequence_name": "small-sequence[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon1 at 3-6 can have maximum deletions 30, got 216.",
+            "message": "Smaller ORF tat_exon1 at 2-5 can have maximum deletions 30, got 216.",
             "orf": "tat_exon1"
         },
         {
             "sequence_name": "small-sequence[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon1 at 3-6 can have maximum deletions 30, got 78.",
+            "message": "Smaller ORF rev_exon1 at 2-5 can have maximum deletions 30, got 78.",
             "orf": "rev_exon1"
         },
         {
@@ -52,13 +52,13 @@
         {
             "sequence_name": "small-sequence[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon2 at 20-21 can have maximum deletions 30, got 90.",
+            "message": "Smaller ORF tat_exon2 at 1-14 can have maximum deletions 30, got 75.",
             "orf": "tat_exon2"
         },
         {
             "sequence_name": "small-sequence[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon2 at 20-21 can have maximum deletions 30, got 294.",
+            "message": "Smaller ORF rev_exon2 at 1-21 can have maximum deletions 30, got 273.",
             "orf": "rev_exon2"
         },
         {
@@ -458,13 +458,13 @@
         {
             "sequence_name": "small-sequence-with-lowercases",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon1 at 1-12 can have maximum deletions 30, got 216.",
+            "message": "Smaller ORF tat_exon1 at 1-11 can have maximum deletions 30, got 216.",
             "orf": "tat_exon1"
         },
         {
             "sequence_name": "small-sequence-with-lowercases",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon1 at 3-12 can have maximum deletions 30, got 78.",
+            "message": "Smaller ORF rev_exon1 at 2-11 can have maximum deletions 30, got 78.",
             "orf": "rev_exon1"
         },
         {
@@ -694,13 +694,13 @@
         {
             "sequence_name": "small-sequence-with-xs",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon1 at 1-13 can have maximum deletions 30, got 216.",
+            "message": "Smaller ORF tat_exon1 at 1-12 can have maximum deletions 30, got 216.",
             "orf": "tat_exon1"
         },
         {
             "sequence_name": "small-sequence-with-xs",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon1 at 3-13 can have maximum deletions 30, got 78.",
+            "message": "Smaller ORF rev_exon1 at 3-12 can have maximum deletions 30, got 78.",
             "orf": "rev_exon1"
         },
         {
@@ -712,13 +712,13 @@
         {
             "sequence_name": "small-sequence-with-xs",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon2 at 13-12 can have maximum deletions 30, got 90.",
+            "message": "Smaller ORF tat_exon2 at 1-12 can have maximum deletions 30, got 78.",
             "orf": "tat_exon2"
         },
         {
             "sequence_name": "small-sequence-with-xs",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon2 at 13-12 can have maximum deletions 30, got 294.",
+            "message": "Smaller ORF rev_exon2 at 1-12 can have maximum deletions 30, got 282.",
             "orf": "rev_exon2"
         },
         {
@@ -824,13 +824,13 @@
         {
             "sequence_name": "small-sequence-with-bad-symbols",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon1 at 1-13 can have maximum deletions 30, got 216.",
+            "message": "Smaller ORF tat_exon1 at 1-12 can have maximum deletions 30, got 216.",
             "orf": "tat_exon1"
         },
         {
             "sequence_name": "small-sequence-with-bad-symbols",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon1 at 3-13 can have maximum deletions 30, got 78.",
+            "message": "Smaller ORF rev_exon1 at 3-12 can have maximum deletions 30, got 78.",
             "orf": "rev_exon1"
         },
         {
@@ -842,13 +842,13 @@
         {
             "sequence_name": "small-sequence-with-bad-symbols",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon2 at 13-12 can have maximum deletions 30, got 90.",
+            "message": "Smaller ORF tat_exon2 at 1-12 can have maximum deletions 30, got 78.",
             "orf": "tat_exon2"
         },
         {
             "sequence_name": "small-sequence-with-bad-symbols",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon2 at 13-12 can have maximum deletions 30, got 294.",
+            "message": "Smaller ORF rev_exon2 at 1-12 can have maximum deletions 30, got 282.",
             "orf": "rev_exon2"
         },
         {
@@ -954,13 +954,13 @@
         {
             "sequence_name": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon1 at 1-13 can have maximum deletions 30, got 216.",
+            "message": "Smaller ORF tat_exon1 at 1-12 can have maximum deletions 30, got 216.",
             "orf": "tat_exon1"
         },
         {
             "sequence_name": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon1 at 3-13 can have maximum deletions 30, got 78.",
+            "message": "Smaller ORF rev_exon1 at 3-12 can have maximum deletions 30, got 78.",
             "orf": "rev_exon1"
         },
         {
@@ -972,13 +972,13 @@
         {
             "sequence_name": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon2 at 13-12 can have maximum deletions 30, got 90.",
+            "message": "Smaller ORF tat_exon2 at 1-12 can have maximum deletions 30, got 78.",
             "orf": "tat_exon2"
         },
         {
             "sequence_name": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon2 at 13-12 can have maximum deletions 30, got 294.",
+            "message": "Smaller ORF rev_exon2 at 1-12 can have maximum deletions 30, got 282.",
             "orf": "rev_exon2"
         },
         {
@@ -1052,13 +1052,13 @@
         {
             "sequence_name": "small-sequence-with-dashes/andwithslashestoo",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon1 at 1-13 can have maximum deletions 30, got 216.",
+            "message": "Smaller ORF tat_exon1 at 1-12 can have maximum deletions 30, got 216.",
             "orf": "tat_exon1"
         },
         {
             "sequence_name": "small-sequence-with-dashes/andwithslashestoo",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon1 at 3-13 can have maximum deletions 30, got 78.",
+            "message": "Smaller ORF rev_exon1 at 3-12 can have maximum deletions 30, got 78.",
             "orf": "rev_exon1"
         },
         {
@@ -1070,13 +1070,13 @@
         {
             "sequence_name": "small-sequence-with-dashes/andwithslashestoo",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon2 at 13-12 can have maximum deletions 30, got 90.",
+            "message": "Smaller ORF tat_exon2 at 1-12 can have maximum deletions 30, got 78.",
             "orf": "tat_exon2"
         },
         {
             "sequence_name": "small-sequence-with-dashes/andwithslashestoo",
             "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon2 at 13-12 can have maximum deletions 30, got 294.",
+            "message": "Smaller ORF rev_exon2 at 1-12 can have maximum deletions 30, got 282.",
             "orf": "rev_exon2"
         },
         {

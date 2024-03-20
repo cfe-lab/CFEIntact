@@ -18,7 +18,6 @@ import cfeintact.detailed_aligner as detailed_aligner
 import cfeintact.defect as defect
 from cfeintact.defect import Defect, ORFDefect
 from cfeintact.aligned_sequence import AlignedSequence
-from cfeintact.reference_index import ReferenceIndex
 from cfeintact.blastrow import BlastRow
 from cfeintact.initialize_orf import initialize_orf
 from cfeintact.original_orf import OriginalORF
@@ -774,13 +773,24 @@ def intact(working_dir,
             blast_matched_orfs_slen = 0
         holistic.blast_sseq_orfs_coverage = aligned_reference_orfs_length / blast_matched_orfs_slen
 
-        # convert PSI locus and RRE locus to appropriate subtype
-        psi_locus = [ReferenceIndex(x).mapto(aligned_subtype)
-                     for x in hxb2_psi_locus]
-        rre_locus = [ReferenceIndex(x).mapto(aligned_subtype)
-                     for x in hxb2_rre_locus]
+        # convert PSI locus to appropriate subtype
+        hxb2_psi_locus_start, hxb2_psi_locus_end = hxb2_psi_locus
+        psi_locus_start = aligned_subtype.coordinate_mapping.ref_to_query.right_min(hxb2_psi_locus_start) or 0
+        psi_locus_end = aligned_subtype.coordinate_mapping.ref_to_query.left_max(hxb2_psi_locus_end) or 0
+        psi_locus = (psi_locus_start, psi_locus_end)
 
-        alignment = aligned_sequence.get_alignment()
+        # convert RRE locus to appropriate subtype
+        hxb2_rre_locus_start, hxb2_rre_locus_end = hxb2_rre_locus
+        rre_locus_start = aligned_subtype.coordinate_mapping.ref_to_query.right_min(hxb2_rre_locus_start) or 0
+        rre_locus_end = aligned_subtype.coordinate_mapping.ref_to_query.left_max(hxb2_rre_locus_end) or 0
+        rre_locus = (rre_locus_start, rre_locus_end)
+
+        # convert MSD site to appropriate subtype
+        hxb2_msd_site_locus_start, hxb2_msd_site_locus_end = (hxb2_msd_site_locus, hxb2_msd_site_locus + 1)
+        msd_site_locus_start = aligned_subtype.coordinate_mapping.ref_to_query.right_min(hxb2_msd_site_locus_start) or 0
+        msd_site_locus_end = aligned_subtype.coordinate_mapping.ref_to_query.left_max(hxb2_msd_site_locus_end) or 0
+
+        alignment = aligned_sequence.alignment
 
         sequence_orfs, orf_errors = has_reading_frames(aligned_sequence, forward_orfs, error_bar)
         sequence_errors.extend(orf_errors)
@@ -822,8 +832,8 @@ def intact(working_dir,
         if check_major_splice_donor_site:
             mutated_splice_donor_site = has_mutated_major_splice_donor_site(
                 alignment,
-                ReferenceIndex(hxb2_msd_site_locus).mapto(aligned_subtype),
-                ReferenceIndex(hxb2_msd_site_locus + 1).mapto(aligned_subtype),
+                msd_site_locus_start,
+                msd_site_locus_end,
                 const.DEFAULT_MSD_SEQUENCE)
             if mutated_splice_donor_site is not None:
                 sequence_errors.append(mutated_splice_donor_site)

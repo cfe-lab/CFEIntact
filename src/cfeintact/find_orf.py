@@ -1,7 +1,6 @@
 from typing import Iterable
 from math import floor
 
-from cfeintact.reference_index import ReferenceIndex
 from cfeintact.get_query_aminoacids_table import get_query_aminoacids_table
 from cfeintact.get_biggest_protein import get_biggest_protein
 from cfeintact.original_orf import OriginalORF
@@ -39,8 +38,10 @@ def find_closest(aminoacids, start, direction, target):
 
 
 def find_candidate_positions(aligned_sequence: AlignedSequence, e: OriginalORF) -> Iterable[MappedORF]:
-    q_start = ReferenceIndex(e.start).mapto(aligned_sequence)
-    q_end = ReferenceIndex(e.end).mapto(aligned_sequence)
+    q_start = aligned_sequence.coordinate_mapping.ref_to_query.right_min(e.start) or 0
+    q_end = aligned_sequence.coordinate_mapping.ref_to_query.left_max(e.end) or 0
+    assert q_start is not None
+    assert q_end is not None
     expected_aminoacids = e.aminoacids
     expected_protein = expected_aminoacids.strip("*")
     visited_set = set()
@@ -71,7 +72,8 @@ def find_candidate_positions(aligned_sequence: AlignedSequence, e: OriginalORF) 
                 else:
                     visited_set.add((closest_start, closest_end))
 
-                got_nucleotides = str(aligned_sequence.slice(closest_start, closest_end).this.seq)
+                # got_nucleotides = str(aligned_sequence.slice(closest_start, closest_end).this.seq)
+                got_nucleotides = str(aligned_sequence.this.seq[closest_start:closest_end + 1])
                 got_aminoacids = translate_to_aminoacids(got_nucleotides)
                 got_protein = get_biggest_protein(has_start_codon(e), got_aminoacids)
                 if has_start_codon(e) and has_stop_codon(e):

@@ -2,12 +2,13 @@ import dataclasses
 from dataclasses import dataclass
 from Bio.SeqRecord import SeqRecord
 from Bio.Seq import Seq
-from typing import Dict, Tuple, List, Optional
+from typing import Dict, Optional
+from aligntools import Cigar
+from functools import cached_property
 
-import cfeintact.coordinates as coords
 import cfeintact.wrappers as wrappers
 from cfeintact.mapped_orf import MappedORF
-from cfeintact.reference_index import ReferenceIndex
+from Bio.Align import MultipleSeqAlignment
 
 
 @dataclass
@@ -15,58 +16,30 @@ class AlignedSequence:
     this: SeqRecord
     reference: SeqRecord
     orfs: Optional[Dict[str, MappedORF]] = dataclasses.field(default=None)
-    alignment: Optional[Tuple[str, str]] = dataclasses.field(default=None)
-    coordinates_mapping: Optional[List[int]] = dataclasses.field(default=None)
 
-    def get_alignment(self):
-        if not self.alignment:
-            self.alignment = wrappers.mafft([self.reference, self.this])
+    @cached_property
+    def alignment(self) -> MultipleSeqAlignment:
+        return wrappers.mafft([self.reference, self.this])
 
-        return self.alignment
+    @property
+    def aligned_reference(self) -> SeqRecord:
+        ret: SeqRecord = self.alignment[0]
+        return ret
 
-    def aligned_reference(self):
-        return self.get_alignment()[0]
+    @property
+    def aligned_this(self) -> SeqRecord:
+        ret: SeqRecord = self.alignment[1]
+        return ret
 
-    def aligned_this(self):
-        return self.get_alignment()[1]
+    @cached_property
+    def cigar(self) -> Cigar:
+        reference = self.aligned_reference
+        query = self.aligned_this
+        return Cigar.from_msa(reference=reference, query=query)
 
-    def get_coordinates_mapping(self):
-        if not self.coordinates_mapping:
-            self.coordinates_mapping = \
-                coords.map_positions(self.aligned_reference(), self.aligned_this())
-
-        return self.coordinates_mapping
-
-    def map_index(self, index):
-        if isinstance(index, ReferenceIndex):
-            index = index.value
-
-        if not isinstance(index, int):
-            raise TypeError(f"Expected integer as index, got {index!r}.")
-
-        mapping = self.get_coordinates_mapping()
-        if index < len(mapping):
-            return mapping[index]
-        else:
-            return mapping[-1]
-
-    def index(self, index):
-        if isinstance(index, ReferenceIndex):
-            index = self.map_index(index)
-
-        return self.this[index]
-
-    def slice(self, first, last):
-        if isinstance(first, ReferenceIndex):
-            first = self.map_index(first)
-        if isinstance(last, ReferenceIndex):
-            last = self.map_index(last)
-
-        newthis = self.this[first:(last + 1)]
-        newreference = self.reference[self.map_index(
-            first):(self.map_index(last) + 1)]
-        # TODO: calculate new "coordinates_mapping" and new "alignment" from these indexes.
-        return AlignedSequence(this=newthis, reference=newreference)
+    @cached_property
+    def coordinate_mapping(self):
+        return self.cigar.coordinate_mapping
 
     def reverse(self):
         newthis = SeqRecord(Seq.reverse_complement(self.this.seq),
@@ -76,5 +49,5 @@ class AlignedSequence:
 
         return AlignedSequence(this=newthis, reference=self.reference)
 
-    def alignment_score(self):
-        return sum([a == b for a, b in zip(self.get_alignment()[0].seq, self.get_alignment()[1].seq)])
+    def alignment_score(self) -> int:
+        return sum([a == b for a, b in zip(self.aligned_reference.seq, self.aligned_this.seq)])

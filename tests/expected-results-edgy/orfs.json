@@ -241,6 +241,34 @@
             "subtype_nucleotides": "ATGACACCTTTGGAAATTAGTGCAATAGTAGGATTGATAGTAGCGCTAATCTCAGCAATAGTAGTGTGGACTATAGTAGCTATAGAAGCTAAGAAATTACTAAGGCAAAGAAAAATAGACAGGTTAGTTAAGAGAATAAGAGAAAGAGCAGAAGACAGTGGAAATGAGAGTGAAGGGGACACAGAGGAATGGGCCAAACTTGTGGAAATGGGGGACTTTGATCCTTGGGTTGGTGATAATTTGTAG"
         },
         {
+            "name": "tat_exon2",
+            "start": 0,
+            "end": 13,
+            "orientation": "forward",
+            "distance": 0.7828594973217965,
+            "protein": "DSGSX",
+            "aminoacids": "DSGSX",
+            "nucleotides": "GACTCTGGGAGTGA",
+            "subtype_start": 7567,
+            "subtype_end": 7659,
+            "subtype_aminoacids": "RPLPIIRGNPTGQKESKKEVASKAETDPCD*",
+            "subtype_nucleotides": "AGACCCCTTCCCATCATCAGAGGGAACCCGACAGGCCAGAAGGAATCGAAGAAGGAGGTGGCGAGCAAGGCAGAGACAGATCCGTGCGATTAG"
+        },
+        {
+            "name": "rev_exon2",
+            "start": 0,
+            "end": 20,
+            "orientation": "forward",
+            "distance": 0.7743216412971542,
+            "protein": "DSGSERX",
+            "aminoacids": "DSGSERX",
+            "nucleotides": "GACTCTGGGAGTGAGAGAT",
+            "subtype_start": 7568,
+            "subtype_end": 7864,
+            "subtype_aminoacids": "DPFPSSEGTRQARRNRRRRWRARQRQIRAISERILSTCLGRSTEPVPLQLPPLERLHLDCNEDCGTSGTQQSQGTETGVGRSQISGEPSVILGPGTKN*",
+            "subtype_nucleotides": "GACCCCTTCCCATCATCAGAGGGAACCCGACAGGCCAGAAGGAATCGAAGAAGGAGGTGGCGAGCAAGGCAGAGACAGATCCGTGCGATTAGTGAGCGGATTCTTAGCACTTGCCTGGGACGATCTACGGAGCCTGTGCCTCTTCAGTTACCACCGCTTGAGAGACTTCATCTTGATTGCAACGAGGACTGTGGAACTTCTGGGACACAGCAGTCTCAAGGGACTGAGACGGGGGTGGGAAGGTCTCAAATATCTGGGGAACCTTCTGTTATATTGGGGCCAGGAACTAAGAATTAG"
+        },
+        {
             "name": "nef",
             "start": 0,
             "end": 20,
@@ -256,13 +284,13 @@
         },
         {
             "name": "tat_exon1",
-            "start": 2,
-            "end": 5,
+            "start": 1,
+            "end": 4,
             "orientation": "forward",
             "distance": 0.778175313059034,
             "protein": "",
-            "aminoacids": "LX",
-            "nucleotides": "CTCT",
+            "aminoacids": "TX",
+            "nucleotides": "ACTC",
             "subtype_start": 5032,
             "subtype_end": 5246,
             "subtype_aminoacids": "MELVDPNLEPWNHPGSQPTTNCSNCYCKKCCWHCQLCFLKKGLGISYGRKKRKHRRGTPQSSKDHQNPIPKX",
@@ -270,45 +298,17 @@
         },
         {
             "name": "rev_exon1",
-            "start": 2,
-            "end": 5,
+            "start": 1,
+            "end": 4,
             "orientation": "forward",
             "distance": 0.7746085011185683,
             "protein": "",
-            "aminoacids": "LX",
-            "nucleotides": "CTCT",
+            "aminoacids": "TX",
+            "nucleotides": "ACTC",
             "subtype_start": 5171,
             "subtype_end": 5246,
             "subtype_aminoacids": "MAGRSGSTDEELLRAVRIIKILYQSX",
             "subtype_nucleotides": "ATGGCAGGAAGAAGCGGAAGCACCGACGAGGAACTCCTCAGAGCAGTAAGGATCATCAAAATCCTATACCAAAGCA"
-        },
-        {
-            "name": "tat_exon2",
-            "start": 19,
-            "end": 20,
-            "orientation": "forward",
-            "distance": 0.7833633904418396,
-            "protein": "",
-            "aminoacids": "",
-            "nucleotides": "",
-            "subtype_start": 7567,
-            "subtype_end": 7659,
-            "subtype_aminoacids": "RPLPIIRGNPTGQKESKKEVASKAETDPCD*",
-            "subtype_nucleotides": "AGACCCCTTCCCATCATCAGAGGGAACCCGACAGGCCAGAAGGAATCGAAGAAGGAGGTGGCGAGCAAGGCAGAGACAGATCCGTGCGATTAG"
-        },
-        {
-            "name": "rev_exon2",
-            "start": 19,
-            "end": 20,
-            "orientation": "forward",
-            "distance": 0.7811608670849972,
-            "protein": "",
-            "aminoacids": "",
-            "nucleotides": "",
-            "subtype_start": 7568,
-            "subtype_end": 7864,
-            "subtype_aminoacids": "DPFPSSEGTRQARRNRRRRWRARQRQIRAISERILSTCLGRSTEPVPLQLPPLERLHLDCNEDCGTSGTQQSQGTETGVGRSQISGEPSVILGPGTKN*",
-            "subtype_nucleotides": "GACCCCTTCCCATCATCAGAGGGAACCCGACAGGCCAGAAGGAATCGAAGAAGGAGGTGGCGAGCAAGGCAGAGACAGATCCGTGCGATTAGTGAGCGGATTCTTAGCACTTGCCTGGGACGATCTACGGAGCCTGTGCCTCTTCAGTTACCACCGCTTGAGAGACTTCATCTTGATTGCAACGAGGACTGTGGAACTTCTGGGACACAGCAGTCTCAAGGGACTGAGACGGGGGTGGGAAGGTCTCAAATATCTGGGGAACCTTCTGTTATATTGGGGCCAGGAACTAAGAATTAG"
         }
     ],
     "singleton-sequence": [
@@ -1009,12 +1009,12 @@
         {
             "name": "tat_exon1",
             "start": 0,
-            "end": 11,
+            "end": 10,
             "orientation": "forward",
             "distance": 0.7747047542141919,
             "protein": "",
             "aminoacids": "ISTP",
-            "nucleotides": "ATCTCCACTCCA",
+            "nucleotides": "ATCTCCACTCC",
             "subtype_start": 5032,
             "subtype_end": 5246,
             "subtype_aminoacids": "MELVDPNLEPWNHPGSQPTTNCSNCYCKKCCWHCQLCFLKKGLGISYGRKKRKHRRGTPQSSKDHQNPIPKX",
@@ -1050,13 +1050,13 @@
         },
         {
             "name": "rev_exon1",
-            "start": 2,
-            "end": 11,
+            "start": 1,
+            "end": 10,
             "orientation": "forward",
-            "distance": 0.7701083856246435,
+            "distance": 0.774292915149818,
             "protein": "",
-            "aminoacids": "LHSX",
-            "nucleotides": "CTCCACTCCA",
+            "aminoacids": "SPLX",
+            "nucleotides": "TCTCCACTCC",
             "subtype_start": 5171,
             "subtype_end": 5246,
             "subtype_aminoacids": "MAGRSGSTDEELLRAVRIIKILYQSX",
@@ -1633,7 +1633,7 @@
         {
             "name": "tat_exon1",
             "start": 0,
-            "end": 12,
+            "end": 11,
             "orientation": "forward",
             "distance": 0.778065029332803,
             "protein": "",
@@ -1659,6 +1659,34 @@
             "subtype_nucleotides": "ATGACACCTTTGGAAATTAGTGCAATAGTAGGATTGATAGTAGCGCTAATCTCAGCAATAGTAGTGTGGACTATAGTAGCTATAGAAGCTAAGAAATTACTAAGGCAAAGAAAAATAGACAGGTTAGTTAAGAGAATAAGAGAAAGAGCAGAAGACAGTGGAAATGAGAGTGAAGGGGACACAGAGGAATGGGCCAAACTTGTGGAAATGGGGGACTTTGATCCTTGGGTTGGTGATAATTTGTAG"
         },
         {
+            "name": "tat_exon2",
+            "start": 0,
+            "end": 11,
+            "orientation": "forward",
+            "distance": 0.7752572497661365,
+            "protein": "ISRV",
+            "aminoacids": "ISRV",
+            "nucleotides": "ATCTCTAGAGTC",
+            "subtype_start": 7567,
+            "subtype_end": 7659,
+            "subtype_aminoacids": "RPLPIIRGNPTGQKESKKEVASKAETDPCD*",
+            "subtype_nucleotides": "AGACCCCTTCCCATCATCAGAGGGAACCCGACAGGCCAGAAGGAATCGAAGAAGGAGGTGGCGAGCAAGGCAGAGACAGATCCGTGCGATTAG"
+        },
+        {
+            "name": "rev_exon2",
+            "start": 0,
+            "end": 11,
+            "orientation": "forward",
+            "distance": 0.7772697583278902,
+            "protein": "ISRV",
+            "aminoacids": "ISRV",
+            "nucleotides": "ATCTCTAGAGTC",
+            "subtype_start": 7568,
+            "subtype_end": 7864,
+            "subtype_aminoacids": "DPFPSSEGTRQARRNRRRRWRARQRQIRAISERILSTCLGRSTEPVPLQLPPLERLHLDCNEDCGTSGTQQSQGTETGVGRSQISGEPSVILGPGTKN*",
+            "subtype_nucleotides": "GACCCCTTCCCATCATCAGAGGGAACCCGACAGGCCAGAAGGAATCGAAGAAGGAGGTGGCGAGCAAGGCAGAGACAGATCCGTGCGATTAGTGAGCGGATTCTTAGCACTTGCCTGGGACGATCTACGGAGCCTGTGCCTCTTCAGTTACCACCGCTTGAGAGACTTCATCTTGATTGCAACGAGGACTGTGGAACTTCTGGGACACAGCAGTCTCAAGGGACTGAGACGGGGGTGGGAAGGTCTCAAATATCTGGGGAACCTTCTGTTATATTGGGGCCAGGAACTAAGAATTAG"
+        },
+        {
             "name": "nef",
             "start": 0,
             "end": 11,
@@ -1675,7 +1703,7 @@
         {
             "name": "rev_exon1",
             "start": 2,
-            "end": 12,
+            "end": 11,
             "orientation": "forward",
             "distance": 0.7701083856246435,
             "protein": "",
@@ -1685,34 +1713,6 @@
             "subtype_end": 5246,
             "subtype_aminoacids": "MAGRSGSTDEELLRAVRIIKILYQSX",
             "subtype_nucleotides": "ATGGCAGGAAGAAGCGGAAGCACCGACGAGGAACTCCTCAGAGCAGTAAGGATCATCAAAATCCTATACCAAAGCA"
-        },
-        {
-            "name": "tat_exon2",
-            "start": 12,
-            "end": 11,
-            "orientation": "forward",
-            "distance": 0.7833633904418396,
-            "protein": "",
-            "aminoacids": "",
-            "nucleotides": "",
-            "subtype_start": 7567,
-            "subtype_end": 7659,
-            "subtype_aminoacids": "RPLPIIRGNPTGQKESKKEVASKAETDPCD*",
-            "subtype_nucleotides": "AGACCCCTTCCCATCATCAGAGGGAACCCGACAGGCCAGAAGGAATCGAAGAAGGAGGTGGCGAGCAAGGCAGAGACAGATCCGTGCGATTAG"
-        },
-        {
-            "name": "rev_exon2",
-            "start": 12,
-            "end": 11,
-            "orientation": "forward",
-            "distance": 0.7811608670849972,
-            "protein": "",
-            "aminoacids": "",
-            "nucleotides": "",
-            "subtype_start": 7568,
-            "subtype_end": 7864,
-            "subtype_aminoacids": "DPFPSSEGTRQARRNRRRRWRARQRQIRAISERILSTCLGRSTEPVPLQLPPLERLHLDCNEDCGTSGTQQSQGTETGVGRSQISGEPSVILGPGTKN*",
-            "subtype_nucleotides": "GACCCCTTCCCATCATCAGAGGGAACCCGACAGGCCAGAAGGAATCGAAGAAGGAGGTGGCGAGCAAGGCAGAGACAGATCCGTGCGATTAGTGAGCGGATTCTTAGCACTTGCCTGGGACGATCTACGGAGCCTGTGCCTCTTCAGTTACCACCGCTTGAGAGACTTCATCTTGATTGCAACGAGGACTGTGGAACTTCTGGGACACAGCAGTCTCAAGGGACTGAGACGGGGGTGGGAAGGTCTCAAATATCTGGGGAACCTTCTGTTATATTGGGGCCAGGAACTAAGAATTAG"
         }
     ],
     "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.WITH-BAD-SYMBOLS[REVERSE_COMPLEMENT]": [
@@ -1945,7 +1945,7 @@
         {
             "name": "tat_exon1",
             "start": 0,
-            "end": 12,
+            "end": 11,
             "orientation": "forward",
             "distance": 0.778065029332803,
             "protein": "",
@@ -1971,6 +1971,34 @@
             "subtype_nucleotides": "ATGACACCTTTGGAAATTAGTGCAATAGTAGGATTGATAGTAGCGCTAATCTCAGCAATAGTAGTGTGGACTATAGTAGCTATAGAAGCTAAGAAATTACTAAGGCAAAGAAAAATAGACAGGTTAGTTAAGAGAATAAGAGAAAGAGCAGAAGACAGTGGAAATGAGAGTGAAGGGGACACAGAGGAATGGGCCAAACTTGTGGAAATGGGGGACTTTGATCCTTGGGTTGGTGATAATTTGTAG"
         },
         {
+            "name": "tat_exon2",
+            "start": 0,
+            "end": 11,
+            "orientation": "forward",
+            "distance": 0.7752572497661365,
+            "protein": "ISRV",
+            "aminoacids": "ISRV",
+            "nucleotides": "ATCTCTAGAGTC",
+            "subtype_start": 7567,
+            "subtype_end": 7659,
+            "subtype_aminoacids": "RPLPIIRGNPTGQKESKKEVASKAETDPCD*",
+            "subtype_nucleotides": "AGACCCCTTCCCATCATCAGAGGGAACCCGACAGGCCAGAAGGAATCGAAGAAGGAGGTGGCGAGCAAGGCAGAGACAGATCCGTGCGATTAG"
+        },
+        {
+            "name": "rev_exon2",
+            "start": 0,
+            "end": 11,
+            "orientation": "forward",
+            "distance": 0.7772697583278902,
+            "protein": "ISRV",
+            "aminoacids": "ISRV",
+            "nucleotides": "ATCTCTAGAGTC",
+            "subtype_start": 7568,
+            "subtype_end": 7864,
+            "subtype_aminoacids": "DPFPSSEGTRQARRNRRRRWRARQRQIRAISERILSTCLGRSTEPVPLQLPPLERLHLDCNEDCGTSGTQQSQGTETGVGRSQISGEPSVILGPGTKN*",
+            "subtype_nucleotides": "GACCCCTTCCCATCATCAGAGGGAACCCGACAGGCCAGAAGGAATCGAAGAAGGAGGTGGCGAGCAAGGCAGAGACAGATCCGTGCGATTAGTGAGCGGATTCTTAGCACTTGCCTGGGACGATCTACGGAGCCTGTGCCTCTTCAGTTACCACCGCTTGAGAGACTTCATCTTGATTGCAACGAGGACTGTGGAACTTCTGGGACACAGCAGTCTCAAGGGACTGAGACGGGGGTGGGAAGGTCTCAAATATCTGGGGAACCTTCTGTTATATTGGGGCCAGGAACTAAGAATTAG"
+        },
+        {
             "name": "nef",
             "start": 0,
             "end": 11,
@@ -1987,7 +2015,7 @@
         {
             "name": "rev_exon1",
             "start": 2,
-            "end": 12,
+            "end": 11,
             "orientation": "forward",
             "distance": 0.7701083856246435,
             "protein": "",
@@ -1997,34 +2025,6 @@
             "subtype_end": 5246,
             "subtype_aminoacids": "MAGRSGSTDEELLRAVRIIKILYQSX",
             "subtype_nucleotides": "ATGGCAGGAAGAAGCGGAAGCACCGACGAGGAACTCCTCAGAGCAGTAAGGATCATCAAAATCCTATACCAAAGCA"
-        },
-        {
-            "name": "tat_exon2",
-            "start": 12,
-            "end": 11,
-            "orientation": "forward",
-            "distance": 0.7833633904418396,
-            "protein": "",
-            "aminoacids": "",
-            "nucleotides": "",
-            "subtype_start": 7567,
-            "subtype_end": 7659,
-            "subtype_aminoacids": "RPLPIIRGNPTGQKESKKEVASKAETDPCD*",
-            "subtype_nucleotides": "AGACCCCTTCCCATCATCAGAGGGAACCCGACAGGCCAGAAGGAATCGAAGAAGGAGGTGGCGAGCAAGGCAGAGACAGATCCGTGCGATTAG"
-        },
-        {
-            "name": "rev_exon2",
-            "start": 12,
-            "end": 11,
-            "orientation": "forward",
-            "distance": 0.7811608670849972,
-            "protein": "",
-            "aminoacids": "",
-            "nucleotides": "",
-            "subtype_start": 7568,
-            "subtype_end": 7864,
-            "subtype_aminoacids": "DPFPSSEGTRQARRNRRRRWRARQRQIRAISERILSTCLGRSTEPVPLQLPPLERLHLDCNEDCGTSGTQQSQGTETGVGRSQISGEPSVILGPGTKN*",
-            "subtype_nucleotides": "GACCCCTTCCCATCATCAGAGGGAACCCGACAGGCCAGAAGGAATCGAAGAAGGAGGTGGCGAGCAAGGCAGAGACAGATCCGTGCGATTAGTGAGCGGATTCTTAGCACTTGCCTGGGACGATCTACGGAGCCTGTGCCTCTTCAGTTACCACCGCTTGAGAGACTTCATCTTGATTGCAACGAGGACTGTGGAACTTCTGGGACACAGCAGTCTCAAGGGACTGAGACGGGGGTGGGAAGGTCTCAAATATCTGGGGAACCTTCTGTTATATTGGGGCCAGGAACTAAGAATTAG"
         }
     ],
     "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.WITH-DASHES[REVERSE_COMPLEMENT]": [
@@ -2257,7 +2257,7 @@
         {
             "name": "tat_exon1",
             "start": 0,
-            "end": 12,
+            "end": 11,
             "orientation": "forward",
             "distance": 0.778065029332803,
             "protein": "",
@@ -2283,6 +2283,34 @@
             "subtype_nucleotides": "ATGACACCTTTGGAAATTAGTGCAATAGTAGGATTGATAGTAGCGCTAATCTCAGCAATAGTAGTGTGGACTATAGTAGCTATAGAAGCTAAGAAATTACTAAGGCAAAGAAAAATAGACAGGTTAGTTAAGAGAATAAGAGAAAGAGCAGAAGACAGTGGAAATGAGAGTGAAGGGGACACAGAGGAATGGGCCAAACTTGTGGAAATGGGGGACTTTGATCCTTGGGTTGGTGATAATTTGTAG"
         },
         {
+            "name": "tat_exon2",
+            "start": 0,
+            "end": 11,
+            "orientation": "forward",
+            "distance": 0.7752572497661365,
+            "protein": "ISRV",
+            "aminoacids": "ISRV",
+            "nucleotides": "ATCTCTAGAGTC",
+            "subtype_start": 7567,
+            "subtype_end": 7659,
+            "subtype_aminoacids": "RPLPIIRGNPTGQKESKKEVASKAETDPCD*",
+            "subtype_nucleotides": "AGACCCCTTCCCATCATCAGAGGGAACCCGACAGGCCAGAAGGAATCGAAGAAGGAGGTGGCGAGCAAGGCAGAGACAGATCCGTGCGATTAG"
+        },
+        {
+            "name": "rev_exon2",
+            "start": 0,
+            "end": 11,
+            "orientation": "forward",
+            "distance": 0.7772697583278902,
+            "protein": "ISRV",
+            "aminoacids": "ISRV",
+            "nucleotides": "ATCTCTAGAGTC",
+            "subtype_start": 7568,
+            "subtype_end": 7864,
+            "subtype_aminoacids": "DPFPSSEGTRQARRNRRRRWRARQRQIRAISERILSTCLGRSTEPVPLQLPPLERLHLDCNEDCGTSGTQQSQGTETGVGRSQISGEPSVILGPGTKN*",
+            "subtype_nucleotides": "GACCCCTTCCCATCATCAGAGGGAACCCGACAGGCCAGAAGGAATCGAAGAAGGAGGTGGCGAGCAAGGCAGAGACAGATCCGTGCGATTAGTGAGCGGATTCTTAGCACTTGCCTGGGACGATCTACGGAGCCTGTGCCTCTTCAGTTACCACCGCTTGAGAGACTTCATCTTGATTGCAACGAGGACTGTGGAACTTCTGGGACACAGCAGTCTCAAGGGACTGAGACGGGGGTGGGAAGGTCTCAAATATCTGGGGAACCTTCTGTTATATTGGGGCCAGGAACTAAGAATTAG"
+        },
+        {
             "name": "nef",
             "start": 0,
             "end": 11,
@@ -2299,7 +2327,7 @@
         {
             "name": "rev_exon1",
             "start": 2,
-            "end": 12,
+            "end": 11,
             "orientation": "forward",
             "distance": 0.7701083856246435,
             "protein": "",
@@ -2309,34 +2337,6 @@
             "subtype_end": 5246,
             "subtype_aminoacids": "MAGRSGSTDEELLRAVRIIKILYQSX",
             "subtype_nucleotides": "ATGGCAGGAAGAAGCGGAAGCACCGACGAGGAACTCCTCAGAGCAGTAAGGATCATCAAAATCCTATACCAAAGCA"
-        },
-        {
-            "name": "tat_exon2",
-            "start": 12,
-            "end": 11,
-            "orientation": "forward",
-            "distance": 0.7833633904418396,
-            "protein": "",
-            "aminoacids": "",
-            "nucleotides": "",
-            "subtype_start": 7567,
-            "subtype_end": 7659,
-            "subtype_aminoacids": "RPLPIIRGNPTGQKESKKEVASKAETDPCD*",
-            "subtype_nucleotides": "AGACCCCTTCCCATCATCAGAGGGAACCCGACAGGCCAGAAGGAATCGAAGAAGGAGGTGGCGAGCAAGGCAGAGACAGATCCGTGCGATTAG"
-        },
-        {
-            "name": "rev_exon2",
-            "start": 12,
-            "end": 11,
-            "orientation": "forward",
-            "distance": 0.7811608670849972,
-            "protein": "",
-            "aminoacids": "",
-            "nucleotides": "",
-            "subtype_start": 7568,
-            "subtype_end": 7864,
-            "subtype_aminoacids": "DPFPSSEGTRQARRNRRRRWRARQRQIRAISERILSTCLGRSTEPVPLQLPPLERLHLDCNEDCGTSGTQQSQGTETGVGRSQISGEPSVILGPGTKN*",
-            "subtype_nucleotides": "GACCCCTTCCCATCATCAGAGGGAACCCGACAGGCCAGAAGGAATCGAAGAAGGAGGTGGCGAGCAAGGCAGAGACAGATCCGTGCGATTAGTGAGCGGATTCTTAGCACTTGCCTGGGACGATCTACGGAGCCTGTGCCTCTTCAGTTACCACCGCTTGAGAGACTTCATCTTGATTGCAACGAGGACTGTGGAACTTCTGGGACACAGCAGTCTCAAGGGACTGAGACGGGGGTGGGAAGGTCTCAAATATCTGGGGAACCTTCTGTTATATTGGGGCCAGGAACTAAGAATTAG"
         }
     ],
     "small-sequence-with-dashes/andwithslashestoo": [
@@ -2413,7 +2413,7 @@
         {
             "name": "tat_exon1",
             "start": 0,
-            "end": 12,
+            "end": 11,
             "orientation": "forward",
             "distance": 0.778065029332803,
             "protein": "",
@@ -2439,6 +2439,34 @@
             "subtype_nucleotides": "ATGACACCTTTGGAAATTAGTGCAATAGTAGGATTGATAGTAGCGCTAATCTCAGCAATAGTAGTGTGGACTATAGTAGCTATAGAAGCTAAGAAATTACTAAGGCAAAGAAAAATAGACAGGTTAGTTAAGAGAATAAGAGAAAGAGCAGAAGACAGTGGAAATGAGAGTGAAGGGGACACAGAGGAATGGGCCAAACTTGTGGAAATGGGGGACTTTGATCCTTGGGTTGGTGATAATTTGTAG"
         },
         {
+            "name": "tat_exon2",
+            "start": 0,
+            "end": 11,
+            "orientation": "forward",
+            "distance": 0.7752572497661365,
+            "protein": "ISRV",
+            "aminoacids": "ISRV",
+            "nucleotides": "ATCTCTAGAGTC",
+            "subtype_start": 7567,
+            "subtype_end": 7659,
+            "subtype_aminoacids": "RPLPIIRGNPTGQKESKKEVASKAETDPCD*",
+            "subtype_nucleotides": "AGACCCCTTCCCATCATCAGAGGGAACCCGACAGGCCAGAAGGAATCGAAGAAGGAGGTGGCGAGCAAGGCAGAGACAGATCCGTGCGATTAG"
+        },
+        {
+            "name": "rev_exon2",
+            "start": 0,
+            "end": 11,
+            "orientation": "forward",
+            "distance": 0.7772697583278902,
+            "protein": "ISRV",
+            "aminoacids": "ISRV",
+            "nucleotides": "ATCTCTAGAGTC",
+            "subtype_start": 7568,
+            "subtype_end": 7864,
+            "subtype_aminoacids": "DPFPSSEGTRQARRNRRRRWRARQRQIRAISERILSTCLGRSTEPVPLQLPPLERLHLDCNEDCGTSGTQQSQGTETGVGRSQISGEPSVILGPGTKN*",
+            "subtype_nucleotides": "GACCCCTTCCCATCATCAGAGGGAACCCGACAGGCCAGAAGGAATCGAAGAAGGAGGTGGCGAGCAAGGCAGAGACAGATCCGTGCGATTAGTGAGCGGATTCTTAGCACTTGCCTGGGACGATCTACGGAGCCTGTGCCTCTTCAGTTACCACCGCTTGAGAGACTTCATCTTGATTGCAACGAGGACTGTGGAACTTCTGGGACACAGCAGTCTCAAGGGACTGAGACGGGGGTGGGAAGGTCTCAAATATCTGGGGAACCTTCTGTTATATTGGGGCCAGGAACTAAGAATTAG"
+        },
+        {
             "name": "nef",
             "start": 0,
             "end": 11,
@@ -2455,7 +2483,7 @@
         {
             "name": "rev_exon1",
             "start": 2,
-            "end": 12,
+            "end": 11,
             "orientation": "forward",
             "distance": 0.7701083856246435,
             "protein": "",
@@ -2465,34 +2493,6 @@
             "subtype_end": 5246,
             "subtype_aminoacids": "MAGRSGSTDEELLRAVRIIKILYQSX",
             "subtype_nucleotides": "ATGGCAGGAAGAAGCGGAAGCACCGACGAGGAACTCCTCAGAGCAGTAAGGATCATCAAAATCCTATACCAAAGCA"
-        },
-        {
-            "name": "tat_exon2",
-            "start": 12,
-            "end": 11,
-            "orientation": "forward",
-            "distance": 0.7833633904418396,
-            "protein": "",
-            "aminoacids": "",
-            "nucleotides": "",
-            "subtype_start": 7567,
-            "subtype_end": 7659,
-            "subtype_aminoacids": "RPLPIIRGNPTGQKESKKEVASKAETDPCD*",
-            "subtype_nucleotides": "AGACCCCTTCCCATCATCAGAGGGAACCCGACAGGCCAGAAGGAATCGAAGAAGGAGGTGGCGAGCAAGGCAGAGACAGATCCGTGCGATTAG"
-        },
-        {
-            "name": "rev_exon2",
-            "start": 12,
-            "end": 11,
-            "orientation": "forward",
-            "distance": 0.7811608670849972,
-            "protein": "",
-            "aminoacids": "",
-            "nucleotides": "",
-            "subtype_start": 7568,
-            "subtype_end": 7864,
-            "subtype_aminoacids": "DPFPSSEGTRQARRNRRRRWRARQRQIRAISERILSTCLGRSTEPVPLQLPPLERLHLDCNEDCGTSGTQQSQGTETGVGRSQISGEPSVILGPGTKN*",
-            "subtype_nucleotides": "GACCCCTTCCCATCATCAGAGGGAACCCGACAGGCCAGAAGGAATCGAAGAAGGAGGTGGCGAGCAAGGCAGAGACAGATCCGTGCGATTAGTGAGCGGATTCTTAGCACTTGCCTGGGACGATCTACGGAGCCTGTGCCTCTTCAGTTACCACCGCTTGAGAGACTTCATCTTGATTGCAACGAGGACTGTGGAACTTCTGGGACACAGCAGTCTCAAGGGACTGAGACGGGGGTGGGAAGGTCTCAAATATCTGGGGAACCTTCTGTTATATTGGGGCCAGGAACTAAGAATTAG"
         }
     ]
 }

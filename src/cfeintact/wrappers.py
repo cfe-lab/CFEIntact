@@ -1,13 +1,16 @@
 import dataclasses
 import subprocess
 import tempfile
+from typing import Iterable
 
 from Bio import SeqIO, AlignIO
+from Bio.Align import MultipleSeqAlignment
+from Bio.SeqRecord import SeqRecord
 
 from cfeintact.blastrow import BlastRow
 
 
-def mafft(sequences):
+def mafft(sequences: Iterable[SeqRecord]) -> MultipleSeqAlignment:
     '''
     Call mafft on a set of sequences and return the resulting alignment.
 
@@ -22,7 +25,7 @@ def mafft(sequences):
         SeqIO.write(sequences, alignment_input.name, "fasta")
         subprocess.run(["mafft", "--quiet", alignment_input.name],
                        shell=False, stdout=alignment_output, check=True)
-        alignment = AlignIO.read(alignment_output.name, "fasta")
+        alignment: MultipleSeqAlignment = AlignIO.read(alignment_output.name, "fasta")
         return alignment
 
 
