@@ -16,8 +16,8 @@ dependencies = [
     "biopython==1.83",
     "click>=6.7",
     "scipy>=1.6.0",
+    "aligntools @ git+https://github.com/cfe-lab/aligntools.git@v1.0.1",
 ]
-
 
 [project.optional-dependencies]
 test = [
@@ -35,6 +35,9 @@ dev = [
 
 [project.scripts]
 cfeintact = "cfeintact.main:cli"
+
+[tool.hatch.metadata]
+allow-direct-references = true
 
 [tool.hatch.build.targets.sdist]
 include = [ "src/cfeintact" ]
