@@ -52,10 +52,13 @@ markers = [
 
 [tool.mypy]
 files = ["src", "tests"]
-ignore_missing_imports = true
 strict_optional = true
 allow_untyped_calls = true
 warn_return_any = true
 warn_unused_ignores = true
 disallow_untyped_defs = false
 strict = true
+
+[[tool.mypy.overrides]]
+module = ["scipy.*", "pytest.*"]
+ignore_missing_imports = true
