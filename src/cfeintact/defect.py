@@ -147,5 +147,5 @@ DefectType = Union[
 
 @dataclass(frozen=True)
 class Defect:
-    sequence_name: str
+    qseqid: str
     error: DefectType

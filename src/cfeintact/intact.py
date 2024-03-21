@@ -545,7 +545,7 @@ class OutputWriter:
             self.holistic_header = ['seqid'] + [field.name for field in dataclasses.fields(HolisticInfo)]
             self.holistic_writer.writerow(self.holistic_header)
             self.errors_writer = csv.DictWriter(
-                self.errors_file, fieldnames=["sequence_name", "error", "message", "orf"])
+                self.errors_file, fieldnames=["qseqid", "error", "message", "orf"])
             self.errors_writer.writeheader()
 
         return self
@@ -583,7 +583,7 @@ class OutputWriter:
             self.subtypes_file.flush()
 
         errors_dicts = [{
-            "sequence_name": d.sequence_name,
+            "qseqid": d.qseqid,
             "error": d.error.__class__.__name__,
             "message": str(d.error),
             "orf": d.error.q.name if isinstance(d.error, ORFDefect) else None,

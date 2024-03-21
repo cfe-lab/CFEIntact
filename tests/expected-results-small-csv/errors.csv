@@ -1,4 +1,4 @@
-sequence_name,error,message,orf
+qseqid,error,message,orf
 KX505501.1,DeletionInOrf,"ORF gag at 337-1824 can have maximum deletions 12, got 15.",gag
 KX505501.1,InternalStopInOrf,ORF pol at 1629-1927 contains an internal stop codon at 1746.,pol
 KX505501.1,InternalStopInOrf,ORF env at 1-1824 contains an internal stop codon at 253.,env
