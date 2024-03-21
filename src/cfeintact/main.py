@@ -1,6 +1,7 @@
 
 import os
 import click
+from importlib.metadata import version
 
 import cfeintact.intact as it
 import cfeintact.log as log
@@ -21,6 +22,16 @@ def get_working_folder(path):
 @click.group()
 def cli():
     pass
+
+
+@cli.command('version')
+def get_version() -> None:
+    if __package__ is None:
+        print("CFEIntact is not installed.")
+        exit(1)
+    else:
+        print(version(__package__))
+        exit(0)
 
 
 @cli.command('check')
@@ -65,10 +76,10 @@ def cli():
     '--working-folder',
     default=os.getcwd()
 )
-def intact(input_file, subtype, check_packaging_signal,
-           check_rre, check_major_splice_donor_site, check_hypermut,
-           check_long_deletion, check_nonhiv, check_scramble, check_internal_inversion,
-           check_unknown_nucleotides, check_small_orfs, output_csv, working_folder):
+def intact(input_file: str, subtype: str, check_packaging_signal: str,
+           check_rre: str, check_major_splice_donor_site: str, check_hypermut: str,
+           check_long_deletion: str, check_nonhiv: str, check_scramble: str, check_internal_inversion: str,
+           check_unknown_nucleotides: str, check_small_orfs: str, output_csv: str, working_folder: str) -> None:
     """
     Check consensus sequences for intactness.
     """
@@ -83,6 +94,7 @@ def intact(input_file, subtype, check_packaging_signal,
         check_unknown_nucleotides, check_small_orfs, output_csv
     )
 
+    exit(0)
 
-if __name__ == "__main__":
-    cli()
+
+if __name__ == "__main__": cli()
