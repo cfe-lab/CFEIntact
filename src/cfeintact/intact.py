@@ -126,7 +126,7 @@ def remove_5_prime(blast_rows):
     return [x for x in blast_rows if x.sstart > 622 and x.send > 622]
 
 
-def contains_internal_inversion(seqid: str, blast_rows: List[BlastRow]) -> Optional[Defect]:
+def contains_internal_inversion(qseqid: str, blast_rows: List[BlastRow]) -> Optional[Defect]:
     ignored_5_prime = remove_5_prime(blast_rows)
 
     if not ignored_5_prime:
@@ -142,10 +142,10 @@ def contains_internal_inversion(seqid: str, blast_rows: List[BlastRow]) -> Optio
     # in forward direction (plus)
     # and some in reverse (minus).
     # This indicates an internal inversion.
-    return Defect(seqid, defect.InternalInversion())
+    return Defect(qseqid, defect.InternalInversion())
 
 
-def is_scrambled(seqid, blast_rows):
+def is_scrambled(qseqid, blast_rows):
     ignored_5_prime = remove_5_prime(blast_rows)
 
     if not ignored_5_prime:
@@ -160,16 +160,16 @@ def is_scrambled(seqid, blast_rows):
     elif direction == "minus" and is_sorted(x.send for x in reversed(ignored_5_prime)):
         return None
     else:
-        return Defect(seqid, defect.Scramble(direction))
+        return Defect(qseqid, defect.Scramble(direction))
 
 
-def is_nonhiv(holistic, seqid, seqlen, blast_rows):
+def is_nonhiv(holistic, qseqid, seqlen, blast_rows):
     aligned_length = sum(abs(x.qend - x.qstart) + 1 for x in blast_rows)
     holistic.blast_matched_qlen = blast_rows[0].qlen if blast_rows else 1
     holistic.blast_qseq_coverage = aligned_length / holistic.blast_matched_qlen
 
     if holistic.blast_qseq_coverage < 0.8 and seqlen > holistic.blast_matched_qlen * 0.6:
-        return Defect(seqid, defect.NonHIV())
+        return Defect(qseqid, defect.NonHIV())
     else:
         return None
 
@@ -538,11 +538,10 @@ class OutputWriter:
             self.errors = {}
         elif self.fmt == "csv":
             self.orfs_writer = csv.writer(self.orfs_file)
-            self.orfs_header = [
-                'seqid'] + [field.name for field in dataclasses.fields(FoundORF)]
+            self.orfs_header = ['qseqid'] + [field.name for field in dataclasses.fields(FoundORF)]
             self.orfs_writer.writerow(self.orfs_header)
             self.holistic_writer = csv.writer(self.holistic_file)
-            self.holistic_header = ['seqid'] + [field.name for field in dataclasses.fields(HolisticInfo)]
+            self.holistic_header = ['qseqid'] + [field.name for field in dataclasses.fields(HolisticInfo)]
             self.holistic_writer.writerow(self.holistic_header)
             self.errors_writer = csv.DictWriter(
                 self.errors_file, fieldnames=["qseqid", "error", "message", "orf"])
@@ -596,9 +595,9 @@ class OutputWriter:
         elif self.fmt == "csv":
             for orf in orfs:
                 self.orfs_writer.writerow(
-                    [(sequence.id if key == 'seqid' else orf[key]) for key in self.orfs_header])
+                    [(sequence.id if key == 'qseqid' else orf[key]) for key in self.orfs_header])
             self.holistic_writer.writerow(
-                [(sequence.id if key == 'seqid' else holistic[key]) for key in self.holistic_header])
+                [(sequence.id if key == 'qseqid' else holistic[key]) for key in self.holistic_header])
             for error in errors_dicts:
                 self.errors_writer.writerow(error)
 
