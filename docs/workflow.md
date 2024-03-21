@@ -14,15 +14,17 @@ This ensures that the direction in which the original sequence is read does not 
 
 The alignment is global, and it never fails.
 
-
 ### ORF Detection
 
-(TODO: describe the logic)
+The logic for Open Reading Frame (ORF) detection operates under the principle of identifying gene segments within the HIV genome that have the potential to code for proteins. The steps generally involve:
+
+1. **Mapping ORFs** to known HIV genes (e.g., gag, pol, env) based on their positions within the sequence alignment to the reference.
+2. **Scanning the sequence** for start codons that may indicate the beginning of an ORF.
+3. **Tracing the sequence** from the start codon to the nearest stop codon (e.g., "TAA", "TAG", "TGA") without encountering other stop codons in between, as this would indicate a potential ORF.
 
 Detection never fails, but it can output ORFs that have a length of 0.
 
 The outputs from this procedure are used to produce the `orfs.json` file.
-
 
 ### BLAST Analysis
 
@@ -91,27 +93,34 @@ an error with code `LongDeletion` is produced.
 
 ### NonHIV check
 
-(TODO: describe the logic)
+To determine whether the sequence might be non-HIV or significantly divergent from known HIV sequences, the following logic is applied:
+
+1. **Calculate the coverage** of the input sequence by the known HIV sequences using the alignment data from the BLAST analysis. Coverage is measured as the percentage of the input sequence that aligns with known HIV sequences.
+2. **Threshold determination**: If the coverage falls below a certain threshold (e.g., 80%), it suggests that a significant portion of the sequence does not align with known HIV sequences, potentially indicating a non-HIV origin or considerable divergence.
+3. **Report NonHIV**: If the coverage is below the threshold, a `NonHIV` error is reported, suggesting that the sequence may not be HIV or may be a highly divergent strain.
 
 This analysis step is copied from [HIVSeqinR software](https://github.com/guineverelee/HIVSeqinR).
-
-It outputs the `NonHIV` error code.
 
 ### Scramble check
 
-(TODO: describe the logic)
+For the scramble check, the logic is aimed at detecting if segments of the HIV genome appear in an unusual order, suggesting potential recombination events or errors in sequence assembly:
+
+1. **Analyze BLAST alignment**: Review the alignment start and end positions of each segment from the BLAST analysis.
+2. **Expect sequential alignment**: In a non-scrambled, intact HIV genome, segments should align sequentially without overlap or significant gaps.
+3. **Detect discrepancies**: If segments are found to align out of expected order or with unexpected overlaps or gaps, it suggests the sequence may be scrambled.
+4. **Report Scramble**: If evidence of scrambling is detected, a `Scramble` error is reported, indicating potential recombination or assembly issues.
 
 This analysis step is copied from [HIVSeqinR software](https://github.com/guineverelee/HIVSeqinR).
-
-It outputs the `Scramble` error code.
 
 ### Inversion check
 
-(TODO: describe the logic)
+The inversion check is designed to identify sequences that may have undergone an inversion, a genetic event where a segment of the genome is reversed end to end:
+
+1. **Orientation analysis**: Using BLAST alignment data, assess the orientation of each aligned segment compared to the reference sequence. Each segment has an associated strand orientation - forward or reverse.
+2. **Detect mixed orientations**: In an intact HIV genome, all segments should align in the same orientation. The presence of segments that align in both forward and reverse orientations within the same sequence suggests possible inversion.
+3. **Report Internal Inversion**: If evidence of internal inversion is detected, an `InternalInversion` error is reported, indicating potential genetic rearrangement within the sequence.
 
 This analysis step is copied from [HIVSeqinR software](https://github.com/guineverelee/HIVSeqinR).
-
-It outputs the `InternalInversion` error code.
 
 ### Large ORFs analysis
 
@@ -147,8 +156,6 @@ This is done with the following algorithm:
 
 If the impact is large enough, meaning that too many nucleotides got frame shifted,
 then output an error with code `FrameshiftInOrf`.
-
-(TODO: show example)
 
 ### Small ORFs analysis
 

@@ -41,7 +41,8 @@ cfeintact check --subtype HXB2 sequences.fasta
 ```
 
 Note: currently it is recommended to use HXB2 even if your sequences are not subtype B.
-This is because many well known reference subtypes contain defects in them.
+This is because many well known sequences of reference subtypes, which CFEIntact uses in its analysis, contain serious defects.
+We track this issue [here](https://github.com/cfe-lab/CFEIntact/issues/5).
 
 ## Documentation
 
