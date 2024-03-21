@@ -5,9 +5,17 @@
 
 Before analyzing a sequence, CFEIntact does some initial preprocessing that is used later in the analysis.
 
+### BLAST Analysis
+
+CFEIntact calls the NCBI's `blastn` program to obtain alignment data that is region-based, as opposed to the global alignment provided by `mafft`.
+
+The subtype of the sequence is determined at this point as well - BLAST tries to align the sequence to every reference subtype sequence specified via the `--subtype` CLI option.
+
+This step is optional, depending on the command line arguments.
+
 ### Alignment to Reference
 
-For each input sequence, CFEIntact uses the `mafft` software to align it to its subtype sequence.
+CFEIntact runs the `mafft` program to align it to its subtype sequence.
 This operation is repeated with the reverse complement (RC) of the input sequence to determine if the fit is better.
 If the RC provides a better alignment, CFEIntact uses it instead.
 This ensures that the direction in which the original sequence is read does not affect the analysis.
@@ -26,11 +34,6 @@ Detection never fails, but it can output ORFs that have a length of 0.
 
 The outputs from this procedure are used to produce the `orfs.json` file.
 
-### BLAST Analysis
-
-Optionally, CFEIntact calls the NCBI's `blastn` program to obtain alignment data that is region-based,
-as opposed to the global alignment provided by `mafft`.
-
 ## Analysis steps
 
 CFEIntact performs multiple analysis steps that are independent of each other.
@@ -38,19 +41,18 @@ Most of these analyses are optional and controlled by passing a command line opt
 
 Table below lists all of the independent steps:
 
-| Name                 | Enabled by Default? | Command Line Option                |
-|----------------------|---------------------|------------------------------------|
-| PSI check            | Yes                 | `--ignore-packaging-signal`        |
-| RRE check            | Yes                 | `--ignore-rre`                     |
-| MSD check            | Yes                 | `--ignore-major-splice-donor-site` |
-| Hypermutation check  | Yes                 | `--ignore-hypermut`                |
-| Large deletion check | Yes                 | `--ignore-long-deletion`           |
-| NonHIV check         | Yes                 | `--ignore-nonhiv`                  |
-| Scramble check       | Yes                 | `--ignore-scramble`                |
-| Inversion check      | Yes                 | `--ignore-internal-inversion`      |
-| Large ORFs analysis  | Yes                 |                                    |
-| Small ORFs analysis  | Yes                 | `--ignore-small-orfs`              |
-
+| Name                 | Command Line Option                |
+|----------------------|------------------------------------|
+| PSI check            | `--ignore-packaging-signal`        |
+| RRE check            | `--ignore-rre`                     |
+| MSD check            | `--ignore-major-splice-donor-site` |
+| Hypermutation check  | `--ignore-hypermut`                |
+| Large deletion check | `--ignore-long-deletion`           |
+| NonHIV check         | `--ignore-nonhiv`                  |
+| Scramble check       | `--ignore-scramble`                |
+| Inversion check      | `--ignore-internal-inversion`      |
+| Large ORFs analysis  |                                    |
+| Small ORFs analysis  | `--ignore-small-orfs`              |
 
 Each step works on a single input sequence and has a set of potential errors it can detect for that sequence.
 

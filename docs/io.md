@@ -1,6 +1,8 @@
 
 # Inputs and Outputs
 
+CFEIntact generates several output files based on the analysis, including intact sequences, nonintact sequences, subtypes, ORFs information, holistic info, and error details. The format of these files can be JSON or CSV, as specified by the user. These files provide a comprehensive report on the analysis, including detected defects, ORF analysis, subtype information, and more.
+
 The only input is a path to a `.fasta` file that you want to analyze.
 This file should include the genomic sequences of interest.
 

@@ -25,6 +25,8 @@ Now that the prerequisites are set, let's proceed with installing CFEIntact. As 
 python3 -m pip install 'git+https://github.com/cfe-lab/CFEIntact'
 ```
 
+To verify if CFEIntact has installed successfuly, run `cfeintact --help`.
+
 ## Platform-specific Instructions
 
 The installation process for CFEIntact will be largely the same across different platforms thanks to Python's cross-platform support. However, ensure you have the necessary permissions to install software on your system or use `sudo` (for Unix-based systems) if required. For Windows users, you may need to run the command prompt as an Administrator for the installation process. Mac users, depending on your system's security and privacy settings, may need to allow the system to install programs from identified developers or use the `sudo` command.
