@@ -66,8 +66,8 @@
     },
     "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.WITH.SOME.LOWERCASES": {
         "intact": false,
-        "qlen": 9714,
-        "hypermutation_probablility": 0.1679778416620883,
+        "qlen": 9718,
+        "hypermutation_probablility": 0.13527282947774355,
         "inferred_subtype": "Ref.01_AE.AF.07.569M.GQ477441",
         "blast_matched_qlen": 1,
         "blast_sseq_coverage": 0.0,
@@ -77,9 +77,9 @@
         "orfs_end": 8006,
         "blast_n_conseqs": 0
     },
-    "small-sequence-with-lowercases": {
+    "small-sequence-with-lowercases[REVERSE_COMPLEMENT]": {
         "intact": false,
-        "qlen": 16,
+        "qlen": 19,
         "hypermutation_probablility": 0.0,
         "inferred_subtype": "Ref.01_AE.AF.07.569M.GQ477441",
         "blast_matched_qlen": 1,

@@ -490,7 +490,7 @@ def has_reading_frames(aligned_sequence, expected, error_bar, reverse=False):
 def iterate_sequences(input_file):
     with open(input_file, 'r') as in_handle:
         for sequence in SeqIO.parse(in_handle, "fasta"):
-            yield sequence
+            yield sequence.upper()
 
 
 def iterate_empty_lists():
