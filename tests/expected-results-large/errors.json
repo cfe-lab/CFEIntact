@@ -21,7 +21,7 @@
         {
             "sequence_name": "KX505501.1",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF vif at 1-1824 can have maximum insertions 18, got 909.",
+            "message": "Smaller ORF vif at 1-1824 can have maximum insertions 3, got 909.",
             "orf": "vif"
         },
         {
@@ -63,7 +63,7 @@
         {
             "sequence_name": "KX505501.1",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 1-1824 can have maximum insertions 126, got 867.",
+            "message": "Smaller ORF nef at 1-1824 can have maximum insertions 45, got 867.",
             "orf": "nef"
         },
         {
@@ -121,7 +121,7 @@
         {
             "sequence_name": "MN692074",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF vpr at 3618-4115 can have maximum insertions 45, got 207.",
+            "message": "Smaller ORF vpr at 3618-4115 can have maximum insertions 3, got 207.",
             "orf": "vpr"
         },
         {
@@ -139,7 +139,7 @@
         {
             "sequence_name": "MN692074",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF vpu at 3618-4115 can have maximum insertions 27, got 249.",
+            "message": "Smaller ORF vpu at 3618-4115 can have maximum insertions 21, got 249.",
             "orf": "vpu"
         },
         {
@@ -157,7 +157,7 @@
         {
             "sequence_name": "MN692074",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 1-4059 can have maximum insertions 126, got 882.",
+            "message": "Smaller ORF nef at 1-4059 can have maximum insertions 45, got 882.",
             "orf": "nef"
         },
         {
@@ -184,7 +184,7 @@
         {
             "sequence_name": "MN090335",
             "error": "InsertionInOrf",
-            "message": "ORF pol at 1428-4469 can have maximum insertions 63, got 30.",
+            "message": "ORF pol at 1428-4469 can have maximum insertions 24, got 30.",
             "orf": "pol"
         },
         {
@@ -352,7 +352,7 @@
         {
             "sequence_name": "MK115158.1",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF vpu at 5591-5860 can have maximum insertions 27, got 24.",
+            "message": "Smaller ORF vpu at 5591-5860 can have maximum insertions 21, got 24.",
             "orf": "vpu"
         },
         {
@@ -692,7 +692,7 @@
         {
             "sequence_name": "MK115702.1",
             "error": "InsertionInOrf",
-            "message": "ORF pol at 1545-4586 can have maximum insertions 63, got 30.",
+            "message": "ORF pol at 1545-4586 can have maximum insertions 24, got 30.",
             "orf": "pol"
         },
         {
@@ -804,7 +804,7 @@
         {
             "sequence_name": "OQ092465",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF tat_exon2 at 8463-8555 can have maximum insertions 0, got 6.",
+            "message": "Smaller ORF tat_exon2 at 8463-8555 can have maximum insertions 3, got 6.",
             "orf": "tat_exon2"
         },
         {
@@ -832,7 +832,7 @@
         {
             "sequence_name": "OQ092464",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF tat_exon2 at 8372-8464 can have maximum insertions 0, got 6.",
+            "message": "Smaller ORF tat_exon2 at 8372-8464 can have maximum insertions 3, got 6.",
             "orf": "tat_exon2"
         },
         {
@@ -852,7 +852,7 @@
         {
             "sequence_name": "OQ092467",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF rev_exon2 at 8390-8674 can have maximum insertions 12, got 9.",
+            "message": "Smaller ORF rev_exon2 at 8390-8674 can have maximum insertions 3, got 9.",
             "orf": "rev_exon2"
         },
         {

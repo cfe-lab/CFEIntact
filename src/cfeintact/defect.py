@@ -36,7 +36,7 @@ class InsertionInOrf(ORFDefect):
     def __str__(self) -> str:
         return (f"{'Smaller ' if self.q.is_small else ''}"
                 f"ORF {self.e.name} at {self.q.start + 1}-{self.q.end + 1} can have maximum insertions "
-                f"{3 * self.e.max_deletions}, got {self.insertions}.")
+                f"{self.e.max_insertions}, got {self.insertions}.")
 
 
 @dataclass(frozen=True)

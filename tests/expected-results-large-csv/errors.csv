@@ -2,14 +2,14 @@ sequence_name,error,message,orf
 KX505501.1,DeletionInOrf,"ORF gag at 337-1824 can have maximum deletions 12, got 15.",gag
 KX505501.1,InternalStopInOrf,ORF pol at 1629-1927 contains an internal stop codon at 1746.,pol
 KX505501.1,InternalStopInOrf,ORF env at 1-1824 contains an internal stop codon at 253.,env
-KX505501.1,InsertionInOrf,"Smaller ORF vif at 1-1824 can have maximum insertions 18, got 909.",vif
+KX505501.1,InsertionInOrf,"Smaller ORF vif at 1-1824 can have maximum insertions 3, got 909.",vif
 KX505501.1,DeletionInOrf,"Smaller ORF vpr at 1600-1824 can have maximum deletions 15, got 66.",vpr
 KX505501.1,DeletionInOrf,"Smaller ORF tat_exon1 at 1578-1746 can have maximum deletions 1, got 180.",tat_exon1
 KX505501.1,DeletionInOrf,"Smaller ORF rev_exon1 at 1578-1746 can have maximum deletions 0, got 42.",rev_exon1
 KX505501.1,DeletionInOrf,"Smaller ORF vpu at 1600-1824 can have maximum deletions 9, got 24.",vpu
 KX505501.1,DeletionInOrf,"Smaller ORF tat_exon2 at 1747-1824 can have maximum deletions 0, got 15.",tat_exon2
 KX505501.1,InternalStopInOrf,Smaller ORF rev_exon2 at 1747-1927 contains an internal stop codon at 1822.,rev_exon2
-KX505501.1,InsertionInOrf,"Smaller ORF nef at 1-1824 can have maximum insertions 126, got 867.",nef
+KX505501.1,InsertionInOrf,"Smaller ORF nef at 1-1824 can have maximum insertions 45, got 867.",nef
 KX505501.1,RevResponseElementDeletion,Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.,
 KX505501.1,LongDeletion,Query sequence contains a long deletion.,
 KX505501.1,Scramble,Sequence is plus-scrambled.,
@@ -18,17 +18,17 @@ MN691959,DeletionInOrf,"Smaller ORF tat_exon2 at 8238-8330 can have maximum dele
 MN692074,InternalStopInOrf,ORF pol at 2085-4153 contains an internal stop codon at 4113.,pol
 MN692074,InternalStopInOrf,ORF env at 3-4115 contains an internal stop codon at 330.,env
 MN692074,DeletionInOrf,"Smaller ORF vif at 3618-4115 can have maximum deletions 6, got 81.",vif
-MN692074,InsertionInOrf,"Smaller ORF vpr at 3618-4115 can have maximum insertions 45, got 207.",vpr
+MN692074,InsertionInOrf,"Smaller ORF vpr at 3618-4115 can have maximum insertions 3, got 207.",vpr
 MN692074,DeletionInOrf,"Smaller ORF tat_exon1 at 3824-4082 can have maximum deletions 1, got 153.",tat_exon1
 MN692074,DeletionInOrf,"Smaller ORF rev_exon1 at 3824-4082 can have maximum deletions 0, got 15.",rev_exon1
-MN692074,InsertionInOrf,"Smaller ORF vpu at 3618-4115 can have maximum insertions 27, got 249.",vpu
+MN692074,InsertionInOrf,"Smaller ORF vpu at 3618-4115 can have maximum insertions 21, got 249.",vpu
 MN692074,DeletionInOrf,"Smaller ORF tat_exon2 at 4083-4115 can have maximum deletions 0, got 60.",tat_exon2
 MN692074,DeletionInOrf,"Smaller ORF rev_exon2 at 4083-4115 can have maximum deletions 4, got 243.",rev_exon2
-MN692074,InsertionInOrf,"Smaller ORF nef at 1-4059 can have maximum insertions 126, got 882.",nef
+MN692074,InsertionInOrf,"Smaller ORF nef at 1-4059 can have maximum insertions 45, got 882.",nef
 MN692074,RevResponseElementDeletion,Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.,
 MN692074,LongDeletion,Query sequence contains a long deletion.,
 MN090335,InternalStopInOrf,ORF gag at 316-1665 contains an internal stop codon at 349.,gag
-MN090335,InsertionInOrf,"ORF pol at 1428-4469 can have maximum insertions 63, got 30.",pol
+MN090335,InsertionInOrf,"ORF pol at 1428-4469 can have maximum insertions 24, got 30.",pol
 MN090335,DeletionInOrf,"Smaller ORF tat_exon2 at 7740-7832 can have maximum deletions 0, got 45.",tat_exon2
 MN090335,PackagingSignalDeletion,Query Sequence exceeds maximum deletion tolerance in PSI. Contains 42 deletions with max tolerance of 10 deletions.,
 MN090335,MajorSpliceDonorSiteMutated,"Query sequence has a mutated splice donor site, AT.",
@@ -53,7 +53,7 @@ MK115211.1,PackagingSignalDeletion,Query Sequence exceeds maximum deletion toler
 MK115211.1,MajorSpliceDonorSiteMutated,"Query sequence has a missing splice donor site, --.",
 MK115211.1,Scramble,Sequence is minus-scrambled.,
 MK115211.1,InternalInversion,Sequence contains an internal inversion.,
-MK115158.1,InsertionInOrf,"Smaller ORF vpu at 5591-5860 can have maximum insertions 27, got 24.",vpu
+MK115158.1,InsertionInOrf,"Smaller ORF vpu at 5591-5860 can have maximum insertions 21, got 24.",vpu
 MK115158.1,DeletionInOrf,"Smaller ORF tat_exon2 at 7897-8004 can have maximum deletions 0, got 15.",tat_exon2
 MK115158.1,PackagingSignalDeletion,Query Sequence exceeds maximum deletion tolerance in PSI. Contains 20 deletions with max tolerance of 10 deletions.,
 MK115158.1,MajorSpliceDonorSiteMutated,"Query sequence has a missing splice donor site, --.",
@@ -105,7 +105,7 @@ MK115520.1,MajorSpliceDonorSiteMutated,"Query sequence has a mutated splice dono
 MK115520.1,InternalInversion,Sequence contains an internal inversion.,
 MK115570.1,PackagingSignalDeletion,Query Sequence exceeds maximum deletion tolerance in PSI. Contains 11 deletions with max tolerance of 10 deletions.,
 MK115570.1,MajorSpliceDonorSiteMutated,"Query sequence has a missing splice donor site, --.",
-MK115702.1,InsertionInOrf,"ORF pol at 1545-4586 can have maximum insertions 63, got 30.",pol
+MK115702.1,InsertionInOrf,"ORF pol at 1545-4586 can have maximum insertions 24, got 30.",pol
 MK115702.1,PackagingSignalDeletion,Query Sequence exceeds maximum deletion tolerance in PSI. Contains 54 deletions with max tolerance of 10 deletions.,
 MK115702.1,MajorSpliceDonorSiteMutated,"Query sequence has a missing splice donor site, --.",
 MK115702.1,Scramble,Sequence is plus-scrambled.,
@@ -122,13 +122,13 @@ MK115095.1,APOBECHypermutationDetected,Query sequence shows evidence of APOBEC3F
 OQ092466,MajorSpliceDonorSiteMutated,"Query sequence has a mutated splice donor site, GC.",
 OQ092463,PackagingSignalDeletion,Query Sequence exceeds maximum deletion tolerance in PSI. Contains 26 deletions with max tolerance of 10 deletions.,
 OQ092463,MajorSpliceDonorSiteMutated,"Query sequence has a missing splice donor site, --.",
-OQ092465,InsertionInOrf,"Smaller ORF tat_exon2 at 8463-8555 can have maximum insertions 0, got 6.",tat_exon2
+OQ092465,InsertionInOrf,"Smaller ORF tat_exon2 at 8463-8555 can have maximum insertions 3, got 6.",tat_exon2
 OQ092465,MajorSpliceDonorSiteMutated,"Query sequence has a mutated splice donor site, GA.",
 OQ092462,PackagingSignalDeletion,Query Sequence exceeds maximum deletion tolerance in PSI. Contains 23 deletions with max tolerance of 10 deletions.,
 OQ092462,MajorSpliceDonorSiteMutated,"Query sequence has a missing splice donor site, --.",
-OQ092464,InsertionInOrf,"Smaller ORF tat_exon2 at 8372-8464 can have maximum insertions 0, got 6.",tat_exon2
+OQ092464,InsertionInOrf,"Smaller ORF tat_exon2 at 8372-8464 can have maximum insertions 3, got 6.",tat_exon2
 OQ092464,PackagingSignalDeletion,Query Sequence exceeds maximum deletion tolerance in PSI. Contains 19 deletions with max tolerance of 10 deletions.,
 OQ092464,MajorSpliceDonorSiteMutated,"Query sequence has a missing splice donor site, --.",
-OQ092467,InsertionInOrf,"Smaller ORF rev_exon2 at 8390-8674 can have maximum insertions 12, got 9.",rev_exon2
+OQ092467,InsertionInOrf,"Smaller ORF rev_exon2 at 8390-8674 can have maximum insertions 3, got 9.",rev_exon2
 OQ092467,PackagingSignalDeletion,Query Sequence exceeds maximum deletion tolerance in PSI. Contains 22 deletions with max tolerance of 10 deletions.,
 OQ092467,MajorSpliceDonorSiteMutated,"Query sequence has a missing splice donor site, --.",

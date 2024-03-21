@@ -606,7 +606,7 @@
         {
             "sequence_name": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "error": "InsertionInOrf",
-            "message": "Smaller ORF tat_exon2 at 8200-8298 can have maximum insertions 0, got 6.",
+            "message": "Smaller ORF tat_exon2 at 8200-8298 can have maximum insertions 3, got 6.",
             "orf": "tat_exon2"
         },
         {
