@@ -615,8 +615,11 @@ def read_hxb2_orfs(aligned_subtype: AlignedSequence,
         start = start if start < vpr_defective_insertion_pos else start - 1
         end = end if end < vpr_defective_insertion_pos else end - 1
 
-        yield initialize_orf(aligned_subtype, name, start, end,
-                             max_deletions, max_insertions, is_small)
+        yield initialize_orf(aligned_subtype, name=name,
+                             start=start, end=end,
+                             max_deletions=max_deletions,
+                             max_insertions=max_insertions,
+                             is_small=is_small)
 
 
 VALID_DNA_CHARACTERS = IUPACData.ambiguous_dna_letters.upper()
