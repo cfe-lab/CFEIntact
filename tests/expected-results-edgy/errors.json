@@ -9,8 +9,8 @@
         },
         {
             "qseqid": "small-sequence[REVERSE_COMPLEMENT]",
-            "error": "DeletionInOrf",
-            "message": "ORF pol at 1-21 can have maximum deletions 91, got 2988.",
+            "error": "FrameshiftInOrf",
+            "message": "ORF pol at 1-21 contains out of frame indels that impact 2014 positions.",
             "orf": "pol"
         },
         {
@@ -51,14 +51,14 @@
         },
         {
             "qseqid": "small-sequence[REVERSE_COMPLEMENT]",
-            "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon2 at 1-14 can have maximum deletions 0, got 75.",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF tat_exon2 at 1-14 contains out of frame indels that impact 63 positions.",
             "orf": "tat_exon2"
         },
         {
             "qseqid": "small-sequence[REVERSE_COMPLEMENT]",
-            "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon2 at 1-21 can have maximum deletions 6, got 273.",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF rev_exon2 at 1-21 contains out of frame indels that impact 193 positions.",
             "orf": "rev_exon2"
         },
         {
@@ -107,8 +107,8 @@
         },
         {
             "qseqid": "singleton-sequence",
-            "error": "DeletionInOrf",
-            "message": "ORF pol at 1-3 can have maximum deletions 91, got 3006.",
+            "error": "FrameshiftInOrf",
+            "message": "ORF pol at 1-3 contains out of frame indels that impact 2008 positions.",
             "orf": "pol"
         },
         {
@@ -149,14 +149,14 @@
         },
         {
             "qseqid": "singleton-sequence",
-            "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon2 at 1-3 can have maximum deletions 0, got 87.",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF tat_exon2 at 1-3 contains out of frame indels that impact 62 positions.",
             "orf": "tat_exon2"
         },
         {
             "qseqid": "singleton-sequence",
-            "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon2 at 1-3 can have maximum deletions 6, got 291.",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF rev_exon2 at 1-3 contains out of frame indels that impact 198 positions.",
             "orf": "rev_exon2"
         },
         {
@@ -415,8 +415,8 @@
         },
         {
             "qseqid": "small-sequence-with-lowercases[REVERSE_COMPLEMENT]",
-            "error": "DeletionInOrf",
-            "message": "ORF pol at 1-21 can have maximum deletions 91, got 2988.",
+            "error": "FrameshiftInOrf",
+            "message": "ORF pol at 1-21 contains out of frame indels that impact 2014 positions.",
             "orf": "pol"
         },
         {
@@ -457,14 +457,14 @@
         },
         {
             "qseqid": "small-sequence-with-lowercases[REVERSE_COMPLEMENT]",
-            "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon2 at 1-14 can have maximum deletions 0, got 75.",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF tat_exon2 at 1-14 contains out of frame indels that impact 63 positions.",
             "orf": "tat_exon2"
         },
         {
             "qseqid": "small-sequence-with-lowercases[REVERSE_COMPLEMENT]",
-            "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon2 at 1-21 can have maximum deletions 6, got 273.",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF rev_exon2 at 1-21 contains out of frame indels that impact 193 positions.",
             "orf": "rev_exon2"
         },
         {
@@ -533,50 +533,50 @@
     "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED": [
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
-            "error": "InternalStopInOrf",
-            "message": "ORF gag at 49-2340 contains an internal stop codon at 106.",
+            "error": "FrameshiftInOrf",
+            "message": "ORF gag at 49-2340 contains out of frame indels that impact 992 positions.",
             "orf": "gag"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
-            "error": "InternalStopInOrf",
-            "message": "ORF pol at 2072-5245 contains an internal stop codon at 2168.",
+            "error": "FrameshiftInOrf",
+            "message": "ORF pol at 2072-5245 contains out of frame indels that impact 1990 positions.",
             "orf": "pol"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
-            "error": "InternalStopInOrf",
-            "message": "ORF env at 6217-8718 contains an internal stop codon at 6292.",
+            "error": "FrameshiftInOrf",
+            "message": "ORF env at 6217-8718 contains out of frame indels that impact 1712 positions.",
             "orf": "env"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
-            "error": "InternalStopInOrf",
-            "message": "Smaller ORF vif at 5294-5818 contains an internal stop codon at 5363.",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF vif at 5294-5818 contains out of frame indels that impact 369 positions.",
             "orf": "vif"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
-            "error": "InternalStopInOrf",
-            "message": "Smaller ORF vpr at 5691-5918 contains an internal stop codon at 5706.",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF vpr at 5691-5918 contains out of frame indels that impact 202 positions.",
             "orf": "vpr"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
-            "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon1 at 5890-6065 can have maximum deletions 0, got 147.",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF tat_exon1 at 5890-6065 contains out of frame indels that impact 129 positions.",
             "orf": "tat_exon1"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
-            "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon1 at 5956-6065 can have maximum deletions 0, got 9.",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF rev_exon1 at 5956-6065 contains out of frame indels that impact 64 positions.",
             "orf": "rev_exon1"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
-            "error": "InternalStopInOrf",
-            "message": "Smaller ORF vpu at 6075-6377 contains an internal stop codon at 6081.",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF vpu at 6075-6377 contains out of frame indels that impact 167 positions.",
             "orf": "vpu"
         },
         {
@@ -587,14 +587,14 @@
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
-            "error": "InternalStopInOrf",
-            "message": "Smaller ORF rev_exon2 at 8200-8528 contains an internal stop codon at 8296.",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF rev_exon2 at 8200-8528 contains out of frame indels that impact 235 positions.",
             "orf": "rev_exon2"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
-            "error": "InternalStopInOrf",
-            "message": "Smaller ORF nef at 8758-9612 contains an internal stop codon at 8839.",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF nef at 8758-9612 contains out of frame indels that impact 444 positions.",
             "orf": "nef"
         },
         {
@@ -663,8 +663,8 @@
         },
         {
             "qseqid": "small-sequence-with-xs",
-            "error": "DeletionInOrf",
-            "message": "ORF pol at 1-12 can have maximum deletions 91, got 2997.",
+            "error": "FrameshiftInOrf",
+            "message": "ORF pol at 1-12 contains out of frame indels that impact 2007 positions.",
             "orf": "pol"
         },
         {
@@ -705,14 +705,14 @@
         },
         {
             "qseqid": "small-sequence-with-xs",
-            "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon2 at 1-12 can have maximum deletions 0, got 78.",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF tat_exon2 at 1-12 contains out of frame indels that impact 61 positions.",
             "orf": "tat_exon2"
         },
         {
             "qseqid": "small-sequence-with-xs",
-            "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon2 at 1-12 can have maximum deletions 6, got 282.",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF rev_exon2 at 1-12 contains out of frame indels that impact 195 positions.",
             "orf": "rev_exon2"
         },
         {
@@ -799,8 +799,8 @@
         },
         {
             "qseqid": "small-sequence-with-bad-symbols",
-            "error": "DeletionInOrf",
-            "message": "ORF pol at 1-12 can have maximum deletions 91, got 2997.",
+            "error": "FrameshiftInOrf",
+            "message": "ORF pol at 1-12 contains out of frame indels that impact 2007 positions.",
             "orf": "pol"
         },
         {
@@ -841,14 +841,14 @@
         },
         {
             "qseqid": "small-sequence-with-bad-symbols",
-            "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon2 at 1-12 can have maximum deletions 0, got 78.",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF tat_exon2 at 1-12 contains out of frame indels that impact 61 positions.",
             "orf": "tat_exon2"
         },
         {
             "qseqid": "small-sequence-with-bad-symbols",
-            "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon2 at 1-12 can have maximum deletions 6, got 282.",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF rev_exon2 at 1-12 contains out of frame indels that impact 195 positions.",
             "orf": "rev_exon2"
         },
         {
@@ -935,8 +935,8 @@
         },
         {
             "qseqid": "small-sequence-with-dashes",
-            "error": "DeletionInOrf",
-            "message": "ORF pol at 1-12 can have maximum deletions 91, got 2997.",
+            "error": "FrameshiftInOrf",
+            "message": "ORF pol at 1-12 contains out of frame indels that impact 2007 positions.",
             "orf": "pol"
         },
         {
@@ -977,14 +977,14 @@
         },
         {
             "qseqid": "small-sequence-with-dashes",
-            "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon2 at 1-12 can have maximum deletions 0, got 78.",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF tat_exon2 at 1-12 contains out of frame indels that impact 61 positions.",
             "orf": "tat_exon2"
         },
         {
             "qseqid": "small-sequence-with-dashes",
-            "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon2 at 1-12 can have maximum deletions 6, got 282.",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF rev_exon2 at 1-12 contains out of frame indels that impact 195 positions.",
             "orf": "rev_exon2"
         },
         {
@@ -1033,8 +1033,8 @@
         },
         {
             "qseqid": "small-sequence-with-dashes/andwithslashestoo",
-            "error": "DeletionInOrf",
-            "message": "ORF pol at 1-12 can have maximum deletions 91, got 2997.",
+            "error": "FrameshiftInOrf",
+            "message": "ORF pol at 1-12 contains out of frame indels that impact 2007 positions.",
             "orf": "pol"
         },
         {
@@ -1075,14 +1075,14 @@
         },
         {
             "qseqid": "small-sequence-with-dashes/andwithslashestoo",
-            "error": "DeletionInOrf",
-            "message": "Smaller ORF tat_exon2 at 1-12 can have maximum deletions 0, got 78.",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF tat_exon2 at 1-12 contains out of frame indels that impact 61 positions.",
             "orf": "tat_exon2"
         },
         {
             "qseqid": "small-sequence-with-dashes/andwithslashestoo",
-            "error": "DeletionInOrf",
-            "message": "Smaller ORF rev_exon2 at 1-12 can have maximum deletions 6, got 282.",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF rev_exon2 at 1-12 contains out of frame indels that impact 195 positions.",
             "orf": "rev_exon2"
         },
         {

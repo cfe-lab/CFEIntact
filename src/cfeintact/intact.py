@@ -448,6 +448,18 @@ def has_reading_frames(aligned_sequence, expected, error_bar, reverse=False):
         deletions = max(0, len(exp_protein) - len(got_protein)) * 3
         insertions = max(0, len(got_protein) - len(exp_protein)) * 3
 
+        got_nucleotides = sequence.seq[q.start:q.start + len(got_protein) * 3].upper()
+        exp_nucleotides = reference.seq[e.start:e.end].upper()
+        if got_nucleotides and exp_nucleotides:
+            orf_alignment = detailed_aligner.align(exp_nucleotides, got_nucleotides)
+            impacted_by_indels = get_indel_impact(orf_alignment)
+
+            # Check for frameshift in ORF
+            if impacted_by_indels >= max(e.max_deletions, e.max_insertions) + 3:
+                d4 = defect.FrameshiftInOrf(e=e, q=q, impacted_positions=impacted_by_indels)
+                errors.append(Defect(sequence.id, d4))
+                continue
+
         # Max deletion allowed in ORF exceeded
         if deletions > e.max_deletions:
 
@@ -463,18 +475,6 @@ def has_reading_frames(aligned_sequence, expected, error_bar, reverse=False):
                 errors.append(Defect(sequence.id, d2))
 
             continue
-
-        got_nucleotides = sequence.seq[q.start:q.start + len(got_protein) * 3].upper()
-        exp_nucleotides = reference.seq[e.start:e.end].upper()
-        if got_nucleotides and exp_nucleotides:
-            orf_alignment = detailed_aligner.align(exp_nucleotides, got_nucleotides)
-            impacted_by_indels = get_indel_impact(orf_alignment)
-
-            # Check for frameshift in ORF
-            if impacted_by_indels >= max(e.max_deletions, e.max_insertions) + 3:
-                d4 = defect.FrameshiftInOrf(e=e, q=q, impacted_positions=impacted_by_indels)
-                errors.append(Defect(sequence.id, d4))
-                continue
 
         if best_match.distance <= e.max_distance:
             continue
