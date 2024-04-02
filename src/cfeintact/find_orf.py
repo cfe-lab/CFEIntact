@@ -90,6 +90,7 @@ def find_candidate_positions(aligned_sequence: AlignedSequence, e: OriginalORF) 
                     protein=got_protein,
                     max_deletions=e.max_deletions,
                     max_insertions=e.max_insertions,
+                    max_distance=e.max_distance,
                     is_small=e.is_small,
                 )
                 yield MappedORF(

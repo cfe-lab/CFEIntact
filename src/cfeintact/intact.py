@@ -605,7 +605,7 @@ class OutputWriter:
 def read_hxb2_orfs(aligned_subtype: AlignedSequence,
                    orfs: const.ORFsDefinition,
                    is_small: bool) -> Iterable[OriginalORF]:
-    for (name, start, end, max_deletions, max_insertions) in orfs:
+    for (name, start, end, max_deletions, max_insertions, max_distance) in orfs:
         # Decrement is needed because original coordinates are 1-based.
         start = start - 1
         end = end - 1
@@ -619,6 +619,7 @@ def read_hxb2_orfs(aligned_subtype: AlignedSequence,
                              start=start, end=end,
                              max_deletions=max_deletions,
                              max_insertions=max_insertions,
+                             max_distance=max_distance,
                              is_small=is_small)
 
 

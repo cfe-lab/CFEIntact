@@ -7,7 +7,7 @@ except for the standard constants such as the 5% limit for p-value.
 
 ## ORF lengths
 
-| ORF name  | deletion tolerance | insertion tolerance |
+| ORF name  | Deletion tolerance | Insertion tolerance |
 |-----------|--------------------|---------------------|
 | gag       | -39                | +201                |
 | pol       | -91                | +21                 |
@@ -42,11 +42,49 @@ The values above are based on the following emperical data:
 
 The table above presents an analysis of Open Reading Frame (ORF) lengths for different genes. The analysis summarizes the lengths by providing statistical measures such as the median, minimum, maximum, mean, mode, standard deviation, variance, and the count of the samples.
 
+Then deletion and insertion tolerance is calculated as `|Median - Minimum|` and `|Median - Maximum|`.
+Note that `InsertionInOrf` error is only reported when the distance measure is also crossed.
 
 Statistical measures help in understanding the distribution of the data. For instance, the mean gives an idea of the average ORF length, while the median provides a measure of the center of the distribution. The mode indicates the most frequently observed length, and the variance or standard deviation shows how spread apart the lengths are from the mean.
 
 
 Each gene has different limits for deletion and insertion tolerance, as shown in the first table. Insights into the length distribution further our understanding of how these tolerances affect gene functionality. For example, if a gene has a high variance, it suggests that the gene can tolerate more variations in its length, hence a higher tolerance limit.
+
+## Distance
+
+TODO: add description as in #ORF lengths
+
+| ORF name  | Distance tolerance |
+|-----------|--------------------|
+| gag       | 0.66               |
+| pol       | 0.76               |
+| env       | 0.69               |
+| vif       | 0.69               |
+| vpr       | 0.50               |
+| tat_exon1 | 0.61               |
+| rev_exon1 | 0.60               |
+| vpu       | 0.75               |
+| tat_exon2 | 0.70               |
+| rev_exon2 | 0.61               |
+| nef       | 0.68               |
+
+TODO: add description as in #ORF lengths
+
+| ORF name  | Mean | Median | Mode | Stdev | Minimum | Maximum | Count |
+|-----------|------|--------|------|-------|---------|---------|-------|
+| gag       | 0.29 | 0.28   | 0.26 | 0.07  | 0.2     | 0.66    | 2054  |
+| pol       | 0.24 | 0.22   | 0.22 | 0.1   | 0.15    | 0.76    | 2054  |
+| env       | 0.5  | 0.49   | 0.45 | 0.04  | 0.44    | 0.69    | 2056  |
+| vif       | 0.37 | 0.37   | 0.35 | 0.05  | 0.23    | 0.69    | 2066  |
+| vpr       | 0.33 | 0.34   | 0.31 | 0.06  | 0.2     | 0.5     | 2071  |
+| tat_exon1 | 0.43 | 0.43   | 0.43 | 0.06  | 0.25    | 0.61    | 2054  |
+| rev_exon1 | 0.43 | 0.43   | 0.43 | 0.08  | 0.16    | 0.6     | 2074  |
+| vpu       | 0.56 | 0.56   | 0.51 | 0.04  | 0.47    | 0.75    | 2056  |
+| tat_exon2 | 0.48 | 0.48   | 0.44 | 0.08  | 0.24    | 0.7     | 2079  |
+| rev_exon2 | 0.43 | 0.44   | 0.41 | 0.07  | 0.21    | 0.61    | 2071  |
+| nef       | 0.48 | 0.48   | 0.45 | 0.05  | 0.39    | 0.68    | 2057  |
+
+TODO: add foreword as in #ORF lengths
 
 ## Other
 

@@ -8,6 +8,7 @@ class OriginalORF:
     end: int
     max_deletions: int
     max_insertions: int
+    max_distance: float
     nucleotides: str
     aminoacids: str
     protein: str

@@ -7,7 +7,7 @@ from cfeintact.aligned_sequence import AlignedSequence
 def initialize_orf(aligned_sequence: AlignedSequence, name: str,
                    start: int, end: int,
                    max_deletions: int, max_insertions: int,
-                   is_small: bool) -> OriginalORF:
+                   max_distance: float, is_small: bool) -> OriginalORF:
     nucleotides = aligned_sequence.reference.seq[start:(end + 1)]
     aminoacids = translate_to_aminoacids(nucleotides)
     protein = aminoacids.strip("*")
@@ -18,6 +18,7 @@ def initialize_orf(aligned_sequence: AlignedSequence, name: str,
             end=end,
             max_deletions=abs(max_deletions),
             max_insertions=abs(max_insertions),
+            max_distance=max_distance,
             nucleotides=nucleotides,
             aminoacids=aminoacids,
             protein=protein,
