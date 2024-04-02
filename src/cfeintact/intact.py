@@ -495,24 +495,16 @@ def check_reading_frame(aligned_sequence, expected, error_bar, reverse=False):
     def add_error(defect):
         if defect:
             errors.append(Defect(sequence.id, defect))
-            return True
 
     for e in expected:
         best_match = find_orf(aligned_sequence, e)
         matches.append(best_match)
         q = best_match.query
 
-        if add_error(check_reading_frame_shift(reference, sequence=sequence, e=e, q=q)):
-            continue
-
-        if add_error(check_reading_frame_deletions(e=e, q=q)):
-            continue
-
-        if add_error(check_reading_frame_insertions(best_match, e=e, q=q)):
-            continue
-
-        if add_error(check_reading_frame_distance(best_match, e=e, q=q)):
-            continue
+        add_error(check_reading_frame_shift(reference, sequence=sequence, e=e, q=q))
+        add_error(check_reading_frame_deletions(e=e, q=q))
+        add_error(check_reading_frame_insertions(best_match, e=e, q=q))
+        add_error(check_reading_frame_distance(best_match, e=e, q=q))
 
     return matches, errors
 

@@ -9,8 +9,26 @@
         },
         {
             "qseqid": "small-sequence[REVERSE_COMPLEMENT]",
+            "error": "SequenceDivergence",
+            "message": "ORF gag at 1-21 can have maximum distance of 0.66 from its subtype ORF's aminoacid sequence, got 0.7803451759315906.",
+            "orf": "gag"
+        },
+        {
+            "qseqid": "small-sequence[REVERSE_COMPLEMENT]",
             "error": "FrameshiftInOrf",
             "message": "ORF pol at 1-21 contains out of frame indels that impact 2014 positions.",
+            "orf": "pol"
+        },
+        {
+            "qseqid": "small-sequence[REVERSE_COMPLEMENT]",
+            "error": "DeletionInOrf",
+            "message": "ORF pol at 1-21 can have maximum deletions 91, got 2988.",
+            "orf": "pol"
+        },
+        {
+            "qseqid": "small-sequence[REVERSE_COMPLEMENT]",
+            "error": "SequenceDivergence",
+            "message": "ORF pol at 1-21 can have maximum distance of 0.76 from its subtype ORF's aminoacid sequence, got 0.7794798035978714.",
             "orf": "pol"
         },
         {
@@ -21,8 +39,20 @@
         },
         {
             "qseqid": "small-sequence[REVERSE_COMPLEMENT]",
+            "error": "SequenceDivergence",
+            "message": "ORF env at 1-21 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.7802599076361288.",
+            "orf": "env"
+        },
+        {
+            "qseqid": "small-sequence[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
             "message": "Smaller ORF vif at 1-21 can have maximum deletions 3, got 573.",
+            "orf": "vif"
+        },
+        {
+            "qseqid": "small-sequence[REVERSE_COMPLEMENT]",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF vif at 1-21 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.7806712105497112.",
             "orf": "vif"
         },
         {
@@ -33,8 +63,20 @@
         },
         {
             "qseqid": "small-sequence[REVERSE_COMPLEMENT]",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF vpr at 1-21 can have maximum distance of 0.5 from its subtype ORF's aminoacid sequence, got 0.7812035661218425.",
+            "orf": "vpr"
+        },
+        {
+            "qseqid": "small-sequence[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
             "message": "Smaller ORF tat_exon1 at 2-5 can have maximum deletions 0, got 216.",
+            "orf": "tat_exon1"
+        },
+        {
+            "qseqid": "small-sequence[REVERSE_COMPLEMENT]",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF tat_exon1 at 2-5 can have maximum distance of 0.61 from its subtype ORF's aminoacid sequence, got 0.778175313059034.",
             "orf": "tat_exon1"
         },
         {
@@ -45,14 +87,38 @@
         },
         {
             "qseqid": "small-sequence[REVERSE_COMPLEMENT]",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF rev_exon1 at 2-5 can have maximum distance of 0.6 from its subtype ORF's aminoacid sequence, got 0.7746085011185683.",
+            "orf": "rev_exon1"
+        },
+        {
+            "qseqid": "small-sequence[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
             "message": "Smaller ORF vpu at 1-21 can have maximum deletions 6, got 243.",
             "orf": "vpu"
         },
         {
             "qseqid": "small-sequence[REVERSE_COMPLEMENT]",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF vpu at 1-21 can have maximum distance of 0.75 from its subtype ORF's aminoacid sequence, got 0.7813860351732544.",
+            "orf": "vpu"
+        },
+        {
+            "qseqid": "small-sequence[REVERSE_COMPLEMENT]",
             "error": "FrameshiftInOrf",
             "message": "Smaller ORF tat_exon2 at 1-14 contains out of frame indels that impact 63 positions.",
+            "orf": "tat_exon2"
+        },
+        {
+            "qseqid": "small-sequence[REVERSE_COMPLEMENT]",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF tat_exon2 at 1-14 can have maximum deletions 0, got 75.",
+            "orf": "tat_exon2"
+        },
+        {
+            "qseqid": "small-sequence[REVERSE_COMPLEMENT]",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF tat_exon2 at 1-14 can have maximum distance of 0.7 from its subtype ORF's aminoacid sequence, got 0.7828594973217965.",
             "orf": "tat_exon2"
         },
         {
@@ -64,7 +130,25 @@
         {
             "qseqid": "small-sequence[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
+            "message": "Smaller ORF rev_exon2 at 1-21 can have maximum deletions 6, got 273.",
+            "orf": "rev_exon2"
+        },
+        {
+            "qseqid": "small-sequence[REVERSE_COMPLEMENT]",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF rev_exon2 at 1-21 can have maximum distance of 0.61 from its subtype ORF's aminoacid sequence, got 0.7743216412971542.",
+            "orf": "rev_exon2"
+        },
+        {
+            "qseqid": "small-sequence[REVERSE_COMPLEMENT]",
+            "error": "DeletionInOrf",
             "message": "Smaller ORF nef at 1-21 can have maximum deletions 48, got 672.",
+            "orf": "nef"
+        },
+        {
+            "qseqid": "small-sequence[REVERSE_COMPLEMENT]",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF nef at 1-21 can have maximum distance of 0.68 from its subtype ORF's aminoacid sequence, got 0.7805933836772095.",
             "orf": "nef"
         },
         {
@@ -107,8 +191,26 @@
         },
         {
             "qseqid": "singleton-sequence",
+            "error": "SequenceDivergence",
+            "message": "ORF gag at 1-3 can have maximum distance of 0.66 from its subtype ORF's aminoacid sequence, got 0.7803451759315906.",
+            "orf": "gag"
+        },
+        {
+            "qseqid": "singleton-sequence",
             "error": "FrameshiftInOrf",
             "message": "ORF pol at 1-3 contains out of frame indels that impact 2008 positions.",
+            "orf": "pol"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "error": "DeletionInOrf",
+            "message": "ORF pol at 1-3 can have maximum deletions 91, got 3006.",
+            "orf": "pol"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "error": "SequenceDivergence",
+            "message": "ORF pol at 1-3 can have maximum distance of 0.76 from its subtype ORF's aminoacid sequence, got 0.780172900892756.",
             "orf": "pol"
         },
         {
@@ -119,8 +221,20 @@
         },
         {
             "qseqid": "singleton-sequence",
+            "error": "SequenceDivergence",
+            "message": "ORF env at 1-3 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.7802599076361288.",
+            "orf": "env"
+        },
+        {
+            "qseqid": "singleton-sequence",
             "error": "DeletionInOrf",
             "message": "Smaller ORF vif at 1-3 can have maximum deletions 3, got 573.",
+            "orf": "vif"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF vif at 1-3 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.7806712105497112.",
             "orf": "vif"
         },
         {
@@ -131,8 +245,20 @@
         },
         {
             "qseqid": "singleton-sequence",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF vpr at 1-3 can have maximum distance of 0.5 from its subtype ORF's aminoacid sequence, got 0.7812035661218425.",
+            "orf": "vpr"
+        },
+        {
+            "qseqid": "singleton-sequence",
             "error": "DeletionInOrf",
             "message": "Smaller ORF tat_exon1 at 1-1 can have maximum deletions 0, got 216.",
+            "orf": "tat_exon1"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF tat_exon1 at 1-1 can have maximum distance of 0.61 from its subtype ORF's aminoacid sequence, got 0.7791629563668745.",
             "orf": "tat_exon1"
         },
         {
@@ -143,14 +269,38 @@
         },
         {
             "qseqid": "singleton-sequence",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF rev_exon1 at 1-1 can have maximum distance of 0.6 from its subtype ORF's aminoacid sequence, got 0.7774095553714444.",
+            "orf": "rev_exon1"
+        },
+        {
+            "qseqid": "singleton-sequence",
             "error": "DeletionInOrf",
             "message": "Smaller ORF vpu at 1-3 can have maximum deletions 6, got 243.",
             "orf": "vpu"
         },
         {
             "qseqid": "singleton-sequence",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF vpu at 1-3 can have maximum distance of 0.75 from its subtype ORF's aminoacid sequence, got 0.7813860351732544.",
+            "orf": "vpu"
+        },
+        {
+            "qseqid": "singleton-sequence",
             "error": "FrameshiftInOrf",
             "message": "Smaller ORF tat_exon2 at 1-3 contains out of frame indels that impact 62 positions.",
+            "orf": "tat_exon2"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF tat_exon2 at 1-3 can have maximum deletions 0, got 87.",
+            "orf": "tat_exon2"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF tat_exon2 at 1-3 can have maximum distance of 0.7 from its subtype ORF's aminoacid sequence, got 0.7852993744414656.",
             "orf": "tat_exon2"
         },
         {
@@ -162,7 +312,25 @@
         {
             "qseqid": "singleton-sequence",
             "error": "DeletionInOrf",
+            "message": "Smaller ORF rev_exon2 at 1-3 can have maximum deletions 6, got 291.",
+            "orf": "rev_exon2"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF rev_exon2 at 1-3 can have maximum distance of 0.61 from its subtype ORF's aminoacid sequence, got 0.7817832764505119.",
+            "orf": "rev_exon2"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "error": "DeletionInOrf",
             "message": "Smaller ORF nef at 1-3 can have maximum deletions 48, got 672.",
+            "orf": "nef"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF nef at 1-3 can have maximum distance of 0.68 from its subtype ORF's aminoacid sequence, got 0.7805933836772095.",
             "orf": "nef"
         },
         {
@@ -205,8 +373,20 @@
         },
         {
             "qseqid": "empty-sequence",
+            "error": "SequenceDivergence",
+            "message": "ORF gag at 1-0 can have maximum distance of 0.66 from its subtype ORF's aminoacid sequence, got 0.7803451759315906.",
+            "orf": "gag"
+        },
+        {
+            "qseqid": "empty-sequence",
             "error": "DeletionInOrf",
             "message": "ORF pol at 1-0 can have maximum deletions 91, got 3009.",
+            "orf": "pol"
+        },
+        {
+            "qseqid": "empty-sequence",
+            "error": "SequenceDivergence",
+            "message": "ORF pol at 1-0 can have maximum distance of 0.76 from its subtype ORF's aminoacid sequence, got 0.7802427468950563.",
             "orf": "pol"
         },
         {
@@ -217,8 +397,20 @@
         },
         {
             "qseqid": "empty-sequence",
+            "error": "SequenceDivergence",
+            "message": "ORF env at 1-0 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.7802599076361288.",
+            "orf": "env"
+        },
+        {
+            "qseqid": "empty-sequence",
             "error": "DeletionInOrf",
             "message": "Smaller ORF vif at 1-0 can have maximum deletions 3, got 573.",
+            "orf": "vif"
+        },
+        {
+            "qseqid": "empty-sequence",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF vif at 1-0 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.7806712105497112.",
             "orf": "vif"
         },
         {
@@ -229,8 +421,20 @@
         },
         {
             "qseqid": "empty-sequence",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF vpr at 1-0 can have maximum distance of 0.5 from its subtype ORF's aminoacid sequence, got 0.7812035661218425.",
+            "orf": "vpr"
+        },
+        {
+            "qseqid": "empty-sequence",
             "error": "DeletionInOrf",
             "message": "Smaller ORF tat_exon1 at 1-1 can have maximum deletions 0, got 216.",
+            "orf": "tat_exon1"
+        },
+        {
+            "qseqid": "empty-sequence",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF tat_exon1 at 1-1 can have maximum distance of 0.61 from its subtype ORF's aminoacid sequence, got 0.7815405696388372.",
             "orf": "tat_exon1"
         },
         {
@@ -241,8 +445,20 @@
         },
         {
             "qseqid": "empty-sequence",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF rev_exon1 at 1-1 can have maximum distance of 0.6 from its subtype ORF's aminoacid sequence, got 0.7839721254355401.",
+            "orf": "rev_exon1"
+        },
+        {
+            "qseqid": "empty-sequence",
             "error": "DeletionInOrf",
             "message": "Smaller ORF vpu at 1-0 can have maximum deletions 6, got 243.",
+            "orf": "vpu"
+        },
+        {
+            "qseqid": "empty-sequence",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF vpu at 1-0 can have maximum distance of 0.75 from its subtype ORF's aminoacid sequence, got 0.7813860351732544.",
             "orf": "vpu"
         },
         {
@@ -253,14 +469,32 @@
         },
         {
             "qseqid": "empty-sequence",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF tat_exon2 at 1-0 can have maximum distance of 0.7 from its subtype ORF's aminoacid sequence, got 0.7833633904418396.",
+            "orf": "tat_exon2"
+        },
+        {
+            "qseqid": "empty-sequence",
             "error": "DeletionInOrf",
             "message": "Smaller ORF rev_exon2 at 1-0 can have maximum deletions 6, got 294.",
             "orf": "rev_exon2"
         },
         {
             "qseqid": "empty-sequence",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF rev_exon2 at 1-0 can have maximum distance of 0.61 from its subtype ORF's aminoacid sequence, got 0.7811608670849972.",
+            "orf": "rev_exon2"
+        },
+        {
+            "qseqid": "empty-sequence",
             "error": "DeletionInOrf",
             "message": "Smaller ORF nef at 1-0 can have maximum deletions 48, got 672.",
+            "orf": "nef"
+        },
+        {
+            "qseqid": "empty-sequence",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF nef at 1-0 can have maximum distance of 0.68 from its subtype ORF's aminoacid sequence, got 0.7805933836772095.",
             "orf": "nef"
         },
         {
@@ -297,8 +531,20 @@
         },
         {
             "qseqid": "empty-sequence2",
+            "error": "SequenceDivergence",
+            "message": "ORF gag at 1-0 can have maximum distance of 0.66 from its subtype ORF's aminoacid sequence, got 0.7803451759315906.",
+            "orf": "gag"
+        },
+        {
+            "qseqid": "empty-sequence2",
             "error": "DeletionInOrf",
             "message": "ORF pol at 1-0 can have maximum deletions 91, got 3009.",
+            "orf": "pol"
+        },
+        {
+            "qseqid": "empty-sequence2",
+            "error": "SequenceDivergence",
+            "message": "ORF pol at 1-0 can have maximum distance of 0.76 from its subtype ORF's aminoacid sequence, got 0.7802427468950563.",
             "orf": "pol"
         },
         {
@@ -309,8 +555,20 @@
         },
         {
             "qseqid": "empty-sequence2",
+            "error": "SequenceDivergence",
+            "message": "ORF env at 1-0 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.7802599076361288.",
+            "orf": "env"
+        },
+        {
+            "qseqid": "empty-sequence2",
             "error": "DeletionInOrf",
             "message": "Smaller ORF vif at 1-0 can have maximum deletions 3, got 573.",
+            "orf": "vif"
+        },
+        {
+            "qseqid": "empty-sequence2",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF vif at 1-0 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.7806712105497112.",
             "orf": "vif"
         },
         {
@@ -321,8 +579,20 @@
         },
         {
             "qseqid": "empty-sequence2",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF vpr at 1-0 can have maximum distance of 0.5 from its subtype ORF's aminoacid sequence, got 0.7812035661218425.",
+            "orf": "vpr"
+        },
+        {
+            "qseqid": "empty-sequence2",
             "error": "DeletionInOrf",
             "message": "Smaller ORF tat_exon1 at 1-1 can have maximum deletions 0, got 216.",
+            "orf": "tat_exon1"
+        },
+        {
+            "qseqid": "empty-sequence2",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF tat_exon1 at 1-1 can have maximum distance of 0.61 from its subtype ORF's aminoacid sequence, got 0.7815405696388372.",
             "orf": "tat_exon1"
         },
         {
@@ -333,8 +603,20 @@
         },
         {
             "qseqid": "empty-sequence2",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF rev_exon1 at 1-1 can have maximum distance of 0.6 from its subtype ORF's aminoacid sequence, got 0.7839721254355401.",
+            "orf": "rev_exon1"
+        },
+        {
+            "qseqid": "empty-sequence2",
             "error": "DeletionInOrf",
             "message": "Smaller ORF vpu at 1-0 can have maximum deletions 6, got 243.",
+            "orf": "vpu"
+        },
+        {
+            "qseqid": "empty-sequence2",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF vpu at 1-0 can have maximum distance of 0.75 from its subtype ORF's aminoacid sequence, got 0.7813860351732544.",
             "orf": "vpu"
         },
         {
@@ -345,14 +627,32 @@
         },
         {
             "qseqid": "empty-sequence2",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF tat_exon2 at 1-0 can have maximum distance of 0.7 from its subtype ORF's aminoacid sequence, got 0.7833633904418396.",
+            "orf": "tat_exon2"
+        },
+        {
+            "qseqid": "empty-sequence2",
             "error": "DeletionInOrf",
             "message": "Smaller ORF rev_exon2 at 1-0 can have maximum deletions 6, got 294.",
             "orf": "rev_exon2"
         },
         {
             "qseqid": "empty-sequence2",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF rev_exon2 at 1-0 can have maximum distance of 0.61 from its subtype ORF's aminoacid sequence, got 0.7811608670849972.",
+            "orf": "rev_exon2"
+        },
+        {
+            "qseqid": "empty-sequence2",
             "error": "DeletionInOrf",
             "message": "Smaller ORF nef at 1-0 can have maximum deletions 48, got 672.",
+            "orf": "nef"
+        },
+        {
+            "qseqid": "empty-sequence2",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF nef at 1-0 can have maximum distance of 0.68 from its subtype ORF's aminoacid sequence, got 0.7805933836772095.",
             "orf": "nef"
         },
         {
@@ -415,8 +715,26 @@
         },
         {
             "qseqid": "small-sequence-with-lowercases[REVERSE_COMPLEMENT]",
+            "error": "SequenceDivergence",
+            "message": "ORF gag at 1-21 can have maximum distance of 0.66 from its subtype ORF's aminoacid sequence, got 0.7803451759315906.",
+            "orf": "gag"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases[REVERSE_COMPLEMENT]",
             "error": "FrameshiftInOrf",
             "message": "ORF pol at 1-21 contains out of frame indels that impact 2014 positions.",
+            "orf": "pol"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases[REVERSE_COMPLEMENT]",
+            "error": "DeletionInOrf",
+            "message": "ORF pol at 1-21 can have maximum deletions 91, got 2988.",
+            "orf": "pol"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases[REVERSE_COMPLEMENT]",
+            "error": "SequenceDivergence",
+            "message": "ORF pol at 1-21 can have maximum distance of 0.76 from its subtype ORF's aminoacid sequence, got 0.7794798035978714.",
             "orf": "pol"
         },
         {
@@ -427,8 +745,20 @@
         },
         {
             "qseqid": "small-sequence-with-lowercases[REVERSE_COMPLEMENT]",
+            "error": "SequenceDivergence",
+            "message": "ORF env at 1-21 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.7802599076361288.",
+            "orf": "env"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
             "message": "Smaller ORF vif at 1-21 can have maximum deletions 3, got 573.",
+            "orf": "vif"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases[REVERSE_COMPLEMENT]",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF vif at 1-21 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.7806712105497112.",
             "orf": "vif"
         },
         {
@@ -439,8 +769,20 @@
         },
         {
             "qseqid": "small-sequence-with-lowercases[REVERSE_COMPLEMENT]",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF vpr at 1-21 can have maximum distance of 0.5 from its subtype ORF's aminoacid sequence, got 0.7812035661218425.",
+            "orf": "vpr"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
             "message": "Smaller ORF tat_exon1 at 2-5 can have maximum deletions 0, got 216.",
+            "orf": "tat_exon1"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases[REVERSE_COMPLEMENT]",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF tat_exon1 at 2-5 can have maximum distance of 0.61 from its subtype ORF's aminoacid sequence, got 0.778175313059034.",
             "orf": "tat_exon1"
         },
         {
@@ -451,14 +793,38 @@
         },
         {
             "qseqid": "small-sequence-with-lowercases[REVERSE_COMPLEMENT]",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF rev_exon1 at 2-5 can have maximum distance of 0.6 from its subtype ORF's aminoacid sequence, got 0.7746085011185683.",
+            "orf": "rev_exon1"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
             "message": "Smaller ORF vpu at 1-21 can have maximum deletions 6, got 243.",
             "orf": "vpu"
         },
         {
             "qseqid": "small-sequence-with-lowercases[REVERSE_COMPLEMENT]",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF vpu at 1-21 can have maximum distance of 0.75 from its subtype ORF's aminoacid sequence, got 0.7813860351732544.",
+            "orf": "vpu"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases[REVERSE_COMPLEMENT]",
             "error": "FrameshiftInOrf",
             "message": "Smaller ORF tat_exon2 at 1-14 contains out of frame indels that impact 63 positions.",
+            "orf": "tat_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases[REVERSE_COMPLEMENT]",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF tat_exon2 at 1-14 can have maximum deletions 0, got 75.",
+            "orf": "tat_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases[REVERSE_COMPLEMENT]",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF tat_exon2 at 1-14 can have maximum distance of 0.7 from its subtype ORF's aminoacid sequence, got 0.7828594973217965.",
             "orf": "tat_exon2"
         },
         {
@@ -470,7 +836,25 @@
         {
             "qseqid": "small-sequence-with-lowercases[REVERSE_COMPLEMENT]",
             "error": "DeletionInOrf",
+            "message": "Smaller ORF rev_exon2 at 1-21 can have maximum deletions 6, got 273.",
+            "orf": "rev_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases[REVERSE_COMPLEMENT]",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF rev_exon2 at 1-21 can have maximum distance of 0.61 from its subtype ORF's aminoacid sequence, got 0.7743216412971542.",
+            "orf": "rev_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases[REVERSE_COMPLEMENT]",
+            "error": "DeletionInOrf",
             "message": "Smaller ORF nef at 1-21 can have maximum deletions 48, got 672.",
+            "orf": "nef"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases[REVERSE_COMPLEMENT]",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF nef at 1-21 can have maximum distance of 0.68 from its subtype ORF's aminoacid sequence, got 0.7805933836772095.",
             "orf": "nef"
         },
         {
@@ -539,8 +923,32 @@
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "error": "InternalStopInOrf",
+            "message": "ORF gag at 49-2340 contains an internal stop codon at 106.",
+            "orf": "gag"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "error": "SequenceDivergence",
+            "message": "ORF gag at 49-2340 can have maximum distance of 0.66 from its subtype ORF's aminoacid sequence, got 0.7685703620754012.",
+            "orf": "gag"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "error": "FrameshiftInOrf",
             "message": "ORF pol at 2072-5245 contains out of frame indels that impact 1990 positions.",
+            "orf": "pol"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "error": "InternalStopInOrf",
+            "message": "ORF pol at 2072-5245 contains an internal stop codon at 2168.",
+            "orf": "pol"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "error": "SequenceDivergence",
+            "message": "ORF pol at 2072-5245 can have maximum distance of 0.76 from its subtype ORF's aminoacid sequence, got 0.760620074126692.",
             "orf": "pol"
         },
         {
@@ -551,8 +959,32 @@
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "error": "InternalStopInOrf",
+            "message": "ORF env at 6217-8718 contains an internal stop codon at 6292.",
+            "orf": "env"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "error": "SequenceDivergence",
+            "message": "ORF env at 6217-8718 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.7741801753020409.",
+            "orf": "env"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "error": "FrameshiftInOrf",
             "message": "Smaller ORF vif at 5294-5818 contains out of frame indels that impact 369 positions.",
+            "orf": "vif"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "error": "InternalStopInOrf",
+            "message": "Smaller ORF vif at 5294-5818 contains an internal stop codon at 5363.",
+            "orf": "vif"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF vif at 5294-5818 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.7726682453594071.",
             "orf": "vif"
         },
         {
@@ -563,8 +995,32 @@
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "error": "InternalStopInOrf",
+            "message": "Smaller ORF vpr at 5691-5918 contains an internal stop codon at 5706.",
+            "orf": "vpr"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF vpr at 5691-5918 can have maximum distance of 0.5 from its subtype ORF's aminoacid sequence, got 0.7699443413729128.",
+            "orf": "vpr"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "error": "FrameshiftInOrf",
             "message": "Smaller ORF tat_exon1 at 5890-6065 contains out of frame indels that impact 129 positions.",
+            "orf": "tat_exon1"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF tat_exon1 at 5890-6065 can have maximum deletions 0, got 147.",
+            "orf": "tat_exon1"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF tat_exon1 at 5890-6065 can have maximum distance of 0.61 from its subtype ORF's aminoacid sequence, got 0.7627492825079107.",
             "orf": "tat_exon1"
         },
         {
@@ -575,8 +1031,32 @@
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF rev_exon1 at 5956-6065 can have maximum deletions 0, got 9.",
+            "orf": "rev_exon1"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF rev_exon1 at 5956-6065 can have maximum distance of 0.6 from its subtype ORF's aminoacid sequence, got 0.7662751921125127.",
+            "orf": "rev_exon1"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "error": "FrameshiftInOrf",
             "message": "Smaller ORF vpu at 6075-6377 contains out of frame indels that impact 167 positions.",
+            "orf": "vpu"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "error": "InternalStopInOrf",
+            "message": "Smaller ORF vpu at 6075-6377 contains an internal stop codon at 6081.",
+            "orf": "vpu"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF vpu at 6075-6377 can have maximum distance of 0.75 from its subtype ORF's aminoacid sequence, got 0.7604365838113448.",
             "orf": "vpu"
         },
         {
@@ -587,14 +1067,50 @@
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "error": "InsertionInOrf",
+            "message": "Smaller ORF tat_exon2 at 8200-8298 can have maximum insertions 3, got 6.",
+            "orf": "tat_exon2"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF tat_exon2 at 8200-8298 can have maximum distance of 0.7 from its subtype ORF's aminoacid sequence, got 0.7551342812006319.",
+            "orf": "tat_exon2"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "error": "FrameshiftInOrf",
             "message": "Smaller ORF rev_exon2 at 8200-8528 contains out of frame indels that impact 235 positions.",
             "orf": "rev_exon2"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "error": "InternalStopInOrf",
+            "message": "Smaller ORF rev_exon2 at 8200-8528 contains an internal stop codon at 8296.",
+            "orf": "rev_exon2"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF rev_exon2 at 8200-8528 can have maximum distance of 0.61 from its subtype ORF's aminoacid sequence, got 0.7651627042736672.",
+            "orf": "rev_exon2"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "error": "FrameshiftInOrf",
             "message": "Smaller ORF nef at 8758-9612 contains out of frame indels that impact 444 positions.",
+            "orf": "nef"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "error": "InternalStopInOrf",
+            "message": "Smaller ORF nef at 8758-9612 contains an internal stop codon at 8839.",
+            "orf": "nef"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF nef at 8758-9612 can have maximum distance of 0.68 from its subtype ORF's aminoacid sequence, got 0.7666383193171439.",
             "orf": "nef"
         },
         {
@@ -663,8 +1179,26 @@
         },
         {
             "qseqid": "small-sequence-with-xs",
+            "error": "SequenceDivergence",
+            "message": "ORF gag at 1-12 can have maximum distance of 0.66 from its subtype ORF's aminoacid sequence, got 0.7803451759315906.",
+            "orf": "gag"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
             "error": "FrameshiftInOrf",
             "message": "ORF pol at 1-12 contains out of frame indels that impact 2007 positions.",
+            "orf": "pol"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "error": "DeletionInOrf",
+            "message": "ORF pol at 1-12 can have maximum deletions 91, got 2997.",
+            "orf": "pol"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "error": "SequenceDivergence",
+            "message": "ORF pol at 1-12 can have maximum distance of 0.76 from its subtype ORF's aminoacid sequence, got 0.7797606832768416.",
             "orf": "pol"
         },
         {
@@ -675,8 +1209,20 @@
         },
         {
             "qseqid": "small-sequence-with-xs",
+            "error": "SequenceDivergence",
+            "message": "ORF env at 1-12 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.7802599076361288.",
+            "orf": "env"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
             "error": "DeletionInOrf",
             "message": "Smaller ORF vif at 1-12 can have maximum deletions 3, got 573.",
+            "orf": "vif"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF vif at 1-12 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.7806712105497112.",
             "orf": "vif"
         },
         {
@@ -687,8 +1233,20 @@
         },
         {
             "qseqid": "small-sequence-with-xs",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF vpr at 1-12 can have maximum distance of 0.5 from its subtype ORF's aminoacid sequence, got 0.7812035661218425.",
+            "orf": "vpr"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
             "error": "DeletionInOrf",
             "message": "Smaller ORF tat_exon1 at 1-12 can have maximum deletions 0, got 216.",
+            "orf": "tat_exon1"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF tat_exon1 at 1-12 can have maximum distance of 0.61 from its subtype ORF's aminoacid sequence, got 0.778065029332803.",
             "orf": "tat_exon1"
         },
         {
@@ -699,14 +1257,38 @@
         },
         {
             "qseqid": "small-sequence-with-xs",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF rev_exon1 at 3-12 can have maximum distance of 0.6 from its subtype ORF's aminoacid sequence, got 0.7701083856246435.",
+            "orf": "rev_exon1"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
             "error": "DeletionInOrf",
             "message": "Smaller ORF vpu at 1-12 can have maximum deletions 6, got 243.",
             "orf": "vpu"
         },
         {
             "qseqid": "small-sequence-with-xs",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF vpu at 1-12 can have maximum distance of 0.75 from its subtype ORF's aminoacid sequence, got 0.7813860351732544.",
+            "orf": "vpu"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
             "error": "FrameshiftInOrf",
             "message": "Smaller ORF tat_exon2 at 1-12 contains out of frame indels that impact 61 positions.",
+            "orf": "tat_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF tat_exon2 at 1-12 can have maximum deletions 0, got 78.",
+            "orf": "tat_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF tat_exon2 at 1-12 can have maximum distance of 0.7 from its subtype ORF's aminoacid sequence, got 0.7752572497661365.",
             "orf": "tat_exon2"
         },
         {
@@ -718,7 +1300,25 @@
         {
             "qseqid": "small-sequence-with-xs",
             "error": "DeletionInOrf",
+            "message": "Smaller ORF rev_exon2 at 1-12 can have maximum deletions 6, got 282.",
+            "orf": "rev_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF rev_exon2 at 1-12 can have maximum distance of 0.61 from its subtype ORF's aminoacid sequence, got 0.7772697583278902.",
+            "orf": "rev_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "error": "DeletionInOrf",
             "message": "Smaller ORF nef at 1-12 can have maximum deletions 48, got 672.",
+            "orf": "nef"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF nef at 1-12 can have maximum distance of 0.68 from its subtype ORF's aminoacid sequence, got 0.7805933836772095.",
             "orf": "nef"
         },
         {
@@ -799,8 +1399,26 @@
         },
         {
             "qseqid": "small-sequence-with-bad-symbols",
+            "error": "SequenceDivergence",
+            "message": "ORF gag at 1-12 can have maximum distance of 0.66 from its subtype ORF's aminoacid sequence, got 0.7803451759315906.",
+            "orf": "gag"
+        },
+        {
+            "qseqid": "small-sequence-with-bad-symbols",
             "error": "FrameshiftInOrf",
             "message": "ORF pol at 1-12 contains out of frame indels that impact 2007 positions.",
+            "orf": "pol"
+        },
+        {
+            "qseqid": "small-sequence-with-bad-symbols",
+            "error": "DeletionInOrf",
+            "message": "ORF pol at 1-12 can have maximum deletions 91, got 2997.",
+            "orf": "pol"
+        },
+        {
+            "qseqid": "small-sequence-with-bad-symbols",
+            "error": "SequenceDivergence",
+            "message": "ORF pol at 1-12 can have maximum distance of 0.76 from its subtype ORF's aminoacid sequence, got 0.7797606832768416.",
             "orf": "pol"
         },
         {
@@ -811,8 +1429,20 @@
         },
         {
             "qseqid": "small-sequence-with-bad-symbols",
+            "error": "SequenceDivergence",
+            "message": "ORF env at 1-12 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.7802599076361288.",
+            "orf": "env"
+        },
+        {
+            "qseqid": "small-sequence-with-bad-symbols",
             "error": "DeletionInOrf",
             "message": "Smaller ORF vif at 1-12 can have maximum deletions 3, got 573.",
+            "orf": "vif"
+        },
+        {
+            "qseqid": "small-sequence-with-bad-symbols",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF vif at 1-12 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.7806712105497112.",
             "orf": "vif"
         },
         {
@@ -823,8 +1453,20 @@
         },
         {
             "qseqid": "small-sequence-with-bad-symbols",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF vpr at 1-12 can have maximum distance of 0.5 from its subtype ORF's aminoacid sequence, got 0.7812035661218425.",
+            "orf": "vpr"
+        },
+        {
+            "qseqid": "small-sequence-with-bad-symbols",
             "error": "DeletionInOrf",
             "message": "Smaller ORF tat_exon1 at 1-12 can have maximum deletions 0, got 216.",
+            "orf": "tat_exon1"
+        },
+        {
+            "qseqid": "small-sequence-with-bad-symbols",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF tat_exon1 at 1-12 can have maximum distance of 0.61 from its subtype ORF's aminoacid sequence, got 0.778065029332803.",
             "orf": "tat_exon1"
         },
         {
@@ -835,14 +1477,38 @@
         },
         {
             "qseqid": "small-sequence-with-bad-symbols",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF rev_exon1 at 3-12 can have maximum distance of 0.6 from its subtype ORF's aminoacid sequence, got 0.7701083856246435.",
+            "orf": "rev_exon1"
+        },
+        {
+            "qseqid": "small-sequence-with-bad-symbols",
             "error": "DeletionInOrf",
             "message": "Smaller ORF vpu at 1-12 can have maximum deletions 6, got 243.",
             "orf": "vpu"
         },
         {
             "qseqid": "small-sequence-with-bad-symbols",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF vpu at 1-12 can have maximum distance of 0.75 from its subtype ORF's aminoacid sequence, got 0.7813860351732544.",
+            "orf": "vpu"
+        },
+        {
+            "qseqid": "small-sequence-with-bad-symbols",
             "error": "FrameshiftInOrf",
             "message": "Smaller ORF tat_exon2 at 1-12 contains out of frame indels that impact 61 positions.",
+            "orf": "tat_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-bad-symbols",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF tat_exon2 at 1-12 can have maximum deletions 0, got 78.",
+            "orf": "tat_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-bad-symbols",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF tat_exon2 at 1-12 can have maximum distance of 0.7 from its subtype ORF's aminoacid sequence, got 0.7752572497661365.",
             "orf": "tat_exon2"
         },
         {
@@ -854,7 +1520,25 @@
         {
             "qseqid": "small-sequence-with-bad-symbols",
             "error": "DeletionInOrf",
+            "message": "Smaller ORF rev_exon2 at 1-12 can have maximum deletions 6, got 282.",
+            "orf": "rev_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-bad-symbols",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF rev_exon2 at 1-12 can have maximum distance of 0.61 from its subtype ORF's aminoacid sequence, got 0.7772697583278902.",
+            "orf": "rev_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-bad-symbols",
+            "error": "DeletionInOrf",
             "message": "Smaller ORF nef at 1-12 can have maximum deletions 48, got 672.",
+            "orf": "nef"
+        },
+        {
+            "qseqid": "small-sequence-with-bad-symbols",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF nef at 1-12 can have maximum distance of 0.68 from its subtype ORF's aminoacid sequence, got 0.7805933836772095.",
             "orf": "nef"
         },
         {
@@ -935,8 +1619,26 @@
         },
         {
             "qseqid": "small-sequence-with-dashes",
+            "error": "SequenceDivergence",
+            "message": "ORF gag at 1-12 can have maximum distance of 0.66 from its subtype ORF's aminoacid sequence, got 0.7803451759315906.",
+            "orf": "gag"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
             "error": "FrameshiftInOrf",
             "message": "ORF pol at 1-12 contains out of frame indels that impact 2007 positions.",
+            "orf": "pol"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "error": "DeletionInOrf",
+            "message": "ORF pol at 1-12 can have maximum deletions 91, got 2997.",
+            "orf": "pol"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "error": "SequenceDivergence",
+            "message": "ORF pol at 1-12 can have maximum distance of 0.76 from its subtype ORF's aminoacid sequence, got 0.7797606832768416.",
             "orf": "pol"
         },
         {
@@ -947,8 +1649,20 @@
         },
         {
             "qseqid": "small-sequence-with-dashes",
+            "error": "SequenceDivergence",
+            "message": "ORF env at 1-12 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.7802599076361288.",
+            "orf": "env"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
             "message": "Smaller ORF vif at 1-12 can have maximum deletions 3, got 573.",
+            "orf": "vif"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF vif at 1-12 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.7806712105497112.",
             "orf": "vif"
         },
         {
@@ -959,8 +1673,20 @@
         },
         {
             "qseqid": "small-sequence-with-dashes",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF vpr at 1-12 can have maximum distance of 0.5 from its subtype ORF's aminoacid sequence, got 0.7812035661218425.",
+            "orf": "vpr"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
             "message": "Smaller ORF tat_exon1 at 1-12 can have maximum deletions 0, got 216.",
+            "orf": "tat_exon1"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF tat_exon1 at 1-12 can have maximum distance of 0.61 from its subtype ORF's aminoacid sequence, got 0.778065029332803.",
             "orf": "tat_exon1"
         },
         {
@@ -971,14 +1697,38 @@
         },
         {
             "qseqid": "small-sequence-with-dashes",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF rev_exon1 at 3-12 can have maximum distance of 0.6 from its subtype ORF's aminoacid sequence, got 0.7701083856246435.",
+            "orf": "rev_exon1"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
             "message": "Smaller ORF vpu at 1-12 can have maximum deletions 6, got 243.",
             "orf": "vpu"
         },
         {
             "qseqid": "small-sequence-with-dashes",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF vpu at 1-12 can have maximum distance of 0.75 from its subtype ORF's aminoacid sequence, got 0.7813860351732544.",
+            "orf": "vpu"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
             "error": "FrameshiftInOrf",
             "message": "Smaller ORF tat_exon2 at 1-12 contains out of frame indels that impact 61 positions.",
+            "orf": "tat_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF tat_exon2 at 1-12 can have maximum deletions 0, got 78.",
+            "orf": "tat_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF tat_exon2 at 1-12 can have maximum distance of 0.7 from its subtype ORF's aminoacid sequence, got 0.7752572497661365.",
             "orf": "tat_exon2"
         },
         {
@@ -990,7 +1740,25 @@
         {
             "qseqid": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
+            "message": "Smaller ORF rev_exon2 at 1-12 can have maximum deletions 6, got 282.",
+            "orf": "rev_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF rev_exon2 at 1-12 can have maximum distance of 0.61 from its subtype ORF's aminoacid sequence, got 0.7772697583278902.",
+            "orf": "rev_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "error": "DeletionInOrf",
             "message": "Smaller ORF nef at 1-12 can have maximum deletions 48, got 672.",
+            "orf": "nef"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF nef at 1-12 can have maximum distance of 0.68 from its subtype ORF's aminoacid sequence, got 0.7805933836772095.",
             "orf": "nef"
         },
         {
@@ -1033,8 +1801,26 @@
         },
         {
             "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "error": "SequenceDivergence",
+            "message": "ORF gag at 1-12 can have maximum distance of 0.66 from its subtype ORF's aminoacid sequence, got 0.7803451759315906.",
+            "orf": "gag"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
             "error": "FrameshiftInOrf",
             "message": "ORF pol at 1-12 contains out of frame indels that impact 2007 positions.",
+            "orf": "pol"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "error": "DeletionInOrf",
+            "message": "ORF pol at 1-12 can have maximum deletions 91, got 2997.",
+            "orf": "pol"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "error": "SequenceDivergence",
+            "message": "ORF pol at 1-12 can have maximum distance of 0.76 from its subtype ORF's aminoacid sequence, got 0.7797606832768416.",
             "orf": "pol"
         },
         {
@@ -1045,8 +1831,20 @@
         },
         {
             "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "error": "SequenceDivergence",
+            "message": "ORF env at 1-12 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.7802599076361288.",
+            "orf": "env"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
             "error": "DeletionInOrf",
             "message": "Smaller ORF vif at 1-12 can have maximum deletions 3, got 573.",
+            "orf": "vif"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF vif at 1-12 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.7806712105497112.",
             "orf": "vif"
         },
         {
@@ -1057,8 +1855,20 @@
         },
         {
             "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF vpr at 1-12 can have maximum distance of 0.5 from its subtype ORF's aminoacid sequence, got 0.7812035661218425.",
+            "orf": "vpr"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
             "error": "DeletionInOrf",
             "message": "Smaller ORF tat_exon1 at 1-12 can have maximum deletions 0, got 216.",
+            "orf": "tat_exon1"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF tat_exon1 at 1-12 can have maximum distance of 0.61 from its subtype ORF's aminoacid sequence, got 0.778065029332803.",
             "orf": "tat_exon1"
         },
         {
@@ -1069,14 +1879,38 @@
         },
         {
             "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF rev_exon1 at 3-12 can have maximum distance of 0.6 from its subtype ORF's aminoacid sequence, got 0.7701083856246435.",
+            "orf": "rev_exon1"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
             "error": "DeletionInOrf",
             "message": "Smaller ORF vpu at 1-12 can have maximum deletions 6, got 243.",
             "orf": "vpu"
         },
         {
             "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF vpu at 1-12 can have maximum distance of 0.75 from its subtype ORF's aminoacid sequence, got 0.7813860351732544.",
+            "orf": "vpu"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
             "error": "FrameshiftInOrf",
             "message": "Smaller ORF tat_exon2 at 1-12 contains out of frame indels that impact 61 positions.",
+            "orf": "tat_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF tat_exon2 at 1-12 can have maximum deletions 0, got 78.",
+            "orf": "tat_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF tat_exon2 at 1-12 can have maximum distance of 0.7 from its subtype ORF's aminoacid sequence, got 0.7752572497661365.",
             "orf": "tat_exon2"
         },
         {
@@ -1088,7 +1922,25 @@
         {
             "qseqid": "small-sequence-with-dashes/andwithslashestoo",
             "error": "DeletionInOrf",
+            "message": "Smaller ORF rev_exon2 at 1-12 can have maximum deletions 6, got 282.",
+            "orf": "rev_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF rev_exon2 at 1-12 can have maximum distance of 0.61 from its subtype ORF's aminoacid sequence, got 0.7772697583278902.",
+            "orf": "rev_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "error": "DeletionInOrf",
             "message": "Smaller ORF nef at 1-12 can have maximum deletions 48, got 672.",
+            "orf": "nef"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF nef at 1-12 can have maximum distance of 0.68 from its subtype ORF's aminoacid sequence, got 0.7805933836772095.",
             "orf": "nef"
         },
         {
