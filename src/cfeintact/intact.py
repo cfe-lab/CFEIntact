@@ -5,10 +5,11 @@ import csv
 import dataclasses
 from dataclasses import dataclass
 from collections import Counter
-from Bio import Seq, SeqIO, SeqRecord
+from Bio import Seq, SeqIO
+from Bio.SeqRecord import SeqRecord
 from Bio.Data import IUPACData
 from scipy.stats import fisher_exact
-from typing import Optional, Dict, List, Iterable
+from typing import Optional, Dict, List, Iterable, Union
 
 import cfeintact.constants as const
 import cfeintact.subtypes as st
@@ -397,13 +398,8 @@ def has_rev_response_element(alignment, rre_locus, rre_tolerance):
 # /end def has_rev_response_element
 
 
-def has_reading_frames(aligned_sequence, expected, error_bar, reverse=False):
-    sequence = aligned_sequence.this
-    reference = aligned_sequence.reference
-
-    errors = []
-    matches = []
-
+def check_reading_frame_shift(reference: SeqRecord, sequence: SeqRecord, e: OriginalORF, q: OriginalORF) \
+        -> Optional[defect.FrameshiftInOrf]:
     def get_indel_impact(alignment):
         shift = 0
         impacted = 0
@@ -427,66 +423,96 @@ def has_reading_frames(aligned_sequence, expected, error_bar, reverse=False):
         return impacted
 
 
-    def get_orf(self: AlignedSequence, expected_orf: OriginalORF) -> MappedORF:
-        if self.orfs is None:
-            self.orfs = {}
+    got_protein = q.protein
+    got_nucleotides = sequence.seq[q.start:q.start + len(got_protein) * 3].upper()
+    exp_nucleotides = reference.seq[e.start:e.end].upper()
 
-        if expected_orf.name not in self.orfs:
-            self.orfs[expected_orf.name] = find_orf(self, expected_orf)
+    if got_nucleotides and exp_nucleotides:
+        orf_alignment = detailed_aligner.align(exp_nucleotides, got_nucleotides)
+        impacted_by_indels = get_indel_impact(orf_alignment)
 
-        return self.orfs[expected_orf.name]
+        # Check for frameshift in ORF
+        if impacted_by_indels >= max(e.max_deletions, e.max_insertions) + 3:
+            return defect.FrameshiftInOrf(e=e, q=q, impacted_positions=impacted_by_indels)
 
+    return None
+
+
+def check_reading_frame_deletions(e: OriginalORF, q: OriginalORF) \
+        -> Optional[Union[defect.InternalStopInOrf, defect.DeletionInOrf]]:
+
+    got_protein = q.protein
+    exp_protein = e.protein
+    deletions = max(0, len(exp_protein) - len(got_protein)) * 3
+
+    # Max deletion allowed in ORF exceeded
+    if deletions > e.max_deletions:
+
+        limit = e.max_deletions // 3
+        limited_aminoacids = q.aminoacids[limit:-limit]
+
+        if "*" in limited_aminoacids:
+            position = q.start + (limit + limited_aminoacids.index('*')) * 3
+            return defect.InternalStopInOrf(e=e, q=q, position=position)
+        else:
+            return defect.DeletionInOrf(e=e, q=q, deletions=deletions)
+
+    return None
+
+
+def check_reading_frame_insertions(best_match: MappedORF, e: OriginalORF, q: OriginalORF) \
+        -> Optional[defect.InsertionInOrf]:
+
+    if best_match.distance <= e.max_distance:
+        return None
+
+    got_protein = q.protein
+    exp_protein = e.protein
+    insertions = max(0, len(got_protein) - len(exp_protein)) * 3
+
+    # Max insertions allowed in ORF exceeded
+    if insertions > e.max_insertions:
+        return defect.InsertionInOrf(e=e, q=q, insertions=insertions)
+
+    return None
+
+
+def check_reading_frame_distance(best_match: MappedORF, e: OriginalORF, q: OriginalORF) \
+        -> Optional[defect.SequenceDivergence]:
+
+    if best_match.distance > e.max_distance:
+        return defect.SequenceDivergence(q=q, e=e, distance=best_match.distance)
+    else:
+        return None
+
+
+def check_reading_frame(aligned_sequence, expected, error_bar, reverse=False):
+    sequence = aligned_sequence.this
+    reference = aligned_sequence.reference
+    errors = []
+    matches = []
+
+    def add_error(defect):
+        if defect:
+            errors.append(Defect(sequence.id, defect))
+            return True
 
     for e in expected:
-        best_match = get_orf(aligned_sequence, e)
+        best_match = find_orf(aligned_sequence, e)
         matches.append(best_match)
         q = best_match.query
 
-        got_protein = q.protein
-        exp_protein = e.protein
-
-        deletions = max(0, len(exp_protein) - len(got_protein)) * 3
-        insertions = max(0, len(got_protein) - len(exp_protein)) * 3
-
-        got_nucleotides = sequence.seq[q.start:q.start + len(got_protein) * 3].upper()
-        exp_nucleotides = reference.seq[e.start:e.end].upper()
-        if got_nucleotides and exp_nucleotides:
-            orf_alignment = detailed_aligner.align(exp_nucleotides, got_nucleotides)
-            impacted_by_indels = get_indel_impact(orf_alignment)
-
-            # Check for frameshift in ORF
-            if impacted_by_indels >= max(e.max_deletions, e.max_insertions) + 3:
-                d4 = defect.FrameshiftInOrf(e=e, q=q, impacted_positions=impacted_by_indels)
-                errors.append(Defect(sequence.id, d4))
-                continue
-
-        # Max deletion allowed in ORF exceeded
-        if deletions > e.max_deletions:
-
-            limit = e.max_deletions // 3
-            limited_aminoacids = q.aminoacids[limit:-limit]
-
-            if "*" in limited_aminoacids:
-                position = q.start + (limit + limited_aminoacids.index('*')) * 3
-                d1 = defect.InternalStopInOrf(e=e, q=q, position=position)
-                errors.append(Defect(sequence.id, d1))
-            else:
-                d2 = defect.DeletionInOrf(e=e, q=q, deletions=deletions)
-                errors.append(Defect(sequence.id, d2))
-
+        if add_error(check_reading_frame_shift(reference, sequence=sequence, e=e, q=q)):
             continue
 
-        if best_match.distance <= e.max_distance:
+        if add_error(check_reading_frame_deletions(e=e, q=q)):
             continue
 
-        # Max insertions allowed in ORF exceeded
-        if insertions > e.max_insertions:
-            d3 = defect.InsertionInOrf(e=e, q=q, insertions=insertions)
-            errors.append(Defect(sequence.id, d3))
+        if add_error(check_reading_frame_insertions(best_match, e=e, q=q)):
             continue
 
-        d5 = defect.SequenceDivergence(q=q, e=e, distance=best_match.distance)
-        errors.append(Defect(sequence.id, d5))
+        if add_error(check_reading_frame_distance(best_match, e=e, q=q)):
+            continue
 
     return matches, errors
 
@@ -718,10 +744,8 @@ def intact(working_dir,
                 err = Defect(sequence.id, defect.UnknownNucleotide(error_details))
                 sequence_errors.append(err)
 
-            sequence = SeqRecord.SeqRecord(
-                Seq.Seq(
-                    ''.join(x for x in sequence.seq if x in VALID_DNA_CHARACTERS)),
-                id=sequence.id, name=sequence.name)
+            seq = Seq.Seq(''.join(x for x in sequence.seq if x in VALID_DNA_CHARACTERS))
+            sequence = SeqRecord(seq, id=sequence.id, name=sequence.name)
 
         holistic.qlen = len(sequence)
         holistic.blast_n_conseqs = len(blast_rows)
@@ -800,10 +824,10 @@ def intact(working_dir,
 
         alignment = aligned_sequence.alignment
 
-        sequence_orfs, orf_errors = has_reading_frames(aligned_sequence, forward_orfs, error_bar)
+        sequence_orfs, orf_errors = check_reading_frame(aligned_sequence, forward_orfs, error_bar)
         sequence_errors.extend(orf_errors)
 
-        sequence_small_orfs, small_orf_errors = has_reading_frames(aligned_sequence, small_orfs, error_bar)
+        sequence_small_orfs, small_orf_errors = check_reading_frame(aligned_sequence, small_orfs, error_bar)
         if check_small_orfs:
             sequence_errors.extend(small_orf_errors)
 

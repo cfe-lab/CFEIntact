@@ -1,21 +1,17 @@
-import dataclasses
 from dataclasses import dataclass
 from Bio.SeqRecord import SeqRecord
 from Bio.Seq import Seq
-from typing import Dict, Optional
 from aligntools import Cigar
 from functools import cached_property
 
 import cfeintact.wrappers as wrappers
-from cfeintact.mapped_orf import MappedORF
 from Bio.Align import MultipleSeqAlignment
 
 
-@dataclass
+@dataclass(frozen=True)
 class AlignedSequence:
     this: SeqRecord
     reference: SeqRecord
-    orfs: Optional[Dict[str, MappedORF]] = dataclasses.field(default=None)
 
     @cached_property
     def alignment(self) -> MultipleSeqAlignment:

@@ -1,4 +1,4 @@
-from typing import Iterable
+from typing import Iterable, Dict, Tuple
 from math import floor
 
 from cfeintact.get_query_aminoacids_table import get_query_aminoacids_table
@@ -101,6 +101,17 @@ def find_candidate_positions(aligned_sequence: AlignedSequence, e: OriginalORF) 
                 )
 
 
+FIND_ORF_CACHE: Dict[Tuple[str, str, str], MappedORF] = {}
+
 def find_orf(aligned_sequence: AlignedSequence, e: OriginalORF) -> MappedORF:
+    assert aligned_sequence.this.id is not None
+    assert aligned_sequence.reference.id is not None
+    key: Tuple[str, str, str] = (aligned_sequence.this.id, aligned_sequence.reference.id, e.name)
+
     candidates = find_candidate_positions(aligned_sequence, e)
-    return min(candidates, key=lambda x: x.distance)
+    result = min(candidates, key=lambda x: x.distance)
+
+    if key not in FIND_ORF_CACHE:
+        FIND_ORF_CACHE[key] = result
+
+    return FIND_ORF_CACHE[key]
