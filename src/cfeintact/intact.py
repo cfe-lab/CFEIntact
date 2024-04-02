@@ -465,7 +465,7 @@ def has_reading_frames(aligned_sequence, expected, error_bar, reverse=False):
             continue
 
         # Max insertions allowed in ORF exceeded
-        if insertions > e.max_insertions:
+        elif insertions > e.max_insertions:
             d3 = defect.InsertionInOrf(e=e, q=q, insertions=insertions)
             errors.append(Defect(sequence.id, d3))
             continue
@@ -480,9 +480,15 @@ def has_reading_frames(aligned_sequence, expected, error_bar, reverse=False):
 
             # Check for frameshift in ORF
             if impacted_by_indels >= e.max_deletions + 0.10 * len(exp_nucleotides):
-                d = defect.FrameshiftInOrf(e=e, q=q, impacted_positions=impacted_by_indels)
-                errors.append(Defect(sequence.id, d))
+                d4 = defect.FrameshiftInOrf(e=e, q=q, impacted_positions=impacted_by_indels)
+                errors.append(Defect(sequence.id, d4))
                 continue
+
+        # Max distance allowed in ORF exceeded
+        if best_match.distance > e.max_distance:
+            d5 = defect.SequenceDivergence(q=q, e=e, distance=best_match.distance)
+            errors.append(Defect(sequence.id, d5))
+            continue
 
     return matches, errors
 

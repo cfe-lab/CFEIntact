@@ -62,6 +62,17 @@ class FrameshiftInOrf(ORFDefect):
 
 
 @dataclass(frozen=True)
+class SequenceDivergence(ORFDefect):
+    e: OriginalORF
+    distance: float
+
+    def __str__(self) -> str:
+        return (f"{'Smaller ' if self.q.is_small else ''}"
+                f"ORF {self.e.name} at {self.q.start + 1}-{self.q.end + 1} can have maximum distance of "
+                f"{self.e.max_distance} from its subtype ORF's aminoacid sequence, got {self.distance}.")
+
+
+@dataclass(frozen=True)
 class MajorSpliceDonorSiteMutated:
     splice_site: str
 
@@ -139,7 +150,7 @@ class UnknownNucleotide:
 # The final exported Defect type encompasses all defined classes
 DefectType = Union[
     LongDeletion, DeletionInOrf, InsertionInOrf, InternalStopInOrf,
-    FrameshiftInOrf, MajorSpliceDonorSiteMutated, PackagingSignalDeletion,
+    FrameshiftInOrf, SequenceDivergence, MajorSpliceDonorSiteMutated, PackagingSignalDeletion,
     PackagingSignalNotComplete, RevResponseElementDeletion, APOBECHypermutationDetected,
     NonHIV, Scramble, InternalInversion, UnknownNucleotide
 ]
