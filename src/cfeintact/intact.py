@@ -471,7 +471,7 @@ def has_reading_frames(aligned_sequence, expected, error_bar, reverse=False):
             impacted_by_indels = get_indel_impact(orf_alignment)
 
             # Check for frameshift in ORF
-            if impacted_by_indels >= e.max_deletions + 0.10 * len(exp_nucleotides):
+            if impacted_by_indels >= max(e.max_deletions, e.max_insertions) + 3:
                 d4 = defect.FrameshiftInOrf(e=e, q=q, impacted_positions=impacted_by_indels)
                 errors.append(Defect(sequence.id, d4))
                 continue
