@@ -14,8 +14,8 @@
         },
         {
             "qseqid": "KX505501.1",
-            "error": "InsertionInOrf",
-            "message": "Smaller ORF vif at 1-1824 can have maximum insertions 3, got 909.",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF vif at 1-1824 contains out of frame indels that impact 964 positions.",
             "orf": "vif"
         },
         {
@@ -56,8 +56,8 @@
         },
         {
             "qseqid": "KX505501.1",
-            "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 1-1824 can have maximum insertions 51, got 867.",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF nef at 1-1824 contains out of frame indels that impact 997 positions.",
             "orf": "nef"
         },
         {
@@ -114,8 +114,8 @@
         },
         {
             "qseqid": "MN692074",
-            "error": "InsertionInOrf",
-            "message": "Smaller ORF vpr at 3618-4115 can have maximum insertions 3, got 207.",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF vpr at 3618-4115 contains out of frame indels that impact 282 positions.",
             "orf": "vpr"
         },
         {
@@ -132,8 +132,8 @@
         },
         {
             "qseqid": "MN692074",
-            "error": "InsertionInOrf",
-            "message": "Smaller ORF vpu at 3618-4115 can have maximum insertions 24, got 249.",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF vpu at 3618-4115 contains out of frame indels that impact 286 positions.",
             "orf": "vpu"
         },
         {
@@ -150,8 +150,8 @@
         },
         {
             "qseqid": "MN692074",
-            "error": "InsertionInOrf",
-            "message": "Smaller ORF nef at 1-4059 can have maximum insertions 51, got 882.",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF nef at 1-4059 contains out of frame indels that impact 929 positions.",
             "orf": "nef"
         },
         {
@@ -174,12 +174,6 @@
             "error": "InternalStopInOrf",
             "message": "ORF gag at 316-1665 contains an internal stop codon at 367.",
             "orf": "gag"
-        },
-        {
-            "qseqid": "MN090335",
-            "error": "InsertionInOrf",
-            "message": "ORF pol at 1428-4469 can have maximum insertions 21, got 30.",
-            "orf": "pol"
         },
         {
             "qseqid": "MN090335",
@@ -679,12 +673,6 @@
     "MK115702.1": [
         {
             "qseqid": "MK115702.1",
-            "error": "InsertionInOrf",
-            "message": "ORF pol at 1545-4586 can have maximum insertions 21, got 30.",
-            "orf": "pol"
-        },
-        {
-            "qseqid": "MK115702.1",
             "error": "PackagingSignalDeletion",
             "message": "Query Sequence exceeds maximum deletion tolerance in PSI. Contains 54 deletions with max tolerance of 10 deletions.",
             "orf": null
@@ -825,12 +813,6 @@
         }
     ],
     "OQ092467": [
-        {
-            "qseqid": "OQ092467",
-            "error": "InsertionInOrf",
-            "message": "Smaller ORF rev_exon2 at 8390-8674 can have maximum insertions 3, got 9.",
-            "orf": "rev_exon2"
-        },
         {
             "qseqid": "OQ092467",
             "error": "PackagingSignalDeletion",
