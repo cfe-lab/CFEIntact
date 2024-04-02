@@ -23,21 +23,21 @@ except for the standard constants such as the 5% limit for p-value.
 
 The values above are based on the following emperical data:
 
-| ORF name  | Median | Minimum | Maximum |    Mean | Mode | Stdev | Count |
-|-----------+--------+---------+---------+---------+------+-------+-------|
-| gag       |   1508 |    1469 |    1709 | 1509.93 | 1502 | 18.79 |  1042 |
-| pol       |   3011 |    2920 |    3032 | 3009.14 | 3011 | 22.94 |  1048 |
-| env       |   2576 |    2522 |    2939 | 2581.93 | 2549 | 45.63 |  1042 |
-| vif       |    578 |     575 |     581 |  577.98 |  578 |  0.99 |  1046 |
-| vpr       |    290 |     284 |     293 |  290.01 |  290 |  1.28 |  1060 |
-| tat_exon1 |    214 |     214 |     214 |     214 |  214 |   0.0 |  1061 |
-| rev_exon1 |     75 |      75 |      75 |      75 |   75 |   0.0 |  1064 |
-| vpu       |    245 |     239 |     269 |   247.2 |  245 |  7.38 |  1055 |
-| tat_exon2 |     92 |      92 |      95 |   92.16 |   92 |  0.68 |  1057 |
-| rev_exon2 |    275 |     269 |     278 |  275.07 |  275 |  0.53 |  1053 |
-| nef       |    629 |     581 |     680 |  632.23 |  620 | 19.49 |  1050 |
+| ORF name  | Mean    | Minimum | Maximum | Median | Mode | Stdev | Count |
+|-----------|---------|---------|---------|--------|------|-------|-------|
+| gag       | 1509.93 | 1469    | 1709    | 1508   | 1502 | 18.79 | 1042  |
+| pol       | 3009.14 | 2920    | 3032    | 3011   | 3011 | 22.94 | 1048  |
+| vpu       | 247.2   | 239     | 269     | 245    | 245  | 7.38  | 1055  |
+| vif       | 577.98  | 575     | 581     | 578    | 578  | 0.99  | 1046  |
+| vpr       | 290.01  | 284     | 293     | 290    | 290  | 1.28  | 1060  |
+| tat_exon1 | 214     | 214     | 214     | 214    | 214  | 0.0   | 1061  |
+| tat_exon2 | 92.16   | 92      | 95      | 92     | 92   | 0.68  | 1057  |
+| rev_exon1 | 75      | 75      | 75      | 75     | 75   | 0.0   | 1064  |
+| rev_exon2 | 275.07  | 269     | 278     | 275    | 275  | 0.53  | 1053  |
+| env       | 2581.93 | 2522    | 2939    | 2576   | 2549 | 45.63 | 1042  |
+| nef       | 632.23  | 581     | 680     | 629    | 620  | 19.49 | 1050  |
 
-<div style='width: 100%; text-align: right;'><tiny>(source: study by British Columbia Centre for Excellence in HIV/AIDS)</tiny></div>
+  <div style='width: 100%; text-align: right;'><tiny>(source: study by British Columbia Centre for Excellence in HIV/AIDS)</tiny></div>
 
 
 The table above presents an analysis of Open Reading Frame (ORF) lengths for different genes. The analysis summarizes the lengths by providing statistical measures such as the median, minimum, maximum, mean, mode, standard deviation, variance, and the count of the samples.
@@ -82,17 +82,19 @@ distribution of distances within the pool of observed instances.
 
 | ORF name  | Mean | Median | Mode | Stdev | Minimum | Maximum | Count |
 |-----------|------|--------|------|-------|---------|---------|-------|
-| gag       | 0.28 | 0.27   | 0.26 | 0.06  | 0.2     | 0.6     | 1046  |
+| gag       | 0.28 | 0.27   | 0.26 | 0.06  | 0.20    | 0.60    | 1046  |
 | pol       | 0.24 | 0.21   | 0.19 | 0.11  | 0.15    | 0.74    | 1046  |
-| env       | 0.5  | 0.49   | 0.45 | 0.05  | 0.44    | 0.69    | 1043  |
+| vpu       | 0.55 | 0.55   | 0.51 | 0.03  | 0.47    | 0.63    | 1042  |
 | vif       | 0.36 | 0.36   | 0.37 | 0.05  | 0.23    | 0.63    | 1051  |
 | vpr       | 0.33 | 0.34   | 0.38 | 0.06  | 0.23    | 0.47    | 1051  |
 | tat_exon1 | 0.42 | 0.43   | 0.48 | 0.06  | 0.25    | 0.56    | 1058  |
-| rev_exon1 | 0.43 | 0.43   | 0.43 | 0.07  | 0.27    | 0.6     | 1053  |
-| vpu       | 0.55 | 0.55   | 0.51 | 0.03  | 0.47    | 0.63    | 1042  |
 | tat_exon2 | 0.47 | 0.48   | 0.44 | 0.07  | 0.24    | 0.67    | 1048  |
+| rev_exon1 | 0.43 | 0.43   | 0.43 | 0.07  | 0.27    | 0.60    | 1053  |
 | rev_exon2 | 0.42 | 0.42   | 0.41 | 0.07  | 0.21    | 0.54    | 1054  |
-| nef       | 0.47 | 0.47   | 0.45 | 0.04  | 0.4     | 0.68    | 1043  |
+| env       | 0.5  | 0.49   | 0.45 | 0.05  | 0.44    | 0.69    | 1043  |
+| nef       | 0.47 | 0.47   | 0.45 | 0.04  | 0.40    | 0.68    | 1043  |
+
+   <div style='width: 100%; text-align: right;'><tiny>(source: study by British Columbia Centre for Excellence in HIV/AIDS)</tiny></div>
 
 The distance measures are an essential component of the genetic
 analysis, providing insights into the physical distances within the
