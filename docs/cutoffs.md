@@ -52,7 +52,12 @@ Each gene has different limits for deletion and insertion tolerance, as shown in
 
 ## Distance
 
-TODO: add description as in #ORF lengths
+The distance tolerance values for each ORF name as presented below are
+crucial for determining the functional viability of variations within
+the gene sequences. These tolerances demonstrate the degree to which
+each ORF can deviate from its typical genetic make-up before the
+changes are considered to significantly impact the gene's function or
+structural integrity.
 
 | ORF name  | Distance tolerance |
 |-----------|--------------------|
@@ -68,7 +73,12 @@ TODO: add description as in #ORF lengths
 | rev_exon2 | 0.61               |
 | nef       | 0.68               |
 
-TODO: add description as in #ORF lengths
+The following table complements the distance tolerance data by
+providing statistical measures on observed distances. These include
+the mean, median, mode, minimum, maximum, standard deviation (Stdev),
+and count metrics for each ORF. Such statistics support the determined
+distance tolerances by reflecting the variability and the general
+distribution of distances within the pool of observed instances.
 
 | ORF name  | Mean | Median | Mode | Stdev | Minimum | Maximum | Count |
 |-----------|------|--------|------|-------|---------|---------|-------|
@@ -84,7 +94,12 @@ TODO: add description as in #ORF lengths
 | rev_exon2 | 0.43 | 0.44   | 0.41 | 0.07  | 0.21    | 0.61    | 2071  |
 | nef       | 0.48 | 0.48   | 0.45 | 0.05  | 0.39    | 0.68    | 2057  |
 
-TODO: add foreword as in #ORF lengths
+The distance measures are an essential component of the genetic
+analysis, providing insights into the physical distances within the
+genetic material that can lead to functional or structural changes. By
+understanding these tolerances and the distribution of natural
+variances, researchers can better predict and analyse the impact of
+genetic mutations or variations within the specified ORFs.
 
 ## Other
 
