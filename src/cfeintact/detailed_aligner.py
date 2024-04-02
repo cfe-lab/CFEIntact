@@ -1,5 +1,6 @@
 
 from Bio import Align
+from fractions import Fraction
 
 aligner = Align.PairwiseAligner()
 aligner.mode = 'global'
@@ -25,13 +26,13 @@ class Alignment:
 
     def distance(self):
         if self.score == 0:
-            absolute = 0
+            absolute = Fraction(0)
         else:
-            absolute = aligner.match_score - (self.score / len(self.reference))
+            absolute = Fraction(aligner.match_score - (self.score / len(self.reference)))
 
         # normalise it to the [0, 1) interval, with f(average_distance) = 0.5.
-        average_distance = 0.62
-        norm = 1 - (average_distance / (absolute + average_distance))
+        average_distance: Fraction = Fraction("0.62")
+        norm = Fraction(1) - (average_distance / (average_distance + absolute))
 
         return norm
 

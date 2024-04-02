@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from fractions import Fraction
 
 
 @dataclass(frozen=True)
@@ -8,7 +9,7 @@ class OriginalORF:
     end: int
     max_deletions: int
     max_insertions: int
-    max_distance: float
+    max_distance: Fraction
     nucleotides: str
     aminoacids: str
     protein: str

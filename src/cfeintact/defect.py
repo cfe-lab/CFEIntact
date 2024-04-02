@@ -1,6 +1,7 @@
 
 from dataclasses import dataclass
 from typing import Union
+from fractions import Fraction
 
 from cfeintact.original_orf import OriginalORF
 
@@ -64,12 +65,14 @@ class FrameshiftInOrf(ORFDefect):
 @dataclass(frozen=True)
 class SequenceDivergence(ORFDefect):
     e: OriginalORF
-    distance: float
+    distance: Fraction
 
     def __str__(self) -> str:
+        ex_dist = float(round(self.e.max_distance, 5))
+        it_dist = float(round(self.distance, 5))
         return (f"{'Smaller ' if self.q.is_small else ''}"
                 f"ORF {self.e.name} at {self.q.start + 1}-{self.q.end + 1} can have maximum distance of "
-                f"{self.e.max_distance} from its subtype ORF's aminoacid sequence, got {self.distance}.")
+                f"{ex_dist} from its subtype ORF's aminoacid sequence, got {it_dist}.")
 
 
 @dataclass(frozen=True)

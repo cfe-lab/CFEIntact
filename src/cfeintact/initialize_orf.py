@@ -2,12 +2,13 @@ from cfeintact.translate_to_aminoacids import translate_to_aminoacids
 from cfeintact.find_orf import find_orf
 from cfeintact.original_orf import OriginalORF
 from cfeintact.aligned_sequence import AlignedSequence
+from fractions import Fraction
 
 
 def initialize_orf(aligned_sequence: AlignedSequence, name: str,
                    start: int, end: int,
                    max_deletions: int, max_insertions: int,
-                   max_distance: float, is_small: bool) -> OriginalORF:
+                   max_distance: Fraction, is_small: bool) -> OriginalORF:
     nucleotides = aligned_sequence.reference.seq[start:(end + 1)]
     aminoacids = translate_to_aminoacids(nucleotides)
     protein = aminoacids.strip("*")

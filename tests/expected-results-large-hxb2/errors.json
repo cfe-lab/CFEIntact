@@ -15,7 +15,7 @@
         {
             "qseqid": "KX505501.1",
             "error": "SequenceDivergence",
-            "message": "ORF pol at 1629-1927 can have maximum distance of 0.76 from its subtype ORF's aminoacid sequence, got 0.7707168089490728.",
+            "message": "ORF pol at 1629-1927 can have maximum distance of 0.76 from its subtype ORF's aminoacid sequence, got 0.77072.",
             "orf": "pol"
         },
         {
@@ -33,7 +33,7 @@
         {
             "qseqid": "KX505501.1",
             "error": "SequenceDivergence",
-            "message": "ORF env at 1-1824 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.7623480451210163.",
+            "message": "ORF env at 1-1824 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.76235.",
             "orf": "env"
         },
         {
@@ -51,7 +51,7 @@
         {
             "qseqid": "KX505501.1",
             "error": "SequenceDivergence",
-            "message": "Smaller ORF vif at 1-1824 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.7647696476964769.",
+            "message": "Smaller ORF vif at 1-1824 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.76477.",
             "orf": "vif"
         },
         {
@@ -69,7 +69,7 @@
         {
             "qseqid": "KX505501.1",
             "error": "SequenceDivergence",
-            "message": "Smaller ORF vpr at 1600-1824 can have maximum distance of 0.5 from its subtype ORF's aminoacid sequence, got 0.763687959047407.",
+            "message": "Smaller ORF vpr at 1600-1824 can have maximum distance of 0.5 from its subtype ORF's aminoacid sequence, got 0.76369.",
             "orf": "vpr"
         },
         {
@@ -87,7 +87,7 @@
         {
             "qseqid": "KX505501.1",
             "error": "SequenceDivergence",
-            "message": "Smaller ORF tat_exon1 at 1578-1746 can have maximum distance of 0.61 from its subtype ORF's aminoacid sequence, got 0.7620745794247616.",
+            "message": "Smaller ORF tat_exon1 at 1578-1746 can have maximum distance of 0.61 from its subtype ORF's aminoacid sequence, got 0.76207.",
             "orf": "tat_exon1"
         },
         {
@@ -105,7 +105,7 @@
         {
             "qseqid": "KX505501.1",
             "error": "SequenceDivergence",
-            "message": "Smaller ORF rev_exon1 at 1578-1746 can have maximum distance of 0.6 from its subtype ORF's aminoacid sequence, got 0.7634976525821596.",
+            "message": "Smaller ORF rev_exon1 at 1578-1746 can have maximum distance of 0.6 from its subtype ORF's aminoacid sequence, got 0.7635.",
             "orf": "rev_exon1"
         },
         {
@@ -123,7 +123,7 @@
         {
             "qseqid": "KX505501.1",
             "error": "SequenceDivergence",
-            "message": "Smaller ORF vpu at 1600-1824 can have maximum distance of 0.75 from its subtype ORF's aminoacid sequence, got 0.7672672672672673.",
+            "message": "Smaller ORF vpu at 1600-1824 can have maximum distance of 0.75 from its subtype ORF's aminoacid sequence, got 0.76727.",
             "orf": "vpu"
         },
         {
@@ -141,7 +141,7 @@
         {
             "qseqid": "KX505501.1",
             "error": "SequenceDivergence",
-            "message": "Smaller ORF tat_exon2 at 1747-1824 can have maximum distance of 0.7 from its subtype ORF's aminoacid sequence, got 0.75732750773712.",
+            "message": "Smaller ORF tat_exon2 at 1747-1824 can have maximum distance of 0.7 from its subtype ORF's aminoacid sequence, got 0.75733.",
             "orf": "tat_exon2"
         },
         {
@@ -159,7 +159,7 @@
         {
             "qseqid": "KX505501.1",
             "error": "SequenceDivergence",
-            "message": "Smaller ORF rev_exon2 at 1747-1927 can have maximum distance of 0.61 from its subtype ORF's aminoacid sequence, got 0.7664255575647981.",
+            "message": "Smaller ORF rev_exon2 at 1747-1927 can have maximum distance of 0.61 from its subtype ORF's aminoacid sequence, got 0.76643.",
             "orf": "rev_exon2"
         },
         {
@@ -177,7 +177,7 @@
         {
             "qseqid": "KX505501.1",
             "error": "SequenceDivergence",
-            "message": "Smaller ORF nef at 1-1824 can have maximum distance of 0.68 from its subtype ORF's aminoacid sequence, got 0.764345579086969.",
+            "message": "Smaller ORF nef at 1-1824 can have maximum distance of 0.68 from its subtype ORF's aminoacid sequence, got 0.76435.",
             "orf": "nef"
         },
         {
@@ -253,7 +253,7 @@
         {
             "qseqid": "MN692074",
             "error": "SequenceDivergence",
-            "message": "ORF env at 3-4115 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.76033143808071.",
+            "message": "ORF env at 3-4115 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.76033.",
             "orf": "env"
         },
         {
@@ -271,7 +271,7 @@
         {
             "qseqid": "MN692074",
             "error": "SequenceDivergence",
-            "message": "Smaller ORF vif at 3618-4115 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.7631664499349805.",
+            "message": "Smaller ORF vif at 3618-4115 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.76317.",
             "orf": "vif"
         },
         {
@@ -289,7 +289,7 @@
         {
             "qseqid": "MN692074",
             "error": "SequenceDivergence",
-            "message": "Smaller ORF vpr at 3618-4115 can have maximum distance of 0.5 from its subtype ORF's aminoacid sequence, got 0.7629151983204618.",
+            "message": "Smaller ORF vpr at 3618-4115 can have maximum distance of 0.5 from its subtype ORF's aminoacid sequence, got 0.76292.",
             "orf": "vpr"
         },
         {
@@ -307,7 +307,7 @@
         {
             "qseqid": "MN692074",
             "error": "SequenceDivergence",
-            "message": "Smaller ORF tat_exon1 at 3824-4082 can have maximum distance of 0.61 from its subtype ORF's aminoacid sequence, got 0.7578614234731668.",
+            "message": "Smaller ORF tat_exon1 at 3824-4082 can have maximum distance of 0.61 from its subtype ORF's aminoacid sequence, got 0.75786.",
             "orf": "tat_exon1"
         },
         {
@@ -319,7 +319,7 @@
         {
             "qseqid": "MN692074",
             "error": "SequenceDivergence",
-            "message": "Smaller ORF rev_exon1 at 3824-4082 can have maximum distance of 0.6 from its subtype ORF's aminoacid sequence, got 0.7666640800807014.",
+            "message": "Smaller ORF rev_exon1 at 3824-4082 can have maximum distance of 0.6 from its subtype ORF's aminoacid sequence, got 0.76666.",
             "orf": "rev_exon1"
         },
         {
@@ -337,7 +337,7 @@
         {
             "qseqid": "MN692074",
             "error": "SequenceDivergence",
-            "message": "Smaller ORF vpu at 3618-4115 can have maximum distance of 0.75 from its subtype ORF's aminoacid sequence, got 0.7634058115037564.",
+            "message": "Smaller ORF vpu at 3618-4115 can have maximum distance of 0.75 from its subtype ORF's aminoacid sequence, got 0.76341.",
             "orf": "vpu"
         },
         {
@@ -355,7 +355,7 @@
         {
             "qseqid": "MN692074",
             "error": "SequenceDivergence",
-            "message": "Smaller ORF tat_exon2 at 4083-4115 can have maximum distance of 0.7 from its subtype ORF's aminoacid sequence, got 0.7740791806184755.",
+            "message": "Smaller ORF tat_exon2 at 4083-4115 can have maximum distance of 0.7 from its subtype ORF's aminoacid sequence, got 0.77408.",
             "orf": "tat_exon2"
         },
         {
@@ -373,7 +373,7 @@
         {
             "qseqid": "MN692074",
             "error": "SequenceDivergence",
-            "message": "Smaller ORF rev_exon2 at 4083-4115 can have maximum distance of 0.61 from its subtype ORF's aminoacid sequence, got 0.7702223654527877.",
+            "message": "Smaller ORF rev_exon2 at 4083-4115 can have maximum distance of 0.61 from its subtype ORF's aminoacid sequence, got 0.77022.",
             "orf": "rev_exon2"
         },
         {
@@ -391,7 +391,7 @@
         {
             "qseqid": "MN692074",
             "error": "SequenceDivergence",
-            "message": "Smaller ORF nef at 1-4059 can have maximum distance of 0.68 from its subtype ORF's aminoacid sequence, got 0.7628009106462086.",
+            "message": "Smaller ORF nef at 1-4059 can have maximum distance of 0.68 from its subtype ORF's aminoacid sequence, got 0.7628.",
             "orf": "nef"
         },
         {
@@ -474,7 +474,7 @@
         {
             "qseqid": "MN090376",
             "error": "SequenceDivergence",
-            "message": "ORF gag at 523-1590 can have maximum distance of 0.66 from its subtype ORF's aminoacid sequence, got 0.6828741441147701.",
+            "message": "ORF gag at 523-1590 can have maximum distance of 0.66 from its subtype ORF's aminoacid sequence, got 0.68287.",
             "orf": "gag"
         },
         {
@@ -650,7 +650,7 @@
         {
             "qseqid": "MK114856.1",
             "error": "SequenceDivergence",
-            "message": "ORF gag at 121-2022 can have maximum distance of 0.66 from its subtype ORF's aminoacid sequence, got 0.7511039743075072.",
+            "message": "ORF gag at 121-2022 can have maximum distance of 0.66 from its subtype ORF's aminoacid sequence, got 0.7511.",
             "orf": "gag"
         },
         {
@@ -680,7 +680,7 @@
         {
             "qseqid": "MK114856.1",
             "error": "SequenceDivergence",
-            "message": "ORF env at 5954-8521 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.7529994904340572.",
+            "message": "ORF env at 5954-8521 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.753.",
             "orf": "env"
         },
         {
@@ -698,7 +698,7 @@
         {
             "qseqid": "MK114856.1",
             "error": "SequenceDivergence",
-            "message": "Smaller ORF vif at 4426-5349 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.7566838361540349.",
+            "message": "Smaller ORF vif at 4426-5349 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.75668.",
             "orf": "vif"
         },
         {
@@ -716,7 +716,7 @@
         {
             "qseqid": "MK114856.1",
             "error": "SequenceDivergence",
-            "message": "Smaller ORF vpr at 5034-5579 can have maximum distance of 0.5 from its subtype ORF's aminoacid sequence, got 0.7334692430420138.",
+            "message": "Smaller ORF vpr at 5034-5579 can have maximum distance of 0.5 from its subtype ORF's aminoacid sequence, got 0.73347.",
             "orf": "vpr"
         },
         {
@@ -734,7 +734,7 @@
         {
             "qseqid": "MK114856.1",
             "error": "SequenceDivergence",
-            "message": "Smaller ORF tat_exon1 at 5428-5774 can have maximum distance of 0.61 from its subtype ORF's aminoacid sequence, got 0.6457491872721899.",
+            "message": "Smaller ORF tat_exon1 at 5428-5774 can have maximum distance of 0.61 from its subtype ORF's aminoacid sequence, got 0.64575.",
             "orf": "tat_exon1"
         },
         {
@@ -788,7 +788,7 @@
         {
             "qseqid": "MK114856.1",
             "error": "SequenceDivergence",
-            "message": "Smaller ORF nef at 7917-9176 can have maximum distance of 0.68 from its subtype ORF's aminoacid sequence, got 0.7587548638132295.",
+            "message": "Smaller ORF nef at 7917-9176 can have maximum distance of 0.68 from its subtype ORF's aminoacid sequence, got 0.75875.",
             "orf": "nef"
         },
         {
@@ -814,7 +814,7 @@
         {
             "qseqid": "MK115009.1",
             "error": "SequenceDivergence",
-            "message": "ORF gag at 303-1715 can have maximum distance of 0.66 from its subtype ORF's aminoacid sequence, got 0.7484174646972894.",
+            "message": "ORF gag at 303-1715 can have maximum distance of 0.66 from its subtype ORF's aminoacid sequence, got 0.74842.",
             "orf": "gag"
         },
         {
@@ -844,7 +844,7 @@
         {
             "qseqid": "MK115009.1",
             "error": "SequenceDivergence",
-            "message": "ORF env at 5753-8353 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.7518870380010406.",
+            "message": "ORF env at 5753-8353 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.75189.",
             "orf": "env"
         },
         {
@@ -862,7 +862,7 @@
         {
             "qseqid": "MK115009.1",
             "error": "SequenceDivergence",
-            "message": "Smaller ORF vif at 4290-4988 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.7624714704923379.",
+            "message": "Smaller ORF vif at 4290-4988 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.76247.",
             "orf": "vif"
         },
         {
@@ -880,7 +880,7 @@
         {
             "qseqid": "MK115009.1",
             "error": "SequenceDivergence",
-            "message": "Smaller ORF vpr at 5088-5378 can have maximum distance of 0.5 from its subtype ORF's aminoacid sequence, got 0.6737199868435482.",
+            "message": "Smaller ORF vpr at 5088-5378 can have maximum distance of 0.5 from its subtype ORF's aminoacid sequence, got 0.67372.",
             "orf": "vpr"
         },
         {
@@ -898,7 +898,7 @@
         {
             "qseqid": "MK115009.1",
             "error": "SequenceDivergence",
-            "message": "Smaller ORF tat_exon1 at 5413-5573 can have maximum distance of 0.61 from its subtype ORF's aminoacid sequence, got 0.6325105553751218.",
+            "message": "Smaller ORF tat_exon1 at 5413-5573 can have maximum distance of 0.61 from its subtype ORF's aminoacid sequence, got 0.63251.",
             "orf": "tat_exon1"
         },
         {
@@ -934,7 +934,7 @@
         {
             "qseqid": "MK115009.1",
             "error": "SequenceDivergence",
-            "message": "Smaller ORF nef at 7749-8996 can have maximum distance of 0.68 from its subtype ORF's aminoacid sequence, got 0.7328145265888457.",
+            "message": "Smaller ORF nef at 7749-8996 can have maximum distance of 0.68 from its subtype ORF's aminoacid sequence, got 0.73281.",
             "orf": "nef"
         },
         {
@@ -987,7 +987,7 @@
         {
             "qseqid": "MK116110.1",
             "error": "SequenceDivergence",
-            "message": "ORF gag at 489-1601 can have maximum distance of 0.66 from its subtype ORF's aminoacid sequence, got 0.7372881355932204.",
+            "message": "ORF gag at 489-1601 can have maximum distance of 0.66 from its subtype ORF's aminoacid sequence, got 0.73729.",
             "orf": "gag"
         },
         {
@@ -1067,7 +1067,7 @@
         {
             "qseqid": "MK115464.1",
             "error": "SequenceDivergence",
-            "message": "ORF gag at 528-2297 can have maximum distance of 0.66 from its subtype ORF's aminoacid sequence, got 0.706855791962175.",
+            "message": "ORF gag at 528-2297 can have maximum distance of 0.66 from its subtype ORF's aminoacid sequence, got 0.70686.",
             "orf": "gag"
         },
         {
@@ -1097,7 +1097,7 @@
         {
             "qseqid": "MK115464.1",
             "error": "SequenceDivergence",
-            "message": "ORF env at 6229-8799 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.7471048806788873.",
+            "message": "ORF env at 6229-8799 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.7471.",
             "orf": "env"
         },
         {
@@ -1115,7 +1115,7 @@
         {
             "qseqid": "MK115464.1",
             "error": "SequenceDivergence",
-            "message": "Smaller ORF vif at 5046-5624 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.7067546928117459.",
+            "message": "Smaller ORF vif at 5046-5624 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.70675.",
             "orf": "vif"
         },
         {
@@ -1133,7 +1133,7 @@
         {
             "qseqid": "MK115464.1",
             "error": "SequenceDivergence",
-            "message": "Smaller ORF tat_exon1 at 5712-6049 can have maximum distance of 0.61 from its subtype ORF's aminoacid sequence, got 0.6342660263102944.",
+            "message": "Smaller ORF tat_exon1 at 5712-6049 can have maximum distance of 0.61 from its subtype ORF's aminoacid sequence, got 0.63427.",
             "orf": "tat_exon1"
         },
         {
@@ -1151,7 +1151,7 @@
         {
             "qseqid": "MK115464.1",
             "error": "SequenceDivergence",
-            "message": "Smaller ORF vpu at 6066-6311 can have maximum distance of 0.75 from its subtype ORF's aminoacid sequence, got 0.7521692502681095.",
+            "message": "Smaller ORF vpu at 6066-6311 can have maximum distance of 0.75 from its subtype ORF's aminoacid sequence, got 0.75217.",
             "orf": "vpu"
         },
         {
@@ -1282,7 +1282,7 @@
         {
             "qseqid": "MK115095.1",
             "error": "SequenceDivergence",
-            "message": "ORF gag at 3-1697 can have maximum distance of 0.66 from its subtype ORF's aminoacid sequence, got 0.7478034493979825.",
+            "message": "ORF gag at 3-1697 can have maximum distance of 0.66 from its subtype ORF's aminoacid sequence, got 0.7478.",
             "orf": "gag"
         },
         {
@@ -1312,7 +1312,7 @@
         {
             "qseqid": "MK115095.1",
             "error": "SequenceDivergence",
-            "message": "ORF env at 5629-8229 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.7513561129398668.",
+            "message": "ORF env at 5629-8229 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.75136.",
             "orf": "env"
         },
         {
@@ -1330,7 +1330,7 @@
         {
             "qseqid": "MK115095.1",
             "error": "SequenceDivergence",
-            "message": "Smaller ORF vif at 4446-5024 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.7494633160752622.",
+            "message": "Smaller ORF vif at 4446-5024 can have maximum distance of 0.69 from its subtype ORF's aminoacid sequence, got 0.74946.",
             "orf": "vif"
         },
         {
@@ -1348,7 +1348,7 @@
         {
             "qseqid": "MK115095.1",
             "error": "SequenceDivergence",
-            "message": "Smaller ORF tat_exon1 at 5289-5449 can have maximum distance of 0.61 from its subtype ORF's aminoacid sequence, got 0.6409453748630458.",
+            "message": "Smaller ORF tat_exon1 at 5289-5449 can have maximum distance of 0.61 from its subtype ORF's aminoacid sequence, got 0.64095.",
             "orf": "tat_exon1"
         },
         {
@@ -1366,7 +1366,7 @@
         {
             "qseqid": "MK115095.1",
             "error": "SequenceDivergence",
-            "message": "Smaller ORF vpu at 5466-5711 can have maximum distance of 0.75 from its subtype ORF's aminoacid sequence, got 0.7521692502681095.",
+            "message": "Smaller ORF vpu at 5466-5711 can have maximum distance of 0.75 from its subtype ORF's aminoacid sequence, got 0.75217.",
             "orf": "vpu"
         },
         {

@@ -32,7 +32,7 @@ class FoundORF:
     start: int
     end: int
     orientation: str
-    distance: str
+    distance: float
     protein: str
     aminoacids: str
     nucleotides: str
@@ -616,8 +616,8 @@ class OutputWriter:
             self.errors[sequence.id] = errors_dicts
         elif self.fmt == "csv":
             for orf in orfs:
-                self.orfs_writer.writerow(
-                    [(sequence.id if key == 'qseqid' else orf[key]) for key in self.orfs_header])
+                row = [(sequence.id if key == 'qseqid' else orf[key]) for key in self.orfs_header]
+                self.orfs_writer.writerow(row)
             self.holistic_writer.writerow(
                 [(sequence.id if key == 'qseqid' else holistic[key]) for key in self.holistic_header])
             for error in errors_dicts:
@@ -828,7 +828,7 @@ def intact(working_dir,
             o.query.start,
             o.query.end,
             o.orientation,
-            o.distance,
+            float(o.distance),
             str(o.query.protein),
             str(o.query.aminoacids),
             str(o.query.nucleotides),
