@@ -9,7 +9,7 @@ from Bio import Seq, SeqIO
 from Bio.SeqRecord import SeqRecord
 from Bio.Data import IUPACData
 from scipy.stats import fisher_exact
-from typing import Optional, Dict, List, Iterable, Union
+from typing import Optional, Dict, List, Iterable, Union, Tuple
 
 import cfeintact.constants as const
 import cfeintact.subtypes as st
@@ -486,7 +486,7 @@ def check_reading_frame_distance(best_match: MappedORF, e: OriginalORF, q: Origi
         return None
 
 
-def check_reading_frame(aligned_sequence, expected, error_bar, reverse=False):
+def check_reading_frame(aligned_sequence, expected, reverse=False):
     sequence = aligned_sequence.this
     reference = aligned_sequence.reference
     errors = []
@@ -684,28 +684,28 @@ def find_invalid_subsequences(sequence):
     return invalid_subsequences
 
 
-def intact(working_dir,
-           input_file,
-           subtype,
-           check_packaging_signal,
-           check_rre,
-           check_major_splice_donor_site,
-           check_hypermut,
-           check_long_deletion,
-           check_nonhiv,
-           check_scramble,
-           check_internal_inversion,
-           check_unknown_nucleotides,
-           check_small_orfs,
-           output_csv,
-           hxb2_forward_orfs=const.DEFAULT_FORWARD_ORFs,
-           hxb2_reverse_orfs=const.DEFAULT_REVERSE_ORFS,
-           hxb2_small_orfs=const.DEFAULT_SMALL_FORWARD_ORFS,
-           hxb2_psi_locus=const.DEFAULT_PSI_LOCUS,
-           hxb2_rre_locus=const.DEFAULT_RRE_LOCUS,
-           hxb2_msd_site_locus=const.DEFAULT_MSD_SITE_LOCUS,
-           min_orf_length=const.DEFAULT_ORF_LENGTH,
-           error_bar=const.DEFAULT_ERROR_BAR):
+def intact(working_dir: str,
+           input_file: str,
+           subtype: str,
+           check_packaging_signal: bool,
+           check_rre: bool,
+           check_major_splice_donor_site: bool,
+           check_hypermut: bool,
+           check_long_deletion: bool,
+           check_nonhiv: bool,
+           check_scramble: bool,
+           check_internal_inversion: bool,
+           check_unknown_nucleotides: bool,
+           check_small_orfs: bool,
+           check_distance: bool,
+           output_csv: bool,
+           hxb2_forward_orfs: const.ORFsDefinition = const.DEFAULT_FORWARD_ORFs,
+           hxb2_reverse_orfs: const.ORFsDefinition = const.DEFAULT_REVERSE_ORFS,
+           hxb2_small_orfs: const.ORFsDefinition = const.DEFAULT_SMALL_FORWARD_ORFS,
+           hxb2_psi_locus: Tuple[int, int] = const.DEFAULT_PSI_LOCUS,
+           hxb2_rre_locus: Tuple[int, int] = const.DEFAULT_RRE_LOCUS,
+           hxb2_msd_site_locus: int = const.DEFAULT_MSD_SITE_LOCUS,
+           ) -> None:
     """
     Check if a set of consensus sequences in a FASTA file is cfeintact.
 
@@ -816,10 +816,10 @@ def intact(working_dir,
 
         alignment = aligned_sequence.alignment
 
-        sequence_orfs, orf_errors = check_reading_frame(aligned_sequence, forward_orfs, error_bar)
+        sequence_orfs, orf_errors = check_reading_frame(aligned_sequence, forward_orfs)
         sequence_errors.extend(orf_errors)
 
-        sequence_small_orfs, small_orf_errors = check_reading_frame(aligned_sequence, small_orfs, error_bar)
+        sequence_small_orfs, small_orf_errors = check_reading_frame(aligned_sequence, small_orfs)
         if check_small_orfs:
             sequence_errors.extend(small_orf_errors)
 

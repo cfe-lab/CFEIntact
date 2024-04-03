@@ -30,6 +30,7 @@ def run_end_to_end(tmp_path, data_file, expected_dir, subtype, output_csv):
         check_internal_inversion=True,
         check_unknown_nucleotides=True,
         check_small_orfs=True,
+        check_distance=True,
         output_csv=output_csv,
     )
 
@@ -84,6 +85,7 @@ def test_single_noblast(tmp_path, request):
         check_internal_inversion=False,
         check_unknown_nucleotides=True,
         check_small_orfs=True,
+        check_distance=True,
         output_csv=output_csv,
     )
 
