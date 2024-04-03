@@ -460,8 +460,11 @@ def check_reading_frame_deletions(e: OriginalORF, q: OriginalORF) \
     return None
 
 
-def check_reading_frame_insertions(best_match: MappedORF, e: OriginalORF, q: OriginalORF) \
+def check_reading_frame_insertions(check_distance: bool, best_match: MappedORF, e: OriginalORF, q: OriginalORF) \
         -> Optional[defect.InsertionInOrf]:
+
+    if not check_distance:
+        return None
 
     if best_match.distance <= e.max_distance:
         return None
@@ -477,8 +480,11 @@ def check_reading_frame_insertions(best_match: MappedORF, e: OriginalORF, q: Ori
     return None
 
 
-def check_reading_frame_distance(best_match: MappedORF, e: OriginalORF, q: OriginalORF) \
+def check_reading_frame_distance(check_distance: bool, best_match: MappedORF, e: OriginalORF, q: OriginalORF) \
         -> Optional[defect.SequenceDivergence]:
+
+    if not check_distance:
+        return None
 
     if best_match.distance > e.max_distance:
         return defect.SequenceDivergence(q=q, e=e, distance=best_match.distance)
@@ -486,7 +492,7 @@ def check_reading_frame_distance(best_match: MappedORF, e: OriginalORF, q: Origi
         return None
 
 
-def check_reading_frame(aligned_sequence, expected, reverse=False):
+def check_reading_frame(check_distance, aligned_sequence, expected, reverse=False):
     sequence = aligned_sequence.this
     reference = aligned_sequence.reference
     errors = []
@@ -503,8 +509,8 @@ def check_reading_frame(aligned_sequence, expected, reverse=False):
 
         add_error(check_reading_frame_shift(reference, sequence=sequence, e=e, q=q))
         add_error(check_reading_frame_deletions(e=e, q=q))
-        add_error(check_reading_frame_insertions(best_match, e=e, q=q))
-        add_error(check_reading_frame_distance(best_match, e=e, q=q))
+        add_error(check_reading_frame_insertions(check_distance, best_match, e=e, q=q))
+        add_error(check_reading_frame_distance(check_distance, best_match, e=e, q=q))
 
     return matches, errors
 
@@ -816,10 +822,10 @@ def intact(working_dir: str,
 
         alignment = aligned_sequence.alignment
 
-        sequence_orfs, orf_errors = check_reading_frame(aligned_sequence, forward_orfs)
+        sequence_orfs, orf_errors = check_reading_frame(check_distance, aligned_sequence, forward_orfs)
         sequence_errors.extend(orf_errors)
 
-        sequence_small_orfs, small_orf_errors = check_reading_frame(aligned_sequence, small_orfs)
+        sequence_small_orfs, small_orf_errors = check_reading_frame(check_distance, aligned_sequence, small_orfs)
         if check_small_orfs:
             sequence_errors.extend(small_orf_errors)
 
