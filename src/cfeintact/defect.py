@@ -78,10 +78,11 @@ class SequenceDivergence(ORFDefect):
 @dataclass(frozen=True)
 class MajorSpliceDonorSiteMutated:
     splice_site: str
+    context: str
 
     def __str__(self) -> str:
         adj = 'missing' if all(x == '-' for x in self.splice_site) else 'mutated'
-        return f"Query sequence has a {adj} splice donor site, {self.splice_site}."
+        return f"Query sequence has a {adj} splice donor site, {self.splice_site}, around {self.context}."
 
 
 @dataclass(frozen=True)

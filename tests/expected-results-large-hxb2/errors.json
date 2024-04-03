@@ -448,7 +448,7 @@
         {
             "qseqid": "MN090335",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a mutated splice donor site, AT.",
+            "message": "Query sequence has a mutated splice donor site, AT, around TTAACTGCGAAT-----CGTTC.",
             "orf": null
         },
         {
@@ -492,7 +492,7 @@
         {
             "qseqid": "MN090376",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, --.",
+            "message": "Query sequence has a missing splice donor site, --, around ----------------------.",
             "orf": null
         },
         {
@@ -519,7 +519,7 @@
         {
             "qseqid": "MK115690.1",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a mutated splice donor site, G-.",
+            "message": "Query sequence has a mutated splice donor site, G-, around GCGGCGACTGG-----------.",
             "orf": null
         },
         {
@@ -539,7 +539,7 @@
         {
             "qseqid": "MK115571.1",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, --.",
+            "message": "Query sequence has a missing splice donor site, --, around ----------------------.",
             "orf": null
         }
     ],
@@ -547,7 +547,7 @@
         {
             "qseqid": "MK115514.1",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, --.",
+            "message": "Query sequence has a missing splice donor site, --, around GCGGCGACT--------CGAAA.",
             "orf": null
         }
     ],
@@ -555,7 +555,7 @@
         {
             "qseqid": "MK115488.1",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, --.",
+            "message": "Query sequence has a missing splice donor site, --, around GCGGCGACT--------CGAAA.",
             "orf": null
         }
     ],
@@ -602,7 +602,7 @@
         {
             "qseqid": "MK115211.1",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, --.",
+            "message": "Query sequence has a missing splice donor site, --, around GCGGCG----------------.",
             "orf": null
         },
         {
@@ -628,7 +628,7 @@
         {
             "qseqid": "MK115158.1",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, --.",
+            "message": "Query sequence has a missing splice donor site, --, around GCGGCGAACG------------.",
             "orf": null
         }
     ],
@@ -1047,7 +1047,7 @@
         {
             "qseqid": "MK116110.1",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, --.",
+            "message": "Query sequence has a missing splice donor site, --, around ----------------------.",
             "orf": null
         },
         {
@@ -1089,7 +1089,7 @@
         {
             "qseqid": "MK115065.1",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, --.",
+            "message": "Query sequence has a missing splice donor site, --, around ----------------------.",
             "orf": null
         },
         {
@@ -1274,7 +1274,7 @@
         {
             "qseqid": "MK115520.1",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a mutated splice donor site, GA.",
+            "message": "Query sequence has a mutated splice donor site, GA, around CTGGTAACTAGAGATCGAAAGT.",
             "orf": null
         },
         {
@@ -1295,7 +1295,7 @@
         {
             "qseqid": "MK115570.1",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, --.",
+            "message": "Query sequence has a missing splice donor site, --, around GCGGCG-----------CGAAA.",
             "orf": null
         }
     ],
@@ -1316,7 +1316,7 @@
         {
             "qseqid": "MK115702.1",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, --.",
+            "message": "Query sequence has a missing splice donor site, --, around ---------------------A.",
             "orf": null
         },
         {
@@ -1466,7 +1466,7 @@
         {
             "qseqid": "OQ092466",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a mutated splice donor site, GC.",
+            "message": "Query sequence has a mutated splice donor site, GC, around GCGGCGACTGGCGAGTACGCCA.",
             "orf": null
         }
     ],
@@ -1480,7 +1480,7 @@
         {
             "qseqid": "OQ092463",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, --.",
+            "message": "Query sequence has a missing splice donor site, --, around ------------GAGTACGCC-.",
             "orf": null
         }
     ],
@@ -1488,7 +1488,7 @@
         {
             "qseqid": "OQ092465",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a mutated splice donor site, GA.",
+            "message": "Query sequence has a mutated splice donor site, GA, around GCGGCGACTGGAGAGTACGCC-.",
             "orf": null
         }
     ],
@@ -1502,7 +1502,7 @@
         {
             "qseqid": "OQ092462",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, --.",
+            "message": "Query sequence has a missing splice donor site, --, around ------------GAGTACGCCA.",
             "orf": null
         }
     ],
@@ -1516,7 +1516,7 @@
         {
             "qseqid": "OQ092464",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, --.",
+            "message": "Query sequence has a missing splice donor site, --, around GCGGCG----------------.",
             "orf": null
         }
     ],
@@ -1530,7 +1530,7 @@
         {
             "qseqid": "OQ092467",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, --.",
+            "message": "Query sequence has a missing splice donor site, --, around ------------GAGTACGCCA.",
             "orf": null
         }
     ]

@@ -166,7 +166,7 @@
         {
             "qseqid": "small-sequence[REVERSE_COMPLEMENT]",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, -.",
+            "message": "Query sequence has a missing splice donor site, -, around .",
             "orf": null
         },
         {
@@ -348,7 +348,7 @@
         {
             "qseqid": "singleton-sequence",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, -.",
+            "message": "Query sequence has a missing splice donor site, -, around .",
             "orf": null
         },
         {
@@ -512,7 +512,7 @@
         {
             "qseqid": "empty-sequence",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, -.",
+            "message": "Query sequence has a missing splice donor site, -, around .",
             "orf": null
         },
         {
@@ -670,7 +670,7 @@
         {
             "qseqid": "empty-sequence2",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, -.",
+            "message": "Query sequence has a missing splice donor site, -, around .",
             "orf": null
         },
         {
@@ -720,7 +720,7 @@
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.WITH.SOME.LOWERCASES",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a mutated splice donor site, G.",
+            "message": "Query sequence has a mutated splice donor site, G, around GAAGGAGAGAGATGGGTGCGA.",
             "orf": null
         },
         {
@@ -896,7 +896,7 @@
         {
             "qseqid": "small-sequence-with-lowercases[REVERSE_COMPLEMENT]",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, -.",
+            "message": "Query sequence has a missing splice donor site, -, around .",
             "orf": null
         },
         {
@@ -952,7 +952,7 @@
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSECOMPLEMENTED[REVERSE_COMPLEMENT]",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a mutated splice donor site, G.",
+            "message": "Query sequence has a mutated splice donor site, G, around GAAGGAGAGAGATGGGTGCGA.",
             "orf": null
         },
         {
@@ -1170,7 +1170,7 @@
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a mutated splice donor site, A.",
+            "message": "Query sequence has a mutated splice donor site, A, around TTCCGTTCGAAATAACTCCGA.",
             "orf": null
         },
         {
@@ -1226,7 +1226,7 @@
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.WITH-XS[REVERSE_COMPLEMENT]",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a mutated splice donor site, G.",
+            "message": "Query sequence has a mutated splice donor site, G, around GAAGGAGAGAGATGGGTGCGA.",
             "orf": null
         },
         {
@@ -1408,7 +1408,7 @@
         {
             "qseqid": "small-sequence-with-xs",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, -.",
+            "message": "Query sequence has a missing splice donor site, -, around .",
             "orf": null
         },
         {
@@ -1470,7 +1470,7 @@
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.WITH-BAD-SYMBOLS[REVERSE_COMPLEMENT]",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a mutated splice donor site, G.",
+            "message": "Query sequence has a mutated splice donor site, G, around GAAGGAGAGAGATGGGTGCGA.",
             "orf": null
         },
         {
@@ -1652,7 +1652,7 @@
         {
             "qseqid": "small-sequence-with-bad-symbols",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, -.",
+            "message": "Query sequence has a missing splice donor site, -, around .",
             "orf": null
         },
         {
@@ -1714,7 +1714,7 @@
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.WITH-DASHES[REVERSE_COMPLEMENT]",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a mutated splice donor site, G.",
+            "message": "Query sequence has a mutated splice donor site, G, around GAAGGAGAGAGATGGGTGCGA.",
             "orf": null
         },
         {
@@ -1896,7 +1896,7 @@
         {
             "qseqid": "small-sequence-with-dashes",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, -.",
+            "message": "Query sequence has a missing splice donor site, -, around .",
             "orf": null
         },
         {
@@ -2078,7 +2078,7 @@
         {
             "qseqid": "small-sequence-with-dashes/andwithslashestoo",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a missing splice donor site, -.",
+            "message": "Query sequence has a missing splice donor site, -, around .",
             "orf": null
         },
         {

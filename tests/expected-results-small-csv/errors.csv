@@ -72,6 +72,6 @@ MN090335,InternalStopInOrf,ORF gag at 316-1665 contains an internal stop codon a
 MN090335,FrameshiftInOrf,Smaller ORF tat_exon2 at 7740-7832 contains out of frame indels that impact 33 positions.,tat_exon2
 MN090335,DeletionInOrf,"Smaller ORF tat_exon2 at 7740-7832 can have maximum deletions 0, got 45.",tat_exon2
 MN090335,PackagingSignalDeletion,Query Sequence exceeds maximum deletion tolerance in PSI. Contains 42 deletions with max tolerance of 10 deletions.,
-MN090335,MajorSpliceDonorSiteMutated,"Query sequence has a mutated splice donor site, AT.",
+MN090335,MajorSpliceDonorSiteMutated,"Query sequence has a mutated splice donor site, AT, around TTAACTGCGAAT-----CGTTC.",
 MN090335,Scramble,Sequence is minus-scrambled.,
 MN090335,InternalInversion,Sequence contains an internal inversion.,

@@ -448,7 +448,7 @@
         {
             "qseqid": "MN090335",
             "error": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a mutated splice donor site, AT.",
+            "message": "Query sequence has a mutated splice donor site, AT, around TTAACTGCGAAT-----CGTTC.",
             "orf": null
         },
         {

@@ -284,11 +284,12 @@ def has_mutated_major_splice_donor_site(alignment,
               str(alignment[0].seq))][splice_donor_end_pos]
 
     sd = alignment[1].seq[sd_begin:(sd_end + 1)]
+    context = alignment[1].seq[(sd_begin - 10):(sd_end + 1 + 10)]
 
     if sd.upper() != splice_donor_sequence.upper():
         return Defect(
             alignment[1].id,
-            defect.MajorSpliceDonorSiteMutated(''.join(sd.upper())),
+            defect.MajorSpliceDonorSiteMutated(''.join(sd.upper()), ''.join(context.upper())),
         )
 
     return None
