@@ -36,6 +36,7 @@ The `check` command provides several options that allow you to customize the ana
 - `--check-internal-inversion` / `--ignore-internal-inversion`: Enables or disables the check for internal inversions. Enabled by default.
 - `--check-unknown-nucleotides` / `--ignore-unknown-nucleotides`: Enables or disables the check for unknown nucleotides in the sequences. Enabled by default.
 - `--check-small-orfs` / `--ignore-small-orfs`: Enables or disables the analysis of small Open Reading Frames (ORFs). Enabled by default.
+- `--check-distance` / `--ignore-distance`: Enables or disables the distance-based analysis. This includes the `InsertionInOrf` error, as well as `SequenceDivergence` one. Enabled by default.
 - `--output-csv` / `--output-json`: Chooses between CSV and JSON output format. CSV is selected by default.
 - `--working-folder`: Specifies the directory where output files will be stored. Defaults to the current working directory.
 

@@ -75,7 +75,7 @@ def get_version() -> None:
     '--check-small-orfs/--ignore-small-orfs', default=True
 )
 @click.option(
-    '--check-distance/--ignore-distance', default=False
+    '--check-distance/--ignore-distance', default=True
 )
 @click.option(
     '--output-csv/--output-json', default=True
