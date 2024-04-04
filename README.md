@@ -37,10 +37,10 @@ python3 -m pip install .
 To analyze a set of FASTA sequences for HIV-1 proviral intactness:
 
 ```shell
-cfeintact check --subtype HXB2 sequences.fasta
+cfeintact check --subtype B sequences.fasta
 ```
 
-Note: currently it is recommended to use HXB2 even if your sequences are not subtype B.
+Note: currently it is recommended to use subtype B even if your sequences are not subtype B.
 This is because many well known sequences of reference subtypes, which CFEIntact uses in its analysis, contain serious defects.
 We track this issue [here](https://github.com/cfe-lab/CFEIntact/issues/5).
 
