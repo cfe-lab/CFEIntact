@@ -14,19 +14,19 @@ ORFDefinition = Tuple[str, int, int, int, int, Fraction]
 ORFsDefinition = List[ORFDefinition]
 
 DEFAULT_FORWARD_ORFs: ORFsDefinition \
-    = [("gag", 790, 2292, 39, 201, Fraction("0.5981496276061171")),
-       ("pol", 2085, 5096, 91, 21, Fraction("0.7442043222003922")),
-       ("env", 6225, 8795, 54, 363, Fraction("0.6303960531725368"))]
+    = [("gag", 790, 2292, 42, 207, Fraction("0.6135702022840934")),
+       ("pol", 2085, 5096, 93, 24, Fraction("0.7523414583707471")),
+       ("env", 6225, 8795, 54, 459, Fraction("0.6862261858364505"))]
 DEFAULT_REVERSE_ORFS: ORFsDefinition = []
 DEFAULT_SMALL_FORWARD_ORFS: ORFsDefinition \
-    = [("vif", 5041, 5619, 3, 3, Fraction("0.6257074581813602")),
-       ("vpr", 5559, 5850, 6, 3, Fraction("0.4742978272390036")),
-       ("tat_exon1", 5831, 6045, 0, 0, Fraction("0.5616889405384466")),
-       ("rev_exon1", 5970, 6045, 0, 0, Fraction("0.6713780918727915")),
-       ("vpu", 6062, 6310, 6, 24, Fraction("0.5982053838484547")),
-       ("tat_exon2", 8377, 8469, 0, 3, Fraction("0.5396509491733008")),
-       ("rev_exon2", 8378, 8653, 6, 3, Fraction("0.6868760338334845")),
-       ("nef", 8797, 9417, 48, 51, Fraction("0.6840688395346594"))]
+    = [("vif", 5041, 5619, 12, 9, Fraction("0.5596656062735806")),
+       ("vpr", 5559, 5850, 6, 6, Fraction("0.4875248737180463")),
+       ("tat_exon1", 5831, 6045, 0, 0, Fraction("0.5802194034967433")),
+       ("rev_exon1", 5970, 6045, 0, 0, Fraction("0.5982053838484547")),
+       ("vpu", 6062, 6310, 6, 24, Fraction("0.6351840675920339")),
+       ("tat_exon2", 8377, 8469, 0, 15, Fraction("0.6561922365988909")),
+       ("rev_exon2", 8378, 8653, 7, 9, Fraction("0.5499850344208321")),
+       ("nef", 8797, 9417, 48, 54, Fraction("0.6839129079656255"))]
 DEFAULT_SMALL_REVERSE_ORFS: ORFsDefinition = []
 
 DEFAULT_ORF_LENGTH = 1000
