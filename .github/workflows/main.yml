@@ -1,5 +1,5 @@
 
-name: Main
+name: main
 
 on:
   push:
@@ -65,6 +65,17 @@ jobs:
 
       - name: Run test
         run: cfeintact check --subtype B tests/data-small.fasta && test -f "errors.csv"
+
+  dockerinstall:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build the Docker image
+        run: docker build . --tag cfeintact
+
+      - name: Run test
+        run: docker run cfeintact sh -c 'cfeintact check --subtype B tests/data-small.fasta && test -f "errors.csv"'
 
   linter:
     runs-on: ubuntu-latest
