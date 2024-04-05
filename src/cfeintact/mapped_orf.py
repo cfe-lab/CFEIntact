@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-from fractions import Fraction
 from functools import cached_property
 
 import cfeintact.detailed_aligner as detailed_aligner
@@ -28,7 +27,7 @@ class MappedORF:
         return detailed_aligner.align(exp_nucleotides, got_nucleotides)
 
     @cached_property
-    def distance(self) -> Fraction:
+    def distance(self) -> float:
         return self.amino_alignment.distance()
 
     @cached_property

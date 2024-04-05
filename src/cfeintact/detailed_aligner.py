@@ -1,6 +1,5 @@
 
 from Bio import Align
-from fractions import Fraction
 from dataclasses import dataclass
 
 aligner = Align.PairwiseAligner()
@@ -25,10 +24,10 @@ class Alignment:
         else:
             raise IndexError("Index out of range")
 
-    def distance(self) -> Fraction:
+    def distance(self) -> float:
         denominator = max(1, len(self.reference))
         shift: int = aligner.match_score
-        absolute = Fraction(-1 * self.score) / denominator + shift
+        absolute = (-1 * self.score) / denominator + shift
         return absolute
 
 

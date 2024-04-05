@@ -1,7 +1,6 @@
 
 from dataclasses import dataclass
 from typing import Union
-from fractions import Fraction
 
 from cfeintact.original_orf import OriginalORF
 
@@ -65,7 +64,7 @@ class FrameshiftInOrf(ORFDefect):
 @dataclass(frozen=True)
 class SequenceDivergence(ORFDefect):
     e: OriginalORF
-    distance: Fraction
+    distance: float
 
     def __str__(self) -> str:
         ex_dist = float(round(self.e.max_distance, 5))
