@@ -25,16 +25,9 @@ class Alignment:
             raise IndexError("Index out of range")
 
     def distance(self):
-        if self.score == 0:
-            absolute = Fraction(0)
-        else:
-            absolute = Fraction(aligner.match_score - (self.score / len(self.reference)))
-
-        # normalise it to the [0, 1) interval, with f(average_distance) = 0.5.
-        average_distance: Fraction = Fraction("0.62")
-        norm = Fraction(1) - (average_distance / (average_distance + absolute))
-
-        return norm
+        denominator = max(1, len(self.reference))
+        absolute = Fraction(-1 * self.score) / denominator + aligner.match_score
+        return absolute
 
 
 def align(seq1, seq2):

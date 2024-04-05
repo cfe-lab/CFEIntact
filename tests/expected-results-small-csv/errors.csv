@@ -1,70 +1,70 @@
 qseqid,error,message,orf
 KX505501.1,FrameshiftInOrf,ORF pol at 1629-1927 contains out of frame indels that impact 1924 positions.,pol
 KX505501.1,InternalStopInOrf,ORF pol at 1629-1927 contains an internal stop codon at 1746.,pol
-KX505501.1,SequenceDivergence,"ORF pol at 1629-1927 can have maximum distance of 0.75234 from its subtype ORF's aminoacid sequence, got 0.77072.",pol
+KX505501.1,SequenceDivergence,"ORF pol at 1629-1927 can have maximum distance of 1.88345 from its subtype ORF's aminoacid sequence, got 2.08408.",pol
 KX505501.1,FrameshiftInOrf,ORF env at 1-1824 contains out of frame indels that impact 1696 positions.,env
 KX505501.1,InternalStopInOrf,ORF env at 1-1824 contains an internal stop codon at 100.,env
-KX505501.1,SequenceDivergence,"ORF env at 1-1824 can have maximum distance of 0.68623 from its subtype ORF's aminoacid sequence, got 0.76235.",env
+KX505501.1,SequenceDivergence,"ORF env at 1-1824 can have maximum distance of 1.35595 from its subtype ORF's aminoacid sequence, got 1.98886.",env
 KX505501.1,FrameshiftInOrf,Smaller ORF vif at 1-1824 contains out of frame indels that impact 964 positions.,vif
 KX505501.1,InsertionInOrf,"Smaller ORF vif at 1-1824 can have maximum insertions 9, got 909.",vif
-KX505501.1,SequenceDivergence,"Smaller ORF vif at 1-1824 can have maximum distance of 0.55967 from its subtype ORF's aminoacid sequence, got 0.76477.",vif
+KX505501.1,SequenceDivergence,"Smaller ORF vif at 1-1824 can have maximum distance of 0.78802 from its subtype ORF's aminoacid sequence, got 2.01571.",vif
 KX505501.1,FrameshiftInOrf,Smaller ORF vpr at 1600-1824 contains out of frame indels that impact 198 positions.,vpr
 KX505501.1,DeletionInOrf,"Smaller ORF vpr at 1600-1824 can have maximum deletions 6, got 66.",vpr
-KX505501.1,SequenceDivergence,"Smaller ORF vpr at 1600-1824 can have maximum distance of 0.48752 from its subtype ORF's aminoacid sequence, got 0.76369.",vpr
+KX505501.1,SequenceDivergence,"Smaller ORF vpr at 1600-1824 can have maximum distance of 0.58981 from its subtype ORF's aminoacid sequence, got 2.00365.",vpr
 KX505501.1,FrameshiftInOrf,Smaller ORF tat_exon1 at 1578-1746 contains out of frame indels that impact 110 positions.,tat_exon1
 KX505501.1,DeletionInOrf,"Smaller ORF tat_exon1 at 1578-1746 can have maximum deletions 0, got 180.",tat_exon1
-KX505501.1,SequenceDivergence,"Smaller ORF tat_exon1 at 1578-1746 can have maximum distance of 0.58022 from its subtype ORF's aminoacid sequence, got 0.76207.",tat_exon1
+KX505501.1,SequenceDivergence,"Smaller ORF tat_exon1 at 1578-1746 can have maximum distance of 0.85696 from its subtype ORF's aminoacid sequence, got 1.98586.",tat_exon1
 KX505501.1,FrameshiftInOrf,Smaller ORF rev_exon1 at 1578-1746 contains out of frame indels that impact 34 positions.,rev_exon1
 KX505501.1,DeletionInOrf,"Smaller ORF rev_exon1 at 1578-1746 can have maximum deletions 0, got 42.",rev_exon1
-KX505501.1,SequenceDivergence,"Smaller ORF rev_exon1 at 1578-1746 can have maximum distance of 0.59821 from its subtype ORF's aminoacid sequence, got 0.7635.",rev_exon1
+KX505501.1,SequenceDivergence,"Smaller ORF rev_exon1 at 1578-1746 can have maximum distance of 0.92308 from its subtype ORF's aminoacid sequence, got 2.00154.",rev_exon1
 KX505501.1,FrameshiftInOrf,Smaller ORF vpu at 1600-1824 contains out of frame indels that impact 190 positions.,vpu
 KX505501.1,DeletionInOrf,"Smaller ORF vpu at 1600-1824 can have maximum deletions 6, got 24.",vpu
-KX505501.1,SequenceDivergence,"Smaller ORF vpu at 1600-1824 can have maximum distance of 0.63518 from its subtype ORF's aminoacid sequence, got 0.76727.",vpu
+KX505501.1,SequenceDivergence,"Smaller ORF vpu at 1600-1824 can have maximum distance of 1.07949 from its subtype ORF's aminoacid sequence, got 2.044.",vpu
 KX505501.1,FrameshiftInOrf,Smaller ORF tat_exon2 at 1747-1824 contains out of frame indels that impact 51 positions.,tat_exon2
 KX505501.1,DeletionInOrf,"Smaller ORF tat_exon2 at 1747-1824 can have maximum deletions 0, got 15.",tat_exon2
-KX505501.1,SequenceDivergence,"Smaller ORF tat_exon2 at 1747-1824 can have maximum distance of 0.65619 from its subtype ORF's aminoacid sequence, got 0.75733.",tat_exon2
+KX505501.1,SequenceDivergence,"Smaller ORF tat_exon2 at 1747-1824 can have maximum distance of 1.18333 from its subtype ORF's aminoacid sequence, got 1.93488.",tat_exon2
 KX505501.1,FrameshiftInOrf,Smaller ORF rev_exon2 at 1747-1927 contains out of frame indels that impact 155 positions.,rev_exon2
 KX505501.1,InternalStopInOrf,Smaller ORF rev_exon2 at 1747-1927 contains an internal stop codon at 1822.,rev_exon2
-KX505501.1,SequenceDivergence,"Smaller ORF rev_exon2 at 1747-1927 can have maximum distance of 0.54999 from its subtype ORF's aminoacid sequence, got 0.76643.",rev_exon2
+KX505501.1,SequenceDivergence,"Smaller ORF rev_exon2 at 1747-1927 can have maximum distance of 0.75773 from its subtype ORF's aminoacid sequence, got 2.0344.",rev_exon2
 KX505501.1,FrameshiftInOrf,Smaller ORF nef at 1-1824 contains out of frame indels that impact 997 positions.,nef
 KX505501.1,InsertionInOrf,"Smaller ORF nef at 1-1824 can have maximum insertions 54, got 867.",nef
-KX505501.1,SequenceDivergence,"Smaller ORF nef at 1-1824 can have maximum distance of 0.68391 from its subtype ORF's aminoacid sequence, got 0.76435.",nef
+KX505501.1,SequenceDivergence,"Smaller ORF nef at 1-1824 can have maximum distance of 1.34148 from its subtype ORF's aminoacid sequence, got 2.01097.",nef
 KX505501.1,RevResponseElementDeletion,Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.,
 KX505501.1,LongDeletion,Query sequence contains a long deletion.,
 KX505501.1,Scramble,Sequence is plus-scrambled.,
 MN691959,FrameshiftInOrf,Smaller ORF vpu at 5911-6156 contains out of frame indels that impact 122 positions.,vpu
 MN691959,InternalStopInOrf,Smaller ORF vpu at 5911-6156 contains an internal stop codon at 5974.,vpu
-MN691959,SequenceDivergence,"Smaller ORF vpu at 5911-6156 can have maximum distance of 0.63518 from its subtype ORF's aminoacid sequence, got 0.73332.",vpu
+MN691959,SequenceDivergence,"Smaller ORF vpu at 5911-6156 can have maximum distance of 1.07949 from its subtype ORF's aminoacid sequence, got 1.70488.",vpu
 MN691959,FrameshiftInOrf,Smaller ORF tat_exon2 at 8238-8330 contains out of frame indels that impact 33 positions.,tat_exon2
 MN691959,DeletionInOrf,"Smaller ORF tat_exon2 at 8238-8330 can have maximum deletions 0, got 45.",tat_exon2
 MN692074,FrameshiftInOrf,ORF pol at 2085-4153 contains out of frame indels that impact 680 positions.,pol
 MN692074,DeletionInOrf,"ORF pol at 2085-4153 can have maximum deletions 93, got 981.",pol
 MN692074,FrameshiftInOrf,ORF env at 3-4115 contains out of frame indels that impact 1539 positions.,env
 MN692074,InternalStopInOrf,ORF env at 3-4115 contains an internal stop codon at 330.,env
-MN692074,SequenceDivergence,"ORF env at 3-4115 can have maximum distance of 0.68623 from its subtype ORF's aminoacid sequence, got 0.76033.",env
+MN692074,SequenceDivergence,"ORF env at 3-4115 can have maximum distance of 1.35595 from its subtype ORF's aminoacid sequence, got 1.96691.",env
 MN692074,FrameshiftInOrf,Smaller ORF vif at 3618-4115 contains out of frame indels that impact 310 positions.,vif
 MN692074,DeletionInOrf,"Smaller ORF vif at 3618-4115 can have maximum deletions 12, got 81.",vif
-MN692074,SequenceDivergence,"Smaller ORF vif at 3618-4115 can have maximum distance of 0.55967 from its subtype ORF's aminoacid sequence, got 0.76317.",vif
+MN692074,SequenceDivergence,"Smaller ORF vif at 3618-4115 can have maximum distance of 0.78802 from its subtype ORF's aminoacid sequence, got 1.99787.",vif
 MN692074,FrameshiftInOrf,Smaller ORF vpr at 3618-4115 contains out of frame indels that impact 282 positions.,vpr
 MN692074,InsertionInOrf,"Smaller ORF vpr at 3618-4115 can have maximum insertions 6, got 207.",vpr
-MN692074,SequenceDivergence,"Smaller ORF vpr at 3618-4115 can have maximum distance of 0.48752 from its subtype ORF's aminoacid sequence, got 0.76292.",vpr
+MN692074,SequenceDivergence,"Smaller ORF vpr at 3618-4115 can have maximum distance of 0.58981 from its subtype ORF's aminoacid sequence, got 1.9951.",vpr
 MN692074,FrameshiftInOrf,Smaller ORF tat_exon1 at 3824-4082 contains out of frame indels that impact 144 positions.,tat_exon1
 MN692074,DeletionInOrf,"Smaller ORF tat_exon1 at 3824-4082 can have maximum deletions 0, got 153.",tat_exon1
-MN692074,SequenceDivergence,"Smaller ORF tat_exon1 at 3824-4082 can have maximum distance of 0.58022 from its subtype ORF's aminoacid sequence, got 0.75786.",tat_exon1
+MN692074,SequenceDivergence,"Smaller ORF tat_exon1 at 3824-4082 can have maximum distance of 0.85696 from its subtype ORF's aminoacid sequence, got 1.94052.",tat_exon1
 MN692074,DeletionInOrf,"Smaller ORF rev_exon1 at 3824-4082 can have maximum deletions 0, got 15.",rev_exon1
-MN692074,SequenceDivergence,"Smaller ORF rev_exon1 at 3824-4082 can have maximum distance of 0.59821 from its subtype ORF's aminoacid sequence, got 0.76666.",rev_exon1
+MN692074,SequenceDivergence,"Smaller ORF rev_exon1 at 3824-4082 can have maximum distance of 0.92308 from its subtype ORF's aminoacid sequence, got 2.03711.",rev_exon1
 MN692074,FrameshiftInOrf,Smaller ORF vpu at 3618-4115 contains out of frame indels that impact 286 positions.,vpu
 MN692074,InsertionInOrf,"Smaller ORF vpu at 3618-4115 can have maximum insertions 24, got 249.",vpu
-MN692074,SequenceDivergence,"Smaller ORF vpu at 3618-4115 can have maximum distance of 0.63518 from its subtype ORF's aminoacid sequence, got 0.76341.",vpu
+MN692074,SequenceDivergence,"Smaller ORF vpu at 3618-4115 can have maximum distance of 1.07949 from its subtype ORF's aminoacid sequence, got 2.00052.",vpu
 MN692074,FrameshiftInOrf,Smaller ORF tat_exon2 at 4083-4115 contains out of frame indels that impact 64 positions.,tat_exon2
 MN692074,DeletionInOrf,"Smaller ORF tat_exon2 at 4083-4115 can have maximum deletions 0, got 60.",tat_exon2
-MN692074,SequenceDivergence,"Smaller ORF tat_exon2 at 4083-4115 can have maximum distance of 0.65619 from its subtype ORF's aminoacid sequence, got 0.77408.",tat_exon2
+MN692074,SequenceDivergence,"Smaller ORF tat_exon2 at 4083-4115 can have maximum distance of 1.18333 from its subtype ORF's aminoacid sequence, got 2.12432.",tat_exon2
 MN692074,FrameshiftInOrf,Smaller ORF rev_exon2 at 4083-4115 contains out of frame indels that impact 187 positions.,rev_exon2
 MN692074,DeletionInOrf,"Smaller ORF rev_exon2 at 4083-4115 can have maximum deletions 7, got 243.",rev_exon2
-MN692074,SequenceDivergence,"Smaller ORF rev_exon2 at 4083-4115 can have maximum distance of 0.54999 from its subtype ORF's aminoacid sequence, got 0.77022.",rev_exon2
+MN692074,SequenceDivergence,"Smaller ORF rev_exon2 at 4083-4115 can have maximum distance of 0.75773 from its subtype ORF's aminoacid sequence, got 2.07826.",rev_exon2
 MN692074,FrameshiftInOrf,Smaller ORF nef at 1-4059 contains out of frame indels that impact 929 positions.,nef
 MN692074,InsertionInOrf,"Smaller ORF nef at 1-4059 can have maximum insertions 54, got 882.",nef
-MN692074,SequenceDivergence,"Smaller ORF nef at 1-4059 can have maximum distance of 0.68391 from its subtype ORF's aminoacid sequence, got 0.7628.",nef
+MN692074,SequenceDivergence,"Smaller ORF nef at 1-4059 can have maximum distance of 1.34148 from its subtype ORF's aminoacid sequence, got 1.99384.",nef
 MN692074,RevResponseElementDeletion,Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.,
 MN692074,LongDeletion,Query sequence contains a long deletion.,
 MN090335,FrameshiftInOrf,ORF gag at 316-1665 contains out of frame indels that impact 553 positions.,gag
