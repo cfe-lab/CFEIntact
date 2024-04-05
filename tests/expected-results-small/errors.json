@@ -3,7 +3,7 @@
         {
             "qseqid": "KX505501.1",
             "error": "FrameshiftInOrf",
-            "message": "ORF pol at 1629-1927 contains out of frame indels that impact 1924 positions.",
+            "message": "ORF pol at 1629-1927 contains out of frame indels that impact 1925 positions.",
             "orf": "pol"
         },
         {
@@ -21,7 +21,7 @@
         {
             "qseqid": "KX505501.1",
             "error": "FrameshiftInOrf",
-            "message": "ORF env at 1-1824 contains out of frame indels that impact 1696 positions.",
+            "message": "ORF env at 1-1824 contains out of frame indels that impact 1697 positions.",
             "orf": "env"
         },
         {
@@ -39,7 +39,7 @@
         {
             "qseqid": "KX505501.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vif at 1-1824 contains out of frame indels that impact 964 positions.",
+            "message": "Smaller ORF vif at 1-1824 contains out of frame indels that impact 956 positions.",
             "orf": "vif"
         },
         {
@@ -75,7 +75,7 @@
         {
             "qseqid": "KX505501.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF tat_exon1 at 1578-1746 contains out of frame indels that impact 110 positions.",
+            "message": "Smaller ORF tat_exon1 at 1578-1746 contains out of frame indels that impact 111 positions.",
             "orf": "tat_exon1"
         },
         {
@@ -147,7 +147,7 @@
         {
             "qseqid": "KX505501.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF rev_exon2 at 1747-1927 contains out of frame indels that impact 155 positions.",
+            "message": "Smaller ORF rev_exon2 at 1747-1927 contains out of frame indels that impact 153 positions.",
             "orf": "rev_exon2"
         },
         {
@@ -165,7 +165,7 @@
         {
             "qseqid": "KX505501.1",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF nef at 1-1824 contains out of frame indels that impact 997 positions.",
+            "message": "Smaller ORF nef at 1-1824 contains out of frame indels that impact 998 positions.",
             "orf": "nef"
         },
         {
@@ -221,7 +221,7 @@
         {
             "qseqid": "MN691959",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF tat_exon2 at 8238-8330 contains out of frame indels that impact 33 positions.",
+            "message": "Smaller ORF tat_exon2 at 8238-8330 contains out of frame indels that impact 32 positions.",
             "orf": "tat_exon2"
         },
         {
@@ -235,7 +235,7 @@
         {
             "qseqid": "MN692074",
             "error": "FrameshiftInOrf",
-            "message": "ORF pol at 2085-4153 contains out of frame indels that impact 680 positions.",
+            "message": "ORF pol at 2085-4153 contains out of frame indels that impact 681 positions.",
             "orf": "pol"
         },
         {
@@ -265,7 +265,7 @@
         {
             "qseqid": "MN692074",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vif at 3618-4115 contains out of frame indels that impact 310 positions.",
+            "message": "Smaller ORF vif at 3618-4115 contains out of frame indels that impact 311 positions.",
             "orf": "vif"
         },
         {
@@ -301,7 +301,7 @@
         {
             "qseqid": "MN692074",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF tat_exon1 at 3824-4082 contains out of frame indels that impact 144 positions.",
+            "message": "Smaller ORF tat_exon1 at 3824-4082 contains out of frame indels that impact 145 positions.",
             "orf": "tat_exon1"
         },
         {
@@ -331,7 +331,7 @@
         {
             "qseqid": "MN692074",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF vpu at 3618-4115 contains out of frame indels that impact 286 positions.",
+            "message": "Smaller ORF vpu at 3618-4115 contains out of frame indels that impact 287 positions.",
             "orf": "vpu"
         },
         {
@@ -349,7 +349,7 @@
         {
             "qseqid": "MN692074",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF tat_exon2 at 4083-4115 contains out of frame indels that impact 64 positions.",
+            "message": "Smaller ORF tat_exon2 at 4083-4115 contains out of frame indels that impact 69 positions.",
             "orf": "tat_exon2"
         },
         {
@@ -367,7 +367,7 @@
         {
             "qseqid": "MN692074",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF rev_exon2 at 4083-4115 contains out of frame indels that impact 187 positions.",
+            "message": "Smaller ORF rev_exon2 at 4083-4115 contains out of frame indels that impact 185 positions.",
             "orf": "rev_exon2"
         },
         {
@@ -430,7 +430,7 @@
         {
             "qseqid": "MN090335",
             "error": "FrameshiftInOrf",
-            "message": "Smaller ORF tat_exon2 at 7740-7832 contains out of frame indels that impact 33 positions.",
+            "message": "Smaller ORF tat_exon2 at 7740-7832 contains out of frame indels that impact 32 positions.",
             "orf": "tat_exon2"
         },
         {

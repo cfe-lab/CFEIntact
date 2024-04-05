@@ -1,6 +1,7 @@
 
 from Bio import Align
 from fractions import Fraction
+from dataclasses import dataclass
 
 aligner = Align.PairwiseAligner()
 aligner.mode = 'global'
@@ -10,13 +11,13 @@ aligner.open_gap_score = -1.5
 aligner.extend_gap_score = -0.2
 
 
+@dataclass(frozen=True)
 class Alignment:
-    def __init__(self, reference, query, score):
-        self.reference = reference
-        self.query = query
-        self.score = score
+    reference: str
+    query: str
+    score: float
 
-    def __getitem__(self, index):
+    def __getitem__(self, index: int) -> str:
         if index == 0:
             return self.reference
         elif index == 1:
@@ -24,17 +25,18 @@ class Alignment:
         else:
             raise IndexError("Index out of range")
 
-    def distance(self):
+    def distance(self) -> Fraction:
         denominator = max(1, len(self.reference))
-        absolute = Fraction(-1 * self.score) / denominator + aligner.match_score
+        shift: int = aligner.match_score
+        absolute = Fraction(-1 * self.score) / denominator + shift
         return absolute
 
 
-def align(seq1, seq2):
-    if seq1 and seq2:
-        x = aligner.align(seq1, seq2)[0]
-        return Alignment(x[0], x[1], x.score)
-    elif seq1 or seq2:
-        return align(seq1 or "-" * len(seq2), seq2 or "-" * len(seq1))
+def align(reference: str, query: str) -> Alignment:
+    if reference and query:
+        x = aligner.align(reference, query)[0]
+        return Alignment(str(x[0]), str(x[1]), x.score)
+    elif reference or query:
+        return align(reference or "-" * len(query), query or "-" * len(reference))
     else:
-        return Alignment(seq1, seq2, 0)
+        return Alignment(reference, query, 0)

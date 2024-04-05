@@ -15,7 +15,6 @@ import cfeintact.constants as const
 import cfeintact.subtypes as st
 import cfeintact.wrappers as wrappers
 import cfeintact.log as log
-import cfeintact.detailed_aligner as detailed_aligner
 import cfeintact.defect as defect
 from cfeintact.defect import Defect, ORFDefect
 from cfeintact.aligned_sequence import AlignedSequence
@@ -399,42 +398,17 @@ def has_rev_response_element(alignment, rre_locus, rre_tolerance):
 # /end def has_rev_response_element
 
 
-def check_reading_frame_shift(reference: SeqRecord, sequence: SeqRecord, e: OriginalORF, q: OriginalORF) \
+def check_reading_frame_shift(reference: SeqRecord,
+                              sequence: SeqRecord,
+                              best_match: MappedORF) \
         -> Optional[defect.FrameshiftInOrf]:
-    def get_indel_impact(alignment):
-        shift = 0
-        impacted = 0
-        counter = 0
-        good = 0
-        for (x, y) in zip(alignment[0], alignment[1]):
-            if x == "-" and y != "-":
-                shift += 1
-            if x != "-" and y == "-":
-                shift -= 1
-            if shift % 3 != 0:
-                counter += 1
-                good = 0
-            else:
-                good += 1
-                if good > 5:
-                    impacted += counter if counter > 30 else 0
-                    counter = 0
 
-        impacted += counter if counter > 30 else 0
-        return impacted
+    q = best_match.query
+    e = best_match.reference
 
-
-    got_protein = q.protein
-    got_nucleotides = sequence.seq[q.start:q.start + len(got_protein) * 3].upper()
-    exp_nucleotides = reference.seq[e.start:e.end].upper()
-
-    if got_nucleotides and exp_nucleotides:
-        orf_alignment = detailed_aligner.align(exp_nucleotides, got_nucleotides)
-        impacted_by_indels = get_indel_impact(orf_alignment)
-
-        # Check for frameshift in ORF
-        if impacted_by_indels >= max(e.max_deletions, e.max_insertions) + 3:
-            return defect.FrameshiftInOrf(e=e, q=q, impacted_positions=impacted_by_indels)
+    impacted_by_indels = best_match.indel_impact
+    if impacted_by_indels >= max(e.max_deletions, e.max_insertions) + 3:
+        return defect.FrameshiftInOrf(e=e, q=q, impacted_positions=impacted_by_indels)
 
     return None
 
@@ -493,7 +467,12 @@ def check_reading_frame_distance(check_distance: bool, best_match: MappedORF, e:
         return None
 
 
-def check_reading_frame(check_distance, aligned_sequence, expected, reverse=False):
+def check_reading_frame(check_distance: bool,
+                        aligned_sequence: AlignedSequence,
+                        expected: Iterable[OriginalORF],
+                        reverse: bool = False) \
+        -> Tuple[List[MappedORF], List[defect.Defect]]:
+
     sequence = aligned_sequence.this
     reference = aligned_sequence.reference
     errors = []
@@ -501,6 +480,7 @@ def check_reading_frame(check_distance, aligned_sequence, expected, reverse=Fals
 
     def add_error(defect):
         if defect:
+            assert sequence.id is not None
             errors.append(Defect(sequence.id, defect))
 
     for e in expected:
@@ -508,7 +488,7 @@ def check_reading_frame(check_distance, aligned_sequence, expected, reverse=Fals
         matches.append(best_match)
         q = best_match.query
 
-        add_error(check_reading_frame_shift(reference, sequence=sequence, e=e, q=q))
+        add_error(check_reading_frame_shift(reference, sequence=sequence, best_match=best_match))
         add_error(check_reading_frame_deletions(e=e, q=q))
         add_error(check_reading_frame_insertions(check_distance, best_match, e=e, q=q))
         add_error(check_reading_frame_distance(check_distance, best_match, e=e, q=q))

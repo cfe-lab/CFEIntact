@@ -54,7 +54,7 @@ class InternalStopInOrf(ORFDefect):
 @dataclass(frozen=True)
 class FrameshiftInOrf(ORFDefect):
     e: OriginalORF
-    impacted_positions: int
+    impacted_positions: float
 
     def __str__(self) -> str:
         return (f"{'Smaller ' if self.q.is_small else ''}"

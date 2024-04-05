@@ -8,16 +8,6 @@ from cfeintact.mapped_orf import MappedORF
 from cfeintact.aligned_sequence import AlignedSequence
 from cfeintact.translate_to_aminoacids import translate_to_aminoacids
 
-import cfeintact.detailed_aligner as detailed_aligner
-
-
-def has_start_codon(orf):
-    return orf.aminoacids.startswith("M")
-
-
-def has_stop_codon(orf):
-    return orf.aminoacids.endswith("*")
-
 
 def find_closest(aminoacids, start, direction, target):
     assert isinstance(start, int) or start.is_integer()
@@ -42,8 +32,6 @@ def find_candidate_positions(aligned_sequence: AlignedSequence, e: OriginalORF) 
     q_end = aligned_sequence.coordinate_mapping.ref_to_query.left_max(e.end) or 0
     assert q_start is not None
     assert q_end is not None
-    expected_aminoacids = e.aminoacids
-    expected_protein = expected_aminoacids.strip("*")
     visited_set = set()
     query_aminoacids_table = get_query_aminoacids_table(aligned_sequence.this)
 
@@ -51,7 +39,7 @@ def find_candidate_positions(aligned_sequence: AlignedSequence, e: OriginalORF) 
         aminoacids = query_aminoacids_table[frame]
         for start_direction in [-1, +1]:
             for end_direction in [-1, +1]:
-                if has_start_codon(e):
+                if e.has_start_codon:
                     q_start_a = floor((q_start - frame) / 3)
                     closest_start_a = find_closest(aminoacids, q_start_a, start_direction, 'M')
                     closest_start = (closest_start_a * 3) + frame
@@ -59,7 +47,7 @@ def find_candidate_positions(aligned_sequence: AlignedSequence, e: OriginalORF) 
                     closest_start = q_start
                     closest_start_a = floor(closest_start / 3)
 
-                if has_stop_codon(e):
+                if e.has_stop_codon:
                     q_end_a = floor((q_end - frame) / 3)
                     closest_end_a = find_closest(aminoacids, q_end_a, end_direction, '*')
                     closest_end = (closest_end_a * 3) + 3 + frame - 1
@@ -72,14 +60,9 @@ def find_candidate_positions(aligned_sequence: AlignedSequence, e: OriginalORF) 
                 else:
                     visited_set.add((closest_start, closest_end))
 
-                # got_nucleotides = str(aligned_sequence.slice(closest_start, closest_end).this.seq)
                 got_nucleotides = str(aligned_sequence.this.seq[closest_start:closest_end + 1])
                 got_aminoacids = translate_to_aminoacids(got_nucleotides)
-                got_protein = get_biggest_protein(has_start_codon(e), got_aminoacids)
-                if has_start_codon(e) and has_stop_codon(e):
-                    dist = detailed_aligner.align(got_protein, expected_protein).distance()
-                else:
-                    dist = detailed_aligner.align(got_aminoacids, expected_aminoacids).distance()
+                got_protein = get_biggest_protein(e.has_start_codon, got_aminoacids)
 
                 orf = OriginalORF(
                     name=e.name,
@@ -93,11 +76,11 @@ def find_candidate_positions(aligned_sequence: AlignedSequence, e: OriginalORF) 
                     max_distance=e.max_distance,
                     is_small=e.is_small,
                 )
+
                 yield MappedORF(
                     reference=e,
                     query=orf,
                     orientation="forward",
-                    distance=dist,
                 )
 
 

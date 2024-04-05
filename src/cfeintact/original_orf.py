@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from fractions import Fraction
+from functools import cached_property
 
 
 @dataclass(frozen=True)
@@ -14,3 +15,11 @@ class OriginalORF:
     aminoacids: str
     protein: str
     is_small: bool
+
+    @cached_property
+    def has_start_codon(self) -> bool:
+        return self.aminoacids.startswith("M")
+
+    @cached_property
+    def has_stop_codon(self) -> bool:
+        return self.aminoacids.endswith("*")
