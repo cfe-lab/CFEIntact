@@ -91,10 +91,9 @@ def find_orf(aligned_sequence: AlignedSequence, e: OriginalORF) -> MappedORF:
     assert aligned_sequence.reference.id is not None
     key: Tuple[str, str, str] = (aligned_sequence.this.id, aligned_sequence.reference.id, e.name)
 
-    candidates = find_candidate_positions(aligned_sequence, e)
-    result = min(candidates, key=lambda x: x.distance)
-
     if key not in FIND_ORF_CACHE:
+        candidates = find_candidate_positions(aligned_sequence, e)
+        result = min(candidates, key=lambda x: x.distance)
         FIND_ORF_CACHE[key] = result
 
     return FIND_ORF_CACHE[key]
