@@ -14,22 +14,22 @@ authors = [
 ]
 dependencies = [
     "biopython==1.83",
-    "click>=6.7",
-    "scipy>=1.6.0",
+    "click==8.1.7",
+    "scipy==1.11.2",
     "aligntools @ git+https://github.com/cfe-lab/aligntools.git@v1.0.2",
 ]
 
 [project.optional-dependencies]
 test = [
     # Dependencies required for running the test suite
-    "pytest>=6.0",
+    "pytest",
     "pytest-cov",
     "requests",
 ]
 dev = [
     # Dependencies required for development (linting, type checking, etc.)
     "flake8",
-    "mypy==1.9.0",
+    "mypy",
     "types-requests",
 ]
 
