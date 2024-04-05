@@ -32,5 +32,5 @@ class MappedORF:
         return self.amino_alignment.distance()
 
     @cached_property
-    def indel_impact(self) -> float:
+    def indel_impact(self) -> int:
         return get_indel_impact(self.nuc_alignment[0], self.nuc_alignment[1])

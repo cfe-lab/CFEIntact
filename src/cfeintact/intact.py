@@ -32,7 +32,7 @@ class FoundORF:
     end: int
     orientation: str
     distance: float
-    indels_impact: float
+    indel_impact: int
     protein: str
     aminoacids: str
     nucleotides: str
@@ -817,7 +817,7 @@ def intact(working_dir: str,
             o.query.end,
             o.orientation,
             float(o.distance),
-            float(o.indel_impact),
+            o.indel_impact,
             str(o.query.protein),
             str(o.query.aminoacids),
             str(o.query.nucleotides),
