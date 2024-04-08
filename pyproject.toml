@@ -15,7 +15,7 @@ authors = [
 dependencies = [
     "biopython==1.83",
     "click==8.1.7",
-    "scipy==1.11.2",
+    "scipy==1.13.0",
     "aligntools @ git+https://github.com/cfe-lab/aligntools.git@v1.0.2",
 ]
 
