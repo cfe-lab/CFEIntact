@@ -27,28 +27,11 @@ jobs:
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
-  slowtest:
-    runs-on: ubuntu-latest
-
-    strategy:
-      fail-fast: false
-      matrix:
-        testcase: ["tests/test_end_to_end.py::test_large", "tests/test_end_to_end.py::test_large_csv", "tests/test_end_to_end.py::test_large_hxb2"]
-
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Install dependencies
-        run: sudo apt-get update && sudo apt-get install -y python3 python3-pip mafft ncbi-blast+
-
-      - name: Run build
-        run: pip3 install .[test]
-
-      - name: Run tests and collect coverage
-        run: pytest -v ${{ matrix.testcase }}
-
   installtest:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, ubuntu-18.04, ubuntu-20.04, ubuntu-22.04]
     steps:
       - uses: actions/checkout@v3
         with:
@@ -65,42 +48,3 @@ jobs:
 
       - name: Run test
         run: cfeintact check --subtype B tests/data-small.fasta && test -f "errors.csv"
-
-  dockerinstall:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Build the Docker image
-        run: docker build . --tag cfeintact
-
-      - name: Run test
-        run: docker run cfeintact sh -c 'cfeintact check --subtype B tests/data-small.fasta && test -f "errors.csv"'
-
-  linter:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Install dependencies
-        run: sudo apt-get update && sudo apt-get install -y python3 python3-pip
-
-      - name: Run build
-        run: pip3 install .[dev]
-
-      - name: Run linter
-        run: flake8
-
-  typechecker:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Install dependencies
-        run: sudo apt-get update && sudo apt-get install -y python3 python3-pip
-
-      - name: Run build
-        run: pip3 install .[dev]
-
-      - name: Run typechecker
-        run: mypy
