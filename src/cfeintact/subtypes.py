@@ -5,10 +5,10 @@ from pathlib import Path
 import importlib.resources as resources
 
 
-def get_reference_dir() -> str:
+def get_reference_dir() -> Path:
     ret = resources.path('cfeintact', 'subtype_alignments')
     if isinstance(ret, str):
-        return ret
+        return Path(ret)
     elif isinstance(ret, Path):
         return ret
     else:
