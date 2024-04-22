@@ -13,9 +13,9 @@ authors = [
     { name = "British Columbia Centre for Excellence in HIV/AIDS", email = "vmysak@bccfe.ca" },
 ]
 dependencies = [
-    "biopython==1.83",
-    "click==8.1.7",
-    "scipy==1.13.0",
+    "biopython>=1.83",
+    "click>=8.0",
+    "scipy>=1.1",
     "aligntools @ git+https://github.com/cfe-lab/aligntools.git@v1.0.2",
 ]
 

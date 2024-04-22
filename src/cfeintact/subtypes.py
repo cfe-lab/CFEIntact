@@ -1,9 +1,22 @@
 import os
 from Bio import Seq, SeqIO, SeqRecord
+from pathlib import Path
 
 import importlib.resources as resources
 
-REFERENCE_DIR = str(resources.path('cfeintact', 'subtype_alignments'))
+
+def get_reference_dir() -> Path:
+    ret = resources.path('cfeintact', 'subtype_alignments')
+    if isinstance(ret, str):
+        return Path(ret)
+    elif isinstance(ret, Path):
+        return ret
+    else:
+        return ret.__enter__()
+
+
+REFERENCE_DIR = get_reference_dir()
+
 
 # This variable holds a mapping between subtype names and their sequences.
 # Prevents re-reading the same sequence from disk multiple time.

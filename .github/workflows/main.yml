@@ -48,7 +48,10 @@ jobs:
         run: pytest -v ${{ matrix.testcase }}
 
   installtest:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, ubuntu-20.04, ubuntu-22.04]
     steps:
       - uses: actions/checkout@v3
         with:
