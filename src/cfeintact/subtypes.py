@@ -13,7 +13,7 @@ def get_reference_dir() -> Path:
         return ret
     else:
         with ret as p:
-            pass
+            return p
 
 
 REFERENCE_DIR = get_reference_dir()
