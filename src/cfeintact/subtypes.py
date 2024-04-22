@@ -12,8 +12,7 @@ def get_reference_dir() -> Path:
     elif isinstance(ret, Path):
         return ret
     else:
-        with ret as p:
-            return p
+        return ret.__enter__()
 
 
 REFERENCE_DIR = get_reference_dir()
