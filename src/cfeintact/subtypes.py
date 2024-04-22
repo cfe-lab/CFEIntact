@@ -12,7 +12,8 @@ def get_reference_dir() -> str:
     elif isinstance(ret, Path):
         return ret
     else:
-        with
+        with ret as p:
+            pass
 
 
 REFERENCE_DIR = get_reference_dir()
