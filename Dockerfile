@@ -1,5 +1,5 @@
 
-FROM ubuntu:22.04
+FROM ubuntu:20.04
 
 ARG DEBIAN_FRONTEND=noniteractive
 
@@ -11,4 +11,4 @@ RUN apt-get install -y git
 WORKDIR /workspaces/CFEIntact
 COPY . .
 
-RUN python3 -m pip install .
+# RUN python3 -m pip install .
