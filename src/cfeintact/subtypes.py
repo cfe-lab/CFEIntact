@@ -4,13 +4,34 @@ from Bio.SeqRecord import SeqRecord
 from pathlib import Path
 from typing import Iterator, List, Sequence, Optional, Dict
 import contextlib
-
 import importlib.resources as resources
 
 
 @contextlib.contextmanager
 def reference_dir() -> Iterator[Path]:
-    ret = resources.path('cfeintact', 'subtype_alignments')
+    """
+    A context manager handling subtype sequences paths packaged with CFEIntact.
+
+    The complexity of the function arises from the need to maintain compatibility with
+    multiple python versions due to changes in APIs of the `importlib.resources` package.
+
+    It first tries to fetch the resource using `resources.files` function introduced in
+    Python 3.9. If it fails, it falls back on `resources.path`.
+    It further ensures that the obtained resource is returned
+    as a Path instance regardless of it being a string, Path, or contextlib context-manager instance.
+
+    Note: `resources.path` is set to be deprecated in future Python versions, hence the
+    intended primary method is using `resources.files`.
+
+    Yields:
+        Path: A path-like object pointing to the 'subtype_alignments' resource within 'cfeintact'.
+    """
+
+    try:
+        ret = resources.as_file(resources.files('cfeintact').joinpath('subtype_alignments'))
+    except AttributeError:
+        ret = resources.path('cfeintact', 'subtype_alignments')
+
     if isinstance(ret, str):
         yield Path(ret)
     elif isinstance(ret, Path):
