@@ -29,7 +29,7 @@ def mafft(sequences: Iterable[SeqRecord]) -> MultipleSeqAlignment:
         return alignment
 
 
-def blast(alignment_file, input_file, output_file):
+def blast(alignment_file: str, input_file: str, output_file: str) -> None:
     fileformat = "10"  # .csv format
     fields = [field.name for field in dataclasses.fields(BlastRow)]
     outfmt = fileformat + ' ' + ' '.join(fields)

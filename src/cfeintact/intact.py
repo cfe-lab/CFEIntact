@@ -92,8 +92,9 @@ def iterate_blast_rows_from_csv(file_path):
 
 def blast_iterate(subtype, input_file, working_dir):
     with open(os.path.join(working_dir, 'blast.csv'), 'w') as output_file:
-        db_file = st.alignment_file(subtype)
-        wrappers.blast(db_file, input_file, output_file.name)
+        with st.alignment_file(subtype) as db_file:
+            wrappers.blast(str(db_file), input_file, output_file.name)
+
         for seq in iterate_blast_rows_from_csv(output_file.name):
             yield seq
 
@@ -705,9 +706,10 @@ def intact(working_dir: str,
     """
 
     subtype_choices = {}
-    with open(st.alignment_file(subtype), 'r') as in_handle:
-        for sequence in SeqIO.parse(in_handle, "fasta"):
-            subtype_choices[sequence.id] = sequence
+    with st.alignment_file(subtype) as path:
+        with open(path, 'r') as in_handle:
+            for sequence in SeqIO.parse(in_handle, "fasta"):
+                subtype_choices[sequence.id] = sequence
 
     def analyse_single_sequence(writer, sequence, blast_rows):
         sequence_errors = []
