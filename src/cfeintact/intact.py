@@ -706,7 +706,7 @@ def intact(working_dir: str,
     """
 
     subtype_choices = {}
-    for sequence in st.alignment_sequence(subtype):
+    for sequence in st.subtype_sequences(subtype):
         subtype_choices[str(sequence.id)] = sequence
 
     def analyse_single_sequence(writer, sequence, blast_rows):

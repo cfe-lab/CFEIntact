@@ -46,7 +46,7 @@ def alignment_file(subtype: str) -> Iterator[Path]:
         yield Path(os.path.join(REFERENCE_DIR, subtype + ".fasta"))
 
 
-def alignment_sequence(subtype: str) -> List[SeqRecord]:
+def subtype_sequences(subtype: str) -> List[SeqRecord]:
     """
 Return an alignment file associated with an HIV subtype.
 
@@ -67,7 +67,7 @@ def subtype_sequence(subtype: str) -> SeqRecord:
 
     if subtype not in SEQUENCE_CACHE:
         # alignment = list(SeqIO.parse(alignment_file(subtype), "fasta"))
-        alignment = alignment_sequence(subtype)
+        alignment = subtype_sequences(subtype)
         SEQUENCE_CACHE[subtype] = SeqRecord(
             Seq.Seq(str(alignment[0].seq).replace("-", "").replace("\n", "")),
             id=alignment[0].id,
