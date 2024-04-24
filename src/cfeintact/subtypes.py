@@ -1,5 +1,5 @@
 import os
-from Bio import Seq, SeqIO
+from Bio import SeqIO
 from Bio.SeqRecord import SeqRecord
 from pathlib import Path
 from typing import Iterator, List, Sequence, Optional, Dict
@@ -22,17 +22,17 @@ def reference_dir() -> Iterator[Path]:
 
 # This variable holds a mapping between subtype names and their sequences.
 # Prevents re-reading the same sequence from disk multiple time.
-SEQUENCE_CACHE: Dict[str, SeqRecord] = {}
+SEQUENCE_CACHE: Dict[str, List[SeqRecord]] = {}
 
 
-def HXB2():
+def HXB2() -> SeqRecord:
     """
     Return the sequence of HXB2, the standard HIV reference sequence
     """
-    return subtype_sequence("HXB2")
+    return subtype_sequences("HXB2")[0]
 
 
-def subtypes():
+def subtypes() -> List[str]:
     """
 List all currently available HIV subtypes
 """
@@ -46,33 +46,21 @@ def alignment_file(subtype: str) -> Iterator[Path]:
         yield Path(os.path.join(REFERENCE_DIR, subtype + ".fasta"))
 
 
+def subtype_sequences_iter(subtype: str) -> Iterator[SeqRecord]:
+    with alignment_file(subtype) as path:
+        yield from SeqIO.parse(path, "fasta")
+
+
 def subtype_sequences(subtype: str) -> List[SeqRecord]:
     """
-Return an alignment file associated with an HIV subtype.
+Return a list of sequences associated with an HIV subtype.
 
 Args:
     subtype: folder in which to put temporary files.
-"""
-    with alignment_file(subtype) as path:
-        return list(SeqIO.parse(path, "fasta"))
-
-
-def subtype_sequence(subtype: str) -> SeqRecord:
-    """
-    Return an example sequence associated with an HIV subtype.
-
-    Args:
-        subtype: folder in which to put temporary files.
     """
 
     if subtype not in SEQUENCE_CACHE:
-        # alignment = list(SeqIO.parse(alignment_file(subtype), "fasta"))
-        alignment = subtype_sequences(subtype)
-        SEQUENCE_CACHE[subtype] = SeqRecord(
-            Seq.Seq(str(alignment[0].seq).replace("-", "").replace("\n", "")),
-            id=alignment[0].id,
-            name=alignment[0].name
-        )
+        SEQUENCE_CACHE[subtype] = list(subtype_sequences_iter(subtype))
 
     return SEQUENCE_CACHE[subtype]
 
