@@ -706,10 +706,8 @@ def intact(working_dir: str,
     """
 
     subtype_choices = {}
-    with st.alignment_file(subtype) as path:
-        with open(path, 'r') as in_handle:
-            for sequence in SeqIO.parse(in_handle, "fasta"):
-                subtype_choices[sequence.id] = sequence
+    for sequence in st.alignment_sequence(subtype):
+        subtype_choices[str(sequence.id)] = sequence
 
     def analyse_single_sequence(writer, sequence, blast_rows):
         sequence_errors = []
