@@ -1,6 +1,6 @@
 import logging
 
-FORMAT = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+FORMAT = '%(levelname)s: [CFEIntact] %(message)s'
 
 log = logging.getLogger()
-logging.basicConfig(level=logging.INFO, format=FORMAT)
+logging.basicConfig(level=logging.INFO, format=FORMAT, datefmt='%Y-%m-%d %H:%M:%S')
