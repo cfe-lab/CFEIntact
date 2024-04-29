@@ -23,8 +23,13 @@ def mafft(sequences: Iterable[SeqRecord]) -> MultipleSeqAlignment:
 
     with tempfile.NamedTemporaryFile() as alignment_input, tempfile.NamedTemporaryFile() as alignment_output:
         SeqIO.write(sequences, alignment_input.name, "fasta")
-        subprocess.run(["mafft", "--quiet", alignment_input.name],
-                       shell=False, stdout=alignment_output, check=True)
+        completed = subprocess.run(["mafft", "--quiet", alignment_input.name],
+                                   shell=False, stdout=alignment_output, check=True)
+
+        if completed.returncode != 0:
+            raise ValueError(f"MAFFT run failed with return code {completed.returncode}. "
+                             f"Please check if the input .FASTA file is correctly formatted.")
+
         alignment: MultipleSeqAlignment = AlignIO.read(alignment_output.name, "fasta")
         return alignment
 
@@ -37,7 +42,7 @@ def blast(alignment_file: str, input_file: str, output_file: str) -> None:
     with open(output_file, "w") as output, \
             tempfile.NamedTemporaryFile() as alignment_output:
 
-        subprocess.call(
+        completed = subprocess.run(
             ["blastn",
              "-query", input_file,
              "-db", alignment_file,
@@ -49,6 +54,10 @@ def blast(alignment_file: str, input_file: str, output_file: str) -> None:
              "-out", alignment_output.name,
              "-outfmt", outfmt],
             shell=False)
+
+        if completed.returncode != 0:
+            raise ValueError(f"BLAST run failed with return code {completed.returncode}. "
+                             f"Please check if the input .FASTA file is correctly formatted.")
 
         output.write(','.join(fields) + '\n')
         alignment_output.seek(0)
