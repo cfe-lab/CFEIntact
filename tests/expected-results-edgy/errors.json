@@ -1,4 +1,60 @@
 {
+    "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455": [
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF vpr at 5559-5843 contains out of frame indels that impact 61 positions.",
+            "orf": "vpr"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
+            "error": "InternalStopInOrf",
+            "message": "Smaller ORF vpr at 5559-5843 contains an internal stop codon at 5793.",
+            "orf": "vpr"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF vpu at 6260-6310 contains out of frame indels that impact 132 positions.",
+            "orf": "vpu"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF vpu at 6260-6310 can have maximum deletions 6, got 198.",
+            "orf": "vpu"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
+            "error": "SequenceDivergence",
+            "message": "Smaller ORF vpu at 6260-6310 can have maximum distance of 1.07949 from its subtype ORF's aminoacid sequence, got 1.78659.",
+            "orf": "vpu"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF tat_exon2 at 8377-8469 contains out of frame indels that impact 32 positions.",
+            "orf": "tat_exon2"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
+            "error": "DeletionInOrf",
+            "message": "Smaller ORF tat_exon2 at 8377-8469 can have maximum deletions 0, got 45.",
+            "orf": "tat_exon2"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
+            "error": "FrameshiftInOrf",
+            "message": "Smaller ORF nef at 8797-9417 contains out of frame indels that impact 168 positions.",
+            "orf": "nef"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
+            "error": "InternalStopInOrf",
+            "message": "Smaller ORF nef at 8797-9417 contains an internal stop codon at 9166.",
+            "orf": "nef"
+        }
+    ],
     "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE": [],
     "small-sequence": [
         {
