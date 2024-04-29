@@ -8,6 +8,7 @@ from Bio.Align import MultipleSeqAlignment
 from Bio.SeqRecord import SeqRecord
 
 from cfeintact.blastrow import BlastRow
+from cfeintact.user_error import UserError
 
 
 def mafft(sequences: Iterable[SeqRecord]) -> MultipleSeqAlignment:
@@ -27,8 +28,8 @@ def mafft(sequences: Iterable[SeqRecord]) -> MultipleSeqAlignment:
                                    shell=False, stdout=alignment_output, check=True)
 
         if completed.returncode != 0:
-            raise ValueError(f"MAFFT run failed with return code {completed.returncode}. "
-                             f"Please check if the input .FASTA file is correctly formatted.")
+            raise UserError(f"MAFFT run failed with return code {completed.returncode}. "
+                            f"Please check if the input .FASTA file is correctly formatted.")
 
         alignment: MultipleSeqAlignment = AlignIO.read(alignment_output.name, "fasta")
         return alignment
@@ -56,8 +57,8 @@ def blast(alignment_file: str, input_file: str, output_file: str) -> None:
             shell=False)
 
         if completed.returncode != 0:
-            raise ValueError(f"BLAST run failed with return code {completed.returncode}. "
-                             f"Please check if the input .FASTA file is correctly formatted.")
+            raise UserError(f"BLAST run failed with return code {completed.returncode}. "
+                            f"Please check if the input .FASTA file is correctly formatted.")
 
         output.write(','.join(fields) + '\n')
         alignment_output.seek(0)

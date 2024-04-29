@@ -14,8 +14,8 @@ from typing import Optional, Dict, List, Iterable, Union, Tuple
 import cfeintact.constants as const
 import cfeintact.subtypes as st
 import cfeintact.wrappers as wrappers
-import cfeintact.log as log
 import cfeintact.defect as defect
+from cfeintact.log import log
 from cfeintact.defect import Defect, ORFDefect
 from cfeintact.aligned_sequence import AlignedSequence
 from cfeintact.blastrow import BlastRow
@@ -23,6 +23,7 @@ from cfeintact.initialize_orf import initialize_orf
 from cfeintact.original_orf import OriginalORF
 from cfeintact.mapped_orf import MappedORF
 from cfeintact.find_orf import find_orf
+from cfeintact.user_error import UserError
 
 
 @dataclass(frozen=True)
@@ -533,7 +534,7 @@ class OutputWriter:
         self.subtypes = set()
 
         if fmt not in ("json", "csv"):
-            raise ValueError(f"Unrecognized output format {fmt}")
+            raise UserError(f"Unrecognized output format {fmt!r}.")
 
     def __enter__(self, *args):
         self.intact_file = open(self.intact_path, 'w')

@@ -4,8 +4,9 @@ import click
 from importlib.metadata import version
 
 import cfeintact.intact as it
-import cfeintact.log as log
 import cfeintact.subtypes as st
+from cfeintact.user_error import UserError
+from cfeintact.log import log
 
 
 def get_working_folder(path):
@@ -96,12 +97,16 @@ def intact(input_file: str, subtype: str, check_packaging_signal: bool,
     log.info('Intactness called.')
     folder = get_working_folder(working_folder)
 
-    it.intact(
-        folder, input_file, subtype, check_packaging_signal, check_rre,
-        check_major_splice_donor_site, check_hypermut,
-        check_long_deletion, check_nonhiv, check_scramble, check_internal_inversion,
-        check_unknown_nucleotides, check_small_orfs, check_distance, output_csv,
-    )
+    try:
+        it.intact(
+            folder, input_file, subtype, check_packaging_signal, check_rre,
+            check_major_splice_donor_site, check_hypermut,
+            check_long_deletion, check_nonhiv, check_scramble, check_internal_inversion,
+            check_unknown_nucleotides, check_small_orfs, check_distance, output_csv,
+        )
+    except UserError as e:
+        log.error("%s", e.message)
+        exit(1)
 
     exit(0)
 
