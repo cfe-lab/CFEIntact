@@ -41,18 +41,19 @@ Most of these analyses are optional and controlled by passing a command line opt
 
 Table below lists all of the independent steps:
 
-| Name                 | Command Line Option                |
-|----------------------|------------------------------------|
-| PSI check            | `--ignore-packaging-signal`        |
-| RRE check            | `--ignore-rre`                     |
-| MSD check            | `--ignore-major-splice-donor-site` |
-| Hypermutation check  | `--ignore-hypermut`                |
-| Large deletion check | `--ignore-long-deletion`           |
-| NonHIV check         | `--ignore-nonhiv`                  |
-| Scramble check       | `--ignore-scramble`                |
-| Inversion check      | `--ignore-internal-inversion`      |
-| Large ORFs analysis  |                                    |
-| Small ORFs analysis  | `--ignore-small-orfs`              |
+| Name                      | Command Line Option                |
+|---------------------------|------------------------------------|
+| PSI check                 | `--ignore-packaging-signal`        |
+| RRE check                 | `--ignore-rre`                     |
+| MSD check                 | `--ignore-major-splice-donor-site` |
+| Hypermutation check       | `--ignore-hypermut`                |
+| Large deletion check      | `--ignore-long-deletion`           |
+| NonHIV check              | `--ignore-nonhiv`                  |
+| Scramble check            | `--ignore-scramble`                |
+| Inversion check           | `--ignore-internal-inversion`      |
+| Large ORFs analysis       |                                    |
+| Small ORFs analysis       | `--ignore-small-orfs`              |
+| Sequence divergence check | `--ignore-distance`                |
 
 Each step works on a single input sequence and has a set of potential errors it can detect for that sequence.
 
@@ -158,6 +159,24 @@ This is done with the following algorithm:
 
 If the impact is large enough, meaning that too many nucleotides got frame shifted,
 then output an error with code `FrameshiftInOrf`.
+
+#### Sequence divergence check
+
+The aim of the sequence divergence check in CFEIntact is straightforward: to compare the amino acid sequences derived from open reading frames (ORFs) in a query HIV sequence against the corresponding amino acid sequences of ORFs in known subtype references. This comparison serves to gauge how much the sequence under analysis deviates from established references, highlighting potential sequencing errors, evolutionary changes, or the presence of novel variants.
+
+**Steps:**
+
+1. **ORF Alignment:** Each detected ORF in the query sequence is translated into its amino acid sequence and aligned against the amino acid sequence of the corresponding ORF in the reference subtype.
+
+2. **Scoring and Normalization:** The alignment is scored based on a predefined scoring system that rewards matches and penalizes mismatches and gaps. The raw score is then normalized to account for ORF length, providing a measure of divergence per amino acid that facilitates comparison across different ORFs and sequences.
+
+3. **Threshold Determination:** Based on an extensive study conducted by the BCCfE Laboratory, thresholds for divergence have been established. These thresholds are crucial for distinguishing between sequences that are functionally similar to their subtype references and those that are significantly divergent. The specifics of this study, including the threshold values, are documented on the [cutoffs page](cutoffs.md).
+
+4. **Decision and Reporting:** If the normalized divergence score of an ORF exceeds the established threshold, a `SequenceDivergence` error is reported, indicating a significant deviation from the subtype reference. This error includes detailed information about the affected ORF and the extent of its divergence.
+
+It's important to note that this check treats all mutations equally, without differentiating their potential impact on gene function. As such, both critical mutations in gene binding sites and inconsequential mutations in redundant regions are weighted the same. This lack of specificity is an inevitable limitation of a "generic distance measure", making it less accurate for detailed functional analysis.
+
+Due to its broad approach to identifying divergence, which may overemphasize the importance of minor mutations, this check is recommended to be disabled by default. Researchers and analysts are encouraged to enable this check based on specific needs or when comprehensive divergence assessment is required, keeping in mind its limitations.
 
 ### Small ORFs analysis
 
