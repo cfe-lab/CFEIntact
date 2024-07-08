@@ -16,7 +16,7 @@ def check_outputs(tmp_path, expected_dir):
 
 
 def run_end_to_end(tmp_path, data_file, expected_dir, subtype, output_csv):
-    main.intact(
+    main.check(
         working_dir=tmp_path,
         input_file=data_file,
         subtype=subtype,
@@ -71,7 +71,7 @@ def test_single_noblast(tmp_path, request):
     subtype = "HXB2"
     output_csv = True
 
-    main.intact(
+    main.check(
         working_dir=tmp_path,
         input_file=data_file,
         subtype=subtype,

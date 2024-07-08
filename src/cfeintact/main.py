@@ -98,7 +98,7 @@ def intact(input_file: str, subtype: str, check_packaging_signal: bool,
     folder = get_working_folder(working_folder)
 
     try:
-        it.intact(
+        it.check(
             folder, input_file, subtype, check_packaging_signal, check_rre,
             check_major_splice_donor_site, check_hypermut,
             check_long_deletion, check_nonhiv, check_scramble, check_internal_inversion,
