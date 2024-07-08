@@ -6,7 +6,7 @@ from importlib.metadata import version
 import cfeintact.intact as it
 import cfeintact.subtypes as st
 from cfeintact.user_error import UserError
-from cfeintact.log import log
+from cfeintact.log import logger
 
 
 def get_working_folder(path):
@@ -94,7 +94,7 @@ def intact(input_file: str, subtype: str, check_packaging_signal: bool,
     Check consensus sequences for intactness.
     """
 
-    log.info('Intactness called.')
+    logger.info('Intactness called.')
     folder = get_working_folder(working_folder)
 
     try:
@@ -105,7 +105,7 @@ def intact(input_file: str, subtype: str, check_packaging_signal: bool,
             check_unknown_nucleotides, check_small_orfs, check_distance, output_csv,
         )
     except UserError as e:
-        log.error("%s", e.message)
+        logger.error("%s", e.message)
         exit(1)
 
     exit(0)

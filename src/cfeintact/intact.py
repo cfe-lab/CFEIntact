@@ -15,7 +15,7 @@ import cfeintact.constants as const
 import cfeintact.subtypes as st
 import cfeintact.wrappers as wrappers
 import cfeintact.defect as defect
-from cfeintact.log import log
+from cfeintact.log import logger
 from cfeintact.defect import Defect, ORFDefect
 from cfeintact.aligned_sequence import AlignedSequence
 from cfeintact.blastrow import BlastRow
@@ -574,14 +574,14 @@ class OutputWriter:
         self.holistic_file.close()
         self.errors_file.close()
 
-        log.info('Intact sequences written to ' + self.intact_path)
-        log.info('Non-intact sequences written to ' + self.non_intact_path)
-        log.info('Subtype sequences written to ' + self.subtypes_path)
-        log.info('ORFs for all sequences written to ' + self.orf_path)
-        log.info('Holistic info for all sequences written to ' + self.holistic_path)
-        log.info('Intactness error information written to ' + self.error_path)
+        logger.info('Intact sequences written to ' + self.intact_path)
+        logger.info('Non-intact sequences written to ' + self.non_intact_path)
+        logger.info('Subtype sequences written to ' + self.subtypes_path)
+        logger.info('ORFs for all sequences written to ' + self.orf_path)
+        logger.info('Holistic info for all sequences written to ' + self.holistic_path)
+        logger.info('Intactness error information written to ' + self.error_path)
         if os.path.exists(os.path.join(self.working_dir, 'blast.csv')):
-            log.info('Blast output written to ' + os.path.join(self.working_dir, 'blast.csv'))
+            logger.info('Blast output written to ' + os.path.join(self.working_dir, 'blast.csv'))
 
     def write(self, sequence, subtype, is_intact, orfs, defects, holistic):
         fasta_file = self.intact_file if is_intact else self.nonintact_file
@@ -764,7 +764,7 @@ def intact(working_dir: str,
            or reverse_aligned_sequence.alignment_score() <= forward_aligned_sequence.alignment_score():
             aligned_sequence = forward_aligned_sequence
         else:
-            log.info("Reversing sequence " + sequence.id)
+            logger.info("Reversing sequence " + sequence.id)
             aligned_sequence = reverse_aligned_sequence
             sequence = aligned_sequence.this
 
