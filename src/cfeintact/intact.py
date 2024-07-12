@@ -63,6 +63,7 @@ class HolisticInfo:
     orfs_end: Optional[int] = dataclasses.field(default=None)
     # number of blast conseqs in the resulting match
     blast_n_conseqs: Optional[int] = dataclasses.field(default=None)
+    is_reverse_complement: Optional[bool] = dataclasses.field(default=None)
 
 
 def iterate_values_from_csv(file_path):
@@ -764,10 +765,12 @@ def check(working_dir: str,
         if blast_orientation_statistics["minus"] < blast_orientation_statistics["plus"] \
            or reverse_aligned_sequence.alignment_score() <= forward_aligned_sequence.alignment_score():
             aligned_sequence = forward_aligned_sequence
+            holistic.is_reverse_complement = False
         else:
             logger.info("Reversing sequence " + sequence.id)
             aligned_sequence = reverse_aligned_sequence
             sequence = aligned_sequence.this
+            holistic.is_reverse_complement = True
 
         # convert ORF positions to appropriate subtype
         forward_orfs, reverse_orfs = \
