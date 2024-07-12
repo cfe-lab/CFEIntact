@@ -103,7 +103,7 @@
         "orfs_end": 8368,
         "blast_n_conseqs": 0
     },
-    "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSECOMPLEMENTED[REVERSE_COMPLEMENT]": {
+    "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSECOMPLEMENTED": {
         "intact": true,
         "qlen": 9718,
         "hypermutation_probablility": 0.0,
@@ -129,7 +129,7 @@
         "orfs_end": 8368,
         "blast_n_conseqs": 0
     },
-    "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.WITH-XS[REVERSE_COMPLEMENT]": {
+    "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.WITH-XS": {
         "intact": false,
         "qlen": 9711,
         "hypermutation_probablility": 0.0,
@@ -155,7 +155,7 @@
         "orfs_end": 8368,
         "blast_n_conseqs": 0
     },
-    "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.WITH-BAD-SYMBOLS[REVERSE_COMPLEMENT]": {
+    "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.WITH-BAD-SYMBOLS": {
         "intact": false,
         "qlen": 9711,
         "hypermutation_probablility": 0.0,
@@ -168,7 +168,7 @@
         "orfs_end": 8793,
         "blast_n_conseqs": 3
     },
-    "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.WITH-DASHES[REVERSE_COMPLEMENT]": {
+    "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.WITH-DASHES": {
         "intact": false,
         "qlen": 9711,
         "hypermutation_probablility": 0.0,

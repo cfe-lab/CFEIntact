@@ -39,7 +39,7 @@ class AlignedSequence:
 
     def reverse(self):
         newthis = SeqRecord(Seq.reverse_complement(self.this.seq),
-                            id=(self.this.id or "*Unknown*") + "[REVERSE_COMPLEMENT]",
+                            id=self.this.id,
                             name=self.this.name
                             )
 
