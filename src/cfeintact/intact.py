@@ -689,12 +689,6 @@ def check(working_dir: str,
           check_small_orfs: bool,
           check_distance: bool,
           output_csv: bool,
-          hxb2_forward_orfs: const.ORFsDefinition = const.DEFAULT_FORWARD_ORFs,
-          hxb2_reverse_orfs: const.ORFsDefinition = const.DEFAULT_REVERSE_ORFS,
-          hxb2_small_orfs: const.ORFsDefinition = const.DEFAULT_SMALL_FORWARD_ORFS,
-          hxb2_psi_locus: Tuple[int, int] = const.DEFAULT_PSI_LOCUS,
-          hxb2_rre_locus: Tuple[int, int] = const.DEFAULT_RRE_LOCUS,
-          hxb2_msd_site_locus: int = const.DEFAULT_MSD_SITE_LOCUS,
           ) -> None:
     """
     Check if a set of consensus sequences in a FASTA file is cfeintact.
@@ -705,6 +699,13 @@ def check(working_dir: str,
     Returns:
         Name of a file containing all consensus sequences.
     """
+
+    hxb2_forward_orfs: const.ORFsDefinition = const.DEFAULT_FORWARD_ORFs
+    hxb2_reverse_orfs: const.ORFsDefinition = const.DEFAULT_REVERSE_ORFS
+    hxb2_small_orfs: const.ORFsDefinition = const.DEFAULT_SMALL_FORWARD_ORFS
+    hxb2_psi_locus: Tuple[int, int] = const.DEFAULT_PSI_LOCUS
+    hxb2_rre_locus: Tuple[int, int] = const.DEFAULT_RRE_LOCUS
+    hxb2_msd_site_locus: int = const.DEFAULT_MSD_SITE_LOCUS
 
     subtype_choices = {}
     for sequence in st.subtype_sequences(subtype):
