@@ -8,52 +8,32 @@ This file should include the genomic sequences of interest.
 
 Once the analysis is complete, CFEIntact will generate these output files:
 
-| Filename        | Description                                                                                                                      |
-|-----------------|----------------------------------------------------------------------------------------------------------------------------------|
-| errors.csv      | This file contains associations between sequences and their identified defects.                                                  |
-| orfs.csv        | This file contains associations between sequences and their identified Open Reading Frames (ORFs).                               |
-| holistic.csv    | This file contains comprehensive analysis details related to the sequences as a whole, rather than being specific to each ORF.   |
-| intact.fasta    | This file contains a list of sequences with no fatal defects identified. These sequences are considered putative intact genomes. |
-| nonintact.fasta | This file contains a list of sequences with identified defects. These sequences are not considered putative intact genomes.      |
-| blast.csv       | This file contains output from BLASTN software. It is produced conditionally.                                                    |
+- `errors.csv`
+- `orfs.csv`
+- `holistic.csv`
+- `intact.fasta`
+- `nonintact.fasta`
+- `subtypes.fasta`
+- `blast.csv`
 
 If you pass the `--output-json` option to CFEIntact, the output format will be `.json` instead of `.csv`.
 
+## `errors.csv`
+
+This file contains associations between sequences and their identified defects.
 Here is an example of the contents of the `errors.csv` file:
 
 | qseqid     | error                       | message                                                                                                             | orf |
 |------------|-----------------------------|---------------------------------------------------------------------------------------------------------------------|-----|
-| KX505501.1 | DeletionInOrf               | ORF pol at 2084-5096 can have maximum deletions 30, got 2892.                                                       | pol |
+| KX505501.1 | InternalStopInOrf           | ORF 'pol' at 1629-1927 contains an internal stop codon at 1746.                                                     | pol |
 | KX505501.1 | RevResponseElementDeletion  | Query Sequence exceeds maximum deletion tolerance in RRE. Contains 35 deletions with max tolerance of 20 deletions. |     |
-| MN691959   | InternalStopInOrf           | Smaller ORF vpu at 6060-6309 contains an internal stop codon at 6100.                                               | vpu |
+| MN691959   | DeletionInOrf               | ORF 'tat_exon2' exeeds maximum deletion tolerance. Contains 45 deletions with max tolerance of 0 deletions.         | vpu |
 | MK114856.1 | APOBECHypermutationDetected | Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 3.639064030015132e-65).                     |     |
 | MK116110.1 | PackagingSignalDeletion     | Query Sequence exceeds maximum deletion tolerance in PSI. Contains 93 deletions with max tolerance of 10 deletions. |     |
 
-Here is an example of the contents of the `holistic.csv` file:
+## `orfs.csv`
 
-| qseqid     | intact | qlen | hypermutation_probablility | inferred_subtype                     | blast_matched_qlen | blast_sseq_coverage | blast_qseq_coverage | blast_sseq_orfs_coverage | orfs_start | orfs_end | blast_n_conseqs |
-|------------|--------|------|----------------------------|--------------------------------------|--------------------|---------------------|---------------------|--------------------------|------------|----------|-----------------|
-| KX505501.1 | False  | 1997 | 0.71                       | Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455 | 1997               | 0.25                | 1.22                | 0.18                     | 789        | 8793     | 4               |
-| MN691959   | False  | 9493 | 0.20                       | Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455 | 9493               | 1.08                | 1.11                | 1                        | 789        | 8793     | 3               |
-| MN692074   | False  | 4178 | 0.36                       | Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455 | 4178               | 0.50                | 1.17                | 0.41                     | 789        | 8793     | 4               |
-| MN692145   | True   | 9689 | 0.17                       | Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455 | 9689               | 1.13                | 1.13                | 1                        | 789        | 8793     | 3               |
-
-### Field descriptions
-
-- `qseqid`: The identifier or name for the sequence (same as in the input FASTA file)
-- `intact`: Whether the query sequence is considered to be intact (True) or not (False)
-- `qlen`: Length of the _query_ sequence
-- `hypermutation_probablility`: The probability that the sequence shows evidence of hypermutation
-- `inferred_subtype`: The suspected subtype of the sequence based on analysis
-- `blast_matched_qlen`: The length of the matched subsequence from the BLASTN software
-- `blast_sseq_coverage`: The coverage of the subject sequence from BLASTN output
-- `blast_qseq_coverage`: The coverage of the query sequence from BLASTN output
-- `blast_sseq_orfs_coverage`: The percentage coverage of ORFs in the subject sequence from BLASTN
-- `orfs_start`: The starting point of the ORFs
-- `orfs_end`: The ending point of the ORFs
-- `blast_n_conseqs`: The number of consecutive sequences from BLASTN results
-- `is_reverse_complement`: Whether the query sequence has been reverse complemented to better fit the reference sequence
-
+This file contains associations between sequences and their identified Open Reading Frames (ORFs).
 Here is an example of the contents of the `orfs.csv` file:
 
 | qseqid     | name | start | end  | orientation | distance            | protein | aminoacids | nucleotides | subtype_start | subtype_end | subtype_aminoacids | subtype_nucleotides |
@@ -78,3 +58,100 @@ Here is an example of the contents of the `orfs.csv` file:
 - `subtype_end`: The end position of the ORF within the identified subtype sequence.
 - `subtype_aminoacids`: The amino acid sequence relevant to the identified subtype.
 - `subtype_nucleotides`: The nucleotide sequence relevant to the identified subtype.
+
+## `holistic.csv`
+
+This file contains comprehensive analysis details related to the sequences as a whole, rather than being specific to each ORF.
+Here is an example of the contents of the `holistic.csv` file:
+
+| qseqid     | intact | qlen | hypermutation_probablility | inferred_subtype                         | blast_matched_qlen | blast_sseq_coverage | blast_qseq_coverage | blast_sseq_orfs_coverage | orfs_start | orfs_end | blast_n_conseqs |
+|------------|--------|------|----------------------------|------------------------------------------|--------------------|---------------------|---------------------|--------------------------|------------|----------|-----------------|
+| KX505501.1 | False  | 1997 | 0.71                       | Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE | 1997               | 0.25                | 1.22                | 0.18                     | 789        | 8793     | 4               |
+| MN691959   | False  | 9493 | 0.20                       | Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE | 9493               | 1.08                | 1.11                | 1                        | 789        | 8793     | 3               |
+| MN692074   | False  | 4178 | 0.36                       | Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE | 4178               | 0.50                | 1.17                | 0.41                     | 789        | 8793     | 4               |
+| MN692145   | True   | 9689 | 0.17                       | Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE | 9689               | 1.13                | 1.13                | 1                        | 789        | 8793     | 3               |
+
+### Field descriptions
+
+- `qseqid`: The identifier or name for the sequence (same as in the input FASTA file)
+- `intact`: Whether the query sequence is considered to be intact (True) or not (False)
+- `qlen`: Length of the _query_ sequence
+- `hypermutation_probablility`: The probability that the sequence shows evidence of hypermutation
+- `inferred_subtype`: The suspected subtype of the sequence based on analysis
+- `blast_matched_qlen`: The length of the matched subsequence from the BLASTN software
+- `blast_sseq_coverage`: The coverage of the subject sequence from BLASTN output
+- `blast_qseq_coverage`: The coverage of the query sequence from BLASTN output
+- `blast_sseq_orfs_coverage`: The percentage coverage of ORFs in the subject sequence from BLASTN
+- `orfs_start`: The starting point of the ORFs
+- `orfs_end`: The ending point of the ORFs
+- `blast_n_conseqs`: The number of consecutive sequences from BLASTN results
+- `is_reverse_complement`: Whether the query sequence has been reverse complemented to better fit the reference sequence
+
+## `intact.fasta`
+
+This file contains a list of sequences with no fatal defects identified. These sequences are considered putative intact genomes.
+The names are exactly those `qseqid`s from `holistic.csv` that have `is_intact` values as `True`.
+Here is an example of the contents of the `intact.fasta` file:
+
+```fasta
+>MN692145
+TGGA......AGCA
+```
+
+## `nonintact.fasta`
+
+This file contains a list of sequences with identified defects. These sequences are not considered putative intact genomes.
+The names are exactly those `qseqid`s from `holistic.csv` that have `is_intact` values as `False`.
+Here is an example of the contents of the `intact.fasta` file:
+
+```fasta
+>KX505501.1
+ACTG.....ATGA
+>MN691959
+CCTA.....TAAA
+>MN692074
+GAGA.....GGTG
+```
+
+## `subtypes.fasta`
+
+This file contains a list of reference sequences.
+The names are exactly those `inferred_subtype`s found in `holistic.csv`.
+Here is an example of the contents of the `intact.fasta` file:
+
+```fasta
+>Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE
+TGGAAGGGCTAATTC...GACCCTTTTAGTCAGTGTGGAAAATCTCTAGCA
+```
+
+## `blast.csv
+
+This file contains output from BLASTN software.
+It is produced conditionally.
+
+Here is an example of the contents of the `blast.csv` file:
+
+| qseqid      | sseqid                                      | sgi | qlen | slen | length | qstart | qend | sstart | send | evalue  | bitscore | pident  | nident | sstrand |
+|-------------|---------------------------------------------|-----|------|------|--------|--------|------|--------|------|---------|----------|---------|--------|---------|
+| KX505501.1  | Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE    | 0   | 1997 | 9718 | 1751   | 1      | 1746 | 455    | 2202 | 0.0     | 2186     | 93.946  | 1645   | plus    |
+| KX505501.1  | Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE    | 0   | 1997 | 9718 | 251    | 1747   | 1997 | 301    | 550  | 1.84e-85| 312      | 93.625  | 235    | plus    |
+
+### Field descriptions
+
+- `qseqid` - The identifier or name for the sequence (same as in the input FASTA file)
+- `sseqid` - Means subject Seq-id. In our case, it's the subtype's sequence id and its the same as `inferred_subtype` of `holistic.csv`
+- `sgi` - Means subject GI
+- `qlen` - Length of the _query_ sequence
+- `slen` - Means subject sequence length
+- `length` - Means alignment length
+- `qstart` - Means start of alignment in query
+- `qend` - Means end of alignment in query
+- `sstart` - Means start of alignment in subject
+- `send` - Means end of alignment in subject
+- `evalue` - Means expect value
+- `bitscore` - Means bit score
+- `pident` - Means percentage of identical matches
+- `nident` - Means number of identical matches
+- `sstrand` - Means subject strand
+
+Consult [BLASTn documentation](https://www.ncbi.nlm.nih.gov/books/NBK279690/) for more details on these values.
