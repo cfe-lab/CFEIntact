@@ -124,7 +124,7 @@ Here is an example of the contents of the `intact.fasta` file:
 TGGAAGGGCTAATTC...GACCCTTTTAGTCAGTGTGGAAAATCTCTAGCA
 ```
 
-## `blast.csv
+## `blast.csv`
 
 This file contains output from BLASTN software.
 It is produced conditionally.
