@@ -21,7 +21,7 @@
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
             "error": "DeletionInOrf",
-            "message": "ORF 'vpu' exeeds maximum deletion tolerance.Contains 198 deletions with max tolerance of 6 deletions.",
+            "message": "ORF 'vpu' exceeds maximum deletion tolerance. Contains 198 deletions with max tolerance of 6 deletions.",
             "orf": "vpu"
         },
         {
@@ -39,7 +39,7 @@
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
             "error": "DeletionInOrf",
-            "message": "ORF 'tat_exon2' exeeds maximum deletion tolerance.Contains 45 deletions with max tolerance of 0 deletions.",
+            "message": "ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 45 deletions with max tolerance of 0 deletions.",
             "orf": "tat_exon2"
         },
         {
@@ -66,7 +66,7 @@
         {
             "qseqid": "small-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF 'gag' exeeds maximum deletion tolerance.Contains 1509 deletions with max tolerance of 42 deletions.",
+            "message": "ORF 'gag' exceeds maximum deletion tolerance. Contains 1509 deletions with max tolerance of 42 deletions.",
             "orf": "gag"
         },
         {
@@ -84,7 +84,7 @@
         {
             "qseqid": "small-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF 'pol' exeeds maximum deletion tolerance.Contains 3012 deletions with max tolerance of 93 deletions.",
+            "message": "ORF 'pol' exceeds maximum deletion tolerance. Contains 3012 deletions with max tolerance of 93 deletions.",
             "orf": "pol"
         },
         {
@@ -102,7 +102,7 @@
         {
             "qseqid": "small-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF 'env' exeeds maximum deletion tolerance.Contains 2571 deletions with max tolerance of 54 deletions.",
+            "message": "ORF 'env' exceeds maximum deletion tolerance. Contains 2571 deletions with max tolerance of 54 deletions.",
             "orf": "env"
         },
         {
@@ -120,7 +120,7 @@
         {
             "qseqid": "small-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF 'vif' exeeds maximum deletion tolerance.Contains 570 deletions with max tolerance of 12 deletions.",
+            "message": "ORF 'vif' exceeds maximum deletion tolerance. Contains 570 deletions with max tolerance of 12 deletions.",
             "orf": "vif"
         },
         {
@@ -138,7 +138,7 @@
         {
             "qseqid": "small-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF 'vpr' exeeds maximum deletion tolerance.Contains 285 deletions with max tolerance of 6 deletions.",
+            "message": "ORF 'vpr' exceeds maximum deletion tolerance. Contains 285 deletions with max tolerance of 6 deletions.",
             "orf": "vpr"
         },
         {
@@ -156,7 +156,7 @@
         {
             "qseqid": "small-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF 'tat_exon1' exeeds maximum deletion tolerance.Contains 216 deletions with max tolerance of 0 deletions.",
+            "message": "ORF 'tat_exon1' exceeds maximum deletion tolerance. Contains 216 deletions with max tolerance of 0 deletions.",
             "orf": "tat_exon1"
         },
         {
@@ -174,7 +174,7 @@
         {
             "qseqid": "small-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF 'rev_exon1' exeeds maximum deletion tolerance.Contains 78 deletions with max tolerance of 0 deletions.",
+            "message": "ORF 'rev_exon1' exceeds maximum deletion tolerance. Contains 78 deletions with max tolerance of 0 deletions.",
             "orf": "rev_exon1"
         },
         {
@@ -192,7 +192,7 @@
         {
             "qseqid": "small-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF 'vpu' exeeds maximum deletion tolerance.Contains 66 deletions with max tolerance of 6 deletions.",
+            "message": "ORF 'vpu' exceeds maximum deletion tolerance. Contains 66 deletions with max tolerance of 6 deletions.",
             "orf": "vpu"
         },
         {
@@ -210,7 +210,7 @@
         {
             "qseqid": "small-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF 'tat_exon2' exeeds maximum deletion tolerance.Contains 69 deletions with max tolerance of 0 deletions.",
+            "message": "ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 69 deletions with max tolerance of 0 deletions.",
             "orf": "tat_exon2"
         },
         {
@@ -228,7 +228,7 @@
         {
             "qseqid": "small-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF 'rev_exon2' exeeds maximum deletion tolerance.Contains 273 deletions with max tolerance of 7 deletions.",
+            "message": "ORF 'rev_exon2' exceeds maximum deletion tolerance. Contains 273 deletions with max tolerance of 7 deletions.",
             "orf": "rev_exon2"
         },
         {
@@ -246,7 +246,7 @@
         {
             "qseqid": "small-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF 'nef' exeeds maximum deletion tolerance.Contains 612 deletions with max tolerance of 48 deletions.",
+            "message": "ORF 'nef' exceeds maximum deletion tolerance. Contains 612 deletions with max tolerance of 48 deletions.",
             "orf": "nef"
         },
         {
@@ -296,7 +296,7 @@
         {
             "qseqid": "singleton-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF 'gag' exeeds maximum deletion tolerance.Contains 1509 deletions with max tolerance of 42 deletions.",
+            "message": "ORF 'gag' exceeds maximum deletion tolerance. Contains 1509 deletions with max tolerance of 42 deletions.",
             "orf": "gag"
         },
         {
@@ -314,7 +314,7 @@
         {
             "qseqid": "singleton-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF 'pol' exeeds maximum deletion tolerance.Contains 3021 deletions with max tolerance of 93 deletions.",
+            "message": "ORF 'pol' exceeds maximum deletion tolerance. Contains 3021 deletions with max tolerance of 93 deletions.",
             "orf": "pol"
         },
         {
@@ -332,7 +332,7 @@
         {
             "qseqid": "singleton-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF 'env' exeeds maximum deletion tolerance.Contains 2571 deletions with max tolerance of 54 deletions.",
+            "message": "ORF 'env' exceeds maximum deletion tolerance. Contains 2571 deletions with max tolerance of 54 deletions.",
             "orf": "env"
         },
         {
@@ -350,7 +350,7 @@
         {
             "qseqid": "singleton-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF 'vif' exeeds maximum deletion tolerance.Contains 570 deletions with max tolerance of 12 deletions.",
+            "message": "ORF 'vif' exceeds maximum deletion tolerance. Contains 570 deletions with max tolerance of 12 deletions.",
             "orf": "vif"
         },
         {
@@ -368,7 +368,7 @@
         {
             "qseqid": "singleton-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF 'vpr' exeeds maximum deletion tolerance.Contains 285 deletions with max tolerance of 6 deletions.",
+            "message": "ORF 'vpr' exceeds maximum deletion tolerance. Contains 285 deletions with max tolerance of 6 deletions.",
             "orf": "vpr"
         },
         {
@@ -386,7 +386,7 @@
         {
             "qseqid": "singleton-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF 'tat_exon1' exeeds maximum deletion tolerance.Contains 216 deletions with max tolerance of 0 deletions.",
+            "message": "ORF 'tat_exon1' exceeds maximum deletion tolerance. Contains 216 deletions with max tolerance of 0 deletions.",
             "orf": "tat_exon1"
         },
         {
@@ -404,7 +404,7 @@
         {
             "qseqid": "singleton-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF 'rev_exon1' exeeds maximum deletion tolerance.Contains 78 deletions with max tolerance of 0 deletions.",
+            "message": "ORF 'rev_exon1' exceeds maximum deletion tolerance. Contains 78 deletions with max tolerance of 0 deletions.",
             "orf": "rev_exon1"
         },
         {
@@ -422,7 +422,7 @@
         {
             "qseqid": "singleton-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF 'vpu' exeeds maximum deletion tolerance.Contains 66 deletions with max tolerance of 6 deletions.",
+            "message": "ORF 'vpu' exceeds maximum deletion tolerance. Contains 66 deletions with max tolerance of 6 deletions.",
             "orf": "vpu"
         },
         {
@@ -440,7 +440,7 @@
         {
             "qseqid": "singleton-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF 'tat_exon2' exeeds maximum deletion tolerance.Contains 87 deletions with max tolerance of 0 deletions.",
+            "message": "ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 87 deletions with max tolerance of 0 deletions.",
             "orf": "tat_exon2"
         },
         {
@@ -458,7 +458,7 @@
         {
             "qseqid": "singleton-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF 'rev_exon2' exeeds maximum deletion tolerance.Contains 291 deletions with max tolerance of 7 deletions.",
+            "message": "ORF 'rev_exon2' exceeds maximum deletion tolerance. Contains 291 deletions with max tolerance of 7 deletions.",
             "orf": "rev_exon2"
         },
         {
@@ -476,7 +476,7 @@
         {
             "qseqid": "singleton-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF 'nef' exeeds maximum deletion tolerance.Contains 612 deletions with max tolerance of 48 deletions.",
+            "message": "ORF 'nef' exceeds maximum deletion tolerance. Contains 612 deletions with max tolerance of 48 deletions.",
             "orf": "nef"
         },
         {
@@ -526,7 +526,7 @@
         {
             "qseqid": "empty-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF 'gag' exeeds maximum deletion tolerance.Contains 1509 deletions with max tolerance of 42 deletions.",
+            "message": "ORF 'gag' exceeds maximum deletion tolerance. Contains 1509 deletions with max tolerance of 42 deletions.",
             "orf": "gag"
         },
         {
@@ -544,7 +544,7 @@
         {
             "qseqid": "empty-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF 'pol' exeeds maximum deletion tolerance.Contains 3024 deletions with max tolerance of 93 deletions.",
+            "message": "ORF 'pol' exceeds maximum deletion tolerance. Contains 3024 deletions with max tolerance of 93 deletions.",
             "orf": "pol"
         },
         {
@@ -562,7 +562,7 @@
         {
             "qseqid": "empty-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF 'env' exeeds maximum deletion tolerance.Contains 2571 deletions with max tolerance of 54 deletions.",
+            "message": "ORF 'env' exceeds maximum deletion tolerance. Contains 2571 deletions with max tolerance of 54 deletions.",
             "orf": "env"
         },
         {
@@ -580,7 +580,7 @@
         {
             "qseqid": "empty-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF 'vif' exeeds maximum deletion tolerance.Contains 570 deletions with max tolerance of 12 deletions.",
+            "message": "ORF 'vif' exceeds maximum deletion tolerance. Contains 570 deletions with max tolerance of 12 deletions.",
             "orf": "vif"
         },
         {
@@ -598,7 +598,7 @@
         {
             "qseqid": "empty-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF 'vpr' exeeds maximum deletion tolerance.Contains 285 deletions with max tolerance of 6 deletions.",
+            "message": "ORF 'vpr' exceeds maximum deletion tolerance. Contains 285 deletions with max tolerance of 6 deletions.",
             "orf": "vpr"
         },
         {
@@ -616,7 +616,7 @@
         {
             "qseqid": "empty-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF 'tat_exon1' exeeds maximum deletion tolerance.Contains 216 deletions with max tolerance of 0 deletions.",
+            "message": "ORF 'tat_exon1' exceeds maximum deletion tolerance. Contains 216 deletions with max tolerance of 0 deletions.",
             "orf": "tat_exon1"
         },
         {
@@ -634,7 +634,7 @@
         {
             "qseqid": "empty-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF 'rev_exon1' exeeds maximum deletion tolerance.Contains 78 deletions with max tolerance of 0 deletions.",
+            "message": "ORF 'rev_exon1' exceeds maximum deletion tolerance. Contains 78 deletions with max tolerance of 0 deletions.",
             "orf": "rev_exon1"
         },
         {
@@ -652,7 +652,7 @@
         {
             "qseqid": "empty-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF 'vpu' exeeds maximum deletion tolerance.Contains 66 deletions with max tolerance of 6 deletions.",
+            "message": "ORF 'vpu' exceeds maximum deletion tolerance. Contains 66 deletions with max tolerance of 6 deletions.",
             "orf": "vpu"
         },
         {
@@ -670,7 +670,7 @@
         {
             "qseqid": "empty-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF 'tat_exon2' exeeds maximum deletion tolerance.Contains 90 deletions with max tolerance of 0 deletions.",
+            "message": "ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 90 deletions with max tolerance of 0 deletions.",
             "orf": "tat_exon2"
         },
         {
@@ -688,7 +688,7 @@
         {
             "qseqid": "empty-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF 'rev_exon2' exeeds maximum deletion tolerance.Contains 294 deletions with max tolerance of 7 deletions.",
+            "message": "ORF 'rev_exon2' exceeds maximum deletion tolerance. Contains 294 deletions with max tolerance of 7 deletions.",
             "orf": "rev_exon2"
         },
         {
@@ -706,7 +706,7 @@
         {
             "qseqid": "empty-sequence",
             "error": "DeletionInOrf",
-            "message": "ORF 'nef' exeeds maximum deletion tolerance.Contains 612 deletions with max tolerance of 48 deletions.",
+            "message": "ORF 'nef' exceeds maximum deletion tolerance. Contains 612 deletions with max tolerance of 48 deletions.",
             "orf": "nef"
         },
         {
@@ -750,7 +750,7 @@
         {
             "qseqid": "empty-sequence2",
             "error": "DeletionInOrf",
-            "message": "ORF 'gag' exeeds maximum deletion tolerance.Contains 1509 deletions with max tolerance of 42 deletions.",
+            "message": "ORF 'gag' exceeds maximum deletion tolerance. Contains 1509 deletions with max tolerance of 42 deletions.",
             "orf": "gag"
         },
         {
@@ -768,7 +768,7 @@
         {
             "qseqid": "empty-sequence2",
             "error": "DeletionInOrf",
-            "message": "ORF 'pol' exeeds maximum deletion tolerance.Contains 3024 deletions with max tolerance of 93 deletions.",
+            "message": "ORF 'pol' exceeds maximum deletion tolerance. Contains 3024 deletions with max tolerance of 93 deletions.",
             "orf": "pol"
         },
         {
@@ -786,7 +786,7 @@
         {
             "qseqid": "empty-sequence2",
             "error": "DeletionInOrf",
-            "message": "ORF 'env' exeeds maximum deletion tolerance.Contains 2571 deletions with max tolerance of 54 deletions.",
+            "message": "ORF 'env' exceeds maximum deletion tolerance. Contains 2571 deletions with max tolerance of 54 deletions.",
             "orf": "env"
         },
         {
@@ -804,7 +804,7 @@
         {
             "qseqid": "empty-sequence2",
             "error": "DeletionInOrf",
-            "message": "ORF 'vif' exeeds maximum deletion tolerance.Contains 570 deletions with max tolerance of 12 deletions.",
+            "message": "ORF 'vif' exceeds maximum deletion tolerance. Contains 570 deletions with max tolerance of 12 deletions.",
             "orf": "vif"
         },
         {
@@ -822,7 +822,7 @@
         {
             "qseqid": "empty-sequence2",
             "error": "DeletionInOrf",
-            "message": "ORF 'vpr' exeeds maximum deletion tolerance.Contains 285 deletions with max tolerance of 6 deletions.",
+            "message": "ORF 'vpr' exceeds maximum deletion tolerance. Contains 285 deletions with max tolerance of 6 deletions.",
             "orf": "vpr"
         },
         {
@@ -840,7 +840,7 @@
         {
             "qseqid": "empty-sequence2",
             "error": "DeletionInOrf",
-            "message": "ORF 'tat_exon1' exeeds maximum deletion tolerance.Contains 216 deletions with max tolerance of 0 deletions.",
+            "message": "ORF 'tat_exon1' exceeds maximum deletion tolerance. Contains 216 deletions with max tolerance of 0 deletions.",
             "orf": "tat_exon1"
         },
         {
@@ -858,7 +858,7 @@
         {
             "qseqid": "empty-sequence2",
             "error": "DeletionInOrf",
-            "message": "ORF 'rev_exon1' exeeds maximum deletion tolerance.Contains 78 deletions with max tolerance of 0 deletions.",
+            "message": "ORF 'rev_exon1' exceeds maximum deletion tolerance. Contains 78 deletions with max tolerance of 0 deletions.",
             "orf": "rev_exon1"
         },
         {
@@ -876,7 +876,7 @@
         {
             "qseqid": "empty-sequence2",
             "error": "DeletionInOrf",
-            "message": "ORF 'vpu' exeeds maximum deletion tolerance.Contains 66 deletions with max tolerance of 6 deletions.",
+            "message": "ORF 'vpu' exceeds maximum deletion tolerance. Contains 66 deletions with max tolerance of 6 deletions.",
             "orf": "vpu"
         },
         {
@@ -894,7 +894,7 @@
         {
             "qseqid": "empty-sequence2",
             "error": "DeletionInOrf",
-            "message": "ORF 'tat_exon2' exeeds maximum deletion tolerance.Contains 90 deletions with max tolerance of 0 deletions.",
+            "message": "ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 90 deletions with max tolerance of 0 deletions.",
             "orf": "tat_exon2"
         },
         {
@@ -912,7 +912,7 @@
         {
             "qseqid": "empty-sequence2",
             "error": "DeletionInOrf",
-            "message": "ORF 'rev_exon2' exeeds maximum deletion tolerance.Contains 294 deletions with max tolerance of 7 deletions.",
+            "message": "ORF 'rev_exon2' exceeds maximum deletion tolerance. Contains 294 deletions with max tolerance of 7 deletions.",
             "orf": "rev_exon2"
         },
         {
@@ -930,7 +930,7 @@
         {
             "qseqid": "empty-sequence2",
             "error": "DeletionInOrf",
-            "message": "ORF 'nef' exeeds maximum deletion tolerance.Contains 612 deletions with max tolerance of 48 deletions.",
+            "message": "ORF 'nef' exceeds maximum deletion tolerance. Contains 612 deletions with max tolerance of 48 deletions.",
             "orf": "nef"
         },
         {
@@ -975,7 +975,7 @@
         {
             "qseqid": "small-sequence-with-lowercases",
             "error": "DeletionInOrf",
-            "message": "ORF 'gag' exeeds maximum deletion tolerance.Contains 1509 deletions with max tolerance of 42 deletions.",
+            "message": "ORF 'gag' exceeds maximum deletion tolerance. Contains 1509 deletions with max tolerance of 42 deletions.",
             "orf": "gag"
         },
         {
@@ -993,7 +993,7 @@
         {
             "qseqid": "small-sequence-with-lowercases",
             "error": "DeletionInOrf",
-            "message": "ORF 'pol' exeeds maximum deletion tolerance.Contains 3012 deletions with max tolerance of 93 deletions.",
+            "message": "ORF 'pol' exceeds maximum deletion tolerance. Contains 3012 deletions with max tolerance of 93 deletions.",
             "orf": "pol"
         },
         {
@@ -1011,7 +1011,7 @@
         {
             "qseqid": "small-sequence-with-lowercases",
             "error": "DeletionInOrf",
-            "message": "ORF 'env' exeeds maximum deletion tolerance.Contains 2571 deletions with max tolerance of 54 deletions.",
+            "message": "ORF 'env' exceeds maximum deletion tolerance. Contains 2571 deletions with max tolerance of 54 deletions.",
             "orf": "env"
         },
         {
@@ -1029,7 +1029,7 @@
         {
             "qseqid": "small-sequence-with-lowercases",
             "error": "DeletionInOrf",
-            "message": "ORF 'vif' exeeds maximum deletion tolerance.Contains 570 deletions with max tolerance of 12 deletions.",
+            "message": "ORF 'vif' exceeds maximum deletion tolerance. Contains 570 deletions with max tolerance of 12 deletions.",
             "orf": "vif"
         },
         {
@@ -1047,7 +1047,7 @@
         {
             "qseqid": "small-sequence-with-lowercases",
             "error": "DeletionInOrf",
-            "message": "ORF 'vpr' exeeds maximum deletion tolerance.Contains 285 deletions with max tolerance of 6 deletions.",
+            "message": "ORF 'vpr' exceeds maximum deletion tolerance. Contains 285 deletions with max tolerance of 6 deletions.",
             "orf": "vpr"
         },
         {
@@ -1065,7 +1065,7 @@
         {
             "qseqid": "small-sequence-with-lowercases",
             "error": "DeletionInOrf",
-            "message": "ORF 'tat_exon1' exeeds maximum deletion tolerance.Contains 216 deletions with max tolerance of 0 deletions.",
+            "message": "ORF 'tat_exon1' exceeds maximum deletion tolerance. Contains 216 deletions with max tolerance of 0 deletions.",
             "orf": "tat_exon1"
         },
         {
@@ -1083,7 +1083,7 @@
         {
             "qseqid": "small-sequence-with-lowercases",
             "error": "DeletionInOrf",
-            "message": "ORF 'rev_exon1' exeeds maximum deletion tolerance.Contains 78 deletions with max tolerance of 0 deletions.",
+            "message": "ORF 'rev_exon1' exceeds maximum deletion tolerance. Contains 78 deletions with max tolerance of 0 deletions.",
             "orf": "rev_exon1"
         },
         {
@@ -1101,7 +1101,7 @@
         {
             "qseqid": "small-sequence-with-lowercases",
             "error": "DeletionInOrf",
-            "message": "ORF 'vpu' exeeds maximum deletion tolerance.Contains 66 deletions with max tolerance of 6 deletions.",
+            "message": "ORF 'vpu' exceeds maximum deletion tolerance. Contains 66 deletions with max tolerance of 6 deletions.",
             "orf": "vpu"
         },
         {
@@ -1119,7 +1119,7 @@
         {
             "qseqid": "small-sequence-with-lowercases",
             "error": "DeletionInOrf",
-            "message": "ORF 'tat_exon2' exeeds maximum deletion tolerance.Contains 69 deletions with max tolerance of 0 deletions.",
+            "message": "ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 69 deletions with max tolerance of 0 deletions.",
             "orf": "tat_exon2"
         },
         {
@@ -1137,7 +1137,7 @@
         {
             "qseqid": "small-sequence-with-lowercases",
             "error": "DeletionInOrf",
-            "message": "ORF 'rev_exon2' exeeds maximum deletion tolerance.Contains 273 deletions with max tolerance of 7 deletions.",
+            "message": "ORF 'rev_exon2' exceeds maximum deletion tolerance. Contains 273 deletions with max tolerance of 7 deletions.",
             "orf": "rev_exon2"
         },
         {
@@ -1155,7 +1155,7 @@
         {
             "qseqid": "small-sequence-with-lowercases",
             "error": "DeletionInOrf",
-            "message": "ORF 'nef' exeeds maximum deletion tolerance.Contains 612 deletions with max tolerance of 48 deletions.",
+            "message": "ORF 'nef' exceeds maximum deletion tolerance. Contains 612 deletions with max tolerance of 48 deletions.",
             "orf": "nef"
         },
         {
@@ -1296,7 +1296,7 @@
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "error": "DeletionInOrf",
-            "message": "ORF 'tat_exon1' exeeds maximum deletion tolerance.Contains 147 deletions with max tolerance of 0 deletions.",
+            "message": "ORF 'tat_exon1' exceeds maximum deletion tolerance. Contains 147 deletions with max tolerance of 0 deletions.",
             "orf": "tat_exon1"
         },
         {
@@ -1314,7 +1314,7 @@
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "error": "DeletionInOrf",
-            "message": "ORF 'rev_exon1' exeeds maximum deletion tolerance.Contains 9 deletions with max tolerance of 0 deletions.",
+            "message": "ORF 'rev_exon1' exceeds maximum deletion tolerance. Contains 9 deletions with max tolerance of 0 deletions.",
             "orf": "rev_exon1"
         },
         {
@@ -1350,7 +1350,7 @@
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "error": "DeletionInOrf",
-            "message": "ORF 'tat_exon2' exeeds maximum deletion tolerance.Contains 45 deletions with max tolerance of 0 deletions.",
+            "message": "ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 45 deletions with max tolerance of 0 deletions.",
             "orf": "tat_exon2"
         },
         {
@@ -1368,7 +1368,7 @@
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "error": "InsertionInOrf",
-            "message": "ORF 'rev_exon2' exeeds maximum insertion tolerance.Contains 21 insertions with max tolerance of 9 insertions.",
+            "message": "ORF 'rev_exon2' exceeds maximum insertion tolerance. Contains 21 insertions with max tolerance of 9 insertions.",
             "orf": "rev_exon2"
         },
         {
@@ -1444,7 +1444,7 @@
         {
             "qseqid": "small-sequence-with-xs",
             "error": "DeletionInOrf",
-            "message": "ORF 'gag' exeeds maximum deletion tolerance.Contains 1509 deletions with max tolerance of 42 deletions.",
+            "message": "ORF 'gag' exceeds maximum deletion tolerance. Contains 1509 deletions with max tolerance of 42 deletions.",
             "orf": "gag"
         },
         {
@@ -1462,7 +1462,7 @@
         {
             "qseqid": "small-sequence-with-xs",
             "error": "DeletionInOrf",
-            "message": "ORF 'pol' exeeds maximum deletion tolerance.Contains 3012 deletions with max tolerance of 93 deletions.",
+            "message": "ORF 'pol' exceeds maximum deletion tolerance. Contains 3012 deletions with max tolerance of 93 deletions.",
             "orf": "pol"
         },
         {
@@ -1480,7 +1480,7 @@
         {
             "qseqid": "small-sequence-with-xs",
             "error": "DeletionInOrf",
-            "message": "ORF 'env' exeeds maximum deletion tolerance.Contains 2571 deletions with max tolerance of 54 deletions.",
+            "message": "ORF 'env' exceeds maximum deletion tolerance. Contains 2571 deletions with max tolerance of 54 deletions.",
             "orf": "env"
         },
         {
@@ -1498,7 +1498,7 @@
         {
             "qseqid": "small-sequence-with-xs",
             "error": "DeletionInOrf",
-            "message": "ORF 'vif' exeeds maximum deletion tolerance.Contains 570 deletions with max tolerance of 12 deletions.",
+            "message": "ORF 'vif' exceeds maximum deletion tolerance. Contains 570 deletions with max tolerance of 12 deletions.",
             "orf": "vif"
         },
         {
@@ -1516,7 +1516,7 @@
         {
             "qseqid": "small-sequence-with-xs",
             "error": "DeletionInOrf",
-            "message": "ORF 'vpr' exeeds maximum deletion tolerance.Contains 285 deletions with max tolerance of 6 deletions.",
+            "message": "ORF 'vpr' exceeds maximum deletion tolerance. Contains 285 deletions with max tolerance of 6 deletions.",
             "orf": "vpr"
         },
         {
@@ -1534,7 +1534,7 @@
         {
             "qseqid": "small-sequence-with-xs",
             "error": "DeletionInOrf",
-            "message": "ORF 'tat_exon1' exeeds maximum deletion tolerance.Contains 216 deletions with max tolerance of 0 deletions.",
+            "message": "ORF 'tat_exon1' exceeds maximum deletion tolerance. Contains 216 deletions with max tolerance of 0 deletions.",
             "orf": "tat_exon1"
         },
         {
@@ -1552,7 +1552,7 @@
         {
             "qseqid": "small-sequence-with-xs",
             "error": "DeletionInOrf",
-            "message": "ORF 'rev_exon1' exeeds maximum deletion tolerance.Contains 78 deletions with max tolerance of 0 deletions.",
+            "message": "ORF 'rev_exon1' exceeds maximum deletion tolerance. Contains 78 deletions with max tolerance of 0 deletions.",
             "orf": "rev_exon1"
         },
         {
@@ -1570,7 +1570,7 @@
         {
             "qseqid": "small-sequence-with-xs",
             "error": "DeletionInOrf",
-            "message": "ORF 'vpu' exeeds maximum deletion tolerance.Contains 66 deletions with max tolerance of 6 deletions.",
+            "message": "ORF 'vpu' exceeds maximum deletion tolerance. Contains 66 deletions with max tolerance of 6 deletions.",
             "orf": "vpu"
         },
         {
@@ -1588,7 +1588,7 @@
         {
             "qseqid": "small-sequence-with-xs",
             "error": "DeletionInOrf",
-            "message": "ORF 'tat_exon2' exeeds maximum deletion tolerance.Contains 78 deletions with max tolerance of 0 deletions.",
+            "message": "ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 78 deletions with max tolerance of 0 deletions.",
             "orf": "tat_exon2"
         },
         {
@@ -1606,7 +1606,7 @@
         {
             "qseqid": "small-sequence-with-xs",
             "error": "DeletionInOrf",
-            "message": "ORF 'rev_exon2' exeeds maximum deletion tolerance.Contains 282 deletions with max tolerance of 7 deletions.",
+            "message": "ORF 'rev_exon2' exceeds maximum deletion tolerance. Contains 282 deletions with max tolerance of 7 deletions.",
             "orf": "rev_exon2"
         },
         {
@@ -1624,7 +1624,7 @@
         {
             "qseqid": "small-sequence-with-xs",
             "error": "DeletionInOrf",
-            "message": "ORF 'nef' exeeds maximum deletion tolerance.Contains 612 deletions with max tolerance of 48 deletions.",
+            "message": "ORF 'nef' exceeds maximum deletion tolerance. Contains 612 deletions with max tolerance of 48 deletions.",
             "orf": "nef"
         },
         {
@@ -1696,7 +1696,7 @@
         {
             "qseqid": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
-            "message": "ORF 'gag' exeeds maximum deletion tolerance.Contains 1509 deletions with max tolerance of 42 deletions.",
+            "message": "ORF 'gag' exceeds maximum deletion tolerance. Contains 1509 deletions with max tolerance of 42 deletions.",
             "orf": "gag"
         },
         {
@@ -1714,7 +1714,7 @@
         {
             "qseqid": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
-            "message": "ORF 'pol' exeeds maximum deletion tolerance.Contains 3012 deletions with max tolerance of 93 deletions.",
+            "message": "ORF 'pol' exceeds maximum deletion tolerance. Contains 3012 deletions with max tolerance of 93 deletions.",
             "orf": "pol"
         },
         {
@@ -1732,7 +1732,7 @@
         {
             "qseqid": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
-            "message": "ORF 'env' exeeds maximum deletion tolerance.Contains 2571 deletions with max tolerance of 54 deletions.",
+            "message": "ORF 'env' exceeds maximum deletion tolerance. Contains 2571 deletions with max tolerance of 54 deletions.",
             "orf": "env"
         },
         {
@@ -1750,7 +1750,7 @@
         {
             "qseqid": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
-            "message": "ORF 'vif' exeeds maximum deletion tolerance.Contains 570 deletions with max tolerance of 12 deletions.",
+            "message": "ORF 'vif' exceeds maximum deletion tolerance. Contains 570 deletions with max tolerance of 12 deletions.",
             "orf": "vif"
         },
         {
@@ -1768,7 +1768,7 @@
         {
             "qseqid": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
-            "message": "ORF 'vpr' exeeds maximum deletion tolerance.Contains 285 deletions with max tolerance of 6 deletions.",
+            "message": "ORF 'vpr' exceeds maximum deletion tolerance. Contains 285 deletions with max tolerance of 6 deletions.",
             "orf": "vpr"
         },
         {
@@ -1786,7 +1786,7 @@
         {
             "qseqid": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
-            "message": "ORF 'tat_exon1' exeeds maximum deletion tolerance.Contains 216 deletions with max tolerance of 0 deletions.",
+            "message": "ORF 'tat_exon1' exceeds maximum deletion tolerance. Contains 216 deletions with max tolerance of 0 deletions.",
             "orf": "tat_exon1"
         },
         {
@@ -1804,7 +1804,7 @@
         {
             "qseqid": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
-            "message": "ORF 'rev_exon1' exeeds maximum deletion tolerance.Contains 78 deletions with max tolerance of 0 deletions.",
+            "message": "ORF 'rev_exon1' exceeds maximum deletion tolerance. Contains 78 deletions with max tolerance of 0 deletions.",
             "orf": "rev_exon1"
         },
         {
@@ -1822,7 +1822,7 @@
         {
             "qseqid": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
-            "message": "ORF 'vpu' exeeds maximum deletion tolerance.Contains 66 deletions with max tolerance of 6 deletions.",
+            "message": "ORF 'vpu' exceeds maximum deletion tolerance. Contains 66 deletions with max tolerance of 6 deletions.",
             "orf": "vpu"
         },
         {
@@ -1840,7 +1840,7 @@
         {
             "qseqid": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
-            "message": "ORF 'tat_exon2' exeeds maximum deletion tolerance.Contains 78 deletions with max tolerance of 0 deletions.",
+            "message": "ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 78 deletions with max tolerance of 0 deletions.",
             "orf": "tat_exon2"
         },
         {
@@ -1858,7 +1858,7 @@
         {
             "qseqid": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
-            "message": "ORF 'rev_exon2' exeeds maximum deletion tolerance.Contains 282 deletions with max tolerance of 7 deletions.",
+            "message": "ORF 'rev_exon2' exceeds maximum deletion tolerance. Contains 282 deletions with max tolerance of 7 deletions.",
             "orf": "rev_exon2"
         },
         {
@@ -1876,7 +1876,7 @@
         {
             "qseqid": "small-sequence-with-dashes",
             "error": "DeletionInOrf",
-            "message": "ORF 'nef' exeeds maximum deletion tolerance.Contains 612 deletions with max tolerance of 48 deletions.",
+            "message": "ORF 'nef' exceeds maximum deletion tolerance. Contains 612 deletions with max tolerance of 48 deletions.",
             "orf": "nef"
         },
         {
@@ -1926,7 +1926,7 @@
         {
             "qseqid": "small-sequence-with-dashes/andwithslashestoo",
             "error": "DeletionInOrf",
-            "message": "ORF 'gag' exeeds maximum deletion tolerance.Contains 1509 deletions with max tolerance of 42 deletions.",
+            "message": "ORF 'gag' exceeds maximum deletion tolerance. Contains 1509 deletions with max tolerance of 42 deletions.",
             "orf": "gag"
         },
         {
@@ -1944,7 +1944,7 @@
         {
             "qseqid": "small-sequence-with-dashes/andwithslashestoo",
             "error": "DeletionInOrf",
-            "message": "ORF 'pol' exeeds maximum deletion tolerance.Contains 3012 deletions with max tolerance of 93 deletions.",
+            "message": "ORF 'pol' exceeds maximum deletion tolerance. Contains 3012 deletions with max tolerance of 93 deletions.",
             "orf": "pol"
         },
         {
@@ -1962,7 +1962,7 @@
         {
             "qseqid": "small-sequence-with-dashes/andwithslashestoo",
             "error": "DeletionInOrf",
-            "message": "ORF 'env' exeeds maximum deletion tolerance.Contains 2571 deletions with max tolerance of 54 deletions.",
+            "message": "ORF 'env' exceeds maximum deletion tolerance. Contains 2571 deletions with max tolerance of 54 deletions.",
             "orf": "env"
         },
         {
@@ -1980,7 +1980,7 @@
         {
             "qseqid": "small-sequence-with-dashes/andwithslashestoo",
             "error": "DeletionInOrf",
-            "message": "ORF 'vif' exeeds maximum deletion tolerance.Contains 570 deletions with max tolerance of 12 deletions.",
+            "message": "ORF 'vif' exceeds maximum deletion tolerance. Contains 570 deletions with max tolerance of 12 deletions.",
             "orf": "vif"
         },
         {
@@ -1998,7 +1998,7 @@
         {
             "qseqid": "small-sequence-with-dashes/andwithslashestoo",
             "error": "DeletionInOrf",
-            "message": "ORF 'vpr' exeeds maximum deletion tolerance.Contains 285 deletions with max tolerance of 6 deletions.",
+            "message": "ORF 'vpr' exceeds maximum deletion tolerance. Contains 285 deletions with max tolerance of 6 deletions.",
             "orf": "vpr"
         },
         {
@@ -2016,7 +2016,7 @@
         {
             "qseqid": "small-sequence-with-dashes/andwithslashestoo",
             "error": "DeletionInOrf",
-            "message": "ORF 'tat_exon1' exeeds maximum deletion tolerance.Contains 216 deletions with max tolerance of 0 deletions.",
+            "message": "ORF 'tat_exon1' exceeds maximum deletion tolerance. Contains 216 deletions with max tolerance of 0 deletions.",
             "orf": "tat_exon1"
         },
         {
@@ -2034,7 +2034,7 @@
         {
             "qseqid": "small-sequence-with-dashes/andwithslashestoo",
             "error": "DeletionInOrf",
-            "message": "ORF 'rev_exon1' exeeds maximum deletion tolerance.Contains 78 deletions with max tolerance of 0 deletions.",
+            "message": "ORF 'rev_exon1' exceeds maximum deletion tolerance. Contains 78 deletions with max tolerance of 0 deletions.",
             "orf": "rev_exon1"
         },
         {
@@ -2052,7 +2052,7 @@
         {
             "qseqid": "small-sequence-with-dashes/andwithslashestoo",
             "error": "DeletionInOrf",
-            "message": "ORF 'vpu' exeeds maximum deletion tolerance.Contains 66 deletions with max tolerance of 6 deletions.",
+            "message": "ORF 'vpu' exceeds maximum deletion tolerance. Contains 66 deletions with max tolerance of 6 deletions.",
             "orf": "vpu"
         },
         {
@@ -2070,7 +2070,7 @@
         {
             "qseqid": "small-sequence-with-dashes/andwithslashestoo",
             "error": "DeletionInOrf",
-            "message": "ORF 'tat_exon2' exeeds maximum deletion tolerance.Contains 78 deletions with max tolerance of 0 deletions.",
+            "message": "ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 78 deletions with max tolerance of 0 deletions.",
             "orf": "tat_exon2"
         },
         {
@@ -2088,7 +2088,7 @@
         {
             "qseqid": "small-sequence-with-dashes/andwithslashestoo",
             "error": "DeletionInOrf",
-            "message": "ORF 'rev_exon2' exeeds maximum deletion tolerance.Contains 282 deletions with max tolerance of 7 deletions.",
+            "message": "ORF 'rev_exon2' exceeds maximum deletion tolerance. Contains 282 deletions with max tolerance of 7 deletions.",
             "orf": "rev_exon2"
         },
         {
@@ -2106,7 +2106,7 @@
         {
             "qseqid": "small-sequence-with-dashes/andwithslashestoo",
             "error": "DeletionInOrf",
-            "message": "ORF 'nef' exeeds maximum deletion tolerance.Contains 612 deletions with max tolerance of 48 deletions.",
+            "message": "ORF 'nef' exceeds maximum deletion tolerance. Contains 612 deletions with max tolerance of 48 deletions.",
             "orf": "nef"
         },
         {

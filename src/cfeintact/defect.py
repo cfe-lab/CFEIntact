@@ -22,8 +22,8 @@ class DeletionInOrf(ORFDefect):
     deletions: int
 
     def __str__(self) -> str:
-        return (f"ORF {self.e.name!r} exeeds maximum deletion tolerance."
-                f"Contains {self.deletions} deletions with max tolerance of {self.e.max_deletions} deletions.")
+        return (f"ORF {self.e.name!r} exceeds maximum deletion tolerance."
+                f" Contains {self.deletions} deletions with max tolerance of {self.e.max_deletions} deletions.")
 
 
 @dataclass(frozen=True)
@@ -32,8 +32,8 @@ class InsertionInOrf(ORFDefect):
     insertions: int
 
     def __str__(self) -> str:
-        return (f"ORF {self.e.name!r} exeeds maximum insertion tolerance."
-                f"Contains {self.insertions} insertions with max tolerance of {self.e.max_insertions} insertions.")
+        return (f"ORF {self.e.name!r} exceeds maximum insertion tolerance."
+                f" Contains {self.insertions} insertions with max tolerance of {self.e.max_insertions} insertions.")
 
 
 @dataclass(frozen=True)
@@ -85,8 +85,8 @@ class PackagingSignalDeletion:
     tolerance: int
 
     def __str__(self) -> str:
-        return (f"Query sequence exceeds maximum deletion tolerance in PSI. "
-                f"Contains {self.deletions} deletions with max tolerance of {self.tolerance} deletions.")
+        return (f"Query sequence exceeds maximum deletion tolerance in PSI."
+                f" Contains {self.deletions} deletions with max tolerance of {self.tolerance} deletions.")
 
 
 @dataclass(frozen=True)
@@ -104,8 +104,8 @@ class RevResponseElementDeletion:
     tolerance: int
 
     def __str__(self) -> str:
-        return (f"Query Sequence exceeds maximum deletion tolerance in RRE. "
-                f"Contains {self.deletions} deletions with max tolerance of {self.tolerance} deletions.")
+        return (f"Query Sequence exceeds maximum deletion tolerance in RRE."
+                f" Contains {self.deletions} deletions with max tolerance of {self.tolerance} deletions.")
 
 
 @dataclass(frozen=True)
