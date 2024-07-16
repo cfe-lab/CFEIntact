@@ -23,13 +23,13 @@ If you pass the `--output-json` option to CFEIntact, the output format will be `
 This file contains associations between sequences and their identified defects.
 Here is an example of the contents of the `errors.csv` file:
 
-| qseqid     | error                       | message                                                                                                             | orf |
-|------------|-----------------------------|---------------------------------------------------------------------------------------------------------------------|-----|
-| KX505501.1 | InternalStopInOrf           | ORF 'pol' at 1629-1927 contains an internal stop codon at 1746.                                                     | pol |
-| KX505501.1 | RevResponseElementDeletion  | Query Sequence exceeds maximum deletion tolerance in RRE. Contains 35 deletions with max tolerance of 20 deletions. |     |
-| MN691959   | DeletionInOrf               | ORF 'tat_exon2' exeeds maximum deletion tolerance. Contains 45 deletions with max tolerance of 0 deletions.         | vpu |
-| MK114856.1 | APOBECHypermutationDetected | Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 3.639064030015132e-65).                     |     |
-| MK116110.1 | PackagingSignalDeletion     | Query Sequence exceeds maximum deletion tolerance in PSI. Contains 93 deletions with max tolerance of 10 deletions. |     |
+| qseqid     | error                       | message                                                                                                             | orf       |
+|------------|-----------------------------|---------------------------------------------------------------------------------------------------------------------|-----------|
+| KX505501.1 | InternalStopInOrf           | ORF 'pol' at 1629-1927 contains an internal stop codon at 1746.                                                     | pol       |
+| KX505501.1 | RevResponseElementDeletion  | Query Sequence exceeds maximum deletion tolerance in RRE. Contains 35 deletions with max tolerance of 20 deletions. |           |
+| MN691959   | DeletionInOrf               | ORF 'tat_exon2' exeeds maximum deletion tolerance. Contains 45 deletions with max tolerance of 0 deletions.         | tat_exon2 |
+| MK114856.1 | APOBECHypermutationDetected | Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 3.639064030015132e-65).                     |           |
+| MK116110.1 | PackagingSignalDeletion     | Query Sequence exceeds maximum deletion tolerance in PSI. Contains 93 deletions with max tolerance of 10 deletions. |           |
 
 ## `orfs.csv`
 
