@@ -13,7 +13,7 @@ class ORFDefect:
 @dataclass(frozen=True)
 class LongDeletion:
     def __str__(self) -> str:
-        return "Query sequence contains a long deletion."
+        return "Query sequence contains a very large deletion."
 
 
 @dataclass(frozen=True)
@@ -22,10 +22,8 @@ class DeletionInOrf(ORFDefect):
     deletions: int
 
     def __str__(self) -> str:
-        return (f"{'Smaller ' if self.q.is_small else ''}"
-                f"ORF {self.e.name} at {self.q.start + 1}-{self.q.end + 1}"
-                f" can have maximum deletions "
-                f"{self.e.max_deletions}, got {self.deletions}.")
+        return (f"ORF {self.e.name!r} exeeds maximum deletion tolerance."
+                f"Contains {self.deletions} deletions with max tolerance of {self.e.max_deletions} deletions.")
 
 
 @dataclass(frozen=True)
@@ -34,9 +32,8 @@ class InsertionInOrf(ORFDefect):
     insertions: int
 
     def __str__(self) -> str:
-        return (f"{'Smaller ' if self.q.is_small else ''}"
-                f"ORF {self.e.name} at {self.q.start + 1}-{self.q.end + 1} can have maximum insertions "
-                f"{self.e.max_insertions}, got {self.insertions}.")
+        return (f"ORF {self.e.name!r} exeeds maximum insertion tolerance."
+                f"Contains {self.insertions} insertions with max tolerance of {self.e.max_insertions} insertions.")
 
 
 @dataclass(frozen=True)
@@ -45,8 +42,7 @@ class InternalStopInOrf(ORFDefect):
     position: int
 
     def __str__(self) -> str:
-        return (f"{'Smaller ' if self.q.is_small else ''}"
-                f"ORF {self.e.name} at {self.q.start + 1}-{self.q.end + 1}"
+        return (f"ORF {self.e.name!r} at {self.q.start + 1}-{self.q.end + 1}"
                 f" contains an internal stop codon at {self.position + 1}.")
 
 
@@ -56,8 +52,7 @@ class FrameshiftInOrf(ORFDefect):
     impacted_positions: float
 
     def __str__(self) -> str:
-        return (f"{'Smaller ' if self.q.is_small else ''}"
-                f"ORF {self.e.name} at {self.q.start + 1}-{self.q.end + 1}"
+        return (f"ORF {self.e.name!r} at {self.q.start + 1}-{self.q.end + 1}"
                 f" contains out of frame indels that impact {self.impacted_positions} positions.")
 
 
@@ -69,9 +64,9 @@ class SequenceDivergence(ORFDefect):
     def __str__(self) -> str:
         ex_dist = float(round(self.e.max_distance, 5))
         it_dist = float(round(self.distance, 5))
-        return (f"{'Smaller ' if self.q.is_small else ''}"
-                f"ORF {self.e.name} at {self.q.start + 1}-{self.q.end + 1} can have maximum distance of "
-                f"{ex_dist} from its subtype ORF's aminoacid sequence, got {it_dist}.")
+        return (f"ORF {self.e.name!r} exceeds maximum distance tolerance."
+                f"It is {it_dist} units of distance away from its reference ORF's aminoacid sequence"
+                f" with max tolerance of {ex_dist}.")
 
 
 @dataclass(frozen=True)
@@ -81,7 +76,7 @@ class MajorSpliceDonorSiteMutated:
 
     def __str__(self) -> str:
         adj = 'missing' if all(x == '-' for x in self.splice_site) else 'mutated'
-        return f"Query sequence has a {adj} splice donor site, {self.splice_site}, around {self.context}."
+        return f"Query sequence has a {adj} splice donor site: {self.splice_site}. The context is {self.context}."
 
 
 @dataclass(frozen=True)
@@ -90,7 +85,7 @@ class PackagingSignalDeletion:
     tolerance: int
 
     def __str__(self) -> str:
-        return (f"Query Sequence exceeds maximum deletion tolerance in PSI. "
+        return (f"Query sequence exceeds maximum deletion tolerance in PSI. "
                 f"Contains {self.deletions} deletions with max tolerance of {self.tolerance} deletions.")
 
 
