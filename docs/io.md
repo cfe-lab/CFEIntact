@@ -21,17 +21,17 @@ If you pass the `--output-json` option to CFEIntact, the output format will be `
 
 Here is an example of the contents of the `errors.csv` file:
 
-| sequence_name | error                       | message                                                                                                             | orf |
-|---------------|-----------------------------|---------------------------------------------------------------------------------------------------------------------|-----|
-| KX505501.1    | DeletionInOrf               | ORF pol at 2084-5096 can have maximum deletions 30, got 2892.                                                       | pol |
-| KX505501.1    | RevResponseElementDeletion  | Query Sequence exceeds maximum deletion tolerance in RRE. Contains 35 deletions with max tolerance of 20 deletions. |     |
-| MN691959      | InternalStopInOrf           | Smaller ORF vpu at 6060-6309 contains an internal stop codon at 6100.                                               | vpu |
-| MK114856.1    | APOBECHypermutationDetected | Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 3.639064030015132e-65).                     |     |
-| MK116110.1    | PackagingSignalDeletion     | Query Sequence exceeds maximum deletion tolerance in PSI. Contains 93 deletions with max tolerance of 10 deletions. |     |
+| qseqid     | error                       | message                                                                                                             | orf |
+|------------|-----------------------------|---------------------------------------------------------------------------------------------------------------------|-----|
+| KX505501.1 | DeletionInOrf               | ORF pol at 2084-5096 can have maximum deletions 30, got 2892.                                                       | pol |
+| KX505501.1 | RevResponseElementDeletion  | Query Sequence exceeds maximum deletion tolerance in RRE. Contains 35 deletions with max tolerance of 20 deletions. |     |
+| MN691959   | InternalStopInOrf           | Smaller ORF vpu at 6060-6309 contains an internal stop codon at 6100.                                               | vpu |
+| MK114856.1 | APOBECHypermutationDetected | Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 3.639064030015132e-65).                     |     |
+| MK116110.1 | PackagingSignalDeletion     | Query Sequence exceeds maximum deletion tolerance in PSI. Contains 93 deletions with max tolerance of 10 deletions. |     |
 
 Here is an example of the contents of the `holistic.csv` file:
 
-| seqid      | intact | qlen | hypermutation_probablility | inferred_subtype                     | blast_matched_qlen | blast_sseq_coverage | blast_qseq_coverage | blast_sseq_orfs_coverage | orfs_start | orfs_end | blast_n_conseqs |
+| qseqid     | intact | qlen | hypermutation_probablility | inferred_subtype                     | blast_matched_qlen | blast_sseq_coverage | blast_qseq_coverage | blast_sseq_orfs_coverage | orfs_start | orfs_end | blast_n_conseqs |
 |------------|--------|------|----------------------------|--------------------------------------|--------------------|---------------------|---------------------|--------------------------|------------|----------|-----------------|
 | KX505501.1 | False  | 1997 | 0.71                       | Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455 | 1997               | 0.25                | 1.22                | 0.18                     | 789        | 8793     | 4               |
 | MN691959   | False  | 9493 | 0.20                       | Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455 | 9493               | 1.08                | 1.11                | 1                        | 789        | 8793     | 3               |
@@ -40,8 +40,8 @@ Here is an example of the contents of the `holistic.csv` file:
 
 ### Field descriptions
 
-- `seqid`: The identifier or name for the sequence (same as in the input FASTA file)
-- `intact`: Whether the sequence is considered to be intact (True) or not (False)
+- `qseqid`: The identifier or name for the sequence (same as in the input FASTA file)
+- `intact`: Whether the query sequence is considered to be intact (True) or not (False)
 - `qlen`: Length of the _query_ sequence
 - `hypermutation_probablility`: The probability that the sequence shows evidence of hypermutation
 - `inferred_subtype`: The suspected subtype of the sequence based on analysis
@@ -52,10 +52,11 @@ Here is an example of the contents of the `holistic.csv` file:
 - `orfs_start`: The starting point of the ORFs
 - `orfs_end`: The ending point of the ORFs
 - `blast_n_conseqs`: The number of consecutive sequences from BLASTN results
+- `is_reverse_complement`: Whether the query sequence has been reverse complemented to better fit the reference sequence
 
 Here is an example of the contents of the `orfs.csv` file:
 
-| seqid      | name | start | end  | orientation | distance            | protein | aminoacids | nucleotides | subtype_start | subtype_end | subtype_aminoacids | subtype_nucleotides |
+| qseqid     | name | start | end  | orientation | distance            | protein | aminoacids | nucleotides | subtype_start | subtype_end | subtype_aminoacids | subtype_nucleotides |
 |------------|------|-------|------|-------------|---------------------|---------|------------|-------------|---------------|-------------|--------------------|---------------------|
 | KX505501.1 | env  | 0     | 1823 | forward     | 0.7623480451210163  | MGAR... | GLSG*...   | GGTCT...    | 6223          | 8793        | MRVKE...           | ATGAG...            |
 | KX505501.1 | vif  | 0     | 1823 | forward     | 0.7647696476964769  | MGAR... | GLSG*...   | GGTCT...    | 5040          | 5618        | MENR...            | ATGG...             |
@@ -64,7 +65,7 @@ Here is an example of the contents of the `orfs.csv` file:
 
 ### Field descriptions
 
-- `seqid`: The identifier for the sequence from which the ORF (Open Reading Frame) is derived.
+- `qseqid`: The identifier for the sequence from which the ORF (Open Reading Frame) is derived.
 - `name`: The name of the gene associated with the ORF.
 - `start`: The start position of the ORF within the query sequence.
 - `end`: The end position of the ORF within the query sequence.
