@@ -442,9 +442,6 @@ def check_reading_frame_deletions(e: OriginalORF, q: OriginalORF) \
 def check_reading_frame_insertions(check_distance: bool, best_match: MappedORF, e: OriginalORF, q: OriginalORF) \
         -> Optional[defect.InsertionInOrf]:
 
-    if not check_distance:
-        return None
-
     if best_match.distance <= e.max_distance:
         return None
 
