@@ -854,12 +854,12 @@ def check(working_dir: str,
             o.distance,
             o.indel_impact,
             str(o.query.protein),
-            str(o.query.aminoacids),
-            str(o.query.nucleotides),
-            o.reference.start,
-            o.reference.end,
-            str(o.reference.aminoacids),
-            str(o.reference.nucleotides),
+            aminoacids=str(o.query.region_aminoacids),
+            nucleotides=str(o.query.region_nucleotides),
+            subtype_start=o.reference.start,
+            subtype_end=o.reference.end,
+            subtype_aminoacids=str(o.reference.aminoacids),
+            subtype_nucleotides=str(o.reference.nucleotides),
         ) for o in sorted(sequence_orfs + sequence_small_orfs, key=lambda o: o.query.start)]
 
         if check_packaging_signal:
