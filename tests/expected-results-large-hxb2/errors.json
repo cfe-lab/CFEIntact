@@ -20,6 +20,12 @@
         },
         {
             "qseqid": "KX505501.1",
+            "error": "MutatedStopCodon",
+            "message": "ORF 'pol' has a mutated stop codon: 'G--'.",
+            "orf": "pol"
+        },
+        {
+            "qseqid": "KX505501.1",
             "error": "FrameshiftInOrf",
             "message": "ORF 'env' at 1600-1824 contains out of frame indels that impact 1689 positions.",
             "orf": "env"
@@ -182,6 +188,18 @@
         },
         {
             "qseqid": "KX505501.1",
+            "error": "MutatedStartCodon",
+            "message": "ORF 'nef' has a mutated start codon: 'AGA'.",
+            "orf": "nef"
+        },
+        {
+            "qseqid": "KX505501.1",
+            "error": "MutatedStopCodon",
+            "message": "ORF 'nef' has a mutated stop codon: 'GA-'.",
+            "orf": "nef"
+        },
+        {
+            "qseqid": "KX505501.1",
             "error": "RevResponseElementDeletion",
             "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.",
             "orf": null
@@ -242,6 +260,12 @@
             "qseqid": "MN692074",
             "error": "DeletionInOrf",
             "message": "ORF 'pol' exceeds maximum deletion tolerance. Contains 981 deletions with max tolerance of 93 deletions.",
+            "orf": "pol"
+        },
+        {
+            "qseqid": "MN692074",
+            "error": "MutatedStopCodon",
+            "message": "ORF 'pol' has a mutated stop codon: '---'.",
             "orf": "pol"
         },
         {
@@ -402,6 +426,18 @@
         },
         {
             "qseqid": "MN692074",
+            "error": "MutatedStartCodon",
+            "message": "ORF 'nef' has a mutated start codon: 'ACC'.",
+            "orf": "nef"
+        },
+        {
+            "qseqid": "MN692074",
+            "error": "MutatedStopCodon",
+            "message": "ORF 'nef' has a mutated stop codon: 'C--'.",
+            "orf": "nef"
+        },
+        {
+            "qseqid": "MN692074",
             "error": "RevResponseElementDeletion",
             "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.",
             "orf": null
@@ -425,6 +461,12 @@
             "qseqid": "MN090335",
             "error": "InternalStopInOrf",
             "message": "ORF 'gag' at 316-1665 contains an internal stop codon at 367.",
+            "orf": "gag"
+        },
+        {
+            "qseqid": "MN090335",
+            "error": "MutatedStopCodon",
+            "message": "ORF 'gag' has a mutated stop codon: 'AG-'.",
             "orf": "gag"
         },
         {
@@ -481,6 +523,12 @@
             "qseqid": "MN090376",
             "error": "SequenceDivergence",
             "message": "ORF 'gag' exceeds maximum distance tolerance. It is 1.33506 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.98443.",
+            "orf": "gag"
+        },
+        {
+            "qseqid": "MN090376",
+            "error": "MutatedStartCodon",
+            "message": "ORF 'gag' has a mutated start codon: 'TGC'.",
             "orf": "gag"
         },
         {
@@ -638,6 +686,12 @@
             "error": "InternalStopInOrf",
             "message": "ORF 'nef' at 8551-9138 contains an internal stop codon at 8983.",
             "orf": "nef"
+        },
+        {
+            "qseqid": "MK114705.1",
+            "error": "MutatedStopCodon",
+            "message": "ORF 'nef' has a mutated stop codon: 'A--'.",
+            "orf": "nef"
         }
     ],
     "MK114856.1": [
@@ -657,6 +711,12 @@
             "qseqid": "MK114856.1",
             "error": "SequenceDivergence",
             "message": "ORF 'gag' exceeds maximum distance tolerance. It is 1.871 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.98443.",
+            "orf": "gag"
+        },
+        {
+            "qseqid": "MK114856.1",
+            "error": "MutatedStartCodon",
+            "message": "ORF 'gag' has a mutated start codon: 'ATA'.",
             "orf": "gag"
         },
         {
@@ -709,6 +769,12 @@
         },
         {
             "qseqid": "MK114856.1",
+            "error": "MutatedStartCodon",
+            "message": "ORF 'vif' has a mutated start codon: 'ATA'.",
+            "orf": "vif"
+        },
+        {
+            "qseqid": "MK114856.1",
             "error": "FrameshiftInOrf",
             "message": "ORF 'vpr' at 5034-5579 contains out of frame indels that impact 171 positions.",
             "orf": "vpr"
@@ -727,6 +793,12 @@
         },
         {
             "qseqid": "MK114856.1",
+            "error": "MutatedStartCodon",
+            "message": "ORF 'vpr' has a mutated start codon: 'ATA'.",
+            "orf": "vpr"
+        },
+        {
+            "qseqid": "MK114856.1",
             "error": "FrameshiftInOrf",
             "message": "ORF 'tat_exon1' at 5428-5774 contains out of frame indels that impact 140 positions.",
             "orf": "tat_exon1"
@@ -741,6 +813,12 @@
             "qseqid": "MK114856.1",
             "error": "SequenceDivergence",
             "message": "ORF 'tat_exon1' exceeds maximum distance tolerance. It is 1.13017 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.85696.",
+            "orf": "tat_exon1"
+        },
+        {
+            "qseqid": "MK114856.1",
+            "error": "MutatedStartCodon",
+            "message": "ORF 'tat_exon1' has a mutated start codon: 'ATA'.",
             "orf": "tat_exon1"
         },
         {
@@ -811,6 +889,12 @@
         },
         {
             "qseqid": "MK114856.1",
+            "error": "MutatedStartCodon",
+            "message": "ORF 'nef' has a mutated start codon: 'ATA'.",
+            "orf": "nef"
+        },
+        {
+            "qseqid": "MK114856.1",
             "error": "APOBECHypermutationDetected",
             "message": "Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 3.639064030015132e-65).",
             "orf": null
@@ -833,6 +917,12 @@
             "qseqid": "MK115009.1",
             "error": "SequenceDivergence",
             "message": "ORF 'gag' exceeds maximum distance tolerance. It is 1.8444 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.98443.",
+            "orf": "gag"
+        },
+        {
+            "qseqid": "MK115009.1",
+            "error": "MutatedStopCodon",
+            "message": "ORF 'gag' has a mutated stop codon: 'A--'.",
             "orf": "gag"
         },
         {
@@ -885,6 +975,18 @@
         },
         {
             "qseqid": "MK115009.1",
+            "error": "MutatedStartCodon",
+            "message": "ORF 'vif' has a mutated start codon: 'AGA'.",
+            "orf": "vif"
+        },
+        {
+            "qseqid": "MK115009.1",
+            "error": "MutatedStopCodon",
+            "message": "ORF 'vif' has a mutated stop codon: '---'.",
+            "orf": "vif"
+        },
+        {
+            "qseqid": "MK115009.1",
             "error": "FrameshiftInOrf",
             "message": "ORF 'vpr' at 5088-5378 contains out of frame indels that impact 88 positions.",
             "orf": "vpr"
@@ -917,6 +1019,12 @@
             "qseqid": "MK115009.1",
             "error": "SequenceDivergence",
             "message": "ORF 'tat_exon1' exceeds maximum distance tolerance. It is 1.20614 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.85696.",
+            "orf": "tat_exon1"
+        },
+        {
+            "qseqid": "MK115009.1",
+            "error": "MutatedStartCodon",
+            "message": "ORF 'tat_exon1' has a mutated start codon: 'ATA'.",
             "orf": "tat_exon1"
         },
         {
@@ -959,6 +1067,12 @@
             "qseqid": "MK115009.1",
             "error": "SequenceDivergence",
             "message": "ORF 'nef' exceeds maximum distance tolerance. It is 1.70049 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.34148.",
+            "orf": "nef"
+        },
+        {
+            "qseqid": "MK115009.1",
+            "error": "MutatedStartCodon",
+            "message": "ORF 'nef' has a mutated start codon: 'ATA'.",
             "orf": "nef"
         },
         {
@@ -1016,6 +1130,18 @@
         },
         {
             "qseqid": "MK116110.1",
+            "error": "MutatedStartCodon",
+            "message": "ORF 'gag' has a mutated start codon: 'CAA'.",
+            "orf": "gag"
+        },
+        {
+            "qseqid": "MK116110.1",
+            "error": "MutatedStopCodon",
+            "message": "ORF 'gag' has a mutated stop codon: 'AA-'.",
+            "orf": "gag"
+        },
+        {
+            "qseqid": "MK116110.1",
             "error": "PackagingSignalDeletion",
             "message": "Query sequence exceeds maximum deletion tolerance in PSI. Contains 93 deletions with max tolerance of 10 deletions.",
             "orf": null
@@ -1045,6 +1171,18 @@
             "qseqid": "MK114997.1",
             "error": "InternalStopInOrf",
             "message": "ORF 'env' at 4986-8207 contains an internal stop codon at 5274.",
+            "orf": "env"
+        },
+        {
+            "qseqid": "MK114997.1",
+            "error": "MutatedStartCodon",
+            "message": "ORF 'env' has a mutated start codon: 'TGA'.",
+            "orf": "env"
+        },
+        {
+            "qseqid": "MK114997.1",
+            "error": "MutatedStopCodon",
+            "message": "ORF 'env' has a mutated stop codon: 'G--'.",
             "orf": "env"
         }
     ],
@@ -1092,6 +1230,12 @@
             "qseqid": "MK115464.1",
             "error": "SequenceDivergence",
             "message": "ORF 'gag' exceeds maximum distance tolerance. It is 1.495 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.98443.",
+            "orf": "gag"
+        },
+        {
+            "qseqid": "MK115464.1",
+            "error": "MutatedStartCodon",
+            "message": "ORF 'gag' has a mutated start codon: 'ATA'.",
             "orf": "gag"
         },
         {
@@ -1162,6 +1306,12 @@
         },
         {
             "qseqid": "MK115464.1",
+            "error": "MutatedStartCodon",
+            "message": "ORF 'tat_exon1' has a mutated start codon: 'ATA'.",
+            "orf": "tat_exon1"
+        },
+        {
+            "qseqid": "MK115464.1",
             "error": "FrameshiftInOrf",
             "message": "ORF 'vpu' at 6066-6311 contains out of frame indels that impact 124 positions.",
             "orf": "vpu"
@@ -1216,6 +1366,12 @@
         },
         {
             "qseqid": "MK115464.1",
+            "error": "MutatedStartCodon",
+            "message": "ORF 'nef' has a mutated start codon: 'ATA'.",
+            "orf": "nef"
+        },
+        {
+            "qseqid": "MK115464.1",
             "error": "APOBECHypermutationDetected",
             "message": "Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 4.937891251407691e-23).",
             "orf": null
@@ -1233,6 +1389,12 @@
             "qseqid": "MK115520.1",
             "error": "InternalStopInOrf",
             "message": "ORF 'pol' at 1988-5004 contains an internal stop codon at 3188.",
+            "orf": "pol"
+        },
+        {
+            "qseqid": "MK115520.1",
+            "error": "MutatedStopCodon",
+            "message": "ORF 'pol' has a mutated stop codon: 'AA-'.",
             "orf": "pol"
         },
         {
@@ -1311,6 +1473,12 @@
         },
         {
             "qseqid": "MK115095.1",
+            "error": "MutatedStartCodon",
+            "message": "ORF 'gag' has a mutated start codon: 'ATA'.",
+            "orf": "gag"
+        },
+        {
+            "qseqid": "MK115095.1",
             "error": "FrameshiftInOrf",
             "message": "ORF 'pol' at 1490-4501 contains out of frame indels that impact 1865 positions.",
             "orf": "pol"
@@ -1377,6 +1545,12 @@
         },
         {
             "qseqid": "MK115095.1",
+            "error": "MutatedStartCodon",
+            "message": "ORF 'tat_exon1' has a mutated start codon: 'ATA'.",
+            "orf": "tat_exon1"
+        },
+        {
+            "qseqid": "MK115095.1",
             "error": "FrameshiftInOrf",
             "message": "ORF 'vpu' at 5466-5711 contains out of frame indels that impact 122 positions.",
             "orf": "vpu"
@@ -1409,6 +1583,12 @@
             "qseqid": "MK115095.1",
             "error": "FrameshiftInOrf",
             "message": "ORF 'nef' at 7625-8872 contains out of frame indels that impact 438 positions.",
+            "orf": "nef"
+        },
+        {
+            "qseqid": "MK115095.1",
+            "error": "MutatedStartCodon",
+            "message": "ORF 'nef' has a mutated start codon: 'ATA'.",
             "orf": "nef"
         },
         {

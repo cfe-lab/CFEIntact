@@ -37,6 +37,26 @@ class InsertionInOrf(ORFDefect):
 
 
 @dataclass(frozen=True)
+class MutatedStopCodon(ORFDefect):
+    e: OriginalORF
+
+    def __str__(self) -> str:
+        codon_start_index = (len(self.q.region_nucleotides) // 3) * 3
+        existing = self.q.region_nucleotides[codon_start_index:]
+        codon = existing.ljust(3, "-")
+        return f"ORF {self.e.name!r} has a mutated stop codon: {codon!r}."
+
+
+@dataclass(frozen=True)
+class MutatedStartCodon(ORFDefect):
+    e: OriginalORF
+
+    def __str__(self) -> str:
+        codon = self.q.region_nucleotides[:3] if self.q.region_nucleotides else '---'
+        return f"ORF {self.e.name!r} has a mutated start codon: {codon!r}."
+
+
+@dataclass(frozen=True)
 class InternalStopInOrf(ORFDefect):
     e: OriginalORF
     position: int
@@ -147,7 +167,7 @@ class UnknownNucleotide:
 
 # The final exported Defect type encompasses all defined classes
 DefectType = Union[
-    LongDeletion, DeletionInOrf, InsertionInOrf, InternalStopInOrf,
+    LongDeletion, DeletionInOrf, InsertionInOrf, MutatedStartCodon, MutatedStopCodon, InternalStopInOrf,
     FrameshiftInOrf, SequenceDivergence, MajorSpliceDonorSiteMutated, PackagingSignalDeletion,
     PackagingSignalNotComplete, RevResponseElementDeletion, APOBECHypermutationDetected,
     NonHIV, Scramble, InternalInversion, UnknownNucleotide

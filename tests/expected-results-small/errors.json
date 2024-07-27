@@ -20,6 +20,12 @@
         },
         {
             "qseqid": "KX505501.1",
+            "error": "MutatedStopCodon",
+            "message": "ORF 'pol' has a mutated stop codon: 'G--'.",
+            "orf": "pol"
+        },
+        {
+            "qseqid": "KX505501.1",
             "error": "FrameshiftInOrf",
             "message": "ORF 'env' at 1600-1824 contains out of frame indels that impact 1689 positions.",
             "orf": "env"
@@ -182,6 +188,18 @@
         },
         {
             "qseqid": "KX505501.1",
+            "error": "MutatedStartCodon",
+            "message": "ORF 'nef' has a mutated start codon: 'AGA'.",
+            "orf": "nef"
+        },
+        {
+            "qseqid": "KX505501.1",
+            "error": "MutatedStopCodon",
+            "message": "ORF 'nef' has a mutated stop codon: 'GA-'.",
+            "orf": "nef"
+        },
+        {
+            "qseqid": "KX505501.1",
             "error": "RevResponseElementDeletion",
             "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.",
             "orf": null
@@ -242,6 +260,12 @@
             "qseqid": "MN692074",
             "error": "DeletionInOrf",
             "message": "ORF 'pol' exceeds maximum deletion tolerance. Contains 981 deletions with max tolerance of 93 deletions.",
+            "orf": "pol"
+        },
+        {
+            "qseqid": "MN692074",
+            "error": "MutatedStopCodon",
+            "message": "ORF 'pol' has a mutated stop codon: '---'.",
             "orf": "pol"
         },
         {
@@ -402,6 +426,18 @@
         },
         {
             "qseqid": "MN692074",
+            "error": "MutatedStartCodon",
+            "message": "ORF 'nef' has a mutated start codon: 'ACC'.",
+            "orf": "nef"
+        },
+        {
+            "qseqid": "MN692074",
+            "error": "MutatedStopCodon",
+            "message": "ORF 'nef' has a mutated stop codon: 'C--'.",
+            "orf": "nef"
+        },
+        {
+            "qseqid": "MN692074",
             "error": "RevResponseElementDeletion",
             "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.",
             "orf": null
@@ -425,6 +461,12 @@
             "qseqid": "MN090335",
             "error": "InternalStopInOrf",
             "message": "ORF 'gag' at 316-1665 contains an internal stop codon at 367.",
+            "orf": "gag"
+        },
+        {
+            "qseqid": "MN090335",
+            "error": "MutatedStopCodon",
+            "message": "ORF 'gag' has a mutated stop codon: 'AG-'.",
             "orf": "gag"
         },
         {

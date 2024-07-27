@@ -402,9 +402,7 @@ def has_rev_response_element(alignment, rre_locus, rre_tolerance):
 # /end def has_rev_response_element
 
 
-def check_reading_frame_shift(reference: SeqRecord,
-                              sequence: SeqRecord,
-                              best_match: MappedORF) \
+def check_reading_frame_shift(best_match: MappedORF) \
         -> Optional[defect.FrameshiftInOrf]:
 
     q = best_match.query
@@ -456,6 +454,40 @@ def check_reading_frame_insertions(check_distance: bool, best_match: MappedORF, 
     return None
 
 
+def check_reading_frame_start(check_distance: bool, best_match: MappedORF, e: OriginalORF, q: OriginalORF) \
+        -> Optional[defect.MutatedStartCodon]:
+
+    if len(q.region_nucleotides) == 0:
+        return None
+
+    if best_match.distance > e.max_distance or \
+       check_reading_frame_insertions(check_distance=check_distance, best_match=best_match, e=e, q=q) or \
+       check_reading_frame_deletions(e=e, q=q) or \
+       check_reading_frame_shift(best_match=best_match):
+
+        if not best_match.starts_properly:
+            return defect.MutatedStartCodon(e=e, q=q)
+
+    return None
+
+
+def check_reading_frame_stop(check_distance: bool, best_match: MappedORF, e: OriginalORF, q: OriginalORF) \
+        -> Optional[defect.MutatedStopCodon]:
+
+    if len(q.region_nucleotides) == 0:
+        return None
+
+    if best_match.distance > e.max_distance or \
+       check_reading_frame_insertions(check_distance=check_distance, best_match=best_match, e=e, q=q) or \
+       check_reading_frame_deletions(e=e, q=q) or \
+       check_reading_frame_shift(best_match=best_match):
+
+        if not best_match.ends_properly:
+            return defect.MutatedStopCodon(e=e, q=q)
+
+    return None
+
+
 def check_reading_frame_distance(check_distance: bool, best_match: MappedORF, e: OriginalORF, q: OriginalORF) \
         -> Optional[defect.SequenceDivergence]:
 
@@ -475,7 +507,6 @@ def check_reading_frame(check_distance: bool,
         -> Tuple[List[MappedORF], List[defect.Defect]]:
 
     sequence = aligned_sequence.this
-    reference = aligned_sequence.reference
     errors = []
     matches = []
 
@@ -489,10 +520,12 @@ def check_reading_frame(check_distance: bool,
         matches.append(best_match)
         q = best_match.query
 
-        add_error(check_reading_frame_shift(reference, sequence=sequence, best_match=best_match))
+        add_error(check_reading_frame_shift(best_match=best_match))
         add_error(check_reading_frame_deletions(e=e, q=q))
         add_error(check_reading_frame_insertions(check_distance, best_match, e=e, q=q))
         add_error(check_reading_frame_distance(check_distance, best_match, e=e, q=q))
+        add_error(check_reading_frame_start(check_distance, best_match, e=e, q=q))
+        add_error(check_reading_frame_stop(check_distance, best_match, e=e, q=q))
 
     return matches, errors
 
