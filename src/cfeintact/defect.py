@@ -64,7 +64,7 @@ class SequenceDivergence(ORFDefect):
     def __str__(self) -> str:
         ex_dist = float(round(self.e.max_distance, 5))
         it_dist = float(round(self.distance, 5))
-        return (f"ORF {self.e.name!r} exceeds maximum distance tolerance."
+        return (f"ORF {self.e.name!r} exceeds maximum distance tolerance. "
                 f"It is {it_dist} units of distance away from its reference ORF's aminoacid sequence"
                 f" with max tolerance of {ex_dist}.")
 

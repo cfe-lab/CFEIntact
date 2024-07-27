@@ -15,7 +15,7 @@
         {
             "qseqid": "KX505501.1",
             "error": "SequenceDivergence",
-            "message": "ORF 'pol' exceeds maximum distance tolerance.It is 2.08408 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.88345.",
+            "message": "ORF 'pol' exceeds maximum distance tolerance. It is 2.08408 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.88345.",
             "orf": "pol"
         },
         {
@@ -33,7 +33,7 @@
         {
             "qseqid": "KX505501.1",
             "error": "SequenceDivergence",
-            "message": "ORF 'env' exceeds maximum distance tolerance.It is 2.11186 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.35595.",
+            "message": "ORF 'env' exceeds maximum distance tolerance. It is 2.11186 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.35595.",
             "orf": "env"
         },
         {
@@ -51,7 +51,7 @@
         {
             "qseqid": "KX505501.1",
             "error": "SequenceDivergence",
-            "message": "ORF 'vif' exceeds maximum distance tolerance.It is 2.04883 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.78802.",
+            "message": "ORF 'vif' exceeds maximum distance tolerance. It is 2.04883 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.78802.",
             "orf": "vif"
         },
         {
@@ -69,7 +69,7 @@
         {
             "qseqid": "KX505501.1",
             "error": "SequenceDivergence",
-            "message": "ORF 'vpr' exceeds maximum distance tolerance.It is 2.00365 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.58981.",
+            "message": "ORF 'vpr' exceeds maximum distance tolerance. It is 2.00365 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.58981.",
             "orf": "vpr"
         },
         {
@@ -87,7 +87,7 @@
         {
             "qseqid": "KX505501.1",
             "error": "SequenceDivergence",
-            "message": "ORF 'tat_exon1' exceeds maximum distance tolerance.It is 1.99763 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.85696.",
+            "message": "ORF 'tat_exon1' exceeds maximum distance tolerance. It is 1.99763 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.85696.",
             "orf": "tat_exon1"
         },
         {
@@ -105,7 +105,7 @@
         {
             "qseqid": "KX505501.1",
             "error": "SequenceDivergence",
-            "message": "ORF 'rev_exon1' exceeds maximum distance tolerance.It is 2.05781 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.92308.",
+            "message": "ORF 'rev_exon1' exceeds maximum distance tolerance. It is 2.05781 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.92308.",
             "orf": "rev_exon1"
         },
         {
@@ -123,7 +123,7 @@
         {
             "qseqid": "KX505501.1",
             "error": "SequenceDivergence",
-            "message": "ORF 'vpu' exceeds maximum distance tolerance.It is 2.044 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.07949.",
+            "message": "ORF 'vpu' exceeds maximum distance tolerance. It is 2.044 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.07949.",
             "orf": "vpu"
         },
         {
@@ -141,7 +141,7 @@
         {
             "qseqid": "KX505501.1",
             "error": "SequenceDivergence",
-            "message": "ORF 'tat_exon2' exceeds maximum distance tolerance.It is 1.93488 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.18333.",
+            "message": "ORF 'tat_exon2' exceeds maximum distance tolerance. It is 1.93488 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.18333.",
             "orf": "tat_exon2"
         },
         {
@@ -159,7 +159,7 @@
         {
             "qseqid": "KX505501.1",
             "error": "SequenceDivergence",
-            "message": "ORF 'rev_exon2' exceeds maximum distance tolerance.It is 2.0344 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.75773.",
+            "message": "ORF 'rev_exon2' exceeds maximum distance tolerance. It is 2.0344 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.75773.",
             "orf": "rev_exon2"
         },
         {
@@ -177,7 +177,7 @@
         {
             "qseqid": "KX505501.1",
             "error": "SequenceDivergence",
-            "message": "ORF 'nef' exceeds maximum distance tolerance.It is 2.0371 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.34148.",
+            "message": "ORF 'nef' exceeds maximum distance tolerance. It is 2.0371 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.34148.",
             "orf": "nef"
         },
         {
@@ -215,7 +215,7 @@
         {
             "qseqid": "MN691959",
             "error": "SequenceDivergence",
-            "message": "ORF 'vpu' exceeds maximum distance tolerance.It is 1.70488 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.07949.",
+            "message": "ORF 'vpu' exceeds maximum distance tolerance. It is 1.70488 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.07949.",
             "orf": "vpu"
         },
         {
@@ -259,7 +259,7 @@
         {
             "qseqid": "MN692074",
             "error": "SequenceDivergence",
-            "message": "ORF 'env' exceeds maximum distance tolerance.It is 2.05571 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.35595.",
+            "message": "ORF 'env' exceeds maximum distance tolerance. It is 2.05571 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.35595.",
             "orf": "env"
         },
         {
@@ -277,7 +277,7 @@
         {
             "qseqid": "MN692074",
             "error": "SequenceDivergence",
-            "message": "ORF 'vif' exceeds maximum distance tolerance.It is 1.99787 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.78802.",
+            "message": "ORF 'vif' exceeds maximum distance tolerance. It is 1.99787 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.78802.",
             "orf": "vif"
         },
         {
@@ -295,7 +295,7 @@
         {
             "qseqid": "MN692074",
             "error": "SequenceDivergence",
-            "message": "ORF 'vpr' exceeds maximum distance tolerance.It is 1.9951 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.58981.",
+            "message": "ORF 'vpr' exceeds maximum distance tolerance. It is 1.9951 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.58981.",
             "orf": "vpr"
         },
         {
@@ -313,7 +313,7 @@
         {
             "qseqid": "MN692074",
             "error": "SequenceDivergence",
-            "message": "ORF 'tat_exon1' exceeds maximum distance tolerance.It is 1.94052 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.85696.",
+            "message": "ORF 'tat_exon1' exceeds maximum distance tolerance. It is 1.94052 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.85696.",
             "orf": "tat_exon1"
         },
         {
@@ -325,7 +325,7 @@
         {
             "qseqid": "MN692074",
             "error": "SequenceDivergence",
-            "message": "ORF 'rev_exon1' exceeds maximum distance tolerance.It is 2.03711 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.92308.",
+            "message": "ORF 'rev_exon1' exceeds maximum distance tolerance. It is 2.03711 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.92308.",
             "orf": "rev_exon1"
         },
         {
@@ -343,7 +343,7 @@
         {
             "qseqid": "MN692074",
             "error": "SequenceDivergence",
-            "message": "ORF 'vpu' exceeds maximum distance tolerance.It is 2.00052 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.07949.",
+            "message": "ORF 'vpu' exceeds maximum distance tolerance. It is 2.00052 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.07949.",
             "orf": "vpu"
         },
         {
@@ -361,7 +361,7 @@
         {
             "qseqid": "MN692074",
             "error": "SequenceDivergence",
-            "message": "ORF 'tat_exon2' exceeds maximum distance tolerance.It is 2.12432 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.18333.",
+            "message": "ORF 'tat_exon2' exceeds maximum distance tolerance. It is 2.12432 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.18333.",
             "orf": "tat_exon2"
         },
         {
@@ -379,7 +379,7 @@
         {
             "qseqid": "MN692074",
             "error": "SequenceDivergence",
-            "message": "ORF 'rev_exon2' exceeds maximum distance tolerance.It is 2.07826 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.75773.",
+            "message": "ORF 'rev_exon2' exceeds maximum distance tolerance. It is 2.07826 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.75773.",
             "orf": "rev_exon2"
         },
         {
@@ -397,7 +397,7 @@
         {
             "qseqid": "MN692074",
             "error": "SequenceDivergence",
-            "message": "ORF 'nef' exceeds maximum distance tolerance.It is 2.00372 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.34148.",
+            "message": "ORF 'nef' exceeds maximum distance tolerance. It is 2.00372 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.34148.",
             "orf": "nef"
         },
         {
