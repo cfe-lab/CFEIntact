@@ -21,37 +21,37 @@
         {
             "qseqid": "KX505501.1",
             "error": "FrameshiftInOrf",
-            "message": "ORF 'env' at 1-1824 contains out of frame indels that impact 1697 positions.",
+            "message": "ORF 'env' at 1600-1824 contains out of frame indels that impact 1689 positions.",
             "orf": "env"
         },
         {
             "qseqid": "KX505501.1",
-            "error": "InternalStopInOrf",
-            "message": "ORF 'env' at 1-1824 contains an internal stop codon at 100.",
+            "error": "DeletionInOrf",
+            "message": "ORF 'env' exceeds maximum deletion tolerance. Contains 2346 deletions with max tolerance of 54 deletions.",
             "orf": "env"
         },
         {
             "qseqid": "KX505501.1",
             "error": "SequenceDivergence",
-            "message": "ORF 'env' exceeds maximum distance tolerance.It is 1.98886 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.35595.",
+            "message": "ORF 'env' exceeds maximum distance tolerance.It is 2.11186 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.35595.",
             "orf": "env"
         },
         {
             "qseqid": "KX505501.1",
             "error": "FrameshiftInOrf",
-            "message": "ORF 'vif' at 1-1824 contains out of frame indels that impact 956 positions.",
+            "message": "ORF 'vif' at 1600-1824 contains out of frame indels that impact 393 positions.",
             "orf": "vif"
         },
         {
             "qseqid": "KX505501.1",
-            "error": "InsertionInOrf",
-            "message": "ORF 'vif' exceeds maximum insertion tolerance. Contains 909 insertions with max tolerance of 9 insertions.",
+            "error": "DeletionInOrf",
+            "message": "ORF 'vif' exceeds maximum deletion tolerance. Contains 354 deletions with max tolerance of 12 deletions.",
             "orf": "vif"
         },
         {
             "qseqid": "KX505501.1",
             "error": "SequenceDivergence",
-            "message": "ORF 'vif' exceeds maximum distance tolerance.It is 2.01571 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.78802.",
+            "message": "ORF 'vif' exceeds maximum distance tolerance.It is 2.04883 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.78802.",
             "orf": "vif"
         },
         {
@@ -75,37 +75,37 @@
         {
             "qseqid": "KX505501.1",
             "error": "FrameshiftInOrf",
-            "message": "ORF 'tat_exon1' at 1578-1746 contains out of frame indels that impact 111 positions.",
+            "message": "ORF 'tat_exon1' at 1307-1746 contains out of frame indels that impact 146 positions.",
             "orf": "tat_exon1"
         },
         {
             "qseqid": "KX505501.1",
             "error": "DeletionInOrf",
-            "message": "ORF 'tat_exon1' exceeds maximum deletion tolerance. Contains 180 deletions with max tolerance of 0 deletions.",
+            "message": "ORF 'tat_exon1' exceeds maximum deletion tolerance. Contains 189 deletions with max tolerance of 0 deletions.",
             "orf": "tat_exon1"
         },
         {
             "qseqid": "KX505501.1",
             "error": "SequenceDivergence",
-            "message": "ORF 'tat_exon1' exceeds maximum distance tolerance.It is 1.98586 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.85696.",
+            "message": "ORF 'tat_exon1' exceeds maximum distance tolerance.It is 1.99763 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.85696.",
             "orf": "tat_exon1"
         },
         {
             "qseqid": "KX505501.1",
             "error": "FrameshiftInOrf",
-            "message": "ORF 'rev_exon1' at 1578-1746 contains out of frame indels that impact 34 positions.",
+            "message": "ORF 'rev_exon1' at 1600-1746 contains out of frame indels that impact 109 positions.",
             "orf": "rev_exon1"
         },
         {
             "qseqid": "KX505501.1",
-            "error": "DeletionInOrf",
-            "message": "ORF 'rev_exon1' exceeds maximum deletion tolerance. Contains 42 deletions with max tolerance of 0 deletions.",
+            "error": "InsertionInOrf",
+            "message": "ORF 'rev_exon1' exceeds maximum insertion tolerance. Contains 69 insertions with max tolerance of 0 insertions.",
             "orf": "rev_exon1"
         },
         {
             "qseqid": "KX505501.1",
             "error": "SequenceDivergence",
-            "message": "ORF 'rev_exon1' exceeds maximum distance tolerance.It is 2.00154 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.92308.",
+            "message": "ORF 'rev_exon1' exceeds maximum distance tolerance.It is 2.05781 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.92308.",
             "orf": "rev_exon1"
         },
         {
@@ -165,19 +165,19 @@
         {
             "qseqid": "KX505501.1",
             "error": "FrameshiftInOrf",
-            "message": "ORF 'nef' at 1-1824 contains out of frame indels that impact 998 positions.",
+            "message": "ORF 'nef' at 1600-1824 contains out of frame indels that impact 411 positions.",
             "orf": "nef"
         },
         {
             "qseqid": "KX505501.1",
-            "error": "InsertionInOrf",
-            "message": "ORF 'nef' exceeds maximum insertion tolerance. Contains 867 insertions with max tolerance of 54 insertions.",
+            "error": "DeletionInOrf",
+            "message": "ORF 'nef' exceeds maximum deletion tolerance. Contains 396 deletions with max tolerance of 48 deletions.",
             "orf": "nef"
         },
         {
             "qseqid": "KX505501.1",
             "error": "SequenceDivergence",
-            "message": "ORF 'nef' exceeds maximum distance tolerance.It is 2.01097 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.34148.",
+            "message": "ORF 'nef' exceeds maximum distance tolerance.It is 2.0371 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.34148.",
             "orf": "nef"
         },
         {
@@ -247,19 +247,19 @@
         {
             "qseqid": "MN692074",
             "error": "FrameshiftInOrf",
-            "message": "ORF 'env' at 3-4115 contains out of frame indels that impact 1539 positions.",
+            "message": "ORF 'env' at 3618-4115 contains out of frame indels that impact 1689 positions.",
             "orf": "env"
         },
         {
             "qseqid": "MN692074",
-            "error": "InternalStopInOrf",
-            "message": "ORF 'env' at 3-4115 contains an internal stop codon at 330.",
+            "error": "DeletionInOrf",
+            "message": "ORF 'env' exceeds maximum deletion tolerance. Contains 2073 deletions with max tolerance of 54 deletions.",
             "orf": "env"
         },
         {
             "qseqid": "MN692074",
             "error": "SequenceDivergence",
-            "message": "ORF 'env' exceeds maximum distance tolerance.It is 1.96691 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.35595.",
+            "message": "ORF 'env' exceeds maximum distance tolerance.It is 2.05571 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.35595.",
             "orf": "env"
         },
         {
@@ -385,19 +385,19 @@
         {
             "qseqid": "MN692074",
             "error": "FrameshiftInOrf",
-            "message": "ORF 'nef' at 1-4059 contains out of frame indels that impact 929 positions.",
+            "message": "ORF 'nef' at 3618-4115 contains out of frame indels that impact 361 positions.",
             "orf": "nef"
         },
         {
             "qseqid": "MN692074",
-            "error": "InsertionInOrf",
-            "message": "ORF 'nef' exceeds maximum insertion tolerance. Contains 882 insertions with max tolerance of 54 insertions.",
+            "error": "DeletionInOrf",
+            "message": "ORF 'nef' exceeds maximum deletion tolerance. Contains 123 deletions with max tolerance of 48 deletions.",
             "orf": "nef"
         },
         {
             "qseqid": "MN692074",
             "error": "SequenceDivergence",
-            "message": "ORF 'nef' exceeds maximum distance tolerance.It is 1.99384 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.34148.",
+            "message": "ORF 'nef' exceeds maximum distance tolerance.It is 2.00372 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.34148.",
             "orf": "nef"
         },
         {

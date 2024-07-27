@@ -28,60 +28,78 @@ def find_closest(aminoacids, start, direction, target):
 
 
 def find_candidate_positions(aligned_sequence: AlignedSequence, e: OriginalORF) -> Iterable[MappedORF]:
-    q_start = aligned_sequence.coordinate_mapping.ref_to_query.right_min(e.start) or 0
-    q_end = aligned_sequence.coordinate_mapping.ref_to_query.left_max(e.end) or 0
-    assert q_start is not None
-    assert q_end is not None
+    q_start = aligned_sequence.coordinate_mapping.ref_to_query.right_min(e.start)
+    q_end = aligned_sequence.coordinate_mapping.ref_to_query.left_max(e.end)
+    if q_start is None:
+        q_start = 0
+    if q_end is None:
+        q_end = len(aligned_sequence.this.seq) - 1
+
     visited_set = set()
     query_aminoacids_table = get_query_aminoacids_table(aligned_sequence.this)
+    initial_frame = q_start % 3
 
-    for frame in range(3):
+    for frame_shift in range(3):
+        q_start_in_frame = q_start + frame_shift
+        q_end_in_frame = q_end + frame_shift
+        q_start_in_aa = (q_start - initial_frame) / 3
+        q_end_in_aa = (q_end - 2 - initial_frame) / 3
+        q_start_in_aa = int(q_start_in_aa)
+        q_end_in_aa = floor(q_end_in_aa)
+        frame = (initial_frame + frame_shift) % 3
         aminoacids = query_aminoacids_table[frame]
-        for start_direction in [-1, +1]:
-            for end_direction in [-1, +1]:
-                if e.has_start_codon:
-                    q_start_a = floor((q_start - frame) / 3)
-                    closest_start_a = find_closest(aminoacids, q_start_a, start_direction, 'M')
-                    closest_start = (closest_start_a * 3) + frame
-                else:
-                    closest_start = q_start
-                    closest_start_a = floor(closest_start / 3)
 
-                if e.has_stop_codon:
-                    q_end_a = floor((q_end - frame) / 3)
-                    closest_end_a = find_closest(aminoacids, q_end_a, end_direction, '*')
-                    closest_end = (closest_end_a * 3) + 3 + frame - 1
-                else:
-                    closest_end = q_end
-                    closest_end_a = floor(closest_end / 3) + 1
+        if e.has_start_codon:
+            closest_start_in_aa = find_closest(aminoacids, q_start_in_aa, -1, 'M')
+            closest_start = (closest_start_in_aa * 3) + frame
+        else:
+            closest_start = q_start
+            closest_start_in_aa = floor(closest_start / 3)
 
-                if (closest_start, closest_end) in visited_set:
-                    continue
-                else:
-                    visited_set.add((closest_start, closest_end))
+        if e.has_stop_codon:
+            closest_end_in_aa = find_closest(aminoacids, q_end_in_aa, +1, '*')
+            closest_end = (closest_end_in_aa * 3) + 3 + frame - 1
+        else:
+            closest_end = q_end
+            closest_end_in_aa = floor(closest_end / 3) + 1
 
-                got_nucleotides = str(aligned_sequence.this.seq[closest_start:closest_end + 1])
-                got_aminoacids = translate_to_aminoacids(got_nucleotides)
-                got_protein = get_biggest_protein(e.has_start_codon, got_aminoacids)
+        if (closest_start, closest_end) in visited_set:
+            continue
+        else:
+            visited_set.add((closest_start, closest_end))
 
-                orf = OriginalORF(
-                    name=e.name,
-                    start=closest_start,
-                    end=closest_end,
-                    nucleotides=got_nucleotides,
-                    aminoacids=got_aminoacids,
-                    protein=got_protein,
-                    max_deletions=e.max_deletions,
-                    max_insertions=e.max_insertions,
-                    max_distance=e.max_distance,
-                    is_small=e.is_small,
-                )
+        region_nucleotides = str(aligned_sequence.this.seq[q_start_in_frame:q_end_in_frame + 1])
+        region_aminoacids = translate_to_aminoacids(region_nucleotides)
+        protein_nucleotides = str(aligned_sequence.this.seq[closest_start:closest_end + 1])
+        protein_aminoacids = translate_to_aminoacids(protein_nucleotides)
+        found_protein = get_biggest_protein(e.has_start_codon, protein_aminoacids)
+        if found_protein:
+            protein, protein_aa_start, protein_aa_end = found_protein
+        else:
+            protein = ""
 
-                yield MappedORF(
-                    reference=e,
-                    query=orf,
-                    orientation="forward",
-                )
+        orf = OriginalORF(
+            name=e.name,
+            start=closest_start,
+            end=closest_end,
+            nucleotides=protein_nucleotides,
+            aminoacids=protein_aminoacids,
+            protein=protein,
+            region_nucleotides=region_nucleotides,
+            region_aminoacids=region_aminoacids,
+            max_deletions=e.max_deletions,
+            max_insertions=e.max_insertions,
+            max_distance=e.max_distance,
+            is_small=e.is_small,
+        )
+
+        mapped = MappedORF(
+            reference=e,
+            query=orf,
+            orientation="forward",
+        )
+
+        yield mapped
 
 
 FIND_ORF_CACHE: Dict[Tuple[str, str, str], MappedORF] = {}

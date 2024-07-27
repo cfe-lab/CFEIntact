@@ -3,31 +3,31 @@
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
             "error": "FrameshiftInOrf",
-            "message": "ORF 'vpr' at 5559-5843 contains out of frame indels that impact 61 positions.",
+            "message": "ORF 'vpr' at 5559-5855 contains out of frame indels that impact 61 positions.",
             "orf": "vpr"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
             "error": "InternalStopInOrf",
-            "message": "ORF 'vpr' at 5559-5843 contains an internal stop codon at 5793.",
+            "message": "ORF 'vpr' at 5559-5855 contains an internal stop codon at 5793.",
             "orf": "vpr"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
             "error": "FrameshiftInOrf",
-            "message": "ORF 'vpu' at 6260-6310 contains out of frame indels that impact 132 positions.",
+            "message": "ORF 'vpu' at 5831-6310 contains out of frame indels that impact 136 positions.",
             "orf": "vpu"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
-            "error": "DeletionInOrf",
-            "message": "ORF 'vpu' exceeds maximum deletion tolerance. Contains 198 deletions with max tolerance of 6 deletions.",
+            "error": "InternalStopInOrf",
+            "message": "ORF 'vpu' at 5831-6310 contains an internal stop codon at 6047.",
             "orf": "vpu"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
             "error": "SequenceDivergence",
-            "message": "ORF 'vpu' exceeds maximum distance tolerance.It is 1.78659 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.07949.",
+            "message": "ORF 'vpu' exceeds maximum distance tolerance.It is 2.00873 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.07949.",
             "orf": "vpu"
         },
         {
@@ -60,7 +60,7 @@
         {
             "qseqid": "small-sequence",
             "error": "FrameshiftInOrf",
-            "message": "ORF 'gag' at 1-21 contains out of frame indels that impact 1009 positions.",
+            "message": "ORF 'gag' at 2-19 contains out of frame indels that impact 1008 positions.",
             "orf": "gag"
         },
         {
@@ -78,7 +78,7 @@
         {
             "qseqid": "small-sequence",
             "error": "FrameshiftInOrf",
-            "message": "ORF 'pol' at 8-21 contains out of frame indels that impact 2018 positions.",
+            "message": "ORF 'pol' at 8-19 contains out of frame indels that impact 2018 positions.",
             "orf": "pol"
         },
         {
@@ -610,7 +610,7 @@
         {
             "qseqid": "empty-sequence",
             "error": "FrameshiftInOrf",
-            "message": "ORF 'tat_exon1' at 1-1 contains out of frame indels that impact 144 positions.",
+            "message": "ORF 'tat_exon1' at 1-0 contains out of frame indels that impact 144 positions.",
             "orf": "tat_exon1"
         },
         {
@@ -628,7 +628,7 @@
         {
             "qseqid": "empty-sequence",
             "error": "FrameshiftInOrf",
-            "message": "ORF 'rev_exon1' at 1-1 contains out of frame indels that impact 51 positions.",
+            "message": "ORF 'rev_exon1' at 1-0 contains out of frame indels that impact 51 positions.",
             "orf": "rev_exon1"
         },
         {
@@ -834,7 +834,7 @@
         {
             "qseqid": "empty-sequence2",
             "error": "FrameshiftInOrf",
-            "message": "ORF 'tat_exon1' at 1-1 contains out of frame indels that impact 144 positions.",
+            "message": "ORF 'tat_exon1' at 1-0 contains out of frame indels that impact 144 positions.",
             "orf": "tat_exon1"
         },
         {
@@ -852,7 +852,7 @@
         {
             "qseqid": "empty-sequence2",
             "error": "FrameshiftInOrf",
-            "message": "ORF 'rev_exon1' at 1-1 contains out of frame indels that impact 51 positions.",
+            "message": "ORF 'rev_exon1' at 1-0 contains out of frame indels that impact 51 positions.",
             "orf": "rev_exon1"
         },
         {
@@ -969,7 +969,7 @@
         {
             "qseqid": "small-sequence-with-lowercases",
             "error": "FrameshiftInOrf",
-            "message": "ORF 'gag' at 1-21 contains out of frame indels that impact 1009 positions.",
+            "message": "ORF 'gag' at 2-19 contains out of frame indels that impact 1008 positions.",
             "orf": "gag"
         },
         {
@@ -987,7 +987,7 @@
         {
             "qseqid": "small-sequence-with-lowercases",
             "error": "FrameshiftInOrf",
-            "message": "ORF 'pol' at 8-21 contains out of frame indels that impact 2018 positions.",
+            "message": "ORF 'pol' at 8-19 contains out of frame indels that impact 2018 positions.",
             "orf": "pol"
         },
         {
@@ -1200,13 +1200,13 @@
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "error": "FrameshiftInOrf",
-            "message": "ORF 'gag' at 319-2340 contains out of frame indels that impact 988 positions.",
+            "message": "ORF 'gag' at 319-2367 contains out of frame indels that impact 988 positions.",
             "orf": "gag"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "error": "InternalStopInOrf",
-            "message": "ORF 'gag' at 319-2340 contains an internal stop codon at 385.",
+            "message": "ORF 'gag' at 319-2367 contains an internal stop codon at 385.",
             "orf": "gag"
         },
         {
@@ -1218,31 +1218,31 @@
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "error": "FrameshiftInOrf",
-            "message": "ORF 'pol' at 2072-5365 contains out of frame indels that impact 2026 positions.",
+            "message": "ORF 'pol' at 2072-5382 contains out of frame indels that impact 2026 positions.",
             "orf": "pol"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "error": "InternalStopInOrf",
-            "message": "ORF 'pol' at 2072-5365 contains an internal stop codon at 2168.",
+            "message": "ORF 'pol' at 2072-5382 contains an internal stop codon at 2168.",
             "orf": "pol"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "error": "SequenceDivergence",
-            "message": "ORF 'pol' exceeds maximum distance tolerance.It is 1.96775 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.88345.",
+            "message": "ORF 'pol' exceeds maximum distance tolerance.It is 1.9686 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.88345.",
             "orf": "pol"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "error": "FrameshiftInOrf",
-            "message": "ORF 'env' at 6217-8802 contains out of frame indels that impact 1737 positions.",
+            "message": "ORF 'env' at 6217-8841 contains out of frame indels that impact 1737 positions.",
             "orf": "env"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "error": "InternalStopInOrf",
-            "message": "ORF 'env' at 6217-8802 contains an internal stop codon at 6292.",
+            "message": "ORF 'env' at 6217-8841 contains an internal stop codon at 6292.",
             "orf": "env"
         },
         {
@@ -1254,13 +1254,13 @@
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "error": "FrameshiftInOrf",
-            "message": "ORF 'vif' at 5294-5818 contains out of frame indels that impact 384 positions.",
+            "message": "ORF 'vif' at 5294-5887 contains out of frame indels that impact 384 positions.",
             "orf": "vif"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "error": "InternalStopInOrf",
-            "message": "ORF 'vif' at 5294-5818 contains an internal stop codon at 5363.",
+            "message": "ORF 'vif' at 5294-5887 contains an internal stop codon at 5363.",
             "orf": "vif"
         },
         {
@@ -1272,13 +1272,13 @@
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "error": "FrameshiftInOrf",
-            "message": "ORF 'vpr' at 5691-5918 contains out of frame indels that impact 196 positions.",
+            "message": "ORF 'vpr' at 5691-6080 contains out of frame indels that impact 196 positions.",
             "orf": "vpr"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "error": "InternalStopInOrf",
-            "message": "ORF 'vpr' at 5691-5918 contains an internal stop codon at 5706.",
+            "message": "ORF 'vpr' at 5691-6080 contains an internal stop codon at 5706.",
             "orf": "vpr"
         },
         {
@@ -1290,19 +1290,19 @@
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "error": "FrameshiftInOrf",
-            "message": "ORF 'tat_exon1' at 5956-6065 contains out of frame indels that impact 119 positions.",
+            "message": "ORF 'tat_exon1' at 5865-6065 contains out of frame indels that impact 144 positions.",
             "orf": "tat_exon1"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "error": "DeletionInOrf",
-            "message": "ORF 'tat_exon1' exceeds maximum deletion tolerance. Contains 147 deletions with max tolerance of 0 deletions.",
+            "message": "ORF 'tat_exon1' exceeds maximum deletion tolerance. Contains 165 deletions with max tolerance of 0 deletions.",
             "orf": "tat_exon1"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "error": "SequenceDivergence",
-            "message": "ORF 'tat_exon1' exceeds maximum distance tolerance.It is 2.00112 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.85696.",
+            "message": "ORF 'tat_exon1' exceeds maximum distance tolerance.It is 2.00183 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.85696.",
             "orf": "tat_exon1"
         },
         {
@@ -1326,13 +1326,13 @@
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "error": "FrameshiftInOrf",
-            "message": "ORF 'vpu' at 5438-6337 contains out of frame indels that impact 162 positions.",
+            "message": "ORF 'vpu' at 5438-6382 contains out of frame indels that impact 162 positions.",
             "orf": "vpu"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "error": "InternalStopInOrf",
-            "message": "ORF 'vpu' at 5438-6337 contains an internal stop codon at 5447.",
+            "message": "ORF 'vpu' at 5438-6382 contains an internal stop codon at 5447.",
             "orf": "vpu"
         },
         {
@@ -1380,13 +1380,13 @@
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "error": "FrameshiftInOrf",
-            "message": "ORF 'nef' at 8825-9553 contains out of frame indels that impact 402 positions.",
+            "message": "ORF 'nef' at 8825-9589 contains out of frame indels that impact 402 positions.",
             "orf": "nef"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "error": "InternalStopInOrf",
-            "message": "ORF 'nef' at 8825-9553 contains an internal stop codon at 8888.",
+            "message": "ORF 'nef' at 8825-9589 contains an internal stop codon at 8888.",
             "orf": "nef"
         },
         {

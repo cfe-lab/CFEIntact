@@ -33,3 +33,17 @@ class MappedORF:
     @cached_property
     def indel_impact(self) -> int:
         return get_indel_impact(self.nuc_alignment[0], self.nuc_alignment[1])
+
+    @cached_property
+    def starts_properly(self) -> bool:
+        if self.reference.has_start_codon:
+            return self.query.has_start_codon
+        else:
+            return True
+
+    @cached_property
+    def ends_properly(self) -> bool:
+        if self.reference.has_stop_codon:
+            return self.query.has_stop_codon
+        else:
+            return True

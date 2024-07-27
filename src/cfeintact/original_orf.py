@@ -13,12 +13,14 @@ class OriginalORF:
     nucleotides: str
     aminoacids: str
     protein: str
+    region_nucleotides: str
+    region_aminoacids: str
     is_small: bool
 
     @cached_property
     def has_start_codon(self) -> bool:
-        return self.aminoacids.startswith("M")
+        return self.region_aminoacids.startswith("M")
 
     @cached_property
     def has_stop_codon(self) -> bool:
-        return self.aminoacids.endswith("*")
+        return self.region_aminoacids.endswith("*")

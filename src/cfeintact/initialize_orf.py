@@ -22,6 +22,8 @@ def initialize_orf(aligned_sequence: AlignedSequence, name: str,
             nucleotides=nucleotides,
             aminoacids=aminoacids,
             protein=protein,
+            region_nucleotides=nucleotides,
+            region_aminoacids=aminoacids,
             is_small=is_small,
         )
 
