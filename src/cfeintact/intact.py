@@ -36,7 +36,6 @@ class FoundORF:
     distance: float
     indel_impact: int
     protein: str
-    aminoacids: str
     nucleotides: str
     subtype_start: int
     subtype_end: int
@@ -864,8 +863,7 @@ def check(working_dir: str,
             o.orientation,
             o.distance,
             o.indel_impact,
-            str(o.query.protein),
-            aminoacids=str(o.query.aminoacids),
+            protein=str(o.query.protein),
             nucleotides=str(o.query.nucleotides),
             subtype_start=o.reference.start,
             subtype_end=o.reference.end,
