@@ -3,31 +3,25 @@
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
             "error": "FrameshiftInOrf",
-            "message": "ORF 'vpr' at 5559-5855 contains out of frame indels that impact 61 positions.",
+            "message": "ORF 'vpr' at 5559-5850 contains out of frame indels that impact 61 positions.",
             "orf": "vpr"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
             "error": "InternalStopInOrf",
-            "message": "ORF 'vpr' at 5559-5855 contains an internal stop codon at 5793.",
+            "message": "ORF 'vpr' at 5559-5850 contains an internal stop codon at 5793.",
             "orf": "vpr"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
             "error": "MutatedStopCodon",
-            "message": "ORF 'vpr' has a mutated stop codon: 'G--'.",
+            "message": "ORF 'vpr' has a mutated stop codon: 'GAC'.",
             "orf": "vpr"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
-            "error": "FrameshiftInOrf",
-            "message": "ORF 'vpu' at 5831-6310 contains out of frame indels that impact 136 positions.",
-            "orf": "vpu"
-        },
-        {
-            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
-            "error": "InternalStopInOrf",
-            "message": "ORF 'vpu' at 5831-6310 contains an internal stop codon at 6047.",
+            "error": "DeletionInOrf",
+            "message": "ORF 'vpu' exceeds maximum deletion tolerance. Contains 30 deletions with max tolerance of 6 deletions.",
             "orf": "vpu"
         },
         {

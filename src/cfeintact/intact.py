@@ -24,6 +24,7 @@ from cfeintact.original_orf import OriginalORF
 from cfeintact.mapped_orf import MappedORF
 from cfeintact.find_orf import find_orf
 from cfeintact.user_error import UserError
+from cfeintact.translate_to_aminoacids import translate_to_aminoacids
 
 
 @dataclass(frozen=True)
@@ -454,10 +455,11 @@ def check_reading_frame_insertions(check_distance: bool, best_match: MappedORF, 
     return None
 
 
-def check_reading_frame_start(check_distance: bool, best_match: MappedORF, e: OriginalORF, q: OriginalORF) \
+def check_reading_frame_start(sequence: SeqRecord, check_distance: bool, best_match: MappedORF,
+                              e: OriginalORF, q: OriginalORF) \
         -> Optional[defect.MutatedStartCodon]:
 
-    if len(q.region_nucleotides) == 0:
+    if len(q.nucleotides) == 0:
         return None
 
     if best_match.distance > e.max_distance or \
@@ -466,15 +468,17 @@ def check_reading_frame_start(check_distance: bool, best_match: MappedORF, e: Or
        check_reading_frame_shift(best_match=best_match):
 
         if not best_match.starts_properly:
-            return defect.MutatedStartCodon(e=e, q=q)
+            codon = str(sequence.seq[q.start:q.start + 2 + 1])
+            return defect.MutatedStartCodon(codon=codon, e=e, q=q)
 
     return None
 
 
-def check_reading_frame_stop(check_distance: bool, best_match: MappedORF, e: OriginalORF, q: OriginalORF) \
+def check_reading_frame_stop(sequence: SeqRecord, check_distance: bool, best_match: MappedORF,
+                             e: OriginalORF, q: OriginalORF) \
         -> Optional[defect.MutatedStopCodon]:
 
-    if len(q.region_nucleotides) == 0:
+    if len(q.nucleotides) == 0:
         return None
 
     if best_match.distance > e.max_distance or \
@@ -483,7 +487,14 @@ def check_reading_frame_stop(check_distance: bool, best_match: MappedORF, e: Ori
        check_reading_frame_shift(best_match=best_match):
 
         if not best_match.ends_properly:
-            return defect.MutatedStopCodon(e=e, q=q)
+            start = q.start + ((q.end - q.start) // 3) * 3
+            end = start + 2
+            codon = str(sequence.seq[start:end + 1])
+            if translate_to_aminoacids(codon) == '*':
+                end = q.end
+                codon = str(sequence.seq[start:end + 1])
+
+            return defect.MutatedStopCodon(codon=codon, e=e, q=q)
 
     return None
 
@@ -524,8 +535,8 @@ def check_reading_frame(check_distance: bool,
         add_error(check_reading_frame_deletions(e=e, q=q))
         add_error(check_reading_frame_insertions(check_distance, best_match, e=e, q=q))
         add_error(check_reading_frame_distance(check_distance, best_match, e=e, q=q))
-        add_error(check_reading_frame_start(check_distance, best_match, e=e, q=q))
-        add_error(check_reading_frame_stop(check_distance, best_match, e=e, q=q))
+        add_error(check_reading_frame_start(sequence, check_distance, best_match, e=e, q=q))
+        add_error(check_reading_frame_stop(sequence, check_distance, best_match, e=e, q=q))
 
     return matches, errors
 
@@ -854,8 +865,8 @@ def check(working_dir: str,
             o.distance,
             o.indel_impact,
             str(o.query.protein),
-            aminoacids=str(o.query.region_aminoacids),
-            nucleotides=str(o.query.region_nucleotides),
+            aminoacids=str(o.query.aminoacids),
+            nucleotides=str(o.query.nucleotides),
             subtype_start=o.reference.start,
             subtype_end=o.reference.end,
             subtype_aminoacids=str(o.reference.aminoacids),

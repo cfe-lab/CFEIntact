@@ -35,13 +35,14 @@ def find_candidate_positions(aligned_sequence: AlignedSequence, e: OriginalORF) 
     if q_end is None:
         q_end = len(aligned_sequence.this.seq) - 1
 
+    region_nucleotides = str(aligned_sequence.this.seq[q_start:q_end + 1])
+    region_aminoacids = translate_to_aminoacids(region_nucleotides)
+
     visited_set = set()
     query_aminoacids_table = get_query_aminoacids_table(aligned_sequence.this)
     initial_frame = q_start % 3
 
     for frame_shift in range(3):
-        q_start_in_frame = q_start + frame_shift
-        q_end_in_frame = q_end + frame_shift
         q_start_in_aa = (q_start - initial_frame) / 3
         q_end_in_aa = (q_end - 2 - initial_frame) / 3
         q_start_in_aa = int(q_start_in_aa)
@@ -68,8 +69,6 @@ def find_candidate_positions(aligned_sequence: AlignedSequence, e: OriginalORF) 
         else:
             visited_set.add((closest_start, closest_end))
 
-        region_nucleotides = str(aligned_sequence.this.seq[q_start_in_frame:q_end_in_frame + 1])
-        region_aminoacids = translate_to_aminoacids(region_nucleotides)
         protein_nucleotides = str(aligned_sequence.this.seq[closest_start:closest_end + 1])
         protein_aminoacids = translate_to_aminoacids(protein_nucleotides)
         found_protein = get_biggest_protein(e.has_start_codon, protein_aminoacids)
@@ -80,13 +79,11 @@ def find_candidate_positions(aligned_sequence: AlignedSequence, e: OriginalORF) 
 
         orf = OriginalORF(
             name=e.name,
-            start=closest_start,
-            end=closest_end,
-            nucleotides=protein_nucleotides,
-            aminoacids=protein_aminoacids,
+            start=q_start,
+            end=q_end,
+            nucleotides=region_nucleotides,
+            aminoacids=region_aminoacids,
             protein=protein,
-            region_nucleotides=region_nucleotides,
-            region_aminoacids=region_aminoacids,
             max_deletions=e.max_deletions,
             max_insertions=e.max_insertions,
             max_distance=e.max_distance,
