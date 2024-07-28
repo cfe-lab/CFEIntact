@@ -517,13 +517,13 @@ def check_reading_frame(check_distance: bool,
         -> Tuple[List[MappedORF], List[defect.Defect]]:
 
     sequence = aligned_sequence.this
-    errors = []
+    defects = []
     matches = []
 
     def add_error(defect):
         if defect:
             assert sequence.id is not None
-            errors.append(Defect(sequence.id, defect))
+            defects.append(Defect(sequence.id, defect))
 
     for e in expected:
         best_match = find_orf(aligned_sequence, e)
@@ -537,7 +537,7 @@ def check_reading_frame(check_distance: bool,
         add_error(check_reading_frame_start(sequence, check_distance, best_match, e=e, q=q))
         add_error(check_reading_frame_stop(sequence, check_distance, best_match, e=e, q=q))
 
-    return matches, errors
+    return matches, defects
 
 
 def iterate_sequences(input_file):
@@ -568,7 +568,7 @@ class OutputWriter:
         self.subtypes_path = os.path.join(working_dir, "subtypes.fasta")
         self.orf_path = os.path.join(working_dir, f"orfs.{fmt}")
         self.holistic_path = os.path.join(working_dir, f"holistic.{fmt}")
-        self.error_path = os.path.join(working_dir, f"errors.{fmt}")
+        self.error_path = os.path.join(working_dir, f"defects.{fmt}")
 
         self.subtypes = set()
 
@@ -579,12 +579,12 @@ class OutputWriter:
         self.subtypes_file = open(self.subtypes_path, 'w')
         self.orfs_file = open(self.orf_path, 'w')
         self.holistic_file = open(self.holistic_path, 'w')
-        self.errors_file = open(self.error_path, 'w')
+        self.defects_file = open(self.error_path, 'w')
 
         if self.fmt == "json":
             self.orfs = {}
             self.holistic = {}
-            self.errors = {}
+            self.defects = {}
         elif self.fmt == "csv":
             self.orfs_writer = csv.writer(self.orfs_file)
             self.orfs_header = ['qseqid'] + [field.name for field in dataclasses.fields(FoundORF)]
@@ -592,9 +592,9 @@ class OutputWriter:
             self.holistic_writer = csv.writer(self.holistic_file)
             self.holistic_header = ['qseqid'] + [field.name for field in dataclasses.fields(HolisticInfo)]
             self.holistic_writer.writerow(self.holistic_header)
-            self.errors_writer = csv.DictWriter(
-                self.errors_file, fieldnames=["qseqid", "error", "message", "orf"])
-            self.errors_writer.writeheader()
+            self.defects_writer = csv.DictWriter(
+                self.defects_file, fieldnames=["qseqid", "error", "message", "orf"])
+            self.defects_writer.writeheader()
 
         return self
 
@@ -602,12 +602,12 @@ class OutputWriter:
         if self.fmt == "json":
             json.dump(self.orfs, self.orfs_file, indent=4)
             json.dump(self.holistic, self.holistic_file, indent=4)
-            json.dump(self.errors, self.errors_file, indent=4)
+            json.dump(self.defects, self.defects_file, indent=4)
 
         self.subtypes_file.close()
         self.orfs_file.close()
         self.holistic_file.close()
-        self.errors_file.close()
+        self.defects_file.close()
 
         logger.info('Subtype sequences written to ' + self.subtypes_path)
         logger.info('ORFs for all sequences written to ' + self.orf_path)
@@ -622,7 +622,7 @@ class OutputWriter:
             SeqIO.write([subtype], self.subtypes_file, "fasta")
             self.subtypes_file.flush()
 
-        errors_dicts = [{
+        defects_dicts = [{
             "qseqid": d.qseqid,
             "error": d.error.__class__.__name__,
             "message": str(d.error),
@@ -632,15 +632,15 @@ class OutputWriter:
         if self.fmt == "json":
             self.orfs[sequence.id] = orfs
             self.holistic[sequence.id] = holistic
-            self.errors[sequence.id] = errors_dicts
+            self.defects[sequence.id] = defects_dicts
         elif self.fmt == "csv":
             for orf in orfs:
                 row = [(sequence.id if key == 'qseqid' else orf[key]) for key in self.orfs_header]
                 self.orfs_writer.writerow(row)
             self.holistic_writer.writerow(
                 [(sequence.id if key == 'qseqid' else holistic[key]) for key in self.holistic_header])
-            for error in errors_dicts:
-                self.errors_writer.writerow(error)
+            for error in defects_dicts:
+                self.defects_writer.writerow(error)
 
 
 def read_hxb2_orfs(aligned_subtype: AlignedSequence,
@@ -741,7 +741,7 @@ def check(working_dir: str,
         subtype_choices[str(sequence.id)] = sequence
 
     def analyse_single_sequence(writer, sequence, blast_rows):
-        sequence_errors = []
+        sequence_defects = []
         holistic = HolisticInfo()
 
         invalid_subsequences = find_invalid_subsequences(sequence)
@@ -753,7 +753,7 @@ def check(working_dir: str,
                     for subseq in invalid_subsequences
                 )
                 err = Defect(sequence.id, defect.UnknownNucleotide(error_details))
-                sequence_errors.append(err)
+                sequence_defects.append(err)
 
             seq = Seq.Seq(''.join(x for x in sequence.seq if x in VALID_DNA_CHARACTERS))
             sequence = SeqRecord(seq, id=sequence.id, name=sequence.name)
@@ -837,12 +837,12 @@ def check(working_dir: str,
 
         alignment = aligned_sequence.alignment
 
-        sequence_orfs, orf_errors = check_reading_frame(check_distance, aligned_sequence, forward_orfs)
-        sequence_errors.extend(orf_errors)
+        sequence_orfs, orf_defects = check_reading_frame(check_distance, aligned_sequence, forward_orfs)
+        sequence_defects.extend(orf_defects)
 
-        sequence_small_orfs, small_orf_errors = check_reading_frame(check_distance, aligned_sequence, small_orfs)
+        sequence_small_orfs, small_orf_defects = check_reading_frame(check_distance, aligned_sequence, small_orfs)
         if check_small_orfs:
-            sequence_errors.extend(small_orf_errors)
+            sequence_defects.extend(small_orf_defects)
 
         hxb2_found_orfs = [FoundORF(
             o.query.name,
@@ -864,7 +864,7 @@ def check(working_dir: str,
                                                      psi_locus,
                                                      const.PSI_ERROR_TOLERANCE)
             if missing_psi_locus is not None:
-                sequence_errors.append(missing_psi_locus)
+                sequence_defects.append(missing_psi_locus)
 
         if check_rre:
             missing_rre_locus = has_rev_response_element(alignment,
@@ -872,7 +872,7 @@ def check(working_dir: str,
                                                          const.RRE_ERROR_TOLERANCE
                                                          )
             if missing_rre_locus is not None:
-                sequence_errors.append(missing_rre_locus)
+                sequence_defects.append(missing_rre_locus)
 
         if check_major_splice_donor_site:
             mutated_splice_donor_site = has_mutated_major_splice_donor_site(
@@ -881,44 +881,44 @@ def check(working_dir: str,
                 msd_site_locus_end,
                 const.DEFAULT_MSD_SEQUENCE)
             if mutated_splice_donor_site is not None:
-                sequence_errors.append(mutated_splice_donor_site)
+                sequence_defects.append(mutated_splice_donor_site)
 
         if check_hypermut is not None:
             hypermutated = isHypermut(holistic, alignment)
 
             if hypermutated is not None:
-                sequence_errors.append(hypermutated)
+                sequence_defects.append(hypermutated)
 
         if check_long_deletion is not None:
             long_deletion = has_long_deletion(sequence, alignment)
             if long_deletion:
-                sequence_errors.append(long_deletion)
+                sequence_defects.append(long_deletion)
 
         if check_nonhiv:
             error = is_nonhiv(holistic, sequence.id, len(sequence), blast_rows)
             if error:
-                sequence_errors.append(error)
+                sequence_defects.append(error)
 
         if check_scramble:
             error = is_scrambled(sequence.id, blast_rows)
             if error:
-                sequence_errors.append(error)
+                sequence_defects.append(error)
 
         if check_internal_inversion:
             error = contains_internal_inversion(sequence.id, blast_rows)
             if error:
-                sequence_errors.append(error)
+                sequence_defects.append(error)
 
-        holistic.intact = len(sequence_errors) == 0
+        holistic.intact = len(sequence_defects) == 0
 
-        # add the small orf errors after the intactness check if not included
+        # add the small orf defects after the intactness check if not included
         if not check_small_orfs:
-            sequence_errors.extend(small_orf_errors)
+            sequence_defects.extend(small_orf_defects)
 
         orfs = [x.__dict__ for x in hxb2_found_orfs]
         subtype = aligned_sequence.reference
         writer.write(sequence, subtype, holistic.intact,
-                     orfs, sequence_errors, holistic.__dict__)
+                     orfs, sequence_defects, holistic.__dict__)
 
     with OutputWriter(working_dir, "csv" if output_csv else "json") as writer:
 

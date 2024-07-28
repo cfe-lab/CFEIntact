@@ -69,7 +69,7 @@ jobs:
         run: test "$(git describe --tags --abbrev=0)" == "v$(cfeintact version)"
 
       - name: Run test
-        run: cfeintact check --subtype B tests/data-small.fasta && test -f "errors.csv"
+        run: cfeintact check --subtype B tests/data-small.fasta && test -f "defects.csv"
 
   dockerinstall:
     runs-on: ubuntu-latest
@@ -80,7 +80,7 @@ jobs:
         run: docker build . --tag cfeintact
 
       - name: Run test
-        run: docker run cfeintact sh -c 'cfeintact check --subtype B tests/data-small.fasta && test -f "errors.csv"'
+        run: docker run cfeintact sh -c 'cfeintact check --subtype B tests/data-small.fasta && test -f "defects.csv"'
 
   linter:
     runs-on: ubuntu-latest

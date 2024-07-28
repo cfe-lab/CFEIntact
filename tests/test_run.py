@@ -15,4 +15,4 @@ def test_basic_run(tmp_path, request):
         try: main.cli()
         except SystemExit as e: assert e.code == 0
 
-    assert os.path.exists(os.path.join(working_dir, "errors.json"))
+    assert os.path.exists(os.path.join(working_dir, "defects.json"))
