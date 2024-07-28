@@ -145,7 +145,7 @@ MK114856.1,Frameshift,ORF 'nef' at 8523-9176 contains out of frame indels that i
 MK114856.1,InternalStop,ORF 'nef' at 8523-9176 contains an internal stop codon at 8724.,nef
 MK114856.1,SequenceDivergence,ORF 'nef' exceeds maximum distance tolerance. It is 1.95 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.34148.,nef
 MK114856.1,MutatedStartCodon,ORF 'nef' has a mutated start codon: 'ATA'.,nef
-MK114856.1,APOBECHypermutationDetected,Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 3.639064030015132e-65).,
+MK114856.1,APOBECHypermutation,Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 3.639064030015132e-65).,
 MK115009.1,Frameshift,ORF 'gag' at 303-1821 contains out of frame indels that impact 844 positions.,gag
 MK115009.1,InternalStop,ORF 'gag' at 303-1821 contains an internal stop codon at 348.,gag
 MK115009.1,SequenceDivergence,ORF 'gag' exceeds maximum distance tolerance. It is 1.8444 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.98443.,gag
@@ -173,7 +173,7 @@ MK115009.1,Frameshift,ORF 'nef' at 8355-8996 contains out of frame indels that i
 MK115009.1,InternalStop,ORF 'nef' at 8355-8996 contains an internal stop codon at 8796.,nef
 MK115009.1,SequenceDivergence,ORF 'nef' exceeds maximum distance tolerance. It is 1.70049 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.34148.,nef
 MK115009.1,MutatedStartCodon,ORF 'nef' has a mutated start codon: 'ATA'.,nef
-MK115009.1,APOBECHypermutationDetected,Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 1.2040967664149076e-41).,
+MK115009.1,APOBECHypermutation,Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 1.2040967664149076e-41).,
 MK115009.1,Scramble,Sequence is minus-scrambled.,
 MK115009.1,InternalInversion,Sequence contains an internal inversion.,
 MK115387.1,Frameshift,ORF 'tat_exon2' at 7870-7962 contains out of frame indels that impact 32 positions.,tat_exon2
@@ -217,7 +217,7 @@ MK115464.1,InternalStop,ORF 'rev_exon2' at 8382-8657 contains an internal stop c
 MK115464.1,Frameshift,ORF 'nef' at 8801-9451 contains out of frame indels that impact 178 positions.,nef
 MK115464.1,Deletion,ORF 'nef' exceeds maximum deletion tolerance. Contains 234 deletions with max tolerance of 48 deletions.,nef
 MK115464.1,MutatedStartCodon,ORF 'nef' has a mutated start codon: 'ATA'.,nef
-MK115464.1,APOBECHypermutationDetected,Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 4.937891251407691e-23).,
+MK115464.1,APOBECHypermutation,Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 4.937891251407691e-23).,
 MK115520.1,Frameshift,ORF 'pol' at 1988-5004 contains out of frame indels that impact 1225 positions.,pol
 MK115520.1,InternalStop,ORF 'pol' at 1988-5004 contains an internal stop codon at 3188.,pol
 MK115520.1,MutatedStopCodon,ORF 'pol' has a mutated stop codon: 'AGA'.,pol
@@ -249,7 +249,7 @@ MK115095.1,InternalStop,ORF 'vpu' at 5466-5711 contains an internal stop codon a
 MK115095.1,SequenceDivergence,ORF 'vpu' exceeds maximum distance tolerance. It is 1.88171 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.07949.,vpu
 MK115095.1,Frameshift,ORF 'rev_exon2' at 7812-8087 contains out of frame indels that impact 69 positions.,rev_exon2
 MK115095.1,InternalStop,ORF 'rev_exon2' at 7812-8087 contains an internal stop codon at 7869.,rev_exon2
-MK115095.1,APOBECHypermutationDetected,Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 8.33506116803153e-40).,
+MK115095.1,APOBECHypermutation,Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 8.33506116803153e-40).,
 OQ092466,MajorSpliceDonorSiteMutated,Query sequence has a mutated splice donor site: GC. The context is GCGGCGACTGGCGAGTACGCCA.,
 OQ092463,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 26 deletions with max tolerance of 10 deletions.,
 OQ092463,MajorSpliceDonorSiteMutated,Query sequence has a missing splice donor site: --. The context is ------------GAGTACGCC-.,

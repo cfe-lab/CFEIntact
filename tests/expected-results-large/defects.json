@@ -907,7 +907,7 @@
         },
         {
             "qseqid": "MK114856.1",
-            "error": "APOBECHypermutationDetected",
+            "error": "APOBECHypermutation",
             "message": "Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 3.639064030015132e-65).",
             "region": null
         }
@@ -1077,7 +1077,7 @@
         },
         {
             "qseqid": "MK115009.1",
-            "error": "APOBECHypermutationDetected",
+            "error": "APOBECHypermutation",
             "message": "Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 1.2040967664149076e-41).",
             "region": null
         },
@@ -1354,7 +1354,7 @@
         },
         {
             "qseqid": "MK115464.1",
-            "error": "APOBECHypermutationDetected",
+            "error": "APOBECHypermutation",
             "message": "Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 4.937891251407691e-23).",
             "region": null
         }
@@ -1557,7 +1557,7 @@
         },
         {
             "qseqid": "MK115095.1",
-            "error": "APOBECHypermutationDetected",
+            "error": "APOBECHypermutation",
             "message": "Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 8.33506116803153e-40).",
             "region": null
         }

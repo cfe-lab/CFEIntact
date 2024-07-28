@@ -240,7 +240,7 @@ def isHypermut(holistic, aln):
     if pval < 0.05:
         return Defect(
             aln[1].id,
-            defect.APOBECHypermutationDetected(pval),
+            defect.APOBECHypermutation(pval),
         )
     # /end if
     return None

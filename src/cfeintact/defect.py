@@ -129,7 +129,7 @@ class RevResponseElementDeletion:
 
 
 @dataclass(frozen=True)
-class APOBECHypermutationDetected:
+class APOBECHypermutation:
     p_value: float
 
     def __str__(self) -> str:
@@ -169,7 +169,7 @@ class UnknownNucleotide:
 DefectType = Union[
     LongDeletion, Deletion, Insertion, MutatedStartCodon, MutatedStopCodon, InternalStop,
     Frameshift, SequenceDivergence, MajorSpliceDonorSiteMutated, PackagingSignalDeletion,
-    PackagingSignalNotComplete, RevResponseElementDeletion, APOBECHypermutationDetected,
+    PackagingSignalNotComplete, RevResponseElementDeletion, APOBECHypermutation,
     NonHIV, Scramble, InternalInversion, UnknownNucleotide
 ]
 
