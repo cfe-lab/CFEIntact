@@ -566,7 +566,7 @@ class OutputWriter:
         self.fmt = fmt
         self.working_dir = working_dir
         self.subtypes_path = os.path.join(working_dir, "subtypes.fasta")
-        self.orf_path = os.path.join(working_dir, f"regions.{fmt}")
+        self.regions_path = os.path.join(working_dir, f"regions.{fmt}")
         self.holistic_path = os.path.join(working_dir, f"holistic.{fmt}")
         self.error_path = os.path.join(working_dir, f"defects.{fmt}")
 
@@ -577,7 +577,7 @@ class OutputWriter:
 
     def __enter__(self, *args):
         self.subtypes_file = open(self.subtypes_path, 'w')
-        self.regions_file = open(self.orf_path, 'w')
+        self.regions_file = open(self.regions_path, 'w')
         self.holistic_file = open(self.holistic_path, 'w')
         self.defects_file = open(self.error_path, 'w')
 
@@ -610,7 +610,7 @@ class OutputWriter:
         self.defects_file.close()
 
         logger.info('Subtype sequences written to ' + self.subtypes_path)
-        logger.info('Regions for all sequences written to ' + self.orf_path)
+        logger.info('Regions for all sequences written to ' + self.regions_path)
         logger.info('Holistic info for all sequences written to ' + self.holistic_path)
         logger.info('Intactness error information written to ' + self.error_path)
         if os.path.exists(os.path.join(self.working_dir, 'blast.csv')):
