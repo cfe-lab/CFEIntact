@@ -403,20 +403,20 @@ def has_rev_response_element(alignment, rre_locus, rre_tolerance):
 
 
 def check_reading_frame_shift(best_match: MappedORF) \
-        -> Optional[defect.FrameshiftInOrf]:
+        -> Optional[defect.Frameshift]:
 
     q = best_match.query
     e = best_match.reference
 
     impacted_by_indels = best_match.indel_impact
     if impacted_by_indels >= max(e.max_deletions, e.max_insertions) + 3:
-        return defect.FrameshiftInOrf(e=e, q=q, impacted_positions=impacted_by_indels)
+        return defect.Frameshift(e=e, q=q, impacted_positions=impacted_by_indels)
 
     return None
 
 
 def check_reading_frame_deletions(e: OriginalORF, q: OriginalORF) \
-        -> Optional[Union[defect.InternalStopInOrf, defect.DeletionInOrf]]:
+        -> Optional[Union[defect.InternalStop, defect.Deletion]]:
 
     got_protein = q.protein
     exp_protein = e.protein
@@ -430,15 +430,15 @@ def check_reading_frame_deletions(e: OriginalORF, q: OriginalORF) \
 
         if "*" in limited_aminoacids:
             position = q.start + (limit + limited_aminoacids.index('*')) * 3
-            return defect.InternalStopInOrf(e=e, q=q, position=position)
+            return defect.InternalStop(e=e, q=q, position=position)
         else:
-            return defect.DeletionInOrf(e=e, q=q, deletions=deletions)
+            return defect.Deletion(e=e, q=q, deletions=deletions)
 
     return None
 
 
 def check_reading_frame_insertions(check_distance: bool, best_match: MappedORF, e: OriginalORF, q: OriginalORF) \
-        -> Optional[defect.InsertionInOrf]:
+        -> Optional[defect.Insertion]:
 
     if best_match.distance <= e.max_distance and best_match.starts_properly and best_match.ends_properly:
         return None
@@ -449,7 +449,7 @@ def check_reading_frame_insertions(check_distance: bool, best_match: MappedORF, 
 
     # Max insertions allowed in ORF exceeded
     if insertions > e.max_insertions:
-        return defect.InsertionInOrf(e=e, q=q, insertions=insertions)
+        return defect.Insertion(e=e, q=q, insertions=insertions)
 
     return None
 
@@ -566,7 +566,7 @@ class OutputWriter:
         self.fmt = fmt
         self.working_dir = working_dir
         self.subtypes_path = os.path.join(working_dir, "subtypes.fasta")
-        self.orf_path = os.path.join(working_dir, f"orfs.{fmt}")
+        self.orf_path = os.path.join(working_dir, f"regions.{fmt}")
         self.holistic_path = os.path.join(working_dir, f"holistic.{fmt}")
         self.error_path = os.path.join(working_dir, f"defects.{fmt}")
 
@@ -577,46 +577,46 @@ class OutputWriter:
 
     def __enter__(self, *args):
         self.subtypes_file = open(self.subtypes_path, 'w')
-        self.orfs_file = open(self.orf_path, 'w')
+        self.regions_file = open(self.orf_path, 'w')
         self.holistic_file = open(self.holistic_path, 'w')
         self.defects_file = open(self.error_path, 'w')
 
         if self.fmt == "json":
-            self.orfs = {}
+            self.regions = {}
             self.holistic = {}
             self.defects = {}
         elif self.fmt == "csv":
-            self.orfs_writer = csv.writer(self.orfs_file)
-            self.orfs_header = ['qseqid'] + [field.name for field in dataclasses.fields(FoundORF)]
-            self.orfs_writer.writerow(self.orfs_header)
+            self.regions_writer = csv.writer(self.regions_file)
+            self.regions_header = ['qseqid'] + [field.name for field in dataclasses.fields(FoundORF)]
+            self.regions_writer.writerow(self.regions_header)
             self.holistic_writer = csv.writer(self.holistic_file)
             self.holistic_header = ['qseqid'] + [field.name for field in dataclasses.fields(HolisticInfo)]
             self.holistic_writer.writerow(self.holistic_header)
             self.defects_writer = csv.DictWriter(
-                self.defects_file, fieldnames=["qseqid", "error", "message", "orf"])
+                self.defects_file, fieldnames=["qseqid", "error", "message", "region"])
             self.defects_writer.writeheader()
 
         return self
 
     def __exit__(self, *args):
         if self.fmt == "json":
-            json.dump(self.orfs, self.orfs_file, indent=4)
+            json.dump(self.regions, self.regions_file, indent=4)
             json.dump(self.holistic, self.holistic_file, indent=4)
             json.dump(self.defects, self.defects_file, indent=4)
 
         self.subtypes_file.close()
-        self.orfs_file.close()
+        self.regions_file.close()
         self.holistic_file.close()
         self.defects_file.close()
 
         logger.info('Subtype sequences written to ' + self.subtypes_path)
-        logger.info('ORFs for all sequences written to ' + self.orf_path)
+        logger.info('Regions for all sequences written to ' + self.orf_path)
         logger.info('Holistic info for all sequences written to ' + self.holistic_path)
         logger.info('Intactness error information written to ' + self.error_path)
         if os.path.exists(os.path.join(self.working_dir, 'blast.csv')):
             logger.info('Blast output written to ' + os.path.join(self.working_dir, 'blast.csv'))
 
-    def write(self, sequence, subtype, is_intact, orfs, defects, holistic):
+    def write(self, sequence, subtype, is_intact, regions, defects, holistic):
         if subtype.id not in self.subtypes:
             self.subtypes.add(subtype.id)
             SeqIO.write([subtype], self.subtypes_file, "fasta")
@@ -626,17 +626,17 @@ class OutputWriter:
             "qseqid": d.qseqid,
             "error": d.error.__class__.__name__,
             "message": str(d.error),
-            "orf": d.error.q.name if isinstance(d.error, ORFDefect) else None,
+            "region": d.error.q.name if isinstance(d.error, ORFDefect) else None,
         } for d in defects]
 
         if self.fmt == "json":
-            self.orfs[sequence.id] = orfs
+            self.regions[sequence.id] = regions
             self.holistic[sequence.id] = holistic
             self.defects[sequence.id] = defects_dicts
         elif self.fmt == "csv":
-            for orf in orfs:
-                row = [(sequence.id if key == 'qseqid' else orf[key]) for key in self.orfs_header]
-                self.orfs_writer.writerow(row)
+            for region in regions:
+                row = [(sequence.id if key == 'qseqid' else region[key]) for key in self.regions_header]
+                self.regions_writer.writerow(row)
             self.holistic_writer.writerow(
                 [(sequence.id if key == 'qseqid' else holistic[key]) for key in self.holistic_header])
             for error in defects_dicts:

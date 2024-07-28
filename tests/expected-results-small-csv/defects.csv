@@ -1,85 +1,85 @@
-qseqid,error,message,orf
-KX505501.1,FrameshiftInOrf,ORF 'pol' at 1629-1746 contains out of frame indels that impact 1950 positions.,pol
-KX505501.1,DeletionInOrf,ORF 'pol' exceeds maximum deletion tolerance. Contains 2892 deletions with max tolerance of 93 deletions.,pol
+qseqid,error,message,region
+KX505501.1,Frameshift,ORF 'pol' at 1629-1746 contains out of frame indels that impact 1950 positions.,pol
+KX505501.1,Deletion,ORF 'pol' exceeds maximum deletion tolerance. Contains 2892 deletions with max tolerance of 93 deletions.,pol
 KX505501.1,SequenceDivergence,ORF 'pol' exceeds maximum distance tolerance. It is 2.13586 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.88345.,pol
 KX505501.1,MutatedStopCodon,ORF 'pol' has a mutated stop codon: 'T--'.,pol
-KX505501.1,FrameshiftInOrf,ORF 'env' at 1747-1746 contains out of frame indels that impact 1714 positions.,env
-KX505501.1,DeletionInOrf,ORF 'env' exceeds maximum deletion tolerance. Contains 2346 deletions with max tolerance of 54 deletions.,env
+KX505501.1,Frameshift,ORF 'env' at 1747-1746 contains out of frame indels that impact 1714 positions.,env
+KX505501.1,Deletion,ORF 'env' exceeds maximum deletion tolerance. Contains 2346 deletions with max tolerance of 54 deletions.,env
 KX505501.1,SequenceDivergence,ORF 'env' exceeds maximum distance tolerance. It is 2.11186 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.35595.,env
-KX505501.1,FrameshiftInOrf,ORF 'vif' at 1747-1746 contains out of frame indels that impact 386 positions.,vif
-KX505501.1,DeletionInOrf,ORF 'vif' exceeds maximum deletion tolerance. Contains 354 deletions with max tolerance of 12 deletions.,vif
+KX505501.1,Frameshift,ORF 'vif' at 1747-1746 contains out of frame indels that impact 386 positions.,vif
+KX505501.1,Deletion,ORF 'vif' exceeds maximum deletion tolerance. Contains 354 deletions with max tolerance of 12 deletions.,vif
 KX505501.1,SequenceDivergence,ORF 'vif' exceeds maximum distance tolerance. It is 2.04883 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.78802.,vif
-KX505501.1,FrameshiftInOrf,ORF 'vpr' at 1747-1746 contains out of frame indels that impact 194 positions.,vpr
-KX505501.1,DeletionInOrf,ORF 'vpr' exceeds maximum deletion tolerance. Contains 66 deletions with max tolerance of 6 deletions.,vpr
+KX505501.1,Frameshift,ORF 'vpr' at 1747-1746 contains out of frame indels that impact 194 positions.,vpr
+KX505501.1,Deletion,ORF 'vpr' exceeds maximum deletion tolerance. Contains 66 deletions with max tolerance of 6 deletions.,vpr
 KX505501.1,SequenceDivergence,ORF 'vpr' exceeds maximum distance tolerance. It is 2.00365 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.58981.,vpr
-KX505501.1,FrameshiftInOrf,ORF 'tat_exon1' at 1747-1746 contains out of frame indels that impact 144 positions.,tat_exon1
-KX505501.1,DeletionInOrf,ORF 'tat_exon1' exceeds maximum deletion tolerance. Contains 69 deletions with max tolerance of 0 deletions.,tat_exon1
+KX505501.1,Frameshift,ORF 'tat_exon1' at 1747-1746 contains out of frame indels that impact 144 positions.,tat_exon1
+KX505501.1,Deletion,ORF 'tat_exon1' exceeds maximum deletion tolerance. Contains 69 deletions with max tolerance of 0 deletions.,tat_exon1
 KX505501.1,SequenceDivergence,ORF 'tat_exon1' exceeds maximum distance tolerance. It is 2.21806 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.85696.,tat_exon1
-KX505501.1,FrameshiftInOrf,ORF 'rev_exon1' at 1747-1746 contains out of frame indels that impact 51 positions.,rev_exon1
-KX505501.1,InsertionInOrf,ORF 'rev_exon1' exceeds maximum insertion tolerance. Contains 69 insertions with max tolerance of 0 insertions.,rev_exon1
+KX505501.1,Frameshift,ORF 'rev_exon1' at 1747-1746 contains out of frame indels that impact 51 positions.,rev_exon1
+KX505501.1,Insertion,ORF 'rev_exon1' exceeds maximum insertion tolerance. Contains 69 insertions with max tolerance of 0 insertions.,rev_exon1
 KX505501.1,SequenceDivergence,ORF 'rev_exon1' exceeds maximum distance tolerance. It is 2.25 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.92308.,rev_exon1
-KX505501.1,FrameshiftInOrf,ORF 'vpu' at 1747-1746 contains out of frame indels that impact 166 positions.,vpu
-KX505501.1,DeletionInOrf,ORF 'vpu' exceeds maximum deletion tolerance. Contains 24 deletions with max tolerance of 6 deletions.,vpu
+KX505501.1,Frameshift,ORF 'vpu' at 1747-1746 contains out of frame indels that impact 166 positions.,vpu
+KX505501.1,Deletion,ORF 'vpu' exceeds maximum deletion tolerance. Contains 24 deletions with max tolerance of 6 deletions.,vpu
 KX505501.1,SequenceDivergence,ORF 'vpu' exceeds maximum distance tolerance. It is 2.044 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.07949.,vpu
-KX505501.1,FrameshiftInOrf,ORF 'tat_exon2' at 1747-1746 contains out of frame indels that impact 62 positions.,tat_exon2
-KX505501.1,DeletionInOrf,ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 15 deletions with max tolerance of 0 deletions.,tat_exon2
+KX505501.1,Frameshift,ORF 'tat_exon2' at 1747-1746 contains out of frame indels that impact 62 positions.,tat_exon2
+KX505501.1,Deletion,ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 15 deletions with max tolerance of 0 deletions.,tat_exon2
 KX505501.1,SequenceDivergence,ORF 'tat_exon2' exceeds maximum distance tolerance. It is 2.24194 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.18333.,tat_exon2
-KX505501.1,FrameshiftInOrf,ORF 'rev_exon2' at 1747-1746 contains out of frame indels that impact 184 positions.,rev_exon2
-KX505501.1,DeletionInOrf,ORF 'rev_exon2' exceeds maximum deletion tolerance. Contains 198 deletions with max tolerance of 7 deletions.,rev_exon2
+KX505501.1,Frameshift,ORF 'rev_exon2' at 1747-1746 contains out of frame indels that impact 184 positions.,rev_exon2
+KX505501.1,Deletion,ORF 'rev_exon2' exceeds maximum deletion tolerance. Contains 198 deletions with max tolerance of 7 deletions.,rev_exon2
 KX505501.1,SequenceDivergence,ORF 'rev_exon2' exceeds maximum distance tolerance. It is 2.21413 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.75773.,rev_exon2
-KX505501.1,FrameshiftInOrf,ORF 'nef' at 1747-1778 contains out of frame indels that impact 425 positions.,nef
-KX505501.1,DeletionInOrf,ORF 'nef' exceeds maximum deletion tolerance. Contains 396 deletions with max tolerance of 48 deletions.,nef
+KX505501.1,Frameshift,ORF 'nef' at 1747-1778 contains out of frame indels that impact 425 positions.,nef
+KX505501.1,Deletion,ORF 'nef' exceeds maximum deletion tolerance. Contains 396 deletions with max tolerance of 48 deletions.,nef
 KX505501.1,SequenceDivergence,ORF 'nef' exceeds maximum distance tolerance. It is 2.0371 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.34148.,nef
 KX505501.1,MutatedStartCodon,ORF 'nef' has a mutated start codon: 'AGA'.,nef
 KX505501.1,MutatedStopCodon,ORF 'nef' has a mutated stop codon: 'GAC'.,nef
 KX505501.1,RevResponseElementDeletion,Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.,
 KX505501.1,LongDeletion,Query sequence contains a very large deletion.,
 KX505501.1,Scramble,Sequence is plus-scrambled.,
-MN691959,FrameshiftInOrf,ORF 'vpu' at 5911-6156 contains out of frame indels that impact 122 positions.,vpu
-MN691959,InternalStopInOrf,ORF 'vpu' at 5911-6156 contains an internal stop codon at 5974.,vpu
+MN691959,Frameshift,ORF 'vpu' at 5911-6156 contains out of frame indels that impact 122 positions.,vpu
+MN691959,InternalStop,ORF 'vpu' at 5911-6156 contains an internal stop codon at 5974.,vpu
 MN691959,SequenceDivergence,ORF 'vpu' exceeds maximum distance tolerance. It is 1.70488 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.07949.,vpu
-MN691959,FrameshiftInOrf,ORF 'tat_exon2' at 8238-8330 contains out of frame indels that impact 32 positions.,tat_exon2
-MN691959,DeletionInOrf,ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 45 deletions with max tolerance of 0 deletions.,tat_exon2
-MN692074,FrameshiftInOrf,ORF 'pol' at 2085-4082 contains out of frame indels that impact 676 positions.,pol
-MN692074,DeletionInOrf,ORF 'pol' exceeds maximum deletion tolerance. Contains 981 deletions with max tolerance of 93 deletions.,pol
+MN691959,Frameshift,ORF 'tat_exon2' at 8238-8330 contains out of frame indels that impact 32 positions.,tat_exon2
+MN691959,Deletion,ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 45 deletions with max tolerance of 0 deletions.,tat_exon2
+MN692074,Frameshift,ORF 'pol' at 2085-4082 contains out of frame indels that impact 676 positions.,pol
+MN692074,Deletion,ORF 'pol' exceeds maximum deletion tolerance. Contains 981 deletions with max tolerance of 93 deletions.,pol
 MN692074,MutatedStopCodon,ORF 'pol' has a mutated stop codon: 'GAT'.,pol
-MN692074,FrameshiftInOrf,ORF 'env' at 4083-4082 contains out of frame indels that impact 1714 positions.,env
-MN692074,DeletionInOrf,ORF 'env' exceeds maximum deletion tolerance. Contains 2073 deletions with max tolerance of 54 deletions.,env
+MN692074,Frameshift,ORF 'env' at 4083-4082 contains out of frame indels that impact 1714 positions.,env
+MN692074,Deletion,ORF 'env' exceeds maximum deletion tolerance. Contains 2073 deletions with max tolerance of 54 deletions.,env
 MN692074,SequenceDivergence,ORF 'env' exceeds maximum distance tolerance. It is 2.05571 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.35595.,env
-MN692074,FrameshiftInOrf,ORF 'vif' at 4083-4082 contains out of frame indels that impact 386 positions.,vif
-MN692074,DeletionInOrf,ORF 'vif' exceeds maximum deletion tolerance. Contains 81 deletions with max tolerance of 12 deletions.,vif
+MN692074,Frameshift,ORF 'vif' at 4083-4082 contains out of frame indels that impact 386 positions.,vif
+MN692074,Deletion,ORF 'vif' exceeds maximum deletion tolerance. Contains 81 deletions with max tolerance of 12 deletions.,vif
 MN692074,SequenceDivergence,ORF 'vif' exceeds maximum distance tolerance. It is 1.99787 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.78802.,vif
-MN692074,FrameshiftInOrf,ORF 'vpr' at 4083-4082 contains out of frame indels that impact 194 positions.,vpr
-MN692074,InsertionInOrf,ORF 'vpr' exceeds maximum insertion tolerance. Contains 207 insertions with max tolerance of 6 insertions.,vpr
+MN692074,Frameshift,ORF 'vpr' at 4083-4082 contains out of frame indels that impact 194 positions.,vpr
+MN692074,Insertion,ORF 'vpr' exceeds maximum insertion tolerance. Contains 207 insertions with max tolerance of 6 insertions.,vpr
 MN692074,SequenceDivergence,ORF 'vpr' exceeds maximum distance tolerance. It is 1.9951 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.58981.,vpr
-MN692074,FrameshiftInOrf,ORF 'tat_exon1' at 4083-4082 contains out of frame indels that impact 144 positions.,tat_exon1
-MN692074,InsertionInOrf,ORF 'tat_exon1' exceeds maximum insertion tolerance. Contains 249 insertions with max tolerance of 0 insertions.,tat_exon1
+MN692074,Frameshift,ORF 'tat_exon1' at 4083-4082 contains out of frame indels that impact 144 positions.,tat_exon1
+MN692074,Insertion,ORF 'tat_exon1' exceeds maximum insertion tolerance. Contains 249 insertions with max tolerance of 0 insertions.,tat_exon1
 MN692074,SequenceDivergence,ORF 'tat_exon1' exceeds maximum distance tolerance. It is 2.21806 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.85696.,tat_exon1
-MN692074,FrameshiftInOrf,ORF 'rev_exon1' at 4083-4082 contains out of frame indels that impact 51 positions.,rev_exon1
-MN692074,InsertionInOrf,ORF 'rev_exon1' exceeds maximum insertion tolerance. Contains 387 insertions with max tolerance of 0 insertions.,rev_exon1
+MN692074,Frameshift,ORF 'rev_exon1' at 4083-4082 contains out of frame indels that impact 51 positions.,rev_exon1
+MN692074,Insertion,ORF 'rev_exon1' exceeds maximum insertion tolerance. Contains 387 insertions with max tolerance of 0 insertions.,rev_exon1
 MN692074,SequenceDivergence,ORF 'rev_exon1' exceeds maximum distance tolerance. It is 2.25 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.92308.,rev_exon1
-MN692074,FrameshiftInOrf,ORF 'vpu' at 4083-4082 contains out of frame indels that impact 166 positions.,vpu
-MN692074,InsertionInOrf,ORF 'vpu' exceeds maximum insertion tolerance. Contains 249 insertions with max tolerance of 24 insertions.,vpu
+MN692074,Frameshift,ORF 'vpu' at 4083-4082 contains out of frame indels that impact 166 positions.,vpu
+MN692074,Insertion,ORF 'vpu' exceeds maximum insertion tolerance. Contains 249 insertions with max tolerance of 24 insertions.,vpu
 MN692074,SequenceDivergence,ORF 'vpu' exceeds maximum distance tolerance. It is 2.00052 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.07949.,vpu
-MN692074,FrameshiftInOrf,ORF 'tat_exon2' at 4083-4082 contains out of frame indels that impact 62 positions.,tat_exon2
-MN692074,DeletionInOrf,ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 60 deletions with max tolerance of 0 deletions.,tat_exon2
+MN692074,Frameshift,ORF 'tat_exon2' at 4083-4082 contains out of frame indels that impact 62 positions.,tat_exon2
+MN692074,Deletion,ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 60 deletions with max tolerance of 0 deletions.,tat_exon2
 MN692074,SequenceDivergence,ORF 'tat_exon2' exceeds maximum distance tolerance. It is 2.24194 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.18333.,tat_exon2
-MN692074,FrameshiftInOrf,ORF 'rev_exon2' at 4083-4082 contains out of frame indels that impact 184 positions.,rev_exon2
-MN692074,DeletionInOrf,ORF 'rev_exon2' exceeds maximum deletion tolerance. Contains 243 deletions with max tolerance of 7 deletions.,rev_exon2
+MN692074,Frameshift,ORF 'rev_exon2' at 4083-4082 contains out of frame indels that impact 184 positions.,rev_exon2
+MN692074,Deletion,ORF 'rev_exon2' exceeds maximum deletion tolerance. Contains 243 deletions with max tolerance of 7 deletions.,rev_exon2
 MN692074,SequenceDivergence,ORF 'rev_exon2' exceeds maximum distance tolerance. It is 2.21413 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.75773.,rev_exon2
-MN692074,FrameshiftInOrf,ORF 'nef' at 4083-4086 contains out of frame indels that impact 412 positions.,nef
-MN692074,DeletionInOrf,ORF 'nef' exceeds maximum deletion tolerance. Contains 123 deletions with max tolerance of 48 deletions.,nef
+MN692074,Frameshift,ORF 'nef' at 4083-4086 contains out of frame indels that impact 412 positions.,nef
+MN692074,Deletion,ORF 'nef' exceeds maximum deletion tolerance. Contains 123 deletions with max tolerance of 48 deletions.,nef
 MN692074,SequenceDivergence,ORF 'nef' exceeds maximum distance tolerance. It is 2.00372 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.34148.,nef
 MN692074,MutatedStartCodon,ORF 'nef' has a mutated start codon: 'ACC'.,nef
 MN692074,MutatedStopCodon,ORF 'nef' has a mutated stop codon: 'CAG'.,nef
 MN692074,RevResponseElementDeletion,Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.,
 MN692074,LongDeletion,Query sequence contains a very large deletion.,
-MN090335,FrameshiftInOrf,ORF 'gag' at 482-1665 contains out of frame indels that impact 1230 positions.,gag
-MN090335,InternalStopInOrf,ORF 'gag' at 482-1665 contains an internal stop codon at 683.,gag
+MN090335,Frameshift,ORF 'gag' at 482-1665 contains out of frame indels that impact 1230 positions.,gag
+MN090335,InternalStop,ORF 'gag' at 482-1665 contains an internal stop codon at 683.,gag
 MN090335,MutatedStartCodon,ORF 'gag' has a mutated start codon: 'ATA'.,gag
 MN090335,MutatedStopCodon,ORF 'gag' has a mutated stop codon: 'AAA'.,gag
-MN090335,FrameshiftInOrf,ORF 'tat_exon2' at 7740-7832 contains out of frame indels that impact 32 positions.,tat_exon2
-MN090335,DeletionInOrf,ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 45 deletions with max tolerance of 0 deletions.,tat_exon2
+MN090335,Frameshift,ORF 'tat_exon2' at 7740-7832 contains out of frame indels that impact 32 positions.,tat_exon2
+MN090335,Deletion,ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 45 deletions with max tolerance of 0 deletions.,tat_exon2
 MN090335,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 42 deletions with max tolerance of 10 deletions.,
 MN090335,MajorSpliceDonorSiteMutated,Query sequence has a mutated splice donor site: AT. The context is TTAACTGCGAAT-----CGTTC.,
 MN090335,Scramble,Sequence is minus-scrambled.,

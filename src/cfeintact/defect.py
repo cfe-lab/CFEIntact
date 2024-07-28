@@ -17,7 +17,7 @@ class LongDeletion:
 
 
 @dataclass(frozen=True)
-class DeletionInOrf(ORFDefect):
+class Deletion(ORFDefect):
     e: OriginalORF
     deletions: int
 
@@ -27,7 +27,7 @@ class DeletionInOrf(ORFDefect):
 
 
 @dataclass(frozen=True)
-class InsertionInOrf(ORFDefect):
+class Insertion(ORFDefect):
     e: OriginalORF
     insertions: int
 
@@ -57,7 +57,7 @@ class MutatedStartCodon(ORFDefect):
 
 
 @dataclass(frozen=True)
-class InternalStopInOrf(ORFDefect):
+class InternalStop(ORFDefect):
     e: OriginalORF
     position: int
 
@@ -67,7 +67,7 @@ class InternalStopInOrf(ORFDefect):
 
 
 @dataclass(frozen=True)
-class FrameshiftInOrf(ORFDefect):
+class Frameshift(ORFDefect):
     e: OriginalORF
     impacted_positions: float
 
@@ -167,8 +167,8 @@ class UnknownNucleotide:
 
 # The final exported Defect type encompasses all defined classes
 DefectType = Union[
-    LongDeletion, DeletionInOrf, InsertionInOrf, MutatedStartCodon, MutatedStopCodon, InternalStopInOrf,
-    FrameshiftInOrf, SequenceDivergence, MajorSpliceDonorSiteMutated, PackagingSignalDeletion,
+    LongDeletion, Deletion, Insertion, MutatedStartCodon, MutatedStopCodon, InternalStop,
+    Frameshift, SequenceDivergence, MajorSpliceDonorSiteMutated, PackagingSignalDeletion,
     PackagingSignalNotComplete, RevResponseElementDeletion, APOBECHypermutationDetected,
     NonHIV, Scramble, InternalInversion, UnknownNucleotide
 ]
