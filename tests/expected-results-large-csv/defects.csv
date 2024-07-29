@@ -1,4 +1,4 @@
-qseqid,error,message,region
+qseqid,code,message,region
 KX505501.1,Frameshift,ORF 'pol' at 1629-1746 contains out of frame indels that impact 1950 positions.,pol
 KX505501.1,Deletion,ORF 'pol' exceeds maximum deletion tolerance. Contains 2892 deletions with max tolerance of 93 deletions.,pol
 KX505501.1,SequenceDivergence,ORF 'pol' exceeds maximum distance tolerance. It is 2.13586 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.88345.,pol

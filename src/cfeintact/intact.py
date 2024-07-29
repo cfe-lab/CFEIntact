@@ -593,7 +593,7 @@ class OutputWriter:
             self.holistic_header = ['qseqid'] + [field.name for field in dataclasses.fields(HolisticInfo)]
             self.holistic_writer.writerow(self.holistic_header)
             self.defects_writer = csv.DictWriter(
-                self.defects_file, fieldnames=["qseqid", "error", "message", "region"])
+                self.defects_file, fieldnames=["qseqid", "code", "message", "region"])
             self.defects_writer.writeheader()
 
         return self
@@ -624,7 +624,7 @@ class OutputWriter:
 
         defects_dicts = [{
             "qseqid": d.qseqid,
-            "error": d.error.__class__.__name__,
+            "code": d.error.__class__.__name__,
             "message": str(d.error),
             "region": d.error.q.name if isinstance(d.error, ORFDefect) else None,
         } for d in defects]

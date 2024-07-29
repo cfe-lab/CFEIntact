@@ -2,217 +2,217 @@
     "KX505501.1": [
         {
             "qseqid": "KX505501.1",
-            "error": "Frameshift",
+            "code": "Frameshift",
             "message": "ORF 'pol' at 1629-1746 contains out of frame indels that impact 1950 positions.",
             "region": "pol"
         },
         {
             "qseqid": "KX505501.1",
-            "error": "Deletion",
+            "code": "Deletion",
             "message": "ORF 'pol' exceeds maximum deletion tolerance. Contains 2892 deletions with max tolerance of 93 deletions.",
             "region": "pol"
         },
         {
             "qseqid": "KX505501.1",
-            "error": "SequenceDivergence",
+            "code": "SequenceDivergence",
             "message": "ORF 'pol' exceeds maximum distance tolerance. It is 2.13586 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.88345.",
             "region": "pol"
         },
         {
             "qseqid": "KX505501.1",
-            "error": "MutatedStopCodon",
+            "code": "MutatedStopCodon",
             "message": "ORF 'pol' has a mutated stop codon: 'T--'.",
             "region": "pol"
         },
         {
             "qseqid": "KX505501.1",
-            "error": "Frameshift",
+            "code": "Frameshift",
             "message": "ORF 'env' at 1747-1746 contains out of frame indels that impact 1714 positions.",
             "region": "env"
         },
         {
             "qseqid": "KX505501.1",
-            "error": "Deletion",
+            "code": "Deletion",
             "message": "ORF 'env' exceeds maximum deletion tolerance. Contains 2346 deletions with max tolerance of 54 deletions.",
             "region": "env"
         },
         {
             "qseqid": "KX505501.1",
-            "error": "SequenceDivergence",
+            "code": "SequenceDivergence",
             "message": "ORF 'env' exceeds maximum distance tolerance. It is 2.11186 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.35595.",
             "region": "env"
         },
         {
             "qseqid": "KX505501.1",
-            "error": "Frameshift",
+            "code": "Frameshift",
             "message": "ORF 'vif' at 1747-1746 contains out of frame indels that impact 386 positions.",
             "region": "vif"
         },
         {
             "qseqid": "KX505501.1",
-            "error": "Deletion",
+            "code": "Deletion",
             "message": "ORF 'vif' exceeds maximum deletion tolerance. Contains 354 deletions with max tolerance of 12 deletions.",
             "region": "vif"
         },
         {
             "qseqid": "KX505501.1",
-            "error": "SequenceDivergence",
+            "code": "SequenceDivergence",
             "message": "ORF 'vif' exceeds maximum distance tolerance. It is 2.04883 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.78802.",
             "region": "vif"
         },
         {
             "qseqid": "KX505501.1",
-            "error": "Frameshift",
+            "code": "Frameshift",
             "message": "ORF 'vpr' at 1747-1746 contains out of frame indels that impact 194 positions.",
             "region": "vpr"
         },
         {
             "qseqid": "KX505501.1",
-            "error": "Deletion",
+            "code": "Deletion",
             "message": "ORF 'vpr' exceeds maximum deletion tolerance. Contains 66 deletions with max tolerance of 6 deletions.",
             "region": "vpr"
         },
         {
             "qseqid": "KX505501.1",
-            "error": "SequenceDivergence",
+            "code": "SequenceDivergence",
             "message": "ORF 'vpr' exceeds maximum distance tolerance. It is 2.00365 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.58981.",
             "region": "vpr"
         },
         {
             "qseqid": "KX505501.1",
-            "error": "Frameshift",
+            "code": "Frameshift",
             "message": "ORF 'tat_exon1' at 1747-1746 contains out of frame indels that impact 144 positions.",
             "region": "tat_exon1"
         },
         {
             "qseqid": "KX505501.1",
-            "error": "Deletion",
+            "code": "Deletion",
             "message": "ORF 'tat_exon1' exceeds maximum deletion tolerance. Contains 69 deletions with max tolerance of 0 deletions.",
             "region": "tat_exon1"
         },
         {
             "qseqid": "KX505501.1",
-            "error": "SequenceDivergence",
+            "code": "SequenceDivergence",
             "message": "ORF 'tat_exon1' exceeds maximum distance tolerance. It is 2.21806 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.85696.",
             "region": "tat_exon1"
         },
         {
             "qseqid": "KX505501.1",
-            "error": "Frameshift",
+            "code": "Frameshift",
             "message": "ORF 'rev_exon1' at 1747-1746 contains out of frame indels that impact 51 positions.",
             "region": "rev_exon1"
         },
         {
             "qseqid": "KX505501.1",
-            "error": "Insertion",
+            "code": "Insertion",
             "message": "ORF 'rev_exon1' exceeds maximum insertion tolerance. Contains 69 insertions with max tolerance of 0 insertions.",
             "region": "rev_exon1"
         },
         {
             "qseqid": "KX505501.1",
-            "error": "SequenceDivergence",
+            "code": "SequenceDivergence",
             "message": "ORF 'rev_exon1' exceeds maximum distance tolerance. It is 2.25 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.92308.",
             "region": "rev_exon1"
         },
         {
             "qseqid": "KX505501.1",
-            "error": "Frameshift",
+            "code": "Frameshift",
             "message": "ORF 'vpu' at 1747-1746 contains out of frame indels that impact 166 positions.",
             "region": "vpu"
         },
         {
             "qseqid": "KX505501.1",
-            "error": "Deletion",
+            "code": "Deletion",
             "message": "ORF 'vpu' exceeds maximum deletion tolerance. Contains 24 deletions with max tolerance of 6 deletions.",
             "region": "vpu"
         },
         {
             "qseqid": "KX505501.1",
-            "error": "SequenceDivergence",
+            "code": "SequenceDivergence",
             "message": "ORF 'vpu' exceeds maximum distance tolerance. It is 2.044 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.07949.",
             "region": "vpu"
         },
         {
             "qseqid": "KX505501.1",
-            "error": "Frameshift",
+            "code": "Frameshift",
             "message": "ORF 'tat_exon2' at 1747-1746 contains out of frame indels that impact 62 positions.",
             "region": "tat_exon2"
         },
         {
             "qseqid": "KX505501.1",
-            "error": "Deletion",
+            "code": "Deletion",
             "message": "ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 15 deletions with max tolerance of 0 deletions.",
             "region": "tat_exon2"
         },
         {
             "qseqid": "KX505501.1",
-            "error": "SequenceDivergence",
+            "code": "SequenceDivergence",
             "message": "ORF 'tat_exon2' exceeds maximum distance tolerance. It is 2.24194 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.18333.",
             "region": "tat_exon2"
         },
         {
             "qseqid": "KX505501.1",
-            "error": "Frameshift",
+            "code": "Frameshift",
             "message": "ORF 'rev_exon2' at 1747-1746 contains out of frame indels that impact 184 positions.",
             "region": "rev_exon2"
         },
         {
             "qseqid": "KX505501.1",
-            "error": "Deletion",
+            "code": "Deletion",
             "message": "ORF 'rev_exon2' exceeds maximum deletion tolerance. Contains 198 deletions with max tolerance of 7 deletions.",
             "region": "rev_exon2"
         },
         {
             "qseqid": "KX505501.1",
-            "error": "SequenceDivergence",
+            "code": "SequenceDivergence",
             "message": "ORF 'rev_exon2' exceeds maximum distance tolerance. It is 2.21413 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.75773.",
             "region": "rev_exon2"
         },
         {
             "qseqid": "KX505501.1",
-            "error": "Frameshift",
+            "code": "Frameshift",
             "message": "ORF 'nef' at 1747-1778 contains out of frame indels that impact 425 positions.",
             "region": "nef"
         },
         {
             "qseqid": "KX505501.1",
-            "error": "Deletion",
+            "code": "Deletion",
             "message": "ORF 'nef' exceeds maximum deletion tolerance. Contains 396 deletions with max tolerance of 48 deletions.",
             "region": "nef"
         },
         {
             "qseqid": "KX505501.1",
-            "error": "SequenceDivergence",
+            "code": "SequenceDivergence",
             "message": "ORF 'nef' exceeds maximum distance tolerance. It is 2.0371 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.34148.",
             "region": "nef"
         },
         {
             "qseqid": "KX505501.1",
-            "error": "MutatedStartCodon",
+            "code": "MutatedStartCodon",
             "message": "ORF 'nef' has a mutated start codon: 'AGA'.",
             "region": "nef"
         },
         {
             "qseqid": "KX505501.1",
-            "error": "MutatedStopCodon",
+            "code": "MutatedStopCodon",
             "message": "ORF 'nef' has a mutated stop codon: 'GAC'.",
             "region": "nef"
         },
         {
             "qseqid": "KX505501.1",
-            "error": "RevResponseElementDeletion",
+            "code": "RevResponseElementDeletion",
             "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.",
             "region": null
         },
         {
             "qseqid": "KX505501.1",
-            "error": "LongDeletion",
+            "code": "LongDeletion",
             "message": "Query sequence contains a very large deletion.",
             "region": null
         },
         {
             "qseqid": "KX505501.1",
-            "error": "Scramble",
+            "code": "Scramble",
             "message": "Sequence is plus-scrambled.",
             "region": null
         }
@@ -220,31 +220,31 @@
     "MN691959": [
         {
             "qseqid": "MN691959",
-            "error": "Frameshift",
+            "code": "Frameshift",
             "message": "ORF 'vpu' at 5911-6156 contains out of frame indels that impact 122 positions.",
             "region": "vpu"
         },
         {
             "qseqid": "MN691959",
-            "error": "InternalStop",
+            "code": "InternalStop",
             "message": "ORF 'vpu' at 5911-6156 contains an internal stop codon at 5974.",
             "region": "vpu"
         },
         {
             "qseqid": "MN691959",
-            "error": "SequenceDivergence",
+            "code": "SequenceDivergence",
             "message": "ORF 'vpu' exceeds maximum distance tolerance. It is 1.70488 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.07949.",
             "region": "vpu"
         },
         {
             "qseqid": "MN691959",
-            "error": "Frameshift",
+            "code": "Frameshift",
             "message": "ORF 'tat_exon2' at 8238-8330 contains out of frame indels that impact 32 positions.",
             "region": "tat_exon2"
         },
         {
             "qseqid": "MN691959",
-            "error": "Deletion",
+            "code": "Deletion",
             "message": "ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 45 deletions with max tolerance of 0 deletions.",
             "region": "tat_exon2"
         }
@@ -252,205 +252,205 @@
     "MN692074": [
         {
             "qseqid": "MN692074",
-            "error": "Frameshift",
+            "code": "Frameshift",
             "message": "ORF 'pol' at 2085-4082 contains out of frame indels that impact 676 positions.",
             "region": "pol"
         },
         {
             "qseqid": "MN692074",
-            "error": "Deletion",
+            "code": "Deletion",
             "message": "ORF 'pol' exceeds maximum deletion tolerance. Contains 981 deletions with max tolerance of 93 deletions.",
             "region": "pol"
         },
         {
             "qseqid": "MN692074",
-            "error": "MutatedStopCodon",
+            "code": "MutatedStopCodon",
             "message": "ORF 'pol' has a mutated stop codon: 'GAT'.",
             "region": "pol"
         },
         {
             "qseqid": "MN692074",
-            "error": "Frameshift",
+            "code": "Frameshift",
             "message": "ORF 'env' at 4083-4082 contains out of frame indels that impact 1714 positions.",
             "region": "env"
         },
         {
             "qseqid": "MN692074",
-            "error": "Deletion",
+            "code": "Deletion",
             "message": "ORF 'env' exceeds maximum deletion tolerance. Contains 2073 deletions with max tolerance of 54 deletions.",
             "region": "env"
         },
         {
             "qseqid": "MN692074",
-            "error": "SequenceDivergence",
+            "code": "SequenceDivergence",
             "message": "ORF 'env' exceeds maximum distance tolerance. It is 2.05571 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.35595.",
             "region": "env"
         },
         {
             "qseqid": "MN692074",
-            "error": "Frameshift",
+            "code": "Frameshift",
             "message": "ORF 'vif' at 4083-4082 contains out of frame indels that impact 386 positions.",
             "region": "vif"
         },
         {
             "qseqid": "MN692074",
-            "error": "Deletion",
+            "code": "Deletion",
             "message": "ORF 'vif' exceeds maximum deletion tolerance. Contains 81 deletions with max tolerance of 12 deletions.",
             "region": "vif"
         },
         {
             "qseqid": "MN692074",
-            "error": "SequenceDivergence",
+            "code": "SequenceDivergence",
             "message": "ORF 'vif' exceeds maximum distance tolerance. It is 1.99787 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.78802.",
             "region": "vif"
         },
         {
             "qseqid": "MN692074",
-            "error": "Frameshift",
+            "code": "Frameshift",
             "message": "ORF 'vpr' at 4083-4082 contains out of frame indels that impact 194 positions.",
             "region": "vpr"
         },
         {
             "qseqid": "MN692074",
-            "error": "Insertion",
+            "code": "Insertion",
             "message": "ORF 'vpr' exceeds maximum insertion tolerance. Contains 207 insertions with max tolerance of 6 insertions.",
             "region": "vpr"
         },
         {
             "qseqid": "MN692074",
-            "error": "SequenceDivergence",
+            "code": "SequenceDivergence",
             "message": "ORF 'vpr' exceeds maximum distance tolerance. It is 1.9951 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.58981.",
             "region": "vpr"
         },
         {
             "qseqid": "MN692074",
-            "error": "Frameshift",
+            "code": "Frameshift",
             "message": "ORF 'tat_exon1' at 4083-4082 contains out of frame indels that impact 144 positions.",
             "region": "tat_exon1"
         },
         {
             "qseqid": "MN692074",
-            "error": "Insertion",
+            "code": "Insertion",
             "message": "ORF 'tat_exon1' exceeds maximum insertion tolerance. Contains 249 insertions with max tolerance of 0 insertions.",
             "region": "tat_exon1"
         },
         {
             "qseqid": "MN692074",
-            "error": "SequenceDivergence",
+            "code": "SequenceDivergence",
             "message": "ORF 'tat_exon1' exceeds maximum distance tolerance. It is 2.21806 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.85696.",
             "region": "tat_exon1"
         },
         {
             "qseqid": "MN692074",
-            "error": "Frameshift",
+            "code": "Frameshift",
             "message": "ORF 'rev_exon1' at 4083-4082 contains out of frame indels that impact 51 positions.",
             "region": "rev_exon1"
         },
         {
             "qseqid": "MN692074",
-            "error": "Insertion",
+            "code": "Insertion",
             "message": "ORF 'rev_exon1' exceeds maximum insertion tolerance. Contains 387 insertions with max tolerance of 0 insertions.",
             "region": "rev_exon1"
         },
         {
             "qseqid": "MN692074",
-            "error": "SequenceDivergence",
+            "code": "SequenceDivergence",
             "message": "ORF 'rev_exon1' exceeds maximum distance tolerance. It is 2.25 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.92308.",
             "region": "rev_exon1"
         },
         {
             "qseqid": "MN692074",
-            "error": "Frameshift",
+            "code": "Frameshift",
             "message": "ORF 'vpu' at 4083-4082 contains out of frame indels that impact 166 positions.",
             "region": "vpu"
         },
         {
             "qseqid": "MN692074",
-            "error": "Insertion",
+            "code": "Insertion",
             "message": "ORF 'vpu' exceeds maximum insertion tolerance. Contains 249 insertions with max tolerance of 24 insertions.",
             "region": "vpu"
         },
         {
             "qseqid": "MN692074",
-            "error": "SequenceDivergence",
+            "code": "SequenceDivergence",
             "message": "ORF 'vpu' exceeds maximum distance tolerance. It is 2.00052 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.07949.",
             "region": "vpu"
         },
         {
             "qseqid": "MN692074",
-            "error": "Frameshift",
+            "code": "Frameshift",
             "message": "ORF 'tat_exon2' at 4083-4082 contains out of frame indels that impact 62 positions.",
             "region": "tat_exon2"
         },
         {
             "qseqid": "MN692074",
-            "error": "Deletion",
+            "code": "Deletion",
             "message": "ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 60 deletions with max tolerance of 0 deletions.",
             "region": "tat_exon2"
         },
         {
             "qseqid": "MN692074",
-            "error": "SequenceDivergence",
+            "code": "SequenceDivergence",
             "message": "ORF 'tat_exon2' exceeds maximum distance tolerance. It is 2.24194 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.18333.",
             "region": "tat_exon2"
         },
         {
             "qseqid": "MN692074",
-            "error": "Frameshift",
+            "code": "Frameshift",
             "message": "ORF 'rev_exon2' at 4083-4082 contains out of frame indels that impact 184 positions.",
             "region": "rev_exon2"
         },
         {
             "qseqid": "MN692074",
-            "error": "Deletion",
+            "code": "Deletion",
             "message": "ORF 'rev_exon2' exceeds maximum deletion tolerance. Contains 243 deletions with max tolerance of 7 deletions.",
             "region": "rev_exon2"
         },
         {
             "qseqid": "MN692074",
-            "error": "SequenceDivergence",
+            "code": "SequenceDivergence",
             "message": "ORF 'rev_exon2' exceeds maximum distance tolerance. It is 2.21413 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.75773.",
             "region": "rev_exon2"
         },
         {
             "qseqid": "MN692074",
-            "error": "Frameshift",
+            "code": "Frameshift",
             "message": "ORF 'nef' at 4083-4086 contains out of frame indels that impact 412 positions.",
             "region": "nef"
         },
         {
             "qseqid": "MN692074",
-            "error": "Deletion",
+            "code": "Deletion",
             "message": "ORF 'nef' exceeds maximum deletion tolerance. Contains 123 deletions with max tolerance of 48 deletions.",
             "region": "nef"
         },
         {
             "qseqid": "MN692074",
-            "error": "SequenceDivergence",
+            "code": "SequenceDivergence",
             "message": "ORF 'nef' exceeds maximum distance tolerance. It is 2.00372 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.34148.",
             "region": "nef"
         },
         {
             "qseqid": "MN692074",
-            "error": "MutatedStartCodon",
+            "code": "MutatedStartCodon",
             "message": "ORF 'nef' has a mutated start codon: 'ACC'.",
             "region": "nef"
         },
         {
             "qseqid": "MN692074",
-            "error": "MutatedStopCodon",
+            "code": "MutatedStopCodon",
             "message": "ORF 'nef' has a mutated stop codon: 'CAG'.",
             "region": "nef"
         },
         {
             "qseqid": "MN692074",
-            "error": "RevResponseElementDeletion",
+            "code": "RevResponseElementDeletion",
             "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.",
             "region": null
         },
         {
             "qseqid": "MN692074",
-            "error": "LongDeletion",
+            "code": "LongDeletion",
             "message": "Query sequence contains a very large deletion.",
             "region": null
         }
@@ -459,61 +459,61 @@
     "MN090335": [
         {
             "qseqid": "MN090335",
-            "error": "Frameshift",
+            "code": "Frameshift",
             "message": "ORF 'gag' at 482-1665 contains out of frame indels that impact 1230 positions.",
             "region": "gag"
         },
         {
             "qseqid": "MN090335",
-            "error": "InternalStop",
+            "code": "InternalStop",
             "message": "ORF 'gag' at 482-1665 contains an internal stop codon at 683.",
             "region": "gag"
         },
         {
             "qseqid": "MN090335",
-            "error": "MutatedStartCodon",
+            "code": "MutatedStartCodon",
             "message": "ORF 'gag' has a mutated start codon: 'ATA'.",
             "region": "gag"
         },
         {
             "qseqid": "MN090335",
-            "error": "MutatedStopCodon",
+            "code": "MutatedStopCodon",
             "message": "ORF 'gag' has a mutated stop codon: 'AAA'.",
             "region": "gag"
         },
         {
             "qseqid": "MN090335",
-            "error": "Frameshift",
+            "code": "Frameshift",
             "message": "ORF 'tat_exon2' at 7740-7832 contains out of frame indels that impact 32 positions.",
             "region": "tat_exon2"
         },
         {
             "qseqid": "MN090335",
-            "error": "Deletion",
+            "code": "Deletion",
             "message": "ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 45 deletions with max tolerance of 0 deletions.",
             "region": "tat_exon2"
         },
         {
             "qseqid": "MN090335",
-            "error": "PackagingSignalDeletion",
+            "code": "PackagingSignalDeletion",
             "message": "Query sequence exceeds maximum deletion tolerance in PSI. Contains 42 deletions with max tolerance of 10 deletions.",
             "region": null
         },
         {
             "qseqid": "MN090335",
-            "error": "MajorSpliceDonorSiteMutated",
+            "code": "MajorSpliceDonorSiteMutated",
             "message": "Query sequence has a mutated splice donor site: AT. The context is TTAACTGCGAAT-----CGTTC.",
             "region": null
         },
         {
             "qseqid": "MN090335",
-            "error": "Scramble",
+            "code": "Scramble",
             "message": "Sequence is minus-scrambled.",
             "region": null
         },
         {
             "qseqid": "MN090335",
-            "error": "InternalInversion",
+            "code": "InternalInversion",
             "message": "Sequence contains an internal inversion.",
             "region": null
         }

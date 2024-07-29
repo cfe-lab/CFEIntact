@@ -2,61 +2,61 @@
     "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455": [
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
-            "error": "Frameshift",
+            "code": "Frameshift",
             "message": "ORF 'vpr' at 5559-5850 contains out of frame indels that impact 61 positions.",
             "region": "vpr"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
-            "error": "InternalStop",
+            "code": "InternalStop",
             "message": "ORF 'vpr' at 5559-5850 contains an internal stop codon at 5793.",
             "region": "vpr"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
-            "error": "MutatedStopCodon",
+            "code": "MutatedStopCodon",
             "message": "ORF 'vpr' has a mutated stop codon: 'GAC'.",
             "region": "vpr"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
-            "error": "Deletion",
+            "code": "Deletion",
             "message": "ORF 'vpu' exceeds maximum deletion tolerance. Contains 30 deletions with max tolerance of 6 deletions.",
             "region": "vpu"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
-            "error": "SequenceDivergence",
+            "code": "SequenceDivergence",
             "message": "ORF 'vpu' exceeds maximum distance tolerance. It is 2.00873 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.07949.",
             "region": "vpu"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
-            "error": "MutatedStartCodon",
+            "code": "MutatedStartCodon",
             "message": "ORF 'vpu' has a mutated start codon: 'ACG'.",
             "region": "vpu"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
-            "error": "Frameshift",
+            "code": "Frameshift",
             "message": "ORF 'tat_exon2' at 8377-8469 contains out of frame indels that impact 32 positions.",
             "region": "tat_exon2"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
-            "error": "Deletion",
+            "code": "Deletion",
             "message": "ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 45 deletions with max tolerance of 0 deletions.",
             "region": "tat_exon2"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
-            "error": "Frameshift",
+            "code": "Frameshift",
             "message": "ORF 'nef' at 8797-9417 contains out of frame indels that impact 168 positions.",
             "region": "nef"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
-            "error": "InternalStop",
+            "code": "InternalStop",
             "message": "ORF 'nef' at 8797-9417 contains an internal stop codon at 9166.",
             "region": "nef"
         }
