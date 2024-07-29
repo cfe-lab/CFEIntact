@@ -29,7 +29,7 @@ from cfeintact.translate_to_aminoacids import translate_to_aminoacids
 
 @dataclass(frozen=True)
 class FoundORF:
-    name: str
+    region: str
     start: int
     end: int
     orientation: str
@@ -845,12 +845,12 @@ def check(working_dir: str,
             sequence_defects.extend(small_orf_defects)
 
         hxb2_found_orfs = [FoundORF(
-            o.query.name,
-            o.query.start,
-            o.query.end,
-            o.orientation,
-            o.distance,
-            o.indel_impact,
+            region=o.query.name,
+            start=o.query.start,
+            end=o.query.end,
+            orientation=o.orientation,
+            distance=o.distance,
+            indel_impact=o.indel_impact,
             protein=str(o.query.protein),
             nucleotides=str(o.query.nucleotides),
             subtype_start=o.reference.start,
