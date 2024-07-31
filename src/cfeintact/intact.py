@@ -24,7 +24,6 @@ from cfeintact.mapped_orf import MappedORF
 from cfeintact.find_orf import find_orf
 from cfeintact.user_error import UserError
 from cfeintact.translate_to_aminoacids import translate_to_aminoacids
-from cfeintact.fisher_exact_test import fisher_exact
 
 
 @dataclass(frozen=True)
@@ -215,6 +214,8 @@ def isHypermut(holistic, aln):
         gIndex -- all 'G' positions in ref
         aIndex -- all 'A' positions in qry
 """
+    from cfeintact.fisher_exact_test import fisher_exact
+
     mutIndex = _getPositions('(?=.[AG][^C])', str(aln[1].seq).upper())
     ctlIndex = _getPositions('(?=.([CT].|[AG]C))', str(aln[1].seq).upper())
     gIndex = _getPositions('G', str(aln[0].seq).upper())
