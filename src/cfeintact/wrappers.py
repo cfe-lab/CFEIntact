@@ -24,12 +24,13 @@ def mafft(sequences: Iterable[SeqRecord]) -> MultipleSeqAlignment:
 
     with tempfile.NamedTemporaryFile() as alignment_input, tempfile.NamedTemporaryFile() as alignment_output:
         SeqIO.write(sequences, alignment_input.name, "fasta")
-        completed = subprocess.run(["mafft", "--quiet", alignment_input.name],
-                                   shell=False, stdout=alignment_output, check=True)
 
-        if completed.returncode != 0:
-            raise UserError(f"MAFFT run failed with return code {completed.returncode}. "
-                            f"Please check if the input .FASTA file is correctly formatted.")
+        try:
+            subprocess.run(["mafft", "--quiet", alignment_input.name],
+                           shell=False, stdout=alignment_output, check=True)
+        except Exception as e:
+            raise UserError(f"MAFFT run failed with {e}. "
+                            f"Please check if the input .FASTA file is correctly formatted.") from e
 
         alignment: MultipleSeqAlignment = AlignIO.read(alignment_output.name, "fasta")
         return alignment
@@ -43,22 +44,24 @@ def blast(alignment_file: str, input_file: str, output_file: str) -> None:
     with open(output_file, "w") as output, \
             tempfile.NamedTemporaryFile() as alignment_output:
 
-        completed = subprocess.run(
-            ["blastn",
-             "-query", input_file,
-             "-db", alignment_file,
-             "-num_alignments", "1",
-             "-reward", "1",
-             "-penalty", "-1",
-             "-gapopen", "2",
-             "-gapextend", "1",
-             "-out", alignment_output.name,
-             "-outfmt", outfmt],
-            shell=False)
-
-        if completed.returncode != 0:
-            raise UserError(f"BLAST run failed with return code {completed.returncode}. "
-                            f"Please check if the input .FASTA file is correctly formatted.")
+        try:
+            subprocess.run(
+                ["blastn",
+                 "-query", input_file,
+                 "-db", alignment_file,
+                 "-num_alignments", "1",
+                 "-reward", "1",
+                 "-penalty", "-1",
+                 "-gapopen", "2",
+                 "-gapextend", "1",
+                 "-out", alignment_output.name,
+                 "-outfmt", outfmt],
+                shell=False,
+                check=True,
+            )
+        except Exception as e:
+            raise UserError(f"BLAST run failed with {e}. "
+                            f"Please check if the input .FASTA file is correctly formatted.") from e
 
         output.write(','.join(fields) + '\n')
         alignment_output.seek(0)
