@@ -105,8 +105,8 @@ def intact(input_file: str, subtype: str, check_packaging_signal: bool,
             check_unknown_nucleotides, check_small_orfs, check_distance, output_csv,
         )
     except UserError as e:
-        logger.error("%s", e.message)
-        exit(1)
+        logger.fatal(e.fmt, *e.fmt_args)
+        exit(e.code)
 
     exit(0)
 

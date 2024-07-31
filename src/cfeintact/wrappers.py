@@ -29,8 +29,9 @@ def mafft(sequences: Iterable[SeqRecord]) -> MultipleSeqAlignment:
             subprocess.run(["mafft", "--quiet", alignment_input.name],
                            shell=False, stdout=alignment_output, check=True)
         except Exception as e:
-            raise UserError(f"MAFFT run failed with {e}. "
-                            f"Please check if the input .FASTA file is correctly formatted.") from e
+            raise UserError("MAFFT run failed with %s. "
+                            "Please check if the input FASTA file is correctly formatted.",
+                            e) from e
 
         alignment: MultipleSeqAlignment = AlignIO.read(alignment_output.name, "fasta")
         return alignment
@@ -60,8 +61,9 @@ def blast(alignment_file: str, input_file: str, output_file: str) -> None:
                 check=True,
             )
         except Exception as e:
-            raise UserError(f"BLAST run failed with {e}. "
-                            f"Please check if the input .FASTA file is correctly formatted.") from e
+            raise UserError("BLAST run failed with %s. "
+                            "Please check if the input FASTA file is correctly formatted.",
+                            e) from e
 
         output.write(','.join(fields) + '\n')
         alignment_output.seek(0)

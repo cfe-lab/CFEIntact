@@ -3,7 +3,8 @@ from cfeintact.user_error import UserError
 
 
 def default_fisher_exact(*args, **kwargs):
-    raise UserError("Cannot import scipy for fisher_exact test.")
+    raise UserError("Cannot import scipy for fisher_exact test. "
+                    "Please check if you have enough RAM for scipy (python -c 'import scipy').")
 
 
 try:
@@ -12,6 +13,7 @@ try:
 except ImportError as e:
     logger.warning("Cannot import scipy: %s.", e)
     fisher_exact = default_fisher_exact
-except KeyboardInterrupt as e:
-    logger.warning("Cannot import scipy: %r.", e)
+except KeyboardInterrupt:
+    logger.warning("Cannot import scipy for fisher_exact test. "
+                   "Please check if you have enough RAM for scipy (python -c 'import scipy').")
     fisher_exact = default_fisher_exact

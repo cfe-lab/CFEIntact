@@ -573,7 +573,7 @@ class OutputWriter:
         self.subtypes = set()
 
         if fmt not in ("json", "csv"):
-            raise UserError(f"Unrecognized output format {fmt!r}.")
+            raise UserError("Unrecognized output format %r.", fmt)
 
     def __enter__(self, *args):
         self.subtypes_file = open(self.subtypes_path, 'w')
