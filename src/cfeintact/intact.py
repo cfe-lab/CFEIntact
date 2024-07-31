@@ -8,7 +8,6 @@ from collections import Counter
 from Bio import Seq, SeqIO
 from Bio.SeqRecord import SeqRecord
 from Bio.Data import IUPACData
-from scipy.stats import fisher_exact
 from typing import Optional, Dict, List, Iterable, Union, Tuple
 
 import cfeintact.constants as const
@@ -25,6 +24,7 @@ from cfeintact.mapped_orf import MappedORF
 from cfeintact.find_orf import find_orf
 from cfeintact.user_error import UserError
 from cfeintact.translate_to_aminoacids import translate_to_aminoacids
+from cfeintact.fisher_exact_test import fisher_exact
 
 
 @dataclass(frozen=True)
