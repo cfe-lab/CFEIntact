@@ -9,9 +9,9 @@ def default_fisher_exact(*args, **kwargs):
 try:
     import scipy.stats as stats
     fisher_exact = stats.fisher_exact
-except Exception as e:
+except ImportError as e:
     logger.warning("Cannot import scipy: %s.", e)
     fisher_exact = default_fisher_exact
 except KeyboardInterrupt as e:
-    logger.warning("Cannot import scipy: %s.", e)
+    logger.warning("Cannot import scipy: %r.", e)
     fisher_exact = default_fisher_exact
