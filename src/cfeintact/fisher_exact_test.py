@@ -12,3 +12,6 @@ try:
 except Exception as e:
     logger.warning("Cannot import scipy: %s.", e)
     fisher_exact = default_fisher_exact
+except KeyboardInterrupt as e:
+    logger.warning("Cannot import scipy: %s.", e)
+    fisher_exact = default_fisher_exact
