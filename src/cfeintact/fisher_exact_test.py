@@ -9,6 +9,6 @@ def default_fisher_exact(*args, **kwargs):
 try:
     import scipy.stats as stats
     fisher_exact = stats.fisher_exact
-except ImportError as e:
+except Exception as e:
     logger.warning("Cannot import scipy: %s.", e)
     fisher_exact = default_fisher_exact
