@@ -7,11 +7,11 @@
 
 # CFEIntact &middot; ![Python version](https://img.shields.io/badge/python-3.6+-blue.svg)
 
-CFEIntact is an automated proviral intactness checker for HIV-1 consensus sequences, developed in Python. It enables researchers and clinicians to analyze HIV-1 sequences for intactness, aiding in the understanding of viral replication and persistence.
+CFEIntact is [BCCfE](https://github.com/cfe-lab)'s version of [HIVIntact](https://github.com/ramics/HIVIntact) -- an automated proviral intactness checker for HIV-1 consensus sequences, developed in Python. It enables researchers and clinicians to analyze HIV-1 sequences for intactness, aiding in the understanding of viral replication and persistence.
 
 - **Automated Analysis:** Simplifies the process of checking HIV-1 consensus sequences for intactness with automated tools.
 - **Extensible:** Designed to be extendable with additional checks and features as the field of HIV research evolves.
-- **Open Source:** Encourages contributions and improvements from the community to make the tool more accurate and robust.
+- **Free software:** Encourages contributions and improvements from the community to make the tool more accurate and robust.
 
 ## Installation
 
