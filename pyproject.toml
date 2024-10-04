@@ -16,7 +16,7 @@ dependencies = [
     "biopython>=1.83",
     "click>=8.0",
     "scipy>=1.1",
-    "aligntools @ git+https://github.com/cfe-lab/aligntools.git@v1.0.2",
+    "aligntools",
 ]
 
 [project.optional-dependencies]
