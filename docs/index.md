@@ -1,8 +1,7 @@
 
 # Welcome to CFEIntact's documentation!
 
-CFEIntact is a python-based program that characterises genomic defects in NFL HIV-1 sequences,
-allowing putative intact genomes to be identified in-silico.
+CFEIntact is BCCfE's version of [HIVIntact](https://github.com/ramics/HIVIntact) -- a python-based program for characterisation of genomic defects in NFL HIV-1 sequences, allowing putative intact genomes to be identified in-silico.
 
 CFEIntact stands out from other applications in its ability to seamlessly integrate into existing sequence-analysis pipelines.
 This makes it an ideal tool for analyzing large next-generation sequencing datasets.
