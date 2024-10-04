@@ -8,8 +8,8 @@ This file should include the genomic sequences of interest.
 
 Once the analysis is complete, CFEIntact will generate these output files:
 
-- `errors.csv`
-- `orfs.csv`
+- `defects.csv`
+- `regions.csv`
 - `holistic.csv`
 - `intact.fasta`
 - `nonintact.fasta`
@@ -18,10 +18,10 @@ Once the analysis is complete, CFEIntact will generate these output files:
 
 If you pass the `--output-json` option to CFEIntact, the output format will be `.json` instead of `.csv`.
 
-## `errors.csv`
+## `defects.csv`
 
 This file contains associations between sequences and their identified defects.
-Here is an example of the contents of the `errors.csv` file:
+Here is an example of the contents of the `defects.csv` file:
 
 | qseqid     | error                       | message                                                                                                             | orf       |
 |------------|-----------------------------|---------------------------------------------------------------------------------------------------------------------|-----------|
@@ -31,10 +31,10 @@ Here is an example of the contents of the `errors.csv` file:
 | MK114856.1 | APOBECHypermutationDetected | Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 3.639064030015132e-65).                     |           |
 | MK116110.1 | PackagingSignalDeletion     | Query Sequence exceeds maximum deletion tolerance in PSI. Contains 93 deletions with max tolerance of 10 deletions. |           |
 
-## `orfs.csv`
+## `regions.csv`
 
 This file contains associations between sequences and their identified Open Reading Frames (ORFs).
-Here is an example of the contents of the `orfs.csv` file:
+Here is an example of the contents of the `regions.csv` file:
 
 | qseqid     | name | start | end  | orientation | distance            | protein | aminoacids | nucleotides | subtype_start | subtype_end | subtype_aminoacids | subtype_nucleotides |
 |------------|------|-------|------|-------------|---------------------|---------|------------|-------------|---------------|-------------|--------------------|---------------------|
