@@ -21,13 +21,15 @@ If you pass the `--output-json` option to CFEIntact, the output format will be `
 This file contains associations between sequences and their identified defects.
 Here is an example of the contents of the `defects.csv` file:
 
-| qseqid     | error                       | message                                                                                                             | orf       |
+| qseqid     | code                       | message                                                                                                             | region       |
 |------------|-----------------------------|---------------------------------------------------------------------------------------------------------------------|-----------|
 | KX505501.1 | InternalStopInOrf           | ORF 'pol' at 1629-1927 contains an internal stop codon at 1746.                                                     | pol       |
 | KX505501.1 | RevResponseElementDeletion  | Query Sequence exceeds maximum deletion tolerance in RRE. Contains 35 deletions with max tolerance of 20 deletions. |           |
 | MN691959   | DeletionInOrf               | ORF 'tat_exon2' exeeds maximum deletion tolerance. Contains 45 deletions with max tolerance of 0 deletions.         | tat_exon2 |
 | MK114856.1 | APOBECHypermutationDetected | Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 3.639064030015132e-65).                     |           |
 | MK116110.1 | PackagingSignalDeletion     | Query Sequence exceeds maximum deletion tolerance in PSI. Contains 93 deletions with max tolerance of 10 deletions. |           |
+
+Here, and below `qseqid` stands for "Query Sequence Id", which is the same sequence name as in the input `.fasta` file.
 
 ## `regions.csv`
 
@@ -71,7 +73,7 @@ Here is an example of the contents of the `holistic.csv` file:
 
 ### Field descriptions
 
-- `qseqid`: The identifier or name for the sequence (same as in the input FASTA file)
+- `qseqid`: The identifier or name for the sequence (same as in the input `.fasta` file)
 - `intact`: Whether the query sequence is considered to be intact (True) or not (False)
 - `qlen`: Length of the _query_ sequence
 - `hypermutation_probablility`: The probability that the sequence shows evidence of hypermutation
@@ -89,7 +91,7 @@ Here is an example of the contents of the `holistic.csv` file:
 
 This file contains a list of reference sequences.
 The names are exactly those `inferred_subtype`s found in `holistic.csv`.
-Here is an example of the contents of the `intact.fasta` file:
+Here is an example of the contents of the `subtypes.fasta` file:
 
 ```fasta
 >Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE
