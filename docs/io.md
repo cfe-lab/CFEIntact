@@ -11,8 +11,6 @@ Once the analysis is complete, CFEIntact will generate these output files:
 - `defects.csv`
 - `regions.csv`
 - `holistic.csv`
-- `intact.fasta`
-- `nonintact.fasta`
 - `subtypes.fasta`
 - `blast.csv`
 
@@ -86,32 +84,6 @@ Here is an example of the contents of the `holistic.csv` file:
 - `orfs_end`: The ending point of the ORFs
 - `blast_n_conseqs`: The number of consecutive sequences from BLASTN results
 - `is_reverse_complement`: Whether the query sequence has been reverse complemented to better fit the reference sequence
-
-## `intact.fasta`
-
-This file contains a list of sequences with no fatal defects identified. These sequences are considered putative intact genomes.
-The names are exactly those `qseqid`s from `holistic.csv` that have `is_intact` values as `True`.
-Here is an example of the contents of the `intact.fasta` file:
-
-```fasta
->MN692145
-TGGA......AGCA
-```
-
-## `nonintact.fasta`
-
-This file contains a list of sequences with identified defects. These sequences are not considered putative intact genomes.
-The names are exactly those `qseqid`s from `holistic.csv` that have `is_intact` values as `False`.
-Here is an example of the contents of the `intact.fasta` file:
-
-```fasta
->KX505501.1
-ACTG.....ATGA
->MN691959
-CCTA.....TAAA
->MN692074
-GAGA.....GGTG
-```
 
 ## `subtypes.fasta`
 
