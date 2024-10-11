@@ -1,13 +1,6 @@
 from typing import List, Tuple, Optional
 
 def get_biggest_protein(has_start_codon: bool, aminoacids: str) -> Optional[Tuple[str, int, int]]:
-    def skip_to_startcodon(x):
-        index = x.find("M")
-        if index >= 0:
-            return x[index:]
-        else:
-            return ""
-
     candidates: List[Tuple[str, int, int]] = []
     current_protein = ""
 
