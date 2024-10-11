@@ -2,7 +2,7 @@ import os
 from Bio import SeqIO
 from Bio.SeqRecord import SeqRecord
 from pathlib import Path
-from typing import Iterator, List, Sequence, Optional, Dict
+from typing import Iterator, List, Dict
 import contextlib
 import importlib.resources as resources
 
@@ -84,17 +84,3 @@ Args:
         SEQUENCE_CACHE[subtype] = list(subtype_sequences_iter(subtype))
 
     return SEQUENCE_CACHE[subtype]
-
-
-def convert_from_aligned_to_reference(position: int, alignment: List[Sequence[str]]) -> Optional[int]:
-    hxb2_pos = 0
-    subtype_pos = 0
-    for i in range(len(alignment[0])):
-        if subtype_pos == position:
-            return hxb2_pos
-        if alignment[0][i] != "-":
-            subtype_pos += 1
-        if alignment[1][i] != "-":
-            hxb2_pos += 1
-
-    return None

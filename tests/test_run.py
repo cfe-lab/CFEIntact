@@ -16,3 +16,11 @@ def test_basic_run(tmp_path, request):
         except SystemExit as e: assert e.code == 0
 
     assert os.path.exists(os.path.join(working_dir, "defects.json"))
+
+
+def test_version_run(tmp_path, request):
+    testargs = ["cfeintact", "version"]
+
+    with patch.object(sys, 'argv', testargs):
+        try: main.cli()
+        except SystemExit as e: assert e.code == 0
