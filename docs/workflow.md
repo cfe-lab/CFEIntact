@@ -87,7 +87,7 @@ Briefly, scans reference for APOBEC possible signatures and non-signatures and p
 fisher test based on ratio of G->A in ref -> query at these signatures.
 
 If there is enough evidence that the sequence is hypermutated (p-value <0.05)
-this step outputs the `APOBECHypermutationDetected` error code.
+this step outputs the `APOBECHypermutation` error code.
 
 ### Large deletion check
 
