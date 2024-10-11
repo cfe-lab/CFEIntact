@@ -2,15 +2,15 @@
     "MN692145": {
         "intact": true,
         "qlen": 9689,
-        "hypermutation_probablility": 0.1672411051048176,
         "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE",
+        "hypermutation_probablility": 0.1672411051048176,
+        "is_reverse_complement": false,
         "blast_matched_qlen": 9689,
         "blast_sseq_coverage": 1.130479522535501,
         "blast_qseq_coverage": 1.1271545051088863,
         "blast_sseq_orfs_coverage": 1.0,
         "orfs_start": 789,
         "orfs_end": 8793,
-        "blast_n_conseqs": 3,
-        "is_reverse_complement": false
+        "blast_n_conseqs": 3
     }
 }

@@ -46,8 +46,9 @@ class FoundORF:
 class HolisticInfo:
     intact: Optional[bool] = dataclasses.field(default=None)
     qlen: Optional[int] = dataclasses.field(default=None)
-    hypermutation_probablility: Optional[float] = dataclasses.field(default=None)
     inferred_subtype: Optional[str] = dataclasses.field(default=None)
+    hypermutation_probablility: Optional[float] = dataclasses.field(default=None)
+    is_reverse_complement: Optional[bool] = dataclasses.field(default=None)
     # number of query nucleotides matched to a known reference sequence
     blast_matched_qlen: Optional[int] = dataclasses.field(default=None)
     # percentage of reference sequence covered by the query sequence
@@ -62,7 +63,6 @@ class HolisticInfo:
     orfs_end: Optional[int] = dataclasses.field(default=None)
     # number of blast conseqs in the resulting match
     blast_n_conseqs: Optional[int] = dataclasses.field(default=None)
-    is_reverse_complement: Optional[bool] = dataclasses.field(default=None)
 
 
 def iterate_values_from_csv(file_path):
