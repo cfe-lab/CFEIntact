@@ -26,7 +26,7 @@ Here is an example of the contents of the `defects.csv` file:
 | KX505501.1 | InternalStopInOrf           | ORF 'pol' at 1629-1927 contains an internal stop codon at 1746.                                                     | pol       |
 | KX505501.1 | RevResponseElementDeletion  | Query Sequence exceeds maximum deletion tolerance in RRE. Contains 35 deletions with max tolerance of 20 deletions. |           |
 | MN691959   | DeletionInOrf               | ORF 'tat_exon2' exeeds maximum deletion tolerance. Contains 45 deletions with max tolerance of 0 deletions.         | tat_exon2 |
-| MK114856.1 | APOBECHypermutationDetected | Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 3.639064030015132e-65).                     |           |
+| MK114856.1 | APOBECHypermutation | Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 3.639064030015132e-65).                     |           |
 | MK116110.1 | PackagingSignalDeletion     | Query Sequence exceeds maximum deletion tolerance in PSI. Contains 93 deletions with max tolerance of 10 deletions. |           |
 
 Here, and below `qseqid` stands for "Query Sequence Id", which is the same sequence name as in the input `.fasta` file.
@@ -64,20 +64,21 @@ Here is an example of the contents of the `regions.csv` file:
 This file contains comprehensive analysis details related to the sequences as a whole, rather than being specific to each ORF.
 Here is an example of the contents of the `holistic.csv` file:
 
-| qseqid     | intact | qlen | hypermutation_probablility | inferred_subtype                         | blast_matched_qlen | blast_sseq_coverage | blast_qseq_coverage | blast_sseq_orfs_coverage | orfs_start | orfs_end | blast_n_conseqs |
-|------------|--------|------|----------------------------|------------------------------------------|--------------------|---------------------|---------------------|--------------------------|------------|----------|-----------------|
-| KX505501.1 | False  | 1997 | 0.71                       | Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE | 1997               | 0.25                | 1.22                | 0.18                     | 789        | 8793     | 4               |
-| MN691959   | False  | 9493 | 0.20                       | Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE | 9493               | 1.08                | 1.11                | 1                        | 789        | 8793     | 3               |
-| MN692074   | False  | 4178 | 0.36                       | Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE | 4178               | 0.50                | 1.17                | 0.41                     | 789        | 8793     | 4               |
-| MN692145   | True   | 9689 | 0.17                       | Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE | 9689               | 1.13                | 1.13                | 1                        | 789        | 8793     | 3               |
+| qseqid     | intact | qlen | inferred_subtype                         | hypermutation_probablility | is_reverse_complement | blast_matched_qlen | blast_sseq_coverage | blast_qseq_coverage | blast_sseq_orfs_coverage | orfs_start | orfs_end | blast_n_conseqs |
+|------------|--------|------|------------------------------------------|----------------------------|-----------------------|--------------------|---------------------|---------------------|--------------------------|------------|----------|-----------------|
+| KX505501.1 | False  | 1997 | Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE | 0.71                       | False                 | 1997               | 0.25                | 1.22                | 0.18                     | 789        | 8793     | 4               |
+| MN691959   | False  | 9493 | Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE | 0.20                       | False                 | 9493               | 1.08                | 1.11                | 1                        | 789        | 8793     | 3               |
+| MN692074   | False  | 4178 | Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE | 0.36                       | False                 | 4178               | 0.50                | 1.17                | 0.41                     | 789        | 8793     | 4               |
+| MN692145   | True   | 9689 | Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE | 0.17                       | False                 | 9689               | 1.13                | 1.13                | 1                        | 789        | 8793     | 3               |
 
 ### Field descriptions
 
 - `qseqid`: The identifier or name for the sequence (same as in the input `.fasta` file)
 - `intact`: Whether the query sequence is considered to be intact (True) or not (False)
 - `qlen`: Length of the _query_ sequence
+- `inferred_subtype`: The suspected subtype of the sequence based on analysis. Same as `sseqid` in `blast.csv`.
 - `hypermutation_probablility`: The probability that the sequence shows evidence of hypermutation
-- `inferred_subtype`: The suspected subtype of the sequence based on analysis
+- `is_reverse_complement`: Whether the query sequence has been reverse complemented to better fit the reference sequence
 - `blast_matched_qlen`: The length of the matched subsequence from the BLASTN software
 - `blast_sseq_coverage`: The coverage of the subject sequence from BLASTN output
 - `blast_qseq_coverage`: The coverage of the query sequence from BLASTN output
@@ -85,7 +86,6 @@ Here is an example of the contents of the `holistic.csv` file:
 - `orfs_start`: The starting point of the ORFs
 - `orfs_end`: The ending point of the ORFs
 - `blast_n_conseqs`: The number of consecutive sequences from BLASTN results
-- `is_reverse_complement`: Whether the query sequence has been reverse complemented to better fit the reference sequence
 
 ## `subtypes.fasta`
 
