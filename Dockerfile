@@ -1,7 +1,7 @@
 
 FROM ubuntu:22.04
 
-ARG DEBIAN_FRONTEND=noniteractive
+ENV DEBIAN_FRONTEND=noniteractive
 
 RUN apt-get update
 RUN apt-get install -y mafft ncbi-blast+
