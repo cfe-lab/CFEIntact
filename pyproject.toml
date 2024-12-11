@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "cfeintact"
-version = "1.23.0"
+version = "1.23.1"
 description = "A bioinformatics tool for detecting defects in HIV-1 proviral sequences."
 readme = "README.md"
 license = "MIT"
