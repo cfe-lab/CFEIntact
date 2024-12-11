@@ -12,3 +12,5 @@ WORKDIR /workspaces/CFEIntact
 COPY . .
 
 RUN python3 -m pip install .
+
+ENTRYPOINT ["cfeintact"]

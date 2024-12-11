@@ -80,7 +80,7 @@ jobs:
         run: docker build . --tag cfeintact
 
       - name: Run test
-        run: docker run cfeintact sh -c 'cfeintact check --subtype B tests/data-small.fasta && test -f "defects.csv"'
+        run: docker run --entrypoint sh -- cfeintact -c 'cfeintact check --subtype B tests/data-small.fasta && test -f "defects.csv"'
 
   linter:
     runs-on: ubuntu-latest
