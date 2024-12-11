@@ -7,9 +7,8 @@ RUN apt-get update
 RUN apt-get install -y mafft ncbi-blast+
 RUN apt-get install -y python3 python3-pip
 
-WORKDIR /workspaces/CFEIntact
-COPY . .
+COPY . /tmp/CFEIntact
 
-RUN python3 -m pip install .
+RUN python3 -m pip install /tmp/CFEIntact
 
 ENTRYPOINT ["cfeintact"]
