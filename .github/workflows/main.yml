@@ -81,8 +81,8 @@ jobs:
 
       - name: Run test
         run: |
-          docker run --volume "$PWD:$PWD" --volume "$PWD/output:/workspaces/CFEIntact" --rm cfeintact check --subtype B "$PWD/tests/data-small.fasta"
-          test -f "$PWD/output/defects.csv"
+          docker run --volume "/home:/home" --workdir "$PWD" --rm cfeintact check --subtype B "tests/data-small.fasta"
+          test -f "defects.csv"
 
   linter:
     runs-on: ubuntu-latest
