@@ -1,7 +1,7 @@
 
 import os
 import click
-from importlib.metadata import version
+from importlib.metadata import version, PackageNotFoundError
 
 import cfeintact.intact as it
 import cfeintact.subtypes as st
@@ -27,12 +27,12 @@ def cli():
 
 @cli.command('version')
 def get_version() -> None:
-    if __package__ is None:
-        print("CFEIntact is not installed.")
-        exit(1)
-    else:
+    try:
         print(version(__package__))
         exit(0)
+    except PackageNotFoundError:
+        print("CFEIntact is not installed.")
+        exit(1)
 
 
 @cli.command('check')
