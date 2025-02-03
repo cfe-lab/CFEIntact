@@ -9,17 +9,17 @@ Before running CFEIntact, ensure that you have [installed it](installation.md).
 
 ## Running the Tool
 
-CFEIntact is executed through a command-line interface (CLI).
+CFEIntact is executed through Docker, and it is a command-line only program.
 
 ### Basic Usage
 
 To check consensus sequences for intactness, use the `check` command followed by the required and optional arguments. Here is the basic syntax:
 
 ```bash
-cfeintact check [OPTIONS] INPUT_FILE
+docker run -v "$PWD":/data cfelab/cfeintact check [OPTIONS] /data/INPUT_FILE
 ```
 
-`INPUT_FILE` denotes the path to the sequence file in FASTA format that you wish to analyze.
+`/data/INPUT_FILE` denotes the path to the sequence file in FASTA format that you wish to analyze. Make sure the file is located in the directory you're mounting, i.e., your current working directory.
 
 ### Options
 
@@ -45,13 +45,13 @@ The `check` command provides several options that allow you to customize the ana
 Run an analysis on `sequences.fasta` for subtype 'A', checking all aspects except small ORFs, and output the results in JSON format:
 
 ```bash
-cfeintact check --subtype A --ignore-small-orfs --output-json sequences.fasta
+docker run -v "$PWD":/data cfelab/cfeintact check --subtype A --ignore-small-orfs --output-json /data/sequences.fasta
 ```
 
 Check sequences in `input.fasta` for subtype 'B' with default settings and save outputs in CSV format in a specific directory:
 
 ```bash
-cfeintact check --subtype B --output-csv --working-folder /path/to/output_folder input.fasta
+docker run -v "$PWD":/data cfelab/cfeintact check --subtype B --output-csv --working-folder /data/path/to/output_folder /data/input.fasta
 ```
 
 ## Understanding the Output
