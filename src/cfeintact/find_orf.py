@@ -28,6 +28,8 @@ def find_closest(aminoacids, start, direction, target):
 
 
 def find_candidate_positions(aligned_sequence: AlignedSequence, e: OriginalORF) -> Iterable[MappedORF]:
+    assert aligned_sequence.this.seq is not None
+
     q_start = aligned_sequence.coordinate_mapping.ref_to_query.right_min(e.start)
     q_end = aligned_sequence.coordinate_mapping.ref_to_query.left_max(e.end)
     if q_start is None:
@@ -35,7 +37,7 @@ def find_candidate_positions(aligned_sequence: AlignedSequence, e: OriginalORF) 
     if q_end is None:
         q_end = len(aligned_sequence.this.seq) - 1
 
-    region_nucleotides = str(aligned_sequence.this.seq[q_start:q_end + 1])
+    region_nucleotides = aligned_sequence.this.seq[q_start:q_end + 1]
     region_aminoacids = translate_to_aminoacids(region_nucleotides)
 
     visited_set = set()

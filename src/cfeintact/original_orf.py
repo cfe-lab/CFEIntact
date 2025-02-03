@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from Bio.Seq import Seq
 from functools import cached_property
 
 
@@ -10,7 +11,7 @@ class OriginalORF:
     max_deletions: int
     max_insertions: int
     max_distance: float
-    nucleotides: str
+    nucleotides: Seq
     aminoacids: str
     protein: str
     is_small: bool

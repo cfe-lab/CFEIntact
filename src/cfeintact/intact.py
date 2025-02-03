@@ -468,6 +468,7 @@ def check_reading_frame_start(sequence: SeqRecord, check_distance: bool, best_ma
        check_reading_frame_shift(best_match=best_match):
 
         if not best_match.starts_properly:
+            assert sequence.seq is not None
             codon = str(sequence.seq[q.start:q.start + 2 + 1])
             return defect.MutatedStartCodon(codon=codon, e=e, q=q)
 
@@ -489,6 +490,7 @@ def check_reading_frame_stop(sequence: SeqRecord, check_distance: bool, best_mat
         if not best_match.ends_properly:
             start = q.start + ((q.end - q.start) // 3) * 3
             end = start + 2
+            assert sequence.seq is not None
             codon = str(sequence.seq[start:end + 1])
             if translate_to_aminoacids(codon) == '*':
                 end = q.end

@@ -3,6 +3,7 @@ from Bio.SeqRecord import SeqRecord
 from Bio.Seq import Seq
 from aligntools import Cigar
 from functools import cached_property
+from typing import Sequence
 
 import cfeintact.wrappers as wrappers
 from Bio.Align import MultipleSeqAlignment
@@ -31,14 +32,18 @@ class AlignedSequence:
     def cigar(self) -> Cigar:
         reference = self.aligned_reference
         query = self.aligned_this
-        return Cigar.from_msa(reference=reference.seq, query=query.seq)
+        seq_reference: Sequence[str] = reference.seq or ""  # type: ignore
+        seq_query: Sequence[str] = query.seq or ""  # type: ignore
+        return Cigar.from_msa(reference=seq_reference, query=seq_query)  # type: ignore
 
     @cached_property
     def coordinate_mapping(self):
         return self.cigar.coordinate_mapping
 
     def reverse(self):
-        newthis = SeqRecord(Seq.reverse_complement(self.this.seq),
+        seq = self.this.seq
+        assert seq is not None
+        newthis = SeqRecord(Seq.reverse_complement(seq),
                             id=self.this.id,
                             name=self.this.name
                             )
@@ -46,4 +51,6 @@ class AlignedSequence:
         return AlignedSequence(this=newthis, reference=self.reference)
 
     def alignment_score(self) -> int:
-        return sum([a == b for a, b in zip(self.aligned_reference.seq, self.aligned_this.seq)])
+        left = self.aligned_reference.seq or ""
+        right = self.aligned_this.seq or ""
+        return sum([a == b for a, b in zip(left, right)])

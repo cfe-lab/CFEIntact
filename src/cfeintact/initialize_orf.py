@@ -8,6 +8,7 @@ def initialize_orf(aligned_sequence: AlignedSequence, name: str,
                    start: int, end: int,
                    max_deletions: int, max_insertions: int,
                    max_distance: float, is_small: bool) -> OriginalORF:
+    assert aligned_sequence.reference.seq is not None
     nucleotides = aligned_sequence.reference.seq[start:(end + 1)]
     aminoacids = translate_to_aminoacids(nucleotides)
     protein = aminoacids.strip("*")
