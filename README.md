@@ -15,30 +15,33 @@ CFEIntact is [BCCfE](https://github.com/cfe-lab)'s version of [HIVIntact](https:
 
 ## Installation
 
-CFEIntact is built with Python 3 and requires several dependencies, including MAFFT and BLAST+, for sequence alignment and analysis.
+The easiest way to install and run CFEIntact is through Docker. The pre-built Docker image is available on Docker Hub.
 
-### Prerequisites
+Ensure Docker is installed on your system. You can download and install Docker from [the official Docker website](https://www.docker.com/get-started).
 
-- `Python3` for running the main program.
-- `pip` for managing Python packages.
-- `MAFFT` for sequence alignment.
-- `BLAST+` for sequence analysis when certain checks are enabled.
-
-Clone the repository and install CFEIntact:
+Once Docker is installed, pull the docker image from Docker Hub:
 
 ```shell
-git clone https://github.com/cfe-lab/CFEIntact
-cd CFEIntact
-python3 -m pip install .
+docker pull cfelab/cfeintact
 ```
+
+To verify the installation, run:
+
+```shell
+docker run --rm cfelab/cfeintact version
+```
+
+This command should print something like `1.23.2`.
 
 ## Running CFEIntact
 
 To analyze a set of FASTA sequences for HIV-1 proviral intactness:
 
 ```shell
-cfeintact check --subtype B sequences.fasta
+docker run -v "$PWD":/data cfeintact check --subtype B /data/sequences.fasta
 ```
+
+This command mounts the current directory to `/data` in the container, making your local files accessible. Be sure to adjust the command for your specific analysis (e.g., `sequences.fasta` is your input file).
 
 Note: currently it is recommended to use subtype B even if your sequences are not subtype B.
 This is because many well known sequences of reference subtypes, which CFEIntact uses in its analysis, contain serious defects.
