@@ -91,8 +91,8 @@ def iterate_blast_rows_from_csv(file_path):
         yield values
 
 
-def blast_iterate(subtype, input_file, working_dir):
-    with open(os.path.join(working_dir, 'blast.csv'), 'w') as output_file:
+def blast_iterate(subtype, input_file, output_dir):
+    with open(os.path.join(output_dir, 'blast.csv'), 'w') as output_file:
         with st.alignment_file(subtype) as db_file:
             wrappers.blast(str(db_file), input_file, output_file.name)
 
@@ -100,8 +100,8 @@ def blast_iterate(subtype, input_file, working_dir):
             yield seq
 
 
-def blast_iterate_inf(subtype, input_file, working_dir):
-    for seq in blast_iterate(subtype, input_file, working_dir):
+def blast_iterate_inf(subtype, input_file, output_dir):
+    for seq in blast_iterate(subtype, input_file, output_dir):
         yield seq
 
     while True:
@@ -565,13 +565,13 @@ def with_blast_rows(blast_it, sequence_it):
 
 
 class OutputWriter:
-    def __init__(self, working_dir, fmt):
+    def __init__(self, output_dir, fmt):
         self.fmt = fmt
-        self.working_dir = working_dir
-        self.subtypes_path = os.path.join(working_dir, "subtypes.fasta")
-        self.regions_path = os.path.join(working_dir, f"regions.{fmt}")
-        self.holistic_path = os.path.join(working_dir, f"holistic.{fmt}")
-        self.error_path = os.path.join(working_dir, f"defects.{fmt}")
+        self.output_dir = output_dir
+        self.subtypes_path = os.path.join(output_dir, "subtypes.fasta")
+        self.regions_path = os.path.join(output_dir, f"regions.{fmt}")
+        self.holistic_path = os.path.join(output_dir, f"holistic.{fmt}")
+        self.error_path = os.path.join(output_dir, f"defects.{fmt}")
 
         self.subtypes = set()
 
@@ -616,8 +616,8 @@ class OutputWriter:
         logger.info('Regions for all sequences written to ' + self.regions_path)
         logger.info('Holistic info for all sequences written to ' + self.holistic_path)
         logger.info('Intactness error information written to ' + self.error_path)
-        if os.path.exists(os.path.join(self.working_dir, 'blast.csv')):
-            logger.info('Blast output written to ' + os.path.join(self.working_dir, 'blast.csv'))
+        if os.path.exists(os.path.join(self.output_dir, 'blast.csv')):
+            logger.info('Blast output written to ' + os.path.join(self.output_dir, 'blast.csv'))
 
     def write(self, sequence, subtype, is_intact, regions, defects, holistic):
         if subtype.id not in self.subtypes:
@@ -706,7 +706,7 @@ def find_invalid_subsequences(sequence):
     return invalid_subsequences
 
 
-def check(working_dir: str,
+def check(output_dir: str,
           input_file: str,
           subtype: str,
           check_packaging_signal: bool,
@@ -923,10 +923,10 @@ def check(working_dir: str,
         writer.write(sequence, subtype, holistic.intact,
                      orfs, sequence_defects, holistic.__dict__)
 
-    with OutputWriter(working_dir, "csv" if output_csv else "json") as writer:
+    with OutputWriter(output_dir, "csv" if output_csv else "json") as writer:
 
         should_run_blast = check_internal_inversion or check_nonhiv or check_scramble or 1 < len(subtype_choices)
-        blast_it = blast_iterate_inf(subtype, input_file, working_dir) if should_run_blast else iterate_empty_lists()
+        blast_it = blast_iterate_inf(subtype, input_file, output_dir) if should_run_blast else iterate_empty_lists()
         for (sequence, blast_rows) in with_blast_rows(blast_it, iterate_sequences(input_file)):
             analyse_single_sequence(writer, sequence, blast_rows)
 

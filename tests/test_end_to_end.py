@@ -17,7 +17,7 @@ def check_outputs(tmp_path, expected_dir):
 
 def run_end_to_end(tmp_path, data_file, expected_dir, subtype, output_csv):
     main.check(
-        working_dir=tmp_path,
+        output_dir=tmp_path,
         input_file=data_file,
         subtype=subtype,
         check_packaging_signal=True,
@@ -72,7 +72,7 @@ def test_single_noblast(tmp_path, request):
     output_csv = True
 
     main.check(
-        working_dir=tmp_path,
+        output_dir=tmp_path,
         input_file=data_file,
         subtype=subtype,
         check_packaging_signal=True,

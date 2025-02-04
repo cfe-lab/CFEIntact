@@ -82,20 +82,20 @@ def get_version() -> None:
     '--output-csv/--output-json', default=True
 )
 @click.option(
-    '--working-folder',
+    '--output',
     default=os.getcwd()
 )
 def intact(input_file: str, subtype: str, check_packaging_signal: bool,
            check_rre: bool, check_major_splice_donor_site: bool, check_hypermut: bool,
            check_long_deletion: bool, check_nonhiv: bool, check_scramble: bool, check_internal_inversion: bool,
            check_unknown_nucleotides: bool, check_small_orfs: bool, check_distance: bool, output_csv: bool,
-           working_folder: str) -> None:
+           output: str) -> None:
     """
     Check consensus sequences for intactness.
     """
 
     logger.info('Intactness called.')
-    folder = get_working_folder(working_folder)
+    folder = get_working_folder(output)
 
     try:
         it.check(
