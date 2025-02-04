@@ -42,16 +42,16 @@ The `check` command provides several options that allow you to customize the ana
 
 ### Examples
 
-Run an analysis on `sequences.fasta` for subtype 'A', checking all aspects except small ORFs, and output the results in JSON format:
+Run an analysis on `sequences.fasta` for subtype 'B', checking all aspects except for genetic distance:
 
 ```bash
-docker run -v "$PWD":/data cfelab/cfeintact check --subtype A --ignore-small-orfs --output-json /data/sequences.fasta
+docker run -v "$PWD":/data cfelab/cfeintact check --subtype B --ignore-distance --working-folder /data /data/sequences.fasta
 ```
 
-Check sequences in `input.fasta` for subtype 'B' with default settings and save outputs in CSV format in a specific directory:
+Check sequences in `input.fasta` for subtype 'A' with default settings and save outputs in JSON format:
 
 ```bash
-docker run -v "$PWD":/data cfelab/cfeintact check --subtype B --output-csv --working-folder /data/path/to/output_folder /data/input.fasta
+docker run -v "$PWD":/data cfelab/cfeintact check --subtype A --output-json --working-folder /data /data/input.fasta
 ```
 
 ## Understanding the Output
