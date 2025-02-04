@@ -38,7 +38,7 @@ This command should print something like `1.23.2`.
 To analyze a set of FASTA sequences for HIV-1 proviral intactness:
 
 ```shell
-docker run -v "$PWD":/data cfeintact check --subtype B /data/sequences.fasta
+docker run -v "$PWD":/data cfeintact check --subtype B --working-folder /data /data/sequences.fasta
 ```
 
 This command mounts the current directory to `/data` in the container, making your local files accessible. Be sure to adjust the command for your specific analysis (e.g., `sequences.fasta` is your input file).
