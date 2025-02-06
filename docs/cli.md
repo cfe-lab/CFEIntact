@@ -16,7 +16,7 @@ CFEIntact is executed through Docker, and it is a command-line only program.
 To check consensus sequences for intactness, use the `check` command followed by the required and optional arguments. Here is the basic syntax:
 
 ```bash
-docker run -v "$PWD":/data cfelab/cfeintact check [OPTIONS] /data/INPUT_FILE
+docker run -v .:/data cfelab/cfeintact check [OPTIONS] /data/INPUT_FILE
 ```
 
 `/data/INPUT_FILE` denotes the path to the sequence file in FASTA format that you wish to analyze. Make sure the file is located in the directory you're mounting, i.e., your current working directory.
@@ -45,13 +45,13 @@ The `check` command provides several options that allow you to customize the ana
 Run an analysis on `sequences.fasta` for subtype 'B', checking all aspects except for genetic distance:
 
 ```bash
-docker run -v "$PWD":/data cfelab/cfeintact check --subtype B --ignore-distance --output /data /data/sequences.fasta
+docker run -v .:/data cfelab/cfeintact check --subtype B --ignore-distance --output /data /data/sequences.fasta
 ```
 
 Check sequences in `input.fasta` for subtype 'A' with default settings and save outputs in JSON format:
 
 ```bash
-docker run -v "$PWD":/data cfelab/cfeintact check --subtype A --output-json --output /data /data/input.fasta
+docker run -v .:/data cfelab/cfeintact check --subtype A --output-json --output /data /data/input.fasta
 ```
 
 ## Understanding the Output
