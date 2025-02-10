@@ -16,10 +16,10 @@ CFEIntact is executed through Docker, and it is a command-line only program.
 To check consensus sequences for intactness, use the `check` command followed by the required and optional arguments. Here is the basic syntax:
 
 ```bash
-docker run -v .:/data cfelab/cfeintact check [OPTIONS] /data/INPUT_FILE
+docker run -v .:/w cfelab/cfeintact check [OPTIONS] INPUT_FILE
 ```
 
-`/data/INPUT_FILE` denotes the path to the sequence file in FASTA format that you wish to analyze. Make sure the file is located in the directory you're mounting, i.e., your current working directory.
+Argument `INPUT_FILE` denotes the path to the sequence file in FASTA format that you wish to analyze. Make sure the file is located in the directory you're mounting, i.e., your current working directory.
 
 ### Options
 
@@ -38,20 +38,20 @@ The `check` command provides several options that allow you to customize the ana
 - `--check-small-orfs` / `--ignore-small-orfs`: Enables or disables the analysis of small Open Reading Frames (ORFs). Enabled by default.
 - `--check-distance` / `--ignore-distance`: Enables or disables the distance-based analysis. This includes the `InsertionInOrf` error, as well as `SequenceDivergence` one. Enabled by default.
 - `--output-csv` / `--output-json`: Chooses between CSV and JSON output format. CSV is selected by default.
-- `--output`: Specifies the directory where output files will be stored. Defaults to the current working directory.
+- `--output`: Specifies the directory where output files will be stored. Defaults to the current working directory (which is `/w` in the case of the docker version).
 
 ### Examples
 
 Run an analysis on `sequences.fasta` for subtype 'B', checking all aspects except for genetic distance:
 
 ```bash
-docker run -v .:/data cfelab/cfeintact check --subtype B --ignore-distance --output /data /data/sequences.fasta
+docker run -v .:/w cfelab/cfeintact check --subtype B --ignore-distance sequences.fasta
 ```
 
 Check sequences in `input.fasta` for subtype 'A' with default settings and save outputs in JSON format:
 
 ```bash
-docker run -v .:/data cfelab/cfeintact check --subtype A --output-json --output /data /data/input.fasta
+docker run -v .:/w cfelab/cfeintact check --subtype A --output-json input.fasta
 ```
 
 ## Understanding the Output
