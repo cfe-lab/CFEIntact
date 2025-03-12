@@ -62,6 +62,9 @@ jobs:
       - name: Install dependencies
         run: sudo apt-get update && sudo apt-get install -y python3 python3-pip mafft ncbi-blast+
 
+      - name: Install packaging support
+        run: pip3 install packaging
+
       - name: Run build
         run: pip3 install .
 
