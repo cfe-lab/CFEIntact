@@ -4,7 +4,7 @@
     - name: Introduction
       link: /introduction.html
     - name: Installation
-      link: /installation.html
+      link: /quick_install.html
     - name: Data Preparation
       link: /data_prep.html
     - name: Running CFEIntact
