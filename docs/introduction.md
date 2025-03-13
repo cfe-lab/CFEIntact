@@ -46,10 +46,20 @@ Here are several reasons why CFEIntact is a particularly well--suited tool for t
 - The codebase is thoroughly tested using GitHub Actions with multiple test suites, ensuring the tool remains robust as it evolves.
 - Linting and type checking via `flake8` and `mypy` help maintain code quality, making it a reliable platform for cutting--edge HIV research.
 
----
-
 CFEIntact exemplifies how modern bioinformatics tools can distill complex genetic data into clear, meaningful narratives about viral integrity. It is a product of interdisciplinary design --- drawing on molecular biology, computer science, and statistical analysis --- to meet one of the most pressing challenges in HIV research. The tool stands as a testament to the progress made when innovative technology is harnessed in service of understanding life at its most intricate and impactful level.
 
 ---
 
+# Setup and Environment
+
+CFEIntact is a command-line program --- it is designed to be interacted with from within a terminal.
+If you are not experienced with that, see the following guides:
+- For Windows: [a beginner's guide to the Windows Command Prompt](https://www.makeuseof.com/tag/a-beginners-guide-to-the-windows-command-line).
+- For POSIX (GNU, BSD, MacOS, ...): [command line for beginners](https://www.freecodecamp.org/news/command-line-for-beginners).
+
+To make CFEIntact accessible and easy to use, we have encapsulated it within a Docker container. This ensures all dependencies and configurations are pre--installed, minimizing compatibility issues across different systems. Docker is a platform to develop, ship, and run applications in isolated environments.
+
+By following the rest of this guide, you will be up and running with proviral sequence analysis quickly, even with minimal technical background.
+
+---
 
