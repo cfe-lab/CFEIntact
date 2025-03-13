@@ -49,7 +49,7 @@ With Docker installed and running, you can now download the pre-configured Docke
   You should see an output similar to:
 
   ```
-  1.23.1
+  1.23.2
   ```
 
 ---
