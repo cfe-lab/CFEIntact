@@ -1,4 +1,26 @@
-- name: Inputs and Outputs
-  link: /io.html
-- name: Workflow
-  link: /workflow.html
+- name: Quick Start
+  link: /introduction.html
+  dropdown:
+    - name: Introduction
+      link: /introduction.html
+    - name: Installation
+      link: /installation.html
+    - name: Data Preparation
+      link: /data_prep.html
+    - name: Running CFEIntact
+      link: /running_cfeintact.html
+    - name: Outputs Interpretation
+      link: /interpretation.html
+
+- name: Topics
+  dropdown:
+    - name: Workflow
+      link: /workflow.html
+    - name: Inputs and Outputs
+      link: /io.html
+    - name: Command Line Interface
+      link: /cli.html
+    - name: Tolerance Limits
+      link: /cutoffs.html
+    - name: Project Background
+      link: /background.html
