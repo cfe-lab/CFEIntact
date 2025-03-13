@@ -10,7 +10,7 @@
     - name: Running CFEIntact
       link: /running_cfeintact.html
     - name: Outputs Interpretation
-      link: /interpretation.html
+      link: /io.html
 
 - name: Topics
   dropdown:
