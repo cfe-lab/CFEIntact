@@ -1,5 +1,6 @@
-
-# CFEIntact Installation Guide
+---
+title: CFEIntact Installation Guide
+---
 
 Welcome to the CFEIntact installation guide! This page aims to provide detailed instructions for installing CFEIntact on your system, guaranteeing smooth execution and operation of the program. CFEIntact, an automated proviral intactness checker, is primarily developed in Python and can be run using Docker or installed directly via pip.
 
