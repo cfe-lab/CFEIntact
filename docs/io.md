@@ -1,5 +1,6 @@
-
-# Inputs and Outputs
+---
+title: Inputs and Outputs
+---
 
 CFEIntact generates several output files based on the analysis, including intact sequences, nonintact sequences, subtypes, ORFs information, holistic info, and error details. The format of these files can be JSON or CSV, as specified by the user. These files provide a comprehensive report on the analysis, including detected defects, ORF analysis, subtype information, and more.
 
@@ -16,7 +17,9 @@ Once the analysis is complete, CFEIntact will generate these output files:
 
 If you pass the `--output-json` option to CFEIntact, the output format will be `.json` instead of `.csv`.
 
-## `defects.csv`
+---
+
+## --- `defects.csv` ---
 
 This file contains associations between sequences and their identified defects.
 Here is an example of the contents of the `defects.csv` file:
@@ -31,7 +34,9 @@ Here is an example of the contents of the `defects.csv` file:
 
 Here, and below `qseqid` stands for "Query Sequence Id", which is the same sequence name as in the input `.fasta` file.
 
-## `regions.csv`
+---
+
+## --- `regions.csv` ---
 
 This file contains associations between sequences and their identified Open Reading Frames (ORFs).
 Here is an example of the contents of the `regions.csv` file:
@@ -59,7 +64,9 @@ Here is an example of the contents of the `regions.csv` file:
 - `subtype_aminoacids`: The amino acid sequence relevant to the identified subtype.
 - `subtype_nucleotides`: The nucleotide sequence relevant to the identified subtype.
 
-## `holistic.csv`
+---
+
+## --- `holistic.csv` ---
 
 This file contains comprehensive analysis details related to the sequences as a whole, rather than being specific to each ORF.
 Here is an example of the contents of the `holistic.csv` file:
@@ -87,7 +94,9 @@ Here is an example of the contents of the `holistic.csv` file:
 - `orfs_end`: The ending point of the ORFs
 - `blast_n_conseqs`: The number of consecutive sequences from BLASTN results
 
-## `subtypes.fasta`
+---
+
+## --- `subtypes.fasta` ---
 
 This file contains a list of reference sequences.
 The names are exactly those `inferred_subtype`s found in `holistic.csv`.
@@ -98,7 +107,9 @@ Here is an example of the contents of the `subtypes.fasta` file:
 TGGAAGGGCTAATTC...GACCCTTTTAGTCAGTGTGGAAAATCTCTAGCA
 ```
 
-## `blast.csv`
+---
+
+## --- `blast.csv` ---
 
 This file contains output from BLASTN software.
 It is produced conditionally.
@@ -129,3 +140,5 @@ Here is an example of the contents of the `blast.csv` file:
 - `sstrand` - Means subject strand
 
 Consult [BLASTn documentation](https://www.ncbi.nlm.nih.gov/books/NBK279690/) for more details on these values.
+
+---
