@@ -1,17 +1,12 @@
-
-# Running CFEIntact
-
-CFEIntact is a comprehensive tool designed for analyzing HIV sequences to check for intactness and detect various genetic anomalies such as hypermutations, large deletions, non-HIV fragments, scrambling, and inversions. It also assesses key genetic regions, including the Packaging Signal Region (PSI), the Rev Response Element (RRE), and the Major Splice Donor (MSD) site. This document will guide you on how to run the CFEIntact tool and understand the options available for a customized analysis.
-
-## Prerequisites
-
-Before running CFEIntact, ensure that you have [installed it](installation.md).
-
-## Running the Tool
+---
+title: Interacting with CFEIntact
+---
 
 CFEIntact is executed through Docker, and it is a command-line only program.
 
-### Basic Usage
+Before running CFEIntact, ensure that you have [installed it](installation.md).
+
+# Basic Usage
 
 To check consensus sequences for intactness, use the `check` command followed by the required and optional arguments. Here is the basic syntax:
 
@@ -21,7 +16,7 @@ docker run -v .:/w cfelab/cfeintact check [OPTIONS] INPUT_FILE
 
 Argument `INPUT_FILE` denotes the path to the sequence file in FASTA format that you wish to analyze. Make sure the file is located in the directory you're mounting, i.e., your current working directory.
 
-### Options
+# Options
 
 The `check` command provides several options that allow you to customize the analysis based on your requirements:
 
@@ -40,7 +35,7 @@ The `check` command provides several options that allow you to customize the ana
 - `--output-csv` / `--output-json`: Chooses between CSV and JSON output format. CSV is selected by default.
 - `--output`: Specifies the directory where output files will be stored. Defaults to the current working directory (which is `/w` in the case of the docker version).
 
-### Examples
+# Examples
 
 Run an analysis on `sequences.fasta` for subtype 'B', checking all aspects except for genetic distance:
 
@@ -54,7 +49,7 @@ Check sequences in `input.fasta` for subtype 'A' with default settings and save 
 docker run -v .:/w cfelab/cfeintact check --subtype A --output-json input.fasta
 ```
 
-## Understanding the Output
+# Understanding the Output
 
 CFEIntact generates several output files based on the analysis, including intact sequences, nonintact sequences, subtypes, ORFs information, holistic info, and error details. The format of these files can be JSON or CSV, as specified by the user. These files provide a comprehensive report on the analysis, including detected defects, ORF analysis, subtype information, and more.
 

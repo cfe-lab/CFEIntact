@@ -1,6 +1,26 @@
-- name: Inputs and Outputs
-  link: /io.html
-- name: Workflow
-  link: /workflow.html
-- name: GitHub
-  link: https://github.com/cfe-lab/CFEIntact
+- name: Quick Start
+  link: /introduction.html
+  dropdown:
+    - name: Introduction
+      link: /introduction.html
+    - name: Installation
+      link: /quick_install.html
+    - name: Data Preparation
+      link: /data_prep.html
+    - name: Running CFEIntact
+      link: /running_cfeintact.html
+    - name: Outputs Interpretation
+      link: /io.html
+
+- name: Topics
+  dropdown:
+    - name: Workflow
+      link: /workflow.html
+    - name: Inputs and Outputs
+      link: /io.html
+    - name: Command Line Interface
+      link: /cli.html
+    - name: Tolerance Limits
+      link: /cutoffs.html
+    - name: Project Background
+      link: /background.html
