@@ -2,7 +2,7 @@
 title: Introduction
 ---
 
-This guide is designed to help people without programming expertise analyze proviral sequences using CFEIntact. By leveraging a Docker container, we simplify the technical setup, allowing them to focus on the biological insights from their data.
+This guide is designed to help people without programming expertise analyze proviral sequences using CFEIntact. By leveraging a Docker container, we simplify the technical setup, allowing them to focus on the biological insights from their data. This page provides a high level overview, before the dive into practical matters of using the program.
 
 ---
 
@@ -28,42 +28,28 @@ In performing this analysis, CFEIntact converts messy biological data into actio
 
 # Why CFEIntact?
 
-#### Comprehensive Defect Detection
+Here are several reasons why CFEIntact is a particularly well--suited tool for the problems highlighted above:
 
-  - CFEIntact examines almost every critical region of the HIV genome --- from the major structural genes (gag, pol, env) to the smaller regulatory open reading frames (vif, vpr, tat, vpu, rev, nef).
-  - It detects a diverse range of defects including large deletions, out--of--frame insertions/deletions, internal stop codons, as well as mutations in key functional domains like the Packaging Signal, Rev Response Element, and Major Splice Donor site.
-
-#### Quantitative Assessment with Established Statistics
-
-  - CFEIntact calculates key metrics like genetic distance and indel impact. By using well-established algorithms along with predefined tolerance values, it provides an objective evaluation of sequence integrity.
-  - Such quantitative measures empower researchers to confidently distinguish intact proviruses from defective ones.
-
-#### Flexible and Customizable Analysis
-
-  - With a rich set of command--line options, users can easily toggle individual checks. For example, one can enable or disable tests for hypermutation, packaging signal integrity, revision of the donor site, as well as checks on sequence divergence.
-  - This modularity means that CFEIntact can be tailored to the specific needs of different research projects or experimental setups.
-
-#### Structured and Detailed Output
-
-  - Comprehensive reports are generated, including:
-    - A holistic summary that covers overall sequence integrity, alignment coverage, and subtype inference.
-    - Detailed breakdowns of identified defects.
-    - Annotations of the detected open reading frames and specific regions affected by insertions, deletions, or other irregularities.
-  - Additionally, a BLAST file and a subtype FASTA file are produced, allowing for further inspection and cross-referencing against known HIV reference sequences.
-  - The tool outputs its findings in both CSV and JSON formats, making integration with downstream pipelines and further statistical analysis straightforward.
-
-#### Containerization and Ease of Deployment
-
-  - With a dedicated Dockerfile and accompanying development container configuration, users can quickly deploy the tool in a consistent, reproducible environment.
-  - The availability of both `pip`--based installation and Docker deployment means that users can easily integrate CFEIntact into laboratory workflows without the hassle of complex dependency issues.
-
-#### Rigorous Development Practices
-
-  - The codebase is thoroughly tested using GitHub Actions with multiple test suites, ensuring the tool remains robust as it evolves.
-  - Linting and type checking via `flake8` and `mypy` help maintain code quality, making it a reliable platform for cutting--edge HIV research.
+- CFEIntact detects a diverse range of defects including large deletions, out--of--frame insertions/deletions, internal stop codons, as well as mutations in key functional domains like the Packaging Signal, Rev Response Element, and Major Splice Donor site.
+- It examines almost every critical region of the HIV genome --- from the major structural genes (gag, pol, env) to the smaller regulatory open reading frames (vif, vpr, tat, vpu, rev, nef).
+- CFEIntact calculates useful metrics like genetic distance and indel impact.
+- With a rich set of command--line options, users can easily toggle individual checks. For example, one can enable or disable tests for hypermutation, packaging signal integrity, revision of the donor site, as well as checks on sequence divergence.
+- This modularity means that CFEIntact can be tailored to the specific needs of different research projects or experimental setups.
+- Comprehensive reports are generated, including:
+  - A holistic summary that covers overall sequence integrity, alignment coverage, and subtype inference.
+  - Detailed breakdowns of identified defects.
+  - Annotations of the detected open reading frames and specific regions affected by insertions, deletions, or other irregularities.
+- Additionally, a BLAST file and a subtype FASTA file are produced, allowing for further inspection and cross-referencing against known HIV reference sequences.
+- The tool outputs its findings in both CSV and JSON formats, making integration with downstream pipelines and further statistical analysis straightforward.
+- With a dedicated Dockerfile and accompanying development container configuration, users can quickly deploy the tool in a consistent, reproducible environment.
+- The availability of both `pip`--based installation and Docker deployment means that users can easily integrate CFEIntact into laboratory workflows without the hassle of complex dependency issues.
+- The codebase is thoroughly tested using GitHub Actions with multiple test suites, ensuring the tool remains robust as it evolves.
+- Linting and type checking via `flake8` and `mypy` help maintain code quality, making it a reliable platform for cutting--edge HIV research.
 
 ---
 
 CFEIntact exemplifies how modern bioinformatics tools can distill complex genetic data into clear, meaningful narratives about viral integrity. It is a product of interdisciplinary design --- drawing on molecular biology, computer science, and statistical analysis --- to meet one of the most pressing challenges in HIV research. The tool stands as a testament to the progress made when innovative technology is harnessed in service of understanding life at its most intricate and impactful level.
 
 ---
+
+
