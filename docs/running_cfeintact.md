@@ -1,5 +1,5 @@
 ---
-title: Data Preparation
+title: Running CFEIntact
 ---
 
 Once your data are prepared and organized into a single FASTA file, it's time to run CFEIntact and analyze your HIV-1 sequences. This guide walks you through the essential steps to launch the analysis using Docker.
@@ -63,17 +63,4 @@ When you run the command:
 
 ---
 
-## Next Steps
-
-After running the analysis:
-
-- **Review the Output:**
-  Check the generated files to understand how each sequence was evaluated.
-  See our [files documentation page](io.html).
-
-- **Adjust Parameters:**
-  If necessary, rerun CFEIntact with different options to focus on specific checks.
-  More info at [command line interface page](cli.html).
-
-- **Integrate with Further Analyses:**
-  Use the detailed output files for downstream processing or statistical analysis as part of your research pipeline.
+Next: [output interpretation](io.html).
