@@ -7,7 +7,7 @@ name = "cfeintact"
 version = "1.23.2"
 description = "A bioinformatics tool for detecting defects in HIV-1 proviral sequences."
 # readme = "README.md"
-license = "MIT"
+license = { text = "MIT" }
 authors = [
     { name = "Imogen Wright", email = "imogen@hyraxbio.co.za" },
     { name = "British Columbia Centre for Excellence in HIV/AIDS", email = "vmysak@bccfe.ca" },
