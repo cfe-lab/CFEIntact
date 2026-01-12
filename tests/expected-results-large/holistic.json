@@ -198,16 +198,16 @@
     "MK115158.1": {
         "intact": false,
         "qlen": 9143,
-        "inferred_subtype": "Ref.47_BF.ES.08.P1942.GQ372987",
-        "hypermutation_probablility": 0.002572269807584293,
+        "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE",
+        "hypermutation_probablility": 0.06758916889824729,
         "is_reverse_complement": false,
         "blast_matched_qlen": 9143,
-        "blast_sseq_coverage": 0.9921577414295317,
-        "blast_qseq_coverage": 0.9699223449633599,
+        "blast_sseq_coverage": 0.9853879399053304,
+        "blast_qseq_coverage": 1.043749316416931,
         "blast_sseq_orfs_coverage": 1.0,
-        "orfs_start": 234,
-        "orfs_end": 8211,
-        "blast_n_conseqs": 1
+        "orfs_start": 789,
+        "orfs_end": 8793,
+        "blast_n_conseqs": 2
     },
     "MK114705.1": {
         "intact": false,
@@ -282,16 +282,16 @@
     "MK116110.1": {
         "intact": false,
         "qlen": 8967,
-        "inferred_subtype": "Ref.B.TH.90.BK132.AY173951",
-        "hypermutation_probablility": 0.07021438897893317,
+        "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE",
+        "hypermutation_probablility": 0.07900386365437118,
         "is_reverse_complement": false,
         "blast_matched_qlen": 8967,
-        "blast_sseq_coverage": 0.9957759004001778,
-        "blast_qseq_coverage": 0.9972119995539199,
-        "blast_sseq_orfs_coverage": 0.9986220719027934,
-        "orfs_start": 140,
-        "orfs_end": 8123,
-        "blast_n_conseqs": 3
+        "blast_sseq_coverage": 0.9846676270837621,
+        "blast_qseq_coverage": 1.0635664101706257,
+        "blast_sseq_orfs_coverage": 0.9986256871564217,
+        "orfs_start": 789,
+        "orfs_end": 8793,
+        "blast_n_conseqs": 4
     },
     "MK115527.1": {
         "intact": true,
@@ -506,30 +506,30 @@
     "OQ092463": {
         "intact": false,
         "qlen": 9605,
-        "inferred_subtype": "Ref.B.TH.90.BK132.AY173951",
-        "hypermutation_probablility": 0.21628713708846803,
+        "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE",
+        "hypermutation_probablility": 0.4036857753053361,
         "is_reverse_complement": false,
         "blast_matched_qlen": 9605,
-        "blast_sseq_coverage": 1.0529124055135617,
-        "blast_qseq_coverage": 0.9884435190005205,
+        "blast_sseq_coverage": 1.0979625437332785,
+        "blast_qseq_coverage": 1.1118167621030712,
         "blast_sseq_orfs_coverage": 1.0,
-        "orfs_start": 140,
-        "orfs_end": 8123,
-        "blast_n_conseqs": 2
+        "orfs_start": 789,
+        "orfs_end": 8793,
+        "blast_n_conseqs": 3
     },
     "OQ092465": {
         "intact": false,
         "qlen": 9659,
-        "inferred_subtype": "Ref.28_BF.BR.99.BREPM12817.DQ085874",
-        "hypermutation_probablility": 0.02412789935966586,
+        "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE",
+        "hypermutation_probablility": 0.5473020413873195,
         "is_reverse_complement": false,
         "blast_matched_qlen": 9659,
-        "blast_sseq_coverage": 1.0429696287964005,
-        "blast_qseq_coverage": 0.9620043482762191,
+        "blast_sseq_coverage": 1.0981683473965838,
+        "blast_qseq_coverage": 1.108292783932084,
         "blast_sseq_orfs_coverage": 1.0,
-        "orfs_start": 200,
-        "orfs_end": 8207,
-        "blast_n_conseqs": 2
+        "orfs_start": 789,
+        "orfs_end": 8793,
+        "blast_n_conseqs": 3
     },
     "OQ092462": {
         "intact": false,
@@ -548,16 +548,16 @@
     "OQ092464": {
         "intact": false,
         "qlen": 9556,
-        "inferred_subtype": "Ref.28_BF.BR.99.BREPM12817.DQ085874",
-        "hypermutation_probablility": 0.006887768010151674,
+        "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE",
+        "hypermutation_probablility": 0.47853703424568406,
         "is_reverse_complement": false,
         "blast_matched_qlen": 9556,
-        "blast_sseq_coverage": 1.0427446569178853,
-        "blast_qseq_coverage": 0.9678735872750105,
+        "blast_sseq_coverage": 1.0979625437332785,
+        "blast_qseq_coverage": 1.115634156550858,
         "blast_sseq_orfs_coverage": 1.0,
-        "orfs_start": 200,
-        "orfs_end": 8207,
-        "blast_n_conseqs": 2
+        "orfs_start": 789,
+        "orfs_end": 8793,
+        "blast_n_conseqs": 3
     },
     "OQ092467": {
         "intact": false,
