@@ -39,14 +39,10 @@ Assuming you have a file called `sequences.fasta` in the current directory.
 Then to analyze a set of FASTA sequences that are included in that file, run:
 
 ```shell
-docker run --rm -v .:/w cfelab/cfeintact check --subtype B --ignore-distance sequences.fasta
+docker run --rm -v .:/w cfelab/cfeintact check --subtype all --ignore-distance sequences.fasta
 ```
 
 This command mounts the current directory to `/w` in the container, making your local files accessible. Be sure to adjust the command for your specific analysis (e.g., `sequences.fasta` is your input file).
-
-Note: currently it is recommended to use subtype B even if your sequences are not subtype B.
-This is because many well known sequences of reference subtypes, which CFEIntact uses in its analysis, contain serious defects.
-We track this issue [here](https://github.com/cfe-lab/CFEIntact/issues/5).
 
 ## Documentation
 
