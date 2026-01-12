@@ -675,12 +675,6 @@
     "MK115158.1": [
         {
             "qseqid": "MK115158.1",
-            "code": "Deletion",
-            "message": "ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 15 deletions with max tolerance of 0 deletions.",
-            "region": "tat_exon2"
-        },
-        {
-            "qseqid": "MK115158.1",
             "code": "PackagingSignalDeletion",
             "message": "Query sequence exceeds maximum deletion tolerance in PSI. Contains 20 deletions with max tolerance of 10 deletions.",
             "region": null
@@ -1113,25 +1107,25 @@
         {
             "qseqid": "MK116110.1",
             "code": "Frameshift",
-            "message": "ORF 'gag' at 118-1601 contains out of frame indels that impact 973 positions.",
+            "message": "ORF 'gag' at 490-1601 contains out of frame indels that impact 991 positions.",
             "region": "gag"
         },
         {
             "qseqid": "MK116110.1",
             "code": "InternalStop",
-            "message": "ORF 'gag' at 118-1601 contains an internal stop codon at 235.",
+            "message": "ORF 'gag' at 490-1601 contains an internal stop codon at 553.",
             "region": "gag"
         },
         {
             "qseqid": "MK116110.1",
             "code": "SequenceDivergence",
-            "message": "ORF 'gag' exceeds maximum distance tolerance. It is 1.73094 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.98443.",
+            "message": "ORF 'gag' exceeds maximum distance tolerance. It is 1.74 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.98443.",
             "region": "gag"
         },
         {
             "qseqid": "MK116110.1",
             "code": "MutatedStartCodon",
-            "message": "ORF 'gag' has a mutated start codon: 'GCT'.",
+            "message": "ORF 'gag' has a mutated start codon: 'TGC'.",
             "region": "gag"
         },
         {
@@ -1143,13 +1137,19 @@
         {
             "qseqid": "MK116110.1",
             "code": "PackagingSignalDeletion",
-            "message": "Query sequence exceeds maximum deletion tolerance in PSI. Contains 22 deletions with max tolerance of 10 deletions.",
+            "message": "Query sequence exceeds maximum deletion tolerance in PSI. Contains 93 deletions with max tolerance of 10 deletions.",
             "region": null
         },
         {
             "qseqid": "MK116110.1",
             "code": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a mutated splice donor site: CC. The context is CCCCCCACTCCCTGACATGCTG.",
+            "message": "Query sequence has a missing splice donor site: --. The context is ----------------------.",
+            "region": null
+        },
+        {
+            "qseqid": "MK116110.1",
+            "code": "InternalInversion",
+            "message": "Sequence contains an internal inversion.",
             "region": null
         }
     ],
@@ -1590,7 +1590,7 @@
         {
             "qseqid": "OQ092465",
             "code": "MajorSpliceDonorSiteMutated",
-            "message": "Query sequence has a mutated splice donor site: GA. The context is GCGGCGACTGGAGAGTACGCCT.",
+            "message": "Query sequence has a mutated splice donor site: GA. The context is GCGGCGACTGGAGAGTACGCC-.",
             "region": null
         }
     ],
@@ -1612,7 +1612,7 @@
         {
             "qseqid": "OQ092464",
             "code": "PackagingSignalDeletion",
-            "message": "Query sequence exceeds maximum deletion tolerance in PSI. Contains 19 deletions with max tolerance of 10 deletions.",
+            "message": "Query sequence exceeds maximum deletion tolerance in PSI. Contains 21 deletions with max tolerance of 10 deletions.",
             "region": null
         },
         {

@@ -107,7 +107,6 @@ MK115211.1,PackagingSignalDeletion,Query sequence exceeds maximum deletion toler
 MK115211.1,MajorSpliceDonorSiteMutated,Query sequence has a missing splice donor site: --. The context is GCGGCG----------------.,
 MK115211.1,Scramble,Sequence is minus-scrambled.,
 MK115211.1,InternalInversion,Sequence contains an internal inversion.,
-MK115158.1,Deletion,ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 15 deletions with max tolerance of 0 deletions.,tat_exon2
 MK115158.1,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 20 deletions with max tolerance of 10 deletions.,
 MK115158.1,MajorSpliceDonorSiteMutated,Query sequence has a missing splice donor site: --. The context is GCGGCGAACG------------.,
 MK114705.1,Frameshift,ORF 'nef' at 8551-9118 contains out of frame indels that impact 122 positions.,nef
@@ -178,13 +177,14 @@ MK115009.1,Scramble,Sequence is minus-scrambled.,
 MK115009.1,InternalInversion,Sequence contains an internal inversion.,
 MK115387.1,Frameshift,ORF 'tat_exon2' at 7870-7962 contains out of frame indels that impact 32 positions.,tat_exon2
 MK115387.1,Deletion,ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 45 deletions with max tolerance of 0 deletions.,tat_exon2
-MK116110.1,Frameshift,ORF 'gag' at 118-1601 contains out of frame indels that impact 973 positions.,gag
-MK116110.1,InternalStop,ORF 'gag' at 118-1601 contains an internal stop codon at 235.,gag
-MK116110.1,SequenceDivergence,ORF 'gag' exceeds maximum distance tolerance. It is 1.73094 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.98443.,gag
-MK116110.1,MutatedStartCodon,ORF 'gag' has a mutated start codon: 'GCT'.,gag
+MK116110.1,Frameshift,ORF 'gag' at 490-1601 contains out of frame indels that impact 991 positions.,gag
+MK116110.1,InternalStop,ORF 'gag' at 490-1601 contains an internal stop codon at 553.,gag
+MK116110.1,SequenceDivergence,ORF 'gag' exceeds maximum distance tolerance. It is 1.74 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.98443.,gag
+MK116110.1,MutatedStartCodon,ORF 'gag' has a mutated start codon: 'TGC'.,gag
 MK116110.1,MutatedStopCodon,ORF 'gag' has a mutated stop codon: 'AAA'.,gag
-MK116110.1,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 22 deletions with max tolerance of 10 deletions.,
-MK116110.1,MajorSpliceDonorSiteMutated,Query sequence has a mutated splice donor site: CC. The context is CCCCCCACTCCCTGACATGCTG.,
+MK116110.1,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 93 deletions with max tolerance of 10 deletions.,
+MK116110.1,MajorSpliceDonorSiteMutated,Query sequence has a missing splice donor site: --. The context is ----------------------.,
+MK116110.1,InternalInversion,Sequence contains an internal inversion.,
 MK114997.1,Frameshift,ORF 'env' at 5651-8207 contains out of frame indels that impact 1167 positions.,env
 MK114997.1,InternalStop,ORF 'env' at 5651-8207 contains an internal stop codon at 6695.,env
 MK114997.1,MutatedStopCodon,ORF 'env' has a mutated stop codon: 'AGA'.,env
@@ -253,10 +253,10 @@ MK115095.1,APOBECHypermutation,Query sequence shows evidence of APOBEC3F/G-media
 OQ092466,MajorSpliceDonorSiteMutated,Query sequence has a mutated splice donor site: GC. The context is GCGGCGACTGGCGAGTACGCCA.,
 OQ092463,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 26 deletions with max tolerance of 10 deletions.,
 OQ092463,MajorSpliceDonorSiteMutated,Query sequence has a missing splice donor site: --. The context is ------------GAGTACGCC-.,
-OQ092465,MajorSpliceDonorSiteMutated,Query sequence has a mutated splice donor site: GA. The context is GCGGCGACTGGAGAGTACGCCT.,
+OQ092465,MajorSpliceDonorSiteMutated,Query sequence has a mutated splice donor site: GA. The context is GCGGCGACTGGAGAGTACGCC-.,
 OQ092462,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 23 deletions with max tolerance of 10 deletions.,
 OQ092462,MajorSpliceDonorSiteMutated,Query sequence has a missing splice donor site: --. The context is ------------GAGTACGCCA.,
-OQ092464,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 19 deletions with max tolerance of 10 deletions.,
+OQ092464,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 21 deletions with max tolerance of 10 deletions.,
 OQ092464,MajorSpliceDonorSiteMutated,Query sequence has a missing splice donor site: --. The context is GCGGCG----------------.,
 OQ092467,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 22 deletions with max tolerance of 10 deletions.,
 OQ092467,MajorSpliceDonorSiteMutated,Query sequence has a missing splice donor site: --. The context is ------------GAGTACGCCA.,
