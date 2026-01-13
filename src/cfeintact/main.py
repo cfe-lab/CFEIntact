@@ -42,7 +42,7 @@ def get_version() -> None:
 )
 @click.option(
     '--subtype',
-    required=True,
+    default="all",
     type=click.Choice(st.subtypes())
 )
 @click.option(
