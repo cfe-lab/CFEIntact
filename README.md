@@ -19,13 +19,7 @@ The easiest way to install and run CFEIntact is through Docker. The pre-built Do
 
 Ensure Docker is installed on your system. You can download and install Docker from [the official Docker website](https://www.docker.com/get-started).
 
-Once Docker is installed, pull the docker image from Docker Hub:
-
-```shell
-docker pull cfelab/cfeintact
-```
-
-To verify the installation, run:
+Once Docker is installed, run:
 
 ```shell
 docker run --rm cfelab/cfeintact version
