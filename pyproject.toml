@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "cfeintact"
-version = "1.23.2"
+version = "1.24.0"
 description = "A bioinformatics tool for detecting defects in HIV-1 proviral sequences."
 requires-python = ">=3.11,<3.13"
 # readme = "README.md"
