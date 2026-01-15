@@ -3,13 +3,25 @@
         {
             "qseqid": "KX505501.1",
             "code": "Frameshift",
+            "message": "ORF 'gag' at 337-1746 contains out of frame indels that impact 69 positions.",
+            "region": "gag"
+        },
+        {
+            "qseqid": "KX505501.1",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'gag' has a mutated stop codon: 'ACT'.",
+            "region": "gag"
+        },
+        {
+            "qseqid": "KX505501.1",
+            "code": "Frameshift",
             "message": "ORF 'pol' at 1629-1746 contains out of frame indels that impact 1950 positions.",
             "region": "pol"
         },
         {
             "qseqid": "KX505501.1",
             "code": "Deletion",
-            "message": "ORF 'pol' exceeds maximum deletion tolerance. Contains 2892 deletions with max tolerance of 93 deletions.",
+            "message": "ORF 'pol' exceeds maximum deletion tolerance. Contains 2892 deletions with max tolerance of 87 deletions.",
             "region": "pol"
         },
         {
@@ -33,7 +45,7 @@
         {
             "qseqid": "KX505501.1",
             "code": "Deletion",
-            "message": "ORF 'env' exceeds maximum deletion tolerance. Contains 2346 deletions with max tolerance of 54 deletions.",
+            "message": "ORF 'env' exceeds maximum deletion tolerance. Contains 2346 deletions with max tolerance of 150 deletions.",
             "region": "env"
         },
         {
@@ -51,7 +63,7 @@
         {
             "qseqid": "KX505501.1",
             "code": "Deletion",
-            "message": "ORF 'vif' exceeds maximum deletion tolerance. Contains 354 deletions with max tolerance of 12 deletions.",
+            "message": "ORF 'vif' exceeds maximum deletion tolerance. Contains 354 deletions with max tolerance of 15 deletions.",
             "region": "vif"
         },
         {
@@ -69,7 +81,7 @@
         {
             "qseqid": "KX505501.1",
             "code": "Deletion",
-            "message": "ORF 'vpr' exceeds maximum deletion tolerance. Contains 66 deletions with max tolerance of 6 deletions.",
+            "message": "ORF 'vpr' exceeds maximum deletion tolerance. Contains 66 deletions with max tolerance of 16 deletions.",
             "region": "vpr"
         },
         {
@@ -87,7 +99,7 @@
         {
             "qseqid": "KX505501.1",
             "code": "Deletion",
-            "message": "ORF 'tat_exon1' exceeds maximum deletion tolerance. Contains 69 deletions with max tolerance of 0 deletions.",
+            "message": "ORF 'tat_exon1' exceeds maximum deletion tolerance. Contains 69 deletions with max tolerance of 3 deletions.",
             "region": "tat_exon1"
         },
         {
@@ -105,7 +117,7 @@
         {
             "qseqid": "KX505501.1",
             "code": "Insertion",
-            "message": "ORF 'rev_exon1' exceeds maximum insertion tolerance. Contains 69 insertions with max tolerance of 0 insertions.",
+            "message": "ORF 'rev_exon1' exceeds maximum insertion tolerance. Contains 69 insertions with max tolerance of 9 insertions.",
             "region": "rev_exon1"
         },
         {
@@ -123,7 +135,7 @@
         {
             "qseqid": "KX505501.1",
             "code": "Deletion",
-            "message": "ORF 'vpu' exceeds maximum deletion tolerance. Contains 24 deletions with max tolerance of 6 deletions.",
+            "message": "ORF 'vpu' exceeds maximum deletion tolerance. Contains 24 deletions with max tolerance of 15 deletions.",
             "region": "vpu"
         },
         {
@@ -136,12 +148,6 @@
             "qseqid": "KX505501.1",
             "code": "Frameshift",
             "message": "ORF 'tat_exon2' at 1747-1746 contains out of frame indels that impact 62 positions.",
-            "region": "tat_exon2"
-        },
-        {
-            "qseqid": "KX505501.1",
-            "code": "Deletion",
-            "message": "ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 15 deletions with max tolerance of 0 deletions.",
             "region": "tat_exon2"
         },
         {
@@ -159,7 +165,7 @@
         {
             "qseqid": "KX505501.1",
             "code": "Deletion",
-            "message": "ORF 'rev_exon2' exceeds maximum deletion tolerance. Contains 198 deletions with max tolerance of 7 deletions.",
+            "message": "ORF 'rev_exon2' exceeds maximum deletion tolerance. Contains 198 deletions with max tolerance of 27 deletions.",
             "region": "rev_exon2"
         },
         {
@@ -177,7 +183,7 @@
         {
             "qseqid": "KX505501.1",
             "code": "Deletion",
-            "message": "ORF 'nef' exceeds maximum deletion tolerance. Contains 396 deletions with max tolerance of 48 deletions.",
+            "message": "ORF 'nef' exceeds maximum deletion tolerance. Contains 396 deletions with max tolerance of 27 deletions.",
             "region": "nef"
         },
         {
@@ -244,8 +250,8 @@
         },
         {
             "qseqid": "MN691959",
-            "code": "Deletion",
-            "message": "ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 45 deletions with max tolerance of 0 deletions.",
+            "code": "InternalStop",
+            "message": "ORF 'tat_exon2' at 8238-8330 contains an internal stop codon at 8283.",
             "region": "tat_exon2"
         }
     ],
@@ -259,7 +265,7 @@
         {
             "qseqid": "MN692074",
             "code": "Deletion",
-            "message": "ORF 'pol' exceeds maximum deletion tolerance. Contains 981 deletions with max tolerance of 93 deletions.",
+            "message": "ORF 'pol' exceeds maximum deletion tolerance. Contains 981 deletions with max tolerance of 87 deletions.",
             "region": "pol"
         },
         {
@@ -277,7 +283,7 @@
         {
             "qseqid": "MN692074",
             "code": "Deletion",
-            "message": "ORF 'env' exceeds maximum deletion tolerance. Contains 2073 deletions with max tolerance of 54 deletions.",
+            "message": "ORF 'env' exceeds maximum deletion tolerance. Contains 2073 deletions with max tolerance of 150 deletions.",
             "region": "env"
         },
         {
@@ -295,7 +301,7 @@
         {
             "qseqid": "MN692074",
             "code": "Deletion",
-            "message": "ORF 'vif' exceeds maximum deletion tolerance. Contains 81 deletions with max tolerance of 12 deletions.",
+            "message": "ORF 'vif' exceeds maximum deletion tolerance. Contains 81 deletions with max tolerance of 15 deletions.",
             "region": "vif"
         },
         {
@@ -313,7 +319,7 @@
         {
             "qseqid": "MN692074",
             "code": "Insertion",
-            "message": "ORF 'vpr' exceeds maximum insertion tolerance. Contains 207 insertions with max tolerance of 6 insertions.",
+            "message": "ORF 'vpr' exceeds maximum insertion tolerance. Contains 207 insertions with max tolerance of 8 insertions.",
             "region": "vpr"
         },
         {
@@ -331,7 +337,7 @@
         {
             "qseqid": "MN692074",
             "code": "Insertion",
-            "message": "ORF 'tat_exon1' exceeds maximum insertion tolerance. Contains 249 insertions with max tolerance of 0 insertions.",
+            "message": "ORF 'tat_exon1' exceeds maximum insertion tolerance. Contains 249 insertions with max tolerance of 9 insertions.",
             "region": "tat_exon1"
         },
         {
@@ -349,7 +355,7 @@
         {
             "qseqid": "MN692074",
             "code": "Insertion",
-            "message": "ORF 'rev_exon1' exceeds maximum insertion tolerance. Contains 387 insertions with max tolerance of 0 insertions.",
+            "message": "ORF 'rev_exon1' exceeds maximum insertion tolerance. Contains 387 insertions with max tolerance of 9 insertions.",
             "region": "rev_exon1"
         },
         {
@@ -385,7 +391,7 @@
         {
             "qseqid": "MN692074",
             "code": "Deletion",
-            "message": "ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 60 deletions with max tolerance of 0 deletions.",
+            "message": "ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 60 deletions with max tolerance of 24 deletions.",
             "region": "tat_exon2"
         },
         {
@@ -403,7 +409,7 @@
         {
             "qseqid": "MN692074",
             "code": "Deletion",
-            "message": "ORF 'rev_exon2' exceeds maximum deletion tolerance. Contains 243 deletions with max tolerance of 7 deletions.",
+            "message": "ORF 'rev_exon2' exceeds maximum deletion tolerance. Contains 243 deletions with max tolerance of 27 deletions.",
             "region": "rev_exon2"
         },
         {
@@ -421,7 +427,7 @@
         {
             "qseqid": "MN692074",
             "code": "Deletion",
-            "message": "ORF 'nef' exceeds maximum deletion tolerance. Contains 123 deletions with max tolerance of 48 deletions.",
+            "message": "ORF 'nef' exceeds maximum deletion tolerance. Contains 123 deletions with max tolerance of 27 deletions.",
             "region": "nef"
         },
         {
@@ -489,8 +495,8 @@
         },
         {
             "qseqid": "MN090335",
-            "code": "Deletion",
-            "message": "ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 45 deletions with max tolerance of 0 deletions.",
+            "code": "InternalStop",
+            "message": "ORF 'tat_exon2' at 7740-7832 contains an internal stop codon at 7785.",
             "region": "tat_exon2"
         },
         {

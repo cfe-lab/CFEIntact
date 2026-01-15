@@ -21,7 +21,7 @@
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
             "code": "Deletion",
-            "message": "ORF 'vpu' exceeds maximum deletion tolerance. Contains 30 deletions with max tolerance of 6 deletions.",
+            "message": "ORF 'vpu' exceeds maximum deletion tolerance. Contains 30 deletions with max tolerance of 15 deletions.",
             "region": "vpu"
         },
         {
@@ -44,8 +44,8 @@
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
-            "code": "Deletion",
-            "message": "ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 45 deletions with max tolerance of 0 deletions.",
+            "code": "InternalStop",
+            "message": "ORF 'tat_exon2' at 8377-8469 contains an internal stop codon at 8422.",
             "region": "tat_exon2"
         },
         {
