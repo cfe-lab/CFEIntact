@@ -42,7 +42,6 @@ The values above are based on the following emperical data:
 The table above presents an analysis of Open Reading Frame (ORF) lengths for different genes. The analysis summarizes the lengths by providing statistical measures such as the median, minimum, maximum, mean, mode, standard deviation, variance, and the count of the samples.
 
 Then deletion and insertion tolerance is calculated as `|Median - Minimum|` and `|Median - Maximum|`.
-Note that `InsertionInOrf` error is only reported when the distance measure is also crossed.
 
 Statistical measures help in understanding the distribution of the data. For instance, the mean gives an idea of the average ORF length, while the median provides a measure of the center of the distribution. The mode indicates the most frequently observed length, and the variance or standard deviation shows how spread apart the lengths are from the mean.
 

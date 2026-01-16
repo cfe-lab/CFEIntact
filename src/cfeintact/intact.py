@@ -441,9 +441,6 @@ def check_reading_frame_deletions(e: OriginalORF, q: OriginalORF) \
 def check_reading_frame_insertions(check_distance: bool, best_match: MappedORF, e: OriginalORF, q: OriginalORF) \
         -> Optional[defect.Insertion]:
 
-    if best_match.distance <= e.max_distance and best_match.starts_properly and best_match.ends_properly:
-        return None
-
     got_protein = q.protein
     exp_protein = e.protein
     insertions = max(0, len(got_protein) - len(exp_protein)) * 3
