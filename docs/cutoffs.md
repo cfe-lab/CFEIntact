@@ -92,7 +92,7 @@ distribution of distances within the pool of observed instances.
 | rev_exon2 | 0.48   | 0.16    | 0.76    | 0.48 | 0.12  | 1422  |
 | nef       | 0.56   | 0.39    | 1.34    | 0.57 | 0.12  | 1409  |
 
-   <div style='width: 100%; text-align: right;'><tiny>(source: study by British Columbia Centre for Excellence in HIV/AIDS)</tiny></div>
+   <div style='width: 100%; text-align: right;'><tiny>( source: [https://github.com/cfe-lab/hivstats](https://github.com/cfe-lab/hivstats) )</tiny></div>
 
 The distance measures are an essential component of the genetic
 analysis, providing insights into the physical distances within the
