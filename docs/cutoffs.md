@@ -9,17 +9,17 @@ except for the standard constants such as the 5% limit for p-value.
 
 | ORF name  | Deletion tolerance | Insertion tolerance |
 |-----------|--------------------|---------------------|
-| gag       | -42                | +207                |
-| pol       | -93                | +24                 |
-| env       | -54                | +459                |
-| vif       | -12                | +9                  |
-| vpr       | -6                 | +6                  |
-| tat_exon1 | -0                 | +0                  |
-| rev_exon1 | -0                 | +0                  |
-| vpu       | -6                 | +24                 |
-| tat_exon2 | -0                 | +15                 |
-| rev_exon2 | -7                 | +9                  |
-| nef       | -48                | +54                 |
+| gag       | -30                | +45                 |
+| pol       | -87                | +51                 |
+| env       | -150               | +123                |
+| vif       | -15                | +12                 |
+| vpr       | -16                | +8                  |
+| tat_exon1 | -3                 | +9                  |
+| rev_exon1 | -3                 | +9                  |
+| vpu       | -15                | +24                 |
+| tat_exon2 | -24                | +15                 |
+| rev_exon2 | -27                | +39                 |
+| nef       | -27                | +48                 |
 
 The values above are based on the following emperical data:
 
@@ -57,19 +57,19 @@ each ORF can deviate from its typical genetic make-up before the
 changes are considered to significantly impact the gene's function or
 structural integrity.
 
-| ORF name  | Distance tolerance |
-|-----------|--------------------|
-| gag       | 0.9844311377245509 |
-| pol       | 1.8834468664850077 |
-| env       | 1.3559456398641183 |
-| vif       | 0.788020833333331  |
-| vpr       | 0.5898148148148137 |
-| tat_exon1 | 0.856962025316456  |
-| rev_exon1 | 0.9230769230769231 |
-| vpu       | 1.0794871794871803 |
-| tat_exon2 | 1.1833333333333333 |
-| rev_exon2 | 0.7577319587628868 |
-| nef       | 1.3414847161572008 |
+| ORF name  | Distance tolerance     |
+|-----------|-----------------------|
+| gag       | 0.36329365079365084    |
+| pol       | 0.30019762845849796    |
+| env       | 0.8311602209944755     |
+| vif       | 0.59375                |
+| vpr       | 0.5625                 |
+| tat_exon1 | 0.8949367088607598     |
+| rev_exon1 | 1.1806451612903224     |
+| vpu       | 1.117777777777778      |
+| tat_exon2 | 1.4210526315789473     |
+| rev_exon2 | 0.7577319587628868     |
+| nef       | 0.8023584905660375     |
 
 The following table complements the distance tolerance data by
 providing statistical measures on observed distances. These include
