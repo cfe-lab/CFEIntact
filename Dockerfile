@@ -9,7 +9,7 @@ RUN apt-get install -y python3 python3-pip
 
 COPY . /tmp/CFEIntact
 
-RUN python3 -m pip install /tmp/CFEIntact
+RUN python3 -m pip install --break-system-packages /tmp/CFEIntact
 
 WORKDIR /w
 
