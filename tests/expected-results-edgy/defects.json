@@ -42,5 +42,1706 @@
             "message": "ORF 'nef' at 8797-9417 contains an internal stop codon at 9166.",
             "region": "nef"
         }
+    ],
+    "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE": [],
+    "small-sequence": [
+        {
+            "qseqid": "small-sequence",
+            "code": "Frameshift",
+            "message": "ORF 'gag' at 7-17 contains out of frame indels that impact 1009 positions.",
+            "region": "gag"
+        },
+        {
+            "qseqid": "small-sequence",
+            "code": "Deletion",
+            "message": "ORF 'gag' exceeds maximum deletion tolerance. Contains 1509 deletions with max tolerance of 30 deletions.",
+            "region": "gag"
+        },
+        {
+            "qseqid": "small-sequence",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'gag' has a mutated start codon: 'GGG'.",
+            "region": "gag"
+        },
+        {
+            "qseqid": "small-sequence",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'gag' has a mutated stop codon: 'AGA'.",
+            "region": "gag"
+        },
+        {
+            "qseqid": "small-sequence",
+            "code": "Frameshift",
+            "message": "ORF 'pol' at 18-17 contains out of frame indels that impact 2018 positions.",
+            "region": "pol"
+        },
+        {
+            "qseqid": "small-sequence",
+            "code": "Deletion",
+            "message": "ORF 'pol' exceeds maximum deletion tolerance. Contains 3021 deletions with max tolerance of 87 deletions.",
+            "region": "pol"
+        },
+        {
+            "qseqid": "small-sequence",
+            "code": "Frameshift",
+            "message": "ORF 'env' at 18-17 contains out of frame indels that impact 1716 positions.",
+            "region": "env"
+        },
+        {
+            "qseqid": "small-sequence",
+            "code": "Deletion",
+            "message": "ORF 'env' exceeds maximum deletion tolerance. Contains 2571 deletions with max tolerance of 150 deletions.",
+            "region": "env"
+        },
+        {
+            "qseqid": "small-sequence",
+            "code": "Frameshift",
+            "message": "ORF 'vif' at 18-17 contains out of frame indels that impact 382 positions.",
+            "region": "vif"
+        },
+        {
+            "qseqid": "small-sequence",
+            "code": "Deletion",
+            "message": "ORF 'vif' exceeds maximum deletion tolerance. Contains 570 deletions with max tolerance of 15 deletions.",
+            "region": "vif"
+        },
+        {
+            "qseqid": "small-sequence",
+            "code": "Frameshift",
+            "message": "ORF 'vpr' at 18-17 contains out of frame indels that impact 192 positions.",
+            "region": "vpr"
+        },
+        {
+            "qseqid": "small-sequence",
+            "code": "Deletion",
+            "message": "ORF 'vpr' exceeds maximum deletion tolerance. Contains 285 deletions with max tolerance of 16 deletions.",
+            "region": "vpr"
+        },
+        {
+            "qseqid": "small-sequence",
+            "code": "Frameshift",
+            "message": "ORF 'tat_exon1' at 18-17 contains out of frame indels that impact 144 positions.",
+            "region": "tat_exon1"
+        },
+        {
+            "qseqid": "small-sequence",
+            "code": "Deletion",
+            "message": "ORF 'tat_exon1' exceeds maximum deletion tolerance. Contains 216 deletions with max tolerance of 3 deletions.",
+            "region": "tat_exon1"
+        },
+        {
+            "qseqid": "small-sequence",
+            "code": "Frameshift",
+            "message": "ORF 'rev_exon1' at 18-17 contains out of frame indels that impact 51 positions.",
+            "region": "rev_exon1"
+        },
+        {
+            "qseqid": "small-sequence",
+            "code": "Deletion",
+            "message": "ORF 'rev_exon1' exceeds maximum deletion tolerance. Contains 78 deletions with max tolerance of 3 deletions.",
+            "region": "rev_exon1"
+        },
+        {
+            "qseqid": "small-sequence",
+            "code": "Frameshift",
+            "message": "ORF 'vpu' at 18-17 contains out of frame indels that impact 164 positions.",
+            "region": "vpu"
+        },
+        {
+            "qseqid": "small-sequence",
+            "code": "Deletion",
+            "message": "ORF 'vpu' exceeds maximum deletion tolerance. Contains 243 deletions with max tolerance of 15 deletions.",
+            "region": "vpu"
+        },
+        {
+            "qseqid": "small-sequence",
+            "code": "Frameshift",
+            "message": "ORF 'tat_exon2' at 18-17 contains out of frame indels that impact 62 positions.",
+            "region": "tat_exon2"
+        },
+        {
+            "qseqid": "small-sequence",
+            "code": "Deletion",
+            "message": "ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 87 deletions with max tolerance of 24 deletions.",
+            "region": "tat_exon2"
+        },
+        {
+            "qseqid": "small-sequence",
+            "code": "Frameshift",
+            "message": "ORF 'rev_exon2' at 18-17 contains out of frame indels that impact 198 positions.",
+            "region": "rev_exon2"
+        },
+        {
+            "qseqid": "small-sequence",
+            "code": "Deletion",
+            "message": "ORF 'rev_exon2' exceeds maximum deletion tolerance. Contains 291 deletions with max tolerance of 27 deletions.",
+            "region": "rev_exon2"
+        },
+        {
+            "qseqid": "small-sequence",
+            "code": "Frameshift",
+            "message": "ORF 'nef' at 18-17 contains out of frame indels that impact 410 positions.",
+            "region": "nef"
+        },
+        {
+            "qseqid": "small-sequence",
+            "code": "Deletion",
+            "message": "ORF 'nef' exceeds maximum deletion tolerance. Contains 612 deletions with max tolerance of 27 deletions.",
+            "region": "nef"
+        },
+        {
+            "qseqid": "small-sequence",
+            "code": "PackagingSignalDeletion",
+            "message": "Query sequence exceeds maximum deletion tolerance in PSI. Contains 126 deletions with max tolerance of 10 deletions.",
+            "region": null
+        },
+        {
+            "qseqid": "small-sequence",
+            "code": "RevResponseElementDeletion",
+            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.",
+            "region": null
+        },
+        {
+            "qseqid": "small-sequence",
+            "code": "MajorSpliceDonorSiteMutated",
+            "message": "Query sequence has a missing splice donor site: --. The context is ----------------------.",
+            "region": null
+        },
+        {
+            "qseqid": "small-sequence",
+            "code": "LongDeletion",
+            "message": "Query sequence contains a very large deletion.",
+            "region": null
+        },
+        {
+            "qseqid": "small-sequence",
+            "code": "NonHIV",
+            "message": "Sequence contains unrecognized parts. It is probably a Human/HIV Chimera sequence.",
+            "region": null
+        }
+    ],
+    "singleton-sequence": [
+        {
+            "qseqid": "singleton-sequence",
+            "code": "Frameshift",
+            "message": "ORF 'gag' at 1-1 contains out of frame indels that impact 1009 positions.",
+            "region": "gag"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "Deletion",
+            "message": "ORF 'gag' exceeds maximum deletion tolerance. Contains 1509 deletions with max tolerance of 30 deletions.",
+            "region": "gag"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'gag' has a mutated start codon: '--A'.",
+            "region": "gag"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'gag' has a mutated stop codon: 'A--'.",
+            "region": "gag"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "Frameshift",
+            "message": "ORF 'pol' at 1-1 contains out of frame indels that impact 2019 positions.",
+            "region": "pol"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "Deletion",
+            "message": "ORF 'pol' exceeds maximum deletion tolerance. Contains 3021 deletions with max tolerance of 87 deletions.",
+            "region": "pol"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'pol' has a mutated stop codon: 'A--'.",
+            "region": "pol"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "Frameshift",
+            "message": "ORF 'env' at 1-1 contains out of frame indels that impact 1717 positions.",
+            "region": "env"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "Deletion",
+            "message": "ORF 'env' exceeds maximum deletion tolerance. Contains 2571 deletions with max tolerance of 150 deletions.",
+            "region": "env"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'env' has a mutated start codon: '--A'.",
+            "region": "env"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'env' has a mutated stop codon: 'A--'.",
+            "region": "env"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "Frameshift",
+            "message": "ORF 'vif' at 1-1 contains out of frame indels that impact 382 positions.",
+            "region": "vif"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "Deletion",
+            "message": "ORF 'vif' exceeds maximum deletion tolerance. Contains 570 deletions with max tolerance of 15 deletions.",
+            "region": "vif"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'vif' has a mutated start codon: '--A'.",
+            "region": "vif"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'vif' has a mutated stop codon: 'A--'.",
+            "region": "vif"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "Frameshift",
+            "message": "ORF 'vpr' at 1-1 contains out of frame indels that impact 193 positions.",
+            "region": "vpr"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "Deletion",
+            "message": "ORF 'vpr' exceeds maximum deletion tolerance. Contains 285 deletions with max tolerance of 16 deletions.",
+            "region": "vpr"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'vpr' has a mutated start codon: '--A'.",
+            "region": "vpr"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'vpr' has a mutated stop codon: 'A--'.",
+            "region": "vpr"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "Frameshift",
+            "message": "ORF 'tat_exon1' at 1-1 contains out of frame indels that impact 144 positions.",
+            "region": "tat_exon1"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "Deletion",
+            "message": "ORF 'tat_exon1' exceeds maximum deletion tolerance. Contains 216 deletions with max tolerance of 3 deletions.",
+            "region": "tat_exon1"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'tat_exon1' has a mutated start codon: '--A'.",
+            "region": "tat_exon1"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "Frameshift",
+            "message": "ORF 'rev_exon1' at 1-1 contains out of frame indels that impact 50 positions.",
+            "region": "rev_exon1"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "Deletion",
+            "message": "ORF 'rev_exon1' exceeds maximum deletion tolerance. Contains 78 deletions with max tolerance of 3 deletions.",
+            "region": "rev_exon1"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'rev_exon1' has a mutated start codon: '--A'.",
+            "region": "rev_exon1"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "Frameshift",
+            "message": "ORF 'vpu' at 1-1 contains out of frame indels that impact 164 positions.",
+            "region": "vpu"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "Deletion",
+            "message": "ORF 'vpu' exceeds maximum deletion tolerance. Contains 243 deletions with max tolerance of 15 deletions.",
+            "region": "vpu"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'vpu' has a mutated start codon: '--A'.",
+            "region": "vpu"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'vpu' has a mutated stop codon: 'A--'.",
+            "region": "vpu"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "Frameshift",
+            "message": "ORF 'tat_exon2' at 1-1 contains out of frame indels that impact 62 positions.",
+            "region": "tat_exon2"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "Deletion",
+            "message": "ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 87 deletions with max tolerance of 24 deletions.",
+            "region": "tat_exon2"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'tat_exon2' has a mutated stop codon: 'A--'.",
+            "region": "tat_exon2"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "Frameshift",
+            "message": "ORF 'rev_exon2' at 1-1 contains out of frame indels that impact 199 positions.",
+            "region": "rev_exon2"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "Deletion",
+            "message": "ORF 'rev_exon2' exceeds maximum deletion tolerance. Contains 291 deletions with max tolerance of 27 deletions.",
+            "region": "rev_exon2"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'rev_exon2' has a mutated stop codon: 'A--'.",
+            "region": "rev_exon2"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "Frameshift",
+            "message": "ORF 'nef' at 1-1 contains out of frame indels that impact 411 positions.",
+            "region": "nef"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "Deletion",
+            "message": "ORF 'nef' exceeds maximum deletion tolerance. Contains 612 deletions with max tolerance of 27 deletions.",
+            "region": "nef"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'nef' has a mutated start codon: '--A'.",
+            "region": "nef"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'nef' has a mutated stop codon: 'A--'.",
+            "region": "nef"
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "PackagingSignalDeletion",
+            "message": "Query sequence exceeds maximum deletion tolerance in PSI. Contains 126 deletions with max tolerance of 10 deletions.",
+            "region": null
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "RevResponseElementDeletion",
+            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.",
+            "region": null
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "MajorSpliceDonorSiteMutated",
+            "message": "Query sequence has a missing splice donor site: --. The context is ----------------------.",
+            "region": null
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "LongDeletion",
+            "message": "Query sequence contains a very large deletion.",
+            "region": null
+        },
+        {
+            "qseqid": "singleton-sequence",
+            "code": "NonHIV",
+            "message": "Sequence contains unrecognized parts. It is probably a Human/HIV Chimera sequence.",
+            "region": null
+        }
+    ],
+    "empty-sequence": [
+        {
+            "qseqid": "empty-sequence",
+            "code": "Frameshift",
+            "message": "ORF 'gag' at 1-0 contains out of frame indels that impact 1008 positions.",
+            "region": "gag"
+        },
+        {
+            "qseqid": "empty-sequence",
+            "code": "Deletion",
+            "message": "ORF 'gag' exceeds maximum deletion tolerance. Contains 1509 deletions with max tolerance of 30 deletions.",
+            "region": "gag"
+        },
+        {
+            "qseqid": "empty-sequence",
+            "code": "Frameshift",
+            "message": "ORF 'pol' at 1-0 contains out of frame indels that impact 2018 positions.",
+            "region": "pol"
+        },
+        {
+            "qseqid": "empty-sequence",
+            "code": "Deletion",
+            "message": "ORF 'pol' exceeds maximum deletion tolerance. Contains 3024 deletions with max tolerance of 87 deletions.",
+            "region": "pol"
+        },
+        {
+            "qseqid": "empty-sequence",
+            "code": "Frameshift",
+            "message": "ORF 'env' at 1-0 contains out of frame indels that impact 1716 positions.",
+            "region": "env"
+        },
+        {
+            "qseqid": "empty-sequence",
+            "code": "Deletion",
+            "message": "ORF 'env' exceeds maximum deletion tolerance. Contains 2571 deletions with max tolerance of 150 deletions.",
+            "region": "env"
+        },
+        {
+            "qseqid": "empty-sequence",
+            "code": "Frameshift",
+            "message": "ORF 'vif' at 1-0 contains out of frame indels that impact 382 positions.",
+            "region": "vif"
+        },
+        {
+            "qseqid": "empty-sequence",
+            "code": "Deletion",
+            "message": "ORF 'vif' exceeds maximum deletion tolerance. Contains 570 deletions with max tolerance of 15 deletions.",
+            "region": "vif"
+        },
+        {
+            "qseqid": "empty-sequence",
+            "code": "Frameshift",
+            "message": "ORF 'vpr' at 1-0 contains out of frame indels that impact 192 positions.",
+            "region": "vpr"
+        },
+        {
+            "qseqid": "empty-sequence",
+            "code": "Deletion",
+            "message": "ORF 'vpr' exceeds maximum deletion tolerance. Contains 285 deletions with max tolerance of 16 deletions.",
+            "region": "vpr"
+        },
+        {
+            "qseqid": "empty-sequence",
+            "code": "Frameshift",
+            "message": "ORF 'tat_exon1' at 1-0 contains out of frame indels that impact 144 positions.",
+            "region": "tat_exon1"
+        },
+        {
+            "qseqid": "empty-sequence",
+            "code": "Deletion",
+            "message": "ORF 'tat_exon1' exceeds maximum deletion tolerance. Contains 216 deletions with max tolerance of 3 deletions.",
+            "region": "tat_exon1"
+        },
+        {
+            "qseqid": "empty-sequence",
+            "code": "Frameshift",
+            "message": "ORF 'rev_exon1' at 1-0 contains out of frame indels that impact 51 positions.",
+            "region": "rev_exon1"
+        },
+        {
+            "qseqid": "empty-sequence",
+            "code": "Deletion",
+            "message": "ORF 'rev_exon1' exceeds maximum deletion tolerance. Contains 78 deletions with max tolerance of 3 deletions.",
+            "region": "rev_exon1"
+        },
+        {
+            "qseqid": "empty-sequence",
+            "code": "Frameshift",
+            "message": "ORF 'vpu' at 1-0 contains out of frame indels that impact 164 positions.",
+            "region": "vpu"
+        },
+        {
+            "qseqid": "empty-sequence",
+            "code": "Deletion",
+            "message": "ORF 'vpu' exceeds maximum deletion tolerance. Contains 243 deletions with max tolerance of 15 deletions.",
+            "region": "vpu"
+        },
+        {
+            "qseqid": "empty-sequence",
+            "code": "Frameshift",
+            "message": "ORF 'tat_exon2' at 1-0 contains out of frame indels that impact 62 positions.",
+            "region": "tat_exon2"
+        },
+        {
+            "qseqid": "empty-sequence",
+            "code": "Deletion",
+            "message": "ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 90 deletions with max tolerance of 24 deletions.",
+            "region": "tat_exon2"
+        },
+        {
+            "qseqid": "empty-sequence",
+            "code": "Frameshift",
+            "message": "ORF 'rev_exon2' at 1-0 contains out of frame indels that impact 198 positions.",
+            "region": "rev_exon2"
+        },
+        {
+            "qseqid": "empty-sequence",
+            "code": "Deletion",
+            "message": "ORF 'rev_exon2' exceeds maximum deletion tolerance. Contains 294 deletions with max tolerance of 27 deletions.",
+            "region": "rev_exon2"
+        },
+        {
+            "qseqid": "empty-sequence",
+            "code": "Frameshift",
+            "message": "ORF 'nef' at 1-0 contains out of frame indels that impact 410 positions.",
+            "region": "nef"
+        },
+        {
+            "qseqid": "empty-sequence",
+            "code": "Deletion",
+            "message": "ORF 'nef' exceeds maximum deletion tolerance. Contains 612 deletions with max tolerance of 27 deletions.",
+            "region": "nef"
+        },
+        {
+            "qseqid": "Ref.01_AE.TH.90.CM240.U54771.CfE",
+            "code": "PackagingSignalDeletion",
+            "message": "Query sequence exceeds maximum deletion tolerance in PSI. Contains 126 deletions with max tolerance of 10 deletions.",
+            "region": null
+        },
+        {
+            "qseqid": "Ref.01_AE.TH.90.CM240.U54771.CfE",
+            "code": "RevResponseElementDeletion",
+            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.",
+            "region": null
+        },
+        {
+            "qseqid": "Ref.01_AE.TH.90.CM240.U54771.CfE",
+            "code": "MajorSpliceDonorSiteMutated",
+            "message": "Query sequence has a missing splice donor site: --. The context is ----------------------.",
+            "region": null
+        },
+        {
+            "qseqid": "empty-sequence",
+            "code": "LongDeletion",
+            "message": "Query sequence contains a very large deletion.",
+            "region": null
+        }
+    ],
+    "empty-sequence2": [
+        {
+            "qseqid": "empty-sequence2",
+            "code": "Frameshift",
+            "message": "ORF 'gag' at 1-0 contains out of frame indels that impact 1008 positions.",
+            "region": "gag"
+        },
+        {
+            "qseqid": "empty-sequence2",
+            "code": "Deletion",
+            "message": "ORF 'gag' exceeds maximum deletion tolerance. Contains 1509 deletions with max tolerance of 30 deletions.",
+            "region": "gag"
+        },
+        {
+            "qseqid": "empty-sequence2",
+            "code": "Frameshift",
+            "message": "ORF 'pol' at 1-0 contains out of frame indels that impact 2018 positions.",
+            "region": "pol"
+        },
+        {
+            "qseqid": "empty-sequence2",
+            "code": "Deletion",
+            "message": "ORF 'pol' exceeds maximum deletion tolerance. Contains 3024 deletions with max tolerance of 87 deletions.",
+            "region": "pol"
+        },
+        {
+            "qseqid": "empty-sequence2",
+            "code": "Frameshift",
+            "message": "ORF 'env' at 1-0 contains out of frame indels that impact 1716 positions.",
+            "region": "env"
+        },
+        {
+            "qseqid": "empty-sequence2",
+            "code": "Deletion",
+            "message": "ORF 'env' exceeds maximum deletion tolerance. Contains 2571 deletions with max tolerance of 150 deletions.",
+            "region": "env"
+        },
+        {
+            "qseqid": "empty-sequence2",
+            "code": "Frameshift",
+            "message": "ORF 'vif' at 1-0 contains out of frame indels that impact 382 positions.",
+            "region": "vif"
+        },
+        {
+            "qseqid": "empty-sequence2",
+            "code": "Deletion",
+            "message": "ORF 'vif' exceeds maximum deletion tolerance. Contains 570 deletions with max tolerance of 15 deletions.",
+            "region": "vif"
+        },
+        {
+            "qseqid": "empty-sequence2",
+            "code": "Frameshift",
+            "message": "ORF 'vpr' at 1-0 contains out of frame indels that impact 192 positions.",
+            "region": "vpr"
+        },
+        {
+            "qseqid": "empty-sequence2",
+            "code": "Deletion",
+            "message": "ORF 'vpr' exceeds maximum deletion tolerance. Contains 285 deletions with max tolerance of 16 deletions.",
+            "region": "vpr"
+        },
+        {
+            "qseqid": "empty-sequence2",
+            "code": "Frameshift",
+            "message": "ORF 'tat_exon1' at 1-0 contains out of frame indels that impact 144 positions.",
+            "region": "tat_exon1"
+        },
+        {
+            "qseqid": "empty-sequence2",
+            "code": "Deletion",
+            "message": "ORF 'tat_exon1' exceeds maximum deletion tolerance. Contains 216 deletions with max tolerance of 3 deletions.",
+            "region": "tat_exon1"
+        },
+        {
+            "qseqid": "empty-sequence2",
+            "code": "Frameshift",
+            "message": "ORF 'rev_exon1' at 1-0 contains out of frame indels that impact 51 positions.",
+            "region": "rev_exon1"
+        },
+        {
+            "qseqid": "empty-sequence2",
+            "code": "Deletion",
+            "message": "ORF 'rev_exon1' exceeds maximum deletion tolerance. Contains 78 deletions with max tolerance of 3 deletions.",
+            "region": "rev_exon1"
+        },
+        {
+            "qseqid": "empty-sequence2",
+            "code": "Frameshift",
+            "message": "ORF 'vpu' at 1-0 contains out of frame indels that impact 164 positions.",
+            "region": "vpu"
+        },
+        {
+            "qseqid": "empty-sequence2",
+            "code": "Deletion",
+            "message": "ORF 'vpu' exceeds maximum deletion tolerance. Contains 243 deletions with max tolerance of 15 deletions.",
+            "region": "vpu"
+        },
+        {
+            "qseqid": "empty-sequence2",
+            "code": "Frameshift",
+            "message": "ORF 'tat_exon2' at 1-0 contains out of frame indels that impact 62 positions.",
+            "region": "tat_exon2"
+        },
+        {
+            "qseqid": "empty-sequence2",
+            "code": "Deletion",
+            "message": "ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 90 deletions with max tolerance of 24 deletions.",
+            "region": "tat_exon2"
+        },
+        {
+            "qseqid": "empty-sequence2",
+            "code": "Frameshift",
+            "message": "ORF 'rev_exon2' at 1-0 contains out of frame indels that impact 198 positions.",
+            "region": "rev_exon2"
+        },
+        {
+            "qseqid": "empty-sequence2",
+            "code": "Deletion",
+            "message": "ORF 'rev_exon2' exceeds maximum deletion tolerance. Contains 294 deletions with max tolerance of 27 deletions.",
+            "region": "rev_exon2"
+        },
+        {
+            "qseqid": "empty-sequence2",
+            "code": "Frameshift",
+            "message": "ORF 'nef' at 1-0 contains out of frame indels that impact 410 positions.",
+            "region": "nef"
+        },
+        {
+            "qseqid": "empty-sequence2",
+            "code": "Deletion",
+            "message": "ORF 'nef' exceeds maximum deletion tolerance. Contains 612 deletions with max tolerance of 27 deletions.",
+            "region": "nef"
+        },
+        {
+            "qseqid": "Ref.01_AE.TH.90.CM240.U54771.CfE",
+            "code": "PackagingSignalDeletion",
+            "message": "Query sequence exceeds maximum deletion tolerance in PSI. Contains 126 deletions with max tolerance of 10 deletions.",
+            "region": null
+        },
+        {
+            "qseqid": "Ref.01_AE.TH.90.CM240.U54771.CfE",
+            "code": "RevResponseElementDeletion",
+            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.",
+            "region": null
+        },
+        {
+            "qseqid": "Ref.01_AE.TH.90.CM240.U54771.CfE",
+            "code": "MajorSpliceDonorSiteMutated",
+            "message": "Query sequence has a missing splice donor site: --. The context is ----------------------.",
+            "region": null
+        },
+        {
+            "qseqid": "empty-sequence2",
+            "code": "LongDeletion",
+            "message": "Query sequence contains a very large deletion.",
+            "region": null
+        }
+    ],
+    "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.WITH.SOME.LOWERCASES": [],
+    "small-sequence-with-lowercases": [
+        {
+            "qseqid": "small-sequence-with-lowercases",
+            "code": "Frameshift",
+            "message": "ORF 'gag' at 7-17 contains out of frame indels that impact 1009 positions.",
+            "region": "gag"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
+            "code": "Deletion",
+            "message": "ORF 'gag' exceeds maximum deletion tolerance. Contains 1509 deletions with max tolerance of 30 deletions.",
+            "region": "gag"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'gag' has a mutated start codon: 'GGG'.",
+            "region": "gag"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'gag' has a mutated stop codon: 'AGA'.",
+            "region": "gag"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
+            "code": "Frameshift",
+            "message": "ORF 'pol' at 18-17 contains out of frame indels that impact 2018 positions.",
+            "region": "pol"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
+            "code": "Deletion",
+            "message": "ORF 'pol' exceeds maximum deletion tolerance. Contains 3021 deletions with max tolerance of 87 deletions.",
+            "region": "pol"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
+            "code": "Frameshift",
+            "message": "ORF 'env' at 18-17 contains out of frame indels that impact 1716 positions.",
+            "region": "env"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
+            "code": "Deletion",
+            "message": "ORF 'env' exceeds maximum deletion tolerance. Contains 2571 deletions with max tolerance of 150 deletions.",
+            "region": "env"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
+            "code": "Frameshift",
+            "message": "ORF 'vif' at 18-17 contains out of frame indels that impact 382 positions.",
+            "region": "vif"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
+            "code": "Deletion",
+            "message": "ORF 'vif' exceeds maximum deletion tolerance. Contains 570 deletions with max tolerance of 15 deletions.",
+            "region": "vif"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
+            "code": "Frameshift",
+            "message": "ORF 'vpr' at 18-17 contains out of frame indels that impact 192 positions.",
+            "region": "vpr"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
+            "code": "Deletion",
+            "message": "ORF 'vpr' exceeds maximum deletion tolerance. Contains 285 deletions with max tolerance of 16 deletions.",
+            "region": "vpr"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
+            "code": "Frameshift",
+            "message": "ORF 'tat_exon1' at 18-17 contains out of frame indels that impact 144 positions.",
+            "region": "tat_exon1"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
+            "code": "Deletion",
+            "message": "ORF 'tat_exon1' exceeds maximum deletion tolerance. Contains 216 deletions with max tolerance of 3 deletions.",
+            "region": "tat_exon1"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
+            "code": "Frameshift",
+            "message": "ORF 'rev_exon1' at 18-17 contains out of frame indels that impact 51 positions.",
+            "region": "rev_exon1"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
+            "code": "Deletion",
+            "message": "ORF 'rev_exon1' exceeds maximum deletion tolerance. Contains 78 deletions with max tolerance of 3 deletions.",
+            "region": "rev_exon1"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
+            "code": "Frameshift",
+            "message": "ORF 'vpu' at 18-17 contains out of frame indels that impact 164 positions.",
+            "region": "vpu"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
+            "code": "Deletion",
+            "message": "ORF 'vpu' exceeds maximum deletion tolerance. Contains 243 deletions with max tolerance of 15 deletions.",
+            "region": "vpu"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
+            "code": "Frameshift",
+            "message": "ORF 'tat_exon2' at 18-17 contains out of frame indels that impact 62 positions.",
+            "region": "tat_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
+            "code": "Deletion",
+            "message": "ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 87 deletions with max tolerance of 24 deletions.",
+            "region": "tat_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
+            "code": "Frameshift",
+            "message": "ORF 'rev_exon2' at 18-17 contains out of frame indels that impact 198 positions.",
+            "region": "rev_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
+            "code": "Deletion",
+            "message": "ORF 'rev_exon2' exceeds maximum deletion tolerance. Contains 291 deletions with max tolerance of 27 deletions.",
+            "region": "rev_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
+            "code": "Frameshift",
+            "message": "ORF 'nef' at 18-17 contains out of frame indels that impact 410 positions.",
+            "region": "nef"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
+            "code": "Deletion",
+            "message": "ORF 'nef' exceeds maximum deletion tolerance. Contains 612 deletions with max tolerance of 27 deletions.",
+            "region": "nef"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
+            "code": "PackagingSignalDeletion",
+            "message": "Query sequence exceeds maximum deletion tolerance in PSI. Contains 126 deletions with max tolerance of 10 deletions.",
+            "region": null
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
+            "code": "RevResponseElementDeletion",
+            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.",
+            "region": null
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
+            "code": "MajorSpliceDonorSiteMutated",
+            "message": "Query sequence has a missing splice donor site: --. The context is ----------------------.",
+            "region": null
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
+            "code": "LongDeletion",
+            "message": "Query sequence contains a very large deletion.",
+            "region": null
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
+            "code": "NonHIV",
+            "message": "Sequence contains unrecognized parts. It is probably a Human/HIV Chimera sequence.",
+            "region": null
+        }
+    ],
+    "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSECOMPLEMENTED": [],
+    "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED": [
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "Frameshift",
+            "message": "ORF 'gag' at 412-2034 contains out of frame indels that impact 994 positions.",
+            "region": "gag"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "InternalStop",
+            "message": "ORF 'gag' at 412-2034 contains an internal stop codon at 466.",
+            "region": "gag"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'gag' has a mutated start codon: 'ACG'.",
+            "region": "gag"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'gag' has a mutated stop codon: 'ATG'.",
+            "region": "gag"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "Frameshift",
+            "message": "ORF 'pol' at 1798-5038 contains out of frame indels that impact 2002 positions.",
+            "region": "pol"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "InternalStop",
+            "message": "ORF 'pol' at 1798-5038 contains an internal stop codon at 2053.",
+            "region": "pol"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'pol' has a mutated stop codon: 'T--'.",
+            "region": "pol"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "Frameshift",
+            "message": "ORF 'env' at 6201-8813 contains out of frame indels that impact 1726 positions.",
+            "region": "env"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "InternalStop",
+            "message": "ORF 'env' at 6201-8813 contains an internal stop codon at 6366.",
+            "region": "env"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'env' has a mutated start codon: 'AAA'.",
+            "region": "env"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'env' has a mutated stop codon: 'AGG'.",
+            "region": "env"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "Frameshift",
+            "message": "ORF 'vif' at 4983-5574 contains out of frame indels that impact 356 positions.",
+            "region": "vif"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "InternalStop",
+            "message": "ORF 'vif' at 4983-5574 contains an internal stop codon at 5025.",
+            "region": "vif"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'vif' has a mutated start codon: 'TCG'.",
+            "region": "vif"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'vif' has a mutated stop codon: 'TAT'.",
+            "region": "vif"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "Frameshift",
+            "message": "ORF 'vpr' at 5517-5804 contains out of frame indels that impact 197 positions.",
+            "region": "vpr"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "InternalStop",
+            "message": "ORF 'vpr' at 5517-5804 contains an internal stop codon at 5535.",
+            "region": "vpr"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'vpr' has a mutated start codon: 'ATT'.",
+            "region": "vpr"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'vpr' has a mutated stop codon: 'AGG'.",
+            "region": "vpr"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "Frameshift",
+            "message": "ORF 'tat_exon1' at 5785-6006 contains out of frame indels that impact 74 positions.",
+            "region": "tat_exon1"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "InternalStop",
+            "message": "ORF 'tat_exon1' at 5785-6006 contains an internal stop codon at 5866.",
+            "region": "tat_exon1"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'tat_exon1' has a mutated start codon: 'GGA'.",
+            "region": "tat_exon1"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "Frameshift",
+            "message": "ORF 'rev_exon1' at 5931-6006 contains out of frame indels that impact 59 positions.",
+            "region": "rev_exon1"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "Deletion",
+            "message": "ORF 'rev_exon1' exceeds maximum deletion tolerance. Contains 27 deletions with max tolerance of 3 deletions.",
+            "region": "rev_exon1"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'rev_exon1' has a mutated start codon: 'GAG'.",
+            "region": "rev_exon1"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "Frameshift",
+            "message": "ORF 'vpu' at 6027-6283 contains out of frame indels that impact 177 positions.",
+            "region": "vpu"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "InternalStop",
+            "message": "ORF 'vpu' at 6027-6283 contains an internal stop codon at 6078.",
+            "region": "vpu"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'vpu' has a mutated stop codon: 'ACA'.",
+            "region": "vpu"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "Frameshift",
+            "message": "ORF 'tat_exon2' at 8374-8466 contains out of frame indels that impact 60 positions.",
+            "region": "tat_exon2"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "Insertion",
+            "message": "ORF 'tat_exon2' exceeds maximum insertion tolerance. Contains 237 insertions with max tolerance of 15 insertions.",
+            "region": "tat_exon2"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'tat_exon2' has a mutated stop codon: 'GGG'.",
+            "region": "tat_exon2"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "Frameshift",
+            "message": "ORF 'rev_exon2' at 8375-8671 contains out of frame indels that impact 186 positions.",
+            "region": "rev_exon2"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "InternalStop",
+            "message": "ORF 'rev_exon2' at 8375-8671 contains an internal stop codon at 8471.",
+            "region": "rev_exon2"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'rev_exon2' has a mutated stop codon: 'TGT'.",
+            "region": "rev_exon2"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "Frameshift",
+            "message": "ORF 'nef' at 8815-9497 contains out of frame indels that impact 357 positions.",
+            "region": "nef"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "InternalStop",
+            "message": "ORF 'nef' at 8815-9497 contains an internal stop codon at 8845.",
+            "region": "nef"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'nef' has a mutated start codon: 'ACG'.",
+            "region": "nef"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'nef' has a mutated stop codon: 'ACG'.",
+            "region": "nef"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "NonHIV",
+            "message": "Sequence contains unrecognized parts. It is probably a Human/HIV Chimera sequence.",
+            "region": null
+        }
+    ],
+    "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.WITH-XS": [
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.WITH-XS",
+            "code": "UnknownNucleotide",
+            "message": "Sequence contains invalid nucleotides: XXXXXXX (start: 45, end: 51).",
+            "region": null
+        }
+    ],
+    "small-sequence-with-xs": [
+        {
+            "qseqid": "small-sequence-with-xs",
+            "code": "UnknownNucleotide",
+            "message": "Sequence contains invalid nucleotides: XXXXXXX (start: 6, end: 12).",
+            "region": null
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "code": "Frameshift",
+            "message": "ORF 'gag' at 6-5 contains out of frame indels that impact 1008 positions.",
+            "region": "gag"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "code": "Deletion",
+            "message": "ORF 'gag' exceeds maximum deletion tolerance. Contains 1509 deletions with max tolerance of 30 deletions.",
+            "region": "gag"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "code": "Frameshift",
+            "message": "ORF 'pol' at 6-5 contains out of frame indels that impact 2018 positions.",
+            "region": "pol"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "code": "Deletion",
+            "message": "ORF 'pol' exceeds maximum deletion tolerance. Contains 3024 deletions with max tolerance of 87 deletions.",
+            "region": "pol"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "code": "Frameshift",
+            "message": "ORF 'env' at 6-5 contains out of frame indels that impact 1716 positions.",
+            "region": "env"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "code": "Deletion",
+            "message": "ORF 'env' exceeds maximum deletion tolerance. Contains 2571 deletions with max tolerance of 150 deletions.",
+            "region": "env"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "code": "Frameshift",
+            "message": "ORF 'vif' at 6-5 contains out of frame indels that impact 382 positions.",
+            "region": "vif"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "code": "Deletion",
+            "message": "ORF 'vif' exceeds maximum deletion tolerance. Contains 570 deletions with max tolerance of 15 deletions.",
+            "region": "vif"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "code": "Frameshift",
+            "message": "ORF 'vpr' at 6-5 contains out of frame indels that impact 192 positions.",
+            "region": "vpr"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "code": "Deletion",
+            "message": "ORF 'vpr' exceeds maximum deletion tolerance. Contains 285 deletions with max tolerance of 16 deletions.",
+            "region": "vpr"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "code": "Frameshift",
+            "message": "ORF 'tat_exon1' at 6-5 contains out of frame indels that impact 144 positions.",
+            "region": "tat_exon1"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "code": "Deletion",
+            "message": "ORF 'tat_exon1' exceeds maximum deletion tolerance. Contains 216 deletions with max tolerance of 3 deletions.",
+            "region": "tat_exon1"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "code": "Frameshift",
+            "message": "ORF 'rev_exon1' at 6-5 contains out of frame indels that impact 51 positions.",
+            "region": "rev_exon1"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "code": "Deletion",
+            "message": "ORF 'rev_exon1' exceeds maximum deletion tolerance. Contains 78 deletions with max tolerance of 3 deletions.",
+            "region": "rev_exon1"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "code": "Frameshift",
+            "message": "ORF 'vpu' at 6-5 contains out of frame indels that impact 164 positions.",
+            "region": "vpu"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "code": "Deletion",
+            "message": "ORF 'vpu' exceeds maximum deletion tolerance. Contains 243 deletions with max tolerance of 15 deletions.",
+            "region": "vpu"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "code": "Frameshift",
+            "message": "ORF 'tat_exon2' at 6-5 contains out of frame indels that impact 62 positions.",
+            "region": "tat_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "code": "Deletion",
+            "message": "ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 90 deletions with max tolerance of 24 deletions.",
+            "region": "tat_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "code": "Frameshift",
+            "message": "ORF 'rev_exon2' at 6-5 contains out of frame indels that impact 198 positions.",
+            "region": "rev_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "code": "Deletion",
+            "message": "ORF 'rev_exon2' exceeds maximum deletion tolerance. Contains 294 deletions with max tolerance of 27 deletions.",
+            "region": "rev_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "code": "Frameshift",
+            "message": "ORF 'nef' at 6-5 contains out of frame indels that impact 410 positions.",
+            "region": "nef"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "code": "Deletion",
+            "message": "ORF 'nef' exceeds maximum deletion tolerance. Contains 612 deletions with max tolerance of 27 deletions.",
+            "region": "nef"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "code": "PackagingSignalDeletion",
+            "message": "Query sequence exceeds maximum deletion tolerance in PSI. Contains 126 deletions with max tolerance of 10 deletions.",
+            "region": null
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "code": "RevResponseElementDeletion",
+            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.",
+            "region": null
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "code": "MajorSpliceDonorSiteMutated",
+            "message": "Query sequence has a missing splice donor site: --. The context is ----------------------.",
+            "region": null
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "code": "LongDeletion",
+            "message": "Query sequence contains a very large deletion.",
+            "region": null
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "code": "NonHIV",
+            "message": "Sequence contains unrecognized parts. It is probably a Human/HIV Chimera sequence.",
+            "region": null
+        }
+    ],
+    "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.WITH-BAD-SYMBOLS": [
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.WITH-BAD-SYMBOLS",
+            "code": "UnknownNucleotide",
+            "message": "Sequence contains invalid nucleotides: >1>#>@> (start: 45, end: 51).",
+            "region": null
+        }
+    ],
+    "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.WITH-DASHES": [
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.WITH-DASHES",
+            "code": "UnknownNucleotide",
+            "message": "Sequence contains invalid nucleotides: ------- (start: 45, end: 51).",
+            "region": null
+        }
+    ],
+    "small-sequence-with-dashes": [
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "code": "UnknownNucleotide",
+            "message": "Sequence contains invalid nucleotides: ------- (start: 6, end: 12).",
+            "region": null
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "code": "Frameshift",
+            "message": "ORF 'gag' at 6-5 contains out of frame indels that impact 1008 positions.",
+            "region": "gag"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "code": "Deletion",
+            "message": "ORF 'gag' exceeds maximum deletion tolerance. Contains 1509 deletions with max tolerance of 30 deletions.",
+            "region": "gag"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "code": "Frameshift",
+            "message": "ORF 'pol' at 6-5 contains out of frame indels that impact 2018 positions.",
+            "region": "pol"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "code": "Deletion",
+            "message": "ORF 'pol' exceeds maximum deletion tolerance. Contains 3024 deletions with max tolerance of 87 deletions.",
+            "region": "pol"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "code": "Frameshift",
+            "message": "ORF 'env' at 6-5 contains out of frame indels that impact 1716 positions.",
+            "region": "env"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "code": "Deletion",
+            "message": "ORF 'env' exceeds maximum deletion tolerance. Contains 2571 deletions with max tolerance of 150 deletions.",
+            "region": "env"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "code": "Frameshift",
+            "message": "ORF 'vif' at 6-5 contains out of frame indels that impact 382 positions.",
+            "region": "vif"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "code": "Deletion",
+            "message": "ORF 'vif' exceeds maximum deletion tolerance. Contains 570 deletions with max tolerance of 15 deletions.",
+            "region": "vif"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "code": "Frameshift",
+            "message": "ORF 'vpr' at 6-5 contains out of frame indels that impact 192 positions.",
+            "region": "vpr"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "code": "Deletion",
+            "message": "ORF 'vpr' exceeds maximum deletion tolerance. Contains 285 deletions with max tolerance of 16 deletions.",
+            "region": "vpr"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "code": "Frameshift",
+            "message": "ORF 'tat_exon1' at 6-5 contains out of frame indels that impact 144 positions.",
+            "region": "tat_exon1"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "code": "Deletion",
+            "message": "ORF 'tat_exon1' exceeds maximum deletion tolerance. Contains 216 deletions with max tolerance of 3 deletions.",
+            "region": "tat_exon1"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "code": "Frameshift",
+            "message": "ORF 'rev_exon1' at 6-5 contains out of frame indels that impact 51 positions.",
+            "region": "rev_exon1"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "code": "Deletion",
+            "message": "ORF 'rev_exon1' exceeds maximum deletion tolerance. Contains 78 deletions with max tolerance of 3 deletions.",
+            "region": "rev_exon1"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "code": "Frameshift",
+            "message": "ORF 'vpu' at 6-5 contains out of frame indels that impact 164 positions.",
+            "region": "vpu"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "code": "Deletion",
+            "message": "ORF 'vpu' exceeds maximum deletion tolerance. Contains 243 deletions with max tolerance of 15 deletions.",
+            "region": "vpu"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "code": "Frameshift",
+            "message": "ORF 'tat_exon2' at 6-5 contains out of frame indels that impact 62 positions.",
+            "region": "tat_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "code": "Deletion",
+            "message": "ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 90 deletions with max tolerance of 24 deletions.",
+            "region": "tat_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "code": "Frameshift",
+            "message": "ORF 'rev_exon2' at 6-5 contains out of frame indels that impact 198 positions.",
+            "region": "rev_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "code": "Deletion",
+            "message": "ORF 'rev_exon2' exceeds maximum deletion tolerance. Contains 294 deletions with max tolerance of 27 deletions.",
+            "region": "rev_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "code": "Frameshift",
+            "message": "ORF 'nef' at 6-5 contains out of frame indels that impact 410 positions.",
+            "region": "nef"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "code": "Deletion",
+            "message": "ORF 'nef' exceeds maximum deletion tolerance. Contains 612 deletions with max tolerance of 27 deletions.",
+            "region": "nef"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "code": "PackagingSignalDeletion",
+            "message": "Query sequence exceeds maximum deletion tolerance in PSI. Contains 126 deletions with max tolerance of 10 deletions.",
+            "region": null
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "code": "RevResponseElementDeletion",
+            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.",
+            "region": null
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "code": "MajorSpliceDonorSiteMutated",
+            "message": "Query sequence has a missing splice donor site: --. The context is ----------------------.",
+            "region": null
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "code": "LongDeletion",
+            "message": "Query sequence contains a very large deletion.",
+            "region": null
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "code": "NonHIV",
+            "message": "Sequence contains unrecognized parts. It is probably a Human/HIV Chimera sequence.",
+            "region": null
+        }
+    ],
+    "small-sequence-with-dashes/andwithslashestoo": [
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "Frameshift",
+            "message": "ORF 'gag' at 6-5 contains out of frame indels that impact 1008 positions.",
+            "region": "gag"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "Deletion",
+            "message": "ORF 'gag' exceeds maximum deletion tolerance. Contains 1509 deletions with max tolerance of 30 deletions.",
+            "region": "gag"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "Frameshift",
+            "message": "ORF 'pol' at 6-5 contains out of frame indels that impact 2018 positions.",
+            "region": "pol"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "Deletion",
+            "message": "ORF 'pol' exceeds maximum deletion tolerance. Contains 3024 deletions with max tolerance of 87 deletions.",
+            "region": "pol"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "Frameshift",
+            "message": "ORF 'env' at 6-5 contains out of frame indels that impact 1716 positions.",
+            "region": "env"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "Deletion",
+            "message": "ORF 'env' exceeds maximum deletion tolerance. Contains 2571 deletions with max tolerance of 150 deletions.",
+            "region": "env"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "Frameshift",
+            "message": "ORF 'vif' at 6-5 contains out of frame indels that impact 382 positions.",
+            "region": "vif"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "Deletion",
+            "message": "ORF 'vif' exceeds maximum deletion tolerance. Contains 570 deletions with max tolerance of 15 deletions.",
+            "region": "vif"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "Frameshift",
+            "message": "ORF 'vpr' at 6-5 contains out of frame indels that impact 192 positions.",
+            "region": "vpr"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "Deletion",
+            "message": "ORF 'vpr' exceeds maximum deletion tolerance. Contains 285 deletions with max tolerance of 16 deletions.",
+            "region": "vpr"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "Frameshift",
+            "message": "ORF 'tat_exon1' at 6-5 contains out of frame indels that impact 144 positions.",
+            "region": "tat_exon1"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "Deletion",
+            "message": "ORF 'tat_exon1' exceeds maximum deletion tolerance. Contains 216 deletions with max tolerance of 3 deletions.",
+            "region": "tat_exon1"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "Frameshift",
+            "message": "ORF 'rev_exon1' at 6-5 contains out of frame indels that impact 51 positions.",
+            "region": "rev_exon1"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "Deletion",
+            "message": "ORF 'rev_exon1' exceeds maximum deletion tolerance. Contains 78 deletions with max tolerance of 3 deletions.",
+            "region": "rev_exon1"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "Frameshift",
+            "message": "ORF 'vpu' at 6-5 contains out of frame indels that impact 164 positions.",
+            "region": "vpu"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "Deletion",
+            "message": "ORF 'vpu' exceeds maximum deletion tolerance. Contains 243 deletions with max tolerance of 15 deletions.",
+            "region": "vpu"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "Frameshift",
+            "message": "ORF 'tat_exon2' at 6-5 contains out of frame indels that impact 62 positions.",
+            "region": "tat_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "Deletion",
+            "message": "ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 90 deletions with max tolerance of 24 deletions.",
+            "region": "tat_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "Frameshift",
+            "message": "ORF 'rev_exon2' at 6-5 contains out of frame indels that impact 198 positions.",
+            "region": "rev_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "Deletion",
+            "message": "ORF 'rev_exon2' exceeds maximum deletion tolerance. Contains 294 deletions with max tolerance of 27 deletions.",
+            "region": "rev_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "Frameshift",
+            "message": "ORF 'nef' at 6-5 contains out of frame indels that impact 410 positions.",
+            "region": "nef"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "Deletion",
+            "message": "ORF 'nef' exceeds maximum deletion tolerance. Contains 612 deletions with max tolerance of 27 deletions.",
+            "region": "nef"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "PackagingSignalDeletion",
+            "message": "Query sequence exceeds maximum deletion tolerance in PSI. Contains 126 deletions with max tolerance of 10 deletions.",
+            "region": null
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "RevResponseElementDeletion",
+            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.",
+            "region": null
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "MajorSpliceDonorSiteMutated",
+            "message": "Query sequence has a missing splice donor site: --. The context is ----------------------.",
+            "region": null
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "LongDeletion",
+            "message": "Query sequence contains a very large deletion.",
+            "region": null
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "NonHIV",
+            "message": "Sequence contains unrecognized parts. It is probably a Human/HIV Chimera sequence.",
+            "region": null
+        }
     ]
 }
