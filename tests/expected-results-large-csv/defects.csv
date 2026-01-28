@@ -29,41 +29,44 @@ KX505501.1,Scramble,Sequence is plus-scrambled.,
 MN691959,Frameshift,ORF 'vpu' at 5911-6156 contains out of frame indels that impact 122 positions.,vpu
 MN691959,InternalStop,ORF 'vpu' at 5911-6156 contains an internal stop codon at 5974.,vpu
 MN691959,InternalStop,ORF 'tat_exon2' at 8238-8330 contains an internal stop codon at 8283.,tat_exon2
-MN692074,Frameshift,ORF 'pol' at 2085-4081 contains out of frame indels that impact 677 positions.,pol
+MN692074,Frameshift,ORF 'pol' at 2085-4082 contains out of frame indels that impact 676 positions.,pol
 MN692074,Deletion,ORF 'pol' exceeds maximum deletion tolerance. Contains 981 deletions with max tolerance of 87 deletions.,pol
 MN692074,MutatedStopCodon,ORF 'pol' has a mutated stop codon: 'GAT'.,pol
-MN692074,Frameshift,ORF 'env' at 4082-4081 contains out of frame indels that impact 1714 positions.,env
+MN692074,Frameshift,ORF 'env' at 4083-4082 contains out of frame indels that impact 1714 positions.,env
 MN692074,Deletion,ORF 'env' exceeds maximum deletion tolerance. Contains 2073 deletions with max tolerance of 150 deletions.,env
-MN692074,Frameshift,ORF 'vif' at 4082-4081 contains out of frame indels that impact 386 positions.,vif
+MN692074,Frameshift,ORF 'vif' at 4083-4082 contains out of frame indels that impact 386 positions.,vif
 MN692074,Deletion,ORF 'vif' exceeds maximum deletion tolerance. Contains 81 deletions with max tolerance of 15 deletions.,vif
-MN692074,Frameshift,ORF 'vpr' at 4082-4081 contains out of frame indels that impact 194 positions.,vpr
+MN692074,Frameshift,ORF 'vpr' at 4083-4082 contains out of frame indels that impact 194 positions.,vpr
 MN692074,Insertion,ORF 'vpr' exceeds maximum insertion tolerance. Contains 207 insertions with max tolerance of 8 insertions.,vpr
-MN692074,Frameshift,ORF 'tat_exon1' at 4082-4081 contains out of frame indels that impact 144 positions.,tat_exon1
-MN692074,Deletion,ORF 'tat_exon1' exceeds maximum deletion tolerance. Contains 153 deletions with max tolerance of 3 deletions.,tat_exon1
-MN692074,Frameshift,ORF 'rev_exon1' at 4082-4081 contains out of frame indels that impact 51 positions.,rev_exon1
-MN692074,Deletion,ORF 'rev_exon1' exceeds maximum deletion tolerance. Contains 15 deletions with max tolerance of 3 deletions.,rev_exon1
-MN692074,Frameshift,ORF 'vpu' at 4082-4081 contains out of frame indels that impact 166 positions.,vpu
+MN692074,Frameshift,ORF 'tat_exon1' at 4083-4082 contains out of frame indels that impact 144 positions.,tat_exon1
+MN692074,Insertion,ORF 'tat_exon1' exceeds maximum insertion tolerance. Contains 249 insertions with max tolerance of 9 insertions.,tat_exon1
+MN692074,Frameshift,ORF 'rev_exon1' at 4083-4082 contains out of frame indels that impact 51 positions.,rev_exon1
+MN692074,Insertion,ORF 'rev_exon1' exceeds maximum insertion tolerance. Contains 387 insertions with max tolerance of 9 insertions.,rev_exon1
+MN692074,Frameshift,ORF 'vpu' at 4083-4082 contains out of frame indels that impact 166 positions.,vpu
 MN692074,Insertion,ORF 'vpu' exceeds maximum insertion tolerance. Contains 249 insertions with max tolerance of 24 insertions.,vpu
-MN692074,Frameshift,ORF 'tat_exon2' at 4082-4081 contains out of frame indels that impact 62 positions.,tat_exon2
-MN692074,Frameshift,ORF 'rev_exon2' at 4082-4081 contains out of frame indels that impact 184 positions.,rev_exon2
-MN692074,Deletion,ORF 'rev_exon2' exceeds maximum deletion tolerance. Contains 204 deletions with max tolerance of 27 deletions.,rev_exon2
-MN692074,Frameshift,ORF 'nef' at 4082-4081 contains out of frame indels that impact 414 positions.,nef
+MN692074,Frameshift,ORF 'tat_exon2' at 4083-4082 contains out of frame indels that impact 62 positions.,tat_exon2
+MN692074,Deletion,ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 60 deletions with max tolerance of 24 deletions.,tat_exon2
+MN692074,Frameshift,ORF 'rev_exon2' at 4083-4082 contains out of frame indels that impact 184 positions.,rev_exon2
+MN692074,Deletion,ORF 'rev_exon2' exceeds maximum deletion tolerance. Contains 243 deletions with max tolerance of 27 deletions.,rev_exon2
+MN692074,Frameshift,ORF 'nef' at 4083-4086 contains out of frame indels that impact 412 positions.,nef
 MN692074,Deletion,ORF 'nef' exceeds maximum deletion tolerance. Contains 123 deletions with max tolerance of 27 deletions.,nef
+MN692074,MutatedStartCodon,ORF 'nef' has a mutated start codon: 'ACC'.,nef
+MN692074,MutatedStopCodon,ORF 'nef' has a mutated stop codon: 'CAG'.,nef
 MN692074,RevResponseElementDeletion,Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.,
 MN692074,LongDeletion,Query sequence contains a very large deletion.,
-MN090335,Frameshift,ORF 'gag' at 360-1665 contains out of frame indels that impact 1304 positions.,gag
-MN090335,InternalStop,ORF 'gag' at 360-1665 contains an internal stop codon at 444.,gag
-MN090335,MutatedStartCodon,ORF 'gag' has a mutated start codon: 'GTT'.,gag
-MN090335,MutatedStopCodon,ORF 'gag' has a mutated stop codon: 'AAG'.,gag
+MN090335,Frameshift,ORF 'gag' at 482-1665 contains out of frame indels that impact 1230 positions.,gag
+MN090335,InternalStop,ORF 'gag' at 482-1665 contains an internal stop codon at 683.,gag
+MN090335,MutatedStartCodon,ORF 'gag' has a mutated start codon: 'ATA'.,gag
+MN090335,MutatedStopCodon,ORF 'gag' has a mutated stop codon: 'AAA'.,gag
 MN090335,InternalStop,ORF 'tat_exon2' at 7740-7832 contains an internal stop codon at 7785.,tat_exon2
-MN090335,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 61 deletions with max tolerance of 10 deletions.,
-MN090335,MajorSpliceDonorSiteMutated,Query sequence has a mutated splice donor site: TG. The context is --------TTTGATGTACACAA.,
+MN090335,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 42 deletions with max tolerance of 10 deletions.,
+MN090335,MajorSpliceDonorSiteMutated,Query sequence has a mutated splice donor site: AT. The context is TTAACTGCGAAT-----CGTTC.,
 MN090335,Scramble,Sequence is minus-scrambled.,
 MN090335,InternalInversion,Sequence contains an internal inversion.,
-MN090376,Frameshift,ORF 'gag' at 283-1590 contains out of frame indels that impact 929 positions.,gag
-MN090376,InternalStop,ORF 'gag' at 283-1590 contains an internal stop codon at 334.,gag
-MN090376,MutatedStartCodon,ORF 'gag' has a mutated start codon: 'TAT'.,gag
-MN090376,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 129 deletions with max tolerance of 10 deletions.,
+MN090376,Frameshift,ORF 'gag' at 541-1590 contains out of frame indels that impact 754 positions.,gag
+MN090376,InternalStop,ORF 'gag' at 541-1590 contains an internal stop codon at 574.,gag
+MN090376,MutatedStartCodon,ORF 'gag' has a mutated start codon: 'TGC'.,gag
+MN090376,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 95 deletions with max tolerance of 10 deletions.,
 MN090376,MajorSpliceDonorSiteMutated,Query sequence has a missing splice donor site: --. The context is ----------------------.,
 MN090376,Scramble,Sequence is minus-scrambled.,
 MN090376,InternalInversion,Sequence contains an internal inversion.,
@@ -84,9 +87,9 @@ MK115211.1,Scramble,Sequence is minus-scrambled.,
 MK115211.1,InternalInversion,Sequence contains an internal inversion.,
 MK115158.1,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 20 deletions with max tolerance of 10 deletions.,
 MK115158.1,MajorSpliceDonorSiteMutated,Query sequence has a missing splice donor site: --. The context is GCGGCGAACG------------.,
-MK114705.1,Frameshift,ORF 'nef' at 8551-9116 contains out of frame indels that impact 122 positions.,nef
-MK114705.1,InternalStop,ORF 'nef' at 8551-9116 contains an internal stop codon at 8983.,nef
-MK114705.1,MutatedStopCodon,ORF 'nef' has a mutated stop codon: 'TCG'.,nef
+MK114705.1,Frameshift,ORF 'nef' at 8551-9118 contains out of frame indels that impact 122 positions.,nef
+MK114705.1,InternalStop,ORF 'nef' at 8551-9118 contains an internal stop codon at 8983.,nef
+MK114705.1,MutatedStopCodon,ORF 'nef' has a mutated stop codon: 'ACG'.,nef
 MK114856.1,Frameshift,ORF 'gag' at 493-2022 contains out of frame indels that impact 828 positions.,gag
 MK114856.1,InternalStop,ORF 'gag' at 493-2022 contains an internal stop codon at 538.,gag
 MK114856.1,MutatedStartCodon,ORF 'gag' has a mutated start codon: 'ATA'.,gag
@@ -110,7 +113,7 @@ MK114856.1,InternalStop,ORF 'rev_exon2' at 8104-8379 contains an internal stop c
 MK114856.1,Frameshift,ORF 'nef' at 8523-9176 contains out of frame indels that impact 403 positions.,nef
 MK114856.1,InternalStop,ORF 'nef' at 8523-9176 contains an internal stop codon at 8559.,nef
 MK114856.1,MutatedStartCodon,ORF 'nef' has a mutated start codon: 'ATA'.,nef
-MK114856.1,APOBECHypermutation,Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 3.668133920996111e-65).,
+MK114856.1,APOBECHypermutation,Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 3.639064030015132e-65).,
 MK115009.1,Frameshift,ORF 'gag' at 303-1821 contains out of frame indels that impact 844 positions.,gag
 MK115009.1,InternalStop,ORF 'gag' at 303-1821 contains an internal stop codon at 348.,gag
 MK115009.1,MutatedStopCodon,ORF 'gag' has a mutated stop codon: 'AAA'.,gag
@@ -131,15 +134,15 @@ MK115009.1,InternalStop,ORF 'rev_exon2' at 7936-8211 contains an internal stop c
 MK115009.1,Frameshift,ORF 'nef' at 8355-8996 contains out of frame indels that impact 395 positions.,nef
 MK115009.1,InternalStop,ORF 'nef' at 8355-8996 contains an internal stop codon at 8796.,nef
 MK115009.1,MutatedStartCodon,ORF 'nef' has a mutated start codon: 'ATA'.,nef
-MK115009.1,APOBECHypermutation,Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 5.043644865581679e-43).,
+MK115009.1,APOBECHypermutation,Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 1.2040967664149076e-41).,
 MK115009.1,Scramble,Sequence is minus-scrambled.,
 MK115009.1,InternalInversion,Sequence contains an internal inversion.,
 MK115387.1,InternalStop,ORF 'tat_exon2' at 7870-7962 contains an internal stop codon at 7915.,tat_exon2
-MK116110.1,Frameshift,ORF 'gag' at 460-1601 contains out of frame indels that impact 967 positions.,gag
-MK116110.1,InternalStop,ORF 'gag' at 460-1601 contains an internal stop codon at 553.,gag
-MK116110.1,MutatedStartCodon,ORF 'gag' has a mutated start codon: 'CCT'.,gag
+MK116110.1,Frameshift,ORF 'gag' at 490-1601 contains out of frame indels that impact 991 positions.,gag
+MK116110.1,InternalStop,ORF 'gag' at 490-1601 contains an internal stop codon at 553.,gag
+MK116110.1,MutatedStartCodon,ORF 'gag' has a mutated start codon: 'TGC'.,gag
 MK116110.1,MutatedStopCodon,ORF 'gag' has a mutated stop codon: 'AAA'.,gag
-MK116110.1,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 80 deletions with max tolerance of 10 deletions.,
+MK116110.1,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 93 deletions with max tolerance of 10 deletions.,
 MK116110.1,MajorSpliceDonorSiteMutated,Query sequence has a missing splice donor site: --. The context is ----------------------.,
 MK116110.1,InternalInversion,Sequence contains an internal inversion.,
 MK114997.1,Frameshift,ORF 'env' at 5651-8207 contains out of frame indels that impact 1167 positions.,env
@@ -167,17 +170,16 @@ MK115464.1,InternalStop,ORF 'rev_exon2' at 8382-8657 contains an internal stop c
 MK115464.1,Frameshift,ORF 'nef' at 8801-9451 contains out of frame indels that impact 178 positions.,nef
 MK115464.1,InternalStop,ORF 'nef' at 8801-9451 contains an internal stop codon at 8837.,nef
 MK115464.1,MutatedStartCodon,ORF 'nef' has a mutated start codon: 'ATA'.,nef
-MK115464.1,APOBECHypermutation,Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 3.6407365532516573e-22).,
+MK115464.1,APOBECHypermutation,Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 4.937891251407691e-23).,
 MK115520.1,Frameshift,ORF 'pol' at 1988-5004 contains out of frame indels that impact 1225 positions.,pol
 MK115520.1,InternalStop,ORF 'pol' at 1988-5004 contains an internal stop codon at 3188.,pol
 MK115520.1,MutatedStopCodon,ORF 'pol' has a mutated stop codon: 'AGA'.,pol
-MK115520.1,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 29 deletions with max tolerance of 10 deletions.,
-MK115520.1,MajorSpliceDonorSiteMutated,Query sequence has a missing splice donor site: --. The context is --------------GAAAGTAA.,
+MK115520.1,MajorSpliceDonorSiteMutated,Query sequence has a mutated splice donor site: GA. The context is CTGGTAACTAGAGATCGAAAGT.,
 MK115520.1,InternalInversion,Sequence contains an internal inversion.,
 MK115570.1,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 11 deletions with max tolerance of 10 deletions.,
 MK115570.1,MajorSpliceDonorSiteMutated,Query sequence has a missing splice donor site: --. The context is GCGGCG-----------CGAAA.,
 MK115702.1,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 54 deletions with max tolerance of 10 deletions.,
-MK115702.1,MajorSpliceDonorSiteMutated,Query sequence has a missing splice donor site: --. The context is -------------------CAA.,
+MK115702.1,MajorSpliceDonorSiteMutated,Query sequence has a missing splice donor site: --. The context is ---------------------A.,
 MK115702.1,Scramble,Sequence is plus-scrambled.,
 MK115702.1,InternalInversion,Sequence contains an internal inversion.,
 MK115095.1,Frameshift,ORF 'gag' at 189-1697 contains out of frame indels that impact 806 positions.,gag
@@ -197,13 +199,13 @@ MK115095.1,InternalStop,ORF 'rev_exon2' at 7812-8087 contains an internal stop c
 MK115095.1,Frameshift,ORF 'nef' at 8231-8872 contains out of frame indels that impact 40 positions.,nef
 MK115095.1,Deletion,ORF 'nef' exceeds maximum deletion tolerance. Contains 36 deletions with max tolerance of 27 deletions.,nef
 MK115095.1,MutatedStartCodon,ORF 'nef' has a mutated start codon: 'ATA'.,nef
-MK115095.1,APOBECHypermutation,Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 2.2575173757883177e-39).,
+MK115095.1,APOBECHypermutation,Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 8.33506116803153e-40).,
 OQ092466,MajorSpliceDonorSiteMutated,Query sequence has a mutated splice donor site: GC. The context is GCGGCGACTGGCGAGTACGCCA.,
 OQ092463,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 26 deletions with max tolerance of 10 deletions.,
-OQ092463,MajorSpliceDonorSiteMutated,Query sequence has a missing splice donor site: --. The context is ------------------GTAC.,
+OQ092463,MajorSpliceDonorSiteMutated,Query sequence has a missing splice donor site: --. The context is ------------GAGTACGCC-.,
 OQ092465,MajorSpliceDonorSiteMutated,Query sequence has a mutated splice donor site: GA. The context is GCGGCGACTGGAGAGTACGCC-.,
-OQ092462,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 22 deletions with max tolerance of 10 deletions.,
-OQ092462,MajorSpliceDonorSiteMutated,Query sequence has a missing splice donor site: --. The context is --------------TACGCCAT.,
+OQ092462,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 23 deletions with max tolerance of 10 deletions.,
+OQ092462,MajorSpliceDonorSiteMutated,Query sequence has a missing splice donor site: --. The context is ------------GAGTACGCCA.,
 OQ092464,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 21 deletions with max tolerance of 10 deletions.,
 OQ092464,MajorSpliceDonorSiteMutated,Query sequence has a missing splice donor site: --. The context is GCGGCG----------------.,
 OQ092467,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 22 deletions with max tolerance of 10 deletions.,
