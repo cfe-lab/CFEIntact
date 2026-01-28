@@ -140,6 +140,103 @@ class OrfAligner:
         except Exception as e:
             raise UserError(f"Failed to align ORF {orf.name}: {e}") from e
     
+    def align_region(self,
+                    reference: SeqRecord,
+                    query: SeqRecord,
+                    region_start: int,
+                    region_end: int,
+                    context: int = 100) -> Optional[OrfAlignment]:
+        """
+        Align a small region with context window.
+        
+        This is useful for small features like MSD, PSI, RRE where we know
+        the exact position in the reference and need to find where it maps
+        in the query. The context window provides anchor points for alignment.
+        
+        Args:
+            reference: Reference sequence
+            query: Query sequence
+            region_start: Start position of feature in reference (0-based)
+            region_end: End position of feature in reference (0-based, inclusive)
+            context: Number of bp to include before/after (default 100)
+        
+        Returns:
+            OrfAlignment with cigar_hit in context window coordinate space
+            
+        Example:
+            >>> aligner = OrfAligner()
+            >>> # MSD is at position 743-744 in HXB2
+            >>> alignment = aligner.align_region(hxb2, query, 743, 744, context=100)
+            >>> if alignment:
+            ...     # Map feature position through alignment
+            ...     coord_map = alignment.cigar_hit.coordinate_mapping
+            ...     # Feature is at offset 100 in extracted region
+            ...     query_pos = coord_map.ref_to_query.right_min(100)
+        """
+        if reference.seq is None or query.seq is None:
+            return None
+        
+        # Extract reference region with context
+        ref_start = max(0, region_start - context)
+        ref_end = min(len(reference.seq), region_end + 1 + context)
+        ref_region = str(reference.seq[ref_start:ref_end])
+        query_seq = str(query.seq)
+        
+        if not ref_region:
+            return None
+        
+        try:
+            # Align context window to query
+            aligner = mappy.Aligner(seq=ref_region, preset=self.preset)
+            
+            if aligner is None:
+                return None
+            
+            hits = list(aligner.map(query_seq))
+            
+            if not hits:
+                return None
+            
+            best_hit = max(hits, key=lambda h: h.mlen)
+            
+            # Convert to CigarHit
+            cigar = Cigar.coerce(best_hit.cigar_str)
+            cigar_hit = CigarHit(
+                cigar=cigar,
+                r_st=best_hit.r_st,
+                r_ei=best_hit.r_en - 1,
+                q_st=best_hit.q_st,
+                q_ei=best_hit.q_en - 1
+            )
+            
+            # Create a pseudo-ORF representing the context window
+            pseudo_orf = OriginalORF(
+                name=f"region_{region_start}_{region_end}",
+                start=ref_start,
+                end=ref_end - 1,
+                nucleotides=reference.seq[ref_start:ref_end],
+                aminoacids="",
+                protein="",
+                max_deletions=0,
+                max_insertions=0,
+                max_distance=0.0,
+                is_small=True
+            )
+            
+            return OrfAlignment(
+                cigar_hit=cigar_hit,
+                reference_orf=pseudo_orf,
+                query_start=best_hit.q_st,
+                query_end=best_hit.q_en - 1,
+                mapq=best_hit.mapq,
+                strand=best_hit.strand,
+                match_length=best_hit.mlen
+            )
+        
+        except Exception as e:
+            # Don't raise for small regions - just return None
+            return None
+    
     def align_all_orfs(self,
                        reference: SeqRecord,
                        query: SeqRecord,

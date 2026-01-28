@@ -11,9 +11,10 @@ This document describes the complete replacement of MAFFT with minimap2 (via map
 
 **Key Design Decisions:**
 1. **ORF-by-ORF local alignment** using mappy for large regions (gag, pol, env, vif, vpr, tat, rev, vpu, nef)
-2. **BioPython PairwiseAligner** for small critical regions (MSD, PSI, RRE) that need precise global alignment
+2. **Context-window alignment** using mappy for small critical regions (MSD, PSI, RRE) - extract ±100bp around feature
 3. **Use existing aligntools library** (CigarHit, Cigar, CoordinateMapping) instead of reimplementing
 4. **Complete removal of MAFFT** - no hybrid approach, clean replacement
+5. **Unified tool** - mappy for all alignment tasks
 
 ---
 
@@ -53,7 +54,7 @@ Minimap2 excels at finding **local alignments** between sequences. This is perfe
 
 ### Core Principle
 
-**Align what you need, when you need it, at the appropriate granularity**
+**Align what you need, when you need it, at the appropriate granularity - using mappy for everything**
 
 Instead of:
 ```
@@ -62,13 +63,15 @@ Instead of:
 
 Do:
 ```
-[Local ORF alignment] → [Analyze ORF]
-[Small region alignment] → [Check feature]
+[Mappy: Local ORF alignment] → [Analyze ORF]
+[Mappy: Small region with context] → [Check feature]
 ```
 
 ### Component Breakdown
 
-#### 1. ORF Alignment (Use Mappy)
+**Unified Approach:** Use mappy for all alignments, adjusting the alignment window size based on the feature.
+
+#### 1. ORF Alignment (Large Regions)
 
 For large ORFs (gag, pol, env) and small ORFs (vif, vpr, tat, rev, vpu, nef):
 
@@ -102,52 +105,56 @@ coordinate_mapping = cigar_hit.coordinate_mapping
 - aligntools CigarHit provides coordinate mapping
 - Fast and accurate for ORF-sized regions (500-3000bp)
 
-#### 2. Small Region Detection (Use BioPython PairwiseAligner)
+#### 2. Small Region Detection (MSD, PSI, RRE)
 
-For MSD, PSI, RRE (which are 2-300bp):
+For small features (2-300bp), we know their position in the reference genome. Use mappy with a context window:
 
 ```python
-from Bio import Align
+# Example: MSD at position 743-744 in HXB2
+MSD_POS = 743
+CONTEXT = 100  # bp before and after
 
-aligner = Align.PairwiseAligner()
-aligner.mode = 'global'
-aligner.match_score = 2
-aligner.mismatch_score = -1
-aligner.open_gap_score = -1.5
-aligner.extend_gap_score = -0.2
+# Extract reference region with context
+ref_start = MSD_POS - CONTEXT  # 643
+ref_end = MSD_POS + 2 + CONTEXT  # 845 (2bp feature + context)
+ref_region = reference_sequence[ref_start:ref_end]  # 202bp
 
-# Align small region
-alignments = aligner.align(reference_region, query_region)
-best = alignments[0]
+# Align this region to query using mappy
+aligner = mappy.Aligner(seq=ref_region, preset="asm20")
+hits = list(aligner.map(str(query_sequence)))
+best_hit = max(hits, key=lambda h: h.mlen)
 
-# Extract aligned sequences for feature detection
-ref_aligned = str(best[0])
-query_aligned = str(best[1])
+# Convert to CigarHit
+cigar_hit = CigarHit(
+    cigar=Cigar.coerce(best_hit.cigar_str),
+    r_st=best_hit.r_st,
+    r_ei=best_hit.r_en - 1,
+    q_st=best_hit.q_st,
+    q_ei=best_hit.q_en - 1
+)
+
+# Map the feature position through the alignment
+# MSD is at offset 100 in the extracted region (due to context)
+feature_offset = CONTEXT
+coord_map = cigar_hit.coordinate_mapping
+query_msd_pos = coord_map.ref_to_query.right_min(feature_offset)
+
+# Check if MSD is intact in query
+msd_query = query_sequence[query_msd_pos:query_msd_pos + 2]
+if msd_query.upper() != "GT":
+    report_defect("MSD mutated")
 ```
 
 **Why this works:**
-- BioPython's PairwiseAligner is perfect for small regions
-- Global alignment ensures precise position mapping
-- Already used in CFEIntact (detailed_aligner.py)
-- No need for external dependencies
+- We know the exact position in the reference
+- Context window (±100bp) provides anchor points for alignment
+- Mappy finds where this region maps in the query
+- Use coordinate mapping to locate the exact feature
+- Consistent with ORF alignment approach
 
-#### 3. Subtype Determination (Use Mappy + BLAST results)
+#### 3. Subtype Determination
 
-Current approach uses BLAST for subtype determination. **Keep this unchanged**.
-
-Mappy could also help here:
-```python
-# For each candidate subtype
-for subtype_name, subtype_seq in subtypes:
-    aligner = mappy.Aligner(seq=str(subtype_seq), preset="asm20")
-    hits = list(aligner.map(str(query_seq)))
-    if hits:
-        best = max(hits, key=lambda h: h.mlen)
-        scores[subtype_name] = best.mlen
-
-# Choose best matching subtype
-best_subtype = max(scores, key=scores.get)
-```
+Current approach uses BLAST for subtype determination. **Keep this unchanged** - BLAST works well for this purpose.
 
 ---
 
@@ -156,6 +163,8 @@ best_subtype = max(scores, key=scores.get)
 ### Phase 1: Core Infrastructure
 
 #### File: `src/cfeintact/orf_aligner.py`
+
+**This module handles both ORF alignment and small region alignment using mappy.**
 
 ```python
 """
@@ -184,7 +193,7 @@ class OrfAlignment:
 
 
 class OrfAligner:
-    """Aligns ORFs using minimap2."""
+    """Aligns ORFs and small regions using minimap2."""
     
     def __init__(self, preset: str = "asm20"):
         self.preset = preset
@@ -238,85 +247,74 @@ class OrfAligner:
             mapq=best_hit.mapq,
             strand=best_hit.strand
         )
-```
-
-#### File: `src/cfeintact/region_aligner.py`
-
-```python
-"""
-Global alignment of small regions using BioPython PairwiseAligner.
-"""
-
-from Bio import Align
-from Bio.Seq import Seq
-from dataclasses import dataclass
-from typing import Tuple
-
-
-@dataclass
-class RegionAlignment:
-    """Result of aligning a small region."""
-    reference_aligned: str
-    query_aligned: str
-    score: float
-    start_pos: int
-    end_pos: int
-
-
-class RegionAligner:
-    """Aligns small critical regions using BioPython."""
-    
-    def __init__(self):
-        self.aligner = Align.PairwiseAligner()
-        self.aligner.mode = 'global'
-        self.aligner.match_score = 2
-        self.aligner.mismatch_score = -1
-        self.aligner.open_gap_score = -1.5
-        self.aligner.extend_gap_score = -0.2
     
     def align_region(self,
-                    reference_seq: str,
-                    query_seq: str,
-                    query_search_start: int = 0,
-                    query_search_end: int = None) -> RegionAlignment:
+                    reference: SeqRecord,
+                    query: SeqRecord,
+                    region_start: int,
+                    region_end: int,
+                    context: int = 100) -> Optional[OrfAlignment]:
         """
-        Globally align a small region.
+        Align a small region with context window.
         
         Args:
-            reference_seq: Small reference sequence (e.g., "GT" for MSD)
-            query_seq: Full query sequence or substring
-            query_search_start: Where to start looking in query
-            query_search_end: Where to stop looking in query
+            reference: Reference sequence
+            query: Query sequence
+            region_start: Start position of feature in reference
+            region_end: End position of feature in reference (inclusive)
+            context: Number of bp to include before/after (default 100)
         
         Returns:
-            RegionAlignment with aligned sequences
+            OrfAlignment with coordinates in context window space
         """
-        if query_search_end is None:
-            query_search_end = len(query_seq)
+        # Extract reference region with context
+        ref_start = max(0, region_start - context)
+        ref_end = min(len(reference.seq), region_end + 1 + context)
+        ref_region = str(reference.seq[ref_start:ref_end])
+        query_seq = str(query.seq)
         
-        search_region = query_seq[query_search_start:query_search_end]
+        # Align to query
+        aligner = mappy.Aligner(seq=ref_region, preset=self.preset)
+        hits = list(aligner.map(query_seq))
         
-        # Perform alignment
-        alignments = list(self.aligner.align(reference_seq, search_region))
+        if not hits:
+            return None
         
-        if not alignments:
-            # Return default empty alignment
-            return RegionAlignment(
-                reference_aligned=reference_seq,
-                query_aligned="-" * len(reference_seq),
-                score=0.0,
-                start_pos=query_search_start,
-                end_pos=query_search_start
-            )
+        best_hit = max(hits, key=lambda h: h.mlen)
         
-        best = alignments[0]
+        # Convert to CigarHit
+        cigar = Cigar.coerce(best_hit.cigar_str)
+        cigar_hit = CigarHit(
+            cigar=cigar,
+            r_st=best_hit.r_st,
+            r_ei=best_hit.r_en - 1,
+            q_st=best_hit.q_st,
+            q_ei=best_hit.q_en - 1
+        )
         
-        return RegionAlignment(
-            reference_aligned=str(best[0]),
-            query_aligned=str(best[1]),
-            score=best.score,
-            start_pos=query_search_start,
-            end_pos=query_search_end
+        # Create a pseudo-ORF for the region
+        # Note: coordinates are in the context window space
+        from cfeintact.original_orf import OriginalORF
+        pseudo_orf = OriginalORF(
+            name=f"region_{region_start}_{region_end}",
+            start=ref_start,
+            end=ref_end - 1,
+            nucleotides=reference.seq[ref_start:ref_end],
+            aminoacids="",
+            protein="",
+            max_deletions=0,
+            max_insertions=0,
+            max_distance=0.0,
+            is_small=True
+        )
+        
+        return OrfAlignment(
+            cigar_hit=cigar_hit,
+            reference_orf=pseudo_orf,
+            query_start=best_hit.q_st,
+            query_end=best_hit.q_en - 1,
+            mapq=best_hit.mapq,
+            strand=best_hit.strand
         )
 ```
 
@@ -342,7 +340,7 @@ if orf_alignment:
 
 ### Phase 3: Refactor Small Region Detection
 
-For MSD, PSI, RRE - use RegionAligner:
+For MSD, PSI, RRE - use OrfAligner with context:
 
 ```python
 # Old approach (via whole-sequence alignment):
@@ -350,23 +348,37 @@ alignment = aligned_sequence.alignment
 sd_begin = [m.start() for m in re.finditer(r"[^-]", str(alignment[0].seq))][pos]
 sd = alignment[1].seq[sd_begin:sd_end]
 
-# New approach (targeted region alignment):
-region_aligner = RegionAligner()
+# New approach (mappy with context window):
+orf_aligner = OrfAligner()
 
-# First, use ORF alignments to estimate where to look
-# (e.g., MSD is near gag start, PSI is in 5' region, etc.)
+# Example: MSD is at position 743 in HXB2
+MSD_REF_POS = 743
+CONTEXT = 100
 
-# For MSD: align 2-letter sequence around expected position
-msd_alignment = region_aligner.align_region(
-    reference_seq="GT",
-    query_seq=str(query.seq),
-    query_search_start=estimated_pos - 50,
-    query_search_end=estimated_pos + 50
+# Align region with context
+msd_alignment = orf_aligner.align_region(
+    reference=reference,
+    query=query,
+    region_start=MSD_REF_POS,
+    region_end=MSD_REF_POS + 1,  # 2bp feature (743-744)
+    context=CONTEXT
 )
 
-if msd_alignment.query_aligned.upper() != "GT":
-    # MSD is mutated
-    report_defect()
+if msd_alignment:
+    # Map feature position through alignment
+    # Feature is at offset CONTEXT in the extracted region
+    coord_map = msd_alignment.cigar_hit.coordinate_mapping
+    query_msd_start = coord_map.ref_to_query.right_min(CONTEXT)
+    query_msd_end = coord_map.ref_to_query.left_max(CONTEXT + 1)
+    
+    # Check the actual sequence
+    msd_seq = query.seq[msd_alignment.query_start + query_msd_start:
+                        msd_alignment.query_start + query_msd_start + 2]
+    
+    if str(msd_seq).upper() != "GT":
+        report_defect("MSD mutated")
+else:
+    report_defect("MSD not found")
 ```
 
 ### Phase 4: Remove MAFFT Completely
@@ -555,13 +567,13 @@ Run against existing test data and ensure:
 
 ## Advantages of This Design
 
-1. ✅ **Uses minimap2's strength** - local alignment, not forcing global
+1. ✅ **Uses minimap2's strength** - local alignment for everything
 2. ✅ **Uses aligntools properly** - leverages existing CigarHit, CoordinateMapping
-3. ✅ **Clean separation** - ORF alignment vs small region alignment
-4. ✅ **Simpler codebase** - removes MAFFT complexity
+3. ✅ **Unified approach** - mappy for all alignments (ORFs and small regions)
+4. ✅ **Simpler codebase** - single alignment tool, removes MAFFT complexity
 5. ✅ **Better performance** - 5-10x faster
-6. ✅ **More maintainable** - fewer dependencies
-7. ✅ **More accurate** - appropriate tools for each task
+6. ✅ **Fewer dependencies** - no BioPython PairwiseAligner needed
+7. ✅ **Consistent coordinate mapping** - same mechanism for all features
 
 ---
 
@@ -592,9 +604,11 @@ Run against existing test data and ensure:
 
 ## Conclusion
 
-This redesign properly leverages minimap2 as a **local aligner** for ORF detection, uses **aligntools** library as intended, employs **BioPython PairwiseAligner** for small regions, and completely removes MAFFT. The result is faster, simpler, more maintainable code that uses appropriate tools for each task.
+This redesign properly leverages minimap2 as a **local aligner** for all alignment tasks, uses **aligntools** library as intended, and completely removes MAFFT. The result is faster, simpler, more maintainable code with a unified alignment approach.
 
-**Key Innovation:** Align what you need (ORFs) at the right granularity (local alignment) instead of aligning everything globally.
+**Key Innovation:** Align what you need at the right granularity using a single tool (mappy):
+- Large regions (ORFs): align the ORF directly
+- Small regions (MSD/PSI/RRE): align with context window (±100bp)
 
 ---
 

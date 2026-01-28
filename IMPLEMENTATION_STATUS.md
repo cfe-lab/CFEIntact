@@ -2,28 +2,37 @@
 
 ## Status: IN PROGRESS
 
+**Last Updated:** January 28, 2026
+
 This document tracks the implementation of the complete replacement of MAFFT with mappy/minimap2.
 
-##  Implementation Summary
+## Implementation Summary
 
 The implementation completely replaces MAFFT with:
 1. **Mappy** for ORF-by-ORF local alignment
-2. **BioPython PairwiseAligner** for small regions (MSD, PSI, RRE)  
+2. **Mappy with context windows** for small regions (MSD, PSI, RRE) - \u00b1100bp around feature
 3. **aligntools** library (CigarHit) for coordinate mapping
+
+**Key Update (Jan 28):** Unified approach using only mappy. No BioPython PairwiseAligner needed.
 
 ## Files Created
 
-✅ `DESIGN.md` - Complete design document  
-✅ `src/cfeintact/orf_aligner.py` - Mappy-based ORF alignment  
-✅ `src/cfeintact/region_aligner.py` - Small region alignment  
+✅ `DESIGN.md` - Complete design document (updated for unified mappy approach)  
+✅ `src/cfeintact/orf_aligner.py` - Mappy-based alignment for ORFs and small regions
+  - `align_orf()` for large ORFs
+  - `align_region()` for small features with context window
+
+## Files Removed
+
+✅ `src/cfeintact/region_aligner.py` - No longer needed (mappy handles everything)
 
 ## Files To Modify/Remove
 
 ### High Priority
 - [ ] `src/cfeintact/intact.py` - Main analysis logic
   - Remove AlignedSequence usage
-  - Use OrfAligner for ORF detection
-  - Use RegionAligner for MSD/PSI/RRE
+  - Use OrfAligner.align_orf() for ORF detection
+  - Use OrfAligner.align_region() for MSD/PSI/RRE (with context=100)
   
 - [ ] `src/cfeintact/find_orf.py` - ORF detection logic
   - Replace AlignedSequence with OrfAlignment
@@ -44,7 +53,7 @@ The implementation completely replaces MAFFT with:
 - [ ] `.github/workflows/main.yml` - Remove MAFFT from CI
 
 ### Documentation
-- [ ] `docs/workflow.md` - Update to describe mappy approach
+- [ ] `docs/workflow.md` - Update to describe mappy approach with context windows
 - [ ] `docs/installation.md` - Remove MAFFT instructions
 - [ ] `README.md` - Update installation steps
 
