@@ -49,7 +49,7 @@ def global_align(sequences: Iterable[SeqRecord]) -> MultipleSeqAlignment:
 
     # Perform alignment and get the first (best) alignment
     try:
-        alignments = aligner.align(str(reference.seq), str(query.seq))
+        alignments = aligner.align(reference.seq, query.seq)
         alignment = next(iter(alignments))
 
         # Convert to MultipleSeqAlignment
