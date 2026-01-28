@@ -78,12 +78,12 @@ def blast(alignment_file: str, input_file: str, output_file: str) -> None:
                 shell=False,
                 check=True,
             )
+        except KeyboardInterrupt as e:
+            raise UserError("BLAST run got cancelled. Cannot continue the analysis.") from e
         except Exception as e:
             raise UserError("BLAST run failed with %s. "
                             "Please check if the input FASTA file is correctly formatted.",
                             e) from e
-        except KeyboardInterrupt as e:
-            raise UserError("BLAST run got cancelled. Cannot continue the analysis.") from e
 
         output.write(','.join(fields) + '\n')
         alignment_output.seek(0)
