@@ -100,7 +100,7 @@ jobs:
 
       - name: Run test
         run: |
-          docker run --rm -v .:/w ghcr.io/cfelab/cfeintact check --subtype B --ignore-distance "tests/data-small.fasta"
+          docker run --rm -v .:/w ghcr.io/cfe-lab/cfeintact check --subtype B --ignore-distance "tests/data-small.fasta"
           test -f "defects.csv"
 
   linter:
