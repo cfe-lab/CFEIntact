@@ -12,7 +12,7 @@ COPY . /tmp/CFEIntact
 RUN python3 -m pip install --break-system-packages /tmp/CFEIntact
 
 RUN rm -rf /tmp/CFEIntact
-RUN rm -rf /etc/apt/ /var/apt /etc/dpkg /var/log /var/cache
+RUN rm -rf /etc/apt/ /var/apt /etc/dpkg /var/log /var/cache /var/lib/apt
 
 WORKDIR /w
 
