@@ -7,24 +7,21 @@ FROM debian:bookworm-slim AS builder
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Python + tools needed to install your package into a venv
-RUN apt-get update \
- && apt-get install -y --no-install-recommends \
-      python3 python3-pip python3-venv
+# Tools needed to install uv
+RUN apt-get update
+RUN apt-get install -y --no-install-recommends curl tar ca-certificates
 
-# Create a self-contained venv for runtime
-RUN python3 -m venv /opt/venv
+# Install uv
+RUN curl -LsSf https://astral.sh/uv/install.sh -o /tmp/uv-install.sh
+RUN sh /tmp/uv-install.sh
 
-# Make sure the venv is used by default
-ENV PATH="/opt/venv/bin:${PATH}"
-
-RUN pip install --upgrade pip setuptools wheel
+ENV UV_PROJECT_ENVIRONMENT=/opt/venv
+ENV PATH="/root/.local/bin:${PATH}"
 
 # Copy your project and install it into the venv
 COPY . /tmp/CFEIntact
-RUN pip install /tmp/CFEIntact
-
-RUN rm -rf /tmp/CFEIntact /etc/apt/ /var/apt /etc/dpkg /var/log /var/cache /var/lib/apt /var/lib/dpkg /root/.cache
+RUN uv --project /tmp/CFEIntact sync
+RUN uv --project /tmp/CFEIntact run cfeintact version
 
 #
 # ---- runtime: only what we need to run ----
@@ -36,13 +33,12 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # Install runtime deps: BLAST + python runtime (so the venv has a compatible interpreter)
 RUN apt-get update \
- && apt-get install -y --no-install-recommends \
-      ncbi-blast+ \
-      python3 \
+ && apt-get install -y --no-install-recommends ncbi-blast+ \
  && rm -rf /tmp/CFEIntact /etc/apt/ /var/apt /etc/dpkg /var/log /var/cache /var/lib/apt /var/lib/dpkg /root/.cache
 
 # Copy the prebuilt venv from the builder
 COPY --from=builder /opt/venv /opt/venv
+COPY --from=builder /root/.local/share/uv /root/.local/share/uv
 
 # Make sure the venv is used by default
 ENV PATH="/opt/venv/bin:${PATH}"
