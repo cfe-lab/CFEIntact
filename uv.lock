@@ -56,6 +56,7 @@ dependencies = [
     { name = "aligntools" },
     { name = "biopython" },
     { name = "click" },
+    { name = "mappy" },
     { name = "numpy" },
     { name = "scipy" },
 ]
@@ -78,6 +79,7 @@ requires-dist = [
     { name = "biopython", specifier = ">=1.83" },
     { name = "click", specifier = ">=8.0" },
     { name = "flake8", marker = "extra == 'dev'" },
+    { name = "mappy", specifier = ">=2.24" },
     { name = "mypy", marker = "extra == 'dev'" },
     { name = "numpy", specifier = "==2.4.1" },
     { name = "pytest", marker = "extra == 'test'" },
@@ -251,6 +253,12 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/61/8d/80244b267b585e7aa79ffdac19f66c4861effc3a24598e77909ecdd0850e/librt-0.7.7-cp312-cp312-win_amd64.whl", hash = "sha256:4353ee891a1834567e0302d4bd5e60f531912179578c36f3d0430f8c5e16b456", size = 49462, upload-time = "2026-01-01T23:51:27.813Z" },
     { url = "https://files.pythonhosted.org/packages/2d/1f/75db802d6a4992d95e8a889682601af9b49d5a13bbfa246d414eede1b56c/librt-0.7.7-cp312-cp312-win_arm64.whl", hash = "sha256:a76f1d679beccccdf8c1958e732a1dfcd6e749f8821ee59d7bec009ac308c029", size = 42828, upload-time = "2026-01-01T23:51:28.804Z" },
 ]
+
+[[package]]
+name = "mappy"
+version = "2.30"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/78/25/21f1816701c7366cc2d1318c37fe374edd242e966ec3ad152f1742cef7a2/mappy-2.30.tar.gz", hash = "sha256:a25448004558a28cb0d74fb1e55b6ffe9a78aa15dd6b2763630fbbabbaa97a27", size = 143810, upload-time = "2025-06-15T22:49:38.771Z" }
 
 [[package]]
 name = "mccabe"
