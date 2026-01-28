@@ -16,7 +16,7 @@ class AlignedSequence:
 
     @cached_property
     def alignment(self) -> MultipleSeqAlignment:
-        return wrappers.mafft([self.reference, self.this])
+        return wrappers.global_align([self.reference, self.this])
 
     @property
     def aligned_reference(self) -> SeqRecord:

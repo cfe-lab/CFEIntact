@@ -7,7 +7,7 @@ Before analyzing a sequence, CFEIntact does some initial preprocessing that is u
 
 ### BLAST Analysis
 
-CFEIntact calls the NCBI's `blastn` program to obtain alignment data that is region-based, as opposed to the global alignment provided by `mafft`.
+CFEIntact calls the NCBI's `blastn` program to obtain alignment data that is region-based, as opposed to global alignment.
 
 The subtype of the sequence is determined at this point as well - BLAST tries to align the sequence to every reference subtype sequence specified via the `--subtype` CLI option.
 
@@ -15,7 +15,7 @@ This step is optional, depending on the command line arguments.
 
 ### Alignment to Reference
 
-CFEIntact runs the `mafft` program to align it to its subtype sequence.
+CFEIntact uses BioPython's global pairwise aligner to align the sequence to its subtype sequence.
 This operation is repeated with the reverse complement (RC) of the input sequence to determine if the fit is better.
 If the RC provides a better alignment, CFEIntact uses it instead.
 This ensures that the direction in which the original sequence is read does not affect the analysis.
