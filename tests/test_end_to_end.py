@@ -32,7 +32,6 @@ def run_end_to_end(tmp_path, data_file, expected_dir, subtype, output_csv):
         check_small_orfs=True,
         check_distance=True,
         output_csv=output_csv,
-        use_mappy=False,  # Use MAFFT by default for existing tests
     )
 
     check_outputs(tmp_path, expected_dir)
@@ -88,7 +87,6 @@ def test_single_noblast(tmp_path, request):
         check_small_orfs=True,
         check_distance=True,
         output_csv=output_csv,
-        use_mappy=False,  # Use MAFFT by default for existing tests
     )
 
     check_outputs(tmp_path, expected_dir)

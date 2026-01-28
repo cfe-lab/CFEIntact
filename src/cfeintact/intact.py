@@ -12,11 +12,9 @@ from typing import Optional, Dict, List, Iterable, Union, Tuple
 
 import cfeintact.constants as const
 import cfeintact.subtypes as st
-import cfeintact.wrappers as wrappers
 import cfeintact.defect as defect
 from cfeintact.log import logger
 from cfeintact.defect import Defect, ORFDefect
-from cfeintact.aligned_sequence import AlignedSequence, create_aligned_sequence
 from cfeintact.blastrow import BlastRow
 from cfeintact.initialize_orf import initialize_orf
 from cfeintact.original_orf import OriginalORF
@@ -718,14 +716,12 @@ def check(output_dir: str,
           check_small_orfs: bool,
           check_distance: bool,
           output_csv: bool,
-          use_mappy: bool = False,
           ) -> None:
     """
     Check if a set of consensus sequences in a FASTA file is cfeintact.
 
     Args:
         input_folder: folder of files from NGS machine.
-        use_mappy: If True, use mappy/minimap2 for alignment; if False, use MAFFT (default: False)
 
     Returns:
         Name of a file containing all consensus sequences.

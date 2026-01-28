@@ -7,7 +7,7 @@ Before analyzing a sequence, CFEIntact does some initial preprocessing that is u
 
 ### BLAST Analysis
 
-CFEIntact calls the NCBI's `blastn` program to obtain alignment data that is region-based, as opposed to the global alignment provided by `mafft`.
+CFEIntact calls the NCBI's `blastn` program to obtain alignment data that is region-based.
 
 The subtype of the sequence is determined at this point as well - BLAST tries to align the sequence to every reference subtype sequence specified via the `--subtype` CLI option.
 
@@ -15,12 +15,13 @@ This step is optional, depending on the command line arguments.
 
 ### Alignment to Reference
 
-CFEIntact runs the `mafft` program to align it to its subtype sequence.
+CFEIntact uses minimap2 (via mappy Python bindings) to perform local alignment of individual features to the subtype reference sequence.
 This operation is repeated with the reverse complement (RC) of the input sequence to determine if the fit is better.
 If the RC provides a better alignment, CFEIntact uses it instead.
 This ensures that the direction in which the original sequence is read does not affect the analysis.
 
-The alignment is global, and it never fails.
+For large features (ORFs like gag, pol, env), minimap2 performs local alignment of each ORF independently.
+For small features (MSD, PSI, RRE), minimap2 aligns a context window (±100bp) around the feature location.
 
 ### ORF Detection
 

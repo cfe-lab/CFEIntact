@@ -48,9 +48,7 @@ Before installing CFEIntact, ensure that you have the following software preinst
 
 2. **pip**: pip, a recursive acronym for "pip installs packages", is a Python package installer. It usually comes pre-installed with Python. You can verify its installation by running the `python3 -m pip --version` command. 
 
-3. **mafft**: Multiple Alignment using Fast Fourier Transform (mafft) underpins high-speed and accurate alignment of multiple sequences, a critical operation in CFEIntact. To install mafft, follow this [link](https://mafft.cbrc.jp/alignment/software/source.html). 
-
-4. **blastn**: Part of the BLAST+ suite from NCBI, blastn cross-references nucleotide sequences to locate regions of similarity. This sequence analysis and comparison tool is crucial for CFEIntact. Follow [this guide](https://www.ncbi.nlm.nih.gov/books/NBK569861/) for detailed installation instructions.
+3. **blastn**: Part of the BLAST+ suite from NCBI, blastn cross-references nucleotide sequences to locate regions of similarity. This sequence analysis and comparison tool is crucial for CFEIntact. Follow [this guide](https://www.ncbi.nlm.nih.gov/books/NBK569861/) for detailed installation instructions.
 
 These prerequisites are essential for CFEIntact to operate as expected. For successful program execution, please ensure all these tools are installed and working correctly.
 
