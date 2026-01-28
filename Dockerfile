@@ -24,7 +24,7 @@ RUN pip install --upgrade pip setuptools wheel
 COPY . /tmp/CFEIntact
 RUN pip install /tmp/CFEIntact
 
-RUN rm -rf /tmp/CFEIntact /etc/apt/ /var/apt /etc/dpkg /var/log /var/cache /var/lib/apt /root/.cache
+RUN rm -rf /tmp/CFEIntact /etc/apt/ /var/apt /etc/dpkg /var/log /var/cache /var/lib/apt /var/lib/dpkg /root/.cache
 
 #
 # ---- runtime: only what we need to run ----
@@ -39,7 +39,7 @@ RUN apt-get update \
  && apt-get install -y --no-install-recommends \
       ncbi-blast+ \
       python3 \
- && rm -rf /tmp/CFEIntact /etc/apt/ /var/apt /etc/dpkg /var/log /var/cache /var/lib/apt /root/.cache
+ && rm -rf /tmp/CFEIntact /etc/apt/ /var/apt /etc/dpkg /var/log /var/cache /var/lib/apt /var/lib/dpkg /root/.cache
 
 # Copy the prebuilt venv from the builder
 COPY --from=builder /opt/venv /opt/venv
