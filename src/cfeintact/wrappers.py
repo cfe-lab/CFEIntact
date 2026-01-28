@@ -30,7 +30,7 @@ def global_align(sequences: Iterable[SeqRecord]) -> MultipleSeqAlignment:
     
     # Use BioPython's PairwiseAligner for global alignment
     aligner = Align.PairwiseAligner(scoring="blastn")
-    aligner.mode = 'global'
+    aligner.mode = 'fogsaa'
     
     # Perform alignment and get the first (best) alignment
     try:
