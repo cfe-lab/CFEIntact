@@ -28,6 +28,16 @@ def global_align(sequences: Iterable[SeqRecord]) -> MultipleSeqAlignment:
 
     reference, query = seq_list
 
+    assert reference.seq is not None
+    assert query.seq is not None
+
+    if len(reference.seq) == 0:
+        default_alignment = SeqRecord(Seq("-" * len(query.seq)), id=query.id, description=query.description)
+        return MultipleSeqAlignment([default_alignment, query])
+    if len(query.seq) == 0:
+        default_alignment = SeqRecord(Seq("-" * len(reference.seq)), id=reference.id, description=reference.description)
+        return MultipleSeqAlignment([reference, default_alignment])
+
     # Use BioPython's PairwiseAligner for global alignment
     aligner = Align.PairwiseAligner()
     aligner.substitution_matrix = Align.substitution_matrices.load("BLASTN")
