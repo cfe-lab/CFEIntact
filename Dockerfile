@@ -36,7 +36,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # Install runtime deps: BLAST + python runtime (so the venv has a compatible interpreter)
 RUN apt-get update \
- && apt-get install -y --no-install-recommends ncbi-blast+ ncdu \
+ && apt-get install -y --no-install-recommends ncbi-blast+ \
  && rm -rf /tmp /etc/apt/ /var/apt /etc/dpkg /var/log /var/cache /var/lib/apt /var/lib/dpkg /root/.cache /opt/uv-home/.cache \
  && mkdir -p /tmp
 
