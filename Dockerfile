@@ -19,9 +19,8 @@ ENV UV_PROJECT_ENVIRONMENT=/opt/venv
 ENV PATH="/root/.local/bin:${PATH}"
 
 # Copy your project and install it into the venv
-COPY . /tmp/CFEIntact
-RUN uv --project /tmp/CFEIntact sync
-RUN uv --project /tmp/CFEIntact run cfeintact version
+COPY . /root/.local/share/uv/CFEIntact
+RUN uv --project /root/.local/share/uv/CFEIntact sync
 
 #
 # ---- runtime: only what we need to run ----
@@ -34,7 +33,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 # Install runtime deps: BLAST + python runtime (so the venv has a compatible interpreter)
 RUN apt-get update \
  && apt-get install -y --no-install-recommends ncbi-blast+ \
- && rm -rf /tmp/CFEIntact /etc/apt/ /var/apt /etc/dpkg /var/log /var/cache /var/lib/apt /var/lib/dpkg /root/.cache
+ && rm -rf /etc/apt/ /var/apt /etc/dpkg /var/log /var/cache /var/lib/apt /var/lib/dpkg /root/.cache
 
 # Copy the prebuilt venv from the builder
 COPY --from=builder /opt/venv /opt/venv
