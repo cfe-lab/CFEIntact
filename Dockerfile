@@ -7,10 +7,10 @@ FROM debian:bookworm-slim AS builder
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Python + tools needed to install your package into a venv
+# Python tools
 RUN apt-get update \
  && apt-get install -y --no-install-recommends \
-      python3 python3-pip python3-venv
+      python3 python3-venv
 
 # Create a self-contained venv for runtime
 RUN python3 -m venv /opt/venv
@@ -20,7 +20,7 @@ ENV PATH="/opt/venv/bin:${PATH}"
 
 RUN pip install --upgrade pip setuptools wheel
 
-# Copy your project and install it into the venv
+# Install into the venv
 COPY . /tmp/CFEIntact
 RUN pip install /tmp/CFEIntact
 
