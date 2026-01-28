@@ -29,7 +29,12 @@ def global_align(sequences: Iterable[SeqRecord]) -> MultipleSeqAlignment:
     reference, query = seq_list
     
     # Use BioPython's PairwiseAligner for global alignment
-    aligner = Align.PairwiseAligner(scoring="megablast")
+    aligner = Align.PairwiseAligner()
+    aligner.substitution_matrix = Align.substitution_matrices.load("BLASTN")
+    aligner.match_score = 1.0
+    aligner.mismatch_score = -1.0
+    aligner.open_gap_score = -7.0
+    aligner.extend_gap_score = -2.0
     aligner.mode = 'global'
     
     # Perform alignment and get the first (best) alignment
