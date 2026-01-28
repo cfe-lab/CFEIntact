@@ -47,6 +47,8 @@ def global_align(sequences: Iterable[SeqRecord]) -> MultipleSeqAlignment:
         aligned_query = SeqRecord(Seq(alignment[1]), id=query.id, description=query.description)
 
         return MultipleSeqAlignment([aligned_ref, aligned_query])
+    except KeyboardInterrupt:
+        raise UserError("Global alignment got cancelled. Cannot continue the analysis.")
     except StopIteration:
         raise UserError("Global alignment failed - no alignment found")
     except Exception as e:
