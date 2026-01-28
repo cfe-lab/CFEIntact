@@ -1,11 +1,7 @@
 
 name: main
 
-on:
-  push:
-  pull_request:
-  schedule:
-    - cron: "0 14 * * 1"
+on: push
 
 jobs:
   quicktest:
