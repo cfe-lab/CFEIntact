@@ -111,5 +111,4 @@ def intact(input_file: str, subtype: str, check_packaging_signal: bool,
     exit(0)
 
 
-if __name__ == "__main__":
-    cli()
+if __name__ == "__main__": cli()

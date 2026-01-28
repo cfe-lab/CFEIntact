@@ -12,9 +12,11 @@ from typing import Optional, Dict, List, Iterable, Union, Tuple
 
 import cfeintact.constants as const
 import cfeintact.subtypes as st
+import cfeintact.wrappers as wrappers
 import cfeintact.defect as defect
 from cfeintact.log import logger
 from cfeintact.defect import Defect, ORFDefect
+from cfeintact.aligned_sequence import AlignedSequence
 from cfeintact.blastrow import BlastRow
 from cfeintact.initialize_orf import initialize_orf
 from cfeintact.original_orf import OriginalORF
@@ -782,10 +784,10 @@ def check(output_dir: str,
 
         holistic.inferred_subtype = reference_name
         reference = subtype_choices[reference_name]
-        aligned_subtype = create_aligned_sequence(this=reference, reference=st.HXB2(), use_mappy=use_mappy)
+        aligned_subtype = AlignedSequence(this=reference, reference=st.HXB2())
 
-        forward_aligned_sequence = create_aligned_sequence(
-            this=sequence, reference=aligned_subtype.this, use_mappy=use_mappy)
+        forward_aligned_sequence = AlignedSequence(
+            this=sequence, reference=aligned_subtype.this)
         reverse_aligned_sequence = forward_aligned_sequence.reverse()
 
         if blast_orientation_statistics["minus"] < blast_orientation_statistics["plus"] \

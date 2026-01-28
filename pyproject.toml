@@ -19,7 +19,6 @@ dependencies = [
     "scipy>=1.1",
     "numpy==2.4.1",
     "aligntools==1.2.2",
-    "mappy>=2.24",
 ]
 
 [project.optional-dependencies]
@@ -63,5 +62,5 @@ disallow_untyped_defs = false
 strict = true
 
 [[tool.mypy.overrides]]
-module = ["scipy.*", "pytest.*", "mappy"]
+module = ["scipy.*", "pytest.*"]
 ignore_missing_imports = true
