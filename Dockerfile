@@ -49,5 +49,4 @@ ENV PATH="/opt/venv/bin:${PATH}"
 
 WORKDIR /w
 
-# Use the venv-installed entrypoint (most reliable)
 ENTRYPOINT ["cfeintact"]
