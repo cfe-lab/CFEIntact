@@ -48,7 +48,7 @@
         {
             "qseqid": "small-sequence",
             "code": "Frameshift",
-            "message": "ORF 'gag' at 7-17 contains out of frame indels that impact 1009 positions.",
+            "message": "ORF 'gag' at 8-7 contains out of frame indels that impact 1008 positions.",
             "region": "gag"
         },
         {
@@ -59,32 +59,26 @@
         },
         {
             "qseqid": "small-sequence",
-            "code": "MutatedStartCodon",
-            "message": "ORF 'gag' has a mutated start codon: 'GGG'.",
-            "region": "gag"
-        },
-        {
-            "qseqid": "small-sequence",
-            "code": "MutatedStopCodon",
-            "message": "ORF 'gag' has a mutated stop codon: 'AGA'.",
-            "region": "gag"
-        },
-        {
-            "qseqid": "small-sequence",
             "code": "Frameshift",
-            "message": "ORF 'pol' at 18-17 contains out of frame indels that impact 2018 positions.",
+            "message": "ORF 'pol' at 8-19 contains out of frame indels that impact 2018 positions.",
             "region": "pol"
         },
         {
             "qseqid": "small-sequence",
             "code": "Deletion",
-            "message": "ORF 'pol' exceeds maximum deletion tolerance. Contains 3021 deletions with max tolerance of 87 deletions.",
+            "message": "ORF 'pol' exceeds maximum deletion tolerance. Contains 3012 deletions with max tolerance of 87 deletions.",
+            "region": "pol"
+        },
+        {
+            "qseqid": "small-sequence",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'pol' has a mutated stop codon: 'GTC'.",
             "region": "pol"
         },
         {
             "qseqid": "small-sequence",
             "code": "Frameshift",
-            "message": "ORF 'env' at 18-17 contains out of frame indels that impact 1716 positions.",
+            "message": "ORF 'env' at 1-19 contains out of frame indels that impact 1717 positions.",
             "region": "env"
         },
         {
@@ -95,8 +89,20 @@
         },
         {
             "qseqid": "small-sequence",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'env' has a mutated start codon: 'ATC'.",
+            "region": "env"
+        },
+        {
+            "qseqid": "small-sequence",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'env' has a mutated stop codon: 'C--'.",
+            "region": "env"
+        },
+        {
+            "qseqid": "small-sequence",
             "code": "Frameshift",
-            "message": "ORF 'vif' at 18-17 contains out of frame indels that impact 382 positions.",
+            "message": "ORF 'vif' at 1-19 contains out of frame indels that impact 382 positions.",
             "region": "vif"
         },
         {
@@ -107,8 +113,20 @@
         },
         {
             "qseqid": "small-sequence",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'vif' has a mutated start codon: 'ATC'.",
+            "region": "vif"
+        },
+        {
+            "qseqid": "small-sequence",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'vif' has a mutated stop codon: 'C--'.",
+            "region": "vif"
+        },
+        {
+            "qseqid": "small-sequence",
             "code": "Frameshift",
-            "message": "ORF 'vpr' at 18-17 contains out of frame indels that impact 192 positions.",
+            "message": "ORF 'vpr' at 1-19 contains out of frame indels that impact 193 positions.",
             "region": "vpr"
         },
         {
@@ -119,8 +137,20 @@
         },
         {
             "qseqid": "small-sequence",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'vpr' has a mutated start codon: 'ATC'.",
+            "region": "vpr"
+        },
+        {
+            "qseqid": "small-sequence",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'vpr' has a mutated stop codon: 'C--'.",
+            "region": "vpr"
+        },
+        {
+            "qseqid": "small-sequence",
             "code": "Frameshift",
-            "message": "ORF 'tat_exon1' at 18-17 contains out of frame indels that impact 144 positions.",
+            "message": "ORF 'tat_exon1' at 1-19 contains out of frame indels that impact 144 positions.",
             "region": "tat_exon1"
         },
         {
@@ -131,8 +161,14 @@
         },
         {
             "qseqid": "small-sequence",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'tat_exon1' has a mutated start codon: 'ATC'.",
+            "region": "tat_exon1"
+        },
+        {
+            "qseqid": "small-sequence",
             "code": "Frameshift",
-            "message": "ORF 'rev_exon1' at 18-17 contains out of frame indels that impact 51 positions.",
+            "message": "ORF 'rev_exon1' at 1-19 contains out of frame indels that impact 50 positions.",
             "region": "rev_exon1"
         },
         {
@@ -143,8 +179,14 @@
         },
         {
             "qseqid": "small-sequence",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'rev_exon1' has a mutated start codon: 'ATC'.",
+            "region": "rev_exon1"
+        },
+        {
+            "qseqid": "small-sequence",
             "code": "Frameshift",
-            "message": "ORF 'vpu' at 18-17 contains out of frame indels that impact 164 positions.",
+            "message": "ORF 'vpu' at 1-19 contains out of frame indels that impact 164 positions.",
             "region": "vpu"
         },
         {
@@ -155,38 +197,74 @@
         },
         {
             "qseqid": "small-sequence",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'vpu' has a mutated start codon: 'ATC'.",
+            "region": "vpu"
+        },
+        {
+            "qseqid": "small-sequence",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'vpu' has a mutated stop codon: 'C--'.",
+            "region": "vpu"
+        },
+        {
+            "qseqid": "small-sequence",
             "code": "Frameshift",
-            "message": "ORF 'tat_exon2' at 18-17 contains out of frame indels that impact 62 positions.",
+            "message": "ORF 'tat_exon2' at 1-19 contains out of frame indels that impact 63 positions.",
             "region": "tat_exon2"
         },
         {
             "qseqid": "small-sequence",
             "code": "Deletion",
-            "message": "ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 87 deletions with max tolerance of 24 deletions.",
+            "message": "ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 69 deletions with max tolerance of 24 deletions.",
+            "region": "tat_exon2"
+        },
+        {
+            "qseqid": "small-sequence",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'tat_exon2' has a mutated stop codon: 'C--'.",
             "region": "tat_exon2"
         },
         {
             "qseqid": "small-sequence",
             "code": "Frameshift",
-            "message": "ORF 'rev_exon2' at 18-17 contains out of frame indels that impact 198 positions.",
+            "message": "ORF 'rev_exon2' at 1-19 contains out of frame indels that impact 199 positions.",
             "region": "rev_exon2"
         },
         {
             "qseqid": "small-sequence",
             "code": "Deletion",
-            "message": "ORF 'rev_exon2' exceeds maximum deletion tolerance. Contains 291 deletions with max tolerance of 27 deletions.",
+            "message": "ORF 'rev_exon2' exceeds maximum deletion tolerance. Contains 273 deletions with max tolerance of 27 deletions.",
+            "region": "rev_exon2"
+        },
+        {
+            "qseqid": "small-sequence",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'rev_exon2' has a mutated stop codon: 'C--'.",
             "region": "rev_exon2"
         },
         {
             "qseqid": "small-sequence",
             "code": "Frameshift",
-            "message": "ORF 'nef' at 18-17 contains out of frame indels that impact 410 positions.",
+            "message": "ORF 'nef' at 1-19 contains out of frame indels that impact 411 positions.",
             "region": "nef"
         },
         {
             "qseqid": "small-sequence",
             "code": "Deletion",
             "message": "ORF 'nef' exceeds maximum deletion tolerance. Contains 612 deletions with max tolerance of 27 deletions.",
+            "region": "nef"
+        },
+        {
+            "qseqid": "small-sequence",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'nef' has a mutated start codon: 'ATC'.",
+            "region": "nef"
+        },
+        {
+            "qseqid": "small-sequence",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'nef' has a mutated stop codon: 'C--'.",
             "region": "nef"
         },
         {
@@ -620,19 +698,19 @@
             "region": "nef"
         },
         {
-            "qseqid": "Ref.01_AE.TH.90.CM240.U54771.CfE",
+            "qseqid": "empty-sequence",
             "code": "PackagingSignalDeletion",
             "message": "Query sequence exceeds maximum deletion tolerance in PSI. Contains 126 deletions with max tolerance of 10 deletions.",
             "region": null
         },
         {
-            "qseqid": "Ref.01_AE.TH.90.CM240.U54771.CfE",
+            "qseqid": "empty-sequence",
             "code": "RevResponseElementDeletion",
             "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.",
             "region": null
         },
         {
-            "qseqid": "Ref.01_AE.TH.90.CM240.U54771.CfE",
+            "qseqid": "empty-sequence",
             "code": "MajorSpliceDonorSiteMutated",
             "message": "Query sequence has a missing splice donor site: --. The context is ----------------------.",
             "region": null
@@ -778,19 +856,19 @@
             "region": "nef"
         },
         {
-            "qseqid": "Ref.01_AE.TH.90.CM240.U54771.CfE",
+            "qseqid": "empty-sequence2",
             "code": "PackagingSignalDeletion",
             "message": "Query sequence exceeds maximum deletion tolerance in PSI. Contains 126 deletions with max tolerance of 10 deletions.",
             "region": null
         },
         {
-            "qseqid": "Ref.01_AE.TH.90.CM240.U54771.CfE",
+            "qseqid": "empty-sequence2",
             "code": "RevResponseElementDeletion",
             "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.",
             "region": null
         },
         {
-            "qseqid": "Ref.01_AE.TH.90.CM240.U54771.CfE",
+            "qseqid": "empty-sequence2",
             "code": "MajorSpliceDonorSiteMutated",
             "message": "Query sequence has a missing splice donor site: --. The context is ----------------------.",
             "region": null
@@ -807,7 +885,7 @@
         {
             "qseqid": "small-sequence-with-lowercases",
             "code": "Frameshift",
-            "message": "ORF 'gag' at 7-17 contains out of frame indels that impact 1009 positions.",
+            "message": "ORF 'gag' at 8-7 contains out of frame indels that impact 1008 positions.",
             "region": "gag"
         },
         {
@@ -818,32 +896,26 @@
         },
         {
             "qseqid": "small-sequence-with-lowercases",
-            "code": "MutatedStartCodon",
-            "message": "ORF 'gag' has a mutated start codon: 'GGG'.",
-            "region": "gag"
-        },
-        {
-            "qseqid": "small-sequence-with-lowercases",
-            "code": "MutatedStopCodon",
-            "message": "ORF 'gag' has a mutated stop codon: 'AGA'.",
-            "region": "gag"
-        },
-        {
-            "qseqid": "small-sequence-with-lowercases",
             "code": "Frameshift",
-            "message": "ORF 'pol' at 18-17 contains out of frame indels that impact 2018 positions.",
+            "message": "ORF 'pol' at 8-19 contains out of frame indels that impact 2018 positions.",
             "region": "pol"
         },
         {
             "qseqid": "small-sequence-with-lowercases",
             "code": "Deletion",
-            "message": "ORF 'pol' exceeds maximum deletion tolerance. Contains 3021 deletions with max tolerance of 87 deletions.",
+            "message": "ORF 'pol' exceeds maximum deletion tolerance. Contains 3012 deletions with max tolerance of 87 deletions.",
+            "region": "pol"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'pol' has a mutated stop codon: 'GTC'.",
             "region": "pol"
         },
         {
             "qseqid": "small-sequence-with-lowercases",
             "code": "Frameshift",
-            "message": "ORF 'env' at 18-17 contains out of frame indels that impact 1716 positions.",
+            "message": "ORF 'env' at 1-19 contains out of frame indels that impact 1717 positions.",
             "region": "env"
         },
         {
@@ -854,8 +926,20 @@
         },
         {
             "qseqid": "small-sequence-with-lowercases",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'env' has a mutated start codon: 'ATC'.",
+            "region": "env"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'env' has a mutated stop codon: 'C--'.",
+            "region": "env"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
             "code": "Frameshift",
-            "message": "ORF 'vif' at 18-17 contains out of frame indels that impact 382 positions.",
+            "message": "ORF 'vif' at 1-19 contains out of frame indels that impact 382 positions.",
             "region": "vif"
         },
         {
@@ -866,8 +950,20 @@
         },
         {
             "qseqid": "small-sequence-with-lowercases",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'vif' has a mutated start codon: 'ATC'.",
+            "region": "vif"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'vif' has a mutated stop codon: 'C--'.",
+            "region": "vif"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
             "code": "Frameshift",
-            "message": "ORF 'vpr' at 18-17 contains out of frame indels that impact 192 positions.",
+            "message": "ORF 'vpr' at 1-19 contains out of frame indels that impact 193 positions.",
             "region": "vpr"
         },
         {
@@ -878,8 +974,20 @@
         },
         {
             "qseqid": "small-sequence-with-lowercases",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'vpr' has a mutated start codon: 'ATC'.",
+            "region": "vpr"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'vpr' has a mutated stop codon: 'C--'.",
+            "region": "vpr"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
             "code": "Frameshift",
-            "message": "ORF 'tat_exon1' at 18-17 contains out of frame indels that impact 144 positions.",
+            "message": "ORF 'tat_exon1' at 1-19 contains out of frame indels that impact 144 positions.",
             "region": "tat_exon1"
         },
         {
@@ -890,8 +998,14 @@
         },
         {
             "qseqid": "small-sequence-with-lowercases",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'tat_exon1' has a mutated start codon: 'ATC'.",
+            "region": "tat_exon1"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
             "code": "Frameshift",
-            "message": "ORF 'rev_exon1' at 18-17 contains out of frame indels that impact 51 positions.",
+            "message": "ORF 'rev_exon1' at 1-19 contains out of frame indels that impact 50 positions.",
             "region": "rev_exon1"
         },
         {
@@ -902,8 +1016,14 @@
         },
         {
             "qseqid": "small-sequence-with-lowercases",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'rev_exon1' has a mutated start codon: 'ATC'.",
+            "region": "rev_exon1"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
             "code": "Frameshift",
-            "message": "ORF 'vpu' at 18-17 contains out of frame indels that impact 164 positions.",
+            "message": "ORF 'vpu' at 1-19 contains out of frame indels that impact 164 positions.",
             "region": "vpu"
         },
         {
@@ -914,38 +1034,74 @@
         },
         {
             "qseqid": "small-sequence-with-lowercases",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'vpu' has a mutated start codon: 'ATC'.",
+            "region": "vpu"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'vpu' has a mutated stop codon: 'C--'.",
+            "region": "vpu"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
             "code": "Frameshift",
-            "message": "ORF 'tat_exon2' at 18-17 contains out of frame indels that impact 62 positions.",
+            "message": "ORF 'tat_exon2' at 1-19 contains out of frame indels that impact 63 positions.",
             "region": "tat_exon2"
         },
         {
             "qseqid": "small-sequence-with-lowercases",
             "code": "Deletion",
-            "message": "ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 87 deletions with max tolerance of 24 deletions.",
+            "message": "ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 69 deletions with max tolerance of 24 deletions.",
+            "region": "tat_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'tat_exon2' has a mutated stop codon: 'C--'.",
             "region": "tat_exon2"
         },
         {
             "qseqid": "small-sequence-with-lowercases",
             "code": "Frameshift",
-            "message": "ORF 'rev_exon2' at 18-17 contains out of frame indels that impact 198 positions.",
+            "message": "ORF 'rev_exon2' at 1-19 contains out of frame indels that impact 199 positions.",
             "region": "rev_exon2"
         },
         {
             "qseqid": "small-sequence-with-lowercases",
             "code": "Deletion",
-            "message": "ORF 'rev_exon2' exceeds maximum deletion tolerance. Contains 291 deletions with max tolerance of 27 deletions.",
+            "message": "ORF 'rev_exon2' exceeds maximum deletion tolerance. Contains 273 deletions with max tolerance of 27 deletions.",
+            "region": "rev_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'rev_exon2' has a mutated stop codon: 'C--'.",
             "region": "rev_exon2"
         },
         {
             "qseqid": "small-sequence-with-lowercases",
             "code": "Frameshift",
-            "message": "ORF 'nef' at 18-17 contains out of frame indels that impact 410 positions.",
+            "message": "ORF 'nef' at 1-19 contains out of frame indels that impact 411 positions.",
             "region": "nef"
         },
         {
             "qseqid": "small-sequence-with-lowercases",
             "code": "Deletion",
             "message": "ORF 'nef' exceeds maximum deletion tolerance. Contains 612 deletions with max tolerance of 27 deletions.",
+            "region": "nef"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'nef' has a mutated start codon: 'ATC'.",
+            "region": "nef"
+        },
+        {
+            "qseqid": "small-sequence-with-lowercases",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'nef' has a mutated stop codon: 'C--'.",
             "region": "nef"
         },
         {
@@ -984,103 +1140,97 @@
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "code": "Frameshift",
-            "message": "ORF 'gag' at 412-2034 contains out of frame indels that impact 994 positions.",
+            "message": "ORF 'gag' at 383-2351 contains out of frame indels that impact 1016 positions.",
             "region": "gag"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "code": "InternalStop",
-            "message": "ORF 'gag' at 412-2034 contains an internal stop codon at 466.",
+            "message": "ORF 'gag' at 383-2351 contains an internal stop codon at 503.",
             "region": "gag"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "code": "MutatedStartCodon",
-            "message": "ORF 'gag' has a mutated start codon: 'ACG'.",
+            "message": "ORF 'gag' has a mutated start codon: 'TGT'.",
             "region": "gag"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "code": "MutatedStopCodon",
-            "message": "ORF 'gag' has a mutated stop codon: 'ATG'.",
+            "message": "ORF 'gag' has a mutated stop codon: 'TTA'.",
             "region": "gag"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "code": "Frameshift",
-            "message": "ORF 'pol' at 1798-5038 contains out of frame indels that impact 2002 positions.",
+            "message": "ORF 'pol' at 2072-5370 contains out of frame indels that impact 2026 positions.",
             "region": "pol"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "code": "InternalStop",
-            "message": "ORF 'pol' at 1798-5038 contains an internal stop codon at 2053.",
+            "message": "ORF 'pol' at 2072-5370 contains an internal stop codon at 2168.",
             "region": "pol"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "code": "MutatedStopCodon",
-            "message": "ORF 'pol' has a mutated stop codon: 'T--'.",
+            "message": "ORF 'pol' has a mutated stop codon: 'GTG'.",
             "region": "pol"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "code": "Frameshift",
-            "message": "ORF 'env' at 6201-8813 contains out of frame indels that impact 1726 positions.",
+            "message": "ORF 'env' at 6267-8828 contains out of frame indels that impact 1733 positions.",
             "region": "env"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "code": "InternalStop",
-            "message": "ORF 'env' at 6201-8813 contains an internal stop codon at 6366.",
+            "message": "ORF 'env' at 6267-8828 contains an internal stop codon at 6459.",
             "region": "env"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "code": "MutatedStartCodon",
-            "message": "ORF 'env' has a mutated start codon: 'AAA'.",
-            "region": "env"
-        },
-        {
-            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
-            "code": "MutatedStopCodon",
-            "message": "ORF 'env' has a mutated stop codon: 'AGG'.",
+            "message": "ORF 'env' has a mutated start codon: 'ATC'.",
             "region": "env"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "code": "Frameshift",
-            "message": "ORF 'vif' at 4983-5574 contains out of frame indels that impact 356 positions.",
+            "message": "ORF 'vif' at 5310-5834 contains out of frame indels that impact 393 positions.",
             "region": "vif"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "code": "InternalStop",
-            "message": "ORF 'vif' at 4983-5574 contains an internal stop codon at 5025.",
+            "message": "ORF 'vif' at 5310-5834 contains an internal stop codon at 5367.",
             "region": "vif"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "code": "MutatedStartCodon",
-            "message": "ORF 'vif' has a mutated start codon: 'TCG'.",
+            "message": "ORF 'vif' has a mutated start codon: 'ATA'.",
             "region": "vif"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "code": "MutatedStopCodon",
-            "message": "ORF 'vif' has a mutated stop codon: 'TAT'.",
+            "message": "ORF 'vif' has a mutated stop codon: 'TCG'.",
             "region": "vif"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "code": "Frameshift",
-            "message": "ORF 'vpr' at 5517-5804 contains out of frame indels that impact 197 positions.",
+            "message": "ORF 'vpr' at 5795-5930 contains out of frame indels that impact 157 positions.",
             "region": "vpr"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "code": "InternalStop",
-            "message": "ORF 'vpr' at 5517-5804 contains an internal stop codon at 5535.",
+            "message": "ORF 'vpr' at 5795-5930 contains an internal stop codon at 5816.",
             "region": "vpr"
         },
         {
@@ -1092,31 +1242,31 @@
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "code": "MutatedStopCodon",
-            "message": "ORF 'vpr' has a mutated stop codon: 'AGG'.",
+            "message": "ORF 'vpr' has a mutated stop codon: 'T--'.",
             "region": "vpr"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "code": "Frameshift",
-            "message": "ORF 'tat_exon1' at 5785-6006 contains out of frame indels that impact 74 positions.",
+            "message": "ORF 'tat_exon1' at 5931-6065 contains out of frame indels that impact 141 positions.",
             "region": "tat_exon1"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
-            "code": "InternalStop",
-            "message": "ORF 'tat_exon1' at 5785-6006 contains an internal stop codon at 5866.",
+            "code": "Deletion",
+            "message": "ORF 'tat_exon1' exceeds maximum deletion tolerance. Contains 165 deletions with max tolerance of 3 deletions.",
             "region": "tat_exon1"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "code": "MutatedStartCodon",
-            "message": "ORF 'tat_exon1' has a mutated start codon: 'GGA'.",
+            "message": "ORF 'tat_exon1' has a mutated start codon: 'GAG'.",
             "region": "tat_exon1"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "code": "Frameshift",
-            "message": "ORF 'rev_exon1' at 5931-6006 contains out of frame indels that impact 59 positions.",
+            "message": "ORF 'rev_exon1' at 6021-6065 contains out of frame indels that impact 54 positions.",
             "region": "rev_exon1"
         },
         {
@@ -1128,86 +1278,104 @@
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "code": "MutatedStartCodon",
-            "message": "ORF 'rev_exon1' has a mutated start codon: 'GAG'.",
+            "message": "ORF 'rev_exon1' has a mutated start codon: 'GGT'.",
             "region": "rev_exon1"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "code": "Frameshift",
-            "message": "ORF 'vpu' at 6027-6283 contains out of frame indels that impact 177 positions.",
+            "message": "ORF 'vpu' at 6083-6365 contains out of frame indels that impact 141 positions.",
             "region": "vpu"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "code": "InternalStop",
-            "message": "ORF 'vpu' at 6027-6283 contains an internal stop codon at 6078.",
+            "message": "ORF 'vpu' at 6083-6365 contains an internal stop codon at 6110.",
+            "region": "vpu"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'vpu' has a mutated start codon: 'ATC'.",
             "region": "vpu"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "code": "MutatedStopCodon",
-            "message": "ORF 'vpu' has a mutated stop codon: 'ACA'.",
+            "message": "ORF 'vpu' has a mutated stop codon: 'CTG'.",
             "region": "vpu"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "code": "Frameshift",
-            "message": "ORF 'tat_exon2' at 8374-8466 contains out of frame indels that impact 60 positions.",
+            "message": "ORF 'tat_exon2' at 8385-8466 contains out of frame indels that impact 67 positions.",
             "region": "tat_exon2"
-        },
-        {
-            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
-            "code": "Insertion",
-            "message": "ORF 'tat_exon2' exceeds maximum insertion tolerance. Contains 237 insertions with max tolerance of 15 insertions.",
-            "region": "tat_exon2"
-        },
-        {
-            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
-            "code": "MutatedStopCodon",
-            "message": "ORF 'tat_exon2' has a mutated stop codon: 'GGG'.",
-            "region": "tat_exon2"
-        },
-        {
-            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
-            "code": "Frameshift",
-            "message": "ORF 'rev_exon2' at 8375-8671 contains out of frame indels that impact 186 positions.",
-            "region": "rev_exon2"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "code": "InternalStop",
-            "message": "ORF 'rev_exon2' at 8375-8671 contains an internal stop codon at 8471.",
+            "message": "ORF 'tat_exon2' at 8385-8466 contains an internal stop codon at 8424.",
+            "region": "tat_exon2"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'tat_exon2' has a mutated stop codon: 'GTA'.",
+            "region": "tat_exon2"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "Frameshift",
+            "message": "ORF 'rev_exon2' at 8386-8668 contains out of frame indels that impact 177 positions.",
             "region": "rev_exon2"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "code": "MutatedStopCodon",
-            "message": "ORF 'rev_exon2' has a mutated stop codon: 'TGT'.",
+            "message": "ORF 'rev_exon2' has a mutated stop codon: 'GTG'.",
             "region": "rev_exon2"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "code": "Frameshift",
-            "message": "ORF 'nef' at 8815-9497 contains out of frame indels that impact 357 positions.",
+            "message": "ORF 'nef' at 8830-9558 contains out of frame indels that impact 404 positions.",
             "region": "nef"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "code": "InternalStop",
-            "message": "ORF 'nef' at 8815-9497 contains an internal stop codon at 8845.",
+            "message": "ORF 'nef' at 8830-9558 contains an internal stop codon at 8884.",
             "region": "nef"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "code": "MutatedStartCodon",
-            "message": "ORF 'nef' has a mutated start codon: 'ACG'.",
+            "message": "ORF 'nef' has a mutated start codon: 'ATA'.",
             "region": "nef"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
             "code": "MutatedStopCodon",
-            "message": "ORF 'nef' has a mutated stop codon: 'ACG'.",
+            "message": "ORF 'nef' has a mutated stop codon: 'AGA'.",
             "region": "nef"
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "PackagingSignalDeletion",
+            "message": "Query sequence exceeds maximum deletion tolerance in PSI. Contains 21 deletions with max tolerance of 10 deletions.",
+            "region": null
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "RevResponseElementDeletion",
+            "message": "Query Sequence exceeds maximum deletion tolerance in RRE. Contains 131 deletions with max tolerance of 20 deletions.",
+            "region": null
+        },
+        {
+            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
+            "code": "MajorSpliceDonorSiteMutated",
+            "message": "Query sequence has a mutated splice donor site: CC. The context is ACGTCGAGAGCCCGGTGCACTA.",
+            "region": null
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
@@ -1234,7 +1402,7 @@
         {
             "qseqid": "small-sequence-with-xs",
             "code": "Frameshift",
-            "message": "ORF 'gag' at 6-5 contains out of frame indels that impact 1008 positions.",
+            "message": "ORF 'gag' at 1-12 contains out of frame indels that impact 1009 positions.",
             "region": "gag"
         },
         {
@@ -1245,20 +1413,38 @@
         },
         {
             "qseqid": "small-sequence-with-xs",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'gag' has a mutated start codon: 'ATC'.",
+            "region": "gag"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'gag' has a mutated stop codon: 'GTC'.",
+            "region": "gag"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
             "code": "Frameshift",
-            "message": "ORF 'pol' at 6-5 contains out of frame indels that impact 2018 positions.",
+            "message": "ORF 'pol' at 1-12 contains out of frame indels that impact 2017 positions.",
             "region": "pol"
         },
         {
             "qseqid": "small-sequence-with-xs",
             "code": "Deletion",
-            "message": "ORF 'pol' exceeds maximum deletion tolerance. Contains 3024 deletions with max tolerance of 87 deletions.",
+            "message": "ORF 'pol' exceeds maximum deletion tolerance. Contains 3012 deletions with max tolerance of 87 deletions.",
+            "region": "pol"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'pol' has a mutated stop codon: 'GTC'.",
             "region": "pol"
         },
         {
             "qseqid": "small-sequence-with-xs",
             "code": "Frameshift",
-            "message": "ORF 'env' at 6-5 contains out of frame indels that impact 1716 positions.",
+            "message": "ORF 'env' at 1-12 contains out of frame indels that impact 1717 positions.",
             "region": "env"
         },
         {
@@ -1269,8 +1455,20 @@
         },
         {
             "qseqid": "small-sequence-with-xs",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'env' has a mutated start codon: 'ATC'.",
+            "region": "env"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'env' has a mutated stop codon: 'GTC'.",
+            "region": "env"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
             "code": "Frameshift",
-            "message": "ORF 'vif' at 6-5 contains out of frame indels that impact 382 positions.",
+            "message": "ORF 'vif' at 1-12 contains out of frame indels that impact 382 positions.",
             "region": "vif"
         },
         {
@@ -1281,8 +1479,20 @@
         },
         {
             "qseqid": "small-sequence-with-xs",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'vif' has a mutated start codon: 'ATC'.",
+            "region": "vif"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'vif' has a mutated stop codon: 'GTC'.",
+            "region": "vif"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
             "code": "Frameshift",
-            "message": "ORF 'vpr' at 6-5 contains out of frame indels that impact 192 positions.",
+            "message": "ORF 'vpr' at 1-12 contains out of frame indels that impact 193 positions.",
             "region": "vpr"
         },
         {
@@ -1293,8 +1503,20 @@
         },
         {
             "qseqid": "small-sequence-with-xs",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'vpr' has a mutated start codon: 'ATC'.",
+            "region": "vpr"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'vpr' has a mutated stop codon: 'GTC'.",
+            "region": "vpr"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
             "code": "Frameshift",
-            "message": "ORF 'tat_exon1' at 6-5 contains out of frame indels that impact 144 positions.",
+            "message": "ORF 'tat_exon1' at 1-12 contains out of frame indels that impact 144 positions.",
             "region": "tat_exon1"
         },
         {
@@ -1305,8 +1527,14 @@
         },
         {
             "qseqid": "small-sequence-with-xs",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'tat_exon1' has a mutated start codon: 'ATC'.",
+            "region": "tat_exon1"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
             "code": "Frameshift",
-            "message": "ORF 'rev_exon1' at 6-5 contains out of frame indels that impact 51 positions.",
+            "message": "ORF 'rev_exon1' at 1-12 contains out of frame indels that impact 50 positions.",
             "region": "rev_exon1"
         },
         {
@@ -1317,8 +1545,14 @@
         },
         {
             "qseqid": "small-sequence-with-xs",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'rev_exon1' has a mutated start codon: 'ATC'.",
+            "region": "rev_exon1"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
             "code": "Frameshift",
-            "message": "ORF 'vpu' at 6-5 contains out of frame indels that impact 164 positions.",
+            "message": "ORF 'vpu' at 1-12 contains out of frame indels that impact 164 positions.",
             "region": "vpu"
         },
         {
@@ -1329,38 +1563,74 @@
         },
         {
             "qseqid": "small-sequence-with-xs",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'vpu' has a mutated start codon: 'ATC'.",
+            "region": "vpu"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'vpu' has a mutated stop codon: 'GTC'.",
+            "region": "vpu"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
             "code": "Frameshift",
-            "message": "ORF 'tat_exon2' at 6-5 contains out of frame indels that impact 62 positions.",
+            "message": "ORF 'tat_exon2' at 1-12 contains out of frame indels that impact 61 positions.",
             "region": "tat_exon2"
         },
         {
             "qseqid": "small-sequence-with-xs",
             "code": "Deletion",
-            "message": "ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 90 deletions with max tolerance of 24 deletions.",
+            "message": "ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 78 deletions with max tolerance of 24 deletions.",
+            "region": "tat_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'tat_exon2' has a mutated stop codon: 'GTC'.",
             "region": "tat_exon2"
         },
         {
             "qseqid": "small-sequence-with-xs",
             "code": "Frameshift",
-            "message": "ORF 'rev_exon2' at 6-5 contains out of frame indels that impact 198 positions.",
+            "message": "ORF 'rev_exon2' at 1-12 contains out of frame indels that impact 202 positions.",
             "region": "rev_exon2"
         },
         {
             "qseqid": "small-sequence-with-xs",
             "code": "Deletion",
-            "message": "ORF 'rev_exon2' exceeds maximum deletion tolerance. Contains 294 deletions with max tolerance of 27 deletions.",
+            "message": "ORF 'rev_exon2' exceeds maximum deletion tolerance. Contains 282 deletions with max tolerance of 27 deletions.",
+            "region": "rev_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'rev_exon2' has a mutated stop codon: 'GTC'.",
             "region": "rev_exon2"
         },
         {
             "qseqid": "small-sequence-with-xs",
             "code": "Frameshift",
-            "message": "ORF 'nef' at 6-5 contains out of frame indels that impact 410 positions.",
+            "message": "ORF 'nef' at 1-12 contains out of frame indels that impact 411 positions.",
             "region": "nef"
         },
         {
             "qseqid": "small-sequence-with-xs",
             "code": "Deletion",
             "message": "ORF 'nef' exceeds maximum deletion tolerance. Contains 612 deletions with max tolerance of 27 deletions.",
+            "region": "nef"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'nef' has a mutated start codon: 'ATC'.",
+            "region": "nef"
+        },
+        {
+            "qseqid": "small-sequence-with-xs",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'nef' has a mutated stop codon: 'GTC'.",
             "region": "nef"
         },
         {
@@ -1420,7 +1690,7 @@
         {
             "qseqid": "small-sequence-with-dashes",
             "code": "Frameshift",
-            "message": "ORF 'gag' at 6-5 contains out of frame indels that impact 1008 positions.",
+            "message": "ORF 'gag' at 1-12 contains out of frame indels that impact 1009 positions.",
             "region": "gag"
         },
         {
@@ -1431,20 +1701,38 @@
         },
         {
             "qseqid": "small-sequence-with-dashes",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'gag' has a mutated start codon: 'ATC'.",
+            "region": "gag"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'gag' has a mutated stop codon: 'GTC'.",
+            "region": "gag"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
             "code": "Frameshift",
-            "message": "ORF 'pol' at 6-5 contains out of frame indels that impact 2018 positions.",
+            "message": "ORF 'pol' at 1-12 contains out of frame indels that impact 2017 positions.",
             "region": "pol"
         },
         {
             "qseqid": "small-sequence-with-dashes",
             "code": "Deletion",
-            "message": "ORF 'pol' exceeds maximum deletion tolerance. Contains 3024 deletions with max tolerance of 87 deletions.",
+            "message": "ORF 'pol' exceeds maximum deletion tolerance. Contains 3012 deletions with max tolerance of 87 deletions.",
+            "region": "pol"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'pol' has a mutated stop codon: 'GTC'.",
             "region": "pol"
         },
         {
             "qseqid": "small-sequence-with-dashes",
             "code": "Frameshift",
-            "message": "ORF 'env' at 6-5 contains out of frame indels that impact 1716 positions.",
+            "message": "ORF 'env' at 1-12 contains out of frame indels that impact 1717 positions.",
             "region": "env"
         },
         {
@@ -1455,8 +1743,20 @@
         },
         {
             "qseqid": "small-sequence-with-dashes",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'env' has a mutated start codon: 'ATC'.",
+            "region": "env"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'env' has a mutated stop codon: 'GTC'.",
+            "region": "env"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
             "code": "Frameshift",
-            "message": "ORF 'vif' at 6-5 contains out of frame indels that impact 382 positions.",
+            "message": "ORF 'vif' at 1-12 contains out of frame indels that impact 382 positions.",
             "region": "vif"
         },
         {
@@ -1467,8 +1767,20 @@
         },
         {
             "qseqid": "small-sequence-with-dashes",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'vif' has a mutated start codon: 'ATC'.",
+            "region": "vif"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'vif' has a mutated stop codon: 'GTC'.",
+            "region": "vif"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
             "code": "Frameshift",
-            "message": "ORF 'vpr' at 6-5 contains out of frame indels that impact 192 positions.",
+            "message": "ORF 'vpr' at 1-12 contains out of frame indels that impact 193 positions.",
             "region": "vpr"
         },
         {
@@ -1479,8 +1791,20 @@
         },
         {
             "qseqid": "small-sequence-with-dashes",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'vpr' has a mutated start codon: 'ATC'.",
+            "region": "vpr"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'vpr' has a mutated stop codon: 'GTC'.",
+            "region": "vpr"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
             "code": "Frameshift",
-            "message": "ORF 'tat_exon1' at 6-5 contains out of frame indels that impact 144 positions.",
+            "message": "ORF 'tat_exon1' at 1-12 contains out of frame indels that impact 144 positions.",
             "region": "tat_exon1"
         },
         {
@@ -1491,8 +1815,14 @@
         },
         {
             "qseqid": "small-sequence-with-dashes",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'tat_exon1' has a mutated start codon: 'ATC'.",
+            "region": "tat_exon1"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
             "code": "Frameshift",
-            "message": "ORF 'rev_exon1' at 6-5 contains out of frame indels that impact 51 positions.",
+            "message": "ORF 'rev_exon1' at 1-12 contains out of frame indels that impact 50 positions.",
             "region": "rev_exon1"
         },
         {
@@ -1503,8 +1833,14 @@
         },
         {
             "qseqid": "small-sequence-with-dashes",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'rev_exon1' has a mutated start codon: 'ATC'.",
+            "region": "rev_exon1"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
             "code": "Frameshift",
-            "message": "ORF 'vpu' at 6-5 contains out of frame indels that impact 164 positions.",
+            "message": "ORF 'vpu' at 1-12 contains out of frame indels that impact 164 positions.",
             "region": "vpu"
         },
         {
@@ -1515,38 +1851,74 @@
         },
         {
             "qseqid": "small-sequence-with-dashes",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'vpu' has a mutated start codon: 'ATC'.",
+            "region": "vpu"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'vpu' has a mutated stop codon: 'GTC'.",
+            "region": "vpu"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
             "code": "Frameshift",
-            "message": "ORF 'tat_exon2' at 6-5 contains out of frame indels that impact 62 positions.",
+            "message": "ORF 'tat_exon2' at 1-12 contains out of frame indels that impact 61 positions.",
             "region": "tat_exon2"
         },
         {
             "qseqid": "small-sequence-with-dashes",
             "code": "Deletion",
-            "message": "ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 90 deletions with max tolerance of 24 deletions.",
+            "message": "ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 78 deletions with max tolerance of 24 deletions.",
+            "region": "tat_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'tat_exon2' has a mutated stop codon: 'GTC'.",
             "region": "tat_exon2"
         },
         {
             "qseqid": "small-sequence-with-dashes",
             "code": "Frameshift",
-            "message": "ORF 'rev_exon2' at 6-5 contains out of frame indels that impact 198 positions.",
+            "message": "ORF 'rev_exon2' at 1-12 contains out of frame indels that impact 202 positions.",
             "region": "rev_exon2"
         },
         {
             "qseqid": "small-sequence-with-dashes",
             "code": "Deletion",
-            "message": "ORF 'rev_exon2' exceeds maximum deletion tolerance. Contains 294 deletions with max tolerance of 27 deletions.",
+            "message": "ORF 'rev_exon2' exceeds maximum deletion tolerance. Contains 282 deletions with max tolerance of 27 deletions.",
+            "region": "rev_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'rev_exon2' has a mutated stop codon: 'GTC'.",
             "region": "rev_exon2"
         },
         {
             "qseqid": "small-sequence-with-dashes",
             "code": "Frameshift",
-            "message": "ORF 'nef' at 6-5 contains out of frame indels that impact 410 positions.",
+            "message": "ORF 'nef' at 1-12 contains out of frame indels that impact 411 positions.",
             "region": "nef"
         },
         {
             "qseqid": "small-sequence-with-dashes",
             "code": "Deletion",
             "message": "ORF 'nef' exceeds maximum deletion tolerance. Contains 612 deletions with max tolerance of 27 deletions.",
+            "region": "nef"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'nef' has a mutated start codon: 'ATC'.",
+            "region": "nef"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'nef' has a mutated stop codon: 'GTC'.",
             "region": "nef"
         },
         {
@@ -1584,7 +1956,7 @@
         {
             "qseqid": "small-sequence-with-dashes/andwithslashestoo",
             "code": "Frameshift",
-            "message": "ORF 'gag' at 6-5 contains out of frame indels that impact 1008 positions.",
+            "message": "ORF 'gag' at 1-12 contains out of frame indels that impact 1009 positions.",
             "region": "gag"
         },
         {
@@ -1595,20 +1967,38 @@
         },
         {
             "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'gag' has a mutated start codon: 'ATC'.",
+            "region": "gag"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'gag' has a mutated stop codon: 'GTC'.",
+            "region": "gag"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
             "code": "Frameshift",
-            "message": "ORF 'pol' at 6-5 contains out of frame indels that impact 2018 positions.",
+            "message": "ORF 'pol' at 1-12 contains out of frame indels that impact 2017 positions.",
             "region": "pol"
         },
         {
             "qseqid": "small-sequence-with-dashes/andwithslashestoo",
             "code": "Deletion",
-            "message": "ORF 'pol' exceeds maximum deletion tolerance. Contains 3024 deletions with max tolerance of 87 deletions.",
+            "message": "ORF 'pol' exceeds maximum deletion tolerance. Contains 3012 deletions with max tolerance of 87 deletions.",
+            "region": "pol"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'pol' has a mutated stop codon: 'GTC'.",
             "region": "pol"
         },
         {
             "qseqid": "small-sequence-with-dashes/andwithslashestoo",
             "code": "Frameshift",
-            "message": "ORF 'env' at 6-5 contains out of frame indels that impact 1716 positions.",
+            "message": "ORF 'env' at 1-12 contains out of frame indels that impact 1717 positions.",
             "region": "env"
         },
         {
@@ -1619,8 +2009,20 @@
         },
         {
             "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'env' has a mutated start codon: 'ATC'.",
+            "region": "env"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'env' has a mutated stop codon: 'GTC'.",
+            "region": "env"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
             "code": "Frameshift",
-            "message": "ORF 'vif' at 6-5 contains out of frame indels that impact 382 positions.",
+            "message": "ORF 'vif' at 1-12 contains out of frame indels that impact 382 positions.",
             "region": "vif"
         },
         {
@@ -1631,8 +2033,20 @@
         },
         {
             "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'vif' has a mutated start codon: 'ATC'.",
+            "region": "vif"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'vif' has a mutated stop codon: 'GTC'.",
+            "region": "vif"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
             "code": "Frameshift",
-            "message": "ORF 'vpr' at 6-5 contains out of frame indels that impact 192 positions.",
+            "message": "ORF 'vpr' at 1-12 contains out of frame indels that impact 193 positions.",
             "region": "vpr"
         },
         {
@@ -1643,8 +2057,20 @@
         },
         {
             "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'vpr' has a mutated start codon: 'ATC'.",
+            "region": "vpr"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'vpr' has a mutated stop codon: 'GTC'.",
+            "region": "vpr"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
             "code": "Frameshift",
-            "message": "ORF 'tat_exon1' at 6-5 contains out of frame indels that impact 144 positions.",
+            "message": "ORF 'tat_exon1' at 1-12 contains out of frame indels that impact 144 positions.",
             "region": "tat_exon1"
         },
         {
@@ -1655,8 +2081,14 @@
         },
         {
             "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'tat_exon1' has a mutated start codon: 'ATC'.",
+            "region": "tat_exon1"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
             "code": "Frameshift",
-            "message": "ORF 'rev_exon1' at 6-5 contains out of frame indels that impact 51 positions.",
+            "message": "ORF 'rev_exon1' at 1-12 contains out of frame indels that impact 50 positions.",
             "region": "rev_exon1"
         },
         {
@@ -1667,8 +2099,14 @@
         },
         {
             "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'rev_exon1' has a mutated start codon: 'ATC'.",
+            "region": "rev_exon1"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
             "code": "Frameshift",
-            "message": "ORF 'vpu' at 6-5 contains out of frame indels that impact 164 positions.",
+            "message": "ORF 'vpu' at 1-12 contains out of frame indels that impact 164 positions.",
             "region": "vpu"
         },
         {
@@ -1679,38 +2117,74 @@
         },
         {
             "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'vpu' has a mutated start codon: 'ATC'.",
+            "region": "vpu"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'vpu' has a mutated stop codon: 'GTC'.",
+            "region": "vpu"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
             "code": "Frameshift",
-            "message": "ORF 'tat_exon2' at 6-5 contains out of frame indels that impact 62 positions.",
+            "message": "ORF 'tat_exon2' at 1-12 contains out of frame indels that impact 61 positions.",
             "region": "tat_exon2"
         },
         {
             "qseqid": "small-sequence-with-dashes/andwithslashestoo",
             "code": "Deletion",
-            "message": "ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 90 deletions with max tolerance of 24 deletions.",
+            "message": "ORF 'tat_exon2' exceeds maximum deletion tolerance. Contains 78 deletions with max tolerance of 24 deletions.",
+            "region": "tat_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'tat_exon2' has a mutated stop codon: 'GTC'.",
             "region": "tat_exon2"
         },
         {
             "qseqid": "small-sequence-with-dashes/andwithslashestoo",
             "code": "Frameshift",
-            "message": "ORF 'rev_exon2' at 6-5 contains out of frame indels that impact 198 positions.",
+            "message": "ORF 'rev_exon2' at 1-12 contains out of frame indels that impact 202 positions.",
             "region": "rev_exon2"
         },
         {
             "qseqid": "small-sequence-with-dashes/andwithslashestoo",
             "code": "Deletion",
-            "message": "ORF 'rev_exon2' exceeds maximum deletion tolerance. Contains 294 deletions with max tolerance of 27 deletions.",
+            "message": "ORF 'rev_exon2' exceeds maximum deletion tolerance. Contains 282 deletions with max tolerance of 27 deletions.",
+            "region": "rev_exon2"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'rev_exon2' has a mutated stop codon: 'GTC'.",
             "region": "rev_exon2"
         },
         {
             "qseqid": "small-sequence-with-dashes/andwithslashestoo",
             "code": "Frameshift",
-            "message": "ORF 'nef' at 6-5 contains out of frame indels that impact 410 positions.",
+            "message": "ORF 'nef' at 1-12 contains out of frame indels that impact 411 positions.",
             "region": "nef"
         },
         {
             "qseqid": "small-sequence-with-dashes/andwithslashestoo",
             "code": "Deletion",
             "message": "ORF 'nef' exceeds maximum deletion tolerance. Contains 612 deletions with max tolerance of 27 deletions.",
+            "region": "nef"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "MutatedStartCodon",
+            "message": "ORF 'nef' has a mutated start codon: 'ATC'.",
+            "region": "nef"
+        },
+        {
+            "qseqid": "small-sequence-with-dashes/andwithslashestoo",
+            "code": "MutatedStopCodon",
+            "message": "ORF 'nef' has a mutated stop codon: 'GTC'.",
             "region": "nef"
         },
         {

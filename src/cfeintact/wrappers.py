@@ -3,9 +3,8 @@ import subprocess
 import tempfile
 from typing import Iterable
 
-from Bio import Align
+from Bio import SeqIO, AlignIO
 from Bio.Align import MultipleSeqAlignment
-from Bio.Seq import Seq
 from Bio.SeqRecord import SeqRecord
 
 from cfeintact.blastrow import BlastRow
@@ -14,55 +13,30 @@ from cfeintact.user_error import UserError
 
 def global_align(sequences: Iterable[SeqRecord]) -> MultipleSeqAlignment:
     '''
-    Perform global pairwise alignment using BioPython's PairwiseAligner.
+    Call mafft on a set of sequences and return the resulting alignment.
 
     Args:
-        sequences: Two sequences to be aligned
+        sequences: Sequences to be aligned
 
     Returns:
-        A MultipleSeqAlignment object
+        An AlignIO object
     '''
-    seq_list = list(sequences)
-    if len(seq_list) != 2:
-        raise UserError("Global alignment requires exactly 2 sequences, got %d", len(seq_list))
 
-    reference, query = seq_list
+    with tempfile.NamedTemporaryFile() as alignment_input, tempfile.NamedTemporaryFile() as alignment_output:
+        SeqIO.write(sequences, alignment_input.name, "fasta")
 
-    assert reference.seq is not None
-    assert query.seq is not None
+        try:
+            subprocess.run(["mafft", "--quiet", alignment_input.name],
+                           shell=False, stdout=alignment_output, check=True)
+        except Exception as e:
+            raise UserError("MAFFT run failed with %s. "
+                            "Please check if the input FASTA file is correctly formatted.",
+                            e) from e
+        except KeyboardInterrupt as e:
+            raise UserError("MAFFT run got cancelled. Cannot continue the analysis.") from e
 
-    if len(reference.seq) == 0:
-        default_alignment = SeqRecord(Seq("-" * len(query.seq)), id=query.id, description=query.description)
-        return MultipleSeqAlignment([default_alignment, query])
-    if len(query.seq) == 0:
-        default_alignment = SeqRecord(Seq("-" * len(reference.seq)), id=reference.id, description=reference.description)
-        return MultipleSeqAlignment([reference, default_alignment])
-
-    # Use BioPython's PairwiseAligner for global alignment
-    aligner = Align.PairwiseAligner()
-    aligner.substitution_matrix = Align.substitution_matrices.load("BLASTN")
-    aligner.match_score = 1.0
-    aligner.mismatch_score = -1.0
-    aligner.open_gap_score = -20.0
-    aligner.extend_gap_score = -5.0
-    aligner.mode = 'global'
-
-    # Perform alignment and get the first (best) alignment
-    try:
-        alignments = aligner.align(reference.seq, query.seq)
-        alignment = next(iter(alignments))
-
-        # Convert to MultipleSeqAlignment
-        aligned_ref = SeqRecord(Seq(alignment[0]), id=reference.id, description=reference.description)
-        aligned_query = SeqRecord(Seq(alignment[1]), id=query.id, description=query.description)
-
-        return MultipleSeqAlignment([aligned_ref, aligned_query])
-    except KeyboardInterrupt:
-        raise UserError("Global alignment got cancelled. Cannot continue the analysis.")
-    except StopIteration:
-        raise UserError("Global alignment failed - no alignment found")
-    except Exception as e:
-        raise UserError("Global alignment failed with %s", e) from e
+        alignment: MultipleSeqAlignment = AlignIO.read(alignment_output.name, "fasta")
+        return alignment
 
 
 def blast(alignment_file: str, input_file: str, output_file: str) -> None:
