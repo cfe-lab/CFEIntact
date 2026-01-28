@@ -79,7 +79,7 @@ jobs:
         id: gitver
         shell: bash
         run: |
-          VERSION="$(git describe --tags --abbrev=0)"
+          VERSION="$(git describe)"
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
           echo "Using version: $VERSION"
 
