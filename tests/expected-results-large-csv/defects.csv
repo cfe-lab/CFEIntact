@@ -40,7 +40,6 @@ KX505501.1,Scramble,Sequence is plus-scrambled.,
 MN691959,Frameshift,ORF 'vpu' at 5911-6156 contains out of frame indels that impact 122 positions.,vpu
 MN691959,InternalStop,ORF 'vpu' at 5911-6156 contains an internal stop codon at 5974.,vpu
 MN691959,SequenceDivergence,ORF 'vpu' exceeds maximum distance tolerance. It is 1.70488 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.11778.,vpu
-MN691959,Frameshift,ORF 'tat_exon2' at 8238-8330 contains out of frame indels that impact 32 positions.,tat_exon2
 MN691959,InternalStop,ORF 'tat_exon2' at 8238-8330 contains an internal stop codon at 8283.,tat_exon2
 MN692074,Frameshift,ORF 'pol' at 2085-4081 contains out of frame indels that impact 677 positions.,pol
 MN692074,Deletion,ORF 'pol' exceeds maximum deletion tolerance. Contains 981 deletions with max tolerance of 87 deletions.,pol
@@ -79,7 +78,6 @@ MN090335,InternalStop,ORF 'gag' at 360-1665 contains an internal stop codon at 4
 MN090335,SequenceDivergence,ORF 'gag' exceeds maximum distance tolerance. It is 0.91719 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.36329.,gag
 MN090335,MutatedStartCodon,ORF 'gag' has a mutated start codon: 'GTT'.,gag
 MN090335,MutatedStopCodon,ORF 'gag' has a mutated stop codon: 'AAG'.,gag
-MN090335,Frameshift,ORF 'tat_exon2' at 7740-7832 contains out of frame indels that impact 32 positions.,tat_exon2
 MN090335,InternalStop,ORF 'tat_exon2' at 7740-7832 contains an internal stop codon at 7785.,tat_exon2
 MN090335,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 61 deletions with max tolerance of 10 deletions.,
 MN090335,MajorSpliceDonorSiteMutated,Query sequence has a mutated splice donor site: TG. The context is --------TTTGATGTACACAA.,
@@ -133,13 +131,11 @@ MK114856.1,Frameshift,ORF 'vpr' at 5289-5579 contains out of frame indels that i
 MK114856.1,InternalStop,ORF 'vpr' at 5289-5579 contains an internal stop codon at 5340.,vpr
 MK114856.1,SequenceDivergence,ORF 'vpr' exceeds maximum distance tolerance. It is 1.70619 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.5625.,vpr
 MK114856.1,MutatedStartCodon,ORF 'vpr' has a mutated start codon: 'ATA'.,vpr
-MK114856.1,Frameshift,ORF 'tat_exon1' at 5560-5774 contains out of frame indels that impact 123 positions.,tat_exon1
 MK114856.1,InternalStop,ORF 'tat_exon1' at 5560-5774 contains an internal stop codon at 5590.,tat_exon1
 MK114856.1,MutatedStartCodon,ORF 'tat_exon1' has a mutated start codon: 'ATA'.,tat_exon1
 MK114856.1,Frameshift,ORF 'vpu' at 5791-6039 contains out of frame indels that impact 122 positions.,vpu
 MK114856.1,InternalStop,ORF 'vpu' at 5791-6039 contains an internal stop codon at 5857.,vpu
 MK114856.1,SequenceDivergence,ORF 'vpu' exceeds maximum distance tolerance. It is 1.77195 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.11778.,vpu
-MK114856.1,Frameshift,ORF 'tat_exon2' at 8103-8195 contains out of frame indels that impact 37 positions.,tat_exon2
 MK114856.1,InternalStop,ORF 'tat_exon2' at 8103-8195 contains an internal stop codon at 8148.,tat_exon2
 MK114856.1,Frameshift,ORF 'rev_exon2' at 8104-8379 contains out of frame indels that impact 69 positions.,rev_exon2
 MK114856.1,InternalStop,ORF 'rev_exon2' at 8104-8379 contains an internal stop codon at 8161.,rev_exon2
@@ -166,7 +162,6 @@ MK115009.1,MutatedStartCodon,ORF 'vif' has a mutated start codon: 'ATA'.,vif
 MK115009.1,Frameshift,ORF 'vpr' at 5088-5378 contains out of frame indels that impact 88 positions.,vpr
 MK115009.1,InternalStop,ORF 'vpr' at 5088-5378 contains an internal stop codon at 5247.,vpr
 MK115009.1,SequenceDivergence,ORF 'vpr' exceeds maximum distance tolerance. It is 1.28021 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.5625.,vpr
-MK115009.1,Frameshift,ORF 'tat_exon1' at 5359-5573 contains out of frame indels that impact 35 positions.,tat_exon1
 MK115009.1,InternalStop,ORF 'tat_exon1' at 5359-5573 contains an internal stop codon at 5389.,tat_exon1
 MK115009.1,MutatedStartCodon,ORF 'tat_exon1' has a mutated start codon: 'ATA'.,tat_exon1
 MK115009.1,InternalStop,ORF 'vpu' at 5590-5835 contains an internal stop codon at 5815.,vpu
@@ -180,7 +175,6 @@ MK115009.1,MutatedStartCodon,ORF 'nef' has a mutated start codon: 'ATA'.,nef
 MK115009.1,APOBECHypermutation,Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 5.043644865581679e-43).,
 MK115009.1,Scramble,Sequence is minus-scrambled.,
 MK115009.1,InternalInversion,Sequence contains an internal inversion.,
-MK115387.1,Frameshift,ORF 'tat_exon2' at 7870-7962 contains out of frame indels that impact 32 positions.,tat_exon2
 MK115387.1,InternalStop,ORF 'tat_exon2' at 7870-7962 contains an internal stop codon at 7915.,tat_exon2
 MK116110.1,Frameshift,ORF 'gag' at 460-1601 contains out of frame indels that impact 967 positions.,gag
 MK116110.1,InternalStop,ORF 'gag' at 460-1601 contains an internal stop codon at 553.,gag
@@ -211,15 +205,12 @@ MK115464.1,SequenceDivergence,ORF 'env' exceeds maximum distance tolerance. It i
 MK115464.1,Frameshift,ORF 'vif' at 5046-5624 contains out of frame indels that impact 248 positions.,vif
 MK115464.1,InternalStop,ORF 'vif' at 5046-5624 contains an internal stop codon at 5253.,vif
 MK115464.1,SequenceDivergence,ORF 'vif' exceeds maximum distance tolerance. It is 1.49427 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.59375.,vif
-MK115464.1,Frameshift,ORF 'tat_exon1' at 5835-6049 contains out of frame indels that impact 129 positions.,tat_exon1
 MK115464.1,Deletion,ORF 'tat_exon1' exceeds maximum deletion tolerance. Contains 195 deletions with max tolerance of 3 deletions.,tat_exon1
 MK115464.1,MutatedStartCodon,ORF 'tat_exon1' has a mutated start codon: 'ATA'.,tat_exon1
 MK115464.1,Frameshift,ORF 'vpu' at 6066-6311 contains out of frame indels that impact 124 positions.,vpu
 MK115464.1,InternalStop,ORF 'vpu' at 6066-6311 contains an internal stop codon at 6132.,vpu
 MK115464.1,SequenceDivergence,ORF 'vpu' exceeds maximum distance tolerance. It is 1.88171 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.11778.,vpu
-MK115464.1,Frameshift,ORF 'tat_exon2' at 8381-8473 contains out of frame indels that impact 37 positions.,tat_exon2
 MK115464.1,InternalStop,ORF 'tat_exon2' at 8381-8473 contains an internal stop codon at 8426.,tat_exon2
-MK115464.1,Frameshift,ORF 'rev_exon2' at 8382-8657 contains out of frame indels that impact 45 positions.,rev_exon2
 MK115464.1,InternalStop,ORF 'rev_exon2' at 8382-8657 contains an internal stop codon at 8439.,rev_exon2
 MK115464.1,Frameshift,ORF 'nef' at 8801-9451 contains out of frame indels that impact 178 positions.,nef
 MK115464.1,InternalStop,ORF 'nef' at 8801-9451 contains an internal stop codon at 8837.,nef
@@ -252,14 +243,13 @@ MK115095.1,SequenceDivergence,ORF 'env' exceeds maximum distance tolerance. It i
 MK115095.1,Frameshift,ORF 'vif' at 4446-5024 contains out of frame indels that impact 332 positions.,vif
 MK115095.1,InternalStop,ORF 'vif' at 4446-5024 contains an internal stop codon at 4557.,vif
 MK115095.1,SequenceDivergence,ORF 'vif' exceeds maximum distance tolerance. It is 1.85469 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.59375.,vif
-MK115095.1,Frameshift,ORF 'tat_exon1' at 5235-5449 contains out of frame indels that impact 35 positions.,tat_exon1
 MK115095.1,Deletion,ORF 'tat_exon1' exceeds maximum deletion tolerance. Contains 54 deletions with max tolerance of 3 deletions.,tat_exon1
 MK115095.1,MutatedStartCodon,ORF 'tat_exon1' has a mutated start codon: 'ATA'.,tat_exon1
 MK115095.1,Frameshift,ORF 'vpu' at 5466-5711 contains out of frame indels that impact 122 positions.,vpu
 MK115095.1,InternalStop,ORF 'vpu' at 5466-5711 contains an internal stop codon at 5532.,vpu
 MK115095.1,SequenceDivergence,ORF 'vpu' exceeds maximum distance tolerance. It is 1.88171 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.11778.,vpu
-MK115095.1,Frameshift,ORF 'rev_exon2' at 7812-8087 contains out of frame indels that impact 69 positions.,rev_exon2
 MK115095.1,InternalStop,ORF 'rev_exon2' at 7812-8087 contains an internal stop codon at 7869.,rev_exon2
+MK115095.1,Frameshift,ORF 'nef' at 8231-8872 contains out of frame indels that impact 40 positions.,nef
 MK115095.1,Deletion,ORF 'nef' exceeds maximum deletion tolerance. Contains 36 deletions with max tolerance of 27 deletions.,nef
 MK115095.1,SequenceDivergence,ORF 'nef' exceeds maximum distance tolerance. It is 0.86806 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.80236.,nef
 MK115095.1,MutatedStartCodon,ORF 'nef' has a mutated start codon: 'ATA'.,nef

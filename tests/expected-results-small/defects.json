@@ -250,12 +250,6 @@
         },
         {
             "qseqid": "MN691959",
-            "code": "Frameshift",
-            "message": "ORF 'tat_exon2' at 8238-8330 contains out of frame indels that impact 32 positions.",
-            "region": "tat_exon2"
-        },
-        {
-            "qseqid": "MN691959",
             "code": "InternalStop",
             "message": "ORF 'tat_exon2' at 8238-8330 contains an internal stop codon at 8283.",
             "region": "tat_exon2"
@@ -486,12 +480,6 @@
             "code": "MutatedStopCodon",
             "message": "ORF 'gag' has a mutated stop codon: 'AAG'.",
             "region": "gag"
-        },
-        {
-            "qseqid": "MN090335",
-            "code": "Frameshift",
-            "message": "ORF 'tat_exon2' at 7740-7832 contains out of frame indels that impact 32 positions.",
-            "region": "tat_exon2"
         },
         {
             "qseqid": "MN090335",

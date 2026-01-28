@@ -2,12 +2,6 @@
     "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455": [
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
-            "code": "Frameshift",
-            "message": "ORF 'vpr' at 5559-5850 contains out of frame indels that impact 61 positions.",
-            "region": "vpr"
-        },
-        {
-            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
             "code": "InternalStop",
             "message": "ORF 'vpr' at 5559-5850 contains an internal stop codon at 5793.",
             "region": "vpr"
@@ -35,12 +29,6 @@
             "code": "MutatedStartCodon",
             "message": "ORF 'vpu' has a mutated start codon: 'ACG'.",
             "region": "vpu"
-        },
-        {
-            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
-            "code": "Frameshift",
-            "message": "ORF 'tat_exon2' at 8377-8469 contains out of frame indels that impact 32 positions.",
-            "region": "tat_exon2"
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",

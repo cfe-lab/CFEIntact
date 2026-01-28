@@ -250,12 +250,6 @@
         },
         {
             "qseqid": "MN691959",
-            "code": "Frameshift",
-            "message": "ORF 'tat_exon2' at 8238-8330 contains out of frame indels that impact 32 positions.",
-            "region": "tat_exon2"
-        },
-        {
-            "qseqid": "MN691959",
             "code": "InternalStop",
             "message": "ORF 'tat_exon2' at 8238-8330 contains an internal stop codon at 8283.",
             "region": "tat_exon2"
@@ -486,12 +480,6 @@
             "code": "MutatedStopCodon",
             "message": "ORF 'gag' has a mutated stop codon: 'AAG'.",
             "region": "gag"
-        },
-        {
-            "qseqid": "MN090335",
-            "code": "Frameshift",
-            "message": "ORF 'tat_exon2' at 7740-7832 contains out of frame indels that impact 32 positions.",
-            "region": "tat_exon2"
         },
         {
             "qseqid": "MN090335",
@@ -835,12 +823,6 @@
         },
         {
             "qseqid": "MK114856.1",
-            "code": "Frameshift",
-            "message": "ORF 'tat_exon1' at 5560-5774 contains out of frame indels that impact 123 positions.",
-            "region": "tat_exon1"
-        },
-        {
-            "qseqid": "MK114856.1",
             "code": "InternalStop",
             "message": "ORF 'tat_exon1' at 5560-5774 contains an internal stop codon at 5590.",
             "region": "tat_exon1"
@@ -868,12 +850,6 @@
             "code": "SequenceDivergence",
             "message": "ORF 'vpu' exceeds maximum distance tolerance. It is 1.77195 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.11778.",
             "region": "vpu"
-        },
-        {
-            "qseqid": "MK114856.1",
-            "code": "Frameshift",
-            "message": "ORF 'tat_exon2' at 8103-8195 contains out of frame indels that impact 37 positions.",
-            "region": "tat_exon2"
         },
         {
             "qseqid": "MK114856.1",
@@ -1035,12 +1011,6 @@
         },
         {
             "qseqid": "MK115009.1",
-            "code": "Frameshift",
-            "message": "ORF 'tat_exon1' at 5359-5573 contains out of frame indels that impact 35 positions.",
-            "region": "tat_exon1"
-        },
-        {
-            "qseqid": "MK115009.1",
             "code": "InternalStop",
             "message": "ORF 'tat_exon1' at 5359-5573 contains an internal stop codon at 5389.",
             "region": "tat_exon1"
@@ -1119,12 +1089,6 @@
         }
     ],
     "MK115387.1": [
-        {
-            "qseqid": "MK115387.1",
-            "code": "Frameshift",
-            "message": "ORF 'tat_exon2' at 7870-7962 contains out of frame indels that impact 32 positions.",
-            "region": "tat_exon2"
-        },
         {
             "qseqid": "MK115387.1",
             "code": "InternalStop",
@@ -1318,12 +1282,6 @@
         },
         {
             "qseqid": "MK115464.1",
-            "code": "Frameshift",
-            "message": "ORF 'tat_exon1' at 5835-6049 contains out of frame indels that impact 129 positions.",
-            "region": "tat_exon1"
-        },
-        {
-            "qseqid": "MK115464.1",
             "code": "Deletion",
             "message": "ORF 'tat_exon1' exceeds maximum deletion tolerance. Contains 195 deletions with max tolerance of 3 deletions.",
             "region": "tat_exon1"
@@ -1354,21 +1312,9 @@
         },
         {
             "qseqid": "MK115464.1",
-            "code": "Frameshift",
-            "message": "ORF 'tat_exon2' at 8381-8473 contains out of frame indels that impact 37 positions.",
-            "region": "tat_exon2"
-        },
-        {
-            "qseqid": "MK115464.1",
             "code": "InternalStop",
             "message": "ORF 'tat_exon2' at 8381-8473 contains an internal stop codon at 8426.",
             "region": "tat_exon2"
-        },
-        {
-            "qseqid": "MK115464.1",
-            "code": "Frameshift",
-            "message": "ORF 'rev_exon2' at 8382-8657 contains out of frame indels that impact 45 positions.",
-            "region": "rev_exon2"
         },
         {
             "qseqid": "MK115464.1",
@@ -1575,12 +1521,6 @@
         },
         {
             "qseqid": "MK115095.1",
-            "code": "Frameshift",
-            "message": "ORF 'tat_exon1' at 5235-5449 contains out of frame indels that impact 35 positions.",
-            "region": "tat_exon1"
-        },
-        {
-            "qseqid": "MK115095.1",
             "code": "Deletion",
             "message": "ORF 'tat_exon1' exceeds maximum deletion tolerance. Contains 54 deletions with max tolerance of 3 deletions.",
             "region": "tat_exon1"
@@ -1611,15 +1551,15 @@
         },
         {
             "qseqid": "MK115095.1",
-            "code": "Frameshift",
-            "message": "ORF 'rev_exon2' at 7812-8087 contains out of frame indels that impact 69 positions.",
+            "code": "InternalStop",
+            "message": "ORF 'rev_exon2' at 7812-8087 contains an internal stop codon at 7869.",
             "region": "rev_exon2"
         },
         {
             "qseqid": "MK115095.1",
-            "code": "InternalStop",
-            "message": "ORF 'rev_exon2' at 7812-8087 contains an internal stop codon at 7869.",
-            "region": "rev_exon2"
+            "code": "Frameshift",
+            "message": "ORF 'nef' at 8231-8872 contains out of frame indels that impact 40 positions.",
+            "region": "nef"
         },
         {
             "qseqid": "MK115095.1",
