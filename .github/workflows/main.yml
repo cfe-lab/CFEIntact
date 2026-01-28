@@ -80,7 +80,7 @@ jobs:
         shell: bash
         run: |
           VERSION="$(git describe --tags --abbrev=0)"
-          echo "version=$VERSION >> "$GITHUB_OUTPUT"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
           echo "Using version: $VERSION"
 
       - name: Login to GHCR
