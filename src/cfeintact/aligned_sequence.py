@@ -32,9 +32,9 @@ class AlignedSequence:
     def cigar(self) -> Cigar:
         reference = self.aligned_reference
         query = self.aligned_this
-        seq_reference: Sequence[str] = reference.seq or ""  # type: ignore
-        seq_query: Sequence[str] = query.seq or ""  # type: ignore
-        return Cigar.from_msa(reference=seq_reference, query=seq_query)  # type: ignore
+        seq_reference: Sequence[str] = str(reference.seq or "")
+        seq_query: Sequence[str] = str(query.seq or "")
+        return Cigar.from_msa(reference=seq_reference, query=seq_query)
 
     @cached_property
     def coordinate_mapping(self):
@@ -54,3 +54,30 @@ class AlignedSequence:
         left = self.aligned_reference.seq or ""
         right = self.aligned_this.seq or ""
         return sum([a == b for a, b in zip(left, right)])
+
+
+def create_aligned_sequence(this: SeqRecord, reference: SeqRecord, use_mappy: bool = False, preset: str = "asm20"):
+    """
+    Factory function to create an aligned sequence using either MAFFT or mappy.
+    
+    Args:
+        this: Query sequence to align
+        reference: Reference sequence
+        use_mappy: If True, use mappy/minimap2; if False, use MAFFT (default: False)
+        preset: Minimap2 preset to use when use_mappy=True (default: "asm20")
+    
+    Returns:
+        AlignedSequence or MappyAlignedSequence instance
+    
+    Example:
+        >>> # Use MAFFT (default)
+        >>> aligned = create_aligned_sequence(query, reference)
+        >>> 
+        >>> # Use mappy
+        >>> aligned = create_aligned_sequence(query, reference, use_mappy=True)
+    """
+    if use_mappy:
+        from cfeintact.mappy_aligned_sequence import MappyAlignedSequence
+        return MappyAlignedSequence(this=this, reference=reference, preset=preset)
+    else:
+        return AlignedSequence(this=this, reference=reference)

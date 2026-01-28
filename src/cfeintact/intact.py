@@ -16,7 +16,7 @@ import cfeintact.wrappers as wrappers
 import cfeintact.defect as defect
 from cfeintact.log import logger
 from cfeintact.defect import Defect, ORFDefect
-from cfeintact.aligned_sequence import AlignedSequence
+from cfeintact.aligned_sequence import AlignedSequence, create_aligned_sequence
 from cfeintact.blastrow import BlastRow
 from cfeintact.initialize_orf import initialize_orf
 from cfeintact.original_orf import OriginalORF
@@ -718,12 +718,14 @@ def check(output_dir: str,
           check_small_orfs: bool,
           check_distance: bool,
           output_csv: bool,
+          use_mappy: bool = False,
           ) -> None:
     """
     Check if a set of consensus sequences in a FASTA file is cfeintact.
 
     Args:
         input_folder: folder of files from NGS machine.
+        use_mappy: If True, use mappy/minimap2 for alignment; if False, use MAFFT (default: False)
 
     Returns:
         Name of a file containing all consensus sequences.
@@ -784,10 +786,10 @@ def check(output_dir: str,
 
         holistic.inferred_subtype = reference_name
         reference = subtype_choices[reference_name]
-        aligned_subtype = AlignedSequence(this=reference, reference=st.HXB2())
+        aligned_subtype = create_aligned_sequence(this=reference, reference=st.HXB2(), use_mappy=use_mappy)
 
-        forward_aligned_sequence = AlignedSequence(
-            this=sequence, reference=aligned_subtype.this)
+        forward_aligned_sequence = create_aligned_sequence(
+            this=sequence, reference=aligned_subtype.this, use_mappy=use_mappy)
         reverse_aligned_sequence = forward_aligned_sequence.reverse()
 
         if blast_orientation_statistics["minus"] < blast_orientation_statistics["plus"] \
