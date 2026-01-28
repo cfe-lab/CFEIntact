@@ -31,10 +31,7 @@ def global_align(sequences: Iterable[SeqRecord]) -> MultipleSeqAlignment:
     # Use BioPython's PairwiseAligner for global alignment
     aligner = Align.PairwiseAligner()
     aligner.mode = 'global'
-    aligner.match_score = 1
-    aligner.mismatch_score = -1
-    aligner.open_gap_score = -2
-    aligner.extend_gap_score = -1
+    aligner.substitution_matrix = Align.substitution_matrices.load("NUC.4.4")
     
     # Perform alignment and get the first (best) alignment
     try:
