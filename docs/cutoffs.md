@@ -109,4 +109,10 @@ The RRE error tolerance is 20.
 
 Minimum tolerable sequence length is 8000.
 
-Maximum tolerable number of nucleotides impacted by frame shifts is 10% of the ORF's length.
+### Frameshift Detection
+
+Frameshift errors are reported when **both** of the following conditions are met:
+1. The indel impact is nonzero (out-of-frame insertions or deletions are present)
+2. The amino acid sequence distance exceeds the distance threshold for that ORF
+
+This dual-criteria approach ensures that frameshifts are only flagged when they co-occur with significant sequence divergence, improving the accuracy of defect detection.

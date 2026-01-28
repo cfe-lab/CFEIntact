@@ -410,7 +410,8 @@ def check_reading_frame_shift(best_match: MappedORF) \
     e = best_match.reference
 
     impacted_by_indels = best_match.indel_impact
-    if impacted_by_indels >= max(e.max_deletions, e.max_insertions) + 3:
+    # Report frameshift iff: indel_impact is nonzero AND distance crosses threshold
+    if impacted_by_indels > 0 and best_match.distance > e.max_distance:
         return defect.Frameshift(e=e, q=q, impacted_positions=impacted_by_indels)
 
     return None

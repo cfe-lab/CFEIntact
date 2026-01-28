@@ -155,10 +155,14 @@ This is done with the following algorithm:
 
     counting all nucleotides that are not in the initial frame as we go.
 
-3. Compare the amount of out of frame nucleotides to a predefined limit.
+3. Check if the indel impact is nonzero (meaning out-of-frame indels were detected).
+4. Check if the amino acid sequence distance exceeds the distance threshold for that ORF.
 
-If the impact is large enough, meaning that too many nucleotides got frame shifted,
-then output an error with code `FrameshiftInOrf`.
+A `FrameshiftInOrf` error is reported if and only if:
+- The indel impact is nonzero (out-of-frame indels are present), **AND**
+- The sequence distance crosses the distance threshold.
+
+This combined approach ensures that frameshifts are only reported when they occur alongside significant sequence divergence, reducing false positives from minor frame variations in otherwise intact sequences.
 
 #### Sequence divergence check
 
