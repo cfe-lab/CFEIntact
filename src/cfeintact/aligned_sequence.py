@@ -34,7 +34,7 @@ class AlignedSequence:
         query = self.aligned_this
         seq_reference: Sequence[str] = reference.seq or ""  # type: ignore
         seq_query: Sequence[str] = query.seq or ""  # type: ignore
-        return Cigar.from_msa(reference=seq_reference, query=seq_query)  # type: ignore
+        return Cigar.from_msa(reference=seq_reference, query=seq_query)
 
     @cached_property
     def coordinate_mapping(self):
