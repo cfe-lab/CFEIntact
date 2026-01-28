@@ -920,11 +920,16 @@ def check(output_dir: str,
         writer.write(sequence, subtype, holistic.intact,
                      orfs, sequence_defects, holistic.__dict__)
 
+    input_count = sum(1 for _ in iterate_sequences(input_file))
+    logger.info(f'Loaded {input_count} sequences from {json.dumps(input_file)}.')
+
     with OutputWriter(output_dir, "csv" if output_csv else "json") as writer:
 
         should_run_blast = check_internal_inversion or check_nonhiv or check_scramble or 1 < len(subtype_choices)
         blast_it = blast_iterate_inf(subtype, input_file, output_dir) if should_run_blast else iterate_empty_lists()
-        for (sequence, blast_rows) in with_blast_rows(blast_it, iterate_sequences(input_file)):
+        it1 = with_blast_rows(blast_it, iterate_sequences(input_file))
+        for index, (sequence, blast_rows) in enumerate(it1):
+            logger.info(f'Processing sequence {index + 1} of {input_count}.')
             analyse_single_sequence(writer, sequence, blast_rows)
 
 # /end def intact
