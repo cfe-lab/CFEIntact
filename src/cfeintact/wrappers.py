@@ -25,9 +25,9 @@ def global_align(sequences: Iterable[SeqRecord]) -> MultipleSeqAlignment:
     seq_list = list(sequences)
     if len(seq_list) != 2:
         raise UserError("Global alignment requires exactly 2 sequences, got %d", len(seq_list))
-    
+
     reference, query = seq_list
-    
+
     # Use BioPython's PairwiseAligner for global alignment
     aligner = Align.PairwiseAligner()
     aligner.substitution_matrix = Align.substitution_matrices.load("BLASTN")
@@ -36,16 +36,16 @@ def global_align(sequences: Iterable[SeqRecord]) -> MultipleSeqAlignment:
     aligner.open_gap_score = -20.0
     aligner.extend_gap_score = -5.0
     aligner.mode = 'global'
-    
+
     # Perform alignment and get the first (best) alignment
     try:
         alignments = aligner.align(str(reference.seq), str(query.seq))
         alignment = next(iter(alignments))
-        
+
         # Convert to MultipleSeqAlignment
         aligned_ref = SeqRecord(Seq(alignment[0]), id=reference.id, description=reference.description)
         aligned_query = SeqRecord(Seq(alignment[1]), id=query.id, description=query.description)
-        
+
         return MultipleSeqAlignment([aligned_ref, aligned_query])
     except StopIteration:
         raise UserError("Global alignment failed - no alignment found")
