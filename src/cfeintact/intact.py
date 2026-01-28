@@ -920,6 +920,9 @@ def check(output_dir: str,
         writer.write(sequence, subtype, holistic.intact,
                      orfs, sequence_defects, holistic.__dict__)
 
+    input_count = sum(1 for _ in iterate_sequences(input_file))
+    logger.info(f'Loaded {input_count} sequences from {json.dumps(input_file)}.')
+
     with OutputWriter(output_dir, "csv" if output_csv else "json") as writer:
 
         should_run_blast = check_internal_inversion or check_nonhiv or check_scramble or 1 < len(subtype_choices)
