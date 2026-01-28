@@ -11,6 +11,8 @@ COPY . /tmp/CFEIntact
 
 RUN python3 -m pip install --break-system-packages /tmp/CFEIntact
 
+RUN rm -rf /tmp/CFEIntact
+
 WORKDIR /w
 
 ENTRYPOINT ["cfeintact"]
