@@ -31,16 +31,15 @@ The `check` command provides several options that allow you to customize the ana
 - `--check-internal-inversion` / `--ignore-internal-inversion`: Enables or disables the check for internal inversions. Enabled by default.
 - `--check-unknown-nucleotides` / `--ignore-unknown-nucleotides`: Enables or disables the check for unknown nucleotides in the sequences. Enabled by default.
 - `--check-small-orfs` / `--ignore-small-orfs`: Enables or disables the analysis of small Open Reading Frames (ORFs). Enabled by default.
-- `--check-distance` / `--ignore-distance`: Enables or disables the distance-based analysis. This includes the `InsertionInOrf` error, as well as `SequenceDivergence` one. Enabled by default.
 - `--output-csv` / `--output-json`: Chooses between CSV and JSON output format. CSV is selected by default.
 - `--output`: Specifies the directory where output files will be stored. Defaults to the current working directory (which is `/w` in the case of the docker version).
 
 # Examples
 
-Run an analysis on `sequences.fasta` for subtype 'B', checking all aspects except for genetic distance:
+Run an analysis on `sequences.fasta` for subtype 'B' with default settings:
 
 ```bash
-docker run -v .:/w cfelab/cfeintact check --subtype B --ignore-distance sequences.fasta
+docker run -v .:/w cfelab/cfeintact check --subtype B sequences.fasta
 ```
 
 Check sequences in `input.fasta` for subtype 'A' with default settings and save outputs in JSON format:

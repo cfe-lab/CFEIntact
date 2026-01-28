@@ -20,12 +20,6 @@
         },
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
-            "code": "SequenceDivergence",
-            "message": "ORF 'vpu' exceeds maximum distance tolerance. It is 2.00873 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 1.11778.",
-            "region": "vpu"
-        },
-        {
-            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
             "code": "MutatedStartCodon",
             "message": "ORF 'vpu' has a mutated start codon: 'ACG'.",
             "region": "vpu"
@@ -46,12 +40,6 @@
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
             "code": "InternalStop",
             "message": "ORF 'nef' at 8797-9417 contains an internal stop codon at 9166.",
-            "region": "nef"
-        },
-        {
-            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
-            "code": "SequenceDivergence",
-            "message": "ORF 'nef' exceeds maximum distance tolerance. It is 0.89272 units of distance away from its reference ORF's aminoacid sequence with max tolerance of 0.80236.",
             "region": "nef"
         }
     ]

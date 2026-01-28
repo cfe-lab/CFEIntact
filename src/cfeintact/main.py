@@ -76,9 +76,6 @@ def get_version() -> None:
     '--check-small-orfs/--ignore-small-orfs', default=True
 )
 @click.option(
-    '--check-distance/--ignore-distance', default=True
-)
-@click.option(
     '--output-csv/--output-json', default=True
 )
 @click.option(
@@ -88,7 +85,7 @@ def get_version() -> None:
 def intact(input_file: str, subtype: str, check_packaging_signal: bool,
            check_rre: bool, check_major_splice_donor_site: bool, check_hypermut: bool,
            check_long_deletion: bool, check_nonhiv: bool, check_scramble: bool, check_internal_inversion: bool,
-           check_unknown_nucleotides: bool, check_small_orfs: bool, check_distance: bool, output_csv: bool,
+           check_unknown_nucleotides: bool, check_small_orfs: bool, output_csv: bool,
            output: str) -> None:
     """
     Check consensus sequences for intactness.
@@ -102,7 +99,7 @@ def intact(input_file: str, subtype: str, check_packaging_signal: bool,
             folder, input_file, subtype, check_packaging_signal, check_rre,
             check_major_splice_donor_site, check_hypermut,
             check_long_deletion, check_nonhiv, check_scramble, check_internal_inversion,
-            check_unknown_nucleotides, check_small_orfs, check_distance, output_csv,
+            check_unknown_nucleotides, check_small_orfs, output_csv,
         )
     except UserError as e:
         logger.fatal(e.fmt, *e.fmt_args)

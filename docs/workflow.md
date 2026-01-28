@@ -53,7 +53,6 @@ Table below lists all of the independent steps:
 | Inversion check           | `--ignore-internal-inversion`      |
 | Large ORFs analysis       |                                    |
 | Small ORFs analysis       | `--ignore-small-orfs`              |
-| Sequence divergence check | `--ignore-distance`                |
 
 Each step works on a single input sequence and has a set of potential errors it can detect for that sequence.
 
@@ -163,24 +162,6 @@ A `FrameshiftInOrf` error is reported if and only if:
 - The sequence distance crosses the distance threshold.
 
 This combined approach ensures that frameshifts are only reported when they occur alongside significant sequence divergence, reducing false positives from minor frame variations in otherwise intact sequences.
-
-#### Sequence divergence check
-
-The aim of the sequence divergence check in CFEIntact is straightforward: to compare the amino acid sequences derived from open reading frames (ORFs) in a query HIV sequence against the corresponding amino acid sequences of ORFs in known subtype references. This comparison serves to gauge how much the sequence under analysis deviates from established references, highlighting potential sequencing errors, evolutionary changes, or the presence of novel variants.
-
-**Steps:**
-
-1. **ORF Alignment:** Each detected ORF in the query sequence is translated into its amino acid sequence and aligned against the amino acid sequence of the corresponding ORF in the reference subtype.
-
-2. **Scoring and Normalization:** The alignment is scored based on a predefined scoring system that rewards matches and penalizes mismatches and gaps. The raw score is then normalized to account for ORF length, providing a measure of divergence per amino acid that facilitates comparison across different ORFs and sequences.
-
-3. **Threshold Determination:** Based on an extensive study conducted by the BCCfE Laboratory, thresholds for divergence have been established. These thresholds are crucial for distinguishing between sequences that are functionally similar to their subtype references and those that are significantly divergent. The specifics of this study, including the threshold values, are documented on the [cutoffs page](cutoffs.md).
-
-4. **Decision and Reporting:** If the normalized divergence score of an ORF exceeds the established threshold, a `SequenceDivergence` error is reported, indicating a significant deviation from the subtype reference. This error includes detailed information about the affected ORF and the extent of its divergence.
-
-It's important to note that this check treats all mutations equally, without differentiating their potential impact on gene function. As such, both critical mutations in gene binding sites and inconsequential mutations in redundant regions are weighted the same. This lack of specificity is an inevitable limitation of a "generic distance measure", making it less accurate for detailed functional analysis.
-
-Due to its broad approach to identifying divergence, which may overemphasize the importance of minor mutations, this check is recommended to be disabled by default. Researchers and analysts are encouraged to enable this check based on specific needs or when comprehensive divergence assessment is required, keeping in mind its limitations.
 
 ### Small ORFs analysis
 

@@ -11,7 +11,7 @@ Once your data are prepared and organized into a single FASTA file, it's time to
 The simplest way to run CFEIntact is via Docker. Open your terminal in the directory where your FASTA file is located (for example, "sequences.fasta") and run the following command:
 
 ```shell
-docker run --rm -v .:/w cfelab/cfeintact check --subtype B --ignore-distance sequences.fasta
+docker run --rm -v .:/w cfelab/cfeintact check --subtype B sequences.fasta
 ```
 
 ### Breaking It Down
@@ -21,7 +21,6 @@ docker run --rm -v .:/w cfelab/cfeintact check --subtype B --ignore-distance seq
 - **cfelab/cfeintact**: The Docker image for CFEIntact.
 - **check**: Tells CFEIntact to analyze your sequences.
 - **--subtype B**: Specifies the HIV subtype ("B" in this case). Adjust this option based on your knowledge of the sequence subtype.
-- **--ignore-distance**: Skips the sequence divergence check. You may toggle this option based on your requirements.
 - **sequences.fasta**: The name of your input FASTA file containing the viral sequences.
 
 ---
@@ -40,7 +39,6 @@ CFEIntact offers a range of command-line options to enable or disable specific c
 - **--check-internal-inversion / --ignore-internal-inversion**
 - **--check-unknown-nucleotides / --ignore-unknown-nucleotides**
 - **--check-small-orfs / --ignore-small-orfs**
-- **--check-distance / --ignore-distance**
 
 You may combine these options according to the level of detail needed for your research. For the quick start, the example command covers the essentials.
 

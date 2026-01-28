@@ -439,7 +439,7 @@ def check_reading_frame_deletions(e: OriginalORF, q: OriginalORF) \
     return None
 
 
-def check_reading_frame_insertions(check_distance: bool, best_match: MappedORF, e: OriginalORF, q: OriginalORF) \
+def check_reading_frame_insertions(best_match: MappedORF, e: OriginalORF, q: OriginalORF) \
         -> Optional[defect.Insertion]:
 
     got_protein = q.protein
@@ -453,7 +453,7 @@ def check_reading_frame_insertions(check_distance: bool, best_match: MappedORF, 
     return None
 
 
-def check_reading_frame_start(sequence: SeqRecord, check_distance: bool, best_match: MappedORF,
+def check_reading_frame_start(sequence: SeqRecord, best_match: MappedORF,
                               e: OriginalORF, q: OriginalORF) \
         -> Optional[defect.MutatedStartCodon]:
 
@@ -461,7 +461,7 @@ def check_reading_frame_start(sequence: SeqRecord, check_distance: bool, best_ma
         return None
 
     if best_match.distance > e.max_distance or \
-       check_reading_frame_insertions(check_distance=check_distance, best_match=best_match, e=e, q=q) or \
+       check_reading_frame_insertions(best_match=best_match, e=e, q=q) or \
        check_reading_frame_deletions(e=e, q=q) or \
        check_reading_frame_shift(best_match=best_match):
 
@@ -473,7 +473,7 @@ def check_reading_frame_start(sequence: SeqRecord, check_distance: bool, best_ma
     return None
 
 
-def check_reading_frame_stop(sequence: SeqRecord, check_distance: bool, best_match: MappedORF,
+def check_reading_frame_stop(sequence: SeqRecord, best_match: MappedORF,
                              e: OriginalORF, q: OriginalORF) \
         -> Optional[defect.MutatedStopCodon]:
 
@@ -481,7 +481,7 @@ def check_reading_frame_stop(sequence: SeqRecord, check_distance: bool, best_mat
         return None
 
     if best_match.distance > e.max_distance or \
-       check_reading_frame_insertions(check_distance=check_distance, best_match=best_match, e=e, q=q) or \
+       check_reading_frame_insertions(best_match=best_match, e=e, q=q) or \
        check_reading_frame_deletions(e=e, q=q) or \
        check_reading_frame_shift(best_match=best_match):
 
@@ -499,20 +499,7 @@ def check_reading_frame_stop(sequence: SeqRecord, check_distance: bool, best_mat
     return None
 
 
-def check_reading_frame_distance(check_distance: bool, best_match: MappedORF, e: OriginalORF, q: OriginalORF) \
-        -> Optional[defect.SequenceDivergence]:
-
-    if not check_distance:
-        return None
-
-    if best_match.distance > e.max_distance:
-        return defect.SequenceDivergence(q=q, e=e, distance=best_match.distance)
-    else:
-        return None
-
-
-def check_reading_frame(check_distance: bool,
-                        aligned_sequence: AlignedSequence,
+def check_reading_frame(aligned_sequence: AlignedSequence,
                         expected: Iterable[OriginalORF],
                         reverse: bool = False) \
         -> Tuple[List[MappedORF], List[defect.Defect]]:
@@ -533,10 +520,9 @@ def check_reading_frame(check_distance: bool,
 
         add_error(check_reading_frame_shift(best_match=best_match))
         add_error(check_reading_frame_deletions(e=e, q=q))
-        add_error(check_reading_frame_insertions(check_distance, best_match, e=e, q=q))
-        add_error(check_reading_frame_distance(check_distance, best_match, e=e, q=q))
-        add_error(check_reading_frame_start(sequence, check_distance, best_match, e=e, q=q))
-        add_error(check_reading_frame_stop(sequence, check_distance, best_match, e=e, q=q))
+        add_error(check_reading_frame_insertions(best_match, e=e, q=q))
+        add_error(check_reading_frame_start(sequence, best_match, e=e, q=q))
+        add_error(check_reading_frame_stop(sequence, best_match, e=e, q=q))
 
     return matches, defects
 
@@ -717,7 +703,6 @@ def check(output_dir: str,
           check_internal_inversion: bool,
           check_unknown_nucleotides: bool,
           check_small_orfs: bool,
-          check_distance: bool,
           output_csv: bool,
           ) -> None:
     """
@@ -838,10 +823,10 @@ def check(output_dir: str,
 
         alignment = aligned_sequence.alignment
 
-        sequence_orfs, orf_defects = check_reading_frame(check_distance, aligned_sequence, forward_orfs)
+        sequence_orfs, orf_defects = check_reading_frame(aligned_sequence, forward_orfs)
         sequence_defects.extend(orf_defects)
 
-        sequence_small_orfs, small_orf_defects = check_reading_frame(check_distance, aligned_sequence, small_orfs)
+        sequence_small_orfs, small_orf_defects = check_reading_frame(aligned_sequence, small_orfs)
         if check_small_orfs:
             sequence_defects.extend(small_orf_defects)
 

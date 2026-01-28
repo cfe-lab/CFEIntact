@@ -33,7 +33,7 @@ Assuming you have a file called `sequences.fasta` in the current directory.
 Then to analyze a set of FASTA sequences that are included in that file, run:
 
 ```shell
-docker run --rm -v .:/w cfelab/cfeintact check --ignore-distance sequences.fasta
+docker run --rm -v .:/w cfelab/cfeintact check sequences.fasta
 ```
 
 This command mounts the current directory to `/w` in the container, making your local files accessible. Be sure to adjust the command for your specific analysis (e.g., `sequences.fasta` is your input file).
