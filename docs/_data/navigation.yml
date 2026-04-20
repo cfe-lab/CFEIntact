@@ -1,3 +1,6 @@
+- name: Try Online
+  link: /app/
+
 - name: Quick Start
   link: /introduction.html
   dropdown:
