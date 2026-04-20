@@ -3,3 +3,6 @@ build/
 __pycache__
 .coverage
 .vscode
+wasm-app/node_modules/
+wasm-app/dist/
+wasm-app/public/cfeintact.wasm

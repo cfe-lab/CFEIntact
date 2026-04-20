@@ -1,0 +1,44 @@
+{
+  "name": "cfeintact-wasm-app",
+  "version": "1.0.0",
+  "description": "Browser-based WebAssembly runner for CFEIntact",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint src --ext .ts",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@bjorn3/browser_wasi_shim": "0.4.2",
+    "@chakra-ui/react": "^3.31.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@vitejs/plugin-react": "^5.1.2",
+    "framer-motion": "^12.29.2",
+    "jszip": "^3.10.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "@types/react": "^19.2.9",
+    "@types/react-dom": "^19.2.3",
+    "@typescript-eslint/eslint-plugin": "^8.19.1",
+    "@typescript-eslint/parser": "^8.19.1",
+    "eslint": "^9.18.0",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.7"
+  },
+  "keywords": [
+    "cfeintact",
+    "container2wasm",
+    "wasm",
+    "webassembly",
+    "wasi",
+    "browser"
+  ],
+  "author": "",
+  "license": "AGPL-3.0"
+}
