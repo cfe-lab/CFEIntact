@@ -38,7 +38,12 @@ async function fetchWasmWithCache(url: string, runId: number): Promise<Uint8Arra
   if (!response.ok) throw new Error(`Failed to fetch WASM: HTTP ${response.status}`);
   if (!response.body) throw new Error("Response body is empty");
 
-  const contentLength = response.headers.get("content-length");
+  // Content-Length reflects the *compressed* wire size when the server uses
+  // Content-Encoding (e.g. gzip). The reader yields *decompressed* bytes, so
+  // using Content-Length as the total would make progress exceed 100%.
+  // Only trust Content-Length when there is no Content-Encoding.
+  const contentEncoding = response.headers.get("content-encoding");
+  const contentLength = !contentEncoding ? response.headers.get("content-length") : null;
   const total = contentLength ? parseInt(contentLength, 10) : 0;
   const reader = response.body.getReader();
   const chunks: Uint8Array[] = [];
