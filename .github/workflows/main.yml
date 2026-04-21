@@ -170,7 +170,7 @@ jobs:
         run: |
           C2W_VERSION=0.8.3
           curl -fsSL \
-            "https://github.com/ktock/container2wasm/releases/download/v${C2W_VERSION}/c2w_${C2W_VERSION}_linux_amd64.tar.gz" \
+            "https://github.com/container2wasm/container2wasm/releases/download/v${C2W_VERSION}/container2wasm-v${C2W_VERSION}-linux-amd64.tar.gz" \
             | tar -xz c2w
           sudo install -m755 c2w /usr/local/bin/c2w
           c2w --version
