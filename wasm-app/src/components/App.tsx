@@ -15,10 +15,18 @@ import type { WorkerMessage, ResultEntry, RunRequest } from "../shared/types";
 // ─── Constants ────────────────────────────────────────────────────────────────
 
 // Resolve to an absolute URL on the main thread before sending to the Web Worker.
-// A bare relative string like "./cfeintact.wasm" would be resolved against the
-// *worker script* URL (e.g. assets/runner-xxx.js), not the page URL, causing a 404.
-// document.baseURI is always absolute and already ends with a trailing slash.
-const WASM_URL = new URL("cfeintact.wasm", document.baseURI).href;
+// A bare relative string would be resolved against the *worker script* URL
+// (e.g. assets/runner-xxx.js), not the page URL, causing a 404.
+// document.baseURI is always absolute and ends with a trailing slash.
+//
+// Include the version baked in at build time (VITE_WASM_VERSION) as a query
+// param so that each new container image gets a distinct Cache Storage key,
+// making cache busting completely automatic and reliable.
+const _wasmVersion = import.meta.env.VITE_WASM_VERSION as string | undefined;
+const WASM_URL = new URL(
+  _wasmVersion ? `cfeintact.wasm?v=${encodeURIComponent(_wasmVersion)}` : "cfeintact.wasm",
+  document.baseURI
+).href;
 const INPUT_MOUNT = "/mnt/in";
 /**
  * Temporary directory INSIDE the container's native (non-9P) filesystem where
@@ -541,18 +549,6 @@ const App = () => {
                   Command run inside the container. Input at <code>{INPUT_PATH}</code>.
                   CFEIntact outputs are automatically collected from the container and made available for download when the run completes.
                 </Text>
-
-                {/* Diagnostic info */}
-                <Box mt={4} p={3} bg="gray.100" borderRadius="md" fontSize="xs" fontFamily="monospace">
-                  <Text fontWeight="semibold" color="gray.600" mb={1}>Diagnostic info</Text>
-                  <Text color="gray.600">Page: {window.location.href}</Text>
-                  <Text color="gray.600">
-                    WASM:{" "}
-                    <a href={WASM_URL} target="_blank" rel="noreferrer" style={{ color: "#2b6cb0", wordBreak: "break-all" }}>
-                      {WASM_URL}
-                    </a>
-                  </Text>
-                </Box>
               </Box>
             )}
           </Box>
@@ -585,6 +581,20 @@ const App = () => {
                 <ProgressBar progress={loadingProgress} label={loadingMessage || "Preparing…"} />
               ) : (
                 <ProgressBar progress={-1} label={`Executing… ${executionTime}s`} />
+              )}
+              {(loadingMessage.includes("Running CFEIntact") || loadingProgress === null) && (
+                <Text fontSize="xs" color="gray.500" mt={3} textAlign="center">
+                  Note: the browser version is about 20–30× slower than a{" "}
+                  <a
+                    href="https://cfe-lab.github.io/CFEIntact/installation.html"
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{ color: "#718096", textDecoration: "underline" }}
+                  >
+                    locally-installed one
+                  </a>
+                  .
+                </Text>
               )}
             </Box>
           )}
@@ -697,7 +707,16 @@ const App = () => {
 
           {/* Footer */}
           <Text fontSize="xs" color="gray.400" textAlign="center" pb={4}>
-            Powered by container2wasm · Analysis runs entirely in your browser
+            Powered by{" "}
+            <a
+              href="https://github.com/container2wasm/container2wasm"
+              target="_blank"
+              rel="noreferrer"
+              style={{ color: "#a0aec0", textDecoration: "underline" }}
+            >
+              container2wasm
+            </a>
+            {" "}· Analysis runs entirely in your browser
           </Text>
 
         </VStack>
