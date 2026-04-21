@@ -1,3 +1,5 @@
 remote_theme: chrisrhymes/bulma-clean-theme@v0.14.0
 title: CFEIntact
 repository: cfe-lab/CFEIntact
+url: https://cfe-lab.github.io
+baseurl: /CFEIntact

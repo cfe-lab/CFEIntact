@@ -228,12 +228,9 @@ jobs:
           bundler-cache: true
           working-directory: docs
 
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
-
       - name: Build Jekyll site
         working-directory: docs
-        run: bundle exec jekyll build
+        run: bundle exec jekyll build --baseurl /CFEIntact
         env:
           JEKYLL_ENV: production
 
