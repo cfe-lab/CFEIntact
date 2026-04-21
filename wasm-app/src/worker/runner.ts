@@ -33,6 +33,7 @@ async function fetchWasmWithCache(url: string, runId: number): Promise<Uint8Arra
   }
 
   // Not cached yet – stream-download with progress reporting.
+  console.log(`[CFEIntact worker] Fetching WASM from: ${url}`);
   const response = await fetch(url);
   if (!response.ok) throw new Error(`Failed to fetch WASM: HTTP ${response.status}`);
   if (!response.body) throw new Error("Response body is empty");

@@ -14,8 +14,11 @@ import type { WorkerMessage, ResultEntry, RunRequest } from "../shared/types";
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
-// Relative path – works whether the app is served at root or a subpath (e.g. /CFEIntact/app/)
-const WASM_URL = "./cfeintact.wasm";
+// Resolve to an absolute URL on the main thread before sending to the Web Worker.
+// A bare relative string like "./cfeintact.wasm" would be resolved against the
+// *worker script* URL (e.g. assets/runner-xxx.js), not the page URL, causing a 404.
+// document.baseURI is always absolute and already ends with a trailing slash.
+const WASM_URL = new URL("cfeintact.wasm", document.baseURI).href;
 const INPUT_MOUNT = "/mnt/in";
 /**
  * Temporary directory INSIDE the container's native (non-9P) filesystem where
@@ -373,6 +376,7 @@ const App = () => {
     stderrBufRef.current = [];
 
     setIsRunning(true);
+    console.log(`[CFEIntact] Starting run. WASM URL: ${WASM_URL}`);
 
     try {
       const fastaBytes = await fastaFile.arrayBuffer();
@@ -415,7 +419,11 @@ const App = () => {
       }
     } catch (e: unknown) {
       const msg = e instanceof Error ? e.message : String(e);
-      toaster.error({ title: "Error", description: msg });
+      console.error(`[CFEIntact] Run failed. WASM URL was: ${WASM_URL}\nError: ${msg}`);
+      toaster.error({
+        title: "Error",
+        description: `${msg} (WASM: ${WASM_URL})`,
+      });
     } finally {
       setIsRunning(false);
       setLoadingProgress(null);
@@ -530,11 +538,21 @@ const App = () => {
                   }}
                 />
                 <Text fontSize="xs" color="gray.400" mt={1}>
-                <Text fontSize="xs" color="gray.400" mt={1}>
                   Command run inside the container. Input at <code>{INPUT_PATH}</code>.
                   CFEIntact outputs are automatically collected from the container and made available for download when the run completes.
                 </Text>
-                </Text>
+
+                {/* Diagnostic info */}
+                <Box mt={4} p={3} bg="gray.100" borderRadius="md" fontSize="xs" fontFamily="monospace">
+                  <Text fontWeight="semibold" color="gray.600" mb={1}>Diagnostic info</Text>
+                  <Text color="gray.600">Page: {window.location.href}</Text>
+                  <Text color="gray.600">
+                    WASM:{" "}
+                    <a href={WASM_URL} target="_blank" rel="noreferrer" style={{ color: "#2b6cb0", wordBreak: "break-all" }}>
+                      {WASM_URL}
+                    </a>
+                  </Text>
+                </Box>
               </Box>
             )}
           </Box>
