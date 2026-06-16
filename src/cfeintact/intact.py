@@ -129,8 +129,7 @@ def remove_5_prime(blast_rows):
     # Both the query and subject 5' LTR regions (positions 1-622) are ignored, since either
     # side can cross-map to the other's 3' LTR and create a false scramble signal.
     return [x for x in blast_rows
-            if x.sstart > 622 and x.send > 622
-            and x.qstart > 622 and x.qend > 622]
+            if x.sstart > 622 and x.send > 622 and x.qstart > 622 and x.qend > 622]
 
 
 def contains_internal_inversion(qseqid: str, blast_rows: List[BlastRow]) -> Optional[Defect]:
