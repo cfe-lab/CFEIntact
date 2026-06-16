@@ -154,7 +154,7 @@
         "blast_n_conseqs": 6
     },
     "MK115030.1": {
-        "intact": false,
+        "intact": true,
         "qlen": 9126,
         "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE",
         "hypermutation_probablility": 0.032014462397289556,

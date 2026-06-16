@@ -32,15 +32,16 @@ def test_is_sorted(lst, expected):
 
 
 class MockBlastRow:
-    def __init__(self, sstart, send, qstart, sstrand):
+    def __init__(self, sstart, send, qstart, sstrand, qend=None):
         self.sstart = sstart
         self.send = send
         self.qstart = qstart
         self.sstrand = sstrand
+        self.qend = qend if qend is not None else qstart
 
 
-def mk_blast_row(sstart, send, qstart, sstrand):
-    return MockBlastRow(sstart, send, qstart, sstrand)
+def mk_blast_row(sstart, send, qstart, sstrand, qend=None):
+    return MockBlastRow(sstart, send, qstart, sstrand, qend=qend)
 
 
 def test_is_scrambled_no_alignment():
@@ -52,8 +53,8 @@ def test_is_scrambled_internal_inversion():
     # Test case where some parts of the sequence are aligned in forward direction
     # and some in reverse, indicating an internal inversion error.
     blast_rows = [
-        mk_blast_row(sstart=900, send=910, qstart=5, sstrand="plus"),
-        mk_blast_row(sstart=930, send=940, qstart=25, sstrand="minus"),
+        mk_blast_row(sstart=900, send=910, qstart=700, sstrand="plus"),
+        mk_blast_row(sstart=930, send=940, qstart=800, sstrand="minus"),
     ]
     result = is_scrambled("id", blast_rows) or contains_internal_inversion("id", blast_rows)
     assert isinstance(result, Defect)
@@ -78,10 +79,10 @@ def test_is_scrambled_minus_strand_sorted():
 def test_is_scrambled_plus_strand_unsorted():
     # Test case with mixed directions and inversions
     blast_rows = [
-        mk_blast_row(sstart=700, send=700, qstart=99, sstrand="plus"),
-        mk_blast_row(sstart=880, send=890, qstart=25, sstrand="plus"),
-        mk_blast_row(sstart=920, send=930, qstart=45, sstrand="plus"),
-        mk_blast_row(sstart=950, send=980, qstart=85, sstrand="plus"),
+        mk_blast_row(sstart=700, send=700, qstart=1100, sstrand="plus"),
+        mk_blast_row(sstart=880, send=890, qstart=700, sstrand="plus"),
+        mk_blast_row(sstart=920, send=930, qstart=800, sstrand="plus"),
+        mk_blast_row(sstart=950, send=980, qstart=900, sstrand="plus"),
     ]
     result = is_scrambled("id", blast_rows) or contains_internal_inversion("id", blast_rows)
     assert isinstance(result, Defect)
@@ -100,8 +101,8 @@ def test_is_scrambled_plus_strand_unsorted_5prime():
 def test_is_scrambled_minus_strand_unsorted():
     # Test case where the direction is "minus" but the send values are not sorted in reverse order.
     blast_rows = [
-        mk_blast_row(sstart=910, send=900, qstart=5, sstrand="minus"),
-        mk_blast_row(sstart=940, send=930, qstart=25, sstrand="minus"),
+        mk_blast_row(sstart=910, send=900, qstart=700, sstrand="minus"),
+        mk_blast_row(sstart=940, send=930, qstart=800, sstrand="minus"),
     ]
     result = is_scrambled("id", blast_rows) or contains_internal_inversion("id", blast_rows)
     assert isinstance(result, Defect)
@@ -110,9 +111,9 @@ def test_is_scrambled_minus_strand_unsorted():
 def test_is_scrambled_mixed_direction():
     # Test case where some rows have "plus" direction and some have "minus" direction.
     blast_rows = [
-        mk_blast_row(sstart=900, send=910, qstart=5, sstrand="plus"),
-        mk_blast_row(sstart=930, send=940, qstart=25, sstrand="minus"),
-        mk_blast_row(sstart=950, send=990, qstart=45, sstrand="minus"),
+        mk_blast_row(sstart=900, send=910, qstart=700, sstrand="plus"),
+        mk_blast_row(sstart=930, send=940, qstart=800, sstrand="minus"),
+        mk_blast_row(sstart=950, send=990, qstart=900, sstrand="minus"),
     ]
     result = is_scrambled("id", blast_rows) or contains_internal_inversion("id", blast_rows)
     assert isinstance(result, Defect)
@@ -135,12 +136,42 @@ def test_is_scrambled_single_row_minus_strand():
 def test_is_scrambled_multiple_directions_and_inversions():
     # Test case with mixed directions and inversions
     blast_rows = [
-        mk_blast_row(sstart=900, send=910, qstart=5, sstrand="plus"),
-        mk_blast_row(sstart=880, send=890, qstart=25, sstrand="minus"),
-        mk_blast_row(sstart=920, send=930, qstart=45, sstrand="minus"),
-        mk_blast_row(sstart=850, send=880, qstart=85, sstrand="plus"),
-        mk_blast_row(sstart=890, send=880, qstart=85, sstrand="minus"),
+        mk_blast_row(sstart=900, send=910, qstart=700, sstrand="plus"),
+        mk_blast_row(sstart=880, send=890, qstart=800, sstrand="minus"),
+        mk_blast_row(sstart=920, send=930, qstart=900, sstrand="minus"),
+        mk_blast_row(sstart=850, send=880, qstart=1000, sstrand="plus"),
+        mk_blast_row(sstart=890, send=880, qstart=1000, sstrand="minus"),
     ]
     result = is_scrambled("id", blast_rows) or contains_internal_inversion("id", blast_rows)
     assert isinstance(result, Defect)
     assert isinstance(result.error, defect.Scramble)
+
+
+# --- Synthetic tests exposing the remove_5_prime bug ---
+# remove_5_prime only filtered rows where the SUBJECT's 5' LTR was involved
+# (sstart/send <= 622), but missed rows where the QUERY's 5' LTR maps to
+# the subject's 3' LTR. This caused false scramble positives when a large
+# insertion split the main alignment and an LTR cross-mapping row remained.
+
+def test_remove_5_prime_filters_query_ltr():
+    from cfeintact.intact import remove_5_prime
+    rows = [
+        mk_blast_row(sstart=900, send=1100, qstart=700, qend=900, sstrand="plus"),
+        mk_blast_row(sstart=9000, send=9700, qstart=1, qend=600, sstrand="plus"),
+        mk_blast_row(sstart=100, send=200, qstart=800, qend=900, sstrand="plus"),
+    ]
+    kept = remove_5_prime(rows)
+    assert len(kept) == 1
+    assert kept[0].qstart == 700
+
+
+def test_is_scrambled_query_ltr_cross_map():
+    # Row C: query 5' LTR (1-600) maps to subject 3' end (9000-9700).
+    # remove_5_prime keeps it (subject coords > 622), creating an
+    # unsorted sstart sequence with rows A and B -> false scramble.
+    blast_rows = [
+        mk_blast_row(sstart=900, send=1100, qstart=700, qend=900, sstrand="plus"),
+        mk_blast_row(sstart=1300, send=1600, qstart=1000, qend=1200, sstrand="plus"),
+        mk_blast_row(sstart=9000, send=9700, qstart=1, qend=600, sstrand="plus"),
+    ]
+    assert is_scrambled("id", blast_rows) is None
