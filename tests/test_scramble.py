@@ -1,6 +1,6 @@
 
 import pytest
-from typing import List, Dict
+from typing import List, Dict, Tuple
 
 import cfeintact.intact as intact
 import cfeintact.defect as defect
@@ -11,11 +11,15 @@ from cfeintact.intact import (
     SubjectPlacement,
     normalized_subject_interval,
     subject_segment,
+    subject_segment_length,
     find_exact_occurrences,
     candidate_subject_placements,
     is_subject_location_informative,
     has_monotone_subject_assignment,
+    has_monotone_subject_assignment_for_group,
+    row_has_enough_order_evidence,
     MIN_ORDER_EVIDENCE_LENGTH,
+    MIN_INTERNAL_INVERSION_EVIDENCE_LENGTH,
 )
 from cfeintact.defect import Defect
 from cfeintact.blastrow import BlastRow
@@ -27,9 +31,6 @@ from cfeintact.blastrow import BlastRow
 # ---------------------------------------------------------------------------
 
 def subject_from_rows(blast_rows, length=10000):
-    """Build a subject string where each row gets a unique segment.
-    Each row's subject interval is filled with a distinct repeating tag.
-    Overlapping intervals will corrupt segments for all overlapping rows."""
     seq = bytearray(b"N" * length)
     for i, row in enumerate(blast_rows):
         lo = min(row.sstart, row.send) - 1
@@ -90,7 +91,7 @@ def mk_blast_row(sstart, send, qstart, sstrand, qend=None, sseqid="mock_subject"
 
 
 # ---------------------------------------------------------------------------
-# Unit tests for new helpers
+# Unit tests for helpers
 # ---------------------------------------------------------------------------
 
 class TestNormalizedSubjectInterval:
@@ -111,7 +112,6 @@ class TestSubjectSegment:
     def test_extracts_correct_slice(self):
         row = mk_blast_row(5, 9, 10, "plus")
         subj = "ABCDEFGHIJKLMNOP"
-        # 1-based inclusive → subject[4:9] = "EFGHI"
         assert subject_segment(row, subj) == "EFGHI"
 
     def test_minus_strand(self):
@@ -126,20 +126,28 @@ class TestSubjectSegment:
             subject_segment(row, subj)
 
 
+class TestSubjectSegmentLength:
+    def test_normal(self):
+        assert subject_segment_length(mk_blast_row(100, 200, 10, "plus")) == 101
+
+    def test_reversed(self):
+        assert subject_segment_length(mk_blast_row(200, 100, 10, "plus")) == 101
+
+    def test_single_base(self):
+        assert subject_segment_length(mk_blast_row(50, 50, 10, "plus")) == 1
+
+
 class TestFindExactOccurrences:
     def test_single_occurrence(self):
         result = find_exact_occurrences("ABC", "XXABCYY")
-        # ABC at 0-indexed pos 2 → SubjectPlacement(3, 5)
         assert result == [SubjectPlacement(3, 5)]
 
     def test_multiple_non_overlapping(self):
         result = find_exact_occurrences("ABA", "ABAXXABA")
-        # first at pos 0 → (1, 3), second at pos 5 → (6, 8)
         assert result == [SubjectPlacement(1, 3), SubjectPlacement(6, 8)]
 
     def test_overlapping(self):
         result = find_exact_occurrences("AAA", "AAAAA")
-        # pos 0 → (1, 3), pos 1 → (2, 4), pos 2 → (3, 5)
         assert result == [
             SubjectPlacement(1, 3),
             SubjectPlacement(2, 4),
@@ -160,62 +168,118 @@ class TestFindExactOccurrences:
 class TestCandidateSubjectPlacements:
     def test_includes_original(self):
         subj = "NNNABCDEABCDFNNN"
-        row = mk_blast_row(4, 8, 10, "plus")  # "ABCDE"
-        cache: Dict[str, List[SubjectPlacement]] = {}
-        placements = candidate_subject_placements(row, subj, cache)
+        row = mk_blast_row(4, 8, 10, "plus")
+        cache: Dict[Tuple[str, str], List[SubjectPlacement]] = {}
+        placements = candidate_subject_placements(row, subj, cache, row.sseqid)
         assert SubjectPlacement(4, 8) in placements
 
     def test_multiple_copies(self):
         subj = "NNNABCDEXXXABCDENNN"
-        row = mk_blast_row(4, 8, 10, "plus")  # "ABCDE"
-        cache: Dict[str, List[SubjectPlacement]] = {}
-        placements = candidate_subject_placements(row, subj, cache)
+        row = mk_blast_row(4, 8, 10, "plus")
+        cache: Dict[Tuple[str, str], List[SubjectPlacement]] = {}
+        placements = candidate_subject_placements(row, subj, cache, row.sseqid)
         assert len(placements) == 2
         assert SubjectPlacement(4, 8) in placements
-        # second copy at 0-indexed pos 11 → SubjectPlacement(12, 16)
         assert SubjectPlacement(12, 16) in placements
 
     def test_caches_results(self):
         subj = "ABCABC"
         row_a = mk_blast_row(1, 3, 10, "plus")
         row_b = mk_blast_row(4, 6, 20, "plus")
-        cache: Dict[str, List[SubjectPlacement]] = {}
-        p1 = candidate_subject_placements(row_a, subj, cache)
-        p2 = candidate_subject_placements(row_b, subj, cache)
-        assert p1 is p2  # same list object from cache
+        cache: Dict[Tuple[str, str], List[SubjectPlacement]] = {}
+        p1 = candidate_subject_placements(row_a, subj, cache, row_a.sseqid)
+        p2 = candidate_subject_placements(row_b, subj, cache, row_b.sseqid)
+        assert p1 is p2
 
 
 class TestIsSubjectLocationInformative:
     def test_short_segment_not_informative(self):
         subj = "A" * 10000
         row = mk_blast_row(500, 500 + MIN_ORDER_EVIDENCE_LENGTH - 1, 10, "plus")
-        assert not is_subject_location_informative(row, subj)
+        cache: Dict[Tuple[str, str], List[SubjectPlacement]] = {}
+        assert not is_subject_location_informative(row, subj, cache, row.sseqid)
 
     def test_long_enough_unique_is_informative(self):
         subj = "N" * 200 + "X" * MIN_ORDER_EVIDENCE_LENGTH + "N" * 9700
         row = mk_blast_row(201, 200 + MIN_ORDER_EVIDENCE_LENGTH, 10, "plus")
-        assert is_subject_location_informative(row, subj)
+        cache: Dict[Tuple[str, str], List[SubjectPlacement]] = {}
+        assert is_subject_location_informative(row, subj, cache, row.sseqid)
 
     def test_long_enough_duplicate_not_informative(self):
         seg = "X" * MIN_ORDER_EVIDENCE_LENGTH
         subj = "N" * 100 + seg + "N" * 500 + seg + "N" * 9300
         row = mk_blast_row(101, 100 + MIN_ORDER_EVIDENCE_LENGTH, 10, "plus")
-        assert not is_subject_location_informative(row, subj)
+        cache: Dict[Tuple[str, str], List[SubjectPlacement]] = {}
+        assert not is_subject_location_informative(row, subj, cache, row.sseqid)
+
+
+class TestRowHasEnoughOrderEvidence:
+    def test_short_row(self):
+        row = mk_blast_row(1, MIN_ORDER_EVIDENCE_LENGTH - 1, 10, "plus")
+        assert not row_has_enough_order_evidence(row, "N" * 10000)
+
+    def test_long_enough(self):
+        row = mk_blast_row(1, MIN_ORDER_EVIDENCE_LENGTH, 10, "plus")
+        assert row_has_enough_order_evidence(row, "N" * 10000)
+
+
+class TestHasMonotoneSubjectAssignmentForGroup:
+    def test_empty_rows(self):
+        cache: Dict[Tuple[str, str], List[SubjectPlacement]] = {}
+        assert has_monotone_subject_assignment_for_group([], "A" * 100, "plus", cache) is True
+
+    def test_plus_sorted(self):
+        rows = [
+            mk_blast_row(100, 200, 10, "plus"),
+            mk_blast_row(300, 400, 20, "plus"),
+        ]
+        subj = subject_from_rows(rows)
+        cache: Dict[Tuple[str, str], List[SubjectPlacement]] = {}
+        assert has_monotone_subject_assignment_for_group(rows, subj, "plus", cache) is True
+
+    def test_plus_unsorted_unique(self):
+        rows = [
+            mk_blast_row(100, 200, 10, "plus"),
+            mk_blast_row(50, 150, 20, "plus"),
+        ]
+        subj = subject_from_rows(rows)
+        cache: Dict[Tuple[str, str], List[SubjectPlacement]] = {}
+        assert has_monotone_subject_assignment_for_group(rows, subj, "plus", cache) is False
+
+    def test_minus_uses_end(self):
+        """For minus: use end (high coord) for monotonicity check."""
+        rows = [
+            mk_blast_row(1000, 900, 10, "minus"),   # end=1000
+            mk_blast_row(800, 700, 20, "minus"),    # end=800
+        ]
+        subj = subject_from_rows(rows)
+        cache: Dict[Tuple[str, str], List[SubjectPlacement]] = {}
+        # end: 1000 -> 800, nonincreasing -> monotone
+        assert has_monotone_subject_assignment_for_group(rows, subj, "minus", cache) is True
+
+    def test_minus_unsorted_unique(self):
+        rows = [
+            mk_blast_row(800, 700, 10, "minus"),    # end=800
+            mk_blast_row(1000, 900, 20, "minus"),   # end=1000
+        ]
+        subj = subject_from_rows(rows)
+        cache: Dict[Tuple[str, str], List[SubjectPlacement]] = {}
+        # end: 800 -> 1000, 1000 > 800 -> not nonincreasing -> not monotone
+        assert has_monotone_subject_assignment_for_group(rows, subj, "minus", cache) is False
 
 
 # ---------------------------------------------------------------------------
-# Behavioral tests — no-alignment edge case
+# Behavioral tests — edge cases
 # ---------------------------------------------------------------------------
 
 def test_is_scrambled_no_alignment():
     blast_rows: List[BlastRow] = []
-    # Both return None → (None or (None is None)) → True
     assert is_scrambled("id", blast_rows, {"mock_subject": ""}) or \
            contains_internal_inversion("id", blast_rows, {"mock_subject": ""}) is None
 
 
 # ---------------------------------------------------------------------------
-# Behavioral tests — monotone unique rows (not scrambled, not inverted)
+# Monotone unique rows (not scrambled)
 # ---------------------------------------------------------------------------
 
 def test_plus_strand_sorted():
@@ -239,29 +303,24 @@ def test_minus_strand_sorted():
 
 
 def test_single_row_plus_strand():
-    blast_rows = [
-        mk_blast_row(sstart=700, send=810, qstart=5, sstrand="plus"),
-    ]
+    blast_rows = [mk_blast_row(sstart=700, send=810, qstart=5, sstrand="plus")]
     subj = subject_from_rows(blast_rows)
     assert is_scrambled("id", blast_rows, {"mock_subject": subj}) or \
            contains_internal_inversion("id", blast_rows, {"mock_subject": subj}) is None
 
 
 def test_single_row_minus_strand():
-    blast_rows = [
-        mk_blast_row(sstart=900, send=910, qstart=5, sstrand="minus"),
-    ]
+    blast_rows = [mk_blast_row(sstart=900, send=910, qstart=5, sstrand="minus")]
     subj = subject_from_rows(blast_rows)
     assert is_scrambled("id", blast_rows, {"mock_subject": subj}) or \
            contains_internal_inversion("id", blast_rows, {"mock_subject": subj}) is None
 
 
 # ---------------------------------------------------------------------------
-# Behavioral tests — unique unsorted regions → Scramble
+# Unique unsorted regions -> Scramble
 # ---------------------------------------------------------------------------
 
 def test_plus_strand_unsorted_unique():
-    # Non-overlapping intervals to avoid subject_from_rows corruption
     blast_rows = [
         mk_blast_row(sstart=880, send=990, qstart=700, sstrand="plus"),
         mk_blast_row(sstart=100, send=210, qstart=1100, sstrand="plus"),
@@ -274,11 +333,11 @@ def test_plus_strand_unsorted_unique():
 
 
 def test_minus_strand_unsorted_unique():
-    # For minus: as qstart increases, normalized low should decrease.
-    # Row B (q=800, low=940) > Row A (q=700, low=910) → not decreasing → Scramble
+    """For minus: monotone if end (high coord) nonincreasing.
+    Row A (q=700, end=980) -> Row B (q=800, end=990): 980 > 990? No -> scramble."""
     blast_rows = [
-        mk_blast_row(sstart=940, send=930, qstart=700, sstrand="minus"),
-        mk_blast_row(sstart=990, send=980, qstart=800, sstrand="minus"),
+        mk_blast_row(sstart=990, send=980, qstart=700, sstrand="minus"),
+        mk_blast_row(sstart=1000, send=990, qstart=800, sstrand="minus"),
     ]
     subj = subject_from_rows(blast_rows)
     result = is_scrambled("id", blast_rows, {"mock_subject": subj}) or \
@@ -288,46 +347,95 @@ def test_minus_strand_unsorted_unique():
 
 
 # ---------------------------------------------------------------------------
-# Behavioral tests — exact duplicate explains reorder (no Scramble)
+# Test A: LTR-style terminal cross-hit should not be scramble
 # ---------------------------------------------------------------------------
 
-def test_scramble_exact_duplicate_explains_reorder():
+def test_ltr_terminal_cross_hit_not_scrambled():
+    """LTR-like terminal repeats: subject has identical prefix and suffix.
+    BLAST maps query 5' to subject 3' and vice versa. Exact-match solver
+    resolves the ambiguity -> no Scramble, no InternalInversion."""
+    segment_len = 200
+    prefix = "X" * segment_len
+    suffix = "X" * segment_len  # identical
+    middle = "Y" * 1000
+    subject = prefix + middle + suffix
+    query_len = len(prefix) + len(middle) + segment_len  # matching length
+
+    blast_rows = [
+        # Full-length alignment
+        mk_blast_row(sstart=1, send=query_len, qstart=1, qend=query_len, sstrand="plus"),
+        # Query 5' -> subject 3' (LTR cross-hit)
+        mk_blast_row(sstart=len(prefix) + len(middle) + 1, send=query_len,
+                      qstart=1, qend=segment_len, sstrand="plus"),
+        # Query 3' -> subject 5' (LTR cross-hit)
+        mk_blast_row(sstart=1, send=segment_len,
+                      qstart=len(prefix) + len(middle) + 1, qend=query_len, sstrand="plus"),
+    ]
+    result = is_scrambled("id", blast_rows, {"mock_subject": subject})
+    assert result is None
+    assert contains_internal_inversion("id", blast_rows, {"mock_subject": subject}) is None
+
+
+# ---------------------------------------------------------------------------
+# Test B: Real reorder of unique regions should still be scramble
+# ---------------------------------------------------------------------------
+
+def test_real_reorder_unique_regions():
+    """Three unique regions A, B, C; query order maps to subject order A, C, B."""
+    subject = "N" * 2000
+    # Manually build with distinct segments
+    seg_a = "AAAA" * 50   # 200 bp
+    seg_b = "BBBB" * 50   # 200 bp
+    seg_c = "CCCC" * 50   # 200 bp
+    subject = seg_a + seg_b + seg_c + "N" * 9400
+
+    blast_rows = [
+        mk_blast_row(sstart=1, send=200, qstart=100, qend=299, sstrand="plus"),     # A at 100
+        mk_blast_row(sstart=401, send=600, qstart=500, qend=699, sstrand="plus"),   # C at 500 (but B is at 201-400)
+        mk_blast_row(sstart=201, send=400, qstart=300, qend=499, sstrand="plus"),   # B at 300
+    ]
+    result = is_scrambled("id", blast_rows, {"mock_subject": subject})
+    assert isinstance(result, Defect)
+    assert isinstance(result.error, defect.Scramble)
+
+
+# ---------------------------------------------------------------------------
+# Test C: Reorder explainable by exact duplicated region should not be scramble
+# ---------------------------------------------------------------------------
+
+def test_exact_duplicate_explains_reorder():
     """Earlier query row maps to a late copy; the segment also occurs earlier."""
     segment = "EXACT_DUPLICATE_" * 10
     subject = (
         "N" * 99 +
-        segment +          # positions 100–259
+        segment +          # positions 100-259
         "N" * 740 +
-        segment +          # positions 1000–1159 (same text)
+        segment +          # positions 1000-1159 (same text)
         "N" * (10000 - 1160)
     )
     blast_rows = [
         mk_blast_row(sstart=1000, send=1159, qstart=100, qend=259, sstrand="plus"),
         mk_blast_row(sstart=400, send=499, qstart=300, qend=399, sstrand="plus"),
     ]
-    result = is_scrambled("id", blast_rows, {"mock_subject": subject})
-    assert result is None
+    assert is_scrambled("id", blast_rows, {"mock_subject": subject}) is None
 
+
+# ---------------------------------------------------------------------------
+# Duplicate not automatically forgiven
+# ---------------------------------------------------------------------------
 
 def test_scramble_duplicate_not_automatically_forgiven():
-    """A duplicate region cannot fix the order when surrounding unique rows
-    constrain the overall assignment, regardless of the duplicate's placement."""
-    # Row A (q=100): unique segment at [300, 399]
-    # Row D (q=300): unique segment at [500, 599]
-    # Row B (q=200): duplicate segment at both [600, 699] and [50, 149]
-    #   - With late copy (600): starts = [300, 600, 500] → not monotone
-    #   - With early copy (50):  starts = [300, 50, 500]  → not monotone
-    # Either way, the total sequence is not monotone → Scramble
+    """Unique rows constrain the assignment; the duplicate cannot fix order."""
     dup = "DUPBLOCK" * 20
     subject = (
         "N" * 49 +
-        dup +              # positions 50–209 (early copy)
+        dup +              # positions 50-209 (early copy)
         "N" * 90 +
-        "UNIQUE_A" * 20 +  # positions 300–459
+        "UNIQUE_A" * 20 +  # positions 300-459
         "N" * 40 +
-        "UNIQUE_D" * 20 +  # positions 500–659
+        "UNIQUE_D" * 20 +  # positions 500-659
         "N" * 40 +
-        dup +              # positions 700–859 (late copy)
+        dup +              # positions 700-859 (late copy)
         "N" * (10000 - 860)
     )
     blast_rows = [
@@ -340,65 +448,30 @@ def test_scramble_duplicate_not_automatically_forgiven():
     assert isinstance(result.error, defect.Scramble)
 
 
-def test_scramble_ltr_analogue():
-    """Identical prefix/suffix blocks (like HIV LTRs) do not trigger scramble."""
-    prefix = "IDENTICAL_PREFIX_" * 11
-    suffix = "IDENTICAL_PREFIX_" * 11  # same string
-    middle = "MIDDLE_UNIQUE_" * 100
-    subject = prefix + middle + suffix
-    # BLAST maps qstart 50 to the suffix (late copy), and qstart 800 to middle
+# ---------------------------------------------------------------------------
+# Test D: Short HSPs should not create order evidence
+# ---------------------------------------------------------------------------
+
+def test_short_hsp_does_not_create_scramble():
+    """A row below MIN_ORDER_EVIDENCE_LENGTH should not cause a scramble."""
+    short_len = MIN_ORDER_EVIDENCE_LENGTH - 1
     blast_rows = [
-        mk_blast_row(
-            sstart=len(prefix) + len(middle) + 1,
-            send=len(prefix) + len(middle) + len(suffix),
-            qstart=50,
-            qend=50 + len(prefix) - 1,
-            sstrand="plus",
-        ),
-        mk_blast_row(
-            sstart=len(prefix) + 1,
-            send=len(prefix) + len(middle),
-            qstart=800,
-            qend=800 + len(middle) - 1,
-            sstrand="plus",
-        ),
+        mk_blast_row(sstart=500, send=500 + short_len - 1, qstart=100, qend=100 + short_len - 1, sstrand="plus"),
+        mk_blast_row(sstart=100, send=100 + short_len - 1, qstart=200, qend=200 + short_len - 1, sstrand="plus"),
     ]
-    result = is_scrambled("id", blast_rows, {"mock_subject": subject})
-    assert result is None
+    subj = subject_from_rows(blast_rows)
+    result = is_scrambled("id", blast_rows, {"mock_subject": subj})
+    assert result is None  # no evidence -> no decision -> not scrambled
 
 
-def test_scramble_minus_duplicate_explains_reorder():
-    """Minus-strand rows whose apparent disorder is explained by duplicates."""
-    seg = "REPEATED_MINUS_" * 10
-    subject = (
-        "N" * 499 +
-        seg +              # positions 500–659
-        "N" * 340 +
-        seg +              # positions 1000–1159
-        "N" * (10000 - 1160)
-    )
-    # Row A (q=100): BLAST picks late copy (1000-1159), minus strand
-    #   Normalized: starts = 1000, end = 1159
-    #   Segment also at 500-659, so candidates include start=500
-    # Row B (q=300): unique segment, start=200
-    #
-    # Without duplicate fix: starts = [1000, 200] → not minus-sorted
-    # With duplicate fix: choose 500 for Row A → starts = [500, 200] → minus-sorted ✓
+def test_short_hsp_does_not_hide_real_scramble():
+    """Short rows are ignored; long unique rows still detect scramble."""
     blast_rows = [
-        mk_blast_row(sstart=1159, send=1000, qstart=100, qend=259, sstrand="minus"),
-        mk_blast_row(sstart=299, send=200, qstart=300, qend=399, sstrand="minus"),
-    ]
-    result = is_scrambled("id", blast_rows, {"mock_subject": subject})
-    assert result is None
-
-
-def test_scramble_minus_unique_unsorted():
-    """Minus-strand with unique segments that are genuinely unsorted → Scramble."""
-    # Row A (q=700, low=910) → Row B (q=800, low=980)
-    # As q increases, low increases (910→980) → not minus-sorted → Scramble
-    blast_rows = [
-        mk_blast_row(sstart=940, send=930, qstart=700, sstrand="minus"),
-        mk_blast_row(sstart=990, send=980, qstart=800, sstrand="minus"),
+        # Short row (< 100 bp) - should be ignored
+        mk_blast_row(sstart=50, send=100, qstart=50, qend=100, sstrand="plus"),
+        # Long rows (> 100 bp) - provide order evidence
+        mk_blast_row(sstart=900, send=1010, qstart=500, qend=610, sstrand="plus"),
+        mk_blast_row(sstart=200, send=310, qstart=700, qend=810, sstrand="plus"),
     ]
     subj = subject_from_rows(blast_rows)
     result = is_scrambled("id", blast_rows, {"mock_subject": subj})
@@ -407,11 +480,109 @@ def test_scramble_minus_unique_unsorted():
 
 
 # ---------------------------------------------------------------------------
-# Internal inversion tests
+# Test E: Cache must be subject-specific
+# ---------------------------------------------------------------------------
+
+def test_cache_is_subject_specific():
+    """Same segment string at different coordinates in different subjects
+    must produce separate cache entries."""
+    subj_a = "ABCABC"
+    subj_b = "XXXXABCXXXX"
+    row = mk_blast_row(1, 3, 10, "plus")  # segment = "ABC"
+
+    cache: Dict[Tuple[str, str], List[SubjectPlacement]] = {}
+
+    # Look up in subject A (sseqid="subj_A")
+    placements_a = candidate_subject_placements(row, subj_a, cache, "subj_A")
+    assert placements_a == [SubjectPlacement(1, 3), SubjectPlacement(4, 6)]
+
+    # Look up in subject B (sseqid="subj_B") - should not reuse cache
+    placements_b = candidate_subject_placements(row, subj_b, cache, "subj_B")
+    assert placements_b == [SubjectPlacement(5, 7)]
+    assert placements_a is not placements_b  # different cached objects
+
+
+# ---------------------------------------------------------------------------
+# Test F: Minus-strand monotone assignment must use placement.end
+# ---------------------------------------------------------------------------
+
+def test_minus_uses_placement_end():
+    """For minus, the greedy assignment uses end (high coord)."""
+    rows = [
+        mk_blast_row(sstart=1000, send=900, qstart=10, sstrand="minus"),   # end=1000
+        mk_blast_row(sstart=800, send=700, qstart=20, sstrand="minus"),    # end=800
+    ]
+    subj = subject_from_rows(rows)
+    result = is_scrambled("id", rows, {"mock_subject": subj})
+    assert result is None  # end: 1000 -> 800, nonincreasing -> not scrambled
+
+
+def test_minus_unsorted_uses_end():
+    """Minus with end increasing should be scramble."""
+    rows = [
+        mk_blast_row(sstart=700, send=800, qstart=10, sstrand="minus"),   # end=800
+        mk_blast_row(sstart=900, send=1000, qstart=20, sstrand="minus"),   # end=1000
+    ]
+    subj = subject_from_rows(rows)
+    result = is_scrambled("id", rows, {"mock_subject": subj})
+    assert isinstance(result, Defect)
+    assert isinstance(result.error, defect.Scramble)
+
+
+# ---------------------------------------------------------------------------
+# Test G: Internal inversion ignores repeated regions
+# ---------------------------------------------------------------------------
+
+def test_inversion_ignores_duplicate():
+    """Plus and minus rows where the minus row maps to a duplicated segment."""
+    seg = "DUP" * 50
+    subject = (
+        "N" * 99 +
+        seg +              # positions 100-248
+        "N" * 751 +
+        seg +              # positions 1000-1148 (duplicate)
+        "N" * (10000 - 1149)
+    )
+    blast_rows = [
+        mk_blast_row(sstart=100, send=248, qstart=100, qend=248, sstrand="plus"),
+        mk_blast_row(sstart=1148, send=1000, qstart=500, qend=648, sstrand="minus"),
+    ]
+    assert contains_internal_inversion("id", blast_rows, {"mock_subject": subject}) is None
+
+
+# ---------------------------------------------------------------------------
+# Test H: Internal inversion requires sufficient minority-strand evidence
+# ---------------------------------------------------------------------------
+
+def test_inversion_insufficient_minority_evidence():
+    """Tiny unique minority-strand row below threshold -> no inversion."""
+    short_len = MIN_INTERNAL_INVERSION_EVIDENCE_LENGTH - 1
+    subject = "N" * 200 + "U" * 200 + "N" * 9600
+    blast_rows = [
+        mk_blast_row(sstart=201, send=400, qstart=100, qend=299, sstrand="plus"),  # 200bp, unique
+        mk_blast_row(sstart=201, send=200 + short_len, qstart=500, qend=500 + short_len - 1, sstrand="minus"),  # too short
+    ]
+    assert contains_internal_inversion("id", blast_rows, {"mock_subject": subject}) is None
+
+
+def test_inversion_sufficient_minority_evidence():
+    """Long enough unique minority-strand row -> inversion."""
+    subject = "N" * 200 + "U" * 200 + "N" * 200 + "V" * 200 + "N" * 9200
+    blast_rows = [
+        mk_blast_row(sstart=201, send=400, qstart=100, qend=299, sstrand="plus"),  # 200bp, unique
+        mk_blast_row(sstart=601, send=800, qstart=500, qend=699, sstrand="minus"),  # 200bp, unique
+    ]
+    result = contains_internal_inversion("id", blast_rows, {"mock_subject": subject})
+    assert isinstance(result, Defect)
+    assert isinstance(result.error, defect.InternalInversion)
+
+
+# ---------------------------------------------------------------------------
+# Internal inversion: full pipeline (is_scrambled + contains_internal_inversion)
 # ---------------------------------------------------------------------------
 
 def test_internal_inversion_detected():
-    """Mixed-strand evidence in informative (unique, ≥100bp) rows → Inversion."""
+    """Mixed-strand evidence in informative rows -> Inversion."""
     blast_rows = [
         mk_blast_row(sstart=900, send=1010, qstart=700, qend=810, sstrand="plus"),
         mk_blast_row(sstart=1200, send=1310, qstart=800, qend=900, sstrand="minus"),
@@ -424,13 +595,13 @@ def test_internal_inversion_detected():
 
 
 def test_internal_inversion_not_reported_for_duplicate_only():
-    """Mixed strand evidence only in duplicate regions → no inversion."""
+    """Mixed strand only in duplicate regions -> no inversion."""
     seg = "DUPSTRAND" * 50
     subject = (
         "N" * 99 +
-        seg +              # positions 100–498
+        seg +              # positions 100-498
         "N" * 501 +
-        seg +              # positions 1000–1398
+        seg +              # positions 1000-1398
         "N" * (10000 - 1399)
     )
     blast_rows = [
@@ -441,65 +612,27 @@ def test_internal_inversion_not_reported_for_duplicate_only():
            contains_internal_inversion("id", blast_rows, {"mock_subject": subject}) is None
 
 
-def test_internal_inversion_with_mixed_informative_and_duplicate():
-    """Mixed strand with one informative and one duplicate row → inversion."""
-    seg = "SOMEDUP" * 50
-    subject = (
-        "N" * 199 +
-        seg +              # positions 200–598 (copy A)
-        "N" * 401 +
-        seg +              # positions 1000–1398 (copy B)
-        "N" * 200 +
-        "UNIQUE_PLUS_" * 20 +  # positions 1599–1778 (unique, plus)
-        "N" * (10000 - 1779)
-    )
-    blast_rows = [
-        mk_blast_row(sstart=1398, send=1000, qstart=100, qend=498, sstrand="minus"),
-        mk_blast_row(sstart=1599, send=1778, qstart=600, qend=779, sstrand="plus"),
-    ]
-    # is_scrambled will check scramble first → both rows, dominant=plus (2/2? no, 1 minus, 1 plus)
-    # Wait, sstrand values: "minus", "plus" → tie. most_frequent returns "minus" or "plus" (first in iteration = "minus")
-    # Direction = "minus". For minus with has_monotone: [start=1000, start=1599] → 1000 → 1599: 1599 > 1000 → NOT nonincreasing → Scramble!
-    # So is_scrambled returns Scramble first. The `or` short-circuits.
-    # contains_internal_inversion is NOT reached.
-    #
-    # That's OK for this test's intent but doesn't test the inversion path.
-    # Let me add a separate test where is_scrambled returns None first.
-    pass
-
-
 def test_internal_inversion_not_hidden_by_duplicate():
-    """When informative rows have mixed strands, inversion is reported
-    even if non-informative rows are also present."""
+    """Informative rows with mixed strands -> inversion, even with duplicates."""
     dup = "X" * 180
     unique_plus = "P" * 160
     unique_minus = "M" * 160
-    total_len = 99 + 180 + 220 + 160 + 340 + 160 + 840 + 180 + 7821
     subject = (
         "N" * 99 +
-        dup +              # positions 100–279 (copy A)
+        dup +              # positions 100-279 (copy A)
         "N" * 220 +
-        unique_plus +      # positions 500–659
+        unique_plus +      # positions 500-659
         "N" * 340 +
-        unique_minus +     # positions 1000–1159
+        unique_minus +     # positions 1000-1159
         "N" * 840 +
-        dup +              # positions 2000–2179 (copy B)
+        dup +              # positions 2000-2179 (copy B)
         "N" * 7821
     )
-    assert len(subject) == total_len == 10000
     blast_rows = [
-        # Row C (qstart=100): non-informative (duplicate), plus
         mk_blast_row(sstart=100, send=279, qstart=100, qend=279, sstrand="plus"),
-        # Row A (qstart=300): informative, plus
         mk_blast_row(sstart=500, send=659, qstart=300, qend=459, sstrand="plus"),
-        # Row B (qstart=500): informative, minus
         mk_blast_row(sstart=1159, send=1000, qstart=500, qend=659, sstrand="minus"),
     ]
-    # Sorted by qstart: C(100, plus), A(300, plus), B(500, minus)
-    # Direction = "plus" (2/3). For plus: starts [100, 500, 1000] → monotone → no scramble.
-    # contains_internal_inversion:
-    #   C is not informative (dup occurs twice).
-    #   A and B are informative with mixed strands → InternalInversion.
     result = is_scrambled("id", blast_rows, {"mock_subject": subject}) or \
              contains_internal_inversion("id", blast_rows, {"mock_subject": subject})
     assert isinstance(result, Defect)
@@ -507,7 +640,7 @@ def test_internal_inversion_not_hidden_by_duplicate():
 
 
 # ---------------------------------------------------------------------------
-# Mixed / multiple direction tests
+# Mixed direction tests
 # ---------------------------------------------------------------------------
 
 def test_mixed_direction_returns_scramble():
@@ -539,16 +672,29 @@ def test_multiple_directions_and_inversions():
 
 
 # ---------------------------------------------------------------------------
-# Edge cases
+# Unknown sseqid
 # ---------------------------------------------------------------------------
 
-def test_unknown_sseqid_falls_back_to_scramble():
-    """If a row's sseqid is not in the subject dict, report scramble."""
+def test_unknown_sseqid_skipped():
+    """If no sseqid is in the subject dict, row is skipped -> no scramble."""
     blast_rows = [
         mk_blast_row(sstart=900, send=1010, qstart=50, qend=150, sstrand="plus",
                      sseqid="unknown_ref"),
     ]
     result = is_scrambled("id", blast_rows, {"mock_subject": "A" * 10000})
+    assert result is None  # skipped, not scrambled
+
+
+def test_unknown_sseqid_does_not_affect_known():
+    """Rows with known sseqid still evaluated; unknown rows are skipped."""
+    blast_rows = [
+        mk_blast_row(sstart=900, send=1010, qstart=50, qend=150, sstrand="plus",
+                     sseqid="known_ref"),
+        mk_blast_row(sstart=100, send=210, qstart=200, qend=310, sstrand="plus",
+                     sseqid="unknown_ref"),
+    ]
+    subj = subject_from_rows([blast_rows[0]])  # only for known_ref
+    result = is_scrambled("id", blast_rows, {"known_ref": subj})
     assert isinstance(result, Defect)
     assert isinstance(result.error, defect.Scramble)
 
@@ -557,8 +703,14 @@ def test_unknown_sseqid_falls_back_to_scramble():
 # has_monotone_subject_assignment direct tests
 # ---------------------------------------------------------------------------
 
-def test_has_monotone_subject_assignment_empty_rows():
-    assert has_monotone_subject_assignment([], {}, "plus") is True
+def test_has_monotone_subject_assignment_no_evidence_rows():
+    """No rows with enough evidence -> returns False."""
+    assert has_monotone_subject_assignment([], {"s": "A" * 10000}, "plus") is False
+
+    # Rows exist but below threshold
+    short = MIN_ORDER_EVIDENCE_LENGTH - 1
+    rows = [mk_blast_row(1, short, 10, "plus")]
+    assert has_monotone_subject_assignment(rows, {"mock_subject": "N" * 10000}, "plus") is False
 
 
 def test_has_monotone_subject_assignment_single():
@@ -577,21 +729,68 @@ def test_has_monotone_subject_assignment_plus_unsorted_unique():
 
 
 def test_has_monotone_subject_assignment_minus_unsorted_unique():
-    # For minus: normalized low must be nonincreasing.
-    # Row A (q=10, start=100) → Row B (q=20, start=150): 150 > 100 → NOT nonincreasing
+    """For minus: end nonincreasing. Row A end=200, Row B end=150 -> nonincreasing? No, 200->150 is ok.
+    Row A end=150, Row B end=200 -> 150->200 not nonincreasing -> fails."""
     rows = [
-        mk_blast_row(200, 100, 10, "minus"),   # start=100
-        mk_blast_row(250, 150, 20, "minus"),   # start=150
+        mk_blast_row(200, 100, 10, "minus"),   # end=200
+        mk_blast_row(250, 150, 20, "minus"),   # end=250, 250 > 200 -> not nonincreasing
     ]
     subj = subject_from_rows(rows)
     assert has_monotone_subject_assignment(rows, {"mock_subject": subj}, "minus") is False
 
 
 def test_has_monotone_subject_assignment_minus_sorted_unique():
-    # Row A (q=10, start=150) → Row B (q=20, start=100): 100 < 150 → nonincreasing ✓
     rows = [
-        mk_blast_row(250, 150, 10, "minus"),   # start=150
-        mk_blast_row(200, 100, 20, "minus"),   # start=100
+        mk_blast_row(250, 150, 10, "minus"),   # end=250
+        mk_blast_row(200, 100, 20, "minus"),   # end=200, 200 <= 250 -> nonincreasing
     ]
     subj = subject_from_rows(rows)
     assert has_monotone_subject_assignment(rows, {"mock_subject": subj}, "minus") is True
+
+
+# ---------------------------------------------------------------------------
+# LTR analogue (no hard-coded 622)
+# ---------------------------------------------------------------------------
+
+def test_scramble_ltr_analogue():
+    """Identical prefix/suffix blocks (like HIV LTRs) do not trigger scramble."""
+    prefix = "IDENTICAL_PREFIX_" * 11
+    suffix = "IDENTICAL_PREFIX_" * 11
+    middle = "MIDDLE_UNIQUE_" * 100
+    subject = prefix + middle + suffix
+    blast_rows = [
+        mk_blast_row(
+            sstart=len(prefix) + len(middle) + 1,
+            send=len(prefix) + len(middle) + len(suffix),
+            qstart=50,
+            qend=50 + len(prefix) - 1,
+            sstrand="plus",
+        ),
+        mk_blast_row(
+            sstart=len(prefix) + 1,
+            send=len(prefix) + len(middle),
+            qstart=800,
+            qend=800 + len(middle) - 1,
+            sstrand="plus",
+        ),
+    ]
+    result = is_scrambled("id", blast_rows, {"mock_subject": subject})
+    assert result is None
+
+
+def test_scramble_minus_duplicate_explains_reorder():
+    """Minus-strand rows whose apparent disorder is explained by duplicates."""
+    seg = "REPEATED_MINUS_" * 10
+    subject = (
+        "N" * 499 +
+        seg +              # positions 500-659
+        "N" * 340 +
+        seg +              # positions 1000-1159
+        "N" * (10000 - 1160)
+    )
+    blast_rows = [
+        mk_blast_row(sstart=1159, send=1000, qstart=100, qend=259, sstrand="minus"),
+        mk_blast_row(sstart=299, send=200, qstart=300, qend=399, sstrand="minus"),
+    ]
+    result = is_scrambled("id", blast_rows, {"mock_subject": subject})
+    assert result is None

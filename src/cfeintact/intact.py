@@ -124,6 +124,7 @@ def most_frequent_element(lst):
 
 
 MIN_ORDER_EVIDENCE_LENGTH = 100
+MIN_INTERNAL_INVERSION_EVIDENCE_LENGTH = 100
 
 
 @dataclass(frozen=True, order=True)
@@ -148,6 +149,10 @@ def subject_segment(row, subject_sequence: str) -> str:
     return subject_sequence[sp.start - 1 : sp.end]
 
 
+def subject_segment_length(row) -> int:
+    return abs(row.send - row.sstart) + 1
+
+
 def find_exact_occurrences(needle: str, haystack: str) -> List[SubjectPlacement]:
     if not needle:
         return []
@@ -165,10 +170,12 @@ def find_exact_occurrences(needle: str, haystack: str) -> List[SubjectPlacement]
 def candidate_subject_placements(
     row,
     subject_sequence: str,
-    occurrence_cache: Dict[str, List[SubjectPlacement]],
+    occurrence_cache: Dict[Tuple[str, str], List[SubjectPlacement]],
+    sseqid: str,
 ) -> List[SubjectPlacement]:
     seg = subject_segment(row, subject_sequence)
-    if seg not in occurrence_cache:
+    key = (sseqid, seg)
+    if key not in occurrence_cache:
         occurrences = find_exact_occurrences(seg, subject_sequence)
         if not occurrences:
             raise ValueError(
@@ -176,40 +183,43 @@ def candidate_subject_placements(
                 f"Row interval: {normalized_subject_interval(row)}, "
                 f"segment length: {len(seg)}"
             )
-        occurrence_cache[seg] = occurrences
-    return occurrence_cache[seg]
+        occurrence_cache[key] = occurrences
+    return occurrence_cache[key]
+
+
+def row_has_enough_order_evidence(row, subject_sequence: str) -> bool:
+    if not hasattr(row, 'sstart') or not hasattr(row, 'send'):
+        return False
+    return subject_segment_length(row) >= MIN_ORDER_EVIDENCE_LENGTH
 
 
 def is_subject_location_informative(
     row,
     subject_sequence: str,
-    cache: Optional[Dict[str, List[SubjectPlacement]]] = None,
+    cache: Dict[Tuple[str, str], List[SubjectPlacement]],
+    sseqid: str,
 ) -> bool:
     seg = subject_segment(row, subject_sequence)
     if len(seg) < MIN_ORDER_EVIDENCE_LENGTH:
         return False
-    if cache is None:
-        cache = {}
-    if seg not in cache:
-        cache[seg] = find_exact_occurrences(seg, subject_sequence)
-    return len(cache[seg]) == 1
+    key = (sseqid, seg)
+    if key not in cache:
+        cache[key] = find_exact_occurrences(seg, subject_sequence)
+    return len(cache[key]) == 1
 
 
-def has_monotone_subject_assignment(
+def has_monotone_subject_assignment_for_group(
     rows: List,
-    subject_sequence_by_id: Dict[str, str],
+    subject_sequence: str,
     direction: str,
+    occurrence_cache: Dict[Tuple[str, str], List[SubjectPlacement]],
 ) -> bool:
-    cache: Dict[str, List[SubjectPlacement]] = {}
     sorted_rows = sorted(rows, key=lambda x: x.qstart)
 
     if direction == "plus":
         prev = -1
         for row in sorted_rows:
-            seq = subject_sequence_by_id.get(row.sseqid)
-            if seq is None:
-                return False
-            candidates = candidate_subject_placements(row, seq, cache)
+            candidates = candidate_subject_placements(row, subject_sequence, occurrence_cache, row.sseqid)
             cand_starts = sorted(sp.start for sp in candidates)
             chosen: Optional[int] = None
             for c in cand_starts:
@@ -224,13 +234,10 @@ def has_monotone_subject_assignment(
     elif direction == "minus":
         prev = float("inf")
         for row in sorted_rows:
-            seq = subject_sequence_by_id.get(row.sseqid)
-            if seq is None:
-                return False
-            candidates = candidate_subject_placements(row, seq, cache)
-            cand_starts = sorted((sp.start for sp in candidates), reverse=True)
+            candidates = candidate_subject_placements(row, subject_sequence, occurrence_cache, row.sseqid)
+            cand_ends = sorted((sp.end for sp in candidates), reverse=True)
             chosen = None
-            for c in cand_starts:
+            for c in cand_ends:
                 if c <= prev:
                     chosen = c
                     break
@@ -239,6 +246,29 @@ def has_monotone_subject_assignment(
             prev = chosen
         return True
 
+    return False
+
+
+def has_monotone_subject_assignment(
+    rows: List,
+    subject_sequence_by_id: Dict[str, str],
+    direction: str,
+) -> bool:
+    # Group rows by sseqid; only consider rows with enough order evidence.
+    groups: Dict[str, List] = {}
+    for row in rows:
+        seq = subject_sequence_by_id.get(row.sseqid)
+        if seq is not None and row_has_enough_order_evidence(row, seq):
+            groups.setdefault(row.sseqid, []).append(row)
+
+    if not groups:
+        return False
+
+    occurrence_cache: Dict[Tuple[str, str], List[SubjectPlacement]] = {}
+    for sseqid, group in groups.items():
+        seq = subject_sequence_by_id[sseqid]
+        if has_monotone_subject_assignment_for_group(group, seq, direction, occurrence_cache):
+            return True
     return False
 
 
@@ -255,18 +285,19 @@ def contains_internal_inversion(
     if not blast_rows:
         return None
 
-    cache: Dict[str, List[SubjectPlacement]] = {}
-    informative: List[BlastRow] = []
+    cache: Dict[Tuple[str, str], List[SubjectPlacement]] = {}
+    strand_lengths: Dict[str, int] = {"plus": 0, "minus": 0}
     for row in blast_rows:
         seq = subject_sequence_by_id.get(row.sseqid)
-        if seq is not None and is_subject_location_informative(row, seq, cache):
-            informative.append(row)
-    if not informative:
-        return None
-    all_same = len(set(x.sstrand for x in informative)) == 1
-    if all_same:
-        return None
-    return Defect(qseqid, defect.InternalInversion())
+        if seq is not None and is_subject_location_informative(row, seq, cache, row.sseqid):
+            slen = subject_segment_length(row)
+            strand = row.sstrand if row.sstrand in ("plus", "minus") else "plus"
+            strand_lengths[strand] = strand_lengths.get(strand, 0) + slen
+
+    if strand_lengths["plus"] >= MIN_INTERNAL_INVERSION_EVIDENCE_LENGTH and \
+       strand_lengths["minus"] >= MIN_INTERNAL_INVERSION_EVIDENCE_LENGTH:
+        return Defect(qseqid, defect.InternalInversion())
+    return None
 
 
 def is_scrambled(
@@ -277,7 +308,16 @@ def is_scrambled(
     if not blast_rows:
         return None
 
-    sorted_rows = sorted(blast_rows, key=lambda x: x.qstart)
+    # Filter to rows that can provide order evidence (known sseqid, enough length).
+    evidence_rows = [
+        r for r in blast_rows
+        if r.sseqid in subject_sequence_by_id
+        and row_has_enough_order_evidence(r, subject_sequence_by_id[r.sseqid])
+    ]
+    if not evidence_rows:
+        return None
+
+    sorted_rows = sorted(evidence_rows, key=lambda x: x.qstart)
     direction = most_frequent_element(x.sstrand for x in sorted_rows)
     if direction is None:
         return None
