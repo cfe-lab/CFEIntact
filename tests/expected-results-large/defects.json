@@ -155,6 +155,12 @@
             "code": "LongDeletion",
             "message": "Query sequence contains a very large deletion.",
             "region": null
+        },
+        {
+            "qseqid": "KX505501.1",
+            "code": "Scramble",
+            "message": "Sequence is plus-scrambled.",
+            "region": null
         }
     ],
     "MN691959": [
@@ -175,12 +181,6 @@
             "code": "InternalStop",
             "message": "ORF 'tat_exon2' at 8238-8330 contains an internal stop codon at 8283.",
             "region": "tat_exon2"
-        },
-        {
-            "qseqid": "MN691959",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
-            "region": null
         }
     ],
     "MN692074": [
@@ -335,34 +335,7 @@
             "region": null
         }
     ],
-    "MN692145": [
-        {
-            "qseqid": "MN692145",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
-            "region": null
-        }
-    ],
-    "MN692145.CfE": [
-        {
-            "qseqid": "MN692145.CfE",
-            "code": "Deletion",
-            "message": "ORF 'pol' exceeds maximum deletion tolerance. Contains 144 deletions with max tolerance of 87 deletions.",
-            "region": "pol"
-        },
-        {
-            "qseqid": "MN692145.CfE",
-            "code": "Insertion",
-            "message": "ORF 'env' exceeds maximum insertion tolerance. Contains 147 insertions with max tolerance of 123 insertions.",
-            "region": "env"
-        },
-        {
-            "qseqid": "MN692145.CfE",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
-            "region": null
-        }
-    ],
+    "MN692145": [],
     "MN090335": [
         {
             "qseqid": "MN090335",
@@ -409,7 +382,7 @@
         {
             "qseqid": "MN090335",
             "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
+            "message": "Sequence is minus-scrambled.",
             "region": null
         },
         {
@@ -453,7 +426,7 @@
         {
             "qseqid": "MN090376",
             "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
+            "message": "Sequence is minus-scrambled.",
             "region": null
         },
         {
@@ -463,14 +436,7 @@
             "region": null
         }
     ],
-    "MK115581.1": [
-        {
-            "qseqid": "MK115581.1",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
-            "region": null
-        }
-    ],
+    "MK115581.1": [],
     "MK115690.1": [
         {
             "qseqid": "MK115690.1",
@@ -503,12 +469,6 @@
             "code": "MajorSpliceDonorSiteMutated",
             "message": "Query sequence has a missing splice donor site: --. The context is ----------------------.",
             "region": null
-        },
-        {
-            "qseqid": "MK115571.1",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
-            "region": null
         }
     ],
     "MK115514.1": [
@@ -516,12 +476,6 @@
             "qseqid": "MK115514.1",
             "code": "MajorSpliceDonorSiteMutated",
             "message": "Query sequence has a missing splice donor site: --. The context is GCGGCGACT--------CGAAA.",
-            "region": null
-        },
-        {
-            "qseqid": "MK115514.1",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
             "region": null
         }
     ],
@@ -531,30 +485,23 @@
             "code": "MajorSpliceDonorSiteMutated",
             "message": "Query sequence has a missing splice donor site: --. The context is GCGGCGACT--------CGAAA.",
             "region": null
-        },
-        {
-            "qseqid": "MK115488.1",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
-            "region": null
         }
     ],
     "MK115030.1": [
         {
             "qseqid": "MK115030.1",
             "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
+            "message": "Sequence is minus-scrambled.",
             "region": null
-        }
-    ],
-    "MK115498.1": [
+        },
         {
-            "qseqid": "MK115498.1",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
+            "qseqid": "MK115030.1",
+            "code": "InternalInversion",
+            "message": "Sequence contains an internal inversion.",
             "region": null
         }
     ],
+    "MK115498.1": [],
     "MK115211.1": [
         {
             "qseqid": "MK115211.1",
@@ -583,7 +530,7 @@
         {
             "qseqid": "MK115211.1",
             "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
+            "message": "Sequence is minus-scrambled.",
             "region": null
         },
         {
@@ -605,12 +552,6 @@
             "code": "MajorSpliceDonorSiteMutated",
             "message": "Query sequence has a missing splice donor site: --. The context is GCGGCGAACG------------.",
             "region": null
-        },
-        {
-            "qseqid": "MK115158.1",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
-            "region": null
         }
     ],
     "MK114705.1": [
@@ -631,12 +572,6 @@
             "code": "MutatedStopCodon",
             "message": "ORF 'nef' has a mutated stop codon: 'ACG'.",
             "region": "nef"
-        },
-        {
-            "qseqid": "MK114705.1",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
-            "region": null
         }
     ],
     "MK114856.1": [
@@ -783,12 +718,6 @@
             "code": "APOBECHypermutation",
             "message": "Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 3.639064030015132e-65).",
             "region": null
-        },
-        {
-            "qseqid": "MK114856.1",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
-            "region": null
         }
     ],
     "MK115009.1": [
@@ -921,7 +850,7 @@
         {
             "qseqid": "MK115009.1",
             "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
+            "message": "Sequence is minus-scrambled.",
             "region": null
         },
         {
@@ -937,22 +866,9 @@
             "code": "InternalStop",
             "message": "ORF 'tat_exon2' at 7870-7962 contains an internal stop codon at 7915.",
             "region": "tat_exon2"
-        },
-        {
-            "qseqid": "MK115387.1",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
-            "region": null
         }
     ],
-    "MK115491.1": [
-        {
-            "qseqid": "MK115491.1",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
-            "region": null
-        }
-    ],
+    "MK115491.1": [],
     "MK116110.1": [
         {
             "qseqid": "MK116110.1",
@@ -992,25 +908,12 @@
         },
         {
             "qseqid": "MK116110.1",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
-            "region": null
-        },
-        {
-            "qseqid": "MK116110.1",
             "code": "InternalInversion",
             "message": "Sequence contains an internal inversion.",
             "region": null
         }
     ],
-    "MK115527.1": [
-        {
-            "qseqid": "MK115527.1",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
-            "region": null
-        }
-    ],
+    "MK115527.1": [],
     "MK114997.1": [
         {
             "qseqid": "MK114997.1",
@@ -1029,22 +932,9 @@
             "code": "MutatedStopCodon",
             "message": "ORF 'env' has a mutated stop codon: 'AGA'.",
             "region": "env"
-        },
-        {
-            "qseqid": "MK114997.1",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
-            "region": null
         }
     ],
-    "MK115518.1": [
-        {
-            "qseqid": "MK115518.1",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
-            "region": null
-        }
-    ],
+    "MK115518.1": [],
     "MK115065.1": [
         {
             "qseqid": "MK115065.1",
@@ -1185,22 +1075,9 @@
             "code": "APOBECHypermutation",
             "message": "Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 4.937891251407691e-23).",
             "region": null
-        },
-        {
-            "qseqid": "MK115464.1",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
-            "region": null
         }
     ],
-    "MK115530.1": [
-        {
-            "qseqid": "MK115530.1",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
-            "region": null
-        }
-    ],
+    "MK115530.1": [],
     "MK115520.1": [
         {
             "qseqid": "MK115520.1",
@@ -1228,19 +1105,12 @@
         },
         {
             "qseqid": "MK115520.1",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
+            "code": "InternalInversion",
+            "message": "Sequence contains an internal inversion.",
             "region": null
         }
     ],
-    "MK115503.1": [
-        {
-            "qseqid": "MK115503.1",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
-            "region": null
-        }
-    ],
+    "MK115503.1": [],
     "MK115570.1": [
         {
             "qseqid": "MK115570.1",
@@ -1253,22 +1123,9 @@
             "code": "MajorSpliceDonorSiteMutated",
             "message": "Query sequence has a missing splice donor site: --. The context is GCGGCG-----------CGAAA.",
             "region": null
-        },
-        {
-            "qseqid": "MK115570.1",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
-            "region": null
         }
     ],
-    "MK115509.1": [
-        {
-            "qseqid": "MK115509.1",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
-            "region": null
-        }
-    ],
+    "MK115509.1": [],
     "MK115702.1": [
         {
             "qseqid": "MK115702.1",
@@ -1403,41 +1260,15 @@
             "code": "APOBECHypermutation",
             "message": "Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 8.33506116803153e-40).",
             "region": null
-        },
-        {
-            "qseqid": "MK115095.1",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
-            "region": null
         }
     ],
-    "MK115490.1": [
-        {
-            "qseqid": "MK115490.1",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
-            "region": null
-        }
-    ],
-    "MK115576.1": [
-        {
-            "qseqid": "MK115576.1",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
-            "region": null
-        }
-    ],
+    "MK115490.1": [],
+    "MK115576.1": [],
     "OQ092466": [
         {
             "qseqid": "OQ092466",
             "code": "MajorSpliceDonorSiteMutated",
             "message": "Query sequence has a mutated splice donor site: GC. The context is GCGGCGACTGGCGAGTACGCCA.",
-            "region": null
-        },
-        {
-            "qseqid": "OQ092466",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
             "region": null
         }
     ],
@@ -1453,12 +1284,6 @@
             "code": "MajorSpliceDonorSiteMutated",
             "message": "Query sequence has a missing splice donor site: --. The context is ------------GAGTACGCC-.",
             "region": null
-        },
-        {
-            "qseqid": "OQ092463",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
-            "region": null
         }
     ],
     "OQ092465": [
@@ -1466,12 +1291,6 @@
             "qseqid": "OQ092465",
             "code": "MajorSpliceDonorSiteMutated",
             "message": "Query sequence has a mutated splice donor site: GA. The context is GCGGCGACTGGAGAGTACGCC-.",
-            "region": null
-        },
-        {
-            "qseqid": "OQ092465",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
             "region": null
         }
     ],
@@ -1487,12 +1306,6 @@
             "code": "MajorSpliceDonorSiteMutated",
             "message": "Query sequence has a missing splice donor site: --. The context is ------------GAGTACGCCA.",
             "region": null
-        },
-        {
-            "qseqid": "OQ092462",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
-            "region": null
         }
     ],
     "OQ092464": [
@@ -1507,12 +1320,6 @@
             "code": "MajorSpliceDonorSiteMutated",
             "message": "Query sequence has a missing splice donor site: --. The context is GCGGCG----------------.",
             "region": null
-        },
-        {
-            "qseqid": "OQ092464",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
-            "region": null
         }
     ],
     "OQ092467": [
@@ -1526,12 +1333,6 @@
             "qseqid": "OQ092467",
             "code": "MajorSpliceDonorSiteMutated",
             "message": "Query sequence has a missing splice donor site: --. The context is ------------GAGTACGCCA.",
-            "region": null
-        },
-        {
-            "qseqid": "OQ092467",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
             "region": null
         }
     ]

@@ -6,11 +6,11 @@
 # Note that because of the defective insertion in VPR of HXB2,
 # the coordinates after that insertion are shifted by -1 (automatically).
 
-from typing import List, Tuple
+from typing import Sequence, Tuple
 
 # (name, start, end, max_deletions, max_insertions, max_distance)
 ORFDefinition = Tuple[str, int, int, int, int, float]
-ORFsDefinition = List[ORFDefinition]
+ORFsDefinition = Sequence[ORFDefinition]
 
 DEFAULT_FORWARD_ORFs: ORFsDefinition \
     = [("gag", 790, 2292, 30, 45, 0.36329365079365084),

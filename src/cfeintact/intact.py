@@ -123,207 +123,47 @@ def most_frequent_element(lst):
     return most_common[0][0] if most_common else None
 
 
-MIN_ORDER_EVIDENCE_LENGTH = 100
-MIN_INTERNAL_INVERSION_EVIDENCE_LENGTH = 100
+def remove_5_prime(blast_rows):
+    # HIV 5' region can easily map to its 3' region because they are identical.
+    # Such a maping would not constitute a scramble, so we ignore the 5' region for this check.
+    return [x for x in blast_rows if x.sstart > 622 and x.send > 622]
 
 
-@dataclass(frozen=True, order=True)
-class SubjectPlacement:
-    start: int  # 1-based inclusive, normalized low coordinate
-    end: int    # 1-based inclusive, normalized high coordinate
+def contains_internal_inversion(qseqid: str, blast_rows: List[BlastRow]) -> Optional[Defect]:
+    ignored_5_prime = remove_5_prime(blast_rows)
 
-
-def normalized_subject_interval(row) -> SubjectPlacement:
-    lo = min(row.sstart, row.send)
-    hi = max(row.sstart, row.send)
-    return SubjectPlacement(lo, hi)
-
-
-def subject_segment(row, subject_sequence: str) -> str:
-    sp = normalized_subject_interval(row)
-    if sp.end > len(subject_sequence):
-        raise ValueError(
-            f"Row subject interval [{sp.start}, {sp.end}] exceeds "
-            f"subject sequence length {len(subject_sequence)}"
-        )
-    return subject_sequence[sp.start - 1 : sp.end]
-
-
-def subject_segment_length(row) -> int:
-    return abs(row.send - row.sstart) + 1
-
-
-def find_exact_occurrences(needle: str, haystack: str) -> List[SubjectPlacement]:
-    if not needle:
-        return []
-    occurrences: List[SubjectPlacement] = []
-    start = 0
-    while True:
-        pos = haystack.find(needle, start)
-        if pos == -1:
-            break
-        occurrences.append(SubjectPlacement(pos + 1, pos + len(needle)))
-        start = pos + 1
-    return occurrences
-
-
-def candidate_subject_placements(
-    row,
-    subject_sequence: str,
-    occurrence_cache: Dict[Tuple[str, str], List[SubjectPlacement]],
-    sseqid: str,
-) -> List[SubjectPlacement]:
-    seg = subject_segment(row, subject_sequence)
-    key = (sseqid, seg)
-    if key not in occurrence_cache:
-        occurrences = find_exact_occurrences(seg, subject_sequence)
-        if not occurrences:
-            raise ValueError(
-                f"Subject interval segment not found in subject sequence. "
-                f"Row interval: {normalized_subject_interval(row)}, "
-                f"segment length: {len(seg)}"
-            )
-        occurrence_cache[key] = occurrences
-    return occurrence_cache[key]
-
-
-def row_has_enough_order_evidence(row, subject_sequence: str) -> bool:
-    if not hasattr(row, 'sstart') or not hasattr(row, 'send'):
-        return False
-    return subject_segment_length(row) >= MIN_ORDER_EVIDENCE_LENGTH
-
-
-def is_subject_location_informative(
-    row,
-    subject_sequence: str,
-    cache: Dict[Tuple[str, str], List[SubjectPlacement]],
-    sseqid: str,
-) -> bool:
-    seg = subject_segment(row, subject_sequence)
-    if len(seg) < MIN_ORDER_EVIDENCE_LENGTH:
-        return False
-    key = (sseqid, seg)
-    if key not in cache:
-        cache[key] = find_exact_occurrences(seg, subject_sequence)
-    return len(cache[key]) == 1
-
-
-def has_monotone_subject_assignment_for_group(
-    rows: List,
-    subject_sequence: str,
-    direction: str,
-    occurrence_cache: Dict[Tuple[str, str], List[SubjectPlacement]],
-) -> bool:
-    sorted_rows = sorted(rows, key=lambda x: x.qstart)
-
-    if direction == "plus":
-        prev = -1
-        for row in sorted_rows:
-            candidates = candidate_subject_placements(row, subject_sequence, occurrence_cache, row.sseqid)
-            cand_starts = sorted(sp.start for sp in candidates)
-            chosen: Optional[int] = None
-            for c in cand_starts:
-                if c >= prev:
-                    chosen = c
-                    break
-            if chosen is None:
-                return False
-            prev = chosen
-        return True
-
-    elif direction == "minus":
-        prev = float("inf")
-        for row in sorted_rows:
-            candidates = candidate_subject_placements(row, subject_sequence, occurrence_cache, row.sseqid)
-            cand_ends = sorted((sp.end for sp in candidates), reverse=True)
-            chosen = None
-            for c in cand_ends:
-                if c <= prev:
-                    chosen = c
-                    break
-            if chosen is None:
-                return False
-            prev = chosen
-        return True
-
-    return False
-
-
-def has_monotone_subject_assignment(
-    rows: List,
-    subject_sequence_by_id: Dict[str, str],
-    direction: str,
-) -> bool:
-    # Group rows by sseqid; only consider rows with enough order evidence.
-    groups: Dict[str, List] = {}
-    for row in rows:
-        seq = subject_sequence_by_id.get(row.sseqid)
-        if seq is not None and row_has_enough_order_evidence(row, seq):
-            groups.setdefault(row.sseqid, []).append(row)
-
-    if not groups:
-        return False
-
-    occurrence_cache: Dict[Tuple[str, str], List[SubjectPlacement]] = {}
-    for sseqid, group in groups.items():
-        seq = subject_sequence_by_id[sseqid]
-        if has_monotone_subject_assignment_for_group(group, seq, direction, occurrence_cache):
-            return True
-    return False
-
-
-# ---------------------------------------------------------------------------
-# Scramble & inversion detection
-# ---------------------------------------------------------------------------
-
-
-def contains_internal_inversion(
-    qseqid: str,
-    blast_rows: List[BlastRow],
-    subject_sequence_by_id: Dict[str, str],
-) -> Optional[Defect]:
-    if not blast_rows:
+    if not ignored_5_prime:
+        # No alignment.
+        # It should be an error normally, yet not an internal inversion error.
         return None
 
-    cache: Dict[Tuple[str, str], List[SubjectPlacement]] = {}
-    strand_lengths: Dict[str, int] = {"plus": 0, "minus": 0}
-    for row in blast_rows:
-        seq = subject_sequence_by_id.get(row.sseqid)
-        if seq is not None and is_subject_location_informative(row, seq, cache, row.sseqid):
-            slen = subject_segment_length(row)
-            strand = row.sstrand if row.sstrand in ("plus", "minus") else "plus"
-            strand_lengths[strand] = strand_lengths.get(strand, 0) + slen
-
-    if strand_lengths["plus"] >= MIN_INTERNAL_INVERSION_EVIDENCE_LENGTH and \
-       strand_lengths["minus"] >= MIN_INTERNAL_INVERSION_EVIDENCE_LENGTH:
-        return Defect(qseqid, defect.InternalInversion())
-    return None
-
-
-def is_scrambled(
-    qseqid: str,
-    blast_rows: List[BlastRow],
-    subject_sequence_by_id: Dict[str, str],
-) -> Optional[Defect]:
-    if not blast_rows:
+    all_same = len(set(x.sstrand for x in ignored_5_prime)) == 1
+    if all_same:
         return None
 
-    # Filter to rows that can provide order evidence (known sseqid, enough length).
-    evidence_rows = [
-        r for r in blast_rows
-        if r.sseqid in subject_sequence_by_id
-        and row_has_enough_order_evidence(r, subject_sequence_by_id[r.sseqid])
-    ]
-    if not evidence_rows:
+    # Some parts of the sequence were aligned
+    # in forward direction (plus)
+    # and some in reverse (minus).
+    # This indicates an internal inversion.
+    return Defect(qseqid, defect.InternalInversion())
+
+
+def is_scrambled(qseqid, blast_rows):
+    ignored_5_prime = remove_5_prime(blast_rows)
+
+    if not ignored_5_prime:
+        # No alignment.
+        # It should be an error normally, yet not a scramble error.
         return None
 
-    sorted_rows = sorted(evidence_rows, key=lambda x: x.qstart)
-    direction = most_frequent_element(x.sstrand for x in sorted_rows)
-    if direction is None:
+    ignored_5_prime.sort(key=lambda x: x.qstart)
+    direction = most_frequent_element(x.sstrand for x in ignored_5_prime)
+    if direction == "plus" and is_sorted(x.sstart for x in ignored_5_prime):
         return None
-    if has_monotone_subject_assignment(sorted_rows, subject_sequence_by_id, direction):
+    elif direction == "minus" and is_sorted(x.send for x in reversed(ignored_5_prime)):
         return None
-    return Defect(qseqid, defect.Scramble(direction))
+    else:
+        return Defect(qseqid, defect.Scramble(direction))
 
 
 def is_nonhiv(holistic, qseqid, seqlen, blast_rows):
@@ -886,10 +726,6 @@ def check(output_dir: str,
     for sequence in st.subtype_sequences(subtype):
         subtype_choices[str(sequence.id)] = sequence
 
-    subject_sequence_by_id = {
-        sid: str(rec.seq) for sid, rec in subtype_choices.items()
-    }
-
     def analyse_single_sequence(writer, sequence, blast_rows):
         sequence_defects = []
         holistic = HolisticInfo()
@@ -1050,12 +886,12 @@ def check(output_dir: str,
                 sequence_defects.append(error)
 
         if check_scramble:
-            error = is_scrambled(sequence.id, blast_rows, subject_sequence_by_id)
+            error = is_scrambled(sequence.id, blast_rows)
             if error:
                 sequence_defects.append(error)
 
         if check_internal_inversion:
-            error = contains_internal_inversion(sequence.id, blast_rows, subject_sequence_by_id)
+            error = contains_internal_inversion(sequence.id, blast_rows)
             if error:
                 sequence_defects.append(error)
 

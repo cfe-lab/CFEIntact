@@ -25,10 +25,10 @@ KX505501.1,MutatedStartCodon,ORF 'nef' has a mutated start codon: 'AGA'.,nef
 KX505501.1,MutatedStopCodon,ORF 'nef' has a mutated stop codon: 'GAC'.,nef
 KX505501.1,RevResponseElementDeletion,Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.,
 KX505501.1,LongDeletion,Query sequence contains a very large deletion.,
+KX505501.1,Scramble,Sequence is plus-scrambled.,
 MN691959,Frameshift,ORF 'vpu' at 5911-6156 contains out of frame indels that impact 122 positions.,vpu
 MN691959,InternalStop,ORF 'vpu' at 5911-6156 contains an internal stop codon at 5974.,vpu
 MN691959,InternalStop,ORF 'tat_exon2' at 8238-8330 contains an internal stop codon at 8283.,tat_exon2
-MN691959,Scramble,Sequence is plus-scrambled.,
 MN692074,Frameshift,ORF 'pol' at 2085-4082 contains out of frame indels that impact 676 positions.,pol
 MN692074,Deletion,ORF 'pol' exceeds maximum deletion tolerance. Contains 981 deletions with max tolerance of 87 deletions.,pol
 MN692074,MutatedStopCodon,ORF 'pol' has a mutated stop codon: 'GAT'.,pol
@@ -54,10 +54,6 @@ MN692074,MutatedStartCodon,ORF 'nef' has a mutated start codon: 'ACC'.,nef
 MN692074,MutatedStopCodon,ORF 'nef' has a mutated stop codon: 'CAG'.,nef
 MN692074,RevResponseElementDeletion,Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.,
 MN692074,LongDeletion,Query sequence contains a very large deletion.,
-MN692145,Scramble,Sequence is plus-scrambled.,
-MN692145.CfE,Deletion,ORF 'pol' exceeds maximum deletion tolerance. Contains 144 deletions with max tolerance of 87 deletions.,pol
-MN692145.CfE,Insertion,ORF 'env' exceeds maximum insertion tolerance. Contains 147 insertions with max tolerance of 123 insertions.,env
-MN692145.CfE,Scramble,Sequence is plus-scrambled.,
 MN090335,Frameshift,ORF 'gag' at 482-1665 contains out of frame indels that impact 1230 positions.,gag
 MN090335,InternalStop,ORF 'gag' at 482-1665 contains an internal stop codon at 683.,gag
 MN090335,MutatedStartCodon,ORF 'gag' has a mutated start codon: 'ATA'.,gag
@@ -65,41 +61,35 @@ MN090335,MutatedStopCodon,ORF 'gag' has a mutated stop codon: 'AAA'.,gag
 MN090335,InternalStop,ORF 'tat_exon2' at 7740-7832 contains an internal stop codon at 7785.,tat_exon2
 MN090335,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 42 deletions with max tolerance of 10 deletions.,
 MN090335,MajorSpliceDonorSiteMutated,Query sequence has a mutated splice donor site: AT. The context is TTAACTGCGAAT-----CGTTC.,
-MN090335,Scramble,Sequence is plus-scrambled.,
+MN090335,Scramble,Sequence is minus-scrambled.,
 MN090335,InternalInversion,Sequence contains an internal inversion.,
 MN090376,Frameshift,ORF 'gag' at 541-1590 contains out of frame indels that impact 754 positions.,gag
 MN090376,InternalStop,ORF 'gag' at 541-1590 contains an internal stop codon at 574.,gag
 MN090376,MutatedStartCodon,ORF 'gag' has a mutated start codon: 'TGC'.,gag
 MN090376,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 95 deletions with max tolerance of 10 deletions.,
 MN090376,MajorSpliceDonorSiteMutated,Query sequence has a missing splice donor site: --. The context is ----------------------.,
-MN090376,Scramble,Sequence is plus-scrambled.,
+MN090376,Scramble,Sequence is minus-scrambled.,
 MN090376,InternalInversion,Sequence contains an internal inversion.,
-MK115581.1,Scramble,Sequence is plus-scrambled.,
 MK115690.1,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 12 deletions with max tolerance of 10 deletions.,
 MK115690.1,MajorSpliceDonorSiteMutated,Query sequence has a mutated splice donor site: G-. The context is GCGGCGACTGG-----------.,
 MK115690.1,Scramble,Sequence is plus-scrambled.,
 MK115571.1,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 79 deletions with max tolerance of 10 deletions.,
 MK115571.1,MajorSpliceDonorSiteMutated,Query sequence has a missing splice donor site: --. The context is ----------------------.,
-MK115571.1,Scramble,Sequence is plus-scrambled.,
 MK115514.1,MajorSpliceDonorSiteMutated,Query sequence has a missing splice donor site: --. The context is GCGGCGACT--------CGAAA.,
-MK115514.1,Scramble,Sequence is plus-scrambled.,
 MK115488.1,MajorSpliceDonorSiteMutated,Query sequence has a missing splice donor site: --. The context is GCGGCGACT--------CGAAA.,
-MK115488.1,Scramble,Sequence is plus-scrambled.,
-MK115030.1,Scramble,Sequence is plus-scrambled.,
-MK115498.1,Scramble,Sequence is plus-scrambled.,
+MK115030.1,Scramble,Sequence is minus-scrambled.,
+MK115030.1,InternalInversion,Sequence contains an internal inversion.,
 MK115211.1,Frameshift,ORF 'env' at 5688-8198 contains out of frame indels that impact 757 positions.,env
 MK115211.1,InternalStop,ORF 'env' at 5688-8198 contains an internal stop codon at 6354.,env
 MK115211.1,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 20 deletions with max tolerance of 10 deletions.,
 MK115211.1,MajorSpliceDonorSiteMutated,Query sequence has a missing splice donor site: --. The context is GCGGCG----------------.,
-MK115211.1,Scramble,Sequence is plus-scrambled.,
+MK115211.1,Scramble,Sequence is minus-scrambled.,
 MK115211.1,InternalInversion,Sequence contains an internal inversion.,
 MK115158.1,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 20 deletions with max tolerance of 10 deletions.,
 MK115158.1,MajorSpliceDonorSiteMutated,Query sequence has a missing splice donor site: --. The context is GCGGCGAACG------------.,
-MK115158.1,Scramble,Sequence is plus-scrambled.,
 MK114705.1,Frameshift,ORF 'nef' at 8551-9118 contains out of frame indels that impact 122 positions.,nef
 MK114705.1,InternalStop,ORF 'nef' at 8551-9118 contains an internal stop codon at 8983.,nef
 MK114705.1,MutatedStopCodon,ORF 'nef' has a mutated stop codon: 'ACG'.,nef
-MK114705.1,Scramble,Sequence is plus-scrambled.,
 MK114856.1,Frameshift,ORF 'gag' at 493-2022 contains out of frame indels that impact 828 positions.,gag
 MK114856.1,InternalStop,ORF 'gag' at 493-2022 contains an internal stop codon at 538.,gag
 MK114856.1,MutatedStartCodon,ORF 'gag' has a mutated start codon: 'ATA'.,gag
@@ -124,7 +114,6 @@ MK114856.1,Frameshift,ORF 'nef' at 8523-9176 contains out of frame indels that i
 MK114856.1,InternalStop,ORF 'nef' at 8523-9176 contains an internal stop codon at 8559.,nef
 MK114856.1,MutatedStartCodon,ORF 'nef' has a mutated start codon: 'ATA'.,nef
 MK114856.1,APOBECHypermutation,Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 3.639064030015132e-65).,
-MK114856.1,Scramble,Sequence is plus-scrambled.,
 MK115009.1,Frameshift,ORF 'gag' at 303-1821 contains out of frame indels that impact 844 positions.,gag
 MK115009.1,InternalStop,ORF 'gag' at 303-1821 contains an internal stop codon at 348.,gag
 MK115009.1,MutatedStopCodon,ORF 'gag' has a mutated stop codon: 'AAA'.,gag
@@ -146,25 +135,19 @@ MK115009.1,Frameshift,ORF 'nef' at 8355-8996 contains out of frame indels that i
 MK115009.1,InternalStop,ORF 'nef' at 8355-8996 contains an internal stop codon at 8796.,nef
 MK115009.1,MutatedStartCodon,ORF 'nef' has a mutated start codon: 'ATA'.,nef
 MK115009.1,APOBECHypermutation,Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 1.2040967664149076e-41).,
-MK115009.1,Scramble,Sequence is plus-scrambled.,
+MK115009.1,Scramble,Sequence is minus-scrambled.,
 MK115009.1,InternalInversion,Sequence contains an internal inversion.,
 MK115387.1,InternalStop,ORF 'tat_exon2' at 7870-7962 contains an internal stop codon at 7915.,tat_exon2
-MK115387.1,Scramble,Sequence is plus-scrambled.,
-MK115491.1,Scramble,Sequence is plus-scrambled.,
 MK116110.1,Frameshift,ORF 'gag' at 490-1601 contains out of frame indels that impact 991 positions.,gag
 MK116110.1,InternalStop,ORF 'gag' at 490-1601 contains an internal stop codon at 553.,gag
 MK116110.1,MutatedStartCodon,ORF 'gag' has a mutated start codon: 'TGC'.,gag
 MK116110.1,MutatedStopCodon,ORF 'gag' has a mutated stop codon: 'AAA'.,gag
 MK116110.1,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 93 deletions with max tolerance of 10 deletions.,
 MK116110.1,MajorSpliceDonorSiteMutated,Query sequence has a missing splice donor site: --. The context is ----------------------.,
-MK116110.1,Scramble,Sequence is plus-scrambled.,
 MK116110.1,InternalInversion,Sequence contains an internal inversion.,
-MK115527.1,Scramble,Sequence is plus-scrambled.,
 MK114997.1,Frameshift,ORF 'env' at 5651-8207 contains out of frame indels that impact 1167 positions.,env
 MK114997.1,InternalStop,ORF 'env' at 5651-8207 contains an internal stop codon at 6695.,env
 MK114997.1,MutatedStopCodon,ORF 'env' has a mutated stop codon: 'AGA'.,env
-MK114997.1,Scramble,Sequence is plus-scrambled.,
-MK115518.1,Scramble,Sequence is plus-scrambled.,
 MK115065.1,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 75 deletions with max tolerance of 10 deletions.,
 MK115065.1,MajorSpliceDonorSiteMutated,Query sequence has a missing splice donor site: --. The context is ----------------------.,
 MK115065.1,Scramble,Sequence is plus-scrambled.,
@@ -188,18 +171,13 @@ MK115464.1,Frameshift,ORF 'nef' at 8801-9451 contains out of frame indels that i
 MK115464.1,InternalStop,ORF 'nef' at 8801-9451 contains an internal stop codon at 8837.,nef
 MK115464.1,MutatedStartCodon,ORF 'nef' has a mutated start codon: 'ATA'.,nef
 MK115464.1,APOBECHypermutation,Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 4.937891251407691e-23).,
-MK115464.1,Scramble,Sequence is plus-scrambled.,
-MK115530.1,Scramble,Sequence is plus-scrambled.,
 MK115520.1,Frameshift,ORF 'pol' at 1988-5004 contains out of frame indels that impact 1225 positions.,pol
 MK115520.1,InternalStop,ORF 'pol' at 1988-5004 contains an internal stop codon at 3188.,pol
 MK115520.1,MutatedStopCodon,ORF 'pol' has a mutated stop codon: 'AGA'.,pol
 MK115520.1,MajorSpliceDonorSiteMutated,Query sequence has a mutated splice donor site: GA. The context is CTGGTAACTAGAGATCGAAAGT.,
-MK115520.1,Scramble,Sequence is plus-scrambled.,
-MK115503.1,Scramble,Sequence is plus-scrambled.,
+MK115520.1,InternalInversion,Sequence contains an internal inversion.,
 MK115570.1,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 11 deletions with max tolerance of 10 deletions.,
 MK115570.1,MajorSpliceDonorSiteMutated,Query sequence has a missing splice donor site: --. The context is GCGGCG-----------CGAAA.,
-MK115570.1,Scramble,Sequence is plus-scrambled.,
-MK115509.1,Scramble,Sequence is plus-scrambled.,
 MK115702.1,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 54 deletions with max tolerance of 10 deletions.,
 MK115702.1,MajorSpliceDonorSiteMutated,Query sequence has a missing splice donor site: --. The context is ---------------------A.,
 MK115702.1,Scramble,Sequence is plus-scrambled.,
@@ -222,22 +200,13 @@ MK115095.1,Frameshift,ORF 'nef' at 8231-8872 contains out of frame indels that i
 MK115095.1,Deletion,ORF 'nef' exceeds maximum deletion tolerance. Contains 36 deletions with max tolerance of 27 deletions.,nef
 MK115095.1,MutatedStartCodon,ORF 'nef' has a mutated start codon: 'ATA'.,nef
 MK115095.1,APOBECHypermutation,Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 8.33506116803153e-40).,
-MK115095.1,Scramble,Sequence is plus-scrambled.,
-MK115490.1,Scramble,Sequence is plus-scrambled.,
-MK115576.1,Scramble,Sequence is plus-scrambled.,
 OQ092466,MajorSpliceDonorSiteMutated,Query sequence has a mutated splice donor site: GC. The context is GCGGCGACTGGCGAGTACGCCA.,
-OQ092466,Scramble,Sequence is plus-scrambled.,
 OQ092463,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 26 deletions with max tolerance of 10 deletions.,
 OQ092463,MajorSpliceDonorSiteMutated,Query sequence has a missing splice donor site: --. The context is ------------GAGTACGCC-.,
-OQ092463,Scramble,Sequence is plus-scrambled.,
 OQ092465,MajorSpliceDonorSiteMutated,Query sequence has a mutated splice donor site: GA. The context is GCGGCGACTGGAGAGTACGCC-.,
-OQ092465,Scramble,Sequence is plus-scrambled.,
 OQ092462,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 23 deletions with max tolerance of 10 deletions.,
 OQ092462,MajorSpliceDonorSiteMutated,Query sequence has a missing splice donor site: --. The context is ------------GAGTACGCCA.,
-OQ092462,Scramble,Sequence is plus-scrambled.,
 OQ092464,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 21 deletions with max tolerance of 10 deletions.,
 OQ092464,MajorSpliceDonorSiteMutated,Query sequence has a missing splice donor site: --. The context is GCGGCG----------------.,
-OQ092464,Scramble,Sequence is plus-scrambled.,
 OQ092467,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 22 deletions with max tolerance of 10 deletions.,
 OQ092467,MajorSpliceDonorSiteMutated,Query sequence has a missing splice donor site: --. The context is ------------GAGTACGCCA.,
-OQ092467,Scramble,Sequence is plus-scrambled.,

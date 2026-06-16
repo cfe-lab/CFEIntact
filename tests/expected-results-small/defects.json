@@ -155,6 +155,12 @@
             "code": "LongDeletion",
             "message": "Query sequence contains a very large deletion.",
             "region": null
+        },
+        {
+            "qseqid": "KX505501.1",
+            "code": "Scramble",
+            "message": "Sequence is plus-scrambled.",
+            "region": null
         }
     ],
     "MN691959": [
@@ -175,12 +181,6 @@
             "code": "InternalStop",
             "message": "ORF 'tat_exon2' at 8238-8330 contains an internal stop codon at 8283.",
             "region": "tat_exon2"
-        },
-        {
-            "qseqid": "MN691959",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
-            "region": null
         }
     ],
     "MN692074": [
@@ -335,14 +335,7 @@
             "region": null
         }
     ],
-    "MN692145": [
-        {
-            "qseqid": "MN692145",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
-            "region": null
-        }
-    ],
+    "MN692145": [],
     "MN090335": [
         {
             "qseqid": "MN090335",
@@ -389,7 +382,7 @@
         {
             "qseqid": "MN090335",
             "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
+            "message": "Sequence is minus-scrambled.",
             "region": null
         },
         {

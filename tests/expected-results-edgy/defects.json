@@ -41,22 +41,9 @@
             "code": "InternalStop",
             "message": "ORF 'nef' at 8797-9417 contains an internal stop codon at 9166.",
             "region": "nef"
-        },
-        {
-            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
-            "region": null
         }
     ],
-    "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE": [
-        {
-            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
-            "region": null
-        }
-    ],
+    "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE": [],
     "small-sequence": [
         {
             "qseqid": "small-sequence",
@@ -893,14 +880,7 @@
             "region": null
         }
     ],
-    "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.WITH.SOME.LOWERCASES": [
-        {
-            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.WITH.SOME.LOWERCASES",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
-            "region": null
-        }
-    ],
+    "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.WITH.SOME.LOWERCASES": [],
     "small-sequence-with-lowercases": [
         {
             "qseqid": "small-sequence-with-lowercases",
@@ -1155,14 +1135,7 @@
             "region": null
         }
     ],
-    "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSECOMPLEMENTED": [
-        {
-            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSECOMPLEMENTED",
-            "code": "Scramble",
-            "message": "Sequence is minus-scrambled.",
-            "region": null
-        }
-    ],
+    "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSECOMPLEMENTED": [],
     "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED": [
         {
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.REVERSED",
@@ -1416,12 +1389,6 @@
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.WITH-XS",
             "code": "UnknownNucleotide",
             "message": "Sequence contains invalid nucleotides: XXXXXXX (start: 45, end: 51).",
-            "region": null
-        },
-        {
-            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.WITH-XS",
-            "code": "Scramble",
-            "message": "Sequence is minus-scrambled.",
             "region": null
         }
     ],
@@ -1703,12 +1670,6 @@
             "code": "UnknownNucleotide",
             "message": "Sequence contains invalid nucleotides: >1>#>@> (start: 45, end: 51).",
             "region": null
-        },
-        {
-            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.WITH-BAD-SYMBOLS",
-            "code": "Scramble",
-            "message": "Sequence is minus-scrambled.",
-            "region": null
         }
     ],
     "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.WITH-DASHES": [
@@ -1716,12 +1677,6 @@
             "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.WITH-DASHES",
             "code": "UnknownNucleotide",
             "message": "Sequence contains invalid nucleotides: ------- (start: 45, end: 51).",
-            "region": null
-        },
-        {
-            "qseqid": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE.BUT.WITH-DASHES",
-            "code": "Scramble",
-            "message": "Sequence is minus-scrambled.",
             "region": null
         }
     ],
