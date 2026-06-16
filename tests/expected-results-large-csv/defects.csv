@@ -160,7 +160,6 @@ MK115520.1,Frameshift,ORF 'pol' at 1988-5004 contains out of frame indels that i
 MK115520.1,InternalStop,ORF 'pol' at 1988-5004 contains an internal stop codon at 3188.,pol
 MK115520.1,MutatedStopCodon,ORF 'pol' has a mutated stop codon: 'AGA'.,pol
 MK115520.1,MajorSpliceDonorSiteMutated,Query sequence has a mutated splice donor site: GA. The context is CTGGTAACTAGAGATCGAAAGT.,
-MK115520.1,InternalInversion,Sequence contains an internal inversion.,
 MK115570.1,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 11 deletions with max tolerance of 10 deletions.,
 MK115570.1,MajorSpliceDonorSiteMutated,Query sequence has a missing splice donor site: --. The context is GCGGCG-----------CGAAA.,
 MK115702.1,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 54 deletions with max tolerance of 10 deletions.,

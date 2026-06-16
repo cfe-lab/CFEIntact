@@ -123,13 +123,29 @@ def most_frequent_element(lst):
     return most_common[0][0] if most_common else None
 
 
+LTR = 622  # or better: a named, justified constant
+
+
+def touches_interval(start, end, lo, hi):
+    a, b = sorted((start, end))
+    return a <= hi and b >= lo
+
+
+def touches_terminal_repeat(row):
+    return (
+        touches_interval(row.qstart, row.qend, 1, LTR) or
+        touches_interval(row.qstart, row.qend, row.qlen - LTR + 1, row.qlen) or
+        touches_interval(row.sstart, row.send, 1, LTR) or
+        touches_interval(row.sstart, row.send, row.slen - LTR + 1, row.slen)
+    )
+
+
 def remove_5_prime(blast_rows):
     # HIV 5' region can easily map to its 3' region because they are identical.
     # Such a maping would not constitute a scramble, so we ignore the 5' region for this check.
     # Both the query and subject 5' LTR regions (positions 1-622) are ignored, since either
     # side can cross-map to the other's 3' LTR and create a false scramble signal.
-    return [x for x in blast_rows
-            if x.sstart > 622 and x.send > 622 and x.qstart > 622 and x.qend > 622]
+    return [row for row in blast_rows if not touches_terminal_repeat(row)]
 
 
 def contains_internal_inversion(qseqid: str, blast_rows: List[BlastRow]) -> Optional[Defect]:

@@ -38,6 +38,8 @@ class MockBlastRow:
         self.qstart = qstart
         self.sstrand = sstrand
         self.qend = qend if qend is not None else qstart
+        self.qlen = 9000
+        self.slen = 9000
 
 
 def mk_blast_row(sstart, send, qstart, sstrand, qend=None):

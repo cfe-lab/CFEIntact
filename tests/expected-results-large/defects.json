@@ -1011,12 +1011,6 @@
             "code": "MajorSpliceDonorSiteMutated",
             "message": "Query sequence has a mutated splice donor site: GA. The context is CTGGTAACTAGAGATCGAAAGT.",
             "region": null
-        },
-        {
-            "qseqid": "MK115520.1",
-            "code": "InternalInversion",
-            "message": "Sequence contains an internal inversion.",
-            "region": null
         }
     ],
     "MK115503.1": [],
