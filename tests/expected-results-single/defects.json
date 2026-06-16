@@ -1,3 +1,10 @@
 {
-    "MN692145": []
+    "MN692145": [
+        {
+            "qseqid": "MN692145",
+            "code": "Scramble",
+            "message": "Sequence is plus-scrambled.",
+            "region": null
+        }
+    ]
 }

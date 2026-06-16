@@ -175,6 +175,12 @@
             "code": "InternalStop",
             "message": "ORF 'tat_exon2' at 8238-8330 contains an internal stop codon at 8283.",
             "region": "tat_exon2"
+        },
+        {
+            "qseqid": "MN691959",
+            "code": "Scramble",
+            "message": "Sequence is plus-scrambled.",
+            "region": null
         }
     ],
     "MN692074": [
@@ -329,7 +335,14 @@
             "region": null
         }
     ],
-    "MN692145": [],
+    "MN692145": [
+        {
+            "qseqid": "MN692145",
+            "code": "Scramble",
+            "message": "Sequence is plus-scrambled.",
+            "region": null
+        }
+    ],
     "MN090335": [
         {
             "qseqid": "MN090335",
@@ -371,6 +384,18 @@
             "qseqid": "MN090335",
             "code": "MajorSpliceDonorSiteMutated",
             "message": "Query sequence has a mutated splice donor site: AT. The context is TTAACTGCGAAT-----CGTTC.",
+            "region": null
+        },
+        {
+            "qseqid": "MN090335",
+            "code": "Scramble",
+            "message": "Sequence is plus-scrambled.",
+            "region": null
+        },
+        {
+            "qseqid": "MN090335",
+            "code": "InternalInversion",
+            "message": "Sequence contains an internal inversion.",
             "region": null
         }
     ]

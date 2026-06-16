@@ -28,6 +28,7 @@ KX505501.1,LongDeletion,Query sequence contains a very large deletion.,
 MN691959,Frameshift,ORF 'vpu' at 5911-6156 contains out of frame indels that impact 122 positions.,vpu
 MN691959,InternalStop,ORF 'vpu' at 5911-6156 contains an internal stop codon at 5974.,vpu
 MN691959,InternalStop,ORF 'tat_exon2' at 8238-8330 contains an internal stop codon at 8283.,tat_exon2
+MN691959,Scramble,Sequence is plus-scrambled.,
 MN692074,Frameshift,ORF 'pol' at 2085-4082 contains out of frame indels that impact 676 positions.,pol
 MN692074,Deletion,ORF 'pol' exceeds maximum deletion tolerance. Contains 981 deletions with max tolerance of 87 deletions.,pol
 MN692074,MutatedStopCodon,ORF 'pol' has a mutated stop codon: 'GAT'.,pol
@@ -53,6 +54,7 @@ MN692074,MutatedStartCodon,ORF 'nef' has a mutated start codon: 'ACC'.,nef
 MN692074,MutatedStopCodon,ORF 'nef' has a mutated stop codon: 'CAG'.,nef
 MN692074,RevResponseElementDeletion,Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.,
 MN692074,LongDeletion,Query sequence contains a very large deletion.,
+MN692145,Scramble,Sequence is plus-scrambled.,
 MN090335,Frameshift,ORF 'gag' at 482-1665 contains out of frame indels that impact 1230 positions.,gag
 MN090335,InternalStop,ORF 'gag' at 482-1665 contains an internal stop codon at 683.,gag
 MN090335,MutatedStartCodon,ORF 'gag' has a mutated start codon: 'ATA'.,gag
@@ -60,3 +62,5 @@ MN090335,MutatedStopCodon,ORF 'gag' has a mutated stop codon: 'AAA'.,gag
 MN090335,InternalStop,ORF 'tat_exon2' at 7740-7832 contains an internal stop codon at 7785.,tat_exon2
 MN090335,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 42 deletions with max tolerance of 10 deletions.,
 MN090335,MajorSpliceDonorSiteMutated,Query sequence has a mutated splice donor site: AT. The context is TTAACTGCGAAT-----CGTTC.,
+MN090335,Scramble,Sequence is plus-scrambled.,
+MN090335,InternalInversion,Sequence contains an internal inversion.,
