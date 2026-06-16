@@ -53,6 +53,9 @@ MN692074,MutatedStartCodon,ORF 'nef' has a mutated start codon: 'ACC'.,nef
 MN692074,MutatedStopCodon,ORF 'nef' has a mutated stop codon: 'CAG'.,nef
 MN692074,RevResponseElementDeletion,Query Sequence exceeds maximum deletion tolerance in RRE. Contains 265 deletions with max tolerance of 20 deletions.,
 MN692074,LongDeletion,Query sequence contains a very large deletion.,
+MN692145.CfE,Deletion,ORF 'pol' exceeds maximum deletion tolerance. Contains 144 deletions with max tolerance of 87 deletions.,pol
+MN692145.CfE,Insertion,ORF 'env' exceeds maximum insertion tolerance. Contains 147 insertions with max tolerance of 123 insertions.,env
+MN692145.CfE,Scramble,Sequence is plus-scrambled.,
 MN090335,Frameshift,ORF 'gag' at 482-1665 contains out of frame indels that impact 1230 positions.,gag
 MN090335,InternalStop,ORF 'gag' at 482-1665 contains an internal stop codon at 683.,gag
 MN090335,MutatedStartCodon,ORF 'gag' has a mutated start codon: 'ATA'.,gag

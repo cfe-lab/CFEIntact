@@ -330,6 +330,26 @@
         }
     ],
     "MN692145": [],
+    "MN692145.CfE": [
+        {
+            "qseqid": "MN692145.CfE",
+            "code": "Deletion",
+            "message": "ORF 'pol' exceeds maximum deletion tolerance. Contains 144 deletions with max tolerance of 87 deletions.",
+            "region": "pol"
+        },
+        {
+            "qseqid": "MN692145.CfE",
+            "code": "Insertion",
+            "message": "ORF 'env' exceeds maximum insertion tolerance. Contains 147 insertions with max tolerance of 123 insertions.",
+            "region": "env"
+        },
+        {
+            "qseqid": "MN692145.CfE",
+            "code": "Scramble",
+            "message": "Sequence is plus-scrambled.",
+            "region": null
+        }
+    ],
     "MN090335": [
         {
             "qseqid": "MN090335",
