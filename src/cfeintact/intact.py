@@ -123,10 +123,17 @@ def most_frequent_element(lst):
     return most_common[0][0] if most_common else None
 
 
-def remove_5_prime(blast_rows):
+def remove_5_prime(blast_rows: Iterable[BlastRow]):
     # HIV 5' region can easily map to its 3' region because they are identical.
     # Such a maping would not constitute a scramble, so we ignore the 5' region for this check.
-    return [x for x in blast_rows if x.sstart > 622 and x.send > 622]
+
+    GAG_START = 789
+    NEF_CUTOFF = 9000
+
+    def is_ltr_match(row: BlastRow):
+        return row.send < GAG_START or row.sstart > NEF_CUTOFF
+
+    return [x for x in blast_rows if not is_ltr_match(x)]
 
 
 def contains_internal_inversion(qseqid: str, blast_rows: List[BlastRow]) -> Optional[Defect]:
