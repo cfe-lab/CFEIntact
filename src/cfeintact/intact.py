@@ -141,10 +141,13 @@ def remove_ends_matches(blast_rows: Sequence[BlastRow]) -> List[BlastRow]:
     def is_ltr_match(row: BlastRow):
         return is_ltr_region(row.sstart, row.send)
 
+    def query_interval(row):
+        return min(row.qstart, row.qend), max(row.qstart, row.qend)
+
     def overlap(a: BlastRow, b: BlastRow):
-        return (a.qstart <= b.qstart and a.qend >= b.qstart
-                or
-                b.qstart <= a.qstart and b.qend >= a.qstart)
+        a_start, a_end = query_interval(a)
+        b_start, b_end = query_interval(b)
+        return a_start <= b_end and b_start <= a_end
 
     non_overlaping = [x for x in blast_rows
                       if not (is_ltr_match(x) and

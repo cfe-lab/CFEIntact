@@ -32,15 +32,17 @@ def test_is_sorted(lst, expected):
 
 
 class MockBlastRow:
-    def __init__(self, sstart, send, qstart, sstrand):
+    def __init__(self, sstart, send, qstart, qend, sstrand):
         self.sstart = sstart
         self.send = send
+        self.qend = qend
         self.qstart = qstart
         self.sstrand = sstrand
 
 
 def mk_blast_row(sstart, send, qstart, sstrand):
-    return MockBlastRow(sstart, send, qstart, sstrand)
+    qend = qstart + 100
+    return MockBlastRow(sstart, send, qstart, qend, sstrand)
 
 
 def test_is_scrambled_no_alignment():
