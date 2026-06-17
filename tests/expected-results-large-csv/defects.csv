@@ -63,11 +63,15 @@ MN090335,MutatedStopCodon,ORF 'gag' has a mutated stop codon: 'AAA'.,gag
 MN090335,InternalStop,ORF 'tat_exon2' at 7740-7832 contains an internal stop codon at 7785.,tat_exon2
 MN090335,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 42 deletions with max tolerance of 10 deletions.,
 MN090335,MajorSpliceDonorSiteMutated,Query sequence has a mutated splice donor site: AT. The context is TTAACTGCGAAT-----CGTTC.,
+MN090335,Scramble,Sequence is minus-scrambled.,
+MN090335,InternalInversion,Sequence contains an internal inversion.,
 MN090376,Frameshift,ORF 'gag' at 541-1590 contains out of frame indels that impact 754 positions.,gag
 MN090376,InternalStop,ORF 'gag' at 541-1590 contains an internal stop codon at 574.,gag
 MN090376,MutatedStartCodon,ORF 'gag' has a mutated start codon: 'TGC'.,gag
 MN090376,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 95 deletions with max tolerance of 10 deletions.,
 MN090376,MajorSpliceDonorSiteMutated,Query sequence has a missing splice donor site: --. The context is ----------------------.,
+MN090376,Scramble,Sequence is minus-scrambled.,
+MN090376,InternalInversion,Sequence contains an internal inversion.,
 MK115690.1,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 12 deletions with max tolerance of 10 deletions.,
 MK115690.1,MajorSpliceDonorSiteMutated,Query sequence has a mutated splice donor site: G-. The context is GCGGCGACTGG-----------.,
 MK115571.1,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 79 deletions with max tolerance of 10 deletions.,
@@ -135,6 +139,8 @@ MK116110.1,MutatedStartCodon,ORF 'gag' has a mutated start codon: 'TGC'.,gag
 MK116110.1,MutatedStopCodon,ORF 'gag' has a mutated stop codon: 'AAA'.,gag
 MK116110.1,PackagingSignalDeletion,Query sequence exceeds maximum deletion tolerance in PSI. Contains 93 deletions with max tolerance of 10 deletions.,
 MK116110.1,MajorSpliceDonorSiteMutated,Query sequence has a missing splice donor site: --. The context is ----------------------.,
+MK116110.1,Scramble,Sequence is minus-scrambled.,
+MK116110.1,InternalInversion,Sequence contains an internal inversion.,
 MK114997.1,Frameshift,ORF 'env' at 5651-8207 contains out of frame indels that impact 1167 positions.,env
 MK114997.1,InternalStop,ORF 'env' at 5651-8207 contains an internal stop codon at 6695.,env
 MK114997.1,MutatedStopCodon,ORF 'env' has a mutated stop codon: 'AGA'.,env

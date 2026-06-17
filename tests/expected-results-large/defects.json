@@ -392,6 +392,18 @@
             "code": "MajorSpliceDonorSiteMutated",
             "message": "Query sequence has a mutated splice donor site: AT. The context is TTAACTGCGAAT-----CGTTC.",
             "region": null
+        },
+        {
+            "qseqid": "MN090335",
+            "code": "Scramble",
+            "message": "Sequence is minus-scrambled.",
+            "region": null
+        },
+        {
+            "qseqid": "MN090335",
+            "code": "InternalInversion",
+            "message": "Sequence contains an internal inversion.",
+            "region": null
         }
     ],
     "MN090376": [
@@ -423,6 +435,18 @@
             "qseqid": "MN090376",
             "code": "MajorSpliceDonorSiteMutated",
             "message": "Query sequence has a missing splice donor site: --. The context is ----------------------.",
+            "region": null
+        },
+        {
+            "qseqid": "MN090376",
+            "code": "Scramble",
+            "message": "Sequence is minus-scrambled.",
+            "region": null
+        },
+        {
+            "qseqid": "MN090376",
+            "code": "InternalInversion",
+            "message": "Sequence contains an internal inversion.",
             "region": null
         }
     ],
@@ -851,6 +875,18 @@
             "qseqid": "MK116110.1",
             "code": "MajorSpliceDonorSiteMutated",
             "message": "Query sequence has a missing splice donor site: --. The context is ----------------------.",
+            "region": null
+        },
+        {
+            "qseqid": "MK116110.1",
+            "code": "Scramble",
+            "message": "Sequence is minus-scrambled.",
+            "region": null
+        },
+        {
+            "qseqid": "MK116110.1",
+            "code": "InternalInversion",
+            "message": "Sequence contains an internal inversion.",
             "region": null
         }
     ],

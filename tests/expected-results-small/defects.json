@@ -372,6 +372,18 @@
             "code": "MajorSpliceDonorSiteMutated",
             "message": "Query sequence has a mutated splice donor site: AT. The context is TTAACTGCGAAT-----CGTTC.",
             "region": null
+        },
+        {
+            "qseqid": "MN090335",
+            "code": "Scramble",
+            "message": "Sequence is minus-scrambled.",
+            "region": null
+        },
+        {
+            "qseqid": "MN090335",
+            "code": "InternalInversion",
+            "message": "Sequence contains an internal inversion.",
+            "region": null
         }
     ]
 }
