@@ -15,7 +15,9 @@ CFEIntact is [BCCfE](https://github.com/cfe-lab)'s version of [HIVIntact](https:
 
 ## Installation
 
-The easiest way to install and run CFEIntact is through Docker. The pre-built Docker image is available on Docker Hub.
+CFEIntact can be run online, without installation: https://cfe-lab.github.io/CFEIntact/app/
+
+The easiest way to install and run CFEIntact locally is through Docker. The pre-built Docker image is available on Docker Hub.
 
 Ensure Docker is installed on your system. You can download and install Docker from [the official Docker website](https://www.docker.com/get-started).
 

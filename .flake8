@@ -4,5 +4,7 @@
 # E303: too many blank lines
 # E711: comparison to None should be 'if cond is None:'
 # E701: multiple statements on one line
-ignore = E302,E303,E711,E701
+# W503: line break before binary operator
+# W504: line break after binary operator
+ignore = E302,E303,E711,E701,W503,W504
 max-line-length = 120

@@ -181,7 +181,10 @@ jobs:
       - name: Convert Docker image to WebAssembly
         run: |
           mkdir -p wasm-app/public
-          c2w --build-arg VM_MEMORY_SIZE_MB=1024 \
+          c2w \
+            --build-arg VM_MEMORY_SIZE_MB=1024 \
+            --build-arg SOURCE_REPO=https://github.com/container2wasm/container2wasm \
+            --build-arg SOURCE_REPO_VERSION=v0.8.3 \
             ghcr.io/cfe-lab/cfeintact:${{ steps.gitver.outputs.version }} \
             wasm-app/public/cfeintact.wasm
 

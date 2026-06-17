@@ -155,12 +155,6 @@
             "code": "LongDeletion",
             "message": "Query sequence contains a very large deletion.",
             "region": null
-        },
-        {
-            "qseqid": "KX505501.1",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
-            "region": null
         }
     ],
     "MN691959": [
@@ -336,6 +330,26 @@
         }
     ],
     "MN692145": [],
+    "MN692145.CfE": [
+        {
+            "qseqid": "MN692145.CfE",
+            "code": "Deletion",
+            "message": "ORF 'pol' exceeds maximum deletion tolerance. Contains 144 deletions with max tolerance of 87 deletions.",
+            "region": "pol"
+        },
+        {
+            "qseqid": "MN692145.CfE",
+            "code": "Insertion",
+            "message": "ORF 'env' exceeds maximum insertion tolerance. Contains 147 insertions with max tolerance of 123 insertions.",
+            "region": "env"
+        },
+        {
+            "qseqid": "MN692145.CfE",
+            "code": "Scramble",
+            "message": "Sequence is plus-scrambled.",
+            "region": null
+        }
+    ],
     "MN090335": [
         {
             "qseqid": "MN090335",
@@ -449,12 +463,6 @@
             "code": "MajorSpliceDonorSiteMutated",
             "message": "Query sequence has a mutated splice donor site: G-. The context is GCGGCGACTGG-----------.",
             "region": null
-        },
-        {
-            "qseqid": "MK115690.1",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
-            "region": null
         }
     ],
     "MK115571.1": [
@@ -487,20 +495,7 @@
             "region": null
         }
     ],
-    "MK115030.1": [
-        {
-            "qseqid": "MK115030.1",
-            "code": "Scramble",
-            "message": "Sequence is minus-scrambled.",
-            "region": null
-        },
-        {
-            "qseqid": "MK115030.1",
-            "code": "InternalInversion",
-            "message": "Sequence contains an internal inversion.",
-            "region": null
-        }
-    ],
+    "MK115030.1": [],
     "MK115498.1": [],
     "MK115211.1": [
         {
@@ -525,18 +520,6 @@
             "qseqid": "MK115211.1",
             "code": "MajorSpliceDonorSiteMutated",
             "message": "Query sequence has a missing splice donor site: --. The context is GCGGCG----------------.",
-            "region": null
-        },
-        {
-            "qseqid": "MK115211.1",
-            "code": "Scramble",
-            "message": "Sequence is minus-scrambled.",
-            "region": null
-        },
-        {
-            "qseqid": "MK115211.1",
-            "code": "InternalInversion",
-            "message": "Sequence contains an internal inversion.",
             "region": null
         }
     ],
@@ -846,18 +829,6 @@
             "code": "APOBECHypermutation",
             "message": "Query sequence shows evidence of APOBEC3F/G-mediated hypermutation (p = 1.2040967664149076e-41).",
             "region": null
-        },
-        {
-            "qseqid": "MK115009.1",
-            "code": "Scramble",
-            "message": "Sequence is minus-scrambled.",
-            "region": null
-        },
-        {
-            "qseqid": "MK115009.1",
-            "code": "InternalInversion",
-            "message": "Sequence contains an internal inversion.",
-            "region": null
         }
     ],
     "MK115387.1": [
@@ -908,6 +879,12 @@
         },
         {
             "qseqid": "MK116110.1",
+            "code": "Scramble",
+            "message": "Sequence is minus-scrambled.",
+            "region": null
+        },
+        {
+            "qseqid": "MK116110.1",
             "code": "InternalInversion",
             "message": "Sequence contains an internal inversion.",
             "region": null
@@ -946,18 +923,6 @@
             "qseqid": "MK115065.1",
             "code": "MajorSpliceDonorSiteMutated",
             "message": "Query sequence has a missing splice donor site: --. The context is ----------------------.",
-            "region": null
-        },
-        {
-            "qseqid": "MK115065.1",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
-            "region": null
-        },
-        {
-            "qseqid": "MK115065.1",
-            "code": "InternalInversion",
-            "message": "Sequence contains an internal inversion.",
             "region": null
         }
     ],
@@ -1142,7 +1107,7 @@
         {
             "qseqid": "MK115702.1",
             "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
+            "message": "Sequence is minus-scrambled.",
             "region": null
         },
         {

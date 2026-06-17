@@ -155,12 +155,6 @@
             "code": "LongDeletion",
             "message": "Query sequence contains a very large deletion.",
             "region": null
-        },
-        {
-            "qseqid": "KX505501.1",
-            "code": "Scramble",
-            "message": "Sequence is plus-scrambled.",
-            "region": null
         }
     ],
     "MN691959": [
