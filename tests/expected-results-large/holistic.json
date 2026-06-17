@@ -548,15 +548,15 @@
     "OQ092462": {
         "intact": false,
         "qlen": 9714,
-        "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE",
-        "hypermutation_probablility": 0.10883643311676816,
+        "inferred_subtype": "HIV_NL43_fullgenome_AF324493",
+        "hypermutation_probablility": 0.2251878377803147,
         "is_reverse_complement": false,
         "blast_matched_qlen": 9714,
-        "blast_sseq_coverage": 1.1306853261988064,
+        "blast_sseq_coverage": 1.130806468225358,
         "blast_qseq_coverage": 1.1301214741610048,
         "blast_sseq_orfs_coverage": 1.0,
         "orfs_start": 789,
-        "orfs_end": 8793,
+        "orfs_end": 8784,
         "blast_n_conseqs": 3
     },
     "OQ092464": {
@@ -576,15 +576,15 @@
     "OQ092467": {
         "intact": false,
         "qlen": 9936,
-        "inferred_subtype": "Ref.B.FR.83.HXB2_LAI_IIIB_BRU.K03455.CfE",
-        "hypermutation_probablility": 0.6438715160567257,
+        "inferred_subtype": "HIV_NL43_fullgenome_AF324493",
+        "hypermutation_probablility": 0.6057550261886027,
         "is_reverse_complement": false,
         "blast_matched_qlen": 9936,
-        "blast_sseq_coverage": 1.1308911298621116,
+        "blast_sseq_coverage": 1.131012462663508,
         "blast_qseq_coverage": 1.0962157809983897,
         "blast_sseq_orfs_coverage": 1.0,
         "orfs_start": 789,
-        "orfs_end": 8793,
+        "orfs_end": 8784,
         "blast_n_conseqs": 3
     }
 }

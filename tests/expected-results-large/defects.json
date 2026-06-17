@@ -1262,6 +1262,12 @@
     "OQ092462": [
         {
             "qseqid": "OQ092462",
+            "code": "Insertion",
+            "message": "ORF 'tat_exon2' exceeds maximum insertion tolerance. Contains 45 insertions with max tolerance of 15 insertions.",
+            "region": "tat_exon2"
+        },
+        {
+            "qseqid": "OQ092462",
             "code": "PackagingSignalDeletion",
             "message": "Query sequence exceeds maximum deletion tolerance in PSI. Contains 23 deletions with max tolerance of 10 deletions.",
             "region": null
@@ -1288,6 +1294,12 @@
         }
     ],
     "OQ092467": [
+        {
+            "qseqid": "OQ092467",
+            "code": "Insertion",
+            "message": "ORF 'tat_exon2' exceeds maximum insertion tolerance. Contains 45 insertions with max tolerance of 15 insertions.",
+            "region": "tat_exon2"
+        },
         {
             "qseqid": "OQ092467",
             "code": "PackagingSignalDeletion",

@@ -1,0 +1,4 @@
+qseqid,sseqid,sgi,qlen,slen,length,qstart,qend,sstart,send,evalue,bitscore,pident,nident,sstrand
+HIV_NL43_fullgenome_AF324493,HIV_NL43_fullgenome_AF324493,0,9709,9709,9709,1,9709,1,9709,0.0,13869,100.000,9709,plus
+HIV_NL43_fullgenome_AF324493,HIV_NL43_fullgenome_AF324493,0,9709,9709,634,9076,9709,1,634,0.0,810,94.637,600,plus
+HIV_NL43_fullgenome_AF324493,HIV_NL43_fullgenome_AF324493,0,9709,9709,634,1,634,9076,9709,0.0,810,94.637,600,plus
