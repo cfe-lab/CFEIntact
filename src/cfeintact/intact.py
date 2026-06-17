@@ -133,7 +133,9 @@ def remove_ends_matches(blast_rows: Sequence[BlastRow]) -> List[BlastRow]:
 
     def is_ltr_region(start: int, end: int):
         'Only checks if the match is a "small match outside of the area of interest".'
-        return end < GAG_START or start > NEF_CUTOFF
+        lo = min(start, end)
+        hi = max(start, end)
+        return hi < GAG_START or lo > NEF_CUTOFF
 
     def is_ltr_match(row: BlastRow):
         return is_ltr_region(row.sstart, row.send)
