@@ -6,10 +6,10 @@
   "description": "CFEIntact database for subtype 'CRF01_AE'",
   "number-of-letters": 9203,
   "number-of-sequences": 1,
-  "last-updated": "2026-01-12T22:10:00",
+  "last-updated": "2026-06-17T17:03:00",
   "number-of-volumes": 1,
-  "bytes-total": 51790,
-  "bytes-to-cache": 2454,
+  "bytes-total": 51782,
+  "bytes-to-cache": 2446,
   "files": [
     "CRF01_AE.fasta.ndb",
     "CRF01_AE.fasta.nhr",
