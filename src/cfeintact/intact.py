@@ -8,7 +8,8 @@ from collections import Counter
 from Bio import Seq, SeqIO
 from Bio.SeqRecord import SeqRecord
 from Bio.Data import IUPACData
-from typing import Optional, Dict, List, Iterable, Union, Tuple
+from typing import Optional, Dict, List, Iterable, Union, Tuple, Sequence
+from itertools import dropwhile
 
 import cfeintact.constants as const
 import cfeintact.subtypes as st
@@ -123,17 +124,36 @@ def most_frequent_element(lst):
     return most_common[0][0] if most_common else None
 
 
-def remove_5_prime(blast_rows: Iterable[BlastRow]):
+def remove_5_prime(blast_rows: Sequence[BlastRow]) -> List[BlastRow]:
     # HIV 5' region can easily map to its 3' region because they are identical.
     # Such a maping would not constitute a scramble, so we ignore the 5' region for this check.
 
     GAG_START = 789
     NEF_CUTOFF = 9000
 
-    def is_ltr_match(row: BlastRow):
-        return row.send < GAG_START or row.sstart > NEF_CUTOFF
+    def is_ltr_region(start: int, end: int):
+        'Only checks if the match is a "small match outside of the area of interest".'
+        return end < GAG_START or start > NEF_CUTOFF
 
-    return [x for x in blast_rows if not is_ltr_match(x)]
+    def is_ltr_match(row: BlastRow):
+        return is_ltr_region(row.sstart, row.send)
+
+    def overlap(a: BlastRow, b: BlastRow):
+        return (a.qstart <= b.qstart and a.qend >= b.qstart
+                or
+                b.qstart <= a.qstart and b.qend >= a.qstart)
+
+    non_overlaping = [x for x in blast_rows
+                      if not (is_ltr_match(x) and
+                              any(not is_ltr_match(y)
+                                  and overlap(x, y)
+                                  for y in blast_rows))]
+
+    sorted_by_query_start = tuple(sorted(non_overlaping, key=lambda x: x.qstart))
+    without_ltr_prefix = tuple(dropwhile(is_ltr_match, sorted_by_query_start))
+    sorted_by_query_end = tuple(sorted(without_ltr_prefix, key=lambda x: x.qend))
+    without_ltr_ends = list(reversed(tuple(dropwhile(is_ltr_match, reversed(sorted_by_query_end)))))
+    return without_ltr_ends
 
 
 def contains_internal_inversion(qseqid: str, blast_rows: List[BlastRow]) -> Optional[Defect]:
@@ -163,6 +183,7 @@ def is_scrambled(qseqid, blast_rows):
         # It should be an error normally, yet not a scramble error.
         return None
 
+    ignored_5_prime.sort(key=lambda x: x.sstart)
     ignored_5_prime.sort(key=lambda x: x.qstart)
     direction = most_frequent_element(x.sstrand for x in ignored_5_prime)
     if direction == "plus" and is_sorted(x.sstart for x in ignored_5_prime):
