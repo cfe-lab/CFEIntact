@@ -6,7 +6,7 @@
   "description": "CFEIntact database for subtype 'CRF02_AG'",
   "number-of-letters": 9774,
   "number-of-sequences": 1,
-  "last-updated": "2026-06-17T17:03:00",
+  "last-updated": "2026-06-17T19:23:00",
   "number-of-volumes": 1,
   "bytes-total": 51933,
   "bytes-to-cache": 2589,
