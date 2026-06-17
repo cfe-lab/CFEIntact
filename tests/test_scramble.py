@@ -80,7 +80,7 @@ def test_is_scrambled_minus_strand_sorted():
 def test_is_scrambled_plus_strand_unsorted():
     # Test case with mixed directions and inversions
     blast_rows = [
-        mk_blast_row(sstart=700, send=700, qstart=99, sstrand="plus"),
+        mk_blast_row(sstart=800, send=800, qstart=99, sstrand="plus"),
         mk_blast_row(sstart=880, send=890, qstart=25, sstrand="plus"),
         mk_blast_row(sstart=920, send=930, qstart=45, sstrand="plus"),
         mk_blast_row(sstart=950, send=980, qstart=85, sstrand="plus"),
