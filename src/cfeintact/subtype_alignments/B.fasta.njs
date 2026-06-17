@@ -6,7 +6,7 @@
   "description": "CFEIntact database for subtype 'B'",
   "number-of-letters": 18714,
   "number-of-sequences": 2,
-  "last-updated": "2026-01-12T22:10:00",
+  "last-updated": "2026-06-17T19:23:00",
   "number-of-volumes": 1,
   "bytes-total": 54309,
   "bytes-to-cache": 4829,

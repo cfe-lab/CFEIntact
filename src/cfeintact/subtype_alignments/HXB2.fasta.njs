@@ -6,10 +6,10 @@
   "description": "CFEIntact database for subtype 'HXB2'",
   "number-of-letters": 9718,
   "number-of-sequences": 1,
-  "last-updated": "2026-01-12T22:10:00",
+  "last-updated": "2026-06-17T19:23:00",
   "number-of-volumes": 1,
-  "bytes-total": 51927,
-  "bytes-to-cache": 2575,
+  "bytes-total": 51919,
+  "bytes-to-cache": 2567,
   "files": [
     "HXB2.fasta.ndb",
     "HXB2.fasta.nhr",
