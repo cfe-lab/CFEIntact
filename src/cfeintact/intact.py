@@ -125,8 +125,9 @@ def most_frequent_element(lst):
 
 
 def remove_ends_matches(blast_rows: Sequence[BlastRow]) -> List[BlastRow]:
-    # HIV 5' region can easily map to its 3' region because they are identical.
-    # Such a maping would not constitute a scramble, so we ignore the 5' region for this check.
+    """
+    Remove terminal subject-region HSPs when they are redundant with central HSPs or occur at query ends.
+    """
 
     GAG_START = 789
     NEF_CUTOFF = 9000
