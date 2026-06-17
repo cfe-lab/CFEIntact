@@ -111,7 +111,7 @@ TGGAAGGGCTAATTC...GACCCTTTTAGTCAGTGTGGAAAATCTCTAGCA
 
 ## --- `blast.csv` ---
 
-This file contains output from BLASTN software.
+This file contains output from [BLAST](https://blast.ncbi.nlm.nih.gov/doc/blast-help/downloadblastdata.html) software.
 It is produced conditionally.
 
 Here is an example of the contents of the `blast.csv` file:
