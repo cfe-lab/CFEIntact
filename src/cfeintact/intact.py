@@ -132,19 +132,19 @@ def remove_ends_matches(blast_rows: Sequence[BlastRow]) -> List[BlastRow]:
     GAG_START = 789
     NEF_CUTOFF = 9000
 
-    def is_ltr_region(start: int, end: int):
+    def is_ltr_region(start: int, end: int) -> bool:
         'Only checks if the match is a "small match outside of the area of interest".'
         lo = min(start, end)
         hi = max(start, end)
         return hi < GAG_START or lo > NEF_CUTOFF
 
-    def is_ltr_match(row: BlastRow):
+    def is_ltr_match(row: BlastRow) -> bool:
         return is_ltr_region(row.sstart, row.send)
 
-    def query_interval(row):
+    def query_interval(row: BlastRow) -> Tuple[int, int]:
         return min(row.qstart, row.qend), max(row.qstart, row.qend)
 
-    def overlap(a: BlastRow, b: BlastRow):
+    def overlap(a: BlastRow, b: BlastRow) -> bool:
         a_start, a_end = query_interval(a)
         b_start, b_end = query_interval(b)
         return a_start <= b_end and b_start <= a_end
