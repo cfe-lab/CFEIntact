@@ -124,7 +124,7 @@ def most_frequent_element(lst):
     return most_common[0][0] if most_common else None
 
 
-def remove_5_prime(blast_rows: Sequence[BlastRow]) -> List[BlastRow]:
+def remove_ends_matches(blast_rows: Sequence[BlastRow]) -> List[BlastRow]:
     # HIV 5' region can easily map to its 3' region because they are identical.
     # Such a maping would not constitute a scramble, so we ignore the 5' region for this check.
 
@@ -157,14 +157,14 @@ def remove_5_prime(blast_rows: Sequence[BlastRow]) -> List[BlastRow]:
 
 
 def contains_internal_inversion(qseqid: str, blast_rows: List[BlastRow]) -> Optional[Defect]:
-    ignored_5_prime = remove_5_prime(blast_rows)
+    filtered_ends = remove_ends_matches(blast_rows)
 
-    if not ignored_5_prime:
+    if not filtered_ends:
         # No alignment.
         # It should be an error normally, yet not an internal inversion error.
         return None
 
-    all_same = len(set(x.sstrand for x in ignored_5_prime)) == 1
+    all_same = len(set(x.sstrand for x in filtered_ends)) == 1
     if all_same:
         return None
 
@@ -176,19 +176,19 @@ def contains_internal_inversion(qseqid: str, blast_rows: List[BlastRow]) -> Opti
 
 
 def is_scrambled(qseqid, blast_rows):
-    ignored_5_prime = remove_5_prime(blast_rows)
+    filtered_ends = remove_ends_matches(blast_rows)
 
-    if not ignored_5_prime:
+    if not filtered_ends:
         # No alignment.
         # It should be an error normally, yet not a scramble error.
         return None
 
-    ignored_5_prime.sort(key=lambda x: x.sstart)
-    ignored_5_prime.sort(key=lambda x: x.qstart)
-    direction = most_frequent_element(x.sstrand for x in ignored_5_prime)
-    if direction == "plus" and is_sorted(x.sstart for x in ignored_5_prime):
+    filtered_ends.sort(key=lambda x: x.sstart)
+    filtered_ends.sort(key=lambda x: x.qstart)
+    direction = most_frequent_element(x.sstrand for x in filtered_ends)
+    if direction == "plus" and is_sorted(x.sstart for x in filtered_ends):
         return None
-    elif direction == "minus" and is_sorted(x.send for x in reversed(ignored_5_prime)):
+    elif direction == "minus" and is_sorted(x.send for x in reversed(filtered_ends)):
         return None
     else:
         return Defect(qseqid, defect.Scramble(direction))
