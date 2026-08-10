@@ -14,7 +14,7 @@ authors = [
     { name = "British Columbia Centre for Excellence in HIV/AIDS", email = "vmysak@bccfe.ca" },
 ]
 dependencies = [
-    "biopython>=1.83",
+    "biopython>=1.88",
     "click>=8.4.2",
     "scipy>=1.1",
     "numpy==2.4.6",
